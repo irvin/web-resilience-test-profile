@@ -125,6 +125,77 @@
         .site-link:focus {
             text-decoration: underline;
         }
+
+        .test-env-toggle {
+            cursor: pointer;
+            user-select: none;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .test-env-toggle:hover {
+            background-color: #dee2e6;
+        }
+
+        .test-env-toggle::after {
+            content: '▼';
+            transition: transform 0.3s;
+        }
+
+        .test-env-toggle.collapsed::after {
+            transform: rotate(-90deg);
+        }
+
+        .test-env-content {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .test-env-content.expanded {
+            display: block;
+        }
+
+        .test-env-section {
+            margin-bottom: 15px;
+        }
+
+        .test-env-section h4 {
+            margin: 0 0 10px 0;
+            font-size: 1em;
+            color: #495057;
+        }
+
+        .test-env-section ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .test-env-section li {
+            margin-bottom: 5px;
+        }
+
+        .canonical-url {
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .canonical-url a {
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        .canonical-url a:hover {
+            text-decoration: underline;
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
 </head>
@@ -141,13 +212,48 @@
             <div class="summary {{summaryClass}}">
                 <h2>{{summaryText}}</h2>
             </div>
-            <p>最後一次測試時間：{{testTime}}</p>
+            <p>最後一次測試時間：{{testTime}}{{#if httpStatus}} (HTTP {{httpStatus}}){{/if}}</p>
             <div class="score-container">
                 <p class="score score-O">境內直接連線 (O): {{domesticCount}}</p><br>
                 <p class="score score-Q">境內雲端服務 (?): {{cloudCount}}</p><br>
                 <p class="score score-X">境外連線 (X): {{foreignCount}}</p>
-                <p>在開啟 {{url}} 時，我們總共鑑別出 {{totalConnections}} 項連線。<br>
-                其中 {{domesticCount}} 項為境內直接連線，{{cloudCount}} 項為境內雲端服務（尚不清楚在對外斷線時是否可用），{{foreignCount}} 項為境外連線。</p>
+                <p>在開啟 <a href="https://{{url}}" target="_blank">{{url}}</a> 時，我們總共識別出來自 {{uniqueDomains}} 個網域的 {{requestCount}} 個請求。<br>
+                其中 {{domesticCount}} 項為境內直接連線，{{cloudCount}} 項為境內的雲端服務，{{foreignCloudCount}} 項為境外的雲端服務，{{foreignDirectCount}} 項為境外其他連線。</p>
+                <p>目前尚不知道境內雲端服務在對外斷線時是否可用，此需由雲端服務提供者進一步說明。</p>
+            </div>
+            <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
+                <span>測試環境</span>
+            </div>
+            <div class="test-env-content">
+                <div class="test-env-section">
+                    <h4>測試參數</h4>
+                    <ul>
+                        <li>指定 DNS 伺服器：{{testParameters.customDNS}}</li>
+                        {{#if testParameters.adblockUrls}}
+                        <li>使用 Adblock 清單：
+                            <ul>
+                                {{#each testParameters.adblockUrls}}
+                                <li><a href="{{this}}" target="_blank">{{this}}</a></li>
+                                {{/each}}
+                            </ul>
+                        </li>
+                        {{/if}}
+                    </ul>
+                </div>
+                {{#if testingEnvironment}}
+                <div class="test-env-section">
+                    <h4>測試環境</h4>
+                    <ul>
+                        <li>IP：{{testingEnvironment.ip}}</li>
+                        {{#if testingEnvironment.city}}<li>城市：{{testingEnvironment.city}}</li>{{/if}}
+                        {{#if testingEnvironment.region}}<li>地區：{{testingEnvironment.region}}</li>{{/if}}
+                        <li>國家：{{testingEnvironment.country}}</li>
+                        {{#if testingEnvironment.org}}<li>組織：{{testingEnvironment.org}}</li>{{/if}}
+                        {{#if testingEnvironment.dnsServer}}<li>DNS 伺服器：{{testingEnvironment.dnsServer}}</li>{{/if}}
+                        <!-- {{#if testingEnvironment.source}}<li>來源：{{testingEnvironment.source}}</li>{{/if}} -->
+                    </ul>
+                </div>
+                {{/if}}
             </div>
             <div class="details-container">
                 <p><a href="{{rawDataUrl}}" target="_blank">原始資料</a></p>
@@ -173,6 +279,11 @@
     <script>
         const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/irvin/web-resilience-test-result/refs/heads/main/';
         const GITHUB_WEB_URL = 'https://github.com/irvin/web-resilience-test-result/blob/main/';
+
+        // 註冊 Handlebars helper 函數
+        Handlebars.registerHelper('ne', function(a, b) {
+            return a !== b;
+        });
 
         const templates = {
             title: Handlebars.compile(document.getElementById('title-template').innerHTML),
@@ -223,6 +334,17 @@
             return filename + '.json';
         }
 
+        function toggleTestEnv(element) {
+            const content = element.nextElementSibling;
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                element.classList.add('collapsed');
+            } else {
+                content.classList.add('expanded');
+                element.classList.remove('collapsed');
+            }
+        }
+
         async function loadResults() {
             const urlParam = getUrlParam();
 
@@ -257,6 +379,8 @@
                 const domesticCount = domesticDirect;
                 const cloudCount = domesticCloud;
                 const foreignCount = foreignCloud + foreignDirect;
+                const foreignCloudCount = foreignCloud;
+                const foreignDirectCount = foreignDirect;
                 const totalConnections = domesticCloud + domesticDirect + foreignCloud + foreignDirect;
 
                 const foreignTotal = foreignCloud + foreignDirect;
@@ -265,15 +389,24 @@
                                     domesticCloud > 0 ? 'might-work' :
                                     'will-work';
 
+
                 document.getElementById('results').innerHTML = templates.resultCard({
-                    url: result.url,
+                    url: result.url.replace(/^https?:\/\//, ''),
+                    canonicalUrl: result.canonicalURL ? result.canonicalURL.replace(/^https?:\/\//, '') : null,
                     summaryText: summaryText,
                     summaryClass: summaryClass,
                     testTime: formatDate(result.timestamp),
+                    httpStatus: result.httpStatus || null,
+                    requestCount: result.requestCount || 0,
+                    uniqueDomains: result.uniqueDomains || 0,
                     domesticCount: domesticCount,
                     cloudCount: cloudCount,
                     foreignCount: foreignCount,
+                    foreignCloudCount: foreignCloudCount,
+                    foreignDirectCount: foreignDirectCount,
                     totalConnections: totalConnections,
+                    testParameters: result.testParameters || {},
+                    testingEnvironment: result.testingEnvironment || null,
                     rawDataUrl: GITHUB_WEB_URL + urlToFilename(result.url),
                     detailsJson: JSON.stringify(result.domainDetails, null, 2)
                 });
