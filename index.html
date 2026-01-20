@@ -160,12 +160,12 @@
         <div class="message">
             <p>找不到 {{url}} 的測試結果</p>
             <p>目前已測試的所有頁面資料：<a href="https://github.com/irvin/web-resilience-test-result" target="_blank">github.com/irvin/web-resilience-test-result</a></p>
-            <p>你可以按照<a href="https://github.com/irvin/digital-service-resilience" target="_blank">這邊的方式</a>進行測試。</p>
+            <p>你可以按照<a href="https://github.com/irvin/web-resilience-test" target="_blank">這邊的方式</a>進行測試。</p>
         </div>
     </template>
 
     <footer>
-      <p><a href="https://github.com/irvin/digital-service-resilience" target="_blank">研究方法</a></p>
+      <p><a href="https://github.com/irvin/web-resilience-test" target="_blank">研究方法</a></p>
       <p><a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank">g0v 數位韌性松</a></p>
       <img src="g0v_logo.png" alt="g0v.tw 台灣零時政府" style="width: 100px; height: 100px;">
     </footer>
@@ -228,7 +228,7 @@
 
             // 如果沒有指定網址，轉址到 g0v.tw 測試結果
             if (!urlParam) {
-                window.location.href = window.location.href + (window.location.href.endsWith('/') ? '' : '/') + '?url=g0v.tw';
+                window.location.href = window.location.href.replace(/\/$/, '') + '?url=g0v.tw';
                 return;
             }
 
