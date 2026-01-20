@@ -14,149 +14,184 @@
     <link id="canonical" rel="canonical" href="https://irvin.github.io/web-resilience-test-result/">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            color: #0366d6;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             line-height: 1.6;
-        }
-        .result-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            background-color: #fff;
-        }
-        .score-container {
-            margin: 0 6px;
-            padding: 12px;
-            background-color: #f8f9fa;
-            border-radius: 6px;
-        }
-        .score-container p {
-            font-size: 0.9em;
-            line-height: 1.5em;
-            margin: 0;
-            margin-bottom: 0.5em;
-        }
-        .score-container .score {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            font-size: 1em;
-            min-width: 100px;
-            text-align: center;
-        }
-        .score-O { background-color: #d4edda; color: #155724; }
-        .score-Q { background-color: #fff3cd; color: #856404; }
-        .score-X { background-color: #f8d7da; color: #721c24; }
-        pre {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 4px;
-            overflow-x: auto;
-            margin: 1em 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            min-height: 100vh;
+            color: #333;
         }
 
-        code {
-            font-size: 0.85em;
-            font-family: Monaco, Consolas, "Courier New", monospace;
-            line-height: 1.5;
+        h1 {
+            font-weight: 700;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-card {
+            border: none;
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .score-container {
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 1px solid #e9ecef;
+        }
+
+        .score-container p {
+            font-size: 0.95em;
+            line-height: 1.6em;
+            margin: 0;
+            margin-bottom: 0.8em;
+        }
+
+        .score-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .score-container .score {
+            display: block;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 0;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .score-O {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+        }
+        .score-Q {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            color: #856404;
+        }
+        .score-X {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            color: #721c24;
         }
 
         .details-container pre {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
+            background: #282c34;
+            color: #aaa;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1em 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: none;
         }
 
         .details-container code {
-            color: #24292e;
+            font-size: 0.8em;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Courier New', monospace;
+            line-height: 1.6;
             background-color: transparent;
             padding: 0;
         }
 
         .message {
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 10px;
             border: 1px solid #dee2e6;
-        }
-
-        .message code {
-            background-color: #e9ecef;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-
-        .raw-json-link {
-            color: #0366d6;
-            text-decoration: none;
-        }
-
-        .raw-json-link:hover {
-            text-decoration: underline;
-        }
-
-        .test-site {
-            margin: 0 0.25em;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .summary {
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
             text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-size: 1.3em;
+            font-weight: 600;
         }
 
         .summary.will-work {
-            background-color: #d4edda;
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
             color: #155724;
+            border: 2px solid #28a745;
         }
 
         .summary.might-work {
-            background-color: #fff3cd;
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
             color: #856404;
+            border: 2px solid #ffc107;
         }
 
         .summary.wont-work {
-            background-color: #f8d7da;
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
             color: #721c24;
+            border: 2px solid #dc3545;
         }
 
         .summary h2 {
             margin: 0;
-        }
-
-        .site-link {
-            text-decoration: none;
-        }
-
-        .site-link:hover,
-        .site-link:focus {
-            text-decoration: underline;
+            font-size: 1.2em;
         }
 
         .test-env-toggle {
             cursor: pointer;
             user-select: none;
-            padding: 10px;
-            background-color: #e9ecef;
-            border-radius: 4px;
-            margin: 15px 0;
+            padding: 14px 18px;
+            background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+            border-radius: 8px;
+            margin: 20px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            border-left: 4px solid #0366d6;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         .test-env-toggle:hover {
-            background-color: #dee2e6;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%);
+            transform: scale(1.005);
+            box-shadow: 0 2px 8px rgba(3, 102, 214, 0.2);
         }
 
         .test-env-toggle::after {
             content: '▼';
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
+            font-size: 0.8em;
+        }
+
+
+        .test-env-toggle:hover:after {
+            color: #0056b3;
         }
 
         .test-env-toggle.collapsed::after {
@@ -164,11 +199,23 @@
         }
 
         .test-env-content {
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 4px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
             margin-top: 10px;
             display: none;
+            border: 1px solid #e9ecef;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 1000px;
+            }
         }
 
         .test-env-content.expanded {
@@ -176,37 +223,75 @@
         }
 
         .test-env-section {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 0.95em;
+        }
+
+        .test-env-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .test-env-section h4 {
-            margin: 0 0 10px 0;
-            font-size: 1em;
-            color: #495057;
+            margin: 0 0 12px 0;
+            font-weight: 600;
         }
 
         .test-env-section ul {
             margin: 0;
-            padding-left: 20px;
+            padding-left: 25px;
         }
 
         .test-env-section li {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            line-height: 1.5;
         }
 
-        .canonical-url {
-            color: #6c757d;
-            font-size: 0.9em;
-            margin-top: 5px;
+        footer {
+            margin-top: 50px;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 2px solid #e9ecef;
         }
 
-        .canonical-url a {
-            color: #0366d6;
-            text-decoration: none;
+        footer p {
+            margin: 10px 0;
         }
 
-        .canonical-url a:hover {
-            text-decoration: underline;
+        footer img {
+            margin-top: 15px;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        footer img:hover {
+            opacity: 1;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.75em;
+            }
+
+            .result-card {
+                padding: 20px;
+            }
+
+            .score-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .summary {
+                font-size: 1.1em;
+            }
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
@@ -224,48 +309,52 @@
             <div class="summary {{summaryClass}}">
                 <h2>{{summaryText}}</h2>
             </div>
-            <p>最後一次測試時間：{{testTime}}{{#if httpStatus}} (HTTP {{httpStatus}}){{/if}}</p>
             <div class="score-container">
-                <p class="score score-O">境內直接連線 (O): {{domesticCount}}</p><br>
-                <p class="score score-Q">境內雲端服務 (?): {{cloudCount}}</p><br>
-                <p class="score score-X">境外連線 (X): {{foreignCount}}</p>
+                <div class="score-stats">
+                    <p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">{{domesticCount}}</strong></p>
+                    <p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">{{cloudCount}}</strong></p>
+                    <p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">{{foreignCount}}</strong></p>
+                </div>
                 <p>在開啟 <a href="https://{{url}}" target="_blank">{{url}}</a> 時，我們總共識別出來自 {{uniqueDomains}} 個網域的 {{requestCount}} 個請求。<br>
                 其中 {{domesticCount}} 項為境內直接連線，{{cloudCount}} 項為境內的雲端服務，{{foreignCloudCount}} 項為境外的雲端服務，{{foreignDirectCount}} 項為境外其他連線。</p>
-                <p>目前尚不知道境內雲端服務在對外斷線時是否可用，此需由雲端服務提供者進一步說明。</p>
+                <p>目前尚不知道境內雲端服務在對外斷線時是否可用，需由服務提供者釐清與說明。</p>
             </div>
-            <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
-                <span>測試環境</span>
-            </div>
-            <div class="test-env-content">
-                <div class="test-env-section">
-                    <h4>測試參數</h4>
-                    <ul>
-                        <li>指定 DNS 伺服器：{{testParameters.customDNS}}</li>
-                        {{#if testParameters.adblockUrls}}
-                        <li>使用 Adblock 清單：
-                            <ul>
-                                {{#each testParameters.adblockUrls}}
-                                <li><a href="{{this}}" target="_blank">{{this}}</a></li>
-                                {{/each}}
-                            </ul>
-                        </li>
-                        {{/if}}
-                    </ul>
+
+            <div class="details-container">
+                <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
+                    <span>測試環境</span>
                 </div>
-                {{#if testingEnvironment}}
-                <div class="test-env-section">
-                    <h4>測試環境</h4>
-                    <ul>
-                        <li>IP：{{testingEnvironment.ip}}</li>
-                        {{#if testingEnvironment.city}}<li>城市：{{testingEnvironment.city}}</li>{{/if}}
-                        {{#if testingEnvironment.region}}<li>地區：{{testingEnvironment.region}}</li>{{/if}}
-                        <li>國家：{{testingEnvironment.country}}</li>
-                        {{#if testingEnvironment.org}}<li>組織：{{testingEnvironment.org}}</li>{{/if}}
-                        {{#if testingEnvironment.dnsServer}}<li>DNS 伺服器：{{testingEnvironment.dnsServer}}</li>{{/if}}
-                        <!-- {{#if testingEnvironment.source}}<li>來源：{{testingEnvironment.source}}</li>{{/if}} -->
-                    </ul>
+                <div class="test-env-content">
+                    <div class="test-env-section">
+                        <h4>測試參數</h4>
+                        <ul>
+                            <li>指定 DNS 伺服器：{{testParameters.customDNS}}</li>
+                            {{#if testParameters.adblockUrls}}
+                            <li>使用 Adblock 清單：
+                                <ul>
+                                    {{#each testParameters.adblockUrls}}
+                                    <li><a href="{{this}}" target="_blank">{{this}}</a></li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                            {{/if}}
+                        </ul>
+                    </div>
+                    {{#if testingEnvironment}}
+                    <div class="test-env-section">
+                        <h4>測試環境</h4>
+                        <ul>
+                            <li>IP：{{testingEnvironment.ip}}</li>
+                            {{#if testingEnvironment.city}}<li>城市：{{testingEnvironment.city}}</li>{{/if}}
+                            {{#if testingEnvironment.region}}<li>地區：{{testingEnvironment.region}}</li>{{/if}}
+                            <li>國家：{{testingEnvironment.country}}</li>
+                            {{#if testingEnvironment.org}}<li>組織：{{testingEnvironment.org}}</li>{{/if}}
+                            {{#if testingEnvironment.dnsServer}}<li>DNS 伺服器：{{testingEnvironment.dnsServer}}</li>{{/if}}
+                            <!-- {{#if testingEnvironment.source}}<li>來源：{{testingEnvironment.source}}</li>{{/if}} -->
+                        </ul>
+                    </div>
+                    {{/if}}
                 </div>
-                {{/if}}
             </div>
             <div class="details-container">
                 <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
@@ -276,6 +365,8 @@
                     <pre><code>{{detailsJson}}</code></pre>
                 </div>
             </div>
+
+            <p style="margin-bottom: 0;">最後測試時間：{{testTime}}{{#if httpStatus}} (HTTP {{httpStatus}}){{/if}}</p>
         </div>
     </template>
 
