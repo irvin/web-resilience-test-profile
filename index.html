@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>海纜斷掉時網站會動嗎？</title>
-    
+
     <!-- Open Graph 標籤 -->
     <meta property="og:title" content="海纜斷掉時網站會動嗎？">
     <meta property="og:description" content="檢測網站在台灣對外海纜斷掉時的可用性">
@@ -59,19 +59,19 @@
             overflow-x: auto;
             margin: 1em 0;
         }
-        
+
         code {
             font-size: 0.7em;
             font-family: Monaco, Consolas, "Courier New", monospace;
         }
-        
+
         .message {
             padding: 20px;
             background-color: #f8f9fa;
             border-radius: 8px;
             border: 1px solid #dee2e6;
         }
-        
+
         .message code {
             background-color: #e9ecef;
             padding: 2px 4px;
@@ -143,11 +143,11 @@
             </div>
             <p>最後一次測試時間：{{testTime}}</p>
             <div class="score-container">
-                <p class="score score-O">境內連線 (O): {{domesticCount}}</p><br>
-                <p class="score score-Q">具有國內節點的雲 (?): {{cloudCount}}</p><br>
+                <p class="score score-O">境內直接連線 (O): {{domesticCount}}</p><br>
+                <p class="score score-Q">境內雲端服務 (?): {{cloudCount}}</p><br>
                 <p class="score score-X">境外連線 (X): {{foreignCount}}</p>
                 <p>在開啟 {{url}} 時，我們總共鑑別出 {{totalConnections}} 項連線。<br>
-                其中 {{domesticCount}} 項為境內資源，{{cloudCount}} 項為具有國內節點的雲端服務（尚不清楚在對外斷線是否可用），{{foreignCount}} 項為境外資源。</p>
+                其中 {{domesticCount}} 項為境內直接連線，{{cloudCount}} 項為境內雲端服務（尚不清楚在對外斷線時是否可用），{{foreignCount}} 項為境外連線。</p>
             </div>
             <div class="details-container">
                 <p><a href="{{rawDataUrl}}" target="_blank">原始資料</a></p>
@@ -195,13 +195,15 @@
         }
 
         function getSummaryText(result) {
-            if (result.test_results.foreign > 0) {
+            const foreignTotal = (result.test_results.foreign?.cloud || 0) + (result.test_results.foreign?.direct || 0);
+            if (foreignTotal > 0) {
                 return '不會動';
-            } else if (result.test_results.cloud_w_domestic_node > 0) {
-                return '不確定';
-            } else {
-                return '會動';
             }
+            const domesticCloud = result.test_results.domestic?.cloud || 0;
+            if (domesticCloud > 0) {
+                return '不確定';
+            }
+            return '會動';
         }
 
         // 從 URL 參數取得要顯示的網址
@@ -223,7 +225,7 @@
 
         async function loadResults() {
             const urlParam = getUrlParam();
-            
+
             // 如果沒有指定網址，轉址到 g0v.tw 測試結果
             if (!urlParam) {
                 window.location.href = window.location.href + (window.location.href.endsWith('/') ? '' : '/') + '?url=g0v.tw';
@@ -236,7 +238,7 @@
             // 更新 meta 標籤
             const baseUrl = 'https://irvin.github.io/web-resilience-test-result/';
             const currentUrl = urlParam ? `${baseUrl}?url=${urlParam}` : baseUrl;
-            
+
             document.querySelector('link[rel="canonical"]').href = currentUrl;
             document.querySelector('meta[property="og:canonical"]').content = currentUrl;
             document.querySelector('meta[property="og:url"]').content = currentUrl;
@@ -246,30 +248,41 @@
             // 顯示測試結果
             const result = await fetchTestResult(urlToFilename(urlParam));
             if (result) {
-                const totalConnections = result.test_results.domestic + 
-                                       result.test_results.cloud_w_domestic_node + 
-                                       result.test_results.foreign;
+                // 使用新格式的 test_results 結構計算各項數值
+                const domesticCloud = result.test_results.domestic?.cloud || 0;
+                const domesticDirect = result.test_results.domestic?.direct || 0;
+                const foreignCloud = result.test_results.foreign?.cloud || 0;
+                const foreignDirect = result.test_results.foreign?.direct || 0;
+
+                const domesticCount = domesticDirect;
+                const cloudCount = domesticCloud;
+                const foreignCount = foreignCloud + foreignDirect;
+                const totalConnections = domesticCloud + domesticDirect + foreignCloud + foreignDirect;
+
+                const foreignTotal = foreignCloud + foreignDirect;
+                const summaryText = getSummaryText(result);
+                const summaryClass = foreignTotal > 0 ? 'wont-work' :
+                                    domesticCloud > 0 ? 'might-work' :
+                                    'will-work';
 
                 document.getElementById('results').innerHTML = templates.resultCard({
                     url: result.url,
-                    summaryText: getSummaryText(result),
-                    summaryClass: result.test_results.foreign > 0 ? 'wont-work' :
-                                result.test_results.cloud_w_domestic_node > 0 ? 'might-work' : 
-                                'will-work',
+                    summaryText: summaryText,
+                    summaryClass: summaryClass,
                     testTime: formatDate(result.timestamp),
-                    domesticCount: result.test_results.domestic,
-                    cloudCount: result.test_results.cloud_w_domestic_node,
-                    foreignCount: result.test_results.foreign,
-                    totalConnections,
+                    domesticCount: domesticCount,
+                    cloudCount: cloudCount,
+                    foreignCount: foreignCount,
+                    totalConnections: totalConnections,
                     rawDataUrl: GITHUB_WEB_URL + urlToFilename(result.url),
                     detailsJson: JSON.stringify(result.domainDetails, null, 2)
                 });
 
-            } 
+                document.querySelector('meta[property="og:description"]').content = summaryText;
+            }
             else {
                 document.getElementById('results').innerHTML = templates.notFound({ url: urlParam });
             }
-            document.querySelector('meta[property="og:description"]').content = getSummaryText(result);
           }
 
         // 載入測試結果
