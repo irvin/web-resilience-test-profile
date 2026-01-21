@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Web resilience test profile static site generator",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js --test && node scripts/deploy-worktree.js",
+    "build:all": "node build.js --all && node scripts/deploy-worktree.js",
+    "clean": "node scripts/clean-worktree.js"
   },
   "dependencies": {
     "playwright": "^1.40.0"

@@ -11,8 +11,10 @@ const TEMPLATE_FILE = path.join(__dirname, 'index.html');
 const BROWSER_INSTANCES = 4; // 同時開啟的瀏覽器實例數量
 const SERVER_PORT = 3000;
 
-// 測試模式：只處理第一個 URL
-const TEST_MODE = process.argv.includes('--test');
+// 測試模式：只處理第一個 URL（預設行為）
+// --all 參數：編譯所有網站
+const BUILD_ALL = process.argv.includes('--all');
+const TEST_MODE = !BUILD_ALL; // 如果沒有 --all，就是測試模式
 const TEST_LIMIT = TEST_MODE ? 1 : null;
 
 // 將網址轉換為目錄路徑（用於創建目錄結構）
@@ -262,7 +264,9 @@ async function processBatch(browser, urls, browserIndex, totalUrls) {
 async function build() {
   console.log('開始建置靜態頁面...');
   if (TEST_MODE) {
-    console.log('🧪 測試模式：只處理第一個網址\n');
+    console.log('🧪 測試模式：只處理第一個網址（使用 npm run build:all 編譯全部）\n');
+  } else {
+    console.log('🚀 完整建置模式：處理所有網址\n');
   }
 
   // 確保輸出目錄存在
