@@ -219,29 +219,6 @@ async function generateStaticHTML(browser, url, index, total) {
 `;
       // 在 loadResults 函數開頭插入檢查
       html = html.replace('async function loadResults() {', `async function loadResults() {${loadResultsFix}`);
-
-      // 在 loadResults() 調用之後插入修復 script（確保狀態正確）
-      const fixScript = `
-        <script>
-          // 確保靜態頁面狀態正確
-          (function() {
-            if (window.__STATIC_PAGE_DATA__ && window.__STATIC_PAGE_URL__) {
-              setTimeout(function() {
-                if (window.__vueState__ && window.__vueState__.vueResult) {
-                  window.__vueState__.vueResult.value = window.__STATIC_PAGE_DATA__;
-                  const resultsEl = document.getElementById('results');
-                  if (resultsEl) resultsEl.style.display = 'block';
-                  if (window.__vueState__.showSearch) window.__vueState__.showSearch.value = false;
-                  if (window.__vueState__.showCheckOther) window.__vueState__.showCheckOther.value = true;
-                }
-              }, 100);
-            }
-          })();
-        </script>
-`;
-      // 在 loadResults() 調用之後插入
-      html = html.replace('loadResults();', `loadResults();${fixScript}`);
-      html = html.replace('</head>', preloadScript + '\n    </head>');
     }
 
     // 修復資源檔案路徑：將相對路徑改為 ../ 路徑
