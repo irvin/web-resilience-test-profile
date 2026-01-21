@@ -682,9 +682,10 @@
             // 最多顯示 maxDisplay 項
             const displayUrls = filteredUrls.slice(0, maxDisplay);
             dropdown.innerHTML = displayUrls.map((url, index) => {
-                // 顯示時移除協定與多餘結尾斜線
+                // 顯示時移除協定、www. 與多餘結尾斜線
                 const cleanUrl = url
                     .replace(/^https?:\/\//, '')
+                    .replace(/^www\./, '')
                     .replace(/\/+$/, '');
                 return templates.searchItem({
                     url,
