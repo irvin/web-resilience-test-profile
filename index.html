@@ -249,7 +249,7 @@
             margin-top: 50px;
             padding: 30px 0;
             text-align: center;
-            border-top: 2px solid #e9ecef;
+            border-top: 2px solid #DDD;
         }
 
         footer p {
@@ -416,9 +416,9 @@
                     <p class="score score-Q{{cloudZeroClass}}">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">{{cloudCount}}</strong></p>
                     <p class="score score-X{{foreignZeroClass}}">境外連線 (X)<br><strong style="font-size: 1.3em;">{{foreignCount}}</strong></p>
                 </div>
-                <p>在開啟 <a href="https://{{url}}" target="_blank">{{url}}</a> 時，我們總共識別出來自 {{uniqueDomains}} 個網域的 {{requestCount}} 個請求。<br>
-                其中 {{domesticCount}} 項為境內直接連線，{{cloudCount}} 項為境內的雲端服務，{{foreignCloudCount}} 項為境外的雲端服務，{{foreignDirectCount}} 項為境外其他連線。</p>
-                <p>目前尚不知道境內雲端服務在對外斷線時是否可用，需由服務提供者釐清與說明。</p>
+                <p>在開啟 <a href="https://{{url}}" target="_blank">{{url}}</a> 時，我們總共識別出來自 {{uniqueDomains}} 個網域的 {{requestCount}} 個請求。</p>
+                <p>其中 {{domesticCount}} 項為境內直接連線，{{cloudCount}} 項為境內的雲端服務，{{foreignCloudCount}} 項為境外的雲端服務，{{foreignDirectCount}} 項為境外其他連線。</p>
+                <p>境內公用雲端服務——目前尚不知道在對外斷線時的可用性，需由服務提供者釐清說明。</p>
             </div>
 
             <div class="details-container">
@@ -496,7 +496,7 @@
                     {{#if hasItems}}
                         總共 {{totalAll}} 網站，目前顯示前 {{shown}} 個。
                         {{#if hasMore}}
-                        <span class="search-load-more">[點擊此處載入更多]</span>
+                        <span class="search-load-more">[載入更多網站]</span>
                         {{/if}}
                     {{else}}
                         總共 {{totalAll}} 網站，目前顯示前 0 個。
