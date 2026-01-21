@@ -647,13 +647,32 @@
             });
         }
 
+        // 檢查是否為靜態頁面
+        function isStaticPage() {
+            // 檢查路徑是否包含 dist/ 或當前頁面是否有靜態內容
+            const pathname = window.location.pathname;
+            const hasStaticContent = document.getElementById('results') &&
+                                    document.getElementById('results').querySelector('.result-card') !== null;
+            return pathname.includes('/dist/') || pathname.match(/\/[^\/]+\/index\.html$/) || hasStaticContent;
+        }
+
         // 選擇 URL 並跳轉
         function selectUrl(url) {
             // 跳轉時也使用標準化後（移除協定與多餘結尾斜線）的網址
             const cleanUrl = url
                 .replace(/^https?:\/\//, '')
                 .replace(/\/+$/, '');
-            window.location.href = window.location.pathname + '?url=' + encodeURIComponent(cleanUrl);
+
+            // 如果是靜態頁面，直接跳轉到對應的靜態頁面路徑
+            if (isStaticPage()) {
+                // 構建靜態頁面路徑，使用相對路徑：../facebook.com/
+                const currentPath = window.location.pathname;
+                const staticPath = `../${cleanUrl}/`;
+                window.location.href = staticPath;
+            } else {
+                // 動態頁面：使用 URL 參數
+                window.location.href = window.location.pathname + '?url=' + encodeURIComponent(cleanUrl);
+            }
         }
 
         async function loadResults() {
@@ -964,14 +983,6 @@
                     selectedIndex.value = -1;
                 }
 
-                function selectUrl(url) {
-                    // 跳轉時也使用標準化後（移除協定與多餘結尾斜線）的網址
-                    const cleanUrl = url
-                        .replace(/^https?:\/\//, '')
-                        .replace(/\/+$/, '');
-                    window.location.href = window.location.pathname + '?url=' + encodeURIComponent(cleanUrl);
-                }
-
                 function openSearch() {
                     // 顯示搜尋框，隱藏「檢查其他網站」按鈕
                     showSearch.value = true;
@@ -1036,7 +1047,7 @@
                     loadMore,
                     onSearchKeydown,
                     onSearchFocus,
-                    selectUrl,
+                    selectUrl: selectUrl, // 使用全局的 selectUrl 函數
                     openSearch
                 };
             }
