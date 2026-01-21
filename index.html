@@ -722,8 +722,8 @@
         async function loadResults() {
             const urlParam = getUrlParam();
 
-            // 如果有 URL 參數，直接跳轉到對應的靜態頁面
-            if (urlParam) {
+            // 如果有 URL 參數，且不在 build 環境中（localhost:3000），直接跳轉到對應的靜態頁面
+            if (urlParam && !window.location.hostname.includes('localhost') && window.location.port !== '3000') {
                 const cleanUrl = cleanUrlForNavigation(urlParam);
                 // 統一使用 /web/_domain_ 格式
                 const staticPath = `/web/${cleanUrl}/`;
@@ -796,7 +796,7 @@
             }
 
             // 更新 meta 標籤
-            const baseUrl = 'https://irvin.github.io/web-resilience-test-result/';
+            const baseUrl = 'https://resilience.ocf.tw/web/';
             const currentUrl = urlParam ? `${baseUrl}?url=${urlParam}` : baseUrl;
 
             document.querySelector('link[rel="canonical"]').href = currentUrl;
