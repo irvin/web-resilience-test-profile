@@ -152,10 +152,10 @@ async function generateStaticHTML(browser, url, index, total) {
     // 等待一小段時間確保所有內容都已渲染
     await page.waitForTimeout(1000);
 
-    // 取得渲染後的完整 HTML
-    let html = await page.content();
+    // 取得渲染後的 HTML（用於提取靜態內容和 meta 資訊）
+    const renderedHtml = await page.content();
 
-    // 從頁面中取得測試結果資料
+    // 從頁面中取得測試結果資料（用於更新 meta）
     const testResult = await page.evaluate(() => {
       return window.__vueState__ && window.__vueState__.vueResult ? window.__vueState__.vueResult.value : null;
     });
@@ -164,61 +164,77 @@ async function generateStaticHTML(browser, url, index, total) {
     const title = await page.title();
     console.log(`  [瀏覽器 ${index}] 頁面標題: ${title}`);
 
-    // 如果成功取得測試結果，在 HTML 中加入預載 script
+    // 1. 從原始模板取得完整頁面
+    let html = fs.readFileSync(TEMPLATE_FILE, 'utf8');
+
     if (testResult) {
-      // 在 </head> 之前插入預載 script
-      const preloadScript = `
-    <script>
-      // 預載測試結果資料（用於靜態 HTML）
-      window.__STATIC_PAGE_DATA__ = ${JSON.stringify(testResult)};
-      window.__STATIC_PAGE_URL__ = ${JSON.stringify(cleanUrl)};
-    </script>
-`;
-      // 在 </head> 之前插入預載資料
-      html = html.replace('</head>', preloadScript + '\n    </head>');
+      // 2. 從 playwright 取得中間靜態部分（兩個標記之間的內容）
+      const staticWrapperHTML = await page.evaluate(() => {
+        const beginMarker = document.querySelector('div[data-static="begin"]');
+        const endMarker = document.querySelector('div[data-static="end"]');
 
-      // 修改 loadResults 函數，讓它在靜態頁面中檢查預載資料
-      // 在 loadResults 函數定義的開頭添加檢查
-      const loadResultsFix = `
-            // 靜態頁面檢查：如果有預載資料，直接使用
-            if (window.__STATIC_PAGE_DATA__ && window.__STATIC_PAGE_URL__) {
-                const urlParam = getUrlParam();
-                // 如果沒有 URL 參數，但我們有預載資料，就使用預載資料
-                if (!urlParam) {
-                    // 等待 Vue 初始化完成
-                    const setStaticData = () => {
-                        if (window.__vueState__ && window.__vueState__.vueResult) {
-                            window.__vueState__.vueResult.value = window.__STATIC_PAGE_DATA__;
-                            const resultsEl = document.getElementById('results');
-                            if (resultsEl) resultsEl.style.display = 'block';
-                            if (window.__vueState__.showSearch) window.__vueState__.showSearch.value = false;
-                            if (window.__vueState__.showCheckOther) window.__vueState__.showCheckOther.value = true;
-                            return true;
-                        }
-                        return false;
-                    };
+        if (beginMarker && endMarker && beginMarker.parentElement) {
+          const parentHTML = beginMarker.parentElement.innerHTML;
+          const beginMarkerHTML = beginMarker.outerHTML;
+          const endMarkerHTML = endMarker.outerHTML;
+          const beginIndex = parentHTML.indexOf(beginMarkerHTML);
+          const endIndex = parentHTML.indexOf(endMarkerHTML);
 
-                    // 立即嘗試設定，如果 Vue 還沒初始化就等待
-                    if (!setStaticData()) {
-                        const checkVue = setInterval(() => {
-                            if (setStaticData()) {
-                                clearInterval(checkVue);
-                            }
-                        }, 50);
-                        setTimeout(() => clearInterval(checkVue), 5000);
-                    }
+          if (beginIndex !== -1 && endIndex !== -1 && endIndex > beginIndex) {
+            const start = beginIndex + beginMarkerHTML.length;
+            return parentHTML.substring(start, endIndex).trim();
+          }
+        }
+        return '';
+      });
 
-                    // 仍然需要載入統計資料供搜尋使用
-                    await loadStatisticData();
-                    if (window.__vueState__ && window.__vueState__.allUrls) {
-                        window.__vueState__.allUrls.value = allUrls;
-                    }
-                    return;
-                }
-            }
-`;
-      // 在 loadResults 函數開頭插入檢查
-      html = html.replace('async function loadResults() {', `async function loadResults() {${loadResultsFix}`);
+      // 3. 替換原始版中間的部分
+      const beginPattern = /<div[^>]*class="static-wrapper"[^>]*data-static="begin"[^>]*><\/div>/;
+      const endPattern = /<div[^>]*class="static-wrapper"[^>]*data-static="end"[^>]*><\/div>/;
+
+      const beginMatch = html.match(beginPattern);
+      const endMatch = html.match(endPattern);
+
+      if (beginMatch && endMatch) {
+        const beginIndex = beginMatch.index;
+        const endIndex = endMatch.index;
+
+        if (endIndex > beginIndex) {
+          const beginTagEnd = beginIndex + beginMatch[0].length;
+          const endTagStart = endIndex;
+
+          // 替換兩個標記之間的所有內容
+          const beforeBegin = html.substring(0, beginTagEnd);
+          const afterEnd = html.substring(endTagStart);
+          html = beforeBegin + '\n        ' + staticWrapperHTML + '\n    ' + afterEnd;
+          console.log(`  [瀏覽器 ${index}] ✅ 已替換 static-wrapper 內容`);
+        } else {
+          console.log(`  [瀏覽器 ${index}] ⚠️  標記順序錯誤 (begin: ${beginIndex}, end: ${endIndex})`);
+        }
+      } else {
+        console.log(`  [瀏覽器 ${index}] ⚠️  找不到 data-static 標記 (begin: ${beginMatch ? 'found' : 'not found'}, end: ${endMatch ? 'found' : 'not found'})`);
+      }
+
+      // 4. 替換整個 head 部分
+      // 從 Playwright 渲染的 HTML 中提取整個 head
+      const renderedHead = await page.evaluate(() => {
+        const headElement = document.querySelector('head');
+        return headElement ? headElement.outerHTML : '';
+      });
+
+      if (renderedHead) {
+        // 替換原始模板中的整個 head 部分
+        const headPattern = /<head[^>]*>[\s\S]*?<\/head>/i;
+        const headMatch = html.match(headPattern);
+        if (headMatch) {
+          html = html.replace(headPattern, renderedHead);
+          console.log(`  [瀏覽器 ${index}] ✅ 已替換整個 head 部分`);
+        } else {
+          console.log(`  [瀏覽器 ${index}] ⚠️  找不到 head 標籤`);
+        }
+      } else {
+        console.log(`  [瀏覽器 ${index}] ⚠️  無法從渲染頁面提取 head`);
+      }
     }
 
     // 修復資源檔案路徑：將相對路徑改為 ../ 路徑
@@ -315,7 +331,7 @@ async function build() {
       batches.map(async () => {
         try {
           return await chromium.launch({
-            headless: true
+            headless: false  // 顯示瀏覽器視窗以便檢查原始碼
           });
         } catch (error) {
           console.error('啟動瀏覽器失敗:', error.message);

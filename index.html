@@ -401,6 +401,8 @@
 </head>
 <body>
     <div id="app">
+
+    <div class="static-wrapper" data-static="begin"></div>
     <h1 v-if="!displayUrl">海纜斷掉時，網站會動嗎？</h1>
     <h1 v-else>海纜斷掉時，<a :href="'https://' + displayUrl" target="_blank">{{displayUrl}}</a> 會動嗎？</h1>
 
@@ -466,6 +468,7 @@
             <p style="margin-bottom: 0;">最後測試時間：{{testTime}}<span v-if="httpStatus"> (HTTP {{httpStatus}})</span></p>
         </div>
     </div>
+    <div class="static-wrapper" data-static="end"></div>
 
     <!-- 統一版型的搜尋框：固定放在 footer 上方 -->
     <div id="search-container" v-show="showSearch">
@@ -665,6 +668,23 @@
             }
 
             const resultsEl = document.getElementById('results');
+
+            // 檢查是否為靜態編譯的頁面（已經有靜態內容）
+            const hasStaticContent = resultsEl && resultsEl.querySelector('.result-card') !== null;
+
+            // 如果是靜態頁面且有靜態內容，直接返回，不需要執行後續的 fetch 邏輯
+            if (hasStaticContent && !urlParam) {
+                // 靜態頁面：保持顯示，設定搜尋相關狀態
+                if (window.__vueState__) {
+                    if (window.__vueState__.showSearch) {
+                        window.__vueState__.showSearch.value = false;
+                    }
+                    if (window.__vueState__.showCheckOther) {
+                        window.__vueState__.showCheckOther.value = true;
+                    }
+                }
+                return;
+            }
 
             if (!urlParam) {
                 // 無 URL 參數：只顯示搜尋框，隱藏結果區
