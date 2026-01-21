@@ -55,7 +55,6 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-
         .score-container {
             margin: 20px 0;
             padding: 20px;
@@ -87,7 +86,6 @@
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
 
         .score-O {
             background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
@@ -194,7 +192,6 @@
             transition: transform 0.3s ease;
             font-size: 0.8em;
         }
-
 
         .test-env-toggle:hover:after {
             color: #0056b3;
@@ -490,11 +487,9 @@
                 const foreignCount = foreignCloud + foreignDirect;
                 const foreignCloudCount = foreignCloud;
                 const foreignDirectCount = foreignDirect;
-                const totalConnections = domesticCloud + domesticDirect + foreignCloud + foreignDirect;
 
-                const foreignTotal = foreignCloud + foreignDirect;
                 const summaryText = getSummaryText(result);
-                const summaryClass = foreignTotal > 0 ? 'wont-work' :
+                const summaryClass = (foreignCloud + foreignDirect) > 0 ? 'wont-work' :
                                     domesticCloud > 0 ? 'might-work' :
                                     'will-work';
 
@@ -505,7 +500,6 @@
 
                 document.getElementById('results').innerHTML = templates.resultCard({
                     url: result.url.replace(/^https?:\/\//, ''),
-                    canonicalUrl: result.canonicalURL ? result.canonicalURL.replace(/^https?:\/\//, '') : null,
                     summaryText: summaryText,
                     summaryClass: summaryClass,
                     testTime: formatDate(result.timestamp),
@@ -520,7 +514,6 @@
                     foreignZeroClass: foreignZeroClass,
                     foreignCloudCount: foreignCloudCount,
                     foreignDirectCount: foreignDirectCount,
-                    totalConnections: totalConnections,
                     testParameters: result.testParameters || {},
                     testingEnvironment: result.testingEnvironment || null,
                     rawDataUrl: GITHUB_WEB_URL + urlToFilename(result.url),
