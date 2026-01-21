@@ -38,25 +38,57 @@ try {
     execSync(`git checkout ${currentBranch}`, { stdio: 'inherit' });
   }
 
-  // 3. 移除舊的 worktree（如果存在）
+  // 3. 清理已註冊但缺失的 worktree
+  try {
+    console.log('🧹 清理 worktree 註冊資訊...');
+    execSync('git worktree prune', { stdio: 'ignore' });
+  } catch (e) {
+    // 忽略錯誤
+  }
+
+  // 4. 移除舊的 worktree（如果存在）
   if (fs.existsSync(WORKTREE_DIR)) {
     try {
-      console.log('🧹 清理舊的 worktree...');
+      console.log('🧹 移除現有的 worktree...');
       process.chdir(WORKTREE_DIR);
       execSync('git reset --hard', { stdio: 'ignore' });
       process.chdir(originalDir);
       execSync(`git worktree remove "${WORKTREE_DIR}" --force`, { stdio: 'inherit' });
     } catch (e) {
-      // 如果移除失敗，手動刪除目錄
-      console.log('⚠️  強制清理 worktree 目錄...');
+      // 如果移除失敗，嘗試清理註冊資訊後再刪除目錄
+      console.log('⚠️  強制清理 worktree...');
+      try {
+        execSync('git worktree prune', { stdio: 'ignore' });
+      } catch (e2) {
+        // 忽略錯誤
+      }
       fs.rmSync(WORKTREE_DIR, { recursive: true, force: true });
+    }
+  } else {
+    // 目錄不存在但可能已註冊，嘗試清理
+    try {
+      execSync(`git worktree remove "${WORKTREE_DIR}" --force`, { stdio: 'ignore' });
+    } catch (e) {
+      // 如果失敗，執行 prune
+      try {
+        execSync('git worktree prune', { stdio: 'ignore' });
+      } catch (e2) {
+        // 忽略錯誤
+      }
     }
   }
 
-  // 4. 創建 worktree
+  // 5. 創建 worktree
   console.log('📁 創建 worktree...');
   // 使用引號包裹路徑，避免空格問題
-  execSync(`git worktree add "${WORKTREE_DIR}" ${GH_PAGES_BRANCH}`, { stdio: 'inherit' });
+  // 如果目錄已註冊但不存在，使用 -f 強制覆蓋
+  try {
+    execSync(`git worktree add "${WORKTREE_DIR}" ${GH_PAGES_BRANCH}`, { stdio: 'inherit' });
+  } catch (e) {
+    // 如果失敗，嘗試使用 -f 強制添加
+    console.log('⚠️  嘗試強制創建 worktree...');
+    execSync(`git worktree add -f "${WORKTREE_DIR}" ${GH_PAGES_BRANCH}`, { stdio: 'inherit' });
+  }
 
   // 5. 清空 worktree 目錄（保留 .git）
   console.log('🧹 清空 worktree 目錄...');
