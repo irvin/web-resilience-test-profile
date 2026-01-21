@@ -235,6 +235,17 @@ async function generateStaticHTML(browser, url, index, total) {
       } else {
         console.log(`  [瀏覽器 ${index}] ⚠️  無法從渲染頁面提取 head`);
       }
+
+      // 在靜態頁面中加入環境變數標記
+      // 在 </head> 之前插入標記 script
+      const staticPageMarker = `
+    <script>
+        // 標記此頁面為靜態編譯頁面
+        window.__IS_STATIC_PAGE__ = true;
+    </script>
+`;
+      html = html.replace('</head>', staticPageMarker + '</head>');
+      console.log(`  [瀏覽器 ${index}] ✅ 已加入靜態頁面標記`);
     }
 
     // 修復資源檔案路徑：將相對路徑改為 ../ 路徑

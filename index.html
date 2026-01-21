@@ -614,15 +614,15 @@
                     let url = lines[i].split('\t')[0];
                     if (url && url.startsWith('http')) {
                         // 標準化：移除多餘的結尾斜線
-                        url = url.replace(/\/+$/, '');
+                        url = cleanUrl(url, { removeProtocol: false, removeWww: false, removeTrailingSlash: true });
                         allUrls.push(url);
                     }
                 }
 
                 // 依字母順序排序（以去掉協定後的網址為準）
                 allUrls.sort((a, b) => {
-                    const ca = a.replace(/^https?:\/\//, '').toLowerCase();
-                    const cb = b.replace(/^https?:\/\//, '').toLowerCase();
+                    const ca = cleanUrlForSearch(a);
+                    const cb = cleanUrlForSearch(b);
                     if (ca < cb) return -1;
                     if (ca > cb) return 1;
                     return 0;
@@ -637,31 +637,67 @@
             }
         }
 
+        // 統一的 URL 清理函數
+        // options: { removeProtocol: true, removeWww: false, removeTrailingSlash: true, toLowerCase: false }
+        function cleanUrl(url, options = {}) {
+            if (!url) return '';
+            let cleaned = url;
+            const {
+                removeProtocol = true,
+                removeWww = false,
+                removeTrailingSlash = true,
+                toLowerCase = false
+            } = options;
+
+            if (removeProtocol) {
+                cleaned = cleaned.replace(/^https?:\/\//, '');
+            }
+            if (removeWww) {
+                cleaned = cleaned.replace(/^www\./, '');
+            }
+            if (removeTrailingSlash) {
+                cleaned = cleaned.replace(/\/+$/, '');
+            }
+            if (toLowerCase) {
+                cleaned = cleaned.toLowerCase();
+            }
+            return cleaned;
+        }
+
+        // 用於顯示的 URL 清理（移除協議、www、結尾斜線）
+        function cleanUrlForDisplay(url) {
+            return cleanUrl(url, { removeProtocol: true, removeWww: true, removeTrailingSlash: true });
+        }
+
+        // 用於導航的 URL 清理（移除協議、結尾斜線，保留 www.）
+        function cleanUrlForNavigation(url) {
+            return cleanUrl(url, { removeProtocol: true, removeWww: false, removeTrailingSlash: true });
+        }
+
+        // 用於搜尋比對的 URL 清理（移除協議，轉小寫）
+        function cleanUrlForSearch(url) {
+            return cleanUrl(url, { removeProtocol: true, removeWww: false, removeTrailingSlash: false, toLowerCase: true });
+        }
+
         // 篩選 URL（純函式，供 Vue 與一般 JS 共用）
         function filterUrls(query, urls) {
             if (!query) return urls;
             const lowerQuery = query.toLowerCase();
             return urls.filter(url => {
-                const cleanUrl = url.replace(/^https?:\/\//, '').toLowerCase();
+                const cleanUrl = cleanUrlForSearch(url);
                 return cleanUrl.includes(lowerQuery);
             });
         }
 
         // 檢查是否為靜態頁面
         function isStaticPage() {
-            // 檢查路徑是否包含 dist/ 或當前頁面是否有靜態內容
-            const pathname = window.location.pathname;
-            const hasStaticContent = document.getElementById('results') &&
-                                    document.getElementById('results').querySelector('.result-card') !== null;
-            return pathname.includes('/dist/') || pathname.match(/\/[^\/]+\/index\.html$/) || hasStaticContent;
+            return window.__IS_STATIC_PAGE__ === true;
         }
 
         // 選擇 URL 並跳轉
         function selectUrl(url) {
-            // 跳轉時也使用標準化後（移除協定與多餘結尾斜線）的網址
-            const cleanUrl = url
-                .replace(/^https?:\/\//, '')
-                .replace(/\/+$/, '');
+            // 跳轉時使用標準化後的網址（移除協定與多餘結尾斜線，保留 www.）
+            const cleanUrl = cleanUrlForNavigation(url);
 
             // 如果是靜態頁面，直接跳轉到對應的靜態頁面路徑
             if (isStaticPage()) {
@@ -688,11 +724,8 @@
 
             const resultsEl = document.getElementById('results');
 
-            // 檢查是否為靜態編譯的頁面（已經有靜態內容）
-            const hasStaticContent = resultsEl && resultsEl.querySelector('.result-card') !== null;
-
-            // 如果是靜態頁面且有靜態內容，直接返回，不需要執行後續的 fetch 邏輯
-            if (hasStaticContent && !urlParam) {
+            // 如果是靜態頁面且沒有 URL 參數，直接返回，不需要執行後續的 fetch 邏輯
+            if (isStaticPage() && !urlParam) {
                 // 靜態頁面：保持顯示，設定搜尋相關狀態
                 if (window.__vueState__) {
                     if (window.__vueState__.showSearch) {
@@ -752,7 +785,7 @@
             document.querySelector('link[rel="canonical"]').href = currentUrl;
             document.querySelector('meta[property="og:canonical"]').content = currentUrl;
             document.querySelector('meta[property="og:url"]').content = currentUrl;
-            const cleanUrlParam = urlParam ? urlParam.replace(/\/+$/, '') : '';
+            const cleanUrlParam = urlParam ? cleanUrlForNavigation(urlParam) : '';
             document.title = cleanUrlParam ? `海纜斷掉時，${cleanUrlParam} 會動嗎？` : '海纜斷掉時網站會動嗎？';
             document.querySelector('meta[property="og:title"]').content = document.title;
 
@@ -781,7 +814,7 @@
                         window.__vueState__.showCheckOther.value = false;
                     }
                     // 將帶入的網址視為輸入框查詢內容（交由 Vue 搜尋邏輯處理）
-                    const clean = urlParam.replace(/^https?:\/\//, '');
+                    const clean = cleanUrlForNavigation(urlParam);
                     if (window.__vueState__.searchQuery) {
                         window.__vueState__.searchQuery.value = clean;
                     }
@@ -834,7 +867,7 @@
 
                 const displayUrl = computed(() => {
                     if (!vueResult.value) return '';
-                    return (vueResult.value.url || '').replace(/^https?:\/\//, '').replace(/\/+$/, '');
+                    return cleanUrlForNavigation(vueResult.value.url || '');
                 });
 
                 const testTime = computed(() => {
@@ -938,13 +971,6 @@
                 });
 
                 // 搜尋相關方法
-                function formatDisplayUrl(url) {
-                    return url
-                        .replace(/^https?:\/\//, '')
-                        .replace(/^www\./, '')
-                        .replace(/\/+$/, '');
-                }
-
                 function loadMore() {
                     maxDisplay.value = Math.min(totalMatched.value, maxDisplay.value + 100);
                 }
@@ -1043,7 +1069,7 @@
                     hasMore,
                     showSearch,
                     showCheckOther,
-                    formatDisplayUrl,
+                    formatDisplayUrl: cleanUrlForDisplay, // 使用全局的 cleanUrlForDisplay 函數
                     loadMore,
                     onSearchKeydown,
                     onSearchFocus,
