@@ -507,7 +507,7 @@
     </div>
 
     <footer>
-      <p><button class="check-other-site-btn" onclick="openSearch()">檢查其他網站</button></p>
+      <p id="check-other-site-container"><button class="check-other-site-btn" onclick="openSearch()">檢查其他網站</button></p>
       <p><a href="https://github.com/irvin/web-resilience-test" target="_blank">研究方法</a></p>
       <p><a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank">g0v 數位韌性松</a></p>
       <img src="g0v_logo.png" alt="g0v.tw 台灣零時政府" style="width: 100px; height: 100px;">
@@ -829,9 +829,13 @@
         // 顯示搜尋框區塊（供「檢查其他網站」按鈕呼叫）
         function openSearch() {
             const container = document.getElementById('search-container');
+            const checkOtherContainer = document.getElementById('check-other-site-container');
             if (!container) return;
 
             container.style.display = 'block';
+            if (checkOtherContainer) {
+                checkOtherContainer.style.display = 'none';
+            }
             initSearchBox();
 
             // Focus 輸入框並顯示所有選項
@@ -854,6 +858,7 @@
 
             const resultsEl = document.getElementById('results');
             const searchContainer = document.getElementById('search-container');
+            const checkOtherContainer = document.getElementById('check-other-site-container');
 
             if (!urlParam) {
                 // 無 URL 參數：只顯示搜尋框，隱藏結果區
@@ -862,6 +867,9 @@
                 }
                 if (searchContainer) {
                     searchContainer.style.display = 'block';
+                }
+                if (checkOtherContainer) {
+                    checkOtherContainer.style.display = 'none';
                 }
                 initSearchBox();
                 // 自動顯示所有選項
@@ -875,6 +883,9 @@
             }
             if (searchContainer) {
                 searchContainer.style.display = 'none';
+            }
+            if (checkOtherContainer) {
+                checkOtherContainer.style.display = 'block';
             }
 
             // 更新 meta 標籤
@@ -946,6 +957,9 @@
                 }
                 if (searchContainer) {
                     searchContainer.style.display = 'block';
+                }
+                if (checkOtherContainer) {
+                    checkOtherContainer.style.display = 'none';
                 }
                 initSearchBox();
 
