@@ -719,8 +719,27 @@
             window.location.href = staticPath;
         }
 
+        // 從 URL 路徑中提取 domain（用於 404 處理）
+        function extractDomainFromPath() {
+            const pathname = window.location.pathname;
+            // 匹配 /web/{domain}/ 格式
+            const match = pathname.match(/^\/web\/([^\/]+)\/?$/);
+            if (match) {
+                return match[1];
+            }
+            return null;
+        }
+
         async function loadResults() {
-            const urlParam = getUrlParam();
+            let urlParam = getUrlParam();
+
+            // 404 處理：如果本身非 static page，則嘗試從路徑擷取 /web/{domain}，視為 URL 參數
+            if (!urlParam && !isStaticPage()) {
+                const domainFromPath = extractDomainFromPath();
+                if (domainFromPath) {
+                    urlParam = domainFromPath;
+                }
+            }
 
             // 如果有 URL 參數，且不在 build 環境中（localhost:3000），直接跳轉到對應的靜態頁面
             if (urlParam && !window.location.hostname.includes('localhost') && window.location.port !== '3000') {

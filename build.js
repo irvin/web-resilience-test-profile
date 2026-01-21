@@ -28,6 +28,14 @@ function urlToDirPath(url) {
   return cleanUrl;
 }
 
+// 修復資源檔案路徑：將相對路徑改為 ../ 路徑
+// 這樣在子目錄中的頁面（如 web/google.com/index.html 或 web/404.html）也能正確載入資源
+function fixAssetPaths(html) {
+  return html.replace(/src=["']((?!https?:\/\/|\.\.\/|\/)[^"']+\.(png|svg|jpg|jpeg|gif|webp|css|js))["']/gi, (match, filename) => {
+    return match.replace(filename, `../${filename}`);
+  });
+}
+
 // 將網址轉換為完整的輸出路徑（目錄 + index.html）
 function urlToOutputPath(url) {
   const dirName = urlToDirPath(url);
@@ -248,12 +256,8 @@ async function generateStaticHTML(browser, url, index, total) {
       console.log(`  [瀏覽器 ${index}] ✅ 已加入靜態頁面標記`);
     }
 
-    // 修復資源檔案路徑：將相對路徑改為 ../ 路徑
-    // 這樣在子目錄中的頁面（如 web/google.com/index.html）也能正確載入資源
-    // 匹配 src="filename" 或 src='filename'，但不包含 http://、https://、//、/ 開頭的
-    html = html.replace(/src=["']((?!https?:\/\/|\.\.\/|\/)[^"']+\.(png|svg|jpg|jpeg|gif|webp|css|js))["']/gi, (match, filename) => {
-      return match.replace(filename, `../${filename}`);
-    });
+    // 修復資源檔案路徑
+    html = fixAssetPaths(html);
 
     return { success: true, html, url: cleanUrl };
   } catch (error) {
@@ -294,6 +298,11 @@ async function build() {
 
   // 複製主頁面（index.html）到輸出目錄
   fs.copyFileSync(TEMPLATE_FILE, path.join(OUTPUT_DIR, 'index.html'));
+
+  // 複製主頁面作為 404.html，並修復圖片路徑
+  let html404 = fs.readFileSync(TEMPLATE_FILE, 'utf8');
+  html404 = fixAssetPaths(html404);
+  fs.writeFileSync(path.join(OUTPUT_DIR, '404.html'), html404, 'utf8');
 
   // 複製其他資源檔案
   const assets = ['g0v_logo.png', 'Logo_Standard_Clearspace-OCF_Purple.svg', 'APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg'];
