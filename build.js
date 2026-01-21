@@ -6,7 +6,7 @@ const http = require('http');
 // Submodule 路徑
 const SUBMODULE_DIR = path.join(__dirname, 'test-result');
 const STATISTIC_TSV_PATH = path.join(SUBMODULE_DIR, 'statistic.tsv');
-const OUTPUT_DIR = path.join(__dirname, 'dist');
+const OUTPUT_DIR = path.join(__dirname, 'web');
 const TEMPLATE_FILE = path.join(__dirname, 'index.html');
 const BROWSER_INSTANCES = 4; // 同時開啟的瀏覽器實例數量
 const SERVER_PORT = 3000;
@@ -249,7 +249,7 @@ async function generateStaticHTML(browser, url, index, total) {
     }
 
     // 修復資源檔案路徑：將相對路徑改為 ../ 路徑
-    // 這樣在子目錄中的頁面（如 dist/google.com/index.html）也能正確載入資源
+    // 這樣在子目錄中的頁面（如 web/google.com/index.html）也能正確載入資源
     // 匹配 src="filename" 或 src='filename'，但不包含 http://、https://、//、/ 開頭的
     html = html.replace(/src=["']((?!https?:\/\/|\.\.\/|\/)[^"']+\.(png|svg|jpg|jpeg|gif|webp|css|js))["']/gi, (match, filename) => {
       return match.replace(filename, `../${filename}`);
@@ -305,11 +305,11 @@ async function build() {
     }
   });
 
-  // 注意：statistic.tsv 和 JSON 檔案都不複製到 dist
+  // 注意：statistic.tsv 和 JSON 檔案都不複製到 web
   // - 建置時：從 submodule 讀取 statistic.tsv 取得 URL 列表
   // - 建置時的 HTTP 伺服器：從 submodule 提供檔案（用於渲染）
   // - 部署後的主頁面：從線上 API 讀取 statistic.tsv 和 JSON
-  // - 靜態頁面（如 dist/google.com/index.html）：使用內嵌的資料，不需要額外檔案
+  // - 靜態頁面（如 web/google.com/index.html）：使用內嵌的資料，不需要額外檔案
 
   // 啟動 HTTP 伺服器
   const server = await startServer();
@@ -368,7 +368,7 @@ async function build() {
 
       for (const result of flatResults) {
         if (result.success && result.html) {
-          // 創建目錄結構：dist/google.com/index.html
+          // 創建目錄結構：web/google.com/index.html
           const dirPath = urlToDirPath(result.url);
           const fullDirPath = path.join(OUTPUT_DIR, dirPath);
           const outputPath = path.join(fullDirPath, 'index.html');
@@ -402,7 +402,7 @@ async function build() {
       if (firstResult) {
         const dirPath = urlToDirPath(firstResult.url);
         console.log(`\n📄 測試檔案: ${path.join(OUTPUT_DIR, dirPath, 'index.html')}`);
-        console.log(`   URL: http://127.0.0.1:5500/dist/${dirPath}/`);
+        console.log(`   URL: http://127.0.0.1:5500/web/${dirPath}/`);
         console.log(`   可以在瀏覽器中開啟查看結果`);
       }
     }

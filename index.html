@@ -709,25 +709,27 @@
             return window.__IS_STATIC_PAGE__ === true;
         }
 
-        // 選擇 URL 並跳轉
+        // 選擇 URL 並跳轉（一律跳轉到靜態頁面）
         function selectUrl(url) {
             // 跳轉時使用標準化後的網址（移除協定與多餘結尾斜線，保留 www.）
             const cleanUrl = cleanUrlForNavigation(url);
 
-            // 如果是靜態頁面，直接跳轉到對應的靜態頁面路徑
-            if (isStaticPage()) {
-                // 構建靜態頁面路徑，使用相對路徑：../facebook.com/
-                const currentPath = window.location.pathname;
-                const staticPath = `../${cleanUrl}/`;
-                window.location.href = staticPath;
-            } else {
-                // 動態頁面：使用 URL 參數
-                window.location.href = window.location.pathname + '?url=' + encodeURIComponent(cleanUrl);
-            }
+            // 統一使用 /web/_domain_ 格式
+            const staticPath = `/web/${cleanUrl}/`;
+            window.location.href = staticPath;
         }
 
         async function loadResults() {
             const urlParam = getUrlParam();
+
+            // 如果有 URL 參數，直接跳轉到對應的靜態頁面
+            if (urlParam) {
+                const cleanUrl = cleanUrlForNavigation(urlParam);
+                // 統一使用 /web/_domain_ 格式
+                const staticPath = `/web/${cleanUrl}/`;
+                window.location.href = staticPath;
+                return;
+            }
 
             // 載入統計資料（無論是否有 URL 參數都需要）
             await loadStatisticData();

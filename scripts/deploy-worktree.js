@@ -2,15 +2,15 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const DIST_DIR = path.join(__dirname, '..', 'dist');
+const DIST_DIR = path.join(__dirname, '..', 'web');
 const WORKTREE_DIR = path.join(__dirname, '..', 'gh-pages-worktree');
 const GH_PAGES_BRANCH = 'gh-pages';
 
 console.log('🚀 開始部署到 gh-pages 分支...');
 
-// 1. 確保 dist/ 目錄存在
+// 1. 確保 web/ 目錄存在
 if (!fs.existsSync(DIST_DIR)) {
-  console.error('❌ dist/ 目錄不存在，請先執行 npm run build');
+  console.error('❌ web/ 目錄不存在，請先執行 npm run build');
   process.exit(1);
 }
 
@@ -104,7 +104,7 @@ try {
     }
   });
 
-  // 6. 複製 dist/ 的內容
+  // 6. 複製 web/ 的內容
   console.log('📋 複製建置產物...');
   const distFiles = fs.readdirSync(DIST_DIR);
   distFiles.forEach(file => {

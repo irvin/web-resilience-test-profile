@@ -49,14 +49,14 @@ npm run build:all
 這會：
 - 從 submodule 讀取 `statistic.tsv` 取得所有測試網址
 - 使用 4 個並行的瀏覽器實例處理
-- 為每個網址生成靜態 HTML 頁面到 `dist/` 目錄
-- 每個網址會建立一個目錄，例如 `dist/google.com/index.html`
-- 主頁面（`dist/index.html`）會從線上 API 讀取 JSON 和 statistic.tsv 資料
+- 為每個網址生成靜態 HTML 頁面到 `web/` 目錄
+- 每個網址會建立一個目錄，例如 `web/google.com/index.html`
+- 主頁面（`web/index.html`）會從線上 API 讀取 JSON 和 statistic.tsv 資料
 - 建置完成後自動準備部署到 `gh-pages` 分支
 
 ## 部署到 gh-pages 分支
 
-建置指令會自動將 `dist/` 的內容部署到 `gh-pages` 分支。完成建置後，執行以下指令推送到遠端：
+建置指令會自動將 `web/` 的內容部署到 `gh-pages` 分支。完成建置後，執行以下指令推送到遠端：
 
 ```bash
 npm run deploy
@@ -70,7 +70,7 @@ npm run deploy
 
 ```
 web-resilience-profile/
-├── dist/                    # 建置產物目錄
+├── web/                     # 建置產物目錄
 │   ├── index.html          # 主頁面
 │   ├── google.com/         # 每個網址的目錄
 │   │   └── index.html
