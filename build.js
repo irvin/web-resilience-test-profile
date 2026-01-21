@@ -1,11 +1,11 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
 const http = require('http');
 
-const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/irvin/web-resilience-test-result/refs/heads/main/';
-const STATISTIC_TSV_URL = GITHUB_RAW_URL + 'statistic.tsv';
+// Submodule 路徑
+const SUBMODULE_DIR = path.join(__dirname, 'test-result');
+const STATISTIC_TSV_PATH = path.join(SUBMODULE_DIR, 'statistic.tsv');
 const OUTPUT_DIR = path.join(__dirname, 'dist');
 const TEMPLATE_FILE = path.join(__dirname, 'index.html');
 const BROWSER_INSTANCES = 4; // 同時開啟的瀏覽器實例數量
@@ -34,25 +34,24 @@ function urlToOutputPath(url) {
   return path.join(dirName, 'index.html');
 }
 
-// 下載檔案
-function fetchUrl(url) {
-  return new Promise((resolve, reject) => {
-    https.get(url, (res) => {
-      if (res.statusCode !== 200) {
-        reject(new Error(`HTTP ${res.statusCode}: ${url}`));
-        return;
-      }
-      let data = '';
-      res.on('data', (chunk) => { data += chunk; });
-      res.on('end', () => resolve(data));
-    }).on('error', reject);
-  });
-}
-
 // 讀取 statistic.tsv 並解析 URL 列表
-async function loadStatisticData() {
-  console.log('正在下載 statistic.tsv...');
-  const text = await fetchUrl(STATISTIC_TSV_URL);
+function loadStatisticData() {
+  console.log('正在讀取 statistic.tsv...');
+
+  // 檢查 submodule 是否存在
+  if (!fs.existsSync(SUBMODULE_DIR)) {
+    console.error('❌ Submodule 不存在，請先執行：');
+    console.error('   git submodule update --init --recursive');
+    process.exit(1);
+  }
+
+  if (!fs.existsSync(STATISTIC_TSV_PATH)) {
+    console.error(`❌ statistic.tsv 不存在於 ${STATISTIC_TSV_PATH}`);
+    console.error('   請確認 submodule 已正確初始化');
+    process.exit(1);
+  }
+
+  const text = fs.readFileSync(STATISTIC_TSV_PATH, 'utf-8');
   const lines = text.split('\n').filter(line => line.trim());
 
   const urls = [];
@@ -76,6 +75,13 @@ function startServer() {
 
       if (url.pathname === '/' || url.pathname === '/index.html') {
         filePath = TEMPLATE_FILE;
+      } else if (url.pathname.endsWith('.json')) {
+        // JSON 檔案從 submodule 讀取
+        const filename = path.basename(url.pathname);
+        filePath = path.join(SUBMODULE_DIR, filename);
+      } else if (url.pathname === '/statistic.tsv') {
+        // statistic.tsv 從 submodule 讀取
+        filePath = STATISTIC_TSV_PATH;
       } else {
         // 處理其他資源檔案
         filePath = path.join(__dirname, url.pathname);
@@ -90,7 +96,8 @@ function startServer() {
           '.css': 'text/css',
           '.png': 'image/png',
           '.svg': 'image/svg+xml',
-          '.json': 'application/json'
+          '.json': 'application/json',
+          '.tsv': 'text/tab-separated-values'
         }[ext] || 'text/plain';
 
         res.writeHead(200, { 'Content-Type': contentType });
@@ -294,12 +301,18 @@ async function build() {
     }
   });
 
+  // 注意：statistic.tsv 和 JSON 檔案都不複製到 dist
+  // - 建置時：從 submodule 讀取 statistic.tsv 取得 URL 列表
+  // - 建置時的 HTTP 伺服器：從 submodule 提供檔案（用於渲染）
+  // - 部署後的主頁面：從線上 API 讀取 statistic.tsv 和 JSON
+  // - 靜態頁面（如 dist/google.com/index.html）：使用內嵌的資料，不需要額外檔案
+
   // 啟動 HTTP 伺服器
   const server = await startServer();
 
   try {
     // 讀取 URL 列表
-    const urls = await loadStatisticData();
+    const urls = loadStatisticData();
     const urlsToProcess = TEST_LIMIT ? urls.slice(0, TEST_LIMIT) : urls;
     console.log(`找到 ${urls.length} 個測試網址，將處理 ${urlsToProcess.length} 個\n`);
 

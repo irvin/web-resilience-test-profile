@@ -18,6 +18,14 @@ npm install
 
 # 安裝 Playwright 瀏覽器
 npx playwright install chromium
+
+# 初始化並更新 submodule（取得測試結果資料）
+git submodule update --init --recursive
+```
+
+**更新 submodule（取得最新資料）：**
+```bash
+git submodule update --remote test-result
 ```
 
 ## 建置流程
@@ -39,10 +47,11 @@ npm run build:all
 ```
 
 這會：
-- 下載 `statistic.tsv` 取得所有測試網址
+- 從 submodule 讀取 `statistic.tsv` 取得所有測試網址
 - 使用 4 個並行的瀏覽器實例處理
 - 為每個網址生成靜態 HTML 頁面到 `dist/` 目錄
 - 每個網址會建立一個目錄，例如 `dist/google.com/index.html`
+- 主頁面（`dist/index.html`）會從線上 API 讀取 JSON 和 statistic.tsv 資料
 - 建置完成後自動準備部署到 `gh-pages` 分支
 
 ## 部署到 gh-pages 分支
@@ -66,6 +75,10 @@ web-resilience-profile/
 │   ├── google.com/         # 每個網址的目錄
 │   │   └── index.html
 │   ├── g0v_logo.png        # 資源檔案
+│   └── ...                 # 
+├── test-result/  # Git submodule（測試結果資料）
+│   ├── statistic.tsv
+│   ├── *.json
 │   └── ...
 ├── scripts/
 │   ├── deploy-worktree.js  # 部署腳本
@@ -80,11 +93,11 @@ web-resilience-profile/
 
 ### 建置流程
 
-1. **下載資料**：從 GitHub 下載 `statistic.tsv` 取得所有測試網址
-2. **啟動 HTTP 伺服器**：在本地啟動 HTTP 伺服器提供 `index.html`
-3. **並行處理**：使用 4 個 Playwright 瀏覽器實例並行處理
-4. **渲染頁面**：每個網址透過 headless browser 載入並渲染
-5. **生成靜態 HTML**：取得渲染後的完整 HTML，包含：
+1. **讀取資料**：從 submodule (`test-result`) 讀取 `statistic.tsv` 取得所有測試網址
+2. **啟動 HTTP 伺服器**：在本地啟動 HTTP 伺服器提供 `index.html`（建置時從 submodule 讀取 JSON 和 statistic.tsv）
+4. **並行處理**：使用 4 個 Playwright 瀏覽器實例並行處理
+5. **渲染頁面**：每個網址透過 headless browser 載入並渲染
+6. **生成靜態 HTML**：取得渲染後的完整 HTML，包含：
    - 正確的 title 和 meta 標籤（SEO 友善）
    - 已渲染的內容（搜尋引擎可直接索引）
    - Vue 互動功能（用戶可以展開/收合詳細資訊）
