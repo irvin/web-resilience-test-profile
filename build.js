@@ -237,6 +237,13 @@ async function generateStaticHTML(browser, url, index, total) {
       html = html.replace('</head>', preloadScript + '\n    </head>');
     }
 
+    // 修復資源檔案路徑：將相對路徑改為 ../ 路徑
+    // 這樣在子目錄中的頁面（如 dist/google.com/index.html）也能正確載入資源
+    // 匹配 src="filename" 或 src='filename'，但不包含 http://、https://、//、/ 開頭的
+    html = html.replace(/src=["']((?!https?:\/\/|\.\.\/|\/)[^"']+\.(png|svg|jpg|jpeg|gif|webp|css|js))["']/gi, (match, filename) => {
+      return match.replace(filename, `../${filename}`);
+    });
+
     return { success: true, html, url: cleanUrl };
   } catch (error) {
     console.error(`  [瀏覽器 ${index}] 錯誤: ${url}`, error.message);
