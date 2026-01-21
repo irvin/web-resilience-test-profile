@@ -1,0 +1,11 @@
+{
+  "name": "web-resilience-profile",
+  "version": "1.0.0",
+  "description": "Web resilience test profile static site generator",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  }
+}
