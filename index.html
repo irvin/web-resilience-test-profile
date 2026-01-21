@@ -713,7 +713,8 @@
             document.querySelector('link[rel="canonical"]').href = currentUrl;
             document.querySelector('meta[property="og:canonical"]').content = currentUrl;
             document.querySelector('meta[property="og:url"]').content = currentUrl;
-            document.title = urlParam ? `海纜斷掉時，${urlParam} 會動嗎？` : '海纜斷掉時網站會動嗎？';
+            const cleanUrlParam = urlParam ? urlParam.replace(/\/+$/, '') : '';
+            document.title = cleanUrlParam ? `海纜斷掉時，${cleanUrlParam} 會動嗎？` : '海纜斷掉時網站會動嗎？';
             document.querySelector('meta[property="og:title"]').content = document.title;
 
             // 顯示測試結果
@@ -794,7 +795,7 @@
 
                 const displayUrl = computed(() => {
                     if (!vueResult.value) return '';
-                    return (vueResult.value.url || '').replace(/^https?:\/\//, '');
+                    return (vueResult.value.url || '').replace(/^https?:\/\//, '').replace(/\/+$/, '');
                 });
 
                 const testTime = computed(() => {
