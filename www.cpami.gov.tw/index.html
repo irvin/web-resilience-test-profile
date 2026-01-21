@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海纜斷掉時，www.cpami.gov.tw 會動嗎？</title>
+
+    <!-- Open Graph 標籤 -->
+    <meta property="og:title" content="海纜斷掉時，www.cpami.gov.tw 會動嗎？">
+    <meta property="og:description" content="不確定">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resilience.ocf.tw/web/?url=www.cpami.gov.tw">
+    <meta property="og:canonical" content="https://resilience.ocf.tw/web/?url=www.cpami.gov.tw">
+    <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/?url=www.cpami.gov.tw">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            color: #0366d6;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        h1 {
+            font-weight: 700;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-card {
+            border: none;
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .score-container {
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border: 1px solid #e9ecef;
+        }
+
+        .score-container p {
+            font-size: 0.95em;
+            line-height: 1.6em;
+            margin: 0;
+            margin-bottom: 0.8em;
+        }
+
+        .score-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .score-container .score {
+            display: block;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 0;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .score-O {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+        }
+        .score-Q {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            color: #856404;
+        }
+        .score-X {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            color: #721c24;
+        }
+
+        .score-zero {
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%) !important;
+            color: #6c757d !important;
+            opacity: 0.6;
+        }
+
+        .details-container pre {
+            background: #282c34;
+            color: #aaa;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1em 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+
+        .details-container code {
+            font-size: 0.8em;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'Courier New', monospace;
+            line-height: 1.6;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .summary {
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        .summary.will-work {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+            border: 2px solid #28a745;
+        }
+
+        .summary.might-work {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            color: #856404;
+            border: 2px solid #ffc107;
+        }
+
+        .summary.wont-work {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            color: #721c24;
+            border: 2px solid #dc3545;
+        }
+
+        .summary h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .test-env-toggle {
+            cursor: pointer;
+            user-select: none;
+            padding: 14px 18px;
+            background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+            border-radius: 8px;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-left: 4px solid #0366d6;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .test-env-toggle:hover {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%);
+            transform: scale(1.005);
+            box-shadow: 0 2px 8px rgba(3, 102, 214, 0.2);
+        }
+
+        .test-env-toggle::after {
+            content: '▼';
+            transition: transform 0.3s ease;
+            font-size: 0.8em;
+        }
+
+        .test-env-toggle:hover:after {
+            color: #0056b3;
+        }
+
+        .test-env-toggle.collapsed::after {
+            transform: rotate(-90deg);
+        }
+
+        .test-env-content {
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            margin-top: 10px;
+            display: none;
+            border: 1px solid #e9ecef;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+            }
+            to {
+                opacity: 1;
+                max-height: 1000px;
+            }
+        }
+
+        .test-env-content.expanded {
+            display: block;
+        }
+
+        .test-env-section {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 0.95em;
+        }
+
+        .test-env-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .test-env-section h4 {
+            margin: 0 0 12px 0;
+            font-weight: 600;
+        }
+
+        .test-env-section ul {
+            margin: 0;
+            padding-left: 25px;
+        }
+
+        .test-env-section li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        footer a {
+            display: inline-block;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer img {
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        footer img:hover {
+            opacity: 1;
+        }
+
+        footer hr {
+            /* margin: 30px 0; */
+            border: 1px solid #DEDEDE;
+            margin-bottom: 2em;
+        }
+
+        /* 搜索框樣式 */
+        .search-box {
+            position: relative;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 18px;
+            font-size: 1.1em;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #0366d6;
+            box-shadow: 0 2px 8px rgba(3, 102, 214, 0.2);
+        }
+
+        .search-dropdown {
+            max-height: 400px;
+            overflow-y: auto;
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            margin-top: 8px;
+        }
+
+        .search-dropdown-item {
+            padding: 12px 18px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s ease;
+            word-break: break-all;
+        }
+
+        .search-dropdown-item:hover,
+        .search-dropdown-item.selected {
+            background-color: #f0f7ff;
+            color: #0366d6;
+        }
+
+        .search-dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .search-no-results {
+            margin-top: 8px;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            color: #6c757d;
+        }
+
+        .search-meta {
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: #6c757d;
+        }
+
+        .search-load-more {
+            cursor: pointer;
+            color: #0366d6;
+            margin-left: 4px;
+        }
+
+        .search-load-more:hover {
+            text-decoration: underline;
+        }
+
+        /* 檢查其他網站按鈕 */
+        .check-other-site-btn {
+            background: linear-gradient(135deg, #0366d6 0%, #0056b3 100%);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin: 10px 0;
+        }
+
+        .check-other-site-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(3, 102, 214, 0.3);
+        }
+
+        .check-other-site-btn:active {
+            transform: translateY(0);
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.75em;
+            }
+
+            .result-card {
+                padding: 20px;
+            }
+
+            .score-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .summary {
+                font-size: 1.1em;
+            }
+
+        }
+    </style>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+
+    <script>
+        // 標記此頁面為靜態編譯頁面
+        window.__IS_STATIC_PAGE__ = true;
+    </script>
+</head>
+<body>
+    <div id="app">
+
+    <div class="static-wrapper" data-static="begin"></div>
+        <h1>海纜斷掉時，<a href="https://www.cpami.gov.tw" target="_blank">www.cpami.gov.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>不確定</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">境內直接連線 (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">2</strong></p><p class="score score-X score-zero">境外連線 (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><p>在開啟 <a href="https://www.cpami.gov.tw" target="_blank">www.cpami.gov.tw</a> 時，我們總共識別出來自 2 個網域的 4 個請求。</p><p>其中 0 項為境內直接連線，2 項為境內的雲端服務，0 項為境外的雲端服務，0 項為境外其他連線。</p><p>境內公用雲端服務——目前尚不知道在對外斷線時的可用性，需由服務提供者釐清說明。</p></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li> 使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/www.cpami.gov.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+  "url": "https://www.cpami.gov.tw/",
+  "canonicalURL": "https://www.cpami.gov.tw/",
+  "httpStatus": 200,
+  "timestamp": "2026-01-14T02:35:53.142Z",
+  "testParameters": {
+    "customDNS": "168.95.1.1",
+    "useAdblock": true,
+    "adblockUrls": [
+      "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
+    ],
+    "useCache": true,
+    "hasIPinfoToken": true
+  },
+  "testingEnvironment": {
+    "ip": "220.132.212.194",
+    "hostname": "220-132-212-194.hinet-ip.hinet.net",
+    "city": "Banqiao",
+    "region": "Taipei",
+    "country": "TW",
+    "loc": "25.0143,121.4672",
+    "org": "AS3462 Data Communication Business Group",
+    "timezone": "Asia/Taipei",
+    "source": "ipinfo json api (direct)",
+    "dnsServer": "168.95.1.1"
+  },
+  "requestCount": 4,
+  "uniqueDomains": 2,
+  "test_results": {
+    "domestic": {
+      "cloud": 2,
+      "direct": 0
+    },
+    "foreign": {
+      "cloud": 0,
+      "direct": 0
+    }
+  },
+  "domainDetails": [
+    {
+      "originalUrl": "https://www.cpami.gov.tw/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "www.cpami.gov.tw",
+        "ip": "223.200.122.41",
+        "hostname": "223-200-122-41.hinet-ip.hinet.net",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS4782 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.nlma.gov.tw/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "www.nlma.gov.tw",
+        "ip": "223.200.122.51",
+        "hostname": "223-200-122-51.hinet-ip.hinet.net",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS4782 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    }
+  ]
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午10:35:53<span> (HTTP 200)</span></p></div></div>
+    <div class="static-wrapper" data-static="end"></div>
+
+    <!-- 統一版型的搜尋框：固定放在 footer 上方 -->
+    <div id="search-container" v-show="showSearch">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="輸入網址查看測試結果..." autocomplete="off"
+                v-model="searchQuery"  @keydown="onSearchKeydown" @focus="onSearchFocus"
+            >
+
+            <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length">
+                <div
+                    class="search-dropdown-item"
+                    v-for="(url, index) in displayedUrls"
+                    :key="url"
+                    :data-url="url"
+                    :data-index="index"
+                    :class="{ selected: index === selectedIndex }"
+                    @click="selectUrl(url)"
+                >
+                    {{ formatDisplayUrl(url) }}
+                </div>
+            </div>
+            <!-- 找不到結果時顯示的區塊 -->
+            <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
+                        <p>找不到 {{ searchQuery }} 的測試結果</p>
+                        <p>你可以在此檢視<a href="https://github.com/irvin/web-resilience-test-result" target="_blank">已測試網站資料</a>，並<a href="https://github.com/irvin/web-resilience-test/blob/main_w_test_result/no-global-connection-check.js" target="_blank">使用此工具</a>手動進行測試。</p>
+            </div>
+            <div class="search-meta" id="search-meta">
+                <!-- 搜尋統計資訊模板 -->
+                <template v-if="hasItems">
+                        總共 {{totalAll}} 網站，目前顯示前 {{shown}} 個。
+                        <span class="search-load-more" v-if="hasMore" @click="loadMore">[載入更多網站]</span>
+                </template>
+                <template v-else>
+                        總共 {{totalAll}} 網站，目前顯示前 0 個。
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p id="check-other-site-container" v-show="showCheckOther"><button class="check-other-site-btn" @click="openSearch">檢查其他網站</button></p>
+        <p style="margin-bottom: 2em;"><a href="https://github.com/irvin/web-resilience-test" target="_blank">研究方法 / 原始碼</a></p>
+        <hr>
+        <p><a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="../g0v_logo.png" title="g0v 數位韌性松" style="height: 80px;"></a></p>
+        <p><a href="https://ocf.tw/" target="_blank"><img src="../Logo_Standard_Clearspace-OCF_Purple.svg" title="開放文化基金會" style="height: 80px;"></a></p>
+        <p>Curated by <a href="https://t.me/s/irvinfly" target="_blank">Irvin Chen</a>. Released under the <a href="https://github.com/irvin/web-resilience-test/?tab=License-1-ov-file#License-1-ov-file" target="_blank">CC BY-NC-ND 4.0 International License</a>.</p>
+        <hr>
+        <p><a href="https://apnic.foundation/" target="_blank"><img src="../APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" title="APNIC Foundation ISIF Asia" style="height: 90px;"></a></p>
+        <p>This work was supported by a grant from the <a href="https://apnic.foundation/" target="_blank">APNIC Foundation</a>, via <a href="https://apnic.foundation/home/isifasia/" target="_blank">ISIF Asia</a>.</p>
+    </footer>
+    </div>
+
+    <script>
+        const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/irvin/web-resilience-test-result/refs/heads/main/';
+        const GITHUB_WEB_URL = 'https://github.com/irvin/web-resilience-test-result/blob/main/';
+        const STATISTIC_TSV_URL = GITHUB_RAW_URL + 'statistic.tsv';
+
+        // 快取 key
+        const CACHE_KEY = 'web_resilience_urls_cache';
+        // 快取過期時間（24 小時，單位：毫秒）
+        const CACHE_EXPIRE_TIME = 24 * 60 * 60 * 1000;
+
+        // 全域變數
+        let allUrls = [];
+
+        async function fetchTestResult(filename) {
+            try {
+                const response = await fetch(GITHUB_RAW_URL + filename);
+                return await response.json();
+            } catch (error) {
+                console.error('Error fetching result:', error);
+                return null;
+            }
+        }
+
+        function formatDate(isoString) {
+            return new Date(isoString).toLocaleString('zh-TW');
+        }
+
+        function getSummaryText(result) {
+            const foreignTotal = (result.test_results.foreign?.cloud || 0) + (result.test_results.foreign?.direct || 0);
+            if (foreignTotal > 0) {
+                return '不會動';
+            }
+            const domesticCloud = result.test_results.domestic?.cloud || 0;
+            if (domesticCloud > 0) {
+                return '不確定';
+            }
+            return '可能會動';
+        }
+
+        // 從 URL 參數取得要顯示的網址
+        function getUrlParam() {
+            return window.location.search.substring(5);
+        }
+
+        // 將網址轉換為對應的 JSON 檔名
+        function urlToFilename(url) {
+            const urlObj = new URL('https://' + url.replace(/^https?:\/\//, ''));
+            let filename = urlObj.hostname + urlObj.pathname.replace(/\//g, '_');
+            if (urlObj.search) filename += '__' + urlObj.search.substring(1).replace(/[&=]/g, '_');
+            filename = filename.replace(/_+$/, '');
+            if (filename.length > 95) {
+                filename = filename.slice(0, 95);
+            }
+            return filename + '.json';
+        }
+
+        function toggleTestEnv(element) {
+            const content = element.nextElementSibling;
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                element.classList.add('collapsed');
+            } else {
+                content.classList.add('expanded');
+                element.classList.remove('collapsed');
+            }
+        }
+
+        // 載入統計資料
+        async function loadStatisticData() {
+            // 檢查快取
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (cached) {
+                try {
+                    const data = JSON.parse(cached);
+                    // 檢查是否過期
+                    const now = Date.now();
+                    const cacheTime = data.timestamp || 0;
+                    const isExpired = (now - cacheTime) > CACHE_EXPIRE_TIME;
+
+                    if (!isExpired && data.urls && data.urls.length > 0) {
+                        allUrls = data.urls;
+                        return allUrls;
+                    } else if (isExpired) {
+                        // 快取已過期，清除
+                        localStorage.removeItem(CACHE_KEY);
+                    }
+                } catch (e) {
+                    console.error('Error parsing cache:', e);
+                    // 解析失敗，清除快取
+                    localStorage.removeItem(CACHE_KEY);
+                }
+            }
+
+            // 載入 TSV
+            try {
+                const response = await fetch(STATISTIC_TSV_URL);
+                const text = await response.text();
+                const lines = text.split('\n').filter(line => line.trim());
+
+                // 跳過標題行，提取 URL（第一欄）
+                allUrls = [];
+                for (let i = 1; i < lines.length; i++) {
+                    let url = lines[i].split('\t')[0];
+                    if (url && url.startsWith('http')) {
+                        // 標準化：移除多餘的結尾斜線
+                        url = cleanUrl(url, { removeProtocol: false, removeWww: false, removeTrailingSlash: true });
+                        allUrls.push(url);
+                    }
+                }
+
+                // 依字母順序排序（以去掉協定後的網址為準）
+                allUrls.sort((a, b) => {
+                    const ca = cleanUrlForSearch(a);
+                    const cb = cleanUrlForSearch(b);
+                    if (ca < cb) return -1;
+                    if (ca > cb) return 1;
+                    return 0;
+                });
+
+                // 儲存快取（包含時間戳記）
+                localStorage.setItem(CACHE_KEY, JSON.stringify({
+                    urls: allUrls,
+                    timestamp: Date.now()
+                }));
+                return allUrls;
+            } catch (error) {
+                console.error('Error loading statistic data:', error);
+                return [];
+            }
+        }
+
+        // 統一的 URL 清理函數
+        // options: { removeProtocol: true, removeWww: false, removeTrailingSlash: true, toLowerCase: false }
+        function cleanUrl(url, options = {}) {
+            if (!url) return '';
+            let cleaned = url;
+            const {
+                removeProtocol = true,
+                removeWww = false,
+                removeTrailingSlash = true,
+                toLowerCase = false
+            } = options;
+
+            if (removeProtocol) {
+                cleaned = cleaned.replace(/^https?:\/\//, '');
+            }
+            if (removeWww) {
+                cleaned = cleaned.replace(/^www\./, '');
+            }
+            if (removeTrailingSlash) {
+                cleaned = cleaned.replace(/\/+$/, '');
+            }
+            if (toLowerCase) {
+                cleaned = cleaned.toLowerCase();
+            }
+            return cleaned;
+        }
+
+        // 用於顯示的 URL 清理（移除協議、www、結尾斜線）
+        function cleanUrlForDisplay(url) {
+            return cleanUrl(url, { removeProtocol: true, removeWww: true, removeTrailingSlash: true });
+        }
+
+        // 用於導航的 URL 清理（移除協議、結尾斜線，保留 www.）
+        function cleanUrlForNavigation(url) {
+            return cleanUrl(url, { removeProtocol: true, removeWww: false, removeTrailingSlash: true });
+        }
+
+        // 用於搜尋比對的 URL 清理（移除協議，轉小寫）
+        function cleanUrlForSearch(url) {
+            return cleanUrl(url, { removeProtocol: true, removeWww: false, removeTrailingSlash: false, toLowerCase: true });
+        }
+
+        // 篩選 URL（純函式，供 Vue 與一般 JS 共用）
+        function filterUrls(query, urls) {
+            if (!query) return urls;
+            const lowerQuery = query.toLowerCase();
+            return urls.filter(url => {
+                const cleanUrl = cleanUrlForSearch(url);
+                return cleanUrl.includes(lowerQuery);
+            });
+        }
+
+        // 檢查是否為靜態頁面
+        function isStaticPage() {
+            return window.__IS_STATIC_PAGE__ === true;
+        }
+
+        // 選擇 URL 並跳轉（一律跳轉到靜態頁面）
+        function selectUrl(url) {
+            // 跳轉時使用標準化後的網址（移除協定與多餘結尾斜線，保留 www.）
+            const cleanUrl = cleanUrlForNavigation(url);
+
+            // 統一使用 /web/_domain_ 格式
+            const staticPath = `/web/${cleanUrl}/`;
+            window.location.href = staticPath;
+        }
+
+        // 從 URL 路徑中提取 domain（用於 404 處理）
+        function extractDomainFromPath() {
+            const pathname = window.location.pathname;
+            // 匹配 /web/{domain}/ 格式
+            const match = pathname.match(/^\/web\/([^\/]+)\/?$/);
+            if (match) {
+                return match[1];
+            }
+            return null;
+        }
+
+        async function loadResults() {
+            let urlParam = getUrlParam();
+
+            // 404 處理：如果本身非 static page，則嘗試從路徑擷取 /web/{domain}，視為 URL 參數
+            if (!urlParam && !isStaticPage()) {
+                const domainFromPath = extractDomainFromPath();
+                if (domainFromPath) {
+                    urlParam = domainFromPath;
+                }
+            }
+
+            // 如果有 URL 參數，且不在 build 環境中（localhost:3000），直接跳轉到對應的靜態頁面
+            if (urlParam && !window.location.hostname.includes('localhost') && window.location.port !== '3000') {
+                const cleanUrl = cleanUrlForNavigation(urlParam);
+                // 統一使用 /web/_domain_ 格式
+                const staticPath = `/web/${cleanUrl}/`;
+                window.location.href = staticPath;
+                return;
+            }
+
+            // 載入統計資料（無論是否有 URL 參數都需要）
+            await loadStatisticData();
+
+            // 將統計 URL 清單注入 Vue 狀態，供搜尋使用
+            if (window.__vueState__ && window.__vueState__.allUrls) {
+                window.__vueState__.allUrls.value = allUrls;
+            }
+
+            const resultsEl = document.getElementById('results');
+
+            // 如果是靜態頁面且沒有 URL 參數，直接返回，不需要執行後續的 fetch 邏輯
+            if (isStaticPage() && !urlParam) {
+                // 靜態頁面：保持顯示，設定搜尋相關狀態
+                if (window.__vueState__) {
+                    if (window.__vueState__.showSearch) {
+                        window.__vueState__.showSearch.value = false;
+                    }
+                    if (window.__vueState__.showCheckOther) {
+                        window.__vueState__.showCheckOther.value = true;
+                    }
+                }
+                return;
+            }
+
+            if (!urlParam) {
+                // 無 URL 參數：只顯示搜尋框，隱藏結果區
+                if (resultsEl) {
+                    resultsEl.style.display = 'none';
+                }
+                // 透過 Vue 狀態控制顯示
+                if (window.__vueState__) {
+                    if (window.__vueState__.showSearch) {
+                        window.__vueState__.showSearch.value = true;
+                    }
+                    if (window.__vueState__.showCheckOther) {
+                        window.__vueState__.showCheckOther.value = false;
+                    }
+                    if (window.__vueState__.searchQuery) {
+                        window.__vueState__.searchQuery.value = '';
+                    }
+                    if (window.__vueState__.selectedIndex) {
+                        window.__vueState__.selectedIndex.value = -1;
+                    }
+                    if (window.__vueState__.maxDisplay) {
+                        window.__vueState__.maxDisplay.value = 100;
+                    }
+                }
+                return;
+            }
+
+            // 有 URL 參數：顯示結果區，初始隱藏搜尋框
+            if (resultsEl) {
+                resultsEl.style.display = 'block';
+            }
+            // 透過 Vue 狀態控制顯示
+            if (window.__vueState__) {
+                if (window.__vueState__.showSearch) {
+                    window.__vueState__.showSearch.value = false;
+                }
+                if (window.__vueState__.showCheckOther) {
+                    window.__vueState__.showCheckOther.value = true;
+                }
+            }
+
+            // 更新 meta 標籤
+            const baseUrl = 'https://resilience.ocf.tw/web/';
+            const currentUrl = urlParam ? `${baseUrl}?url=${urlParam}` : baseUrl;
+
+            document.querySelector('link[rel="canonical"]').href = currentUrl;
+            document.querySelector('meta[property="og:canonical"]').content = currentUrl;
+            document.querySelector('meta[property="og:url"]').content = currentUrl;
+            const cleanUrlParam = urlParam ? cleanUrlForNavigation(urlParam) : '';
+            document.title = cleanUrlParam ? `海纜斷掉時，${cleanUrlParam} 會動嗎？` : '海纜斷掉時網站會動嗎？';
+            document.querySelector('meta[property="og:title"]').content = document.title;
+
+            // 顯示測試結果
+            const result = await fetchTestResult(urlToFilename(urlParam));
+            if (result) {
+                // 將結果寫入 Vue 狀態，由 Vue template 負責渲染結果卡片與 h1
+                if (window.__vueState__ && window.__vueState__.vueResult) {
+                    window.__vueState__.vueResult.value = result;
+                }
+
+                const summaryText = getSummaryText(result);
+                document.querySelector('meta[property="og:description"]').content = summaryText;
+            }
+            else {
+                // 找不到結果時，改用搜尋框的「找不到」流程
+                if (resultsEl) {
+                    resultsEl.style.display = 'none';
+                }
+                // 透過 Vue 狀態控制顯示
+                if (window.__vueState__) {
+                    if (window.__vueState__.showSearch) {
+                        window.__vueState__.showSearch.value = true;
+                    }
+                    if (window.__vueState__.showCheckOther) {
+                        window.__vueState__.showCheckOther.value = false;
+                    }
+                    // 將帶入的網址視為輸入框查詢內容（交由 Vue 搜尋邏輯處理）
+                    const clean = cleanUrlForNavigation(urlParam);
+                    if (window.__vueState__.searchQuery) {
+                        window.__vueState__.searchQuery.value = clean;
+                    }
+                    if (window.__vueState__.selectedIndex) {
+                        window.__vueState__.selectedIndex.value = -1;
+                    }
+                    if (window.__vueState__.maxDisplay) {
+                        window.__vueState__.maxDisplay.value = 100;
+                    }
+                }
+            }
+
+        }
+
+    </script>
+    <script>
+        const { createApp, ref, computed } = Vue;
+
+        // 提供給現有 JS 存取的 Vue 狀態容器
+        const vueState = {
+            vueResult: null,
+            allUrls: null,
+            searchQuery: null,
+            selectedIndex: null,
+            maxDisplay: null
+        };
+
+        const vueRootApp = createApp({
+            setup() {
+                const vueResult = ref(null);
+
+                // 搜尋相關狀態
+                const allUrlsRef = ref([]);
+                const searchQuery = ref('');
+                const selectedIndex = ref(-1);
+                const maxDisplay = ref(100);
+                const showSearch = ref(false);
+                const showCheckOther = ref(true);
+
+                // 讓外部 JS 可以直接設定結果與搜尋狀態
+                vueState.vueResult = vueResult;
+                vueState.allUrls = allUrlsRef;
+                vueState.searchQuery = searchQuery;
+                vueState.selectedIndex = selectedIndex;
+                vueState.maxDisplay = maxDisplay;
+                vueState.showSearch = showSearch;
+                vueState.showCheckOther = showCheckOther;
+
+                const hasResult = computed(() => !!vueResult.value);
+
+                const displayUrl = computed(() => {
+                    if (!vueResult.value) return '';
+                    return cleanUrlForNavigation(vueResult.value.url || '');
+                });
+
+                const testTime = computed(() => {
+                    if (!vueResult.value) return '';
+                    return formatDate(vueResult.value.timestamp);
+                });
+
+                const httpStatus = computed(() => {
+                    if (!vueResult.value) return null;
+                    return vueResult.value.httpStatus || null;
+                });
+
+                const requestCount = computed(() => {
+                    if (!vueResult.value) return 0;
+                    return vueResult.value.requestCount || 0;
+                });
+
+                const uniqueDomains = computed(() => {
+                    if (!vueResult.value) return 0;
+                    return vueResult.value.uniqueDomains || 0;
+                });
+
+                const testParameters = computed(() => {
+                    if (!vueResult.value) return {};
+                    return vueResult.value.testParameters || {};
+                });
+
+                const testingEnvironment = computed(() => {
+                    if (!vueResult.value) return null;
+                    return vueResult.value.testingEnvironment || null;
+                });
+
+                // 搜尋相關計算
+                const filteredUrls = computed(() => {
+                    return filterUrls(searchQuery.value, allUrlsRef.value || []);
+                });
+
+                const displayedUrls = computed(() => {
+                    return filteredUrls.value.slice(0, maxDisplay.value);
+                });
+
+                const totalAll = computed(() => (allUrlsRef.value || []).length);
+                const totalMatched = computed(() => filteredUrls.value.length);
+                const shown = computed(() => displayedUrls.value.length);
+                const hasItems = computed(() => totalMatched.value > 0);
+                const hasMore = computed(() => totalMatched.value > shown.value);
+
+                const foreignCloud = computed(() => {
+                    if (!vueResult.value) return 0;
+                    return vueResult.value.test_results?.foreign?.cloud || 0;
+                });
+
+                const foreignDirect = computed(() => {
+                    if (!vueResult.value) return 0;
+                    return vueResult.value.test_results?.foreign?.direct || 0;
+                });
+
+                const domesticCloud = computed(() => {
+                    if (!vueResult.value) return 0;
+                    return vueResult.value.test_results?.domestic?.cloud || 0;
+                });
+
+                const domesticDirect = computed(() => {
+                    if (!vueResult.value) return 0;
+                    return vueResult.value.test_results?.domestic?.direct || 0;
+                });
+
+                const domesticCount = computed(() => domesticDirect.value);
+                const cloudCount = computed(() => domesticCloud.value);
+                const foreignCloudCount = computed(() => foreignCloud.value);
+                const foreignDirectCount = computed(() => foreignDirect.value);
+                const foreignCount = computed(() => foreignCloudCount.value + foreignDirectCount.value);
+
+                const summaryText = computed(() => {
+                    if (!vueResult.value) return '';
+                    return getSummaryText(vueResult.value);
+                });
+
+                const summaryClass = computed(() => {
+                    if (!vueResult.value) return '';
+                    const fc = foreignCloud.value;
+                    const fd = foreignDirect.value;
+                    const dc = domesticCloud.value;
+                    if (fc + fd > 0) return 'wont-work';
+                    if (dc > 0) return 'might-work';
+                    return 'will-work';
+                });
+
+                const domesticZeroClass = computed(() => domesticCount.value === 0 ? ' score-zero' : '');
+                const cloudZeroClass = computed(() => cloudCount.value === 0 ? ' score-zero' : '');
+                const foreignZeroClass = computed(() => foreignCount.value === 0 ? ' score-zero' : '');
+
+                const rawDataUrl = computed(() => {
+                    if (!vueResult.value) return '#';
+                    return GITHUB_WEB_URL + urlToFilename(vueResult.value.url);
+                });
+
+                const detailsJson = computed(() => {
+                    if (!vueResult.value) return '';
+                    return JSON.stringify(vueResult.value, null, 2);
+                });
+
+                // 搜尋相關方法
+                function loadMore() {
+                    maxDisplay.value = Math.min(totalMatched.value, maxDisplay.value + 100);
+                }
+
+                function onSearchKeydown(e) {
+                    if (!displayedUrls.value.length) return;
+
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        selectedIndex.value = Math.min(
+                            selectedIndex.value + 1,
+                            displayedUrls.value.length - 1
+                        );
+                    } else if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        selectedIndex.value = Math.max(selectedIndex.value - 1, -1);
+                    } else if (e.key === 'Enter') {
+                        e.preventDefault();
+                        let targetUrl = null;
+                        if (selectedIndex.value >= 0 && displayedUrls.value[selectedIndex.value]) {
+                            targetUrl = displayedUrls.value[selectedIndex.value];
+                        } else if (displayedUrls.value.length > 0) {
+                            targetUrl = displayedUrls.value[0];
+                        }
+                        if (targetUrl) {
+                            selectUrl(targetUrl);
+                        }
+                    } else if (e.key === 'Escape') {
+                        // ESC 時暫時不隱藏下拉，僅清除選取
+                        selectedIndex.value = -1;
+                    }
+                }
+
+                function onSearchFocus() {
+                    // 聚焦時重新顯示目前查詢結果（狀態由 computed 自動處理）
+                    selectedIndex.value = -1;
+                }
+
+                function openSearch() {
+                    // 顯示搜尋框，隱藏「檢查其他網站」按鈕
+                    showSearch.value = true;
+                    showCheckOther.value = false;
+                    // 重置搜尋狀態
+                    searchQuery.value = '';
+                    selectedIndex.value = -1;
+                    maxDisplay.value = 100;
+                    // Focus 輸入框
+                    setTimeout(() => {
+                        const input = document.getElementById('search-input');
+                        if (input) {
+                            input.focus();
+                            const container = document.getElementById('search-container');
+                            if (container) {
+                                container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }
+                    }, 50);
+                }
+
+                // 暴露 openSearch 到全域，供 onclick 使用
+                window.openSearch = openSearch;
+
+                return {
+                    vueResult,
+                    hasResult,
+                    displayUrl,
+                    testTime,
+                    httpStatus,
+                    requestCount,
+                    uniqueDomains,
+                    testParameters,
+                    testingEnvironment,
+                    domesticCount,
+                    cloudCount,
+                    foreignCount,
+                    foreignCloudCount,
+                    foreignDirectCount,
+                    summaryText,
+                    summaryClass,
+                    domesticZeroClass,
+                    cloudZeroClass,
+                    foreignZeroClass,
+                    rawDataUrl,
+                    detailsJson,
+                    // 搜尋相關
+                    allUrls: allUrlsRef,
+                    searchQuery,
+                    selectedIndex,
+                    maxDisplay,
+                    filteredUrls,
+                    displayedUrls,
+                    totalAll,
+                    totalMatched,
+                    shown,
+                    hasItems,
+                    hasMore,
+                    showSearch,
+                    showCheckOther,
+                    formatDisplayUrl: cleanUrlForDisplay, // 使用全局的 cleanUrlForDisplay 函數
+                    loadMore,
+                    onSearchKeydown,
+                    onSearchFocus,
+                    selectUrl: selectUrl, // 使用全局的 selectUrl 函數
+                    openSearch
+                };
+            }
+        });
+
+        const vm = vueRootApp.mount('#app');
+        window.__vueApp__ = vm;
+        window.__vueState__ = vueState;
+
+        // Vue 掛載完成後再載入測試結果，確保可以直接寫入 Vue 狀態
+        loadResults();
+    </script>
+</body>
+</html>
