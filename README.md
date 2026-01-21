@@ -81,10 +81,10 @@ web-resilience-profile/
 │   ├── *.json
 │   └── ...
 ├── scripts/
+│   ├── build.js            # 建置腳本
 │   ├── deploy-worktree.js  # 部署腳本
 │   ├── deploy.js           # 推送與清理腳本
 │   └── clean-worktree.js   # 清理腳本（內部使用）
-├── build.js                # 建置腳本
 ├── index.html              # 原始模板
 └── package.json
 ```

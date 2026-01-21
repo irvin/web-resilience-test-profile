@@ -3,11 +3,14 @@ const fs = require('fs');
 const path = require('path');
 const http = require('http');
 
+// 專案根目錄（build.js 現在在 scripts/ 目錄中）
+const ROOT_DIR = path.join(__dirname, '..');
+
 // Submodule 路徑
-const SUBMODULE_DIR = path.join(__dirname, 'test-result');
+const SUBMODULE_DIR = path.join(ROOT_DIR, 'test-result');
 const STATISTIC_TSV_PATH = path.join(SUBMODULE_DIR, 'statistic.tsv');
-const OUTPUT_DIR = path.join(__dirname, 'web');
-const TEMPLATE_FILE = path.join(__dirname, 'index.html');
+const OUTPUT_DIR = path.join(ROOT_DIR, 'web');
+const TEMPLATE_FILE = path.join(ROOT_DIR, 'index.html');
 const BROWSER_INSTANCES = 8; // 同時開啟的瀏覽器實例數量
 const SERVER_PORT = 3000;
 
@@ -92,7 +95,7 @@ function startServer() {
         filePath = STATISTIC_TSV_PATH;
       } else {
         // 處理其他資源檔案
-        filePath = path.join(__dirname, url.pathname);
+        filePath = path.join(ROOT_DIR, url.pathname);
       }
 
       // 檢查檔案是否存在
@@ -330,7 +333,7 @@ async function build() {
   // 複製其他資源檔案
   const assets = ['g0v_logo.png', 'Logo_Standard_Clearspace-OCF_Purple.svg', 'APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg'];
   assets.forEach(asset => {
-    const srcPath = path.join(__dirname, asset);
+    const srcPath = path.join(ROOT_DIR, asset);
     const destPath = path.join(OUTPUT_DIR, asset);
     if (fs.existsSync(srcPath)) {
       fs.copyFileSync(srcPath, destPath);
