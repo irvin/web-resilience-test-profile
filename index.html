@@ -102,6 +102,12 @@
             color: #721c24;
         }
 
+        .score-zero {
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%) !important;
+            color: #6c757d !important;
+            opacity: 0.6;
+        }
+
         .details-container pre {
             background: #282c34;
             color: #aaa;
@@ -311,9 +317,9 @@
             </div>
             <div class="score-container">
                 <div class="score-stats">
-                    <p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">{{domesticCount}}</strong></p>
-                    <p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">{{cloudCount}}</strong></p>
-                    <p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">{{foreignCount}}</strong></p>
+                    <p class="score score-O{{domesticZeroClass}}">境內直接連線 (O)<br><strong style="font-size: 1.3em;">{{domesticCount}}</strong></p>
+                    <p class="score score-Q{{cloudZeroClass}}">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">{{cloudCount}}</strong></p>
+                    <p class="score score-X{{foreignZeroClass}}">境外連線 (X)<br><strong style="font-size: 1.3em;">{{foreignCount}}</strong></p>
                 </div>
                 <p>在開啟 <a href="https://{{url}}" target="_blank">{{url}}</a> 時，我們總共識別出來自 {{uniqueDomains}} 個網域的 {{requestCount}} 個請求。<br>
                 其中 {{domesticCount}} 項為境內直接連線，{{cloudCount}} 項為境內的雲端服務，{{foreignCloudCount}} 項為境外的雲端服務，{{foreignDirectCount}} 項為境外其他連線。</p>
@@ -497,6 +503,10 @@
                                     domesticCloud > 0 ? 'might-work' :
                                     'will-work';
 
+                // 計算每個 score 是否需要加上 score-zero class（如果為 0）
+                const domesticZeroClass = domesticCount === 0 ? ' score-zero' : '';
+                const cloudZeroClass = cloudCount === 0 ? ' score-zero' : '';
+                const foreignZeroClass = foreignCount === 0 ? ' score-zero' : '';
 
                 document.getElementById('results').innerHTML = templates.resultCard({
                     url: result.url.replace(/^https?:\/\//, ''),
@@ -510,6 +520,9 @@
                     domesticCount: domesticCount,
                     cloudCount: cloudCount,
                     foreignCount: foreignCount,
+                    domesticZeroClass: domesticZeroClass,
+                    cloudZeroClass: cloudZeroClass,
+                    foreignZeroClass: foreignZeroClass,
                     foreignCloudCount: foreignCloudCount,
                     foreignDirectCount: foreignDirectCount,
                     totalConnections: totalConnections,
