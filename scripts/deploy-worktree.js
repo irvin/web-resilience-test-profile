@@ -105,14 +105,12 @@ try {
   console.log('\n✅ 本地部署完成！');
   console.log(`📁 worktree 位置: ${WORKTREE_DIR}`);
   console.log(`🌿 分支: ${GH_PAGES_BRANCH}`);
-  console.log('\n📝 接下來請手動執行：');
+  console.log('\n📝 接下來請執行：');
+  console.log(`   npm run deploy`);
+  console.log(`   或手動執行：`);
   console.log(`   cd ${WORKTREE_DIR}`);
   console.log(`   git push origin ${GH_PAGES_BRANCH}`);
-  console.log(`   或`);
-  console.log(`   git push origin ${GH_PAGES_BRANCH} --force  # 如果需要強制推送`);
-  console.log('\n💡 推送完成後，可以執行以下指令清理 worktree：');
-  console.log(`   npm run clean`);
-  console.log(`   或`);
+  console.log(`   cd ..`);
   console.log(`   git worktree remove ${WORKTREE_DIR}`);
 
   // 不自動清理 worktree，讓用戶可以手動 push

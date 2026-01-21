@@ -5,7 +5,7 @@
   "scripts": {
     "build": "node build.js --test && node scripts/deploy-worktree.js",
     "build:all": "node build.js --all && node scripts/deploy-worktree.js",
-    "clean": "node scripts/clean-worktree.js"
+    "deploy": "node scripts/deploy.js"
   },
   "dependencies": {
     "playwright": "^1.40.0"

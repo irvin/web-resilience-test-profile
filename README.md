@@ -47,27 +47,15 @@ npm run build:all
 
 ## 部署到 gh-pages 分支
 
-建置指令會自動將 `dist/` 的內容部署到 `gh-pages` 分支，並保留 worktree 供手動 push。
-
-### 手動 Push
-
-部署腳本會保留 worktree，需要手動 push：
+建置指令會自動將 `dist/` 的內容部署到 `gh-pages` 分支。完成建置後，執行以下指令推送到遠端：
 
 ```bash
-# 進入 worktree 目錄
-cd gh-pages-worktree
-
-# Push 到遠端
-git push origin gh-pages
+npm run deploy
 ```
 
-### 清理 Worktree
-
-Push 完成後，清理 worktree：
-
-```bash
-npm run clean
-```
+這會自動執行：
+- 推送 `gh-pages` 分支到遠端
+- 清理本地 worktree
 
 ## 專案結構
 
@@ -81,7 +69,8 @@ web-resilience-profile/
 │   └── ...
 ├── scripts/
 │   ├── deploy-worktree.js  # 部署腳本
-│   └── clean-worktree.js   # 清理腳本
+│   ├── deploy.js           # 推送與清理腳本
+│   └── clean-worktree.js   # 清理腳本（內部使用）
 ├── build.js                # 建置腳本
 ├── index.html              # 原始模板
 └── package.json
