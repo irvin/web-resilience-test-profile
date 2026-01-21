@@ -125,14 +125,6 @@
             padding: 0;
         }
 
-        .message {
-            padding: 25px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border-radius: 10px;
-            border: 1px solid #dee2e6;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
         .summary {
             padding: 20px;
             margin-bottom: 25px;
@@ -331,9 +323,12 @@
         }
 
         .search-no-results {
-            margin-top: 20px;
+            margin-top: 8px;
             padding: 20px;
-            text-align: center;
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             color: #6c757d;
         }
 
@@ -476,14 +471,6 @@
         </div>
     </template>
 
-    <template id="not-found-template">
-        <div class="message">
-            <p>找不到 {{url}} 的測試結果</p>
-            <p>目前已測試的所有頁面資料：<a href="https://github.com/irvin/web-resilience-test-result" target="_blank">github.com/irvin/web-resilience-test-result</a></p>
-            <p>你可以按照<a href="https://github.com/irvin/web-resilience-test" target="_blank">這邊的方式</a>進行測試。</p>
-        </div>
-    </template>
-
     <!-- 統一版型的搜尋框：固定放在 footer 上方 -->
     <div id="search-container" style="display: none;">
         <div class="search-box">
@@ -496,8 +483,12 @@
                     </div>
                 </template>
             </div>
+            <!-- 找不到結果時顯示的區塊 -->
             <div class="search-no-results" id="search-no-results" style="display: none;">
-                <p>找不到符合的網站</p>
+                <template id="not-found-template">
+                        <p>找不到 {{url}} 的測試結果</p>
+                        <p>你可以在此檢視<a href="https://github.com/irvin/web-resilience-test-result" target="_blank">已測試網站資料</a>，並<a href="https://github.com/irvin/web-resilience-test/blob/main_w_test_result/no-global-connection-check.js" target="_blank">使用此工具</a>手動進行測試。</p>
+                </template>
             </div>
             <div class="search-meta" id="search-meta">
                 <!-- 搜尋統計資訊模板 -->
@@ -668,6 +659,12 @@
             if (filteredUrls.length === 0) {
                 dropdown.classList.remove('show');
                 noResults.style.display = 'block';
+                // 取得目前輸入的查詢字串，使用 not-found-template 統一顯示樣式
+                const input = document.getElementById('search-input');
+                const query = input ? input.value : '';
+                if (templates.notFound) {
+                    noResults.innerHTML = templates.notFound({ url: query || '' });
+                }
                 if (meta) {
                     meta.innerHTML = templates.searchMeta({
                         totalAll: allUrls.length,
@@ -740,6 +737,18 @@
             }
         }
 
+        // 執行一次搜尋流程（設定輸入框內容、篩選與顯示結果）
+        function runSearch(query) {
+            const input = document.getElementById('search-input');
+            if (input) {
+                input.value = query;
+            }
+            maxDisplay = 100;
+            selectedIndex = -1;
+            const filtered = filterUrls(query, allUrls);
+            showDropdown(filtered);
+        }
+
         // 選擇 URL 並跳轉
         function selectUrl(url) {
             // 跳轉時也使用標準化後（移除協定與多餘結尾斜線）的網址
@@ -770,17 +779,11 @@
             if (!input) return;
 
             input.addEventListener('input', (e) => {
-                const query = e.target.value;
-                maxDisplay = 100;
-                selectedIndex = -1;
-                const filtered = filterUrls(query, allUrls);
-                showDropdown(filtered);
+                runSearch(e.target.value);
             });
 
             input.addEventListener('focus', () => {
-                const query = input.value;
-                const filtered = filterUrls(query, allUrls);
-                showDropdown(filtered);
+                runSearch(input.value);
             });
 
             input.addEventListener('keydown', (e) => {
@@ -873,9 +876,6 @@
                 searchContainer.style.display = 'none';
             }
 
-            const cleanUrl = urlParam.replace(/^https?:\/\//, '');
-            document.querySelector('h1').outerHTML = templates.title({ url: cleanUrl });
-
             // 更新 meta 標籤
             const baseUrl = 'https://irvin.github.io/web-resilience-test-result/';
             const currentUrl = urlParam ? `${baseUrl}?url=${urlParam}` : baseUrl;
@@ -889,6 +889,9 @@
             // 顯示測試結果
             const result = await fetchTestResult(urlToFilename(urlParam));
             if (result) {
+                // 只有在找到結果時才替換 h1，顯示「海纜斷掉時，<site> 會動嗎？」
+                const displayUrl = (result.url || urlParam || '').replace(/^https?:\/\//, '');
+                document.querySelector('h1').outerHTML = templates.title({ url: displayUrl });
                 // 使用新格式的 test_results 結構計算各項數值
                 const domesticCloud = result.test_results.domestic?.cloud || 0;
                 const domesticDirect = result.test_results.domestic?.direct || 0;
@@ -936,7 +939,18 @@
                 document.querySelector('meta[property="og:description"]').content = summaryText;
             }
             else {
-                document.getElementById('results').innerHTML = templates.notFound({ url: urlParam });
+                // 找不到結果時，改用搜尋框的「找不到」流程
+                if (resultsEl) {
+                    resultsEl.style.display = 'none';
+                }
+                if (searchContainer) {
+                    searchContainer.style.display = 'block';
+                }
+                initSearchBox();
+
+                // 將帶入的網址視為輸入框查詢內容
+                const clean = urlParam.replace(/^https?:\/\//, '');
+                runSearch(clean);
             }
 
         }
