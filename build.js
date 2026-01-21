@@ -8,7 +8,7 @@ const SUBMODULE_DIR = path.join(__dirname, 'test-result');
 const STATISTIC_TSV_PATH = path.join(SUBMODULE_DIR, 'statistic.tsv');
 const OUTPUT_DIR = path.join(__dirname, 'web');
 const TEMPLATE_FILE = path.join(__dirname, 'index.html');
-const BROWSER_INSTANCES = 4; // 同時開啟的瀏覽器實例數量
+const BROWSER_INSTANCES = 8; // 同時開啟的瀏覽器實例數量
 const SERVER_PORT = 3000;
 
 // 測試模式：只處理第一個 URL（預設行為）
@@ -268,15 +268,38 @@ async function generateStaticHTML(browser, url, index, total) {
   }
 }
 
-// 處理一批 URL（使用單一瀏覽器實例）
-async function processBatch(browser, urls, browserIndex, totalUrls) {
+// 處理單一 URL（使用瀏覽器實例）
+async function processUrl(browser, url, browserIndex, globalIndex, totalUrls) {
+  return await generateStaticHTML(browser, url, browserIndex, globalIndex);
+}
+
+// Worker 函數：從 URL 隊列中取一個處理一個
+async function processUrlWorker(browser, urlQueue, workerId, totalUrls) {
   const results = [];
 
-  for (let i = 0; i < urls.length; i++) {
-    const url = urls[i];
-    const globalIndex = results.length + 1;
-    const result = await generateStaticHTML(browser, url, browserIndex, globalIndex);
+  while (urlQueue.length > 0) {
+    const url = urlQueue.shift();
+    if (!url) break;
+
+    const globalIndex = totalUrls - urlQueue.length;
+    const result = await processUrl(browser, url, workerId, globalIndex, totalUrls);
     results.push(result);
+
+    // 立即寫入檔案（不需要等待所有完成）
+    if (result.success && result.html) {
+      const dirPath = urlToDirPath(result.url);
+      const fullDirPath = path.join(OUTPUT_DIR, dirPath);
+      const outputPath = path.join(fullDirPath, 'index.html');
+
+      // 確保目錄存在
+      if (!fs.existsSync(fullDirPath)) {
+        fs.mkdirSync(fullDirPath, { recursive: true });
+      }
+
+      // 寫入 index.html
+      fs.writeFileSync(outputPath, result.html, 'utf-8');
+      console.log(`  ✓ 已儲存: ${dirPath}/index.html`);
+    }
   }
 
   return results;
@@ -329,26 +352,14 @@ async function build() {
     const urlsToProcess = TEST_LIMIT ? urls.slice(0, TEST_LIMIT) : urls;
     console.log(`找到 ${urls.length} 個測試網址，將處理 ${urlsToProcess.length} 個\n`);
 
-    // 將 URL 列表平均分配給各個瀏覽器實例
-    const urlsPerBrowser = Math.ceil(urlsToProcess.length / BROWSER_INSTANCES);
-    const batches = [];
+    // 創建 URL 隊列（複製一份，避免修改原始陣列）
+    const urlQueue = [...urlsToProcess];
 
-    for (let i = 0; i < BROWSER_INSTANCES; i++) {
-      const start = i * urlsPerBrowser;
-      const end = Math.min(start + urlsPerBrowser, urlsToProcess.length);
-      if (start < urlsToProcess.length) {
-        batches.push({
-          urls: urlsToProcess.slice(start, end),
-          browserIndex: i + 1
-        });
-      }
-    }
-
-    console.log(`啟動 ${batches.length} 個瀏覽器實例進行平行處理...\n`);
+    console.log(`啟動 ${BROWSER_INSTANCES} 個瀏覽器實例進行平行處理...\n`);
 
     // 啟動所有瀏覽器實例
     const browsers = await Promise.all(
-      batches.map(async () => {
+      Array.from({ length: BROWSER_INSTANCES }, async (_, idx) => {
         try {
           return await chromium.launch({
             headless: true  // 不顯示瀏覽器視窗
@@ -365,32 +376,20 @@ async function build() {
     let flatResults = [];
 
     try {
-      // 並行處理所有批次
+      // 並行處理：每個 worker 從隊列中取一個 URL 處理一個
       const allResults = await Promise.all(
-        batches.map((batch, idx) =>
-          processBatch(browsers[idx], batch.urls, batch.browserIndex, urlsToProcess.length)
+        browsers.map((browser, idx) =>
+          processUrlWorker(browser, urlQueue, idx + 1, urlsToProcess.length)
         )
       );
 
-      // 將結果扁平化並寫入檔案
+      // 將結果扁平化
       flatResults = allResults.flat();
 
+      // 統計成功和失敗數量
       for (const result of flatResults) {
         if (result.success && result.html) {
-          // 創建目錄結構：web/google.com/index.html
-          const dirPath = urlToDirPath(result.url);
-          const fullDirPath = path.join(OUTPUT_DIR, dirPath);
-          const outputPath = path.join(fullDirPath, 'index.html');
-
-          // 確保目錄存在
-          if (!fs.existsSync(fullDirPath)) {
-            fs.mkdirSync(fullDirPath, { recursive: true });
-          }
-
-          // 寫入 index.html
-          fs.writeFileSync(outputPath, result.html, 'utf-8');
           successCount++;
-          console.log(`  ✓ 已儲存: ${dirPath}/index.html`);
         } else {
           failCount++;
         }
