@@ -274,6 +274,107 @@
             opacity: 1;
         }
 
+        /* 搜索框樣式 */
+        .search-box {
+            position: relative;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 18px;
+            font-size: 1.1em;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #0366d6;
+            box-shadow: 0 2px 8px rgba(3, 102, 214, 0.2);
+        }
+
+        .search-dropdown {
+            max-height: 400px;
+            overflow-y: auto;
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: none;
+            margin-top: 8px;
+        }
+
+        .search-dropdown.show {
+            display: block;
+        }
+
+        .search-dropdown-item {
+            padding: 12px 18px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s ease;
+            word-break: break-all;
+        }
+
+        .search-dropdown-item:hover,
+        .search-dropdown-item.selected {
+            background-color: #f0f7ff;
+            color: #0366d6;
+        }
+
+        .search-dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .search-no-results {
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+            color: #6c757d;
+        }
+
+        .search-meta {
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: #6c757d;
+        }
+
+        .search-load-more {
+            cursor: pointer;
+            color: #0366d6;
+            margin-left: 4px;
+        }
+
+        .search-load-more:hover {
+            text-decoration: underline;
+        }
+
+        /* 檢查其他網站按鈕 */
+        .check-other-site-btn {
+            background: linear-gradient(135deg, #0366d6 0%, #0056b3 100%);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin: 10px 0;
+        }
+
+        .check-other-site-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(3, 102, 214, 0.3);
+        }
+
+        .check-other-site-btn:active {
+            transform: translateY(0);
+        }
+
         /* 響應式設計 */
         @media (max-width: 768px) {
             body {
@@ -295,12 +396,14 @@
             .summary {
                 font-size: 1.1em;
             }
+
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
 </head>
 <body>
     <h1>海纜斷掉時，網站會動嗎？</h1>
+
     <template id="title-template">
         <h1>海纜斷掉時，<a href="https://{{url}}" target="_blank">{{url}}</a> 會動嗎？</h1>
     </template>
@@ -381,7 +484,39 @@
         </div>
     </template>
 
+    <!-- 統一版型的搜尋框：固定放在 footer 上方 -->
+    <div id="search-container" style="display: none;">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="輸入網址查看測試結果..." autocomplete="off">
+            <div class="search-dropdown" id="search-dropdown">
+                <!-- 搜尋下拉選單項目模板 -->
+                <template id="search-item-template">
+                    <div class="search-dropdown-item {{#if selected}}selected{{/if}}" data-url="{{url}}" data-index="{{index}}">
+                        {{cleanUrl}}
+                    </div>
+                </template>
+            </div>
+            <div class="search-no-results" id="search-no-results" style="display: none;">
+                <p>找不到符合的網站</p>
+            </div>
+            <div class="search-meta" id="search-meta">
+                <!-- 搜尋統計資訊模板 -->
+                <template id="search-meta-template">
+                    {{#if hasItems}}
+                        總共 {{totalAll}} 網站，目前顯示前 {{shown}} 個。
+                        {{#if hasMore}}
+                        <span class="search-load-more">[點擊此處載入更多]</span>
+                        {{/if}}
+                    {{else}}
+                        總共 {{totalAll}} 網站，目前顯示前 0 個。
+                    {{/if}}
+                </template>
+            </div>
+        </div>
+    </div>
+
     <footer>
+      <p><button class="check-other-site-btn" onclick="openSearch()">檢查其他網站</button></p>
       <p><a href="https://github.com/irvin/web-resilience-test" target="_blank">研究方法</a></p>
       <p><a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank">g0v 數位韌性松</a></p>
       <img src="g0v_logo.png" alt="g0v.tw 台灣零時政府" style="width: 100px; height: 100px;">
@@ -390,11 +525,23 @@
     <script>
         const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/irvin/web-resilience-test-result/refs/heads/main/';
         const GITHUB_WEB_URL = 'https://github.com/irvin/web-resilience-test-result/blob/main/';
+        const STATISTIC_TSV_URL = GITHUB_RAW_URL + 'statistic.tsv';
+
+        // 快取 key
+        const CACHE_KEY = 'web_resilience_urls_cache';
+
+        // 全域變數
+        let allUrls = [];
+        let selectedIndex = -1;
+        let maxDisplay = 100;
+        let searchInitialized = false;
 
         const templates = {
             title: Handlebars.compile(document.getElementById('title-template').innerHTML),
             resultCard: Handlebars.compile(document.getElementById('result-card-template').innerHTML),
-            notFound: Handlebars.compile(document.getElementById('not-found-template').innerHTML)
+            notFound: Handlebars.compile(document.getElementById('not-found-template').innerHTML),
+            searchItem: Handlebars.compile(document.getElementById('search-item-template').innerHTML),
+            searchMeta: Handlebars.compile(document.getElementById('search-meta-template').innerHTML)
         };
 
         async function fetchTestResult(filename) {
@@ -451,13 +598,279 @@
             }
         }
 
+        // 載入統計資料
+        async function loadStatisticData() {
+            // 檢查快取
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (cached) {
+                try {
+                    const data = JSON.parse(cached);
+                    allUrls = data.urls || [];
+                    if (allUrls.length > 0) {
+                        return allUrls;
+                    }
+                } catch (e) {
+                    console.error('Error parsing cache:', e);
+                }
+            }
+
+            // 載入 TSV
+            try {
+                const response = await fetch(STATISTIC_TSV_URL);
+                const text = await response.text();
+                const lines = text.split('\n').filter(line => line.trim());
+
+                // 跳過標題行，提取 URL（第一欄）
+                allUrls = [];
+                for (let i = 1; i < lines.length; i++) {
+                    let url = lines[i].split('\t')[0];
+                    if (url && url.startsWith('http')) {
+                        // 標準化：移除多餘的結尾斜線
+                        url = url.replace(/\/+$/, '');
+                        allUrls.push(url);
+                    }
+                }
+
+                // 依字母順序排序（以去掉協定後的網址為準）
+                allUrls.sort((a, b) => {
+                    const ca = a.replace(/^https?:\/\//, '').toLowerCase();
+                    const cb = b.replace(/^https?:\/\//, '').toLowerCase();
+                    if (ca < cb) return -1;
+                    if (ca > cb) return 1;
+                    return 0;
+                });
+
+                // 儲存快取
+                localStorage.setItem(CACHE_KEY, JSON.stringify({ urls: allUrls }));
+                return allUrls;
+            } catch (error) {
+                console.error('Error loading statistic data:', error);
+                return [];
+            }
+        }
+
+        // 篩選 URL
+        function filterUrls(query, urls) {
+            if (!query) return urls;
+            const lowerQuery = query.toLowerCase();
+            return urls.filter(url => {
+                const cleanUrl = url.replace(/^https?:\/\//, '').toLowerCase();
+                return cleanUrl.includes(lowerQuery);
+            });
+        }
+
+        // 顯示下拉選單（單一版型）
+        function showDropdown(filteredUrls) {
+            const dropdown = document.getElementById('search-dropdown');
+            const noResults = document.getElementById('search-no-results');
+            const meta = document.getElementById('search-meta');
+
+            if (filteredUrls.length === 0) {
+                dropdown.classList.remove('show');
+                noResults.style.display = 'block';
+                if (meta) {
+                    meta.innerHTML = templates.searchMeta({
+                        totalAll: allUrls.length,
+                        shown: 0,
+                        hasItems: false,
+                        hasMore: false
+                    });
+                }
+                return;
+            }
+
+            noResults.style.display = 'none';
+            dropdown.classList.add('show');
+
+            // 最多顯示 maxDisplay 項
+            const displayUrls = filteredUrls.slice(0, maxDisplay);
+            dropdown.innerHTML = displayUrls.map((url, index) => {
+                // 顯示時移除協定與多餘結尾斜線
+                const cleanUrl = url
+                    .replace(/^https?:\/\//, '')
+                    .replace(/\/+$/, '');
+                return templates.searchItem({
+                    url,
+                    index,
+                    cleanUrl,
+                    selected: index === selectedIndex
+                });
+            }).join('');
+
+            // 綁定點擊事件
+            dropdown.querySelectorAll('.search-dropdown-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const url = item.getAttribute('data-url');
+                    selectUrl(url);
+                });
+            });
+
+            if (meta) {
+                const shown = displayUrls.length;
+                const totalMatched = filteredUrls.length;
+                const totalAll = allUrls.length;
+                const hasMore = totalMatched > shown;
+
+                meta.innerHTML = templates.searchMeta({
+                    totalAll,
+                    shown,
+                    hasItems: true,
+                    hasMore
+                });
+
+                if (hasMore) {
+                    const loadMore = meta.querySelector('.search-load-more');
+                    if (loadMore) {
+                        loadMore.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            maxDisplay = Math.min(totalMatched, maxDisplay + 100);
+                            showDropdown(filteredUrls);
+                        });
+                    }
+                }
+            }
+
+            // 滾動到選中項
+            if (selectedIndex >= 0 && selectedIndex < displayUrls.length) {
+                const selectedItem = dropdown.querySelector(`[data-index="${selectedIndex}"]`);
+                if (selectedItem) {
+                    selectedItem.scrollIntoView({ block: 'nearest' });
+                }
+            }
+        }
+
+        // 選擇 URL 並跳轉
+        function selectUrl(url) {
+            // 跳轉時也使用標準化後（移除協定與多餘結尾斜線）的網址
+            const cleanUrl = url
+                .replace(/^https?:\/\//, '')
+                .replace(/\/+$/, '');
+            window.location.href = window.location.pathname + '?url=' + encodeURIComponent(cleanUrl);
+        }
+
+        // 更新選中項
+        function updateSelectedItem(items) {
+            items.forEach((item, index) => {
+                if (index === selectedIndex) {
+                    item.classList.add('selected');
+                    item.scrollIntoView({ block: 'nearest' });
+                } else {
+                    item.classList.remove('selected');
+                }
+            });
+        }
+
+        // 初始化搜索框（單一版型）
+        function initSearchBox() {
+            if (searchInitialized) return;
+
+            const input = document.getElementById('search-input');
+
+            if (!input) return;
+
+            input.addEventListener('input', (e) => {
+                const query = e.target.value;
+                maxDisplay = 100;
+                selectedIndex = -1;
+                const filtered = filterUrls(query, allUrls);
+                showDropdown(filtered);
+            });
+
+            input.addEventListener('focus', () => {
+                const query = input.value;
+                const filtered = filterUrls(query, allUrls);
+                showDropdown(filtered);
+            });
+
+            input.addEventListener('keydown', (e) => {
+                const dropdown = document.getElementById('search-dropdown');
+                const items = dropdown.querySelectorAll('.search-dropdown-item');
+
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+                    updateSelectedItem(items);
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    selectedIndex = Math.max(selectedIndex - 1, -1);
+                    updateSelectedItem(items);
+                } else if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (selectedIndex >= 0 && items[selectedIndex]) {
+                        const url = items[selectedIndex].getAttribute('data-url');
+                        selectUrl(url);
+                    } else if (items.length > 0) {
+                        // 如果沒有選中，選擇第一個
+                        const url = items[0].getAttribute('data-url');
+                        selectUrl(url);
+                    }
+                } else if (e.key === 'Escape') {
+                    dropdown.classList.remove('show');
+                }
+            });
+
+            // 點擊外部關閉下拉選單
+            document.addEventListener('click', (e) => {
+                const searchBox = input.closest('.search-box');
+                if (searchBox && !searchBox.contains(e.target)) {
+                    const dropdown = document.getElementById('search-dropdown');
+                    dropdown.classList.remove('show');
+                }
+            });
+
+            searchInitialized = true;
+        }
+
+        // 顯示搜尋框區塊（供「檢查其他網站」按鈕呼叫）
+        function openSearch() {
+            const container = document.getElementById('search-container');
+            if (!container) return;
+
+            container.style.display = 'block';
+            initSearchBox();
+
+            // Focus 輸入框並顯示所有選項
+            setTimeout(() => {
+                const input = document.getElementById('search-input');
+                if (input) {
+                    input.focus();
+                    const filtered = filterUrls(input.value, allUrls);
+                    showDropdown(filtered);
+                    container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 50);
+        }
+
         async function loadResults() {
             const urlParam = getUrlParam();
 
-            // 如果沒有指定網址，轉址到 g0v.tw 測試結果
+            // 載入統計資料（無論是否有 URL 參數都需要）
+            await loadStatisticData();
+
+            const resultsEl = document.getElementById('results');
+            const searchContainer = document.getElementById('search-container');
+
             if (!urlParam) {
-                window.location.href = window.location.href.replace(/\/$/, '') + '?url=g0v.tw';
+                // 無 URL 參數：只顯示搜尋框，隱藏結果區
+                if (resultsEl) {
+                    resultsEl.style.display = 'none';
+                }
+                if (searchContainer) {
+                    searchContainer.style.display = 'block';
+                }
+                initSearchBox();
+                // 自動顯示所有選項
+                showDropdown(allUrls);
                 return;
+            }
+
+            // 有 URL 參數：顯示結果區，初始隱藏搜尋框
+            if (resultsEl) {
+                resultsEl.style.display = 'block';
+            }
+            if (searchContainer) {
+                searchContainer.style.display = 'none';
             }
 
             const cleanUrl = urlParam.replace(/^https?:\/\//, '');
@@ -525,7 +938,8 @@
             else {
                 document.getElementById('results').innerHTML = templates.notFound({ url: urlParam });
             }
-          }
+
+        }
 
         // 載入測試結果
         loadResults();
