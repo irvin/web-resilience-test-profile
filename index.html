@@ -249,7 +249,10 @@
             margin-top: 50px;
             padding: 30px 0;
             text-align: center;
-            border-top: 2px solid #DDD;
+        }
+
+        footer a {
+            display: inline-block;
         }
 
         footer p {
@@ -257,13 +260,18 @@
         }
 
         footer img {
-            margin-top: 15px;
             opacity: 0.8;
             transition: opacity 0.2s ease;
         }
 
         footer img:hover {
             opacity: 1;
+        }
+
+        footer hr {
+            /* margin: 30px 0; */
+            border: 1px solid #DEDEDE;
+            margin-bottom: 2em;
         }
 
         /* 搜索框樣式 */
@@ -507,10 +515,14 @@
     </div>
 
     <footer>
-      <p id="check-other-site-container"><button class="check-other-site-btn" onclick="openSearch()">檢查其他網站</button></p>
-      <p><a href="https://github.com/irvin/web-resilience-test" target="_blank">研究方法</a></p>
-      <p><a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank">g0v 數位韌性松</a></p>
-      <img src="g0v_logo.png" alt="g0v.tw 台灣零時政府" style="width: 100px; height: 100px;">
+        <p id="check-other-site-container"><button class="check-other-site-btn" onclick="openSearch()">檢查其他網站</button></p>
+        <p style="margin-bottom: 2em;"><a href="https://github.com/irvin/web-resilience-test" target="_blank">研究方法 / 原始碼</a></p>
+        <hr>
+        <p><a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="g0v_logo.png" title="g0v 台灣零時政府 數位韌性松" style="height: 80px;"></a></p>
+        <p><a href="https://ocf.tw/" target="_blank"><img src="Logo_Standard_Clearspace-OCF_Purple.svg" title="開放文化基金會" style="height: 80px;"></a></p>
+        <hr>
+        <p><a href="https://apnic.foundation/" target="_blank"><img src="APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" title="APNIC Foundation ISIF Asia" style="height: 90px;"></a></p>
+        <p>This work was supported by a grant from the <a href="https://apnic.foundation/" target="_blank">APNIC Foundation</a>, via <a href="https://apnic.foundation/home/isifasia/" target="_blank">ISIF Asia</a>.</p>
     </footer>
 
     <script>
