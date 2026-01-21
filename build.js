@@ -342,7 +342,7 @@ async function build() {
       batches.map(async () => {
         try {
           return await chromium.launch({
-            headless: false  // 顯示瀏覽器視窗以便檢查原始碼
+            headless: true  // 不顯示瀏覽器視窗
           });
         } catch (error) {
           console.error('啟動瀏覽器失敗:', error.message);
