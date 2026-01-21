@@ -304,12 +304,7 @@
             border: 1px solid #e9ecef;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            display: none;
             margin-top: 8px;
-        }
-
-        .search-dropdown.show {
-            display: block;
         }
 
         .search-dropdown-item {
@@ -402,29 +397,25 @@
 
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 </head>
 <body>
-    <h1>海纜斷掉時，網站會動嗎？</h1>
+    <div id="app">
+    <h1 v-if="!displayUrl">海纜斷掉時，網站會動嗎？</h1>
+    <h1 v-else>海纜斷掉時，<a :href="'https://' + displayUrl" target="_blank">{{displayUrl}}</a> 會動嗎？</h1>
 
-    <template id="title-template">
-        <h1>海纜斷掉時，<a href="https://{{url}}" target="_blank">{{url}}</a> 會動嗎？</h1>
-    </template>
-
-    <div id="results"></div>
-
-    <template id="result-card-template">
-        <div class="result-card">
-            <div class="summary {{summaryClass}}">
+    <div id="results">
+        <div v-if="vueResult" class="result-card">
+            <div class="summary" :class="summaryClass">
                 <h2>{{summaryText}}</h2>
             </div>
             <div class="score-container">
                 <div class="score-stats">
-                    <p class="score score-O{{domesticZeroClass}}">境內直接連線 (O)<br><strong style="font-size: 1.3em;">{{domesticCount}}</strong></p>
-                    <p class="score score-Q{{cloudZeroClass}}">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">{{cloudCount}}</strong></p>
-                    <p class="score score-X{{foreignZeroClass}}">境外連線 (X)<br><strong style="font-size: 1.3em;">{{foreignCount}}</strong></p>
+                    <p class="score score-O" :class="domesticZeroClass">境內直接連線 (O)<br><strong style="font-size: 1.3em;">{{domesticCount}}</strong></p>
+                    <p class="score score-Q" :class="cloudZeroClass">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">{{cloudCount}}</strong></p>
+                    <p class="score score-X" :class="foreignZeroClass">境外連線 (X)<br><strong style="font-size: 1.3em;">{{foreignCount}}</strong></p>
                 </div>
-                <p>在開啟 <a href="https://{{url}}" target="_blank">{{url}}</a> 時，我們總共識別出來自 {{uniqueDomains}} 個網域的 {{requestCount}} 個請求。</p>
+                <p>在開啟 <a :href="'https://' + displayUrl" target="_blank">{{displayUrl}}</a> 時，我們總共識別出來自 {{uniqueDomains}} 個網域的 {{requestCount}} 個請求。</p>
                 <p>其中 {{domesticCount}} 項為境內直接連線，{{cloudCount}} 項為境內的雲端服務，{{foreignCloudCount}} 項為境外的雲端服務，{{foreignDirectCount}} 項為境外其他連線。</p>
                 <p>境內公用雲端服務——目前尚不知道在對外斷線時的可用性，需由服務提供者釐清說明。</p>
             </div>
@@ -437,32 +428,29 @@
                     <div class="test-env-section">
                         <h4>測試參數</h4>
                         <ul>
-                            <li>指定 DNS 伺服器：{{testParameters.customDNS}}</li>
-                            {{#if testParameters.adblockUrls}}
-                            <li>使用 Adblock 清單：
+                            <li>指定 DNS 伺服器：{{testParameters && testParameters.customDNS}}</li>
+                            <li v-if="testParameters && testParameters.adblockUrls && testParameters.adblockUrls.length">
+                                使用 Adblock 清單：
                                 <ul>
-                                    {{#each testParameters.adblockUrls}}
-                                    <li><a href="{{this}}" target="_blank">{{this}}</a></li>
-                                    {{/each}}
+                                    <li v-for="url in testParameters.adblockUrls" :key="url">
+                                        <a :href="url" target="_blank">{{url}}</a>
+                                    </li>
                                 </ul>
                             </li>
-                            {{/if}}
                         </ul>
                     </div>
-                    {{#if testingEnvironment}}
-                    <div class="test-env-section">
+
+                    <div class="test-env-section" v-if="testingEnvironment">
                         <h4>測試環境</h4>
                         <ul>
                             <li>IP：{{testingEnvironment.ip}}</li>
-                            {{#if testingEnvironment.city}}<li>城市：{{testingEnvironment.city}}</li>{{/if}}
-                            {{#if testingEnvironment.region}}<li>地區：{{testingEnvironment.region}}</li>{{/if}}
+                            <li v-if="testingEnvironment.city">城市：{{testingEnvironment.city}}</li>
+                            <li v-if="testingEnvironment.region">地區：{{testingEnvironment.region}}</li>
                             <li>國家：{{testingEnvironment.country}}</li>
-                            {{#if testingEnvironment.org}}<li>組織：{{testingEnvironment.org}}</li>{{/if}}
-                            {{#if testingEnvironment.dnsServer}}<li>DNS 伺服器：{{testingEnvironment.dnsServer}}</li>{{/if}}
-                            <!-- {{#if testingEnvironment.source}}<li>來源：{{testingEnvironment.source}}</li>{{/if}} -->
+                            <li v-if="testingEnvironment.org">組織：{{testingEnvironment.org}}</li>
+                            <li v-if="testingEnvironment.dnsServer">DNS 伺服器：{{testingEnvironment.dnsServer}}</li>
                         </ul>
                     </div>
-                    {{/if}}
                 </div>
             </div>
             <div class="details-container">
@@ -470,52 +458,55 @@
                     <span>原始資料</span>
                 </div>
                 <div class="test-env-content">
-                    <p style="margin-top: 0;"><a href="{{rawDataUrl}}" target="_blank">在 GitHub 上查看</a></p>
+                    <p style="margin-top: 0;"><a :href="rawDataUrl" target="_blank">在 GitHub 上查看</a></p>
                     <pre><code>{{detailsJson}}</code></pre>
                 </div>
             </div>
 
-            <p style="margin-bottom: 0;">最後測試時間：{{testTime}}{{#if httpStatus}} (HTTP {{httpStatus}}){{/if}}</p>
+            <p style="margin-bottom: 0;">最後測試時間：{{testTime}}<span v-if="httpStatus"> (HTTP {{httpStatus}})</span></p>
         </div>
-    </template>
+    </div>
 
     <!-- 統一版型的搜尋框：固定放在 footer 上方 -->
-    <div id="search-container" style="display: none;">
+    <div id="search-container" v-show="showSearch">
         <div class="search-box">
-            <input type="text" id="search-input" placeholder="輸入網址查看測試結果..." autocomplete="off">
-            <div class="search-dropdown" id="search-dropdown">
-                <!-- 搜尋下拉選單項目模板 -->
-                <template id="search-item-template">
-                    <div class="search-dropdown-item {{#if selected}}selected{{/if}}" data-url="{{url}}" data-index="{{index}}">
-                        {{cleanUrl}}
-                    </div>
-                </template>
+            <input type="text" id="search-input" placeholder="輸入網址查看測試結果..." autocomplete="off"
+                v-model="searchQuery"  @keydown="onSearchKeydown" @focus="onSearchFocus"
+            >
+
+            <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length">
+                <div
+                    class="search-dropdown-item"
+                    v-for="(url, index) in displayedUrls"
+                    :key="url"
+                    :data-url="url"
+                    :data-index="index"
+                    :class="{ selected: index === selectedIndex }"
+                    @click="selectUrl(url)"
+                >
+                    {{ formatDisplayUrl(url) }}
+                </div>
             </div>
             <!-- 找不到結果時顯示的區塊 -->
-            <div class="search-no-results" id="search-no-results" style="display: none;">
-                <template id="not-found-template">
-                        <p>找不到 {{url}} 的測試結果</p>
+            <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
+                        <p>找不到 {{ searchQuery }} 的測試結果</p>
                         <p>你可以在此檢視<a href="https://github.com/irvin/web-resilience-test-result" target="_blank">已測試網站資料</a>，並<a href="https://github.com/irvin/web-resilience-test/blob/main_w_test_result/no-global-connection-check.js" target="_blank">使用此工具</a>手動進行測試。</p>
-                </template>
             </div>
             <div class="search-meta" id="search-meta">
                 <!-- 搜尋統計資訊模板 -->
-                <template id="search-meta-template">
-                    {{#if hasItems}}
+                <template v-if="hasItems">
                         總共 {{totalAll}} 網站，目前顯示前 {{shown}} 個。
-                        {{#if hasMore}}
-                        <span class="search-load-more">[載入更多網站]</span>
-                        {{/if}}
-                    {{else}}
+                        <span class="search-load-more" v-if="hasMore" @click="loadMore">[載入更多網站]</span>
+                </template>
+                <template v-else>
                         總共 {{totalAll}} 網站，目前顯示前 0 個。
-                    {{/if}}
                 </template>
             </div>
         </div>
     </div>
 
     <footer>
-        <p id="check-other-site-container"><button class="check-other-site-btn" onclick="openSearch()">檢查其他網站</button></p>
+        <p id="check-other-site-container" v-show="showCheckOther"><button class="check-other-site-btn" @click="openSearch">檢查其他網站</button></p>
         <p style="margin-bottom: 2em;"><a href="https://github.com/irvin/web-resilience-test" target="_blank">研究方法 / 原始碼</a></p>
         <hr>
         <p><a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="g0v_logo.png" title="g0v 台灣零時政府 數位韌性松" style="height: 80px;"></a></p>
@@ -525,6 +516,7 @@
         <p><a href="https://apnic.foundation/" target="_blank"><img src="APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" title="APNIC Foundation ISIF Asia" style="height: 90px;"></a></p>
         <p>This work was supported by a grant from the <a href="https://apnic.foundation/" target="_blank">APNIC Foundation</a>, via <a href="https://apnic.foundation/home/isifasia/" target="_blank">ISIF Asia</a>.</p>
     </footer>
+    </div>
 
     <script>
         const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/irvin/web-resilience-test-result/refs/heads/main/';
@@ -536,17 +528,6 @@
 
         // 全域變數
         let allUrls = [];
-        let selectedIndex = -1;
-        let maxDisplay = 100;
-        let searchInitialized = false;
-
-        const templates = {
-            title: Handlebars.compile(document.getElementById('title-template').innerHTML),
-            resultCard: Handlebars.compile(document.getElementById('result-card-template').innerHTML),
-            notFound: Handlebars.compile(document.getElementById('not-found-template').innerHTML),
-            searchItem: Handlebars.compile(document.getElementById('search-item-template').innerHTML),
-            searchMeta: Handlebars.compile(document.getElementById('search-meta-template').innerHTML)
-        };
 
         async function fetchTestResult(filename) {
             try {
@@ -653,7 +634,7 @@
             }
         }
 
-        // 篩選 URL
+        // 篩選 URL（純函式，供 Vue 與一般 JS 共用）
         function filterUrls(query, urls) {
             if (!query) return urls;
             const lowerQuery = query.toLowerCase();
@@ -661,106 +642,6 @@
                 const cleanUrl = url.replace(/^https?:\/\//, '').toLowerCase();
                 return cleanUrl.includes(lowerQuery);
             });
-        }
-
-        // 顯示下拉選單（單一版型）
-        function showDropdown(filteredUrls) {
-            const dropdown = document.getElementById('search-dropdown');
-            const noResults = document.getElementById('search-no-results');
-            const meta = document.getElementById('search-meta');
-
-            if (filteredUrls.length === 0) {
-                dropdown.classList.remove('show');
-                noResults.style.display = 'block';
-                // 取得目前輸入的查詢字串，使用 not-found-template 統一顯示樣式
-                const input = document.getElementById('search-input');
-                const query = input ? input.value : '';
-                if (templates.notFound) {
-                    noResults.innerHTML = templates.notFound({ url: query || '' });
-                }
-                if (meta) {
-                    meta.innerHTML = templates.searchMeta({
-                        totalAll: allUrls.length,
-                        shown: 0,
-                        hasItems: false,
-                        hasMore: false
-                    });
-                }
-                return;
-            }
-
-            noResults.style.display = 'none';
-            dropdown.classList.add('show');
-
-            // 最多顯示 maxDisplay 項
-            const displayUrls = filteredUrls.slice(0, maxDisplay);
-            dropdown.innerHTML = displayUrls.map((url, index) => {
-                // 顯示時移除協定、www. 與多餘結尾斜線
-                const cleanUrl = url
-                    .replace(/^https?:\/\//, '')
-                    .replace(/^www\./, '')
-                    .replace(/\/+$/, '');
-                return templates.searchItem({
-                    url,
-                    index,
-                    cleanUrl,
-                    selected: index === selectedIndex
-                });
-            }).join('');
-
-            // 綁定點擊事件
-            dropdown.querySelectorAll('.search-dropdown-item').forEach(item => {
-                item.addEventListener('click', () => {
-                    const url = item.getAttribute('data-url');
-                    selectUrl(url);
-                });
-            });
-
-            if (meta) {
-                const shown = displayUrls.length;
-                const totalMatched = filteredUrls.length;
-                const totalAll = allUrls.length;
-                const hasMore = totalMatched > shown;
-
-                meta.innerHTML = templates.searchMeta({
-                    totalAll,
-                    shown,
-                    hasItems: true,
-                    hasMore
-                });
-
-                if (hasMore) {
-                    const loadMore = meta.querySelector('.search-load-more');
-                    if (loadMore) {
-                        loadMore.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            maxDisplay = Math.min(totalMatched, maxDisplay + 100);
-                            showDropdown(filteredUrls);
-                        });
-                    }
-                }
-            }
-
-            // 滾動到選中項
-            if (selectedIndex >= 0 && selectedIndex < displayUrls.length) {
-                const selectedItem = dropdown.querySelector(`[data-index="${selectedIndex}"]`);
-                if (selectedItem) {
-                    selectedItem.scrollIntoView({ block: 'nearest' });
-                }
-            }
-        }
-
-        // 執行一次搜尋流程（設定輸入框內容、篩選與顯示結果）
-        function runSearch(query) {
-            const input = document.getElementById('search-input');
-            if (input) {
-                input.value = query;
-            }
-            maxDisplay = 100;
-            selectedIndex = -1;
-            const filtered = filterUrls(query, allUrls);
-            showDropdown(filtered);
         }
 
         // 選擇 URL 並跳轉
@@ -772,121 +653,42 @@
             window.location.href = window.location.pathname + '?url=' + encodeURIComponent(cleanUrl);
         }
 
-        // 更新選中項
-        function updateSelectedItem(items) {
-            items.forEach((item, index) => {
-                if (index === selectedIndex) {
-                    item.classList.add('selected');
-                    item.scrollIntoView({ block: 'nearest' });
-                } else {
-                    item.classList.remove('selected');
-                }
-            });
-        }
-
-        // 初始化搜索框（單一版型）
-        function initSearchBox() {
-            if (searchInitialized) return;
-
-            const input = document.getElementById('search-input');
-
-            if (!input) return;
-
-            input.addEventListener('input', (e) => {
-                runSearch(e.target.value);
-            });
-
-            input.addEventListener('focus', () => {
-                runSearch(input.value);
-            });
-
-            input.addEventListener('keydown', (e) => {
-                const dropdown = document.getElementById('search-dropdown');
-                const items = dropdown.querySelectorAll('.search-dropdown-item');
-
-                if (e.key === 'ArrowDown') {
-                    e.preventDefault();
-                    selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
-                    updateSelectedItem(items);
-                } else if (e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    selectedIndex = Math.max(selectedIndex - 1, -1);
-                    updateSelectedItem(items);
-                } else if (e.key === 'Enter') {
-                    e.preventDefault();
-                    if (selectedIndex >= 0 && items[selectedIndex]) {
-                        const url = items[selectedIndex].getAttribute('data-url');
-                        selectUrl(url);
-                    } else if (items.length > 0) {
-                        // 如果沒有選中，選擇第一個
-                        const url = items[0].getAttribute('data-url');
-                        selectUrl(url);
-                    }
-                } else if (e.key === 'Escape') {
-                    dropdown.classList.remove('show');
-                }
-            });
-
-            // 點擊外部關閉下拉選單
-            document.addEventListener('click', (e) => {
-                const searchBox = input.closest('.search-box');
-                if (searchBox && !searchBox.contains(e.target)) {
-                    const dropdown = document.getElementById('search-dropdown');
-                    dropdown.classList.remove('show');
-                }
-            });
-
-            searchInitialized = true;
-        }
-
-        // 顯示搜尋框區塊（供「檢查其他網站」按鈕呼叫）
-        function openSearch() {
-            const container = document.getElementById('search-container');
-            const checkOtherContainer = document.getElementById('check-other-site-container');
-            if (!container) return;
-
-            container.style.display = 'block';
-            if (checkOtherContainer) {
-                checkOtherContainer.style.display = 'none';
-            }
-            initSearchBox();
-
-            // Focus 輸入框並顯示所有選項
-            setTimeout(() => {
-                const input = document.getElementById('search-input');
-                if (input) {
-                    input.focus();
-                    const filtered = filterUrls(input.value, allUrls);
-                    showDropdown(filtered);
-                    container.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }, 50);
-        }
-
         async function loadResults() {
             const urlParam = getUrlParam();
 
             // 載入統計資料（無論是否有 URL 參數都需要）
             await loadStatisticData();
 
+            // 將統計 URL 清單注入 Vue 狀態，供搜尋使用
+            if (window.__vueState__ && window.__vueState__.allUrls) {
+                window.__vueState__.allUrls.value = allUrls;
+            }
+
             const resultsEl = document.getElementById('results');
-            const searchContainer = document.getElementById('search-container');
-            const checkOtherContainer = document.getElementById('check-other-site-container');
 
             if (!urlParam) {
                 // 無 URL 參數：只顯示搜尋框，隱藏結果區
                 if (resultsEl) {
                     resultsEl.style.display = 'none';
                 }
-                if (searchContainer) {
-                    searchContainer.style.display = 'block';
+                // 透過 Vue 狀態控制顯示
+                if (window.__vueState__) {
+                    if (window.__vueState__.showSearch) {
+                        window.__vueState__.showSearch.value = true;
+                    }
+                    if (window.__vueState__.showCheckOther) {
+                        window.__vueState__.showCheckOther.value = false;
+                    }
+                    if (window.__vueState__.searchQuery) {
+                        window.__vueState__.searchQuery.value = '';
+                    }
+                    if (window.__vueState__.selectedIndex) {
+                        window.__vueState__.selectedIndex.value = -1;
+                    }
+                    if (window.__vueState__.maxDisplay) {
+                        window.__vueState__.maxDisplay.value = 100;
+                    }
                 }
-                if (checkOtherContainer) {
-                    checkOtherContainer.style.display = 'none';
-                }
-                initSearchBox();
-                // 自動顯示所有選項
-                showDropdown(allUrls);
                 return;
             }
 
@@ -894,11 +696,14 @@
             if (resultsEl) {
                 resultsEl.style.display = 'block';
             }
-            if (searchContainer) {
-                searchContainer.style.display = 'none';
-            }
-            if (checkOtherContainer) {
-                checkOtherContainer.style.display = 'block';
+            // 透過 Vue 狀態控制顯示
+            if (window.__vueState__) {
+                if (window.__vueState__.showSearch) {
+                    window.__vueState__.showSearch.value = false;
+                }
+                if (window.__vueState__.showCheckOther) {
+                    window.__vueState__.showCheckOther.value = true;
+                }
             }
 
             // 更新 meta 標籤
@@ -914,53 +719,12 @@
             // 顯示測試結果
             const result = await fetchTestResult(urlToFilename(urlParam));
             if (result) {
-                // 只有在找到結果時才替換 h1，顯示「海纜斷掉時，<site> 會動嗎？」
-                const displayUrl = (result.url || urlParam || '').replace(/^https?:\/\//, '');
-                document.querySelector('h1').outerHTML = templates.title({ url: displayUrl });
-                // 使用新格式的 test_results 結構計算各項數值
-                const domesticCloud = result.test_results.domestic?.cloud || 0;
-                const domesticDirect = result.test_results.domestic?.direct || 0;
-                const foreignCloud = result.test_results.foreign?.cloud || 0;
-                const foreignDirect = result.test_results.foreign?.direct || 0;
-
-                const domesticCount = domesticDirect;
-                const cloudCount = domesticCloud;
-                const foreignCount = foreignCloud + foreignDirect;
-                const foreignCloudCount = foreignCloud;
-                const foreignDirectCount = foreignDirect;
+                // 將結果寫入 Vue 狀態，由 Vue template 負責渲染結果卡片與 h1
+                if (window.__vueState__ && window.__vueState__.vueResult) {
+                    window.__vueState__.vueResult.value = result;
+                }
 
                 const summaryText = getSummaryText(result);
-                const summaryClass = (foreignCloud + foreignDirect) > 0 ? 'wont-work' :
-                                    domesticCloud > 0 ? 'might-work' :
-                                    'will-work';
-
-                // 計算每個 score 是否需要加上 score-zero class（如果為 0）
-                const domesticZeroClass = domesticCount === 0 ? ' score-zero' : '';
-                const cloudZeroClass = cloudCount === 0 ? ' score-zero' : '';
-                const foreignZeroClass = foreignCount === 0 ? ' score-zero' : '';
-
-                document.getElementById('results').innerHTML = templates.resultCard({
-                    url: result.url.replace(/^https?:\/\//, ''),
-                    summaryText: summaryText,
-                    summaryClass: summaryClass,
-                    testTime: formatDate(result.timestamp),
-                    httpStatus: result.httpStatus || null,
-                    requestCount: result.requestCount || 0,
-                    uniqueDomains: result.uniqueDomains || 0,
-                    domesticCount: domesticCount,
-                    cloudCount: cloudCount,
-                    foreignCount: foreignCount,
-                    domesticZeroClass: domesticZeroClass,
-                    cloudZeroClass: cloudZeroClass,
-                    foreignZeroClass: foreignZeroClass,
-                    foreignCloudCount: foreignCloudCount,
-                    foreignDirectCount: foreignDirectCount,
-                    testParameters: result.testParameters || {},
-                    testingEnvironment: result.testingEnvironment || null,
-                    rawDataUrl: GITHUB_WEB_URL + urlToFilename(result.url),
-                    detailsJson: JSON.stringify(result, null, 2)
-                });
-
                 document.querySelector('meta[property="og:description"]').content = summaryText;
             }
             else {
@@ -968,22 +732,300 @@
                 if (resultsEl) {
                     resultsEl.style.display = 'none';
                 }
-                if (searchContainer) {
-                    searchContainer.style.display = 'block';
+                // 透過 Vue 狀態控制顯示
+                if (window.__vueState__) {
+                    if (window.__vueState__.showSearch) {
+                        window.__vueState__.showSearch.value = true;
+                    }
+                    if (window.__vueState__.showCheckOther) {
+                        window.__vueState__.showCheckOther.value = false;
+                    }
+                    // 將帶入的網址視為輸入框查詢內容（交由 Vue 搜尋邏輯處理）
+                    const clean = urlParam.replace(/^https?:\/\//, '');
+                    if (window.__vueState__.searchQuery) {
+                        window.__vueState__.searchQuery.value = clean;
+                    }
+                    if (window.__vueState__.selectedIndex) {
+                        window.__vueState__.selectedIndex.value = -1;
+                    }
+                    if (window.__vueState__.maxDisplay) {
+                        window.__vueState__.maxDisplay.value = 100;
+                    }
                 }
-                if (checkOtherContainer) {
-                    checkOtherContainer.style.display = 'none';
-                }
-                initSearchBox();
-
-                // 將帶入的網址視為輸入框查詢內容
-                const clean = urlParam.replace(/^https?:\/\//, '');
-                runSearch(clean);
             }
 
         }
 
-        // 載入測試結果
+    </script>
+    <script>
+        const { createApp, ref, computed } = Vue;
+
+        // 提供給現有 JS 存取的 Vue 狀態容器
+        const vueState = {
+            vueResult: null,
+            allUrls: null,
+            searchQuery: null,
+            selectedIndex: null,
+            maxDisplay: null
+        };
+
+        const vueRootApp = createApp({
+            setup() {
+                const vueResult = ref(null);
+
+                // 搜尋相關狀態
+                const allUrlsRef = ref([]);
+                const searchQuery = ref('');
+                const selectedIndex = ref(-1);
+                const maxDisplay = ref(100);
+                const showSearch = ref(false);
+                const showCheckOther = ref(true);
+
+                // 讓外部 JS 可以直接設定結果與搜尋狀態
+                vueState.vueResult = vueResult;
+                vueState.allUrls = allUrlsRef;
+                vueState.searchQuery = searchQuery;
+                vueState.selectedIndex = selectedIndex;
+                vueState.maxDisplay = maxDisplay;
+                vueState.showSearch = showSearch;
+                vueState.showCheckOther = showCheckOther;
+
+                const hasResult = computed(() => !!vueResult.value);
+
+                const displayUrl = computed(() => {
+                    if (!vueResult.value) return '';
+                    return (vueResult.value.url || '').replace(/^https?:\/\//, '');
+                });
+
+                const testTime = computed(() => {
+                    if (!vueResult.value) return '';
+                    return formatDate(vueResult.value.timestamp);
+                });
+
+                const httpStatus = computed(() => {
+                    if (!vueResult.value) return null;
+                    return vueResult.value.httpStatus || null;
+                });
+
+                const requestCount = computed(() => {
+                    if (!vueResult.value) return 0;
+                    return vueResult.value.requestCount || 0;
+                });
+
+                const uniqueDomains = computed(() => {
+                    if (!vueResult.value) return 0;
+                    return vueResult.value.uniqueDomains || 0;
+                });
+
+                const testParameters = computed(() => {
+                    if (!vueResult.value) return {};
+                    return vueResult.value.testParameters || {};
+                });
+
+                const testingEnvironment = computed(() => {
+                    if (!vueResult.value) return null;
+                    return vueResult.value.testingEnvironment || null;
+                });
+
+                // 搜尋相關計算
+                const filteredUrls = computed(() => {
+                    return filterUrls(searchQuery.value, allUrlsRef.value || []);
+                });
+
+                const displayedUrls = computed(() => {
+                    return filteredUrls.value.slice(0, maxDisplay.value);
+                });
+
+                const totalAll = computed(() => (allUrlsRef.value || []).length);
+                const totalMatched = computed(() => filteredUrls.value.length);
+                const shown = computed(() => displayedUrls.value.length);
+                const hasItems = computed(() => totalMatched.value > 0);
+                const hasMore = computed(() => totalMatched.value > shown.value);
+
+                const foreignCloud = computed(() => {
+                    if (!vueResult.value) return 0;
+                    return vueResult.value.test_results?.foreign?.cloud || 0;
+                });
+
+                const foreignDirect = computed(() => {
+                    if (!vueResult.value) return 0;
+                    return vueResult.value.test_results?.foreign?.direct || 0;
+                });
+
+                const domesticCloud = computed(() => {
+                    if (!vueResult.value) return 0;
+                    return vueResult.value.test_results?.domestic?.cloud || 0;
+                });
+
+                const domesticDirect = computed(() => {
+                    if (!vueResult.value) return 0;
+                    return vueResult.value.test_results?.domestic?.direct || 0;
+                });
+
+                const domesticCount = computed(() => domesticDirect.value);
+                const cloudCount = computed(() => domesticCloud.value);
+                const foreignCloudCount = computed(() => foreignCloud.value);
+                const foreignDirectCount = computed(() => foreignDirect.value);
+                const foreignCount = computed(() => foreignCloudCount.value + foreignDirectCount.value);
+
+                const summaryText = computed(() => {
+                    if (!vueResult.value) return '';
+                    return getSummaryText(vueResult.value);
+                });
+
+                const summaryClass = computed(() => {
+                    if (!vueResult.value) return '';
+                    const fc = foreignCloud.value;
+                    const fd = foreignDirect.value;
+                    const dc = domesticCloud.value;
+                    if (fc + fd > 0) return 'wont-work';
+                    if (dc > 0) return 'might-work';
+                    return 'will-work';
+                });
+
+                const domesticZeroClass = computed(() => domesticCount.value === 0 ? ' score-zero' : '');
+                const cloudZeroClass = computed(() => cloudCount.value === 0 ? ' score-zero' : '');
+                const foreignZeroClass = computed(() => foreignCount.value === 0 ? ' score-zero' : '');
+
+                const rawDataUrl = computed(() => {
+                    if (!vueResult.value) return '#';
+                    return GITHUB_WEB_URL + urlToFilename(vueResult.value.url);
+                });
+
+                const detailsJson = computed(() => {
+                    if (!vueResult.value) return '';
+                    return JSON.stringify(vueResult.value, null, 2);
+                });
+
+                // 搜尋相關方法
+                function formatDisplayUrl(url) {
+                    return url
+                        .replace(/^https?:\/\//, '')
+                        .replace(/^www\./, '')
+                        .replace(/\/+$/, '');
+                }
+
+                function loadMore() {
+                    maxDisplay.value = Math.min(totalMatched.value, maxDisplay.value + 100);
+                }
+
+                function onSearchKeydown(e) {
+                    if (!displayedUrls.value.length) return;
+
+                    if (e.key === 'ArrowDown') {
+                        e.preventDefault();
+                        selectedIndex.value = Math.min(
+                            selectedIndex.value + 1,
+                            displayedUrls.value.length - 1
+                        );
+                    } else if (e.key === 'ArrowUp') {
+                        e.preventDefault();
+                        selectedIndex.value = Math.max(selectedIndex.value - 1, -1);
+                    } else if (e.key === 'Enter') {
+                        e.preventDefault();
+                        let targetUrl = null;
+                        if (selectedIndex.value >= 0 && displayedUrls.value[selectedIndex.value]) {
+                            targetUrl = displayedUrls.value[selectedIndex.value];
+                        } else if (displayedUrls.value.length > 0) {
+                            targetUrl = displayedUrls.value[0];
+                        }
+                        if (targetUrl) {
+                            selectUrl(targetUrl);
+                        }
+                    } else if (e.key === 'Escape') {
+                        // ESC 時暫時不隱藏下拉，僅清除選取
+                        selectedIndex.value = -1;
+                    }
+                }
+
+                function onSearchFocus() {
+                    // 聚焦時重新顯示目前查詢結果（狀態由 computed 自動處理）
+                    selectedIndex.value = -1;
+                }
+
+                function selectUrl(url) {
+                    // 跳轉時也使用標準化後（移除協定與多餘結尾斜線）的網址
+                    const cleanUrl = url
+                        .replace(/^https?:\/\//, '')
+                        .replace(/\/+$/, '');
+                    window.location.href = window.location.pathname + '?url=' + encodeURIComponent(cleanUrl);
+                }
+
+                function openSearch() {
+                    // 顯示搜尋框，隱藏「檢查其他網站」按鈕
+                    showSearch.value = true;
+                    showCheckOther.value = false;
+                    // 重置搜尋狀態
+                    searchQuery.value = '';
+                    selectedIndex.value = -1;
+                    maxDisplay.value = 100;
+                    // Focus 輸入框
+                    setTimeout(() => {
+                        const input = document.getElementById('search-input');
+                        if (input) {
+                            input.focus();
+                            const container = document.getElementById('search-container');
+                            if (container) {
+                                container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                        }
+                    }, 50);
+                }
+
+                // 暴露 openSearch 到全域，供 onclick 使用
+                window.openSearch = openSearch;
+
+                return {
+                    vueResult,
+                    hasResult,
+                    displayUrl,
+                    testTime,
+                    httpStatus,
+                    requestCount,
+                    uniqueDomains,
+                    testParameters,
+                    testingEnvironment,
+                    domesticCount,
+                    cloudCount,
+                    foreignCount,
+                    foreignCloudCount,
+                    foreignDirectCount,
+                    summaryText,
+                    summaryClass,
+                    domesticZeroClass,
+                    cloudZeroClass,
+                    foreignZeroClass,
+                    rawDataUrl,
+                    detailsJson,
+                    // 搜尋相關
+                    allUrls: allUrlsRef,
+                    searchQuery,
+                    selectedIndex,
+                    maxDisplay,
+                    filteredUrls,
+                    displayedUrls,
+                    totalAll,
+                    totalMatched,
+                    shown,
+                    hasItems,
+                    hasMore,
+                    showSearch,
+                    showCheckOther,
+                    formatDisplayUrl,
+                    loadMore,
+                    onSearchKeydown,
+                    onSearchFocus,
+                    selectUrl,
+                    openSearch
+                };
+            }
+        });
+
+        const vm = vueRootApp.mount('#app');
+        window.__vueApp__ = vm;
+        window.__vueState__ = vueState;
+
+        // Vue 掛載完成後再載入測試結果，確保可以直接寫入 Vue 狀態
         loadResults();
     </script>
 </body>
