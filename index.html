@@ -528,6 +528,8 @@
 
         // 快取 key
         const CACHE_KEY = 'web_resilience_urls_cache';
+        // 快取過期時間（24 小時，單位：毫秒）
+        const CACHE_EXPIRE_TIME = 24 * 60 * 60 * 1000;
 
         // 全域變數
         let allUrls = [];
@@ -593,12 +595,22 @@
             if (cached) {
                 try {
                     const data = JSON.parse(cached);
-                    allUrls = data.urls || [];
-                    if (allUrls.length > 0) {
+                    // 檢查是否過期
+                    const now = Date.now();
+                    const cacheTime = data.timestamp || 0;
+                    const isExpired = (now - cacheTime) > CACHE_EXPIRE_TIME;
+
+                    if (!isExpired && data.urls && data.urls.length > 0) {
+                        allUrls = data.urls;
                         return allUrls;
+                    } else if (isExpired) {
+                        // 快取已過期，清除
+                        localStorage.removeItem(CACHE_KEY);
                     }
                 } catch (e) {
                     console.error('Error parsing cache:', e);
+                    // 解析失敗，清除快取
+                    localStorage.removeItem(CACHE_KEY);
                 }
             }
 
@@ -628,8 +640,11 @@
                     return 0;
                 });
 
-                // 儲存快取
-                localStorage.setItem(CACHE_KEY, JSON.stringify({ urls: allUrls }));
+                // 儲存快取（包含時間戳記）
+                localStorage.setItem(CACHE_KEY, JSON.stringify({
+                    urls: allUrls,
+                    timestamp: Date.now()
+                }));
                 return allUrls;
             } catch (error) {
                 console.error('Error loading statistic data:', error);
