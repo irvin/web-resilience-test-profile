@@ -561,6 +561,41 @@ const vueRootApp = createApp({
                         categoryText: formatCategory(detail.category || ''),
                         categoryClass: getCategoryClass(detail.category || '')
                     };
+                })
+                .sort((a, b) => {
+                    // 按照 AS 號碼以外的名稱排序
+                    const orgA = a.org || '';
+                    const orgB = b.org || '';
+                    // 如果都沒有 org，保持原順序
+                    if (!orgA && !orgB) return 0;
+                    // 沒有 org 的排在最後
+                    if (!orgA) return 1;
+                    if (!orgB) return -1;
+
+                    // 提取 AS 號碼後面的名稱部分
+                    // 格式通常是 "AS12345 Organization Name" 或 "AS12345"
+                    const extractOrgName = (org) => {
+                        // 移除 "AS" 開頭和數字部分
+                        const match = org.match(/^AS\d+\s*(.+)?$/i);
+                        if (match && match[1]) {
+                            return match[1].trim();
+                        }
+                        // 如果沒有名稱部分，返回空字串（會排在最後）
+                        return '';
+                    };
+
+                    const nameA = extractOrgName(orgA);
+                    const nameB = extractOrgName(orgB);
+
+                    // 如果都沒有名稱，按照完整 org 排序
+                    if (!nameA && !nameB) {
+                        return orgA.localeCompare(orgB, 'zh-TW');
+                    }
+                    // 沒有名稱的排在最後
+                    if (!nameA) return 1;
+                    if (!nameB) return -1;
+                    // 按照名稱排序
+                    return nameA.localeCompare(nameB, 'zh-TW');
                 });
         });
 
