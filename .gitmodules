@@ -1,3 +1,6 @@
 [submodule "test-result"]
 	path = test-result
 	url = https://github.com/irvin/web-resilience-test-result.git
+[submodule "top-traffic-list-taiwan"]
+	path = top-traffic-list-taiwan
+	url = https://github.com/irvin/top-traffic-website-list-taiwan.git
