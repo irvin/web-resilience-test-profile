@@ -74,7 +74,7 @@ web-resilience-profile/
 │   ├── index.html          # 主頁面
 │   ├── google.com/         # 每個網址的目錄
 │   │   └── index.html
-│   ├── g0v_logo.png        # 資源檔案
+│   ├── g0v_logo.svg        # 資源檔案
 │   └── ...                 # 
 ├── test-result/  # Git submodule（測試結果資料）
 │   ├── statistic.tsv
@@ -82,7 +82,7 @@ web-resilience-profile/
 │   └── ...
 ├── scripts/
 │   ├── build.js            # 建置腳本
-│   ├── deploy-worktree.js  # 部署腳本
+│   ├── build-worktree.js  # 部署腳本
 │   ├── deploy.js           # 推送與清理腳本
 │   └── clean-worktree.js   # 清理腳本（內部使用）
 ├── index.html              # 原始模板

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Web resilience test profile static site generator",
   "scripts": {
-    "build": "node scripts/build.js --test && node scripts/deploy-worktree.js",
-    "build:all": "node scripts/build.js --all && node scripts/deploy-worktree.js",
+    "build": "node scripts/build.js --test && node scripts/build-worktree.js",
+    "build:all": "node scripts/build.js --all && node scripts/build-worktree.js",
     "deploy": "node scripts/deploy.js"
   },
   "dependencies": {

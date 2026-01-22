@@ -34,9 +34,15 @@ function urlToDirPath(url) {
 // 修復資源檔案路徑：將相對路徑改為 ../ 路徑
 // 這樣在子目錄中的頁面（如 web/google.com/index.html 或 web/404.html）也能正確載入資源
 function fixAssetPaths(html) {
-  return html.replace(/src=["']((?!https?:\/\/|\.\.\/|\/)[^"']+\.(png|svg|jpg|jpeg|gif|webp|css|js))["']/gi, (match, filename) => {
+  // 處理 src 屬性
+  html = html.replace(/src=["']((?!https?:\/\/|\.\.\/|\/)[^"']+\.(png|svg|jpg|jpeg|gif|webp|css|js))["']/gi, (match, filename) => {
     return match.replace(filename, `../${filename}`);
   });
+  // 處理 href 屬性（用於 link 標籤，如 styles.css）
+  html = html.replace(/href=["']((?!https?:\/\/|\.\.\/|\/)[^"']+\.(png|svg|jpg|jpeg|gif|webp|css|js))["']/gi, (match, filename) => {
+    return match.replace(filename, `../${filename}`);
+  });
+  return html;
 }
 
 // 將網址轉換為完整的輸出路徑（目錄 + index.html）
@@ -331,7 +337,7 @@ async function build() {
   fs.writeFileSync(path.join(OUTPUT_DIR, '404.html'), html404, 'utf8');
 
   // 複製其他資源檔案
-  const assets = ['g0v_logo.png', 'Logo_Standard_Clearspace-OCF_Purple.svg', 'APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg'];
+  const assets = ['g0v_logo.svg', 'Logo_Compact-OCF_Purple.svg', 'APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg', 'styles.css', 'app.js'];
   assets.forEach(asset => {
     const srcPath = path.join(ROOT_DIR, asset);
     const destPath = path.join(OUTPUT_DIR, asset);

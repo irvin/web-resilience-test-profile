@@ -237,6 +237,7 @@ footer {
 
 footer a {
     display: inline-block;
+    cursor: pointer;
 }
 
 footer p {
@@ -245,7 +246,10 @@ footer p {
 
 footer img {
     opacity: 0.8;
+    margin: 0 10px;
     transition: opacity 0.2s ease;
+    vertical-align: middle;
+    cursor: pointer;
 }
 
 footer img:hover {
