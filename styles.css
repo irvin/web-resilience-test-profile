@@ -361,6 +361,80 @@ footer hr {
     transform: translateY(0);
 }
 
+/* Category 標籤樣式 */
+.category-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.category-domestic-cloud {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    color: #856404;
+}
+
+.category-foreign-cloud {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+}
+
+.category-domestic-direct {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+}
+
+.category-foreign-direct {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+}
+
+/* 連線資訊列表樣式 */
+.test-env-section .connection-list {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.test-env-section .connection-item {
+    padding: 8px 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.test-env-section .connection-item:first-child {
+    padding-top: 0;
+}
+
+.test-env-section .connection-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.test-env-section .connection-domain {
+    color: #0366d6;
+    word-break: break-all;
+    flex: 1;
+    min-width: 0;
+}
+
+.test-env-section .connection-org {
+    color: #6c757d;
+    white-space: nowrap;
+}
+
+.test-env-section .connection-item > span {
+    margin-left: 0;
+}
+
 /* 響應式設計 */
 @media (max-width: 768px) {
     body {

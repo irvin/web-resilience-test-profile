@@ -465,6 +465,24 @@ const vueRootApp = createApp({
             return 'will-work';
         });
 
+        // 生成連線統計項目列表（只包含非零項目）
+        const connectionStatsItems = computed(() => {
+            const items = [];
+            if (domesticCount.value > 0) {
+                items.push({ count: domesticCount.value, key: 'domestic' });
+            }
+            if (cloudCount.value > 0) {
+                items.push({ count: cloudCount.value, key: 'cloud' });
+            }
+            if (foreignCloudCount.value > 0) {
+                items.push({ count: foreignCloudCount.value, key: 'foreignCloud' });
+            }
+            if (foreignDirectCount.value > 0) {
+                items.push({ count: foreignDirectCount.value, key: 'foreignDirect' });
+            }
+            return items;
+        });
+
         const domesticZeroClass = computed(() => domesticCount.value === 0 ? ' score-zero' : '');
         const cloudZeroClass = computed(() => cloudCount.value === 0 ? ' score-zero' : '');
         const foreignZeroClass = computed(() => foreignCount.value === 0 ? ' score-zero' : '');
@@ -477,6 +495,126 @@ const vueRootApp = createApp({
         const detailsJson = computed(() => {
             if (!vueResult.value) return '';
             return JSON.stringify(vueResult.value, null, 2);
+        });
+
+        // 格式化 category 為中文
+        function formatCategory(category) {
+            const categoryMap = {
+                'domestic/cloud': '境內／雲端',
+                'foreign/cloud': '境外／雲端',
+                'domestic/direct': '境內／其他',
+                'foreign/direct': '境外／其他'
+            };
+            return categoryMap[category] || category;
+        }
+
+        // 取得 category 對應的 CSS class
+        function getCategoryClass(category) {
+            const classMap = {
+                'domestic/cloud': 'category-domestic-cloud',
+                'foreign/cloud': 'category-foreign-cloud',
+                'domestic/direct': 'category-domestic-direct',
+                'foreign/direct': 'category-foreign-direct'
+            };
+            return classMap[category] || '';
+        }
+
+        // 網站位置（來自 domainDetails[0]）
+        const siteLocation = computed(() => {
+            if (!vueResult.value || !vueResult.value.domainDetails || vueResult.value.domainDetails.length === 0) {
+                return null;
+            }
+            const firstDetail = vueResult.value.domainDetails[0];
+            return {
+                ip: firstDetail.ipinfo?.ip || '',
+                org: firstDetail.ipinfo?.org || '',
+                category: firstDetail.category || '',
+                categoryText: formatCategory(firstDetail.category || ''),
+                categoryClass: getCategoryClass(firstDetail.category || '')
+            };
+        });
+
+        // 連線資訊（來自 domainDetails[1] 之後）
+        const connectionDetails = computed(() => {
+            if (!vueResult.value || !vueResult.value.domainDetails || vueResult.value.domainDetails.length <= 1) {
+                return [];
+            }
+            return vueResult.value.domainDetails.slice(1)
+                .filter(detail => {
+                    // 篩除沒有有效資料的連線
+                    // 必須有 category
+                    if (!detail.category) {
+                        return false;
+                    }
+                    // 必須有有效的 domain
+                    let domain = '';
+                    try {
+                        const url = new URL(detail.originalUrl);
+                        domain = url.hostname;
+                    } catch (e) {
+                        // 如果無法解析 URL，檢查是否有 ipinfo.domain
+                        domain = detail.ipinfo?.domain || '';
+                    }
+                    // 如果 domain 為空，則篩除
+                    if (!domain || domain.trim() === '') {
+                        return false;
+                    }
+                    return true;
+                })
+                .map(detail => {
+                    // 從 originalUrl 提取 domain
+                    let domain = '';
+                    try {
+                        const url = new URL(detail.originalUrl);
+                        domain = url.hostname;
+                    } catch (e) {
+                        // 如果無法解析，使用 ipinfo.domain
+                        domain = detail.ipinfo?.domain || detail.originalUrl;
+                    }
+                    return {
+                        domain: domain,
+                        originalUrl: detail.originalUrl,
+                        org: detail.ipinfo?.org || '',
+                        category: detail.category || '',
+                        categoryText: formatCategory(detail.category || ''),
+                        categoryClass: getCategoryClass(detail.category || '')
+                    };
+                })
+                .sort((a, b) => {
+                    // 按照 AS 號碼以外的名稱排序
+                    const orgA = a.org || '';
+                    const orgB = b.org || '';
+                    // 如果都沒有 org，保持原順序
+                    if (!orgA && !orgB) return 0;
+                    // 沒有 org 的排在最後
+                    if (!orgA) return 1;
+                    if (!orgB) return -1;
+
+                    // 提取 AS 號碼後面的名稱部分
+                    // 格式通常是 "AS12345 Organization Name" 或 "AS12345"
+                    const extractOrgName = (org) => {
+                        // 移除 "AS" 開頭和數字部分
+                        const match = org.match(/^AS\d+\s*(.+)?$/i);
+                        if (match && match[1]) {
+                            return match[1].trim();
+                        }
+                        // 如果沒有名稱部分，返回空字串（會排在最後）
+                        return '';
+                    };
+
+                    const nameA = extractOrgName(orgA);
+                    const nameB = extractOrgName(orgB);
+
+                    // 如果都沒有名稱，按照完整 org 排序
+                    if (!nameA && !nameB) {
+                        return orgA.localeCompare(orgB, 'zh-TW');
+                    }
+                    // 沒有名稱的排在最後
+                    if (!nameA) return 1;
+                    if (!nameB) return -1;
+                    // 按照名稱排序
+                    return nameA.localeCompare(nameB, 'zh-TW');
+                });
         });
 
         // 搜尋相關方法
@@ -559,11 +697,16 @@ const vueRootApp = createApp({
             foreignDirectCount,
             summaryText,
             summaryClass,
+            connectionStatsItems,
             domesticZeroClass,
             cloudZeroClass,
             foreignZeroClass,
             rawDataUrl,
             detailsJson,
+            siteLocation,
+            connectionDetails,
+            formatCategory,
+            getCategoryClass,
             // 搜尋相關
             allUrls: allUrlsRef,
             searchQuery,

@@ -34,8 +34,47 @@
                     <p class="score score-X" :class="foreignZeroClass">境外連線 (X)<br><strong style="font-size: 1.3em;">{{foreignCount}}</strong></p>
                 </div>
                 <p>在開啟 <a :href="'https://' + displayUrl" target="_blank">{{displayUrl}}</a> 時，我們總共識別出來自 {{uniqueDomains}} 個網域的 {{requestCount}} 個請求。</p>
-                <p>其中 {{domesticCount}} 項為境內直接連線，{{cloudCount}} 項為境內的雲端服務，{{foreignCloudCount}} 項為境外的雲端服務，{{foreignDirectCount}} 項為境外其他連線。</p>
+                <p v-if="connectionStatsItems && connectionStatsItems.length > 0">
+                    其中
+                    <template v-for="(item, index) in connectionStatsItems" :key="index">
+                        {{item.count}} 項為<!--
+                        --><span v-if="item.key === 'domestic'">境內直接連線</span><!--
+                        --><span v-else-if="item.key === 'cloud'">境內的雲端服務</span><!--
+                        --><span v-else-if="item.key === 'foreignCloud'">境外的雲端服務</span><!--
+                        --><span v-else-if="item.key === 'foreignDirect'">境外其他連線</span><!--
+                        --><span v-if="index < connectionStatsItems.length - 1">，</span><!--
+                        --><span v-else>。</span>
+                    </template>
+                </p>
                 <p>境內公用雲端服務——目前尚不知道在對外斷線時的可用性，需由服務提供者釐清說明。</p>
+            </div>
+
+            <div class="details-container">
+                <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
+                    <span>連線資訊</span>
+                </div>
+                <div class="test-env-content">
+                    <div class="test-env-section" v-if="siteLocation">
+                        <h4>網站位置</h4>
+                        <ul class="connection-list">
+                            <li class="connection-item">
+                                <span v-if="siteLocation.category" :class="['category-badge', siteLocation.categoryClass]">{{siteLocation.categoryText}}</span>
+                                <span v-if="siteLocation.org" class="connection-org">{{siteLocation.org}}</span>
+                                <span v-if="siteLocation.ip" class="connection-domain">{{siteLocation.ip}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="test-env-section" v-if="connectionDetails && connectionDetails.length > 0">
+                        <h4>連線資訊</h4>
+                        <ul class="connection-list">
+                            <li v-for="(connection, index) in connectionDetails" :key="index" class="connection-item">
+                                <span v-if="connection.category" :class="['category-badge', connection.categoryClass]">{{connection.categoryText}}</span>
+                                <span v-if="connection.org" class="connection-org">{{connection.org}}</span>
+                                <span class="connection-domain">{{connection.domain}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="details-container">
@@ -71,6 +110,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="details-container">
                 <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
                     <span>原始資料</span>
