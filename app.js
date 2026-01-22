@@ -465,6 +465,24 @@ const vueRootApp = createApp({
             return 'will-work';
         });
 
+        // 生成連線統計項目列表（只包含非零項目）
+        const connectionStatsItems = computed(() => {
+            const items = [];
+            if (domesticCount.value > 0) {
+                items.push({ count: domesticCount.value, key: 'domestic' });
+            }
+            if (cloudCount.value > 0) {
+                items.push({ count: cloudCount.value, key: 'cloud' });
+            }
+            if (foreignCloudCount.value > 0) {
+                items.push({ count: foreignCloudCount.value, key: 'foreignCloud' });
+            }
+            if (foreignDirectCount.value > 0) {
+                items.push({ count: foreignDirectCount.value, key: 'foreignDirect' });
+            }
+            return items;
+        });
+
         const domesticZeroClass = computed(() => domesticCount.value === 0 ? ' score-zero' : '');
         const cloudZeroClass = computed(() => cloudCount.value === 0 ? ' score-zero' : '');
         const foreignZeroClass = computed(() => foreignCount.value === 0 ? ' score-zero' : '');
@@ -679,6 +697,7 @@ const vueRootApp = createApp({
             foreignDirectCount,
             summaryText,
             summaryClass,
+            connectionStatsItems,
             domesticZeroClass,
             cloudZeroClass,
             foreignZeroClass,
