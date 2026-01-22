@@ -9,9 +9,8 @@
     <meta property="og:title" content="海纜斷掉時網站會動嗎？">
     <meta property="og:description" content="檢測網站在台灣對外海纜斷掉時的可用性">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://irvin.github.io/web-resilience-test-result/">
-    <meta property="og:canonical" content="https://irvin.github.io/web-resilience-test-result/">
-    <link id="canonical" rel="canonical" href="https://irvin.github.io/web-resilience-test-result/">
+    <meta property="og:url" content="https://resilience.ocf.tw/web">
+    <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web">
 
     <style>
         * {
@@ -815,11 +814,10 @@
             }
 
             // 更新 meta 標籤
-            const baseUrl = 'https://resilience.ocf.tw/web/';
-            const currentUrl = urlParam ? `${baseUrl}?url=${urlParam}` : baseUrl;
+            const baseUrl = 'https://resilience.ocf.tw/web';
+            const currentUrl = urlParam ? `${baseUrl}/${urlParam}` : baseUrl;
 
             document.querySelector('link[rel="canonical"]').href = currentUrl;
-            document.querySelector('meta[property="og:canonical"]').content = currentUrl;
             document.querySelector('meta[property="og:url"]').content = currentUrl;
             const cleanUrlParam = urlParam ? cleanUrlForNavigation(urlParam) : '';
             document.title = cleanUrlParam ? `海纜斷掉時，${cleanUrlParam} 會動嗎？` : '海纜斷掉時網站會動嗎？';
