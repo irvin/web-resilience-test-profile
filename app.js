@@ -479,6 +479,91 @@ const vueRootApp = createApp({
             return JSON.stringify(vueResult.value, null, 2);
         });
 
+        // 格式化 category 為中文
+        function formatCategory(category) {
+            const categoryMap = {
+                'domestic/cloud': '境內／雲端',
+                'foreign/cloud': '境外／雲端',
+                'domestic/direct': '境內／其他',
+                'foreign/direct': '境外／其他'
+            };
+            return categoryMap[category] || category;
+        }
+
+        // 取得 category 對應的 CSS class
+        function getCategoryClass(category) {
+            const classMap = {
+                'domestic/cloud': 'category-domestic-cloud',
+                'foreign/cloud': 'category-foreign-cloud',
+                'domestic/direct': 'category-domestic-direct',
+                'foreign/direct': 'category-foreign-direct'
+            };
+            return classMap[category] || '';
+        }
+
+        // 網站位置（來自 domainDetails[0]）
+        const siteLocation = computed(() => {
+            if (!vueResult.value || !vueResult.value.domainDetails || vueResult.value.domainDetails.length === 0) {
+                return null;
+            }
+            const firstDetail = vueResult.value.domainDetails[0];
+            return {
+                ip: firstDetail.ipinfo?.ip || '',
+                org: firstDetail.ipinfo?.org || '',
+                category: firstDetail.category || '',
+                categoryText: formatCategory(firstDetail.category || ''),
+                categoryClass: getCategoryClass(firstDetail.category || '')
+            };
+        });
+
+        // 連線資訊（來自 domainDetails[1] 之後）
+        const connectionDetails = computed(() => {
+            if (!vueResult.value || !vueResult.value.domainDetails || vueResult.value.domainDetails.length <= 1) {
+                return [];
+            }
+            return vueResult.value.domainDetails.slice(1)
+                .filter(detail => {
+                    // 篩除沒有有效資料的連線
+                    // 必須有 category
+                    if (!detail.category) {
+                        return false;
+                    }
+                    // 必須有有效的 domain
+                    let domain = '';
+                    try {
+                        const url = new URL(detail.originalUrl);
+                        domain = url.hostname;
+                    } catch (e) {
+                        // 如果無法解析 URL，檢查是否有 ipinfo.domain
+                        domain = detail.ipinfo?.domain || '';
+                    }
+                    // 如果 domain 為空，則篩除
+                    if (!domain || domain.trim() === '') {
+                        return false;
+                    }
+                    return true;
+                })
+                .map(detail => {
+                    // 從 originalUrl 提取 domain
+                    let domain = '';
+                    try {
+                        const url = new URL(detail.originalUrl);
+                        domain = url.hostname;
+                    } catch (e) {
+                        // 如果無法解析，使用 ipinfo.domain
+                        domain = detail.ipinfo?.domain || detail.originalUrl;
+                    }
+                    return {
+                        domain: domain,
+                        originalUrl: detail.originalUrl,
+                        org: detail.ipinfo?.org || '',
+                        category: detail.category || '',
+                        categoryText: formatCategory(detail.category || ''),
+                        categoryClass: getCategoryClass(detail.category || '')
+                    };
+                });
+        });
+
         // 搜尋相關方法
         function loadMore() {
             maxDisplay.value = Math.min(totalMatched.value, maxDisplay.value + 100);
@@ -564,6 +649,10 @@ const vueRootApp = createApp({
             foreignZeroClass,
             rawDataUrl,
             detailsJson,
+            siteLocation,
+            connectionDetails,
+            formatCategory,
+            getCategoryClass,
             // 搜尋相關
             allUrls: allUrlsRef,
             searchQuery,

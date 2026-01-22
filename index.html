@@ -71,6 +71,35 @@
                     </div>
                 </div>
             </div>
+
+            <div class="details-container">
+                <div class="test-env-toggle" onclick="toggleTestEnv(this)">
+                    <span>連線資訊</span>
+                </div>
+                <div class="test-env-content expanded">
+                    <div class="test-env-section" v-if="siteLocation">
+                        <h4>網站位置</h4>
+                        <ul class="connection-list">
+                            <li class="connection-item">
+                                <span v-if="siteLocation.category" :class="['category-badge', siteLocation.categoryClass]">{{siteLocation.categoryText}}</span>
+                                <span v-if="siteLocation.org" class="connection-org">{{siteLocation.org}}</span>
+                                <span v-if="siteLocation.ip" class="connection-domain">{{siteLocation.ip}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="test-env-section" v-if="connectionDetails && connectionDetails.length > 0">
+                        <h4>連線資訊</h4>
+                        <ul class="connection-list">
+                            <li v-for="(connection, index) in connectionDetails" :key="index" class="connection-item">
+                                <span v-if="connection.category" :class="['category-badge', connection.categoryClass]">{{connection.categoryText}}</span>
+                                <span v-if="connection.org" class="connection-org">{{connection.org}}</span>
+                                <span class="connection-domain">{{connection.domain}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div class="details-container">
                 <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
                     <span>原始資料</span>
