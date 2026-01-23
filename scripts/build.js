@@ -16,8 +16,20 @@ const SERVER_PORT = 3000;
 
 // 測試模式：只處理第一個 URL（預設行為）
 // --all 參數：編譯所有網站
+// 直接傳入網站名稱作為參數：編譯特定網站（例如：node build.js www.article19.org）
 const BUILD_ALL = process.argv.includes('--all');
-const TEST_MODE = !BUILD_ALL; // 如果沒有 --all，就是測試模式
+
+// 檢查是否有直接傳入的參數（不是以 -- 開頭的）
+let BUILD_SITE = null;
+if (!BUILD_ALL) {
+  // 過濾掉 node、腳本路徑、以及所有以 -- 開頭的參數
+  const directArgs = process.argv.slice(2).filter(arg => !arg.startsWith('--'));
+  if (directArgs.length > 0) {
+    BUILD_SITE = directArgs[0];
+  }
+}
+
+const TEST_MODE = !BUILD_ALL && !BUILD_SITE; // 如果沒有 --all 和直接傳入的網站名稱，就是測試模式
 const TEST_LIMIT = TEST_MODE ? 1 : null;
 
 // 將網址轉換為目錄路徑（用於創建目錄結構）
@@ -317,7 +329,9 @@ async function processUrlWorker(browser, urlQueue, workerId, totalUrls) {
 // 主建置函數
 async function build() {
   console.log('開始建置靜態頁面...');
-  if (TEST_MODE) {
+  if (BUILD_SITE) {
+    console.log(`🎯 特定網站模式：只處理 ${BUILD_SITE}\n`);
+  } else if (TEST_MODE) {
     console.log('🧪 測試模式：只處理第一個網址（使用 npm run build:all 編譯全部）\n');
   } else {
     console.log('🚀 完整建置模式：處理所有網址\n');
@@ -358,7 +372,30 @@ async function build() {
   try {
     // 讀取 URL 列表
     const urls = loadStatisticData();
-    const urlsToProcess = TEST_LIMIT ? urls.slice(0, TEST_LIMIT) : urls;
+
+    // 根據模式過濾 URL
+    let urlsToProcess;
+    if (BUILD_SITE) {
+      // 過濾出匹配的網站（支援部分匹配，例如 "article19.org" 可以匹配 "www.article19.org"）
+      const sitePattern = BUILD_SITE.replace(/^https?:\/\//, '').replace(/\/+$/, '');
+      urlsToProcess = urls.filter(url => {
+        const cleanUrl = url.replace(/^https?:\/\//, '').replace(/\/+$/, '');
+        return cleanUrl.includes(sitePattern) || sitePattern.includes(cleanUrl);
+      });
+
+      if (urlsToProcess.length === 0) {
+        console.error(`❌ 找不到匹配 "${BUILD_SITE}" 的網站`);
+        console.error(`   請確認網站名稱是否正確`);
+        process.exit(1);
+      }
+
+      console.log(`找到 ${urlsToProcess.length} 個匹配的網站：`);
+      urlsToProcess.forEach(url => console.log(`   - ${url}`));
+      console.log('');
+    } else {
+      urlsToProcess = TEST_LIMIT ? urls.slice(0, TEST_LIMIT) : urls;
+    }
+
     console.log(`找到 ${urls.length} 個測試網址，將處理 ${urlsToProcess.length} 個\n`);
 
     // 創建 URL 隊列（複製一份，避免修改原始陣列）
