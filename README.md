@@ -28,6 +28,16 @@ git submodule update --init --recursive
 git submodule update --remote test-result
 ```
 
+## 快速參考
+
+| 指令 | 說明 |
+|------|------|
+| `npm run build` | 測試建置（只處理第一個網址） |
+| `npm run build <網站名稱>` | 建置特定網站（例如：`npm run build www.article19.org`） |
+| `npm run build:all` | 建置所有網站 |
+| `npm run build-worktree` | 手動執行 worktree 操作（不執行建置） |
+| `npm run deploy` | 推送 `gh-pages` 分支到遠端 |
+
 ## 建置流程
 
 ### 測試建置（只編譯一個網站，預設）
@@ -40,6 +50,28 @@ npm run build
 - 只處理第一個網址，用於快速測試建置流程
 - 建置完成後自動準備部署到 `gh-pages` 分支
 
+### 建置特定網站
+
+```bash
+npm run build www.article19.org
+```
+
+這會：
+- 只處理指定的網站（支援部分匹配，例如 `article19.org` 可以匹配 `www.article19.org`）
+- 自動過濾出所有匹配的網站並進行建置
+- 建置完成後自動準備部署到 `gh-pages` 分支
+
+**範例：**
+```bash
+# 建置 www.article19.org
+npm run build www.article19.org
+
+# 使用部分名稱也可以（會匹配所有包含該字串的網站）
+npm run build article19.org
+
+# 如果找不到匹配的網站，會顯示錯誤訊息並退出
+```
+
 ### 建置所有網站
 
 ```bash
@@ -48,7 +80,7 @@ npm run build:all
 
 這會：
 - 從 submodule 讀取 `statistic.tsv` 取得所有測試網址
-- 使用 4 個並行的瀏覽器實例處理
+- 使用 8 個並行的瀏覽器實例處理
 - 為每個網址生成靜態 HTML 頁面到 `web/` 目錄
 - 每個網址會建立一個目錄，例如 `web/google.com/index.html`
 - 主頁面（`web/index.html`）會從線上 API 讀取 JSON 和 statistic.tsv 資料
@@ -66,6 +98,18 @@ npm run deploy
 - 推送 `gh-pages` 分支到遠端
 - 清理本地 worktree
 
+### 手動執行 worktree 操作
+
+如果只需要準備 worktree 而不執行建置，可以使用：
+
+```bash
+npm run build-worktree
+```
+
+這會：
+- 將 `web/` 的內容部署到 `gh-pages` 分支（不執行建置）
+- 適用於已經完成建置，只需要更新 worktree 的情況
+
 ## 專案結構
 
 ```
@@ -82,6 +126,7 @@ web-resilience-profile/
 │   └── ...
 ├── scripts/
 │   ├── build.js            # 建置腳本
+│   ├── build-wrapper.js    # 建置包裝腳本（處理參數傳遞）
 │   ├── build-worktree.js  # 部署腳本
 │   ├── deploy.js           # 推送與清理腳本
 │   └── clean-worktree.js   # 清理腳本（內部使用）
@@ -94,8 +139,9 @@ web-resilience-profile/
 ### 建置流程
 
 1. **讀取資料**：從 submodule (`test-result`) 讀取 `statistic.tsv` 取得所有測試網址
-2. **啟動 HTTP 伺服器**：在本地啟動 HTTP 伺服器提供 `index.html`（建置時從 submodule 讀取 JSON 和 statistic.tsv）
-4. **並行處理**：使用 4 個 Playwright 瀏覽器實例並行處理
+2. **過濾網址**（可選）：如果指定了網站名稱，會過濾出匹配的網址（支援部分匹配）
+3. **啟動 HTTP 伺服器**：在本地啟動 HTTP 伺服器提供 `index.html`（建置時從 submodule 讀取 JSON 和 statistic.tsv）
+4. **並行處理**：使用 8 個 Playwright 瀏覽器實例並行處理
 5. **渲染頁面**：每個網址透過 headless browser 載入並渲染
 6. **生成靜態 HTML**：取得渲染後的完整 HTML，包含：
    - 正確的 title 和 meta 標籤（SEO 友善）
