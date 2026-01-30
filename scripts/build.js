@@ -360,10 +360,15 @@ async function build() {
     }
   });
 
-  // 注意：statistic.tsv 和 JSON 檔案都不複製到 web
-  // - 建置時：從 submodule 讀取 statistic.tsv 取得 URL 列表
+  // 複製 statistic.tsv 到輸出目錄，部署後主頁從本站讀取（不需再從 api repo 抓）
+  if (fs.existsSync(STATISTIC_TSV_PATH)) {
+    fs.copyFileSync(STATISTIC_TSV_PATH, path.join(OUTPUT_DIR, 'statistic.tsv'));
+  }
+
+  // 注意：JSON 檔案不複製到 web
+  // - 建置時：從 submodule 讀取 statistic.tsv 取得 URL 列表，並複製到 web 供部署
   // - 建置時的 HTTP 伺服器：從 submodule 提供檔案（用於渲染）
-  // - 部署後的主頁面：從線上 API 讀取 statistic.tsv 和 JSON
+  // - 部署後的主頁面：從本站讀取 statistic.tsv，JSON 仍從 GitHub raw 讀取
   // - 靜態頁面（如 web/google.com/index.html）：使用內嵌的資料，不需要額外檔案
 
   // 啟動 HTTP 伺服器

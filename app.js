@@ -1,6 +1,7 @@
 const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/irvin/web-resilience-test-result/refs/heads/main/';
 const GITHUB_WEB_URL = 'https://github.com/irvin/web-resilience-test-result/blob/main/';
-const STATISTIC_TSV_URL = GITHUB_RAW_URL + 'statistic.tsv';
+// 部署後 statistic.tsv 在 gh-pages 根目錄，從本站讀取即可
+const STATISTIC_TSV_URL = '/statistic.tsv';
 
 // 快取 key
 const CACHE_KEY = 'web_resilience_urls_cache';
