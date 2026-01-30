@@ -1,6 +1,7 @@
 const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/irvin/web-resilience-test-result/refs/heads/main/';
 const GITHUB_WEB_URL = 'https://github.com/irvin/web-resilience-test-result/blob/main/';
-const STATISTIC_TSV_URL = GITHUB_RAW_URL + 'statistic.tsv';
+// 部署後 statistic.tsv 在 gh-pages 根目錄，從本站讀取即可
+const STATISTIC_TSV_URL = '/statistic.tsv';
 
 // 快取 key
 const CACHE_KEY = 'web_resilience_urls_cache';
@@ -190,16 +191,16 @@ function selectUrl(url) {
     // 跳轉時使用標準化後的網址（移除協定與多餘結尾斜線，保留 www.）
     const cleanUrl = cleanUrlForNavigation(url);
 
-    // 統一使用 /web/_domain_ 格式
-    const staticPath = `/web/${cleanUrl}/`;
+    // 統一使用 /_domain_ 格式
+    const staticPath = `/${cleanUrl}/`;
     window.location.href = staticPath;
 }
 
 // 從 URL 路徑中提取 domain（用於 404 處理）
 function extractDomainFromPath() {
     const pathname = window.location.pathname;
-    // 匹配 /web/{domain}/ 格式
-    const match = pathname.match(/^\/web\/([^\/]+)\/?$/);
+    // 匹配 /{domain}/ 格式
+    const match = pathname.match(/^\/([^\/]+)\/?$/);
     if (match) {
         return match[1];
     }
@@ -209,7 +210,7 @@ function extractDomainFromPath() {
 async function loadResults() {
     let urlParam = getUrlParam();
 
-    // 404 處理：如果本身非 static page，則嘗試從路徑擷取 /web/{domain}，視為 URL 參數
+    // 404 處理：如果本身非 static page，則嘗試從路徑擷取 /{domain}，視為 URL 參數
     if (!urlParam && !isStaticPage()) {
         const domainFromPath = extractDomainFromPath();
         if (domainFromPath) {
@@ -220,8 +221,8 @@ async function loadResults() {
     // 如果有 URL 參數，且不在 build 環境中（localhost:3000），直接跳轉到對應的靜態頁面
     if (urlParam && !window.location.hostname.includes('localhost') && window.location.port !== '3000') {
         const cleanUrl = cleanUrlForNavigation(urlParam);
-        // 統一使用 /web/_domain_ 格式
-        const staticPath = `/web/${cleanUrl}/`;
+        // 統一使用 /_domain_ 格式
+        const staticPath = `/${cleanUrl}/`;
         window.location.href = staticPath;
         return;
     }
@@ -291,7 +292,7 @@ async function loadResults() {
     }
 
     // 更新 meta 標籤
-    const baseUrl = 'https://resilience.ocf.tw/web';
+    const baseUrl = 'https://web.resilience.ocf.tw';
     const currentUrl = urlParam ? `${baseUrl}/${urlParam}` : baseUrl;
 
     document.querySelector('link[rel="canonical"]').href = currentUrl;

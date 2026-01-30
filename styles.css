@@ -306,6 +306,17 @@ footer hr {
     word-break: break-all;
 }
 
+a.search-dropdown-item {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+a.search-dropdown-item:hover,
+a.search-dropdown-item.selected {
+    text-decoration: none;
+}
+
 .search-dropdown-item:hover,
 .search-dropdown-item.selected {
     background-color: #f0f7ff;

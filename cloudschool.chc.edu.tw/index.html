@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>海纜斷掉時，cloudschool.chc.edu.tw 會動嗎？</title>
+    <link rel="icon" href="/favicon.ico">
 
     <!-- Open Graph 標籤 -->
     <meta property="og:title" content="海纜斷掉時，cloudschool.chc.edu.tw 會動嗎？">
     <meta property="og:description" content="不確定">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://resilience.ocf.tw/web/cloudschool.chc.edu.tw">
-    <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/cloudschool.chc.edu.tw">
+    <meta property="og:url" content="https://web.resilience.ocf.tw/cloudschool.chc.edu.tw">
+    <link id="canonical" rel="canonical" href="https://web.resilience.ocf.tw/cloudschool.chc.edu.tw">
 
     <link rel="stylesheet" href="../styles.css">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
 
     <script>
         // 標記此頁面為靜態編譯頁面
@@ -90,7 +91,8 @@
             >
 
             <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length">
-                <div
+                <a
+                    :href=`/${formatDisplayUrl(url)}`
                     class="search-dropdown-item"
                     v-for="(url, index) in displayedUrls"
                     :key="url"
@@ -100,7 +102,7 @@
                     @click="selectUrl(url)"
                 >
                     {{ formatDisplayUrl(url) }}
-                </div>
+                </a>
             </div>
             <!-- 找不到結果時顯示的區塊 -->
             <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
