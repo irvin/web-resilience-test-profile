@@ -351,7 +351,14 @@ async function build() {
   fs.writeFileSync(path.join(OUTPUT_DIR, '404.html'), html404, 'utf8');
 
   // 複製其他資源檔案
-  const assets = ['g0v_logo.svg', 'Logo_Compact-OCF_Purple.svg', 'APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg', 'styles.css', 'app.js'];
+  const assets = [
+    'g0v_logo.svg', 
+    'Logo_Compact-OCF_Purple.svg', 
+    'APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg', 
+    'styles.css', 
+    'app.js', 
+    'favicon.ico'
+  ];
   assets.forEach(asset => {
     const srcPath = path.join(ROOT_DIR, asset);
     const destPath = path.join(OUTPUT_DIR, asset);
