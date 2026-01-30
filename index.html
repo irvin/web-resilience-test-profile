@@ -134,7 +134,8 @@
             >
 
             <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length">
-                <div
+                <a
+                    :href=`/${formatDisplayUrl(url)}`
                     class="search-dropdown-item"
                     v-for="(url, index) in displayedUrls"
                     :key="url"
@@ -144,7 +145,7 @@
                     @click="selectUrl(url)"
                 >
                     {{ formatDisplayUrl(url) }}
-                </div>
+                </a>
             </div>
             <!-- 找不到結果時顯示的區塊 -->
             <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
