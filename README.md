@@ -5,7 +5,7 @@
 ## 功能說明
 
 這個專案會：
-1. 從 GitHub 讀取 `statistic.tsv` 取得所有測試過的網址
+1. 從 submodule 讀取 `statistic.tsv` 取得所有測試過的網址
 2. 為每個網址生成獨立的靜態 HTML 頁面
 3. 使用 headless browser（Playwright）渲染 Vue 應用，確保 SEO 友善
 4. 將建置產物部署到 `gh-pages` 分支，供其他 repo 使用 submodule 引入
@@ -142,8 +142,7 @@ web-resilience-profile/
 2. **過濾網址**（可選）：如果指定了網站名稱，會過濾出匹配的網址（支援部分匹配）
 3. **啟動 HTTP 伺服器**：在本地啟動 HTTP 伺服器提供 `index.html`（建置時從 submodule 讀取 JSON 和 statistic.tsv）
 4. **並行處理**：使用 8 個 Playwright 瀏覽器實例並行處理
-5. **渲染頁面**：每個網址透過 headless browser 載入並渲染
-6. **生成靜態 HTML**：取得渲染後的完整 HTML，包含：
+5. **生成靜態 HTML**：透過 headless browser 載入頁面並渲染，生成完整 HTML，包含：
    - 正確的 title 和 meta 標籤（SEO 友善）
    - 已渲染的內容（搜尋引擎可直接索引）
    - Vue 互動功能（用戶可以展開/收合詳細資訊）
@@ -151,7 +150,7 @@ web-resilience-profile/
 ### 路徑處理
 
 - 每個網址會建立一個目錄，例如 `google.com/index.html`
-- 訪問 URL 為 `https://domain.com/web/google.com/`（無需 `.html` 副檔名）
+- 對應訪問 URL 為 `https://resilience.ocf.tw/web/google.com/`
 
 ## 相關連結
 
