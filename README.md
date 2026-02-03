@@ -150,7 +150,7 @@ web-resilience-profile/
 ### 路徑處理
 
 - 每個網址會建立一個目錄，例如 `google.com/index.html`
-- 對應訪問 URL 為 `https://web.resilience.ocf.tw/google.com/`
+- 對應訪問 URL 為 `https://resilience.ocf.tw/web/google.com/`
 
 ## 相關連結
 

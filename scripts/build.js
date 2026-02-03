@@ -468,7 +468,6 @@ async function build() {
       if (firstResult) {
         const dirPath = urlToDirPath(firstResult.url);
         console.log(`\n📄 測試檔案: ${path.join(OUTPUT_DIR, dirPath, 'index.html')}`);
-        // 本地建置產物在 web/ 下，從專案根目錄 serve 時需加 /web/ 前綴
         console.log(`   URL: http://127.0.0.1:5500/web/${dirPath}/`);
         console.log(`   可以在瀏覽器中開啟查看結果`);
       }
