@@ -136,14 +136,14 @@
 
             <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length">
                 <a
-                    :href=`/${formatDisplayUrl(url)}`
+                    :href=`/web/${formatDisplayUrl(url)}/`
                     class="search-dropdown-item"
                     v-for="(url, index) in displayedUrls"
                     :key="url"
                     :data-url="url"
                     :data-index="index"
                     :class="{ selected: index === selectedIndex }"
-                    @click="selectUrl(url)"
+                    @click.prevent="selectUrl(url)"
                 >
                     {{ formatDisplayUrl(url) }}
                 </a>
