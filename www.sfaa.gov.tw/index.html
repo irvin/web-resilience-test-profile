@@ -10,8 +10,8 @@
     <meta property="og:title" content="海纜斷掉時，www.sfaa.gov.tw 會動嗎？">
     <meta property="og:description" content="不確定">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://web.resilience.ocf.tw/www.sfaa.gov.tw">
-    <link id="canonical" rel="canonical" href="https://web.resilience.ocf.tw/www.sfaa.gov.tw">
+    <meta property="og:url" content="https://resilience.ocf.tw/web/www.sfaa.gov.tw">
+    <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/www.sfaa.gov.tw">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -221,14 +221,14 @@
 
             <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length">
                 <a
-                    :href=`/${formatDisplayUrl(url)}`
+                    :href=`/web/${formatDisplayUrl(url)}/`
                     class="search-dropdown-item"
                     v-for="(url, index) in displayedUrls"
                     :key="url"
                     :data-url="url"
                     :data-index="index"
                     :class="{ selected: index === selectedIndex }"
-                    @click="selectUrl(url)"
+                    @click.prevent="selectUrl(url)"
                 >
                     {{ formatDisplayUrl(url) }}
                 </a>

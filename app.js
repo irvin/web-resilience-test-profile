@@ -1,7 +1,5 @@
 const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/irvin/web-resilience-test-result/refs/heads/main/';
 const GITHUB_WEB_URL = 'https://github.com/irvin/web-resilience-test-result/blob/main/';
-// 部署後 statistic.tsv 在 gh-pages 根目錄，從本站讀取即可
-const STATISTIC_TSV_URL = '/statistic.tsv';
 
 // 快取 key
 const CACHE_KEY = 'web_resilience_urls_cache';
@@ -10,6 +8,26 @@ const CACHE_EXPIRE_TIME = 24 * 60 * 60 * 1000;
 
 // 全域變數
 let allUrls = [];
+
+function isLocalhost() {
+    const host = window.location.hostname;
+    return host === 'localhost' || host === '127.0.0.1';
+}
+
+function getLocalDynamicBasePath() {
+    const pathname = window.location.pathname || '/';
+    return pathname.startsWith('/web/') ? '/web/' : '/';
+}
+
+// 統一取 statistic.tsv 的位置：
+// - localhost：從 submodule 的 test-result/statistic.tsv 讀取
+// - 線上：build 時會把 statistic.tsv 放在 /web/ 下（例如 /web/statistic.tsv）
+function getStatisticTsvUrl() {
+    if (isLocalhost()) {
+        return '/test-result/statistic.tsv';
+    }
+    return '/web/statistic.tsv';
+}
 
 async function fetchTestResult(filename) {
     try {
@@ -93,7 +111,7 @@ async function loadStatisticData() {
 
     // 載入 TSV
     try {
-        const response = await fetch(STATISTIC_TSV_URL);
+        const response = await fetch(getStatisticTsvUrl());
         const text = await response.text();
         const lines = text.split('\n').filter(line => line.trim());
 
@@ -191,16 +209,22 @@ function selectUrl(url) {
     // 跳轉時使用標準化後的網址（移除協定與多餘結尾斜線，保留 www.）
     const cleanUrl = cleanUrlForNavigation(url);
 
-    // 統一使用 /_domain_ 格式
-    const staticPath = `/${cleanUrl}/`;
+    // localhost：維持動態模式，用 ?url= 觀看即時狀態
+    if (isLocalhost()) {
+        window.location.href = `${getLocalDynamicBasePath()}?url=${encodeURIComponent(cleanUrl)}`;
+        return;
+    }
+
+    // 統一使用 /web/_domain_ 格式
+    const staticPath = `/web/${cleanUrl}/`;
     window.location.href = staticPath;
 }
 
 // 從 URL 路徑中提取 domain（用於 404 處理）
 function extractDomainFromPath() {
     const pathname = window.location.pathname;
-    // 匹配 /{domain}/ 格式
-    const match = pathname.match(/^\/([^\/]+)\/?$/);
+    // 匹配 /web/{domain}/ 格式
+    const match = pathname.match(/^\/web\/([^\/]+)\/?$/);
     if (match) {
         return match[1];
     }
@@ -210,7 +234,7 @@ function extractDomainFromPath() {
 async function loadResults() {
     let urlParam = getUrlParam();
 
-    // 404 處理：如果本身非 static page，則嘗試從路徑擷取 /{domain}，視為 URL 參數
+    // 404 處理：如果本身非 static page，則嘗試從路徑擷取 /web/{domain}，視為 URL 參數
     if (!urlParam && !isStaticPage()) {
         const domainFromPath = extractDomainFromPath();
         if (domainFromPath) {
@@ -218,11 +242,12 @@ async function loadResults() {
         }
     }
 
-    // 如果有 URL 參數，且不在 build 環境中（localhost:3000），直接跳轉到對應的靜態頁面
-    if (urlParam && !window.location.hostname.includes('localhost') && window.location.port !== '3000') {
+    // 線上只有靜態：如果有 ?url=，在線上直接跳轉到對應的靜態頁面
+    // localhost（任何 port）則保留動態模式，方便用 Live Server 檢視
+    if (urlParam && !isLocalhost()) {
         const cleanUrl = cleanUrlForNavigation(urlParam);
-        // 統一使用 /_domain_ 格式
-        const staticPath = `/${cleanUrl}/`;
+        // 統一使用 /web/_domain_ 格式
+        const staticPath = `/web/${cleanUrl}/`;
         window.location.href = staticPath;
         return;
     }
@@ -292,7 +317,7 @@ async function loadResults() {
     }
 
     // 更新 meta 標籤
-    const baseUrl = 'https://web.resilience.ocf.tw';
+    const baseUrl = 'https://resilience.ocf.tw/web';
     const currentUrl = urlParam ? `${baseUrl}/${urlParam}` : baseUrl;
 
     document.querySelector('link[rel="canonical"]').href = currentUrl;

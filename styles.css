@@ -471,4 +471,38 @@ a.search-dropdown-item.selected {
         font-size: 1.1em;
     }
 
+    /* 手機上：每個 connection-item 內的三個 span 各佔一行，過長自動換行 */
+    .test-env-section .connection-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .test-env-section .connection-item > span {
+        display: inline-block;
+        max-width: 100%;
+        min-width: 0;
+    }
+    
+    .test-env-section .connection-item .category-badge {
+        line-height: 1;
+        padding: 6px;
+        margin-left: -3px;
+    }
+
+    .test-env-section .connection-org {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .test-env-section .connection-domain {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+
+    .category-badge {
+        margin-left: 0;
+    }
+
 }
