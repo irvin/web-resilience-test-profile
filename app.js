@@ -8,6 +8,7 @@ const CACHE_EXPIRE_TIME = 24 * 60 * 60 * 1000;
 
 // 全域變數
 let allUrls = [];
+let statisticLoaded = false;
 
 function isLocalhost() {
     const host = window.location.hostname;
@@ -147,6 +148,25 @@ async function loadStatisticData() {
     }
 }
 
+// 確保已載入統計資料與搜尋清單（lazy load）
+async function ensureStatisticLoaded() {
+    if (statisticLoaded && allUrls && allUrls.length > 0) {
+        // 已經載入過，且有資料，直接同步 Vue 狀態後返回
+        if (window.__vueState__ && window.__vueState__.allUrls) {
+            window.__vueState__.allUrls.value = allUrls;
+        }
+        return;
+    }
+
+    await loadStatisticData();
+    statisticLoaded = true;
+
+    // 將統計 URL 清單注入 Vue 狀態，供搜尋使用
+    if (window.__vueState__ && window.__vueState__.allUrls) {
+        window.__vueState__.allUrls.value = allUrls;
+    }
+}
+
 // 統一的 URL 清理函數
 // options: { removeProtocol: true, removeWww: false, removeTrailingSlash: true, toLowerCase: false }
 function cleanUrl(url, options = {}) {
@@ -242,22 +262,24 @@ async function loadResults() {
         }
     }
 
-    // 線上只有靜態：如果有 ?url=，在線上直接跳轉到對應的靜態頁面
+    // 線上只有靜態：如果有 ?url=，且該網址存在於 statistic.tsv 中，才在線上跳轉到對應的靜態頁面
     // localhost（任何 port）則保留動態模式，方便用 Live Server 檢視
     if (urlParam && !isLocalhost()) {
-        const cleanUrl = cleanUrlForNavigation(urlParam);
-        // 統一使用 /web/_domain_ 格式
-        const staticPath = `/web/${cleanUrl}/`;
-        window.location.href = staticPath;
-        return;
-    }
+        await ensureStatisticLoaded();
+        const targetKey = cleanUrlForNavigation(urlParam);
+        // 檢查 statistic.tsv 是否有這個網址（用同一套 cleanUrlForNavigation 規則比對）
+        const existsInStatistic = allUrls.some(url => {
+            return cleanUrlForNavigation(url) === targetKey;
+        });
 
-    // 載入統計資料（無論是否有 URL 參數都需要）
-    await loadStatisticData();
-
-    // 將統計 URL 清單注入 Vue 狀態，供搜尋使用
-    if (window.__vueState__ && window.__vueState__.allUrls) {
-        window.__vueState__.allUrls.value = allUrls;
+        if (existsInStatistic) {
+            // 統一使用 /web/_domain_ 格式
+            const staticPath = `/web/${targetKey}/`;
+            window.location.href = staticPath;
+            return;
+        }
+        // 如果不存在於 statistic.tsv，就不做 ?url → /web/{xxx} 的轉址
+        // 讓後面的動態流程處理（例如顯示「找不到結果」並開啟搜尋）
     }
 
     const resultsEl = document.getElementById('results');
@@ -275,6 +297,13 @@ async function loadResults() {
         }
         return;
     }
+
+    // 走到這裡的情況：
+    // - 動態首頁（無 urlParam）
+    // - 有 urlParam 但在 localhost
+    // - 有 urlParam 且在線上，但不在 statistic.tsv 中（不 redirect，改由動態流程處理）
+    // 這些情境都需要統計資料來支援搜尋體驗，因此在此 lazy 載入
+    await ensureStatisticLoaded();
 
     if (!urlParam) {
         // 無 URL 參數：只顯示搜尋框，隱藏結果區
@@ -682,7 +711,10 @@ const vueRootApp = createApp({
             selectedIndex.value = -1;
         }
 
-        function openSearch() {
+        async function openSearch() {
+            // 第一次打開搜尋時，才確保載入 statistic.tsv
+            await ensureStatisticLoaded();
+
             // 顯示搜尋框，隱藏「檢查其他網站」按鈕
             showSearch.value = true;
             showCheckOther.value = false;
