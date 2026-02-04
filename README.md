@@ -160,3 +160,7 @@ web-resilience-profile/
 ## License
 
 CC BY-NC-ND 4.0 International License
+
+## 🙏 致謝
+
+This work was supported by a grant from the APNIC Foundation, via the Information Society Innovation Fund (ISIF Asia).
