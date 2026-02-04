@@ -252,6 +252,16 @@ function extractDomainFromPath() {
 }
 
 async function loadResults() {
+    // 如果在舊的 GitHub Pages 網址上（irvin.github.io），且帶有 ?url= 參數，全部轉向到 resilience.ocf.tw
+    if (window.location.hostname === 'irvin.github.io') {
+        const search = window.location.search || '';
+        if (search.startsWith('?url=')) {
+            const hash = window.location.hash || '';
+            window.location.replace(`https://resilience.ocf.tw/web/${search}${hash}`);
+            return;
+        }
+    }
+
     let urlParam = getUrlParam();
 
     // 404 處理：如果本身非 static page，則嘗試從路徑擷取 /web/{domain}，視為 URL 參數
