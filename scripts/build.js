@@ -1,4 +1,5 @@
 const { chromium } = require('playwright');
+const { execFileSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const http = require('http');
@@ -13,6 +14,7 @@ const OUTPUT_DIR = path.join(ROOT_DIR, 'web');
 const TEMPLATE_FILE = path.join(ROOT_DIR, 'index.html');
 const BROWSER_INSTANCES = 8; // 同時開啟的瀏覽器實例數量
 const SERVER_PORT = 3000;
+const SITEMAP_BASE_URL = 'https://resilience.ocf.tw/web/'; // sitemap 的 base URL（/web）
 
 // 測試模式：只處理第一個 URL（預設行為）
 // --all 參數：編譯所有網站
@@ -402,7 +404,9 @@ async function build() {
       }
 
       console.log(`找到 ${urlsToProcess.length} 個匹配的網站：`);
-      urlsToProcess.forEach(url => console.log(`   - ${url}`));
+      urlsToProcess.forEach(url => {
+        console.log(`   - ${url}`);
+      });
       console.log('');
     } else {
       urlsToProcess = TEST_LIMIT ? urls.slice(0, TEST_LIMIT) : urls;
@@ -462,6 +466,18 @@ async function build() {
     console.log(`成功生成: ${successCount} 個頁面`);
     console.log(`失敗/跳過: ${failCount} 個網址`);
     console.log(`輸出目錄: ${OUTPUT_DIR}`);
+
+    // 生成 sitemap.xml（放在 web/，部署後位於 /web/sitemap.xml）
+    if (TEST_MODE) {
+      console.log('ℹ️  測試模式：不更新 sitemap.xml（保留原檔）');
+    } else {
+      try {
+        const sitemapScript = path.join(__dirname, 'generate-sitemap.js');
+        execFileSync(process.execPath, [sitemapScript, '--base', SITEMAP_BASE_URL, '--out', OUTPUT_DIR], { stdio: 'inherit' });
+      } catch (e) {
+        console.log(`⚠️  sitemap 生成失敗：${e.message}`);
+      }
+    }
 
     if (TEST_MODE && successCount > 0) {
       const firstResult = flatResults.find(r => r.success);

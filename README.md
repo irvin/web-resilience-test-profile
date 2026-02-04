@@ -35,6 +35,7 @@ git submodule update --remote test-result
 | `npm run build` | 測試建置（只處理第一個網址） |
 | `npm run build <網站名稱>` | 建置特定網站（例如：`npm run build www.article19.org`） |
 | `npm run build:all` | 建置所有網站 |
+| `npm run generate:sitemap` | 只產生 sitemap（不跑 Playwright） |
 | `npm run build-worktree` | 手動執行 worktree 操作（不執行建置） |
 | `npm run deploy` | 推送 `gh-pages` 分支到遠端 |
 
@@ -84,7 +85,29 @@ npm run build:all
 - 為每個網址生成靜態 HTML 頁面到 `web/` 目錄
 - 每個網址會建立一個目錄，例如 `web/google.com/index.html`
 - 主頁面（`web/index.html`）會從線上 API 讀取 JSON 和 statistic.tsv 資料
+- 建置完成後會在 `web/` 產生 `sitemap.xml`（部署後位於 `/web/sitemap.xml`）
 - 建置完成後自動準備部署到 `gh-pages` 分支
+
+## Sitemap（提交搜尋引擎用）
+
+### 產出位置
+
+- 建置後：`web/sitemap.xml`
+- 部署後：`https://resilience.ocf.tw/web/sitemap.xml`
+
+### 內容與日期（lastmod）規則
+
+- **sitemap 收錄哪些頁面**：以 `web/` 資料夾下「實際存在的子目錄」（且包含 `index.html`）為準，確保 sitemap 與部署內容一致
+- **主頁 `/web/` 的 lastmod**：使用 `web/index.html` 的檔案修改時間（mtime，`YYYY-MM-DD`）
+- **個別站點頁面 `/web/<domain>/` 的 lastmod**：使用 `web/<dir>/index.html` 的檔案修改時間（mtime，`YYYY-MM-DD`）
+
+> 備註：測試模式（`npm run build` 預設）不會更新 `web/sitemap.xml`，避免把 sitemap 變成只含 1 筆測試資料。
+
+### 只重建 sitemap（不跑 Playwright）
+
+```bash
+npm run generate:sitemap
+```
 
 ## 部署到 gh-pages 分支
 
@@ -129,6 +152,7 @@ web-resilience-profile/
 │   ├── build-wrapper.js    # 建置包裝腳本（處理參數傳遞）
 │   ├── build-worktree.js  # 部署腳本
 │   ├── deploy.js           # 推送與清理腳本
+│   ├── generate-sitemap.js # sitemap 生成腳本（輸出到 web/sitemap.xml）
 │   └── clean-worktree.js   # 清理腳本（內部使用）
 ├── index.html              # 原始模板
 └── package.json

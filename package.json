@@ -6,7 +6,8 @@
     "build": "node scripts/build-wrapper.js",
     "build:all": "node scripts/build.js --all && node scripts/build-worktree.js",
     "build-worktree": "node scripts/build-worktree.js",
-    "deploy": "node scripts/deploy.js"
+    "deploy": "node scripts/deploy.js",
+    "generate:sitemap": "node scripts/generate-sitemap.js --base https://resilience.ocf.tw/web/"
   },
   "dependencies": {
     "playwright": "^1.40.0"
