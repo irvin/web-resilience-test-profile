@@ -356,8 +356,9 @@ async function loadResults() {
     }
 
     // 更新 meta 標籤
-    const baseUrl = 'https://resilience.ocf.tw/web';
-    const currentUrl = urlParam ? `${baseUrl}/${urlParam}` : baseUrl;
+    const baseUrl = 'https://resilience.ocf.tw/web/';
+    const canonicalPath = urlParam ? cleanUrlForNavigation(urlParam) : '';
+    const currentUrl = canonicalPath ? `${baseUrl}${canonicalPath}/` : baseUrl;
 
     document.querySelector('link[rel="canonical"]').href = currentUrl;
     document.querySelector('meta[property="og:url"]').content = currentUrl;
