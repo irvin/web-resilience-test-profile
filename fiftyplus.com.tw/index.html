@@ -291,7 +291,7 @@
                 v-model="searchQuery"  @keydown="onSearchKeydown" @focus="onSearchFocus"
             >
 
-            <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length">
+            <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length" @scroll.passive="onDropdownScroll">
                 <a
                     :href=`/web/${formatDisplayUrl(url)}/`
                     class="search-dropdown-item"
