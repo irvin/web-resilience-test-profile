@@ -335,7 +335,7 @@ async function loadResults() {
                 window.__vueState__.selectedIndex.value = -1;
             }
             if (window.__vueState__.maxDisplay) {
-                window.__vueState__.maxDisplay.value = 100;
+                window.__vueState__.maxDisplay.value = 200;
             }
         }
         return;
@@ -399,7 +399,7 @@ async function loadResults() {
                 window.__vueState__.selectedIndex.value = -1;
             }
             if (window.__vueState__.maxDisplay) {
-                window.__vueState__.maxDisplay.value = 100;
+                window.__vueState__.maxDisplay.value = 200;
             }
         }
     }
@@ -425,7 +425,7 @@ const vueRootApp = createApp({
         const allUrlsRef = ref([]);
         const searchQuery = ref('');
         const selectedIndex = ref(-1);
-        const maxDisplay = ref(100);
+        const maxDisplay = ref(200);
         const showSearch = ref(false);
         const showCheckOther = ref(true);
 
@@ -686,7 +686,7 @@ const vueRootApp = createApp({
 
         // 搜尋相關方法
         function loadMore() {
-            maxDisplay.value = Math.min(totalMatched.value, maxDisplay.value + 100);
+            maxDisplay.value = Math.min(totalMatched.value, maxDisplay.value + 200);
         }
 
         function onDropdownScroll(event) {
@@ -750,7 +750,7 @@ const vueRootApp = createApp({
             // 重置搜尋狀態
             searchQuery.value = '';
             selectedIndex.value = -1;
-            maxDisplay.value = 100;
+            maxDisplay.value = 200;
             // Focus 輸入框
             setTimeout(() => {
                 const input = document.getElementById('search-input');
