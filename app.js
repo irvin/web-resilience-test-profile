@@ -489,6 +489,7 @@ const vueRootApp = createApp({
         const shown = computed(() => displayedUrls.value.length);
         const hasItems = computed(() => totalMatched.value > 0);
         const hasMore = computed(() => totalMatched.value > shown.value);
+        const isAutoLoadingMore = ref(false);
 
         const foreignCloud = computed(() => {
             if (!vueResult.value) return 0;
@@ -688,6 +689,23 @@ const vueRootApp = createApp({
             maxDisplay.value = Math.min(totalMatched.value, maxDisplay.value + 100);
         }
 
+        function onDropdownScroll(event) {
+            if (isAutoLoadingMore.value || !hasMore.value) return;
+
+            const dropdown = event.target;
+            const distanceToBottom = dropdown.scrollHeight - dropdown.scrollTop - dropdown.clientHeight;
+
+            // 允許少量誤差，避免因浮點精度造成觸底判斷失敗
+            if (distanceToBottom <= 8) {
+                isAutoLoadingMore.value = true;
+                loadMore();
+
+                requestAnimationFrame(() => {
+                    isAutoLoadingMore.value = false;
+                });
+            }
+        }
+
         function onSearchKeydown(e) {
             if (!displayedUrls.value.length) return;
 
@@ -792,6 +810,7 @@ const vueRootApp = createApp({
             showCheckOther,
             formatDisplayUrl: cleanUrlForDisplay, // 使用全局的 cleanUrlForDisplay 函數
             loadMore,
+            onDropdownScroll,
             onSearchKeydown,
             onSearchFocus,
             selectUrl: selectUrl, // 使用全局的 selectUrl 函數
