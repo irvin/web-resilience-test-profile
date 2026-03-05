@@ -166,22 +166,27 @@ async function generateStaticHTML(browser, url, index, total) {
       timeout: 30000
     });
 
-    // 等待 Vue 應用完全渲染
-    // 檢查結果是否已載入
+    // 等待頁面進入可擷取狀態：有結果，或明確顯示找不到結果
     await page.waitForFunction(
       () => {
-        return window.__vueState__ &&
-               window.__vueState__.vueResult &&
-               window.__vueState__.vueResult.value !== null;
+        const vueState = window.__vueState__;
+        if (!vueState) return false;
+
+        const hasResult = !!(vueState.vueResult && vueState.vueResult.value);
+        const noResultEl = document.getElementById('search-no-results');
+        const hasNoResultMessage = !!(noResultEl && noResultEl.textContent && noResultEl.textContent.trim().length > 0);
+        return hasResult || hasNoResultMessage;
       },
       { timeout: 10000 }
     ).catch(() => {
-      // 如果超時，可能是找不到結果，繼續執行
-      console.log(`  [瀏覽器 ${index}] 警告: ${cleanUrl} 可能沒有測試結果`);
+      // 如果超時，可能是找不到結果或資料不完整，繼續執行
+      console.log(`  [瀏覽器 ${index}] 警告: ${cleanUrl} 渲染狀態等待逾時`);
     });
 
-    // 等待一小段時間確保所有內容都已渲染
-    await page.waitForTimeout(1000);
+    // 等兩個 animation frame，讓 Vue/瀏覽器完成最後一輪 DOM flush
+    await page.evaluate(() => new Promise((resolve) => {
+      requestAnimationFrame(() => requestAnimationFrame(resolve));
+    }));
 
     // 取得渲染後的 HTML（用於提取靜態內容和 meta 資訊）
     const renderedHtml = await page.content();
