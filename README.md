@@ -2,6 +2,9 @@
 
 靜態網站生成器，用於生成「海纜斷掉時網站會動嗎？」的測試結果頁面。
 
+> 檢測本身（收集連線、產生 JSON + `statistic.tsv`）在 `web-resilience-test` 專案完成，  
+> 本專案負責把測試結果「轉成可以對外瀏覽的靜態頁面」並部署到 `gh-pages`。
+
 ## 功能說明
 
 這個專案會：
@@ -9,6 +12,10 @@
 2. 為每個網址生成獨立的靜態 HTML 頁面
 3. 使用 headless browser（Playwright）渲染 Vue 應用，確保 SEO 友善
 4. 將建置產物部署到 `gh-pages` 分支，供其他 repo 使用 submodule 引入
+
+## 從「更新檢測結果」到「在 resilience.ocf.tw 看到新網頁」的完整流程
+
+請參考 `add-new-sites.md` 文件。
 
 ## 安裝
 
@@ -175,6 +182,13 @@ web-resilience-profile/
 
 - 每個網址會建立一個目錄，例如 `google.com/index.html`
 - 對應訪問 URL 為 `https://resilience.ocf.tw/web/google.com/`
+
+## TODO
+
+- 問題：使用者端看不到更新？
+
+FIXME: 因 statistic.tsv 會在 client side cache 24 小時，故使用者端無法強制更新網頁清單。
+需在 build 頁面時加入對應的 statistic.tsv 版本資訊，然後頁面載入時檢查 statistic.tsv 的 build time，若早於頁面則需抓取最新版本。
 
 ## 相關連結
 
