@@ -1,0 +1,4 @@
+[submodule "report"]
+	path = report
+	url = https://github.com/irvin/web-resilience-test.git
+	branch = report
