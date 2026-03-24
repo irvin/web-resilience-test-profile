@@ -90,11 +90,17 @@ try {
     execSync(`git worktree add -f "${WORKTREE_DIR}" ${GH_PAGES_BRANCH}`, { stdio: 'inherit' });
   }
 
-  // 5. 清空 worktree 目錄（保留 .git）
+  // 5. 清空 worktree 目錄（只保留 git 結構與 report submodule）
+  // 靜態資源檔案應該完全由 build.js 從 web/ 產物覆蓋，不在這裡以檔名白名單保留。
   console.log('🧹 清空 worktree 目錄...');
+  const keepEntries = new Set([
+    '.git',
+    '.gitmodules',
+    'report'
+  ]);
   const files = fs.readdirSync(WORKTREE_DIR);
   files.forEach(file => {
-    if (file !== '.git') {
+    if (!keepEntries.has(file)) {
       const filePath = path.join(WORKTREE_DIR, file);
       try {
         fs.rmSync(filePath, { recursive: true, force: true });
