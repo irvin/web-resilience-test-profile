@@ -28,26 +28,83 @@
             <div class="summary" :class="summaryClass">
                 <h2>{{summaryText}}</h2>
             </div>
+
             <div class="score-container">
                 <div class="score-stats">
                     <p class="score score-O" :class="domesticZeroClass">境內直接連線 (O)<br><strong style="font-size: 1.3em;">{{domesticCount}}</strong></p>
                     <p class="score score-Q" :class="cloudZeroClass">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">{{cloudCount}}</strong></p>
                     <p class="score score-X" :class="foreignZeroClass">境外連線 (X)<br><strong style="font-size: 1.3em;">{{foreignCount}}</strong></p>
                 </div>
-                <p>在開啟 <a :href="'https://' + displayUrl" target="_blank">{{displayUrl}}</a> 時，我們總共識別出來自 {{uniqueDomains}} 個網域的 {{requestCount}} 個請求。</p>
-                <p v-if="connectionStatsItems && connectionStatsItems.length > 0">
-                    其中
-                    <template v-for="(item, index) in connectionStatsItems" :key="index">
-                        {{item.count}} 項為<!--
-                        --><span v-if="item.key === 'domestic'">境內直接連線</span><!--
-                        --><span v-else-if="item.key === 'cloud'">境內的雲端服務</span><!--
-                        --><span v-else-if="item.key === 'foreignCloud'">境外的雲端服務</span><!--
-                        --><span v-else-if="item.key === 'foreignDirect'">境外其他連線</span><!--
-                        --><span v-if="index < connectionStatsItems.length - 1">，</span><!--
-                        --><span v-else>。</span>
+
+                <div class="test-env-section" itemscope itemtype="https://schema.org/FAQPage">
+                    <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <p itemprop="name"><strong>海纜斷掉時，{{ displayUrl }} 還能正常開啟嗎？</strong></p>
+                        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <p itemprop="text" v-if="summaryText === '不會動'">根據最近一次測試，在海纜斷掉的情境下，{{ displayUrl }} 「可能不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p>
+                            <p itemprop="text" v-else-if="summaryText === '不確定'">根據最近一次測試，在海纜斷掉的情境下，{{ displayUrl }} 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p>
+                            <p itemprop="text" v-else>根據最近一次測試，在海纜斷掉的情境下，{{ displayUrl }} 「可能會動」。這表示如果海纜中斷、對外連線受阻，網站有可能維持可用。</p>
+                        </div>
+                    </div>
+
+                    <template v-if="summaryText === '不會動'">
+                        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                            <p itemprop="name"><strong>為什麼 {{ displayUrl }} 在海纜斷掉時「不會動」？</strong></p>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p>
+                            </div>
+                        </div>
                     </template>
-                </p>
-                <p>境內公用雲端服務——目前尚不知道在對外斷線時的可用性，需由服務提供者釐清說明。</p>
+                    <template v-else-if="summaryText === '不確定'">
+                        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                            <p itemprop="name"><strong>為什麼 {{ displayUrl }} 在海纜斷掉時「不確定是否會動」？</strong></p>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">測試過程中，我們雖然沒有看到直接連到境外的資源請求，但有發現對於跨國雲服務在台灣的節點依賴。這些服務能否在對外受阻時持續運作，會受到平台架構、快取設計、或回源方式等影響，所以目前只能列為「不確定」。</p>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                            <p itemprop="name"><strong>為什麼 {{ displayUrl }} 在海纜斷掉時「可能會動」？</strong></p>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">測試過程中，{{ displayUrl }} 的首頁使用的資源，看起來都能在境內取得，也沒有發現明確的國際雲依賴。這代表在海纜中斷或阻礙時，相對比較有機會維持運作。</p>
+                            </div>
+                        </div>
+                    </template>
+                    
+                    <template v-if="summaryText === '不會動'">
+                        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                            <p itemprop="name"><strong>這是不是代表在海纜壅塞時，{{ displayUrl }} 屆時一定不能用？</strong></p>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-else-if="summaryText === '不確定'">
+                        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                            <p itemprop="name"><strong>這是不是代表在海纜壅塞時，{{ displayUrl }} 屆時可能不能用？</strong></p>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">「不確定」的意思是，目前不足以判定一定能用或不能用。{{ displayUrl }} 所依賴的這些跨國雲服務在台節點，在海纜斷線或極度壅塞時的可用性，需由業者進一步釐清與說明。</p>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                            <p itemprop="name"><strong>這是不是代表在海纜壅塞時，{{ displayUrl }} 一定沒問題？</strong></p>
+                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                                <p itemprop="text">不是。「可能會動」只表示首頁測試中沒有看到明顯高風險依賴，不代表整個網站所有頁面、登入流程、API、資料庫或其他功能，都一定正常。</p>
+                            </div>
+                        </div>
+                    </template>
+
+                    <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <p itemprop="name"><strong>怎麼研判 {{ displayUrl }} 在海纜障礙時的韌性？</strong></p>
+                        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <p itemprop="text">打開 {{ displayUrl }} 的首頁時，我們觀察到來自 {{ uniqueDomains }} 個網域的 {{ requestCount }} 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>
+                            詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
             <div class="details-container">
