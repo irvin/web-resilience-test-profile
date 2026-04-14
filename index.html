@@ -21,7 +21,7 @@
 
     <div class="static-wrapper" data-static="begin"></div>
     <h1 v-if="!displayUrl">海纜斷掉時，網站會動嗎？</h1>
-    <h1 v-else>海纜斷掉時，<a :href="'https://' + displayUrl" target="_blank">{{displayUrl}}</a> 會動嗎？</h1>
+    <h1 v-else>海纜斷掉時，<a :href="'https://' + displayUrl" target="_blank" rel="noopener noreferrer nofollow">{{displayUrl}}</a> 會動嗎？</h1>
 
     <div id="results">
         <div v-if="vueResult" class="result-card">
@@ -40,7 +40,7 @@
                     <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
                         <p itemprop="name"><strong>海纜斷掉時，{{ displayUrl }} 還能正常開啟嗎？</strong></p>
                         <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                            <p itemprop="text" v-if="summaryText === '不會動'">根據最近一次測試，在海纜斷掉的情境下，{{ displayUrl }} 「可能不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p>
+                            <p itemprop="text" v-if="summaryText === '不會動'">根據最近一次測試，在海纜斷掉的情境下，{{ displayUrl }} 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p>
                             <p itemprop="text" v-else-if="summaryText === '不確定'">根據最近一次測試，在海纜斷掉的情境下，{{ displayUrl }} 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p>
                             <p itemprop="text" v-else>根據最近一次測試，在海纜斷掉的情境下，{{ displayUrl }} 「可能會動」。這表示如果海纜中斷、對外連線受阻，網站有可能維持可用。</p>
                         </div>
