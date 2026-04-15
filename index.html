@@ -21,7 +21,7 @@
     <div id="app">
 
     <div class="static-wrapper" data-static="begin"></div>
-    <h1 v-if="!displayUrl">海纜斷掉時，網站會動嗎？</h1>
+    <h1 v-if="!displayUrl" class="home-title">海纜斷掉時，網站會動嗎？</h1>
     <h1 v-else>海纜斷掉時，<a :href="'https://' + displayUrl" target="_blank" rel="noopener noreferrer nofollow">{{displayUrl}}</a> 會動嗎？</h1>
 
     <div id="results">

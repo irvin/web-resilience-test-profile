@@ -31,6 +31,12 @@ h1 {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+.home-title {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .overview-card {
     border: none;
     padding: 0;
