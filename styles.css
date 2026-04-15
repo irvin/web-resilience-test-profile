@@ -31,6 +31,53 @@ h1 {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+.overview-card {
+    border: none;
+    padding: 0;
+    margin: 24px auto 30px;
+    background: transparent;
+    box-shadow: none;
+    max-width: 600px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.overview-card h2 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-align: left;
+}
+
+.overview-card p {
+    margin: 0 0 14px;
+    color: #555;
+    text-align: left;
+}
+
+.overview-chart {
+    margin: 0 0 14px;
+}
+
+.overview-chart img {
+    width: 80%;
+    height: auto;
+    display: block;
+    border: 1px solid #DEDEDE;
+    border-radius: 0;
+    background: #fff;
+    margin: 20px auto 0;
+}
+
+.overview-link {
+    margin-top: 12px;
+}
+
+.overview-card hr {
+    border: 1px solid #DEDEDE;
+    margin-bottom: 2em;
+}
+
 .result-card {
     border: none;
     padding: 30px;
@@ -461,6 +508,10 @@ a.search-dropdown-item.selected {
 
     .result-card {
         padding: 20px;
+    }
+
+    .overview-card {
+        margin: 20px auto 28px;
     }
 
     .score-stats {

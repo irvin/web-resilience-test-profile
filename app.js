@@ -30,6 +30,16 @@ function getStatisticTsvUrl() {
     return '/web/statistic.tsv';
 }
 
+// 統一取整體結果圖表位置：
+// - localhost：從 submodule 的 test-result/img/overall-result.svg 讀取
+// - 線上：build 時會把圖表放在 /web/img/ 下
+function getOverallChartUrl() {
+    if (isLocalhost()) {
+        return '/test-result/img/overall-result.svg';
+    }
+    return '/web/img/overall-result.svg';
+}
+
 async function fetchTestResult(filename) {
     try {
         const response = await fetch(GITHUB_RAW_URL + filename);
@@ -455,6 +465,7 @@ const vueRootApp = createApp({
         vueState.showCheckOther = showCheckOther;
 
         const hasResult = computed(() => !!vueResult.value);
+        const overallChartUrl = computed(() => getOverallChartUrl());
 
         const displayUrl = computed(() => {
             if (!vueResult.value) return '';
@@ -786,6 +797,7 @@ const vueRootApp = createApp({
         return {
             vueResult,
             hasResult,
+            overallChartUrl,
             displayUrl,
             testTime,
             httpStatus,

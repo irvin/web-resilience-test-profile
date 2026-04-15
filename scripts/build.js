@@ -10,6 +10,7 @@ const ROOT_DIR = path.join(__dirname, '..');
 // Submodule 路徑
 const SUBMODULE_DIR = path.join(ROOT_DIR, 'test-result');
 const STATISTIC_TSV_PATH = path.join(SUBMODULE_DIR, 'statistic.tsv');
+const SUBMODULE_IMG_DIR = path.join(SUBMODULE_DIR, 'img');
 const OUTPUT_DIR = path.join(ROOT_DIR, 'web');
 const TEMPLATE_FILE = path.join(ROOT_DIR, 'index.html');
 const BROWSER_INSTANCES = 8; // 同時開啟的瀏覽器實例數量
@@ -63,6 +64,20 @@ function fixAssetPaths(html) {
 function urlToOutputPath(url) {
   const dirName = urlToDirPath(url);
   return path.join(dirName, 'index.html');
+}
+
+function copyDirRecursive(src, dest) {
+  if (!fs.existsSync(src)) return;
+  fs.mkdirSync(dest, { recursive: true });
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+    if (entry.isDirectory()) {
+      copyDirRecursive(srcPath, destPath);
+    } else if (entry.isFile()) {
+      fs.copyFileSync(srcPath, destPath);
+    }
+  }
 }
 
 // 讀取 statistic.tsv 並解析 URL 列表
@@ -377,6 +392,13 @@ async function build() {
   // 複製 statistic.tsv 到輸出目錄，部署後主頁從本站讀取（不需再從 api repo 抓）
   if (fs.existsSync(STATISTIC_TSV_PATH)) {
     fs.copyFileSync(STATISTIC_TSV_PATH, path.join(OUTPUT_DIR, 'statistic.tsv'));
+  }
+
+  // 複製整體圖表等資產（test-result/img -> web/img）
+  if (fs.existsSync(SUBMODULE_IMG_DIR)) {
+    const outputImgDir = path.join(OUTPUT_DIR, 'img');
+    fs.rmSync(outputImgDir, { recursive: true, force: true });
+    copyDirRecursive(SUBMODULE_IMG_DIR, outputImgDir);
   }
 
   // 注意：JSON 檔案不複製到 web
