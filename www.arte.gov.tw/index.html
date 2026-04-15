@@ -268,16 +268,7 @@
         </div>
     </div>
 
-    <section v-if="!displayUrl" class="overview-card">
-        <hr>
-        <h2>整體結果</h2>
-        <p>
-            根據目前的檢測結果，下圖為台灣常用網站的境外及國際雲資源依賴暴露狀態。亦即，在海纜斷光或極度壅塞的情境下，有多少比例的網站將會直接失效，多少網站因依賴國際雲節點而故障風險較高，多少比例的網站則相對較有韌性。<a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">查看研究方法與彙整報告</a>。
-        </p>
-        <figure class="overview-chart">
-            <img :src="overallChartUrl" alt="整體結果圖表">
-        </figure>
-    </section>
+    
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther"><button class="check-other-site-btn" @click="openSearch">檢查其他網站</button></p>
