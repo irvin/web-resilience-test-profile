@@ -297,6 +297,9 @@ async function generateStaticHTML(browser, url, index, total) {
 `;
       html = html.replace('</head>', staticPageMarker + '</head>');
       console.log(`  [瀏覽器 ${index}] ✅ 已加入靜態頁面標記`);
+
+      // 個別站點靜態頁不需要顯示整體結果區塊，避免殘留 v-if 在靜態頁誤顯示
+      html = html.replace(/<section[^>]*class="overview-card"[^>]*>[\s\S]*?<\/section>/i, '');
     }
 
     // 修復資源檔案路徑
