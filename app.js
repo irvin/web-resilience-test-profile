@@ -30,6 +30,16 @@ function getStatisticTsvUrl() {
     return '/web/statistic.tsv';
 }
 
+// 統一取整體結果圖表位置：
+// - localhost：從 submodule 的 test-result/img/overall-result.svg 讀取
+// - 線上：build 時會把圖表放在 /web/img/ 下
+function getOverallChartUrl() {
+    if (isLocalhost()) {
+        return '/test-result/img/overall-result.svg';
+    }
+    return '/web/img/overall-result.svg';
+}
+
 async function fetchTestResult(filename) {
     try {
         const response = await fetch(GITHUB_RAW_URL + filename);
@@ -54,6 +64,20 @@ function getSummaryText(result) {
         return '不確定';
     }
     return '可能會動';
+}
+
+function getOgDescription(domain, summaryText) {
+    const normalizedDomain = cleanUrlForNavigation(domain || '');
+    if (!normalizedDomain) {
+        return '輸入網址查看測試結果';
+    }
+    if (summaryText === '不會動') {
+        return `根據最近一次測試，在海纜斷掉的情境下，${normalizedDomain} 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。`;
+    }
+    if (summaryText === '不確定') {
+        return `根據最近一次測試，在海纜斷掉的情境下，${normalizedDomain} 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。`;
+    }
+    return `根據最近一次測試，在海纜斷掉的情境下，${normalizedDomain} 「可能會動」。這表示如果海纜中斷、對外連線受阻，網站有可能維持可用。`;
 }
 
 // 從 URL 參數取得要顯示的網址
@@ -375,7 +399,9 @@ async function loadResults() {
         }
 
         const summaryText = getSummaryText(result);
-        document.querySelector('meta[property="og:description"]').content = summaryText;
+        const description = getOgDescription(cleanUrlParam, summaryText);
+        document.querySelector('meta[property="og:description"]').content = description;
+        document.querySelector('meta[name="description"]').content = description;
     }
     else {
         // 找不到結果時，改用搜尋框的「找不到」流程
@@ -439,6 +465,7 @@ const vueRootApp = createApp({
         vueState.showCheckOther = showCheckOther;
 
         const hasResult = computed(() => !!vueResult.value);
+        const overallChartUrl = computed(() => getOverallChartUrl());
 
         const displayUrl = computed(() => {
             if (!vueResult.value) return '';
@@ -770,6 +797,7 @@ const vueRootApp = createApp({
         return {
             vueResult,
             hasResult,
+            overallChartUrl,
             displayUrl,
             testTime,
             httpStatus,
