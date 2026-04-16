@@ -397,11 +397,18 @@ async function build() {
     fs.copyFileSync(STATISTIC_TSV_PATH, path.join(OUTPUT_DIR, 'statistic.tsv'));
   }
 
-  // 複製整體圖表等資產（test-result/img -> web/img）
+  // 複製首頁需要的整體圖表（test-result/img/overall-result.svg -> web/img/overall-result.svg）
   if (fs.existsSync(SUBMODULE_IMG_DIR)) {
     const outputImgDir = path.join(OUTPUT_DIR, 'img');
     fs.rmSync(outputImgDir, { recursive: true, force: true });
-    copyDirRecursive(SUBMODULE_IMG_DIR, outputImgDir);
+    fs.mkdirSync(outputImgDir, { recursive: true });
+
+    const overallChartSrc = path.join(SUBMODULE_IMG_DIR, 'overall-result.svg');
+    const overallChartDest = path.join(outputImgDir, 'overall-result.svg');
+
+    if (fs.existsSync(overallChartSrc)) {
+      fs.copyFileSync(overallChartSrc, overallChartDest);
+    }
   }
 
   // 注意：JSON 檔案不複製到 web
