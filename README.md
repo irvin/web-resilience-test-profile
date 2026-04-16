@@ -1,204 +1,223 @@
 # Web Resilience Profile
 
-靜態網站生成器，用於生成「海纜斷掉時網站會動嗎？」的測試結果頁面。
+Static site generator for publishing web resilience test result pages such as "Will this website still work during a submarine cable outage?"
 
-> 檢測本身（收集連線、產生 JSON + `statistic.tsv`）在 `web-resilience-test` 專案完成，  
-> 本專案負責把測試結果「轉成可以對外瀏覽的靜態頁面」並部署到 `gh-pages`。
+For Chinese documentation 中文文件請見, see [`README.zh-TW.md`](README.zh-TW.md).
 
-## 功能說明
+> The underlying measurement pipeline that collects requests and produces JSON plus `statistic.tsv` lives in the `web-resilience-test` repository.  
+> This repository turns that data into browseable static pages and prepares the output for deployment on `gh-pages`.
 
-這個專案會：
-1. 從 submodule 讀取 `statistic.tsv` 取得所有測試過的網址
-2. 為每個網址生成獨立的靜態 HTML 頁面
-3. 使用 headless browser（Playwright）渲染 Vue 應用，確保 SEO 友善
-4. 將建置產物部署到 `gh-pages` 分支，供其他 repo 使用 submodule 引入
+## What this repository does
 
-## 從「更新檢測結果」到「在 resilience.ocf.tw 看到新網頁」的完整流程
+This project:
+1. Reads `statistic.tsv` from the `test-result` submodule
+2. Generates one static HTML page per tested website
+3. Uses a headless browser (Playwright) to render the Vue app for SEO-friendly output
+4. Prepares the generated `web/` output for deployment on the `gh-pages` branch
 
-請參考 `add-new-sites.md` 文件。
+## End-to-end workflow
 
-## 安裝
+For the full workflow from updating test results to publishing a new page on `resilience.ocf.tw`, see [`add-new-sites.md`](add-new-sites.md).
+
+## Installation
 
 ```bash
-# 安裝依賴
+# Install dependencies
 npm install
 
-# 安裝 Playwright 瀏覽器
+# Install the Playwright browser
 npx playwright install chromium
 
-# 初始化並更新 submodule（取得測試結果資料）
+# Initialize and update the submodule that stores test result data
 git submodule update --init --recursive
 ```
 
-**更新 submodule（取得最新資料）：**
+To refresh the submodule later:
+
 ```bash
 git submodule update --remote test-result
 ```
 
-## 快速參考
+## Quick reference
 
-| 指令 | 說明 |
+| Command | Description |
 |------|------|
-| `npm run build` | 測試建置（只處理第一個網址） |
-| `npm run build <網站名稱>` | 建置特定網站（例如：`npm run build www.article19.org`） |
-| `npm run build:all` | 建置所有網站 |
-| `npm run generate:sitemap` | 只產生 sitemap（不跑 Playwright） |
-| `npm run build-worktree` | 手動執行 worktree 操作（不執行建置） |
-| `npm run deploy` | 推送 `gh-pages` 分支到遠端 |
+| `npm run build` | Test build that only processes the first website |
+| `npm run build <site>` | Build a specific website, for example `npm run build www.article19.org` |
+| `npm run build:all` | Build all websites |
+| `npm run generate:sitemap` | Generate the sitemap only, without Playwright |
+| `npm run build-worktree` | Prepare the `gh-pages` worktree without rebuilding |
+| `npm run deploy` | Push the `gh-pages` branch to the remote |
 
-## 建置流程
+## Build modes
 
-### 測試建置（只編譯一個網站，預設）
+### Test build
 
 ```bash
 npm run build
 ```
 
-這會：
-- 只處理第一個網址，用於快速測試建置流程
-- 建置完成後自動準備部署到 `gh-pages` 分支
+This mode:
+- Builds only the first website for a fast smoke test
+- Prepares the generated output for the `gh-pages` branch automatically
 
-### 建置特定網站
+### Build a specific website
 
 ```bash
 npm run build www.article19.org
 ```
 
-這會：
-- 只處理指定的網站（支援部分匹配，例如 `article19.org` 可以匹配 `www.article19.org`）
-- 自動過濾出所有匹配的網站並進行建置
-- 建置完成後自動準備部署到 `gh-pages` 分支
+This mode:
+- Builds only matching websites
+- Supports partial matching such as `article19.org`
+- Prepares the generated output for the `gh-pages` branch automatically
 
-**範例：**
+Examples:
+
 ```bash
-# 建置 www.article19.org
+# Build one exact site
 npm run build www.article19.org
 
-# 使用部分名稱也可以（會匹配所有包含該字串的網站）
+# Partial matching also works
 npm run build article19.org
-
-# 如果找不到匹配的網站，會顯示錯誤訊息並退出
 ```
 
-### 建置所有網站
+### Build all websites
 
 ```bash
 npm run build:all
 ```
 
-這會：
-- 從 submodule 讀取 `statistic.tsv` 取得所有測試網址
-- 使用 8 個並行的瀏覽器實例處理
-- 為每個網址生成靜態 HTML 頁面到 `web/` 目錄
-- 每個網址會建立一個目錄，例如 `web/google.com/index.html`
-- 主頁面（`web/index.html`）會從線上 API 讀取 JSON 和 statistic.tsv 資料
-- 建置完成後會在 `web/` 產生 `sitemap.xml`（部署後位於 `/web/sitemap.xml`）
-- 建置完成後自動準備部署到 `gh-pages` 分支
+This mode:
+- Reads all tested URLs from `test-result/statistic.tsv`
+- Uses 8 parallel browser instances
+- Generates static pages under `web/`
+- Creates one directory per site, for example `web/google.com/index.html`
+- Keeps `web/index.html` as the main landing page
+- Generates `web/sitemap.xml`
+- Prepares the output for the `gh-pages` branch automatically
 
-## Sitemap（提交搜尋引擎用）
+## Sitemap
 
-### 產出位置
+### Output path
 
-- 建置後：`web/sitemap.xml`
-- 部署後：`https://resilience.ocf.tw/web/sitemap.xml`
+- Build output: `web/sitemap.xml`
+- Deployed URL: `https://resilience.ocf.tw/web/sitemap.xml`
 
-### 內容與日期（lastmod）規則
+### `lastmod` rules
 
-- **sitemap 收錄哪些頁面**：以 `web/` 資料夾下「實際存在的子目錄」（且包含 `index.html`）為準，確保 sitemap 與部署內容一致
-- **主頁 `/web/` 的 lastmod**：使用 `web/index.html` 的檔案修改時間（mtime，`YYYY-MM-DD`）
-- **個別站點頁面 `/web/<domain>/` 的 lastmod**：使用 `web/<dir>/index.html` 的檔案修改時間（mtime，`YYYY-MM-DD`）
+- The sitemap includes only directories that actually exist under `web/` and contain `index.html`
+- The homepage `/web/` uses the modification time of `web/index.html`
+- Each site page `/web/<domain>/` uses the modification time of `web/<domain>/index.html`
 
-> 備註：測試模式（`npm run build` 預設）不會更新 `web/sitemap.xml`，避免把 sitemap 變成只含 1 筆測試資料。
+Note: the default `npm run build` test mode does not update `web/sitemap.xml`, so the sitemap will not accidentally shrink to a single test page.
 
-### 只重建 sitemap（不跑 Playwright）
+### Rebuild only the sitemap
 
 ```bash
 npm run generate:sitemap
 ```
 
-## 部署到 gh-pages 分支
+## Deployment
 
-建置指令會自動將 `web/` 的內容部署到 `gh-pages` 分支。完成建置後，執行以下指令推送到遠端：
+Build commands automatically prepare the `web/` output for the `gh-pages` branch. After the build finishes, push the result with:
 
 ```bash
 npm run deploy
 ```
 
-這會自動執行：
-- 推送 `gh-pages` 分支到遠端
-- 清理本地 worktree
+This will:
+- Push `gh-pages` to the remote
+- Clean up the local worktree
 
-### 手動執行 worktree 操作
+### Prepare the worktree only
 
-如果只需要準備 worktree 而不執行建置，可以使用：
+If you already built the site and only want to sync the worktree:
 
 ```bash
 npm run build-worktree
 ```
 
-這會：
-- 將 `web/` 的內容部署到 `gh-pages` 分支（不執行建置）
-- 適用於已經完成建置，只需要更新 worktree 的情況
+## Customizing for your own version
 
-## 專案結構
+If you are adapting this repository for another country, organization, or report set, these are the main places to start:
 
-```
+- `index.html`: the current Chinese-first template used by the live site
+- `index.en.example.html`: an English example template that demonstrates how to reskin the page
+- `app.js`: shared runtime logic, summary mapping, search behavior, and configurable text overrides
+- `styles.css`: shared styles used by both the main template and the example template
+- `test-result/`: the input data source, including `statistic.tsv` and result JSON files
+- `add-new-sites.md`: the maintainer workflow for updating content
+
+Typical customization points:
+- branding and logos
+- report links and source code links
+- page copy, FAQ text, and empty-state text
+- default locale and meta text overrides
+- deployment destination and hosting URL
+
+The example English template uses `window.__WEB_RESILIENCE_TEXT__` to override labels and dynamic text while reusing the same `app.js` runtime. That pattern is intended to make forks easier without introducing a full runtime i18n layer.
+
+## Project structure
+
+```text
 web-resilience-profile/
-├── web/                     # 建置產物目錄
-│   ├── index.html          # 主頁面
-│   ├── google.com/         # 每個網址的目錄
+├── web/                     # Generated output directory
+│   ├── index.html           # Main landing page
+│   ├── google.com/          # One directory per tested website
 │   │   └── index.html
-│   ├── g0v_logo.svg        # 資源檔案
-│   └── ...                 # 
-├── test-result/  # Git submodule（測試結果資料）
+│   └── ...
+├── test-result/             # Git submodule with test result data
 │   ├── statistic.tsv
 │   ├── *.json
 │   └── ...
 ├── scripts/
-│   ├── build.js            # 建置腳本
-│   ├── build-wrapper.js    # 建置包裝腳本（處理參數傳遞）
-│   ├── build-worktree.js  # 部署腳本
-│   ├── deploy.js           # 推送與清理腳本
-│   ├── generate-sitemap.js # sitemap 生成腳本（輸出到 web/sitemap.xml）
-│   └── clean-worktree.js   # 清理腳本（內部使用）
-├── index.html              # 原始模板
+│   ├── build.js
+│   ├── build-wrapper.js
+│   ├── build-worktree.js
+│   ├── deploy.js
+│   ├── generate-sitemap.js
+│   └── clean-worktree.js
+├── index.html
+├── index.en.example.html
+├── app.js
+├── styles.css
 └── package.json
 ```
 
-## 技術細節
+## Technical notes
 
-### 建置流程
+### Build flow
 
-1. **讀取資料**：從 submodule (`test-result`) 讀取 `statistic.tsv` 取得所有測試網址
-2. **過濾網址**（可選）：如果指定了網站名稱，會過濾出匹配的網址（支援部分匹配）
-3. **啟動 HTTP 伺服器**：在本地啟動 HTTP 伺服器提供 `index.html`（建置時從 submodule 讀取 JSON 和 statistic.tsv）
-4. **並行處理**：使用 8 個 Playwright 瀏覽器實例並行處理
-5. **生成靜態 HTML**：透過 headless browser 載入頁面並渲染，生成完整 HTML，包含：
-   - 正確的 title 和 meta 標籤（SEO 友善）
-   - 已渲染的內容（搜尋引擎可直接索引）
-   - Vue 互動功能（用戶可以展開/收合詳細資訊）
+1. Read `statistic.tsv` from the `test-result` submodule
+2. Optionally filter the target sites when a site name is supplied
+3. Start a local HTTP server that serves `index.html`
+4. Render pages with parallel Playwright browser instances
+5. Save fully rendered static HTML with SEO metadata and Vue interactions preserved
 
-### 路徑處理
+### URL structure
 
-- 每個網址會建立一個目錄，例如 `google.com/index.html`
-- 對應訪問 URL 為 `https://resilience.ocf.tw/web/google.com/`
+- Each website becomes a directory such as `google.com/index.html`
+- The corresponding deployed URL is `https://resilience.ocf.tw/web/google.com/`
 
-## TODO
+## Known issue
 
-- 問題：使用者端看不到更新？
+`statistic.tsv` is cached on the client side for 24 hours, so users may not immediately see updated site lists.
 
-FIXME: 因 statistic.tsv 會在 client side cache 24 小時，故使用者端無法強制更新網頁清單。
-需在 build 頁面時加入對應的 statistic.tsv 版本資訊，然後頁面載入時檢查 statistic.tsv 的 build time，若早於頁面則需抓取最新版本。
+Future improvement:
+- embed a `statistic.tsv` version or build timestamp in generated pages
+- compare that timestamp at runtime
+- refresh the list when the page is newer than the cached statistic data
 
-## 相關連結
+## Related repositories
 
-- 研究方法與原始碼：https://github.com/irvin/web-resilience-test
-- 測試結果資料：https://github.com/irvin/web-resilience-test-result
+- Research method and measurement code: https://github.com/irvin/web-resilience-test
+- Test result dataset: https://github.com/irvin/web-resilience-test-result
 
 ## License
 
 CC BY-NC-ND 4.0 International License
 
-## 🙏 致謝
+## Acknowledgements
 
 This work was supported by a grant from the APNIC Foundation, via the Information Society Innovation Fund (ISIF Asia).

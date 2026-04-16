@@ -1,12 +1,76 @@
 const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/irvin/web-resilience-test-result/refs/heads/main/';
 const GITHUB_WEB_URL = 'https://github.com/irvin/web-resilience-test-result/blob/main/';
 
-// 快取 key
+const DEFAULT_DISPLAY_LOCALE = 'zh-TW';
+const DEFAULT_SORT_LOCALE = 'zh-TW';
+
+const SUMMARY_KEYS = {
+    WONT_WORK: 'wontWork',
+    UNCERTAIN: 'uncertain',
+    MIGHT_WORK: 'mightWork'
+};
+
+const SUMMARY_LABELS = {
+    [SUMMARY_KEYS.WONT_WORK]: '不會動',
+    [SUMMARY_KEYS.UNCERTAIN]: '不確定',
+    [SUMMARY_KEYS.MIGHT_WORK]: '可能會動'
+};
+
+const CATEGORY_LABELS = {
+    'domestic/cloud': '境內／雲端',
+    'foreign/cloud': '境外／雲端',
+    'domestic/direct': '境內／其他',
+    'foreign/direct': '境外／其他'
+};
+
+const DEFAULT_PAGE_TITLE = '海纜斷掉時網站會動嗎？';
+const DEFAULT_META_DESCRIPTION = '輸入網址查看測試結果';
+
+const DEFAULT_APP_TEXT = {
+    displayLocale: DEFAULT_DISPLAY_LOCALE,
+    sortLocale: DEFAULT_SORT_LOCALE,
+    summaryLabels: SUMMARY_LABELS,
+    categoryLabels: CATEGORY_LABELS,
+    pageTitle: (domain) => domain ? `海纜斷掉時，${domain} 會動嗎？` : DEFAULT_PAGE_TITLE,
+    ogDescription: (domain, summaryKey) => {
+        if (!domain) {
+            return DEFAULT_META_DESCRIPTION;
+        }
+
+        if (summaryKey === SUMMARY_KEYS.WONT_WORK) {
+            return `根據最近一次測試，在海纜斷掉的情境下，${domain} 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。`;
+        }
+
+        if (summaryKey === SUMMARY_KEYS.UNCERTAIN) {
+            return `根據最近一次測試，在海纜斷掉的情境下，${domain} 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。`;
+        }
+
+        return `根據最近一次測試，在海纜斷掉的情境下，${domain} 「可能會動」。這表示如果海纜中斷、對外連線受阻，網站有可能維持可用。`;
+    }
+};
+
+function getAppTextConfig() {
+    const overrides = window.__WEB_RESILIENCE_TEXT__ || {};
+    return {
+        ...DEFAULT_APP_TEXT,
+        ...overrides,
+        summaryLabels: {
+            ...DEFAULT_APP_TEXT.summaryLabels,
+            ...(overrides.summaryLabels || {})
+        },
+        categoryLabels: {
+            ...DEFAULT_APP_TEXT.categoryLabels,
+            ...(overrides.categoryLabels || {})
+        }
+    };
+}
+
+// Cache key
 const CACHE_KEY = 'web_resilience_urls_cache';
-// 快取過期時間（24 小時，單位：毫秒）
+// Cache expiration time (24 hours in milliseconds)
 const CACHE_EXPIRE_TIME = 24 * 60 * 60 * 1000;
 
-// 全域變數
+// Global state
 let allUrls = [];
 let statisticLoaded = false;
 
@@ -20,9 +84,9 @@ function getLocalDynamicBasePath() {
     return pathname.startsWith('/web/') ? '/web/' : '/';
 }
 
-// 統一取 statistic.tsv 的位置：
-// - localhost：從 submodule 的 test-result/statistic.tsv 讀取
-// - 線上：build 時會把 statistic.tsv 放在 /web/ 下（例如 /web/statistic.tsv）
+// Resolve the statistic.tsv location:
+// - localhost: read from the test-result submodule
+// - production: read the file emitted under /web/ at build time
 function getStatisticTsvUrl() {
     if (isLocalhost()) {
         return '/test-result/statistic.tsv';
@@ -30,9 +94,9 @@ function getStatisticTsvUrl() {
     return '/web/statistic.tsv';
 }
 
-// 統一取整體結果圖表位置：
-// - localhost：從 submodule 的 test-result/img/overall-result.svg 讀取
-// - 線上：build 時會把圖表放在 /web/img/ 下
+// Resolve the overall chart location:
+// - localhost: read from the test-result submodule
+// - production: read the file emitted under /web/img/ at build time
 function getOverallChartUrl() {
     if (isLocalhost()) {
         return '/test-result/img/overall-result.svg';
@@ -50,42 +114,37 @@ async function fetchTestResult(filename) {
     }
 }
 
-function formatDate(isoString) {
-    return new Date(isoString).toLocaleString('zh-TW');
+function formatDate(isoString, locale = DEFAULT_DISPLAY_LOCALE) {
+    return new Date(isoString).toLocaleString(locale);
 }
 
-function getSummaryText(result) {
+function getSummaryKey(result) {
     const foreignTotal = (result.test_results.foreign?.cloud || 0) + (result.test_results.foreign?.direct || 0);
     if (foreignTotal > 0) {
-        return '不會動';
+        return SUMMARY_KEYS.WONT_WORK;
     }
     const domesticCloud = result.test_results.domestic?.cloud || 0;
     if (domesticCloud > 0) {
-        return '不確定';
+        return SUMMARY_KEYS.UNCERTAIN;
     }
-    return '可能會動';
+    return SUMMARY_KEYS.MIGHT_WORK;
 }
 
-function getOgDescription(domain, summaryText) {
+function getSummaryText(summaryKey) {
+    return getAppTextConfig().summaryLabels[summaryKey] || '';
+}
+
+function getOgDescription(domain, summaryKey) {
     const normalizedDomain = cleanUrlForNavigation(domain || '');
-    if (!normalizedDomain) {
-        return '輸入網址查看測試結果';
-    }
-    if (summaryText === '不會動') {
-        return `根據最近一次測試，在海纜斷掉的情境下，${normalizedDomain} 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。`;
-    }
-    if (summaryText === '不確定') {
-        return `根據最近一次測試，在海纜斷掉的情境下，${normalizedDomain} 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。`;
-    }
-    return `根據最近一次測試，在海纜斷掉的情境下，${normalizedDomain} 「可能會動」。這表示如果海纜中斷、對外連線受阻，網站有可能維持可用。`;
+    return getAppTextConfig().ogDescription(normalizedDomain, summaryKey);
 }
 
-// 從 URL 參數取得要顯示的網址
+// Read the current target URL from the query string.
 function getUrlParam() {
     return window.location.search.substring(5);
 }
 
-// 將網址轉換為對應的 JSON 檔名
+// Convert a URL into the corresponding JSON filename.
 function urlToFilename(url) {
     const urlObj = new URL('https://' + url.replace(/^https?:\/\//, ''));
     let filename = urlObj.hostname + urlObj.pathname.replace(/\//g, '_');
@@ -108,14 +167,14 @@ function toggleTestEnv(element) {
     }
 }
 
-// 載入統計資料
+// Load statistic data.
 async function loadStatisticData() {
-    // 檢查快取
+    // Check the local cache first.
     const cached = localStorage.getItem(CACHE_KEY);
     if (cached) {
         try {
             const data = JSON.parse(cached);
-            // 檢查是否過期
+            // Remove expired cache entries.
             const now = Date.now();
             const cacheTime = data.timestamp || 0;
             const isExpired = (now - cacheTime) > CACHE_EXPIRE_TIME;
@@ -124,34 +183,34 @@ async function loadStatisticData() {
                 allUrls = data.urls;
                 return allUrls;
             } else if (isExpired) {
-                // 快取已過期，清除
+                // Cache expired, clear it.
                 localStorage.removeItem(CACHE_KEY);
             }
         } catch (e) {
             console.error('Error parsing cache:', e);
-            // 解析失敗，清除快取
+            // Cache payload is invalid, clear it.
             localStorage.removeItem(CACHE_KEY);
         }
     }
 
-    // 載入 TSV
+    // Load the TSV file when cache is missing or stale.
     try {
         const response = await fetch(getStatisticTsvUrl());
         const text = await response.text();
         const lines = text.split('\n').filter(line => line.trim());
 
-        // 跳過標題行，提取 URL（第一欄）
+        // Skip the header row and collect URLs from the first column.
         allUrls = [];
         for (let i = 1; i < lines.length; i++) {
             let url = lines[i].split('\t')[0];
             if (url && url.startsWith('http')) {
-                // 標準化：移除多餘的結尾斜線
+                // Normalize URLs by removing redundant trailing slashes.
                 url = cleanUrl(url, { removeProtocol: false, removeWww: false, removeTrailingSlash: true });
                 allUrls.push(url);
             }
         }
 
-        // 依字母順序排序（以去掉協定後的網址為準）
+        // Sort alphabetically using normalized URLs.
         allUrls.sort((a, b) => {
             const ca = cleanUrlForSearch(a);
             const cb = cleanUrlForSearch(b);
@@ -160,7 +219,7 @@ async function loadStatisticData() {
             return 0;
         });
 
-        // 儲存快取（包含時間戳記）
+        // Persist the cache with a timestamp.
         localStorage.setItem(CACHE_KEY, JSON.stringify({
             urls: allUrls,
             timestamp: Date.now()
@@ -172,10 +231,10 @@ async function loadStatisticData() {
     }
 }
 
-// 確保已載入統計資料與搜尋清單（lazy load）
+// Ensure statistic data has been loaded before search is used.
 async function ensureStatisticLoaded() {
     if (statisticLoaded && allUrls && allUrls.length > 0) {
-        // 已經載入過，且有資料，直接同步 Vue 狀態後返回
+        // Already loaded, just sync the Vue state and exit.
         if (window.__vueState__ && window.__vueState__.allUrls) {
             window.__vueState__.allUrls.value = allUrls;
         }
@@ -185,13 +244,13 @@ async function ensureStatisticLoaded() {
     await loadStatisticData();
     statisticLoaded = true;
 
-    // 將統計 URL 清單注入 Vue 狀態，供搜尋使用
+    // Inject the URL list into Vue state for search usage.
     if (window.__vueState__ && window.__vueState__.allUrls) {
         window.__vueState__.allUrls.value = allUrls;
     }
 }
 
-// 統一的 URL 清理函數
+// Shared URL cleanup helper.
 // options: { removeProtocol: true, removeWww: false, removeTrailingSlash: true, toLowerCase: false }
 function cleanUrl(url, options = {}) {
     if (!url) return '';
@@ -218,22 +277,22 @@ function cleanUrl(url, options = {}) {
     return cleaned;
 }
 
-// 用於顯示的 URL 清理（移除協議、www、結尾斜線）
+// URL cleanup for display labels.
 function cleanUrlForDisplay(url) {
     return cleanUrl(url, { removeProtocol: true, removeWww: true, removeTrailingSlash: true });
 }
 
-// 用於導航的 URL 清理（移除協議、結尾斜線，保留 www.）
+// URL cleanup for navigation targets.
 function cleanUrlForNavigation(url) {
     return cleanUrl(url, { removeProtocol: true, removeWww: false, removeTrailingSlash: true });
 }
 
-// 用於搜尋比對的 URL 清理（移除協議，轉小寫）
+// URL cleanup for search matching.
 function cleanUrlForSearch(url) {
     return cleanUrl(url, { removeProtocol: true, removeWww: false, removeTrailingSlash: false, toLowerCase: true });
 }
 
-// 篩選 URL（純函式，供 Vue 與一般 JS 共用）
+// Pure URL filter shared by Vue and plain JS code.
 function filterUrls(query, urls) {
     if (!query) return urls;
     const lowerQuery = query.toLowerCase();
@@ -243,31 +302,31 @@ function filterUrls(query, urls) {
     });
 }
 
-// 檢查是否為靜態頁面
+// Check whether the current page is a prerendered static page.
 function isStaticPage() {
     return window.__IS_STATIC_PAGE__ === true;
 }
 
-// 選擇 URL 並跳轉（一律跳轉到靜態頁面）
+// Navigate to the selected URL.
 function selectUrl(url) {
-    // 跳轉時使用標準化後的網址（移除協定與多餘結尾斜線，保留 www.）
+    // Use a normalized URL for navigation.
     const cleanUrl = cleanUrlForNavigation(url);
 
-    // localhost：維持動態模式，用 ?url= 觀看即時狀態
+    // Keep localhost in dynamic mode for local preview.
     if (isLocalhost()) {
         window.location.href = `${getLocalDynamicBasePath()}?url=${encodeURIComponent(cleanUrl)}`;
         return;
     }
 
-    // 統一使用 /web/_domain_ 格式
+    // Use the canonical /web/{domain}/ static path format.
     const staticPath = `/web/${cleanUrl}/`;
     window.location.href = staticPath;
 }
 
-// 從 URL 路徑中提取 domain（用於 404 處理）
+// Extract the domain from a /web/{domain}/ path, used by 404 fallbacks.
 function extractDomainFromPath() {
     const pathname = window.location.pathname;
-    // 匹配 /web/{domain}/ 格式
+    // Match the /web/{domain}/ format.
     const match = pathname.match(/^\/web\/([^\/]+)\/?$/);
     if (match) {
         return match[1];
@@ -276,7 +335,7 @@ function extractDomainFromPath() {
 }
 
 async function loadResults() {
-    // 如果在舊的 GitHub Pages 網址上（irvin.github.io），且帶有 ?url= 參數，全部轉向到 resilience.ocf.tw
+    // Redirect legacy GitHub Pages URLs to the current site.
     if (window.location.hostname === 'irvin.github.io') {
         const search = window.location.search || '';
         if (search.startsWith('?url=')) {
@@ -288,7 +347,7 @@ async function loadResults() {
 
     let urlParam = getUrlParam();
 
-    // 404 處理：如果本身非 static page，則嘗試從路徑擷取 /web/{domain}，視為 URL 參數
+    // Recover the target URL from the path when handling a 404 fallback.
     if (!urlParam && !isStaticPage()) {
         const domainFromPath = extractDomainFromPath();
         if (domainFromPath) {
@@ -296,31 +355,31 @@ async function loadResults() {
         }
     }
 
-    // 線上只有靜態：如果有 ?url=，且該網址存在於 statistic.tsv 中，才在線上跳轉到對應的靜態頁面
-    // localhost（任何 port）則保留動態模式，方便用 Live Server 檢視
+    // Production uses static pages only: redirect to a static page when the URL exists.
+    // localhost keeps dynamic mode so Live Server can preview it.
     if (urlParam && !isLocalhost()) {
         await ensureStatisticLoaded();
         const targetKey = cleanUrlForNavigation(urlParam);
-        // 檢查 statistic.tsv 是否有這個網址（用同一套 cleanUrlForNavigation 規則比對）
+        // Match URLs using the same normalization logic as the static page paths.
         const existsInStatistic = allUrls.some(url => {
             return cleanUrlForNavigation(url) === targetKey;
         });
 
         if (existsInStatistic) {
-            // 統一使用 /web/_domain_ 格式
+            // Use the canonical /web/{domain}/ static path format.
             const staticPath = `/web/${targetKey}/`;
             window.location.href = staticPath;
             return;
         }
-        // 如果不存在於 statistic.tsv，就不做 ?url → /web/{xxx} 的轉址
-        // 讓後面的動態流程處理（例如顯示「找不到結果」並開啟搜尋）
+        // If the URL is missing from statistic.tsv, keep the dynamic flow so
+        // the page can fall back to the "no results" search state.
     }
 
     const resultsEl = document.getElementById('results');
 
-    // 如果是靜態頁面且沒有 URL 參數，直接返回，不需要執行後續的 fetch 邏輯
+    // A prerendered static page without query params does not need runtime fetches.
     if (isStaticPage() && !urlParam) {
-        // 靜態頁面：保持顯示，設定搜尋相關狀態
+        // Keep the prerendered content visible and sync the search UI state.
         if (window.__vueState__) {
             if (window.__vueState__.showSearch) {
                 window.__vueState__.showSearch.value = false;
@@ -332,19 +391,19 @@ async function loadResults() {
         return;
     }
 
-    // 走到這裡的情況：
-    // - 動態首頁（無 urlParam）
-    // - 有 urlParam 但在 localhost
-    // - 有 urlParam 且在線上，但不在 statistic.tsv 中（不 redirect，改由動態流程處理）
-    // 這些情境都需要統計資料來支援搜尋體驗，因此在此 lazy 載入
+    // Remaining cases:
+    // - dynamic homepage with no URL param
+    // - localhost with a URL param
+    // - production with a URL param that is not present in statistic.tsv
+    // All of them need statistic data to power search behavior.
     await ensureStatisticLoaded();
 
     if (!urlParam) {
-        // 無 URL 參數：只顯示搜尋框，隱藏結果區
+        // No URL parameter: show search only and hide the results section.
         if (resultsEl) {
             resultsEl.style.display = 'none';
         }
-        // 透過 Vue 狀態控制顯示
+        // Sync the visible state through Vue.
         if (window.__vueState__) {
             if (window.__vueState__.showSearch) {
                 window.__vueState__.showSearch.value = true;
@@ -365,11 +424,11 @@ async function loadResults() {
         return;
     }
 
-    // 有 URL 參數：顯示結果區，初始隱藏搜尋框
+    // A URL parameter is present: show results and hide search initially.
     if (resultsEl) {
         resultsEl.style.display = 'block';
     }
-    // 透過 Vue 狀態控制顯示
+    // Sync the visible state through Vue.
     if (window.__vueState__) {
         if (window.__vueState__.showSearch) {
             window.__vueState__.showSearch.value = false;
@@ -379,7 +438,7 @@ async function loadResults() {
         }
     }
 
-    // 更新 meta 標籤
+    // Update meta tags for the current page.
     const baseUrl = 'https://resilience.ocf.tw/web/';
     const canonicalPath = urlParam ? cleanUrlForNavigation(urlParam) : '';
     const currentUrl = canonicalPath ? `${baseUrl}${canonicalPath}/` : baseUrl;
@@ -387,28 +446,28 @@ async function loadResults() {
     document.querySelector('link[rel="canonical"]').href = currentUrl;
     document.querySelector('meta[property="og:url"]').content = currentUrl;
     const cleanUrlParam = urlParam ? cleanUrlForNavigation(urlParam) : '';
-    document.title = cleanUrlParam ? `海纜斷掉時，${cleanUrlParam} 會動嗎？` : '海纜斷掉時網站會動嗎？';
+    document.title = getAppTextConfig().pageTitle(cleanUrlParam);
     document.querySelector('meta[property="og:title"]').content = document.title;
 
-    // 顯示測試結果
+    // Load and display the test result.
     const result = await fetchTestResult(urlToFilename(urlParam));
     if (result) {
-        // 將結果寫入 Vue 狀態，由 Vue template 負責渲染結果卡片與 h1
+        // Write the result into Vue state so the template can render it.
         if (window.__vueState__ && window.__vueState__.vueResult) {
             window.__vueState__.vueResult.value = result;
         }
 
-        const summaryText = getSummaryText(result);
-        const description = getOgDescription(cleanUrlParam, summaryText);
+        const summaryKey = getSummaryKey(result);
+        const description = getOgDescription(cleanUrlParam, summaryKey);
         document.querySelector('meta[property="og:description"]').content = description;
         document.querySelector('meta[name="description"]').content = description;
     }
     else {
-        // 找不到結果時，改用搜尋框的「找不到」流程
+        // Fall back to the search-based empty state when no result exists.
         if (resultsEl) {
             resultsEl.style.display = 'none';
         }
-        // 透過 Vue 狀態控制顯示
+        // Sync the visible state through Vue.
         if (window.__vueState__) {
             if (window.__vueState__.showSearch) {
                 window.__vueState__.showSearch.value = true;
@@ -416,7 +475,7 @@ async function loadResults() {
             if (window.__vueState__.showCheckOther) {
                 window.__vueState__.showCheckOther.value = false;
             }
-            // 將帶入的網址視為輸入框查詢內容（交由 Vue 搜尋邏輯處理）
+            // Seed the search input with the requested URL for the empty state.
             const clean = cleanUrlForNavigation(urlParam);
             if (window.__vueState__.searchQuery) {
                 window.__vueState__.searchQuery.value = clean;
@@ -434,7 +493,7 @@ async function loadResults() {
 
 const { createApp, ref, computed } = Vue;
 
-// 提供給現有 JS 存取的 Vue 狀態容器
+// Vue state container exposed to the existing plain JS helpers.
 const vueState = {
     vueResult: null,
     allUrls: null,
@@ -447,7 +506,7 @@ const vueRootApp = createApp({
     setup() {
         const vueResult = ref(null);
 
-        // 搜尋相關狀態
+        // Search-related state
         const allUrlsRef = ref([]);
         const searchQuery = ref('');
         const selectedIndex = ref(-1);
@@ -455,7 +514,7 @@ const vueRootApp = createApp({
         const showSearch = ref(false);
         const showCheckOther = ref(true);
 
-        // 讓外部 JS 可以直接設定結果與搜尋狀態
+        // Allow external JS helpers to update result and search state directly.
         vueState.vueResult = vueResult;
         vueState.allUrls = allUrlsRef;
         vueState.searchQuery = searchQuery;
@@ -474,7 +533,7 @@ const vueRootApp = createApp({
 
         const testTime = computed(() => {
             if (!vueResult.value) return '';
-            return formatDate(vueResult.value.timestamp);
+            return formatDate(vueResult.value.timestamp, getAppTextConfig().displayLocale);
         });
 
         const httpStatus = computed(() => {
@@ -502,7 +561,7 @@ const vueRootApp = createApp({
             return vueResult.value.testingEnvironment || null;
         });
 
-        // 搜尋相關計算
+        // Search-related computed state
         const filteredUrls = computed(() => {
             return filterUrls(searchQuery.value, allUrlsRef.value || []);
         });
@@ -544,9 +603,14 @@ const vueRootApp = createApp({
         const foreignDirectCount = computed(() => foreignDirect.value);
         const foreignCount = computed(() => foreignCloudCount.value + foreignDirectCount.value);
 
-        const summaryText = computed(() => {
+        const summaryKey = computed(() => {
             if (!vueResult.value) return '';
-            return getSummaryText(vueResult.value);
+            return getSummaryKey(vueResult.value);
+        });
+
+        const summaryText = computed(() => {
+            if (!summaryKey.value) return '';
+            return getSummaryText(summaryKey.value);
         });
 
         const summaryClass = computed(() => {
@@ -559,7 +623,7 @@ const vueRootApp = createApp({
             return 'will-work';
         });
 
-        // 生成連線統計項目列表（只包含非零項目）
+        // Build a list of non-zero connection statistics.
         const connectionStatsItems = computed(() => {
             const items = [];
             if (domesticCount.value > 0) {
@@ -591,18 +655,12 @@ const vueRootApp = createApp({
             return JSON.stringify(vueResult.value, null, 2);
         });
 
-        // 格式化 category 為中文
-        function formatCategory(category) {
-            const categoryMap = {
-                'domestic/cloud': '境內／雲端',
-                'foreign/cloud': '境外／雲端',
-                'domestic/direct': '境內／其他',
-                'foreign/direct': '境外／其他'
-            };
-            return categoryMap[category] || category;
+        // Convert a category key into the current display label.
+        function getCategoryDisplayText(category) {
+            return getAppTextConfig().categoryLabels[category] || category;
         }
 
-        // 取得 category 對應的 CSS class
+        // Map category keys to CSS classes.
         function getCategoryClass(category) {
             const classMap = {
                 'domestic/cloud': 'category-domestic-cloud',
@@ -613,7 +671,7 @@ const vueRootApp = createApp({
             return classMap[category] || '';
         }
 
-        // 網站位置（來自 domainDetails[0]）
+        // Primary site location taken from domainDetails[0].
         const siteLocation = computed(() => {
             if (!vueResult.value || !vueResult.value.domainDetails || vueResult.value.domainDetails.length === 0) {
                 return null;
@@ -623,46 +681,47 @@ const vueRootApp = createApp({
                 ip: firstDetail.ipinfo?.ip || '',
                 org: firstDetail.ipinfo?.org || '',
                 category: firstDetail.category || '',
-                categoryText: formatCategory(firstDetail.category || ''),
+                categoryText: getCategoryDisplayText(firstDetail.category || ''),
                 categoryClass: getCategoryClass(firstDetail.category || '')
             };
         });
 
-        // 連線資訊（來自 domainDetails[1] 之後）
+        // Connection details from domainDetails[1] onward.
         const connectionDetails = computed(() => {
             if (!vueResult.value || !vueResult.value.domainDetails || vueResult.value.domainDetails.length <= 1) {
                 return [];
             }
             return vueResult.value.domainDetails.slice(1)
                 .filter(detail => {
-                    // 篩除沒有有效資料的連線
-                    // 必須有 category
+                    // Ignore connections with missing required data.
                     if (!detail.category) {
                         return false;
                     }
-                    // 必須有有效的 domain
+
+                    // A valid domain is required.
                     let domain = '';
                     try {
                         const url = new URL(detail.originalUrl);
                         domain = url.hostname;
                     } catch (e) {
-                        // 如果無法解析 URL，檢查是否有 ipinfo.domain
+                        // Fall back to ipinfo.domain when originalUrl is not parseable.
                         domain = detail.ipinfo?.domain || '';
                     }
-                    // 如果 domain 為空，則篩除
+
+                    // Ignore empty domain values.
                     if (!domain || domain.trim() === '') {
                         return false;
                     }
                     return true;
                 })
                 .map(detail => {
-                    // 從 originalUrl 提取 domain
+                    // Extract the domain from originalUrl.
                     let domain = '';
                     try {
                         const url = new URL(detail.originalUrl);
                         domain = url.hostname;
                     } catch (e) {
-                        // 如果無法解析，使用 ipinfo.domain
+                        // Fall back to ipinfo.domain when parsing fails.
                         domain = detail.ipinfo?.domain || detail.originalUrl;
                     }
                     return {
@@ -670,48 +729,50 @@ const vueRootApp = createApp({
                         originalUrl: detail.originalUrl,
                         org: detail.ipinfo?.org || '',
                         category: detail.category || '',
-                        categoryText: formatCategory(detail.category || ''),
+                        categoryText: getCategoryDisplayText(detail.category || ''),
                         categoryClass: getCategoryClass(detail.category || '')
                     };
                 })
                 .sort((a, b) => {
-                    // 按照 AS 號碼以外的名稱排序
+                    // Sort by organization name without the ASN prefix.
                     const orgA = a.org || '';
                     const orgB = b.org || '';
-                    // 如果都沒有 org，保持原順序
+                    // Keep the original order when both org values are missing.
                     if (!orgA && !orgB) return 0;
-                    // 沒有 org 的排在最後
+                    // Missing organization values sort last.
                     if (!orgA) return 1;
                     if (!orgB) return -1;
 
-                    // 提取 AS 號碼後面的名稱部分
-                    // 格式通常是 "AS12345 Organization Name" 或 "AS12345"
+                    // Extract the organization name after the ASN prefix.
+                    // Expected forms are "AS12345 Organization Name" or "AS12345".
                     const extractOrgName = (org) => {
-                        // 移除 "AS" 開頭和數字部分
+                        // Strip the "AS" prefix and following digits.
                         const match = org.match(/^AS\d+\s*(.+)?$/i);
                         if (match && match[1]) {
                             return match[1].trim();
                         }
-                        // 如果沒有名稱部分，返回空字串（會排在最後）
+
+                        // Missing organization names sort last.
                         return '';
                     };
 
                     const nameA = extractOrgName(orgA);
                     const nameB = extractOrgName(orgB);
 
-                    // 如果都沒有名稱，按照完整 org 排序
+                    // Fall back to the full org string when both names are missing.
                     if (!nameA && !nameB) {
-                        return orgA.localeCompare(orgB, 'zh-TW');
+                        return orgA.localeCompare(orgB, getAppTextConfig().sortLocale);
                     }
-                    // 沒有名稱的排在最後
+                    // Missing organization names sort last.
                     if (!nameA) return 1;
                     if (!nameB) return -1;
-                    // 按照名稱排序
-                    return nameA.localeCompare(nameB, 'zh-TW');
+
+                    // Sort by the extracted organization name.
+                    return nameA.localeCompare(nameB, getAppTextConfig().sortLocale);
                 });
         });
 
-        // 搜尋相關方法
+        // Search-related methods
         function loadMore() {
             maxDisplay.value = Math.min(totalMatched.value, maxDisplay.value + 200);
         }
@@ -722,7 +783,7 @@ const vueRootApp = createApp({
             const dropdown = event.target;
             const distanceToBottom = dropdown.scrollHeight - dropdown.scrollTop - dropdown.clientHeight;
 
-            // 允許少量誤差，避免因浮點精度造成觸底判斷失敗
+            // Allow a small threshold to avoid float precision issues near the bottom.
             if (distanceToBottom <= 8) {
                 isAutoLoadingMore.value = true;
                 loadMore();
@@ -757,28 +818,30 @@ const vueRootApp = createApp({
                     selectUrl(targetUrl);
                 }
             } else if (e.key === 'Escape') {
-                // ESC 時暫時不隱藏下拉，僅清除選取
+                // Keep the dropdown open on Escape and just clear selection.
                 selectedIndex.value = -1;
             }
         }
 
         function onSearchFocus() {
-            // 聚焦時重新顯示目前查詢結果（狀態由 computed 自動處理）
+            // Reset selection when the input regains focus.
             selectedIndex.value = -1;
         }
 
         async function openSearch() {
-            // 第一次打開搜尋時，才確保載入 statistic.tsv
+            // Ensure statistic.tsv is loaded before opening search for the first time.
             await ensureStatisticLoaded();
 
-            // 顯示搜尋框，隱藏「檢查其他網站」按鈕
+            // Show the search box and hide the secondary CTA button.
             showSearch.value = true;
             showCheckOther.value = false;
-            // 重置搜尋狀態
+
+            // Reset search state.
             searchQuery.value = '';
             selectedIndex.value = -1;
             maxDisplay.value = 200;
-            // Focus 輸入框
+
+            // Focus the input after the DOM updates.
             setTimeout(() => {
                 const input = document.getElementById('search-input');
                 if (input) {
@@ -791,7 +854,7 @@ const vueRootApp = createApp({
             }, 50);
         }
 
-        // 暴露 openSearch 到全域，供 onclick 使用
+        // Expose openSearch globally for inline onclick handlers.
         window.openSearch = openSearch;
 
         return {
@@ -810,6 +873,7 @@ const vueRootApp = createApp({
             foreignCount,
             foreignCloudCount,
             foreignDirectCount,
+            summaryKey,
             summaryText,
             summaryClass,
             connectionStatsItems,
@@ -820,9 +884,9 @@ const vueRootApp = createApp({
             detailsJson,
             siteLocation,
             connectionDetails,
-            formatCategory,
+            getCategoryDisplayText,
             getCategoryClass,
-            // 搜尋相關
+            // Search-related state and methods
             allUrls: allUrlsRef,
             searchQuery,
             selectedIndex,
@@ -836,12 +900,12 @@ const vueRootApp = createApp({
             hasMore,
             showSearch,
             showCheckOther,
-            formatDisplayUrl: cleanUrlForDisplay, // 使用全局的 cleanUrlForDisplay 函數
+            formatDisplayUrl: cleanUrlForDisplay, // Reuse the global cleanUrlForDisplay helper.
             loadMore,
             onDropdownScroll,
             onSearchKeydown,
             onSearchFocus,
-            selectUrl: selectUrl, // 使用全局的 selectUrl 函數
+            selectUrl: selectUrl, // Reuse the global selectUrl helper.
             openSearch
         };
     }
@@ -851,5 +915,5 @@ const vm = vueRootApp.mount('#app');
 window.__vueApp__ = vm;
 window.__vueState__ = vueState;
 
-// Vue 掛載完成後再載入測試結果，確保可以直接寫入 Vue 狀態
+// Load results after Vue mounts so state writes are immediately reactive.
 loadResults();
