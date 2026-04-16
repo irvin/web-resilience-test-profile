@@ -318,7 +318,7 @@ footer hr {
     margin-bottom: 2em;
 }
 
-/* 搜索框樣式 */
+/* Search box */
 .search-box {
     position: relative;
     max-width: 600px;
@@ -406,7 +406,7 @@ a.search-dropdown-item.selected {
     text-decoration: underline;
 }
 
-/* 檢查其他網站按鈕 */
+/* "Check another site" button */
 .check-other-site-btn {
     background: linear-gradient(135deg, #0366d6 0%, #0056b3 100%);
     color: #fff;
@@ -428,7 +428,7 @@ a.search-dropdown-item.selected {
     transform: translateY(0);
 }
 
-/* Category 標籤樣式 */
+/* Category badge */
 .category-badge {
     display: inline-block;
     padding: 4px 10px;
@@ -458,7 +458,7 @@ a.search-dropdown-item.selected {
     color: #721c24;
 }
 
-/* 連線資訊列表樣式 */
+/* Connection details list */
 .test-env-section .connection-list {
     list-style: none;
     margin: 0;
@@ -502,7 +502,7 @@ a.search-dropdown-item.selected {
     margin-left: 0;
 }
 
-/* 響應式設計 */
+/* Responsive layout */
 @media (max-width: 768px) {
     body {
         padding: 15px;
@@ -528,7 +528,7 @@ a.search-dropdown-item.selected {
         font-size: 1.1em;
     }
 
-    /* 手機上：每個 connection-item 內的三個 span 各佔一行，過長自動換行 */
+    /* Mobile: stack the three spans in each connection-item; long text wraps */
     .test-env-section .connection-item {
         flex-direction: column;
         align-items: flex-start;
