@@ -5,58 +5,54 @@ const path = require('path');
 const WORKTREE_DIR = path.join(__dirname, '..', 'gh-pages-worktree');
 const GH_PAGES_BRANCH = 'gh-pages';
 
-console.log('🚀 開始部署到 GitHub Pages...\n');
+console.log('🚀 Pushing gh-pages to GitHub Pages...\n');
 
 const originalDir = process.cwd();
 
 try {
-  // 1. 檢查 worktree 是否存在
   if (!fs.existsSync(WORKTREE_DIR)) {
-    console.error('❌ gh-pages-worktree 目錄不存在，請先執行 npm run build');
+    console.error('❌ gh-pages-worktree does not exist. Run npm run build first.');
     process.exit(1);
   }
 
-  // 2. 切換到 worktree 目錄並 push
-  console.log(`📤 推送 ${GH_PAGES_BRANCH} 分支到遠端...`);
+  console.log(`📤 Pushing ${GH_PAGES_BRANCH}...`);
   process.chdir(WORKTREE_DIR);
 
   try {
     execSync(`git push origin ${GH_PAGES_BRANCH}`, { stdio: 'inherit' });
-    console.log('✅ 推送成功\n');
+    console.log('✅ Push succeeded\n');
   } catch (error) {
-    console.error('❌ 推送失敗:', error.message);
+    console.error('❌ Push failed:', error.message);
     process.chdir(originalDir);
     process.exit(1);
   }
 
-  // 3. 切回原目錄並清理 worktree
   process.chdir(originalDir);
-  console.log('🧹 清理 worktree...');
+  console.log('🧹 Removing worktree...');
 
   try {
     execSync(`git worktree remove "${WORKTREE_DIR}"`, { stdio: 'inherit' });
-    console.log('✅ worktree 已清理');
+    console.log('✅ Worktree removed');
   } catch (error) {
-    console.error('⚠️  清理失敗，嘗試強制清理...');
+    console.error('⚠️  Remove failed, retrying with --force...');
     try {
       execSync(`git worktree remove "${WORKTREE_DIR}" --force`, { stdio: 'inherit' });
-      console.log('✅ worktree 已強制清理');
+      console.log('✅ Worktree removed (--force)');
     } catch (forceError) {
-      console.error('❌ 無法清理 worktree，請手動刪除:', WORKTREE_DIR);
+      console.error('❌ Could not remove worktree. Delete manually:', WORKTREE_DIR);
       process.exit(1);
     }
   }
 
-  console.log('\n✅ 部署完成！');
+  console.log('\n✅ Deploy complete.');
 
 } catch (error) {
-  console.error('\n❌ 部署失敗:', error.message);
+  console.error('\n❌ Deploy failed:', error.message);
 
-  // 確保切回原目錄
   try {
     process.chdir(originalDir);
   } catch (e) {
-    // 忽略錯誤
+    // ignore
   }
 
   process.exit(1);

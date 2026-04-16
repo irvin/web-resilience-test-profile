@@ -2,7 +2,8 @@
 
 靜態網站生成器，用於生成「海纜斷掉時網站會動嗎？」的測試結果頁面。
 
-英文主文件請見 [`README.md`](README.md)。
+英文主文件請見 [`README.md`](README.md)。  
+跨專案上線流程的英文版請見 [`add-new-sites.md`](add-new-sites.md)。
 
 > 檢測本身（收集連線、產生 JSON + `statistic.tsv`）在 `web-resilience-test` 專案完成，  
 > 本專案負責把測試結果「轉成可以對外瀏覽的靜態頁面」並部署到 `gh-pages`。
@@ -17,7 +18,7 @@
 
 ## 從「更新檢測結果」到「在 resilience.ocf.tw 看到新網頁」的完整流程
 
-請參考 `add-new-sites.md` 文件。
+請參考 [`add-new-sites.zh-TW.md`](add-new-sites.zh-TW.md)。
 
 ## 安裝
 
@@ -164,8 +165,12 @@ web-resilience-profile/
 │   ├── deploy.js            # 推送與清理腳本
 │   ├── generate-sitemap.js  # sitemap 生成腳本（輸出到 web/sitemap.xml）
 │   └── clean-worktree.js    # 清理腳本（內部使用）
-├── index.html               # 原始模板
+├── index.html               # 原始模板（正式站中文）
+├── index.en.example.html    # 英文範例模板
+├── add-new-sites.zh-TW.md   # 維運流程（繁中）
+├── add-new-sites.md         # 維運流程（英文）
 ├── app.js
+├── styles.css
 └── package.json
 ```
 

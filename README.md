@@ -2,7 +2,7 @@
 
 Static site generator for publishing web resilience test result pages such as "Will this website still work during a submarine cable outage?"
 
-For Chinese documentation 中文文件請見, see [`README.zh-TW.md`](README.zh-TW.md).
+中文文件請見 For Chinese documentation, see [`README.zh-TW.md`](README.zh-TW.md).
 
 > The underlying measurement pipeline that collects requests and produces JSON plus `statistic.tsv` lives in the `web-resilience-test` repository.  
 > This repository turns that data into browseable static pages and prepares the output for deployment on `gh-pages`.
@@ -147,7 +147,8 @@ If you are adapting this repository for another country, organization, or report
 - `app.js`: shared runtime logic, summary mapping, search behavior, and configurable text overrides
 - `styles.css`: shared styles used by both the main template and the example template
 - `test-result/`: the input data source, including `statistic.tsv` and result JSON files
-- `add-new-sites.md`: the maintainer workflow for updating content
+- `add-new-sites.md`: maintainer workflow (English)
+- `add-new-sites.zh-TW.md`: same workflow (Traditional Chinese)
 
 Typical customization points:
 - branding and logos
@@ -180,6 +181,8 @@ web-resilience-profile/
 │   └── clean-worktree.js
 ├── index.html
 ├── index.en.example.html
+├── add-new-sites.md
+├── add-new-sites.zh-TW.md
 ├── app.js
 ├── styles.css
 └── package.json

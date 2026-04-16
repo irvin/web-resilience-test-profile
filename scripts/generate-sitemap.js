@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 /**
- * 生成 sitemap.xml 到 web/ 目錄
+ * Generate sitemap.xml under web/
  *
- * 預設 baseUrl: https://resilience.ocf.tw/web/
- * 可用 --base 或環境變數 SITEMAP_BASE_URL 覆寫
+ * Default baseUrl: https://resilience.ocf.tw/web/
+ * Override with --base or SITEMAP_BASE_URL
  */
 
 const fs = require('fs');
@@ -20,7 +20,7 @@ function getArgValue(args, name) {
 }
 
 function normalizeBaseUrl(baseUrl) {
-  if (!baseUrl) throw new Error('請提供 baseUrl（--base 或 SITEMAP_BASE_URL）');
+  if (!baseUrl) throw new Error('baseUrl is required (--base or SITEMAP_BASE_URL)');
   return baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 }
 
@@ -87,8 +87,6 @@ function main() {
   const builtDirs = listBuiltDirs(outputDir);
 
   const entries = [];
-  // 以 web/ 內實際存在的目錄為準（更符合實際部署內容）
-  // 主頁（/web/）
   const rootIndexLastmod = getIndexHtmlLastModDate(path.join(outputDir, 'index.html'));
   entries.push({ loc: baseUrl, lastmod: rootIndexLastmod });
 
@@ -104,11 +102,10 @@ function main() {
   const outPath = path.join(outputDir, 'sitemap.xml');
   fs.writeFileSync(outPath, xml, 'utf-8');
 
-  console.log(`✓ sitemap 已產生：${outPath}`);
+  console.log(`✓ Wrote sitemap: ${outPath}`);
   console.log(`  baseUrl: ${baseUrl}`);
   console.log(`  urls: ${entries.length}`);
   console.log('  mode: from web/');
 }
 
 main();
-

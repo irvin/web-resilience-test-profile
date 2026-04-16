@@ -1,23 +1,25 @@
-## 新增網站：從測試到上線的流程
+# Adding a site: from test to production
 
-這份文件整理「從新增一個測試網站」到「在 `https://resilience.ocf.tw/web/<domain>/` 上看到對應頁面」的完整跨專案流程。
+This document describes the end-to-end flow from **adding a new tested site** to **seeing the page at** `https://resilience.ocf.tw/web/<domain>/`.
 
-專案所有 repos
-- 檢測與統計：`web-resilience-test`
-- 生成靜態頁面與部署： `web-resilience-test-profile`
-- 對外網站： `resilience.ocf.tw`
+中文文件請見 For the Traditional Chinese version, see [`add-new-sites.zh-TW.md`](add-new-sites.zh-TW.md).
 
-部署完成會更新以下頁面：
+Related repositories
+- Measurement and statistics: `web-resilience-test`
+- Static page generation and deployment: `web-resilience-test-profile`
+- Public site: `resilience.ocf.tw`
 
-- 主頁：`https://resilience.ocf.tw/web/`
-- 單一網站頁面：`https://resilience.ocf.tw/web/<domain>/`
-- Sitemap：`https://resilience.ocf.tw/web/sitemap.xml`
+After deployment, these URLs are updated:
+
+- Home: `https://resilience.ocf.tw/web/`
+- Per-site page: `https://resilience.ocf.tw/web/<domain>/`
+- Sitemap: `https://resilience.ocf.tw/web/sitemap.xml`
 
 ---
 
-## 0. 前置條件
+## 0. Prerequisites
 
-- 三個 repo 均已 clone 到本機，且路徑關係大致如下（實際目錄名稱可依你環境調整）：
+- All three repositories are cloned locally, with paths similar to (adjust names as needed):
 
   ```bash
   web-resilience-test/
@@ -28,17 +30,17 @@
     web/ (submodule)
   ```
 
-- `web-resilience-test` 以及 `web-resilience-test-profile` 裡的 `test-result/`，是指向同一個 `test-results` 測試結果 repo 的 Git submodule。
+- The `test-result/` directory inside `web-resilience-test` and `web-resilience-test-profile` points to the same `test-results` Git submodule.
 
-## 1. 檢測網站（repo `web-resilience-test`）
+## 1. Run a measurement (`web-resilience-test` repo)
 
-> 目標：對新網站跑檢測、產生 JSON 結果與更新 `statistic.tsv`。
+> Goal: run the checker for a new site, produce JSON output, and update `statistic.tsv`.
 
-測試前記得要先關掉會影響連線狀態的 VPN 或 (macOS) iCloud Private Relay。
+Before testing, turn off VPN or (on macOS) iCloud Private Relay if they affect connectivity.
 
-### 1-1. 檢測單一網站
+### 1-1. Single-site measurement
 
-在 `web-resilience-test` 目錄中：
+Inside `web-resilience-test`:
 
 ```bash
 cd /path/to/web-resilience-test
@@ -49,27 +51,27 @@ node no-global-connection-check.js \
   --save https://www.example.com
 ```
 
-說明：
+Notes:
 
-- `--save` 會在 `test-results/` 底下產生一個 JSON 檔，檔名大致為 `{hostname+path}.json`  
-  例：`test-results/www.article19.org.json`
-- 常用參數：
-  - `--debug`：輸出詳細偵錯資訊
-  - `--dns IP`：自訂 DNS 伺服器（通常使用中華電信 `168.95.1.1`）
-  - `--ipinfo-token TOKEN`：指定 IPinfo Token（也可直接設環境變數 `IPINFO_TOKEN`）
-  - `--adblock false`：不使用 adblock 清單過濾
-  - `--adblock-url url1,url2`：指定自訂 adblock DNS 過濾清單（可用逗號分隔多個）
-  - `--cache false`：不使用快取（強制重新下載 adblock / IPinfo 資料；預設為使用）
-  - `--timeout N`：頁面載入逾時（秒，預設 120）
-  - `--headless false`：改用非 headless 瀏覽器模式
+- `--save` writes a JSON file under `test-results/`, roughly named `{hostname+path}.json`  
+  Example: `test-results/www.article19.org.json`
+- Common flags:
+  - `--debug`: verbose debug output
+  - `--dns IP`: custom DNS server (often Chunghwa Telecom `168.95.1.1`)
+  - `--ipinfo-token TOKEN`: IPinfo token (or set env `IPINFO_TOKEN`)
+  - `--adblock false`: do not use adblock lists
+  - `--adblock-url url1,url2`: custom adblock DNS filter lists (comma-separated)
+  - `--cache false`: disable cache (force re-download of adblock / IPinfo data; default is cached)
+  - `--timeout N`: page load timeout in seconds (default 120)
+  - `--headless false`: run a visible browser
 
-### 1-2. 批次檢測網站
+### 1-2. Batch measurement
 
-若一次要新增很多網站，建議先建立要檢測的網站清單（例如 `manual_curated_list_tw.json`），再使用 `batch-test.js` 檢測該清單，會自動為每個站呼叫 `checkWebsiteResilience(... --save)`，並在最後替你跑統計。
+For many sites, prepare a list file (for example `manual_curated_list_tw.json`) and run `batch-test.js`. It calls `checkWebsiteResilience(... --save)` per site and runs statistics at the end.
 
-`batch-test.js` 可使用 `no-global-connection-check.js` 的相同參數。
+`batch-test.js` accepts the same parameters as `no-global-connection-check.js`.
 
-目前本專案使用的「參數組合」如下：
+Current parameter bundle used by this project:
 
 ```bash
 cd /path/to/web-resilience-test
@@ -80,131 +82,130 @@ node batch-test.js \
   manual_curated_list_tw.json
 ```
 
-## 2. 更新 `statistic.tsv` 統計檔
+## 2. Regenerate `statistic.tsv`
 
-同樣在 `web-resilience-test` 目錄中：
+Still in `web-resilience-test`:
 
 ```bash
 node generate_statistic.js
 ```
 
-**這支腳本會：**
+**This script:**
 
-- 掃描 `test-results/` 內所有網站的 JSON 結果
-- 依 `top-traffic-list-taiwan/merged_lists_tw.json` 的排序產出統計
-- 統計並寫入 `test-results/statistic.tsv`，包含以下欄位：
+- Scans all site JSON files under `test-results/`
+- Orders output using `top-traffic-list-taiwan/merged_lists_tw.json`
+- Writes `test-results/statistic.tsv` with columns such as:
   - `url`, `timestamp`
-  - [境內／境外] × [雲端／直連] 連線數
+  - counts for [domestic/foreign] × [cloud/direct]
 
-> 若是透過 `batch-test.js` 批次測試，腳本執行完會自動呼叫 `generate_statistic.js`
+> If you used `batch-test.js`, it already runs `generate_statistic.js` at the end.
 
-## 3. 更新 `test-results` 測試結果 repo
+## 3. Commit and push the `test-results` repo
 
-如果 `test-results/` 是獨立的 Git submodule，需要在該目錄內單獨 commit / push：
+If `test-results/` is a separate Git submodule, commit and push there:
 
 ```bash
 cd test-results
 git add .
-git commit -m "新增網站測試結果: example.com"
+git commit -m "Add measurement results: example.com"
 git push
 ```
 
-## 4. 在 `web-resilience-test-profile` 匯入最新結果建置頁面
+## 4. Pull latest data and build in `web-resilience-test-profile`
 
-> 目標：把剛剛更新好的 `statistic.tsv` 與 JSON 結果轉成靜態 HTML 頁面。
+> Goal: turn the updated `statistic.tsv` and JSON into static HTML.
 
-### 4-1. 更新測試結果 submodule
+### 4-1. Update the `test-result` submodule
 
-在 `web-resilience-test-profile` 目錄中：
+Inside `web-resilience-test-profile`:
 
 ```bash
 cd /path/to/web-resilience-test-profile
 git submodule update --remote test-result
 ```
 
-這會把 `test-result/` 更新到剛才 push 的最新版本，包含：
+This updates `test-result/` to the revision you just pushed, including:
 
 - `test-result/statistic.tsv`
-- 各網站的 `*.json` 結果檔
+- per-site `*.json` files
 
-### 4-2. （首次或環境變更時）安裝 dependencies
+### 4-2. Install dependencies (first time or after changes)
 
 ```bash
 npm install
 npx playwright install chromium
 ```
 
-### 4-3. 建置靜態頁面
+### 4-3. Build static pages
 
-**更新單一網站頁面：**
+**Single site (partial name match):**
 
 ```bash
-# 支援部分字串匹配
 npm run build example.com
-# 例：npm run build www.article19.org
-# 或：npm run build article19.org
+# e.g. npm run build www.article19.org
+# or: npm run build article19.org
 ```
 
-**或建置所有網站頁面：**
+**All sites:**
 
 ```bash
 npm run build:all
 ```
 
-建置完成後，會在 `web/` 下產生：
+Outputs under `web/`:
 
-- `web/<domain>/index.html`：每個網站的個別頁面
-- `web/index.html`：主列表頁
-- `web/sitemap.xml`：在完整建置流程中更新，用於搜尋引擎
+- `web/<domain>/index.html`: per-site pages
+- `web/index.html`: home
+- `web/sitemap.xml`: updated on full builds (for search engines)
 
-### 4-4. 推送到 `gh-pages` branch
+### 4-4. Push to the `gh-pages` branch
 
-> 目標：把 `web/` 目錄內容推到 `gh-pages` 分支。
+> Goal: publish the `web/` directory to `gh-pages`.
 
-在 `web-resilience-test-profile` 目錄中：
+Inside `web-resilience-test-profile`:
 
 ```bash
 npm run deploy
 ```
 
-這會：
+This:
 
-- 把 `web/` 的內容更新到 `gh-pages` 分支
-- 推送到遠端
-- 清理本地 worktree
+- Updates `gh-pages` with `web/` contents
+- Pushes to the remote
+- Cleans the local worktree
 
-## 5. 更新 `resilience.ocf.tw`
+## 5. Update `resilience.ocf.tw`
 
-`resilience.ocf.tw` 這個 repo 是整體網站容器，透過 submodule 掛入 `web-resilience-test-profile` 的 `gh-pages` 成為 `/web/` 的內容。
+The `resilience.ocf.tw` repo is the site shell; it includes `web-resilience-test-profile`’s `gh-pages` output as `/web/`.
 
-### 5-1. 更新 `/web` submodule
+### 5-1. Update the `/web` submodule
 
-在 `resilience.ocf.tw` 目錄中：
+Inside `resilience.ocf.tw`:
 
 ```bash
 git submodule update --remote web-resilience-test-profile
 ```
 
-### 5-2. 更新 cloudflare cache
+### 5-2. Purge Cloudflare cache (optional)
 
-`resilience.ocf.tw` 使用 Cloudflare 設定 cache everything。更新頁面後，可手動清除 cache。（optional）
+`resilience.ocf.tw` uses Cloudflare “cache everything”. After publishing, you can purge cache manually.
 
-- 確定 github pages action 已完成 `https://github.com/ocftw/resilience.ocf.tw/actions/workflows/gh-pages.yml`
-- 於 https://dash.cloudflare.com/f76f75b73e9e49dd7c05a7bd315dc468/ocf.tw/caching/configuration 點選「custom perge」，選擇「hostname」，輸入「`resilience.ocf.tw`」
+- Confirm the GitHub Pages workflow finished: `https://github.com/ocftw/resilience.ocf.tw/actions/workflows/gh-pages.yml`
+- In the Cloudflare dashboard, use custom purge by hostname `resilience.ocf.tw`.
 
-### 5-3. (known issue) 使用者端最長需要等候24小時才能看到新加入的網站
+### 5-3. (Known issue) Users may wait up to 24 hours to see new sites in the list
 
-因現行的 statistic.tsv 會在使用者端的瀏覽器 local storage 中 cache 24 小時，故使用者端無法強制更新網頁清單。
+The browser caches `statistic.tsv` in `localStorage` for 24 hours, so the site list may not refresh immediately for everyone.
 
-## 6. 問題快速檢查清單
+## 6. Quick troubleshooting checklist
 
-若在 resilience.ocf.tw 網站上看不到更新，依照下列順序檢查：
+If updates do not appear on `resilience.ocf.tw`, check in order:
 
-1. `web-resilience-test` 是否有跑 `npm run check --save` 與 `node generate_statistic.js`
-2. `test-results` submodule 是否已經 `git push`
-3. `web-resilience-test-profile` 是否有成功建立靜態頁面並推送到 `gh-pages` branch：
+1. `web-resilience-test`: ran measurement with `--save` and `node generate_statistic.js`
+2. `test-results` submodule: changes are `git push`’d
+3. `web-resilience-test-profile`: built and deployed:
    - `git submodule update --remote test-result`
-   - `npm run build <domain>` 或 `npm run build:all`
+   - `npm run build <domain>` or `npm run build:all`
    - `npm run deploy`
-4. `resilience.ocf.tw` 是否已正確指到最新的 `gh-pages` submodule 版本
-5. 手動清除 Cloudflare cache
+4. `resilience.ocf.tw`: submodule points at the latest `gh-pages` revision
+5. Purge Cloudflare cache manually
