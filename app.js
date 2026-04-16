@@ -65,11 +65,6 @@ function getAppTextConfig() {
     };
 }
 
-// Cache key
-const CACHE_KEY = 'web_resilience_urls_cache';
-// Cache expiration time (24 hours in milliseconds)
-const CACHE_EXPIRE_TIME = 24 * 60 * 60 * 1000;
-
 // Global state
 let allUrls = [];
 let statisticLoaded = false;
@@ -84,13 +79,17 @@ function getLocalDynamicBasePath() {
     return pathname.startsWith('/web/') ? '/web/' : '/';
 }
 
-// Resolve the statistic.tsv location:
-// - localhost: read from the test-result submodule
-// - production: read the file emitted under /web/ at build time
+// Resolve the statistic.tsv location from template metadata.
+// - source template: /test-result/statistic.tsv
+// - built pages: replaced with the versioned /web/statistic.<hash>.tsv
 function getStatisticTsvUrl() {
-    if (isLocalhost()) {
-        return '/test-result/statistic.tsv';
+    const meta = document.querySelector('meta[name="web-resilience-statistic-url"]');
+    const rawUrl = meta ? meta.getAttribute('content') : null;
+    const metaUrl = rawUrl ? rawUrl.trim() : null;
+    if (metaUrl) {
+        return metaUrl;
     }
+
     return '/web/statistic.tsv';
 }
 
@@ -169,31 +168,11 @@ function toggleTestEnv(element) {
 
 // Load statistic data.
 async function loadStatisticData() {
-    // Check the local cache first.
-    const cached = localStorage.getItem(CACHE_KEY);
-    if (cached) {
-        try {
-            const data = JSON.parse(cached);
-            // Remove expired cache entries.
-            const now = Date.now();
-            const cacheTime = data.timestamp || 0;
-            const isExpired = (now - cacheTime) > CACHE_EXPIRE_TIME;
-
-            if (!isExpired && data.urls && data.urls.length > 0) {
-                allUrls = data.urls;
-                return allUrls;
-            } else if (isExpired) {
-                // Cache expired, clear it.
-                localStorage.removeItem(CACHE_KEY);
-            }
-        } catch (e) {
-            console.error('Error parsing cache:', e);
-            // Cache payload is invalid, clear it.
-            localStorage.removeItem(CACHE_KEY);
-        }
+    // Keep the parsed list in memory for the current page only.
+    if (allUrls && allUrls.length > 0) {
+        return allUrls;
     }
 
-    // Load the TSV file when cache is missing or stale.
     try {
         const response = await fetch(getStatisticTsvUrl());
         const text = await response.text();
@@ -219,11 +198,6 @@ async function loadStatisticData() {
             return 0;
         });
 
-        // Persist the cache with a timestamp.
-        localStorage.setItem(CACHE_KEY, JSON.stringify({
-            urls: allUrls,
-            timestamp: Date.now()
-        }));
         return allUrls;
     } catch (error) {
         console.error('Error loading statistic data:', error);
