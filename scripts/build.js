@@ -1,5 +1,6 @@
 const { chromium } = require('playwright');
 const { execFileSync } = require('child_process');
+const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 const http = require('http');
@@ -78,6 +79,53 @@ function copyDirRecursive(src, dest) {
       fs.copyFileSync(srcPath, destPath);
     }
   }
+}
+
+function getStatisticArtifact() {
+  const statisticContent = fs.readFileSync(STATISTIC_TSV_PATH, 'utf-8');
+  const statisticVersion = crypto.createHash('sha1').update(statisticContent).digest('hex');
+  return { statisticFileName: `statistic.${statisticVersion}.tsv` };
+}
+
+function statisticPublicUrl(statisticFileName) {
+  return `/web/${statisticFileName}`;
+}
+
+/**
+ * Replace the template meta with the versioned URL; optionally append preload and static marker before </head>.
+ */
+function injectHeadExtras(html, { statisticFileName, statisticPreload = false, staticPageMarker = false }) {
+  const url = statisticPublicUrl(statisticFileName);
+  let out = html.replace(
+    /<meta name="web-resilience-statistic-url" content="[^"]*">/,
+    `<meta name="web-resilience-statistic-url" content="${url}">`
+  );
+  const extra = [];
+  if (statisticPreload) {
+    extra.push(`    <link rel="preload" href="${url}" as="fetch">`);
+  }
+  if (staticPageMarker) {
+    extra.push('    <script>window.__IS_STATIC_PAGE__ = true;</script>');
+  }
+  if (extra.length) {
+    out = out.replace('</head>', `\n${extra.join('\n')}\n</head>`);
+  }
+  return out;
+}
+
+function cleanupVersionedStatisticTsfs(outputDir) {
+  if (!fs.existsSync(outputDir)) return;
+  for (const entry of fs.readdirSync(outputDir)) {
+    if (/^statistic\.[a-f0-9]+\.tsv$/i.test(entry)) {
+      fs.rmSync(path.join(outputDir, entry), { force: true });
+    }
+  }
+}
+
+function copyVersionedStatistic(outputDir, artifact) {
+  if (!fs.existsSync(STATISTIC_TSV_PATH)) return;
+  cleanupVersionedStatisticTsfs(outputDir);
+  fs.copyFileSync(STATISTIC_TSV_PATH, path.join(outputDir, artifact.statisticFileName));
 }
 
 // 讀取 statistic.tsv 並解析 URL 列表
@@ -162,7 +210,7 @@ function startServer() {
 }
 
 // 使用 Playwright 生成靜態 HTML
-async function generateStaticHTML(browser, url, index, total) {
+async function generateStaticHTML(browser, url, index, total, artifact) {
   const page = await browser.newPage({
     viewport: { width: 1200, height: 800 }
   });
@@ -287,15 +335,11 @@ async function generateStaticHTML(browser, url, index, total) {
         console.log(`  [瀏覽器 ${index}] ⚠️  無法從渲染頁面提取 head`);
       }
 
-      // 在靜態頁面中加入環境變數標記
-      // 在 </head> 之前插入標記 script
-      const staticPageMarker = `
-    <script>
-        // 標記此頁面為靜態編譯頁面
-        window.__IS_STATIC_PAGE__ = true;
-    </script>
-`;
-      html = html.replace('</head>', staticPageMarker + '</head>');
+      // 在靜態頁面中加入 statistic URL meta 與靜態頁面標記
+      html = injectHeadExtras(html, {
+        statisticFileName: artifact.statisticFileName,
+        staticPageMarker: true
+      });
       console.log(`  [瀏覽器 ${index}] ✅ 已加入靜態頁面標記`);
 
       // 個別站點靜態頁不需要顯示整體結果區塊，避免殘留 v-if 在靜態頁誤顯示
@@ -315,12 +359,12 @@ async function generateStaticHTML(browser, url, index, total) {
 }
 
 // 處理單一 URL（使用瀏覽器實例）
-async function processUrl(browser, url, browserIndex, globalIndex, totalUrls) {
-  return await generateStaticHTML(browser, url, browserIndex, globalIndex);
+async function processUrl(browser, url, browserIndex, globalIndex, totalUrls, artifact) {
+  return await generateStaticHTML(browser, url, browserIndex, globalIndex, artifact);
 }
 
 // Worker 函數：從 URL 隊列中取一個處理一個
-async function processUrlWorker(browser, urlQueue, workerId, totalUrls) {
+async function processUrlWorker(browser, urlQueue, workerId, totalUrls, artifact) {
   const results = [];
 
   while (urlQueue.length > 0) {
@@ -328,7 +372,7 @@ async function processUrlWorker(browser, urlQueue, workerId, totalUrls) {
     if (!url) break;
 
     const globalIndex = totalUrls - urlQueue.length;
-    const result = await processUrl(browser, url, workerId, globalIndex, totalUrls);
+    const result = await processUrl(browser, url, workerId, globalIndex, totalUrls, artifact);
     results.push(result);
 
     // 立即寫入檔案（不需要等待所有完成）
@@ -362,17 +406,24 @@ async function build() {
     console.log('🚀 完整建置模式：處理所有網址\n');
   }
 
+  const artifact = getStatisticArtifact();
+
   // 確保輸出目錄存在
   if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
 
-  // 複製主頁面（index.html）到輸出目錄
-  fs.copyFileSync(TEMPLATE_FILE, path.join(OUTPUT_DIR, 'index.html'));
+  // 複製主頁面（index.html）到輸出目錄：meta + statistic preload
+  const homepageHtml = injectHeadExtras(fs.readFileSync(TEMPLATE_FILE, 'utf8'), {
+    statisticFileName: artifact.statisticFileName,
+    statisticPreload: true
+  });
+  fs.writeFileSync(path.join(OUTPUT_DIR, 'index.html'), homepageHtml, 'utf8');
 
-  // 複製主頁面作為 404.html，並修復圖片路徑
-  let html404 = fs.readFileSync(TEMPLATE_FILE, 'utf8');
-  html404 = fixAssetPaths(html404);
+  // 404：修復資源路徑後只更新 meta（無 preload）
+  const html404 = injectHeadExtras(fixAssetPaths(fs.readFileSync(TEMPLATE_FILE, 'utf8')), {
+    statisticFileName: artifact.statisticFileName
+  });
   fs.writeFileSync(path.join(OUTPUT_DIR, '404.html'), html404, 'utf8');
 
   // 複製其他資源檔案
@@ -392,10 +443,7 @@ async function build() {
     }
   });
 
-  // 複製 statistic.tsv 到輸出目錄，部署後主頁從本站讀取（不需再從 api repo 抓）
-  if (fs.existsSync(STATISTIC_TSV_PATH)) {
-    fs.copyFileSync(STATISTIC_TSV_PATH, path.join(OUTPUT_DIR, 'statistic.tsv'));
-  }
+  copyVersionedStatistic(OUTPUT_DIR, artifact);
 
   // 複製首頁需要的整體圖表（test-result/img/overall-result.svg -> web/img/overall-result.svg）
   if (fs.existsSync(SUBMODULE_IMG_DIR)) {
@@ -412,9 +460,9 @@ async function build() {
   }
 
   // 注意：JSON 檔案不複製到 web
-  // - 建置時：從 submodule 讀取 statistic.tsv 取得 URL 列表，並複製到 web 供部署
+  // - 建置時：從 submodule 讀取 statistic.tsv 取得 URL 列表，並複製成 versioned 檔名供部署
   // - 建置時的 HTTP 伺服器：從 submodule 提供檔案（用於渲染）
-  // - 部署後的主頁面：從本站讀取 statistic.tsv，JSON 仍從 GitHub raw 讀取
+  // - 部署後的主頁面：從本站讀取 versioned statistic.tsv，JSON 仍從 GitHub raw 讀取
   // - 靜態頁面（如 web/google.com/index.html）：使用內嵌的資料，不需要額外檔案
 
   // 啟動 HTTP 伺服器
@@ -478,7 +526,7 @@ async function build() {
       // 並行處理：每個 worker 從隊列中取一個 URL 處理一個
       const allResults = await Promise.all(
         browsers.map((browser, idx) =>
-          processUrlWorker(browser, urlQueue, idx + 1, urlsToProcess.length)
+          processUrlWorker(browser, urlQueue, idx + 1, urlsToProcess.length, artifact)
         )
       );
 
