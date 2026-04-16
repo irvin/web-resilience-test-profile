@@ -256,7 +256,11 @@
     
 
     <footer>
-        <p id="check-other-site-container" v-show="showCheckOther"><button class="check-other-site-btn" @click="openSearch">檢查其他網站</button></p>
+        <p id="check-other-site-container" v-show="showCheckOther">
+            <a href="/web/">
+                <button class="check-other-site-btn" @click.prevent="openSearch">檢查其他網站</button>
+            </a>
+        </p>
         <hr>
         <p>
             <a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="../g0v_logo.svg" title="g0v 數位韌性松" style="height: 65px;"></a>
