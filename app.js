@@ -422,7 +422,6 @@ async function loadResults() {
 
     // A prerendered static page without query params does not need runtime fetches.
     if (isStaticPage() && !urlParam) {
-        // Keep the prerendered content visible and sync the search UI state.
         if (window.__vueState__) {
             if (window.__vueState__.showSearch) {
                 window.__vueState__.showSearch.value = false;

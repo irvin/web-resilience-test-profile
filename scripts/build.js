@@ -167,7 +167,13 @@ function startServer() {
       let filePath;
 
       if (url.pathname === '/' || url.pathname === '/index.html') {
-        filePath = TEMPLATE_FILE;
+        const hasUrlQuery = url.searchParams.has('url');
+        if (hasUrlQuery) {
+          filePath = TEMPLATE_FILE;
+        } else {
+          const builtIndex = path.join(OUTPUT_DIR, 'index.html');
+          filePath = fs.existsSync(builtIndex) ? builtIndex : TEMPLATE_FILE;
+        }
       } else if (url.pathname.endsWith('.json')) {
         const filename = path.basename(url.pathname);
         filePath = path.join(SUBMODULE_DIR, filename);
@@ -338,6 +344,81 @@ async function generateStaticHTML(browser, url, index, total, artifact) {
   }
 }
 
+/** Prerender only `.overview-card` and `<head>` (meta/title) for the homepage; rest stays Vue templates. */
+async function prerenderHomepageOverviewAndMeta(browser, artifact) {
+  const page = await browser.newPage({
+    viewport: { width: 1200, height: 800 }
+  });
+
+  try {
+    console.log('  [homepage] loading / (overview + meta)...');
+    await page.goto(`http://localhost:${SERVER_PORT}/`, {
+      waitUntil: 'networkidle0',
+      timeout: 45000
+    });
+
+    await page
+      .waitForFunction(
+        () => {
+          const card = document.querySelector('.overview-card');
+          if (!card) return false;
+          return !card.textContent.includes('{{');
+        },
+        { timeout: 25000 }
+      )
+      .catch(() => {
+        console.log('  [homepage] ⚠️  timeout waiting for .overview-card; continuing');
+      });
+
+    await page.evaluate(() => new Promise((resolve) => {
+      requestAnimationFrame(() => requestAnimationFrame(resolve));
+    }));
+
+    const overviewOuter = await page.evaluate(() => {
+      const el = document.querySelector('.overview-card');
+      return el ? el.outerHTML : '';
+    });
+
+    let html = fs.readFileSync(TEMPLATE_FILE, 'utf8');
+
+    if (overviewOuter) {
+      const overviewPattern = /<section[^>]*class="overview-card"[^>]*>[\s\S]*?<\/section>/i;
+      if (overviewPattern.test(html)) {
+        html = html.replace(overviewPattern, overviewOuter);
+        console.log('  [homepage] ✅ replaced .overview-card');
+      } else {
+        console.log('  [homepage] ⚠️  .overview-card block not found in template');
+      }
+    }
+
+    const renderedHead = await page.evaluate(() => {
+      const headElement = document.querySelector('head');
+      return headElement ? headElement.outerHTML : '';
+    });
+
+    if (renderedHead) {
+      const headPattern = /<head[^>]*>[\s\S]*?<\/head>/i;
+      if (headPattern.test(html)) {
+        html = html.replace(headPattern, renderedHead);
+        console.log('  [homepage] ✅ replaced <head>');
+      }
+    }
+
+    html = injectHeadExtras(html, {
+      statisticFileName: artifact.statisticFileName,
+      statisticPreload: false,
+      staticPageMarker: false
+    });
+
+    return html;
+  } catch (error) {
+    console.error('  [homepage] error:', error.message);
+    throw error;
+  } finally {
+    await page.close();
+  }
+}
+
 async function processUrl(browser, url, browserIndex, globalIndex, totalUrls, artifact) {
   return await generateStaticHTML(browser, url, browserIndex, globalIndex, artifact);
 }
@@ -431,6 +512,18 @@ async function build() {
   const server = await startServer();
 
   try {
+    console.log('Prerendering homepage (.overview-card + <head>)...\n');
+    const homeBrowser = await chromium.launch({
+      headless: true
+    });
+    try {
+      const prerenderedHome = await prerenderHomepageOverviewAndMeta(homeBrowser, artifact);
+      fs.writeFileSync(path.join(OUTPUT_DIR, 'index.html'), prerenderedHome, 'utf8');
+      console.log('✓ Homepage overview + meta written to web/index.html\n');
+    } finally {
+      await homeBrowser.close();
+    }
+
     const urls = loadStatisticData();
 
     let urlsToProcess;
