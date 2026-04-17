@@ -11,6 +11,7 @@ const ROOT_DIR = path.join(__dirname, '..');
 // Submodule path
 const SUBMODULE_DIR = path.join(ROOT_DIR, 'test-result');
 const STATISTIC_TSV_PATH = path.join(SUBMODULE_DIR, 'statistic.tsv');
+const OVERALL_RESULT_TSV_PATH = path.join(SUBMODULE_DIR, 'overall-result.tsv');
 const SUBMODULE_IMG_DIR = path.join(SUBMODULE_DIR, 'img');
 const OUTPUT_DIR = path.join(ROOT_DIR, 'web');
 const TEMPLATE_FILE = path.join(ROOT_DIR, 'index.html');
@@ -380,21 +381,17 @@ async function build() {
   }
 
   const artifact = getStatisticArtifact();
+  const templateHtml = fs.readFileSync(TEMPLATE_FILE, 'utf8');
 
   if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
 
-  const homepageHtml = injectHeadExtras(fs.readFileSync(TEMPLATE_FILE, 'utf8'), {
+  const homepageHtml = injectHeadExtras(templateHtml, {
     statisticFileName: artifact.statisticFileName,
     statisticPreload: true
   });
   fs.writeFileSync(path.join(OUTPUT_DIR, 'index.html'), homepageHtml, 'utf8');
-
-  const html404 = injectHeadExtras(fixAssetPaths(fs.readFileSync(TEMPLATE_FILE, 'utf8')), {
-    statisticFileName: artifact.statisticFileName
-  });
-  fs.writeFileSync(path.join(OUTPUT_DIR, '404.html'), html404, 'utf8');
 
   const assets = [
     'g0v_logo.svg', 
@@ -413,6 +410,10 @@ async function build() {
   });
 
   copyVersionedStatistic(OUTPUT_DIR, artifact);
+
+  if (fs.existsSync(OVERALL_RESULT_TSV_PATH)) {
+    fs.copyFileSync(OVERALL_RESULT_TSV_PATH, path.join(OUTPUT_DIR, 'overall-result.tsv'));
+  }
 
   if (fs.existsSync(SUBMODULE_IMG_DIR)) {
     const outputImgDir = path.join(OUTPUT_DIR, 'img');

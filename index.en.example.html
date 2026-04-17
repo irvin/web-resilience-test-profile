@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will This Website Still Work During a Submarine Cable Outage?</title>
-    <meta name="description" content="Enter a URL to view its test result">
+    <title>When submarine cables fail, will websites still work?</title>
+    <meta name="description" content="Enter a URL to view the test result">
     <link rel="icon" href="/favicon.ico">
     <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/">
 
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Will This Website Still Work During a Submarine Cable Outage?">
-    <meta property="og:description" content="Enter a URL to view its test result">
+    <meta property="og:title" content="When submarine cables fail, will websites still work?">
+    <meta property="og:description" content="Enter a URL to view the test result">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/">
     <meta name="web-resilience-statistic-url" content="/test-result/statistic.tsv">
@@ -22,8 +22,8 @@
     <div id="app">
 
     <div class="static-wrapper" data-static="begin"></div>
-    <h1 v-if="!displayUrl" class="home-title">Will This Website Still Work During a Submarine Cable Outage?</h1>
-    <h1 v-else>Will <a :href="'https://' + displayUrl" target="_blank" rel="noopener noreferrer nofollow">{{displayUrl}}</a> still work during a submarine cable outage?</h1>
+    <h1 v-if="!displayUrl" class="home-title">When submarine cables fail, will the websites Taiwanese people use most still work?</h1>
+    <h1 v-else>When submarine cables fail, will <a :href="'https://' + displayUrl" target="_blank" rel="noopener noreferrer nofollow">{{displayUrl}}</a> still work?</h1>
 
     <div id="results">
         <div v-if="vueResult" class="result-card">
@@ -40,69 +40,69 @@
 
                 <div class="test-env-section" itemscope itemtype="https://schema.org/FAQPage">
                     <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                        <p itemprop="name"><strong>Can {{ displayUrl }} still open normally during a submarine cable outage?</strong></p>
+                        <p itemprop="name"><strong>When submarine cables fail, can {{ displayUrl }} still load normally?</strong></p>
                         <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                            <p itemprop="text" v-if="summaryKey === 'wontWork'">Based on the latest test, {{ displayUrl }} may not work during a submarine cable outage. This means the website may become unreachable if international connectivity is interrupted.</p>
-                            <p itemprop="text" v-else-if="summaryKey === 'uncertain'">Based on the latest test, the availability of {{ displayUrl }} is uncertain during a submarine cable outage. We cannot confirm whether it would remain accessible if international connectivity is disrupted.</p>
-                            <p itemprop="text" v-else>Based on the latest test, {{ displayUrl }} may continue to work during a submarine cable outage. This suggests the website has a better chance of remaining available if international connectivity is disrupted.</p>
+                            <p itemprop="text" v-if="summaryKey === 'wontWork'">Based on the latest test, under a submarine-cable outage scenario {{ displayUrl }} may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p>
+                            <p itemprop="text" v-else-if="summaryKey === 'uncertain'">Based on the latest test, under a submarine-cable outage scenario the availability of {{ displayUrl }} is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.</p>
+                            <p itemprop="text" v-else>Based on the latest test, under a submarine-cable outage scenario {{ displayUrl }} “may work.” If international connectivity is cut or blocked, the site may still remain available.</p>
                         </div>
                     </div>
 
                     <template v-if="summaryKey === 'wontWork'">
                         <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                            <p itemprop="name"><strong>Why might {{ displayUrl }} not work during a submarine cable outage?</strong></p>
+                            <p itemprop="name"><strong>Why might {{ displayUrl }} “not work” when submarine cables fail?</strong></p>
                             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <p itemprop="text">During testing, we found that some homepage content or resources depended on infrastructure outside the country. Those resources usually load normally, but they may fail when submarine cables are cut or heavily congested, which can break the site experience.</p>
+                                <p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p>
                             </div>
                         </div>
                     </template>
                     <template v-else-if="summaryKey === 'uncertain'">
                         <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                            <p itemprop="name"><strong>Why is it uncertain whether {{ displayUrl }} would still work?</strong></p>
+                            <p itemprop="name"><strong>Why is it “uncertain” whether {{ displayUrl }} would work when submarine cables fail?</strong></p>
                             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <p itemprop="text">We did not observe direct foreign resource requests, but we did find dependencies on in-country nodes of multinational cloud services. Whether those services would keep working during an international connectivity disruption depends on platform architecture, cache design, and origin routing, so the result remains uncertain.</p>
+                                <p itemprop="text">We did not see direct requests to foreign resources, but we did find reliance on in-country nodes of multinational cloud services. Whether those services keep running when outbound connectivity is impaired depends on platform architecture, cache design, origin routing, and more—so for now we can only label the outcome “uncertain.”</p>
                             </div>
                         </div>
                     </template>
                     <template v-else>
                         <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                            <p itemprop="name"><strong>Why might {{ displayUrl }} continue to work?</strong></p>
+                            <p itemprop="name"><strong>Why might {{ displayUrl }} “may work” when submarine cables fail?</strong></p>
                             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <p itemprop="text">During testing, the homepage resources for {{ displayUrl }} appeared to be available domestically, and we did not find clear evidence of international cloud dependencies. That means the site may have a better chance of staying available when submarine cables are disrupted.</p>
+                                <p itemprop="text">During testing, resources used by the homepage of {{ displayUrl }} appeared obtainable within the country, and we did not find clear international-cloud dependencies. That means when cables are cut or connectivity is blocked, the site has a relatively better chance of staying up.</p>
                             </div>
                         </div>
                     </template>
 
                     <template v-if="summaryKey === 'wontWork'">
                         <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                            <p itemprop="name"><strong>Does this mean {{ displayUrl }} will definitely fail during severe cable congestion?</strong></p>
+                            <p itemprop="name"><strong>Does this mean {{ displayUrl }} will definitely be unavailable during severe cable congestion?</strong></p>
                             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <p itemprop="text">Not necessarily. This result is based on dependencies observed while loading the homepage. It indicates elevated risk, but it does not guarantee that every page or every function would fail completely.</p>
+                                <p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p>
                             </div>
                         </div>
                     </template>
                     <template v-else-if="summaryKey === 'uncertain'">
                         <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                            <p itemprop="name"><strong>Does this mean {{ displayUrl }} might fail during severe cable congestion?</strong></p>
+                            <p itemprop="name"><strong>Does this mean {{ displayUrl }} might be unavailable during severe cable congestion?</strong></p>
                             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <p itemprop="text">Yes, that is possible. "Uncertain" means there is not enough evidence to say the site would definitely work or definitely fail. Service providers would need to explain how their in-country nodes behave when international links are unavailable.</p>
+                                <p itemprop="text">“Uncertain” means we currently cannot conclude it will definitely work or definitely fail. Availability of the multinational cloud in-country nodes that {{ displayUrl }} depends on, when cables are cut or congestion is extreme, needs to be clarified and explained further by providers.</p>
                             </div>
                         </div>
                     </template>
                     <template v-else>
                         <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                            <p itemprop="name"><strong>Does this mean {{ displayUrl }} is definitely safe?</strong></p>
+                            <p itemprop="name"><strong>Does this mean {{ displayUrl }} will definitely be fine during severe cable congestion?</strong></p>
                             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                                <p itemprop="text">No. "May work" only means the homepage test did not reveal obvious high-risk dependencies. It does not guarantee that every page, login flow, API, database, or other feature would keep working normally.</p>
+                                <p itemprop="text">No. “May work” only means the homepage test did not show obvious high-risk dependencies. It does not guarantee that every page, login flow, API, database, or other function would behave normally.</p>
                             </div>
                         </div>
                     </template>
 
                     <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-                        <p itemprop="name"><strong>How is the resilience of {{ displayUrl }} evaluated?</strong></p>
+                        <p itemprop="name"><strong>How is resilience for {{ displayUrl }} under cable outages assessed?</strong></p>
                         <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                            <p itemprop="text">When opening the homepage of {{ displayUrl }}, we observed {{ requestCount }} requests from {{ uniqueDomains }} domains.<br>If any of those requests connect abroad, the result is classified as "Will not work". If there are no direct foreign connections but there is reliance on in-country nodes of multinational cloud services, the result is "Uncertain". If the homepage only depends on domestic resources outside that cloud-dependency category, the result is "May work".<br>
-                            For detailed rules and methodology, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research method and full report</a>.</p>
+                            <p itemprop="text">When opening the homepage of {{ displayUrl }}, we observed {{ requestCount }} requests across {{ uniqueDomains }} domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>
+                            For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p>
                         </div>
                     </div>
 
@@ -111,7 +111,7 @@
 
             <div class="details-container">
                 <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
-                    <span>Connection details</span>
+                    <span>Connection information</span>
                 </div>
                 <div class="test-env-content">
                     <div class="test-env-section" v-if="siteLocation">
@@ -125,7 +125,7 @@
                         </ul>
                     </div>
                     <div class="test-env-section" v-if="connectionDetails && connectionDetails.length > 0">
-                        <h4>Connection details</h4>
+                        <h4>Connection information</h4>
                         <ul class="connection-list">
                             <li v-for="(connection, index) in connectionDetails" :key="index" class="connection-item">
                                 <span v-if="connection.category" :class="['category-badge', connection.categoryClass]">{{connection.categoryText}}</span>
@@ -145,9 +145,9 @@
                     <div class="test-env-section">
                         <h4>Test parameters</h4>
                         <ul>
-                            <li>DNS server: {{testParameters && testParameters.customDNS}}</li>
+                            <li>Specified DNS server: {{testParameters && testParameters.customDNS}}</li>
                             <li v-if="testParameters && testParameters.adblockUrls && testParameters.adblockUrls.length">
-                                Adblock lists:
+                                Adblock lists used:
                                 <ul>
                                     <li v-for="url in testParameters.adblockUrls" :key="url">
                                         <a :href="url" target="_blank">{{url}}</a>
@@ -189,7 +189,7 @@
     <!-- Shared search box layout placed above the footer -->
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
-            <input type="text" id="search-input" placeholder="Enter a URL to view its test result..." autocomplete="off"
+            <input type="text" id="search-input" placeholder="Enter a URL to view the test result..." autocomplete="off"
                 v-model="searchQuery"  @keydown="onSearchKeydown" @focus="onSearchFocus"
             >
 
@@ -207,37 +207,47 @@
                     {{ formatDisplayUrl(url) }}
                 </a>
             </div>
-            <!-- Empty state shown when no result matches the search query -->
+            <!-- Empty state when the query matches no result -->
             <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
-                        <p>No test result was found for {{ searchQuery }}</p>
-                        <p>You can review the <a href="https://github.com/irvin/web-resilience-test-result" target="_blank">tested site dataset</a> and run a manual test with <a href="https://github.com/irvin/web-resilience-test/blob/main_w_test_result/no-global-connection-check.js" target="_blank">this tool</a>.</p>
+                        <p>No test result found for {{ searchQuery }}</p>
+                        <p>You can browse the <a href="https://github.com/irvin/web-resilience-test-result" target="_blank">dataset of tested sites</a> and run a manual test with <a href="https://github.com/irvin/web-resilience-test/blob/main_w_test_result/no-global-connection-check.js" target="_blank">this tool</a>.</p>
             </div>
             <div class="search-meta" id="search-meta">
                 <!-- Search statistics -->
                 <template v-if="hasItems">
-                        {{totalAll}} sites in total, showing the first {{shown}}.
+                        {{ totalAll }} sites in total; showing the first {{ shown }}.
                         <span class="search-load-more" v-if="hasMore" @click="loadMore">[Load more sites]</span>
                 </template>
                 <template v-else>
-                        {{totalAll}} sites in total, showing the first 0.
+                        {{ totalAll }} sites in total; showing the first 0.
                 </template>
             </div>
         </div>
     </div>
 
-    <section v-if="!displayUrl" class="overview-card">
+    <section v-if="!displayUrl" class="overview-card" itemscope itemtype="https://schema.org/FAQPage">
         <hr>
-        <h2>Overall results</h2>
-        <p>
-            Based on the current dataset, the chart below shows the exposure of widely used Taiwanese websites to foreign and multinational cloud dependencies. In other words, it estimates what share of websites may fail outright, what share may face elevated risk due to international cloud dependence, and what share appear relatively more resilient during submarine cable cuts or severe congestion. <a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">Read the methodology and full report</a>.
-        </p>
+        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <meta itemprop="name" content="When submarine cables fail, will the websites Taiwanese people use most still work?">
+            <div v-if="overallStats" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">Based on tests of {{ overallStats.totalCount }} widely used Taiwanese websites, if submarine cables fail or congestion is severe, {{ overallStats.wontWorkPercent }} of sites may not work; {{ overallStats.internationalCloudPercent }} face higher risk; only {{ overallStats.mightWorkPercent }} are relatively more resilient and more likely to remain available.</p>
+                <p>The chart below shows exposure to foreign and international cloud dependencies among widely used Taiwanese sites. <a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">Read the research methodology and aggregated report</a></p>
+            </div>
+            <div v-else>
+                <p>Based on current test results, the chart below shows exposure to foreign and international cloud dependencies among widely used Taiwanese websites—that is, what share of sites would fail outright, how many face higher fault risk due to reliance on international cloud nodes, and what share are relatively more resilient when submarine cables fail or congestion is extreme. <a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">Read the research methodology and aggregated report</a></p>
+            </div>
+        </div>
         <figure class="overview-chart">
-            <img :src="overallChartUrl" alt="Overall result chart">
+            <img :src="overallChartUrl" alt="Overall results chart">
         </figure>
     </section>
 
     <footer>
-        <p id="check-other-site-container" v-show="showCheckOther"><button class="check-other-site-btn" @click="openSearch">Check another site</button></p>
+        <p id="check-other-site-container" v-show="showCheckOther">
+            <a href="/web/">
+                <button class="check-other-site-btn" @click.prevent="openSearch">Check another site</button>
+            </a>
+        </p>
         <hr>
         <p>
             <a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="g0v_logo.svg" title="g0v Digital Resilience Hackathon" style="height: 65px;"></a>
@@ -245,7 +255,7 @@
         </p>
         <p>Curated by <a href="https://t.me/s/irvinfly" target="_blank">Irvin Chen</a>. Released under the <a href="https://github.com/irvin/web-resilience-test/?tab=License-1-ov-file#License-1-ov-file" target="_blank">CC BY-NC-ND 4.0 International License</a>.</p>
         <p style="margin-bottom: 2em;">
-            <a href="https://resilience.ocf.tw/web/report/" target="_blank">Research report</a> | <a href="https://github.com/irvin/web-resilience-test" target="_blank">Source code</a>
+            <a href="https://resilience.ocf.tw/web/report/" target="_blank">Research report</a>｜<a href="https://github.com/irvin/web-resilience-test" target="_blank">Source code</a>
         </p>
         <hr>
         <p><a href="https://apnic.foundation/" target="_blank"><img src="APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" title="APNIC Foundation ISIF Asia" style="height: 90px;"></a></p>
@@ -269,22 +279,24 @@
                 'foreign/direct': 'Foreign / Other'
             },
             pageTitle: (domain) => domain
-                ? `Will ${domain} still work during a submarine cable outage?`
-                : 'Will This Website Still Work During a Submarine Cable Outage?',
+                ? `When submarine cables fail, will ${domain} still work?`
+                : 'When submarine cables fail, will websites still work?',
+            homeOverallMetaDescription: (stats) =>
+                `Based on tests of ${stats.totalCount} widely used Taiwanese websites, if submarine cables fail, ${stats.wontWorkPercent} may not work, ${stats.internationalCloudPercent} face higher risk, and only ${stats.mightWorkPercent} are more likely to remain operable. Enter a URL to see whether the site you want to visit might work!`,
             ogDescription: (domain, summaryKey) => {
                 if (!domain) {
-                    return 'Enter a URL to view its test result';
+                    return 'Enter a URL to view the test result';
                 }
 
                 if (summaryKey === 'wontWork') {
-                    return `Based on the latest test, ${domain} may not work during a submarine cable outage. The website may become unreachable if international connectivity is interrupted.`;
+                    return `Based on the latest test, under a submarine-cable outage scenario ${domain} may “not work.” If international connectivity is cut or blocked, the site may fail to load.`;
                 }
 
                 if (summaryKey === 'uncertain') {
-                    return `Based on the latest test, the availability of ${domain} is uncertain during a submarine cable outage. We cannot confirm whether it would remain accessible if international connectivity is disrupted.`;
+                    return `Based on the latest test, under a submarine-cable outage scenario the availability of ${domain} is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.`;
                 }
 
-                return `Based on the latest test, ${domain} may continue to work during a submarine cable outage. This suggests the site has a better chance of staying available if international connectivity is disrupted.`;
+                return `Based on the latest test, under a submarine-cable outage scenario ${domain} “may work.” If international connectivity is cut or blocked, the site may still remain available.`;
             }
         };
     </script>
