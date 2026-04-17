@@ -26,12 +26,21 @@ const CATEGORY_LABELS = {
 const DEFAULT_PAGE_TITLE = '海纜斷掉時網站會動嗎？';
 const DEFAULT_META_DESCRIPTION = '輸入網址查看測試結果';
 
+/**
+ * Homepage meta description once overall-result.tsv is loaded (Vue updates DOM; no build placeholders).
+ * @param {{ totalCount: string, wontWorkPercent: string, internationalCloudPercent: string, mightWorkPercent: string }} stats
+ */
+function defaultHomeOverallMetaDescription(stats) {
+    return `根據 ${stats.totalCount} 個台灣常用網站的檢測結果，在海纜斷光或極度壅塞的情況下，有 ${stats.wontWorkPercent} 的網站可能不會動；${stats.internationalCloudPercent} 的網站有較高風險；僅 ${stats.mightWorkPercent} 的網站相對較有韌性。輸入網址查看測試結果！`;
+}
+
 const DEFAULT_APP_TEXT = {
     displayLocale: DEFAULT_DISPLAY_LOCALE,
     sortLocale: DEFAULT_SORT_LOCALE,
     summaryLabels: SUMMARY_LABELS,
     categoryLabels: CATEGORY_LABELS,
     pageTitle: (domain) => domain ? `海纜斷掉時，${domain} 會動嗎？` : DEFAULT_PAGE_TITLE,
+    homeOverallMetaDescription: defaultHomeOverallMetaDescription,
     ogDescription: (domain, summaryKey) => {
         if (!domain) {
             return DEFAULT_META_DESCRIPTION;
@@ -54,6 +63,7 @@ function getAppTextConfig() {
     return {
         ...DEFAULT_APP_TEXT,
         ...overrides,
+        homeOverallMetaDescription: overrides.homeOverallMetaDescription || DEFAULT_APP_TEXT.homeOverallMetaDescription,
         summaryLabels: {
             ...DEFAULT_APP_TEXT.summaryLabels,
             ...(overrides.summaryLabels || {})
@@ -101,6 +111,65 @@ function getOverallChartUrl() {
         return '/test-result/img/overall-result.svg';
     }
     return '/web/img/overall-result.svg';
+}
+
+// Resolve the overall-result.tsv location:
+// - localhost: read from the test-result submodule
+// - production: read the file emitted under /web/ at build time
+function getOverallResultTsvUrl() {
+    if (isLocalhost()) {
+        return '/test-result/overall-result.tsv';
+    }
+    return '/web/overall-result.tsv';
+}
+
+function formatOverallPercent(rawPercent) {
+    if (rawPercent === null || rawPercent === undefined) return '';
+    const match = String(rawPercent).trim().match(/^(-?\d+(?:\.\d+)?)%?$/);
+    if (!match) return String(rawPercent);
+    return `${Math.round(Number(match[1]))}%`;
+}
+
+async function loadOverallResult() {
+    try {
+        const response = await fetch(getOverallResultTsvUrl());
+        if (!response.ok) return null;
+        const text = await response.text();
+        const lines = text.split('\n').filter(line => line.trim());
+        if (lines.length < 2) return null;
+
+        const headers = lines[0].split('\t').map(h => h.trim());
+        const categoryIdx = headers.indexOf('category');
+        const countIdx = headers.indexOf('count');
+        const percentIdx = headers.indexOf('percent');
+        if (categoryIdx === -1 || countIdx === -1 || percentIdx === -1) return null;
+
+        const rowsByCategory = {};
+        for (let i = 1; i < lines.length; i++) {
+            const cols = lines[i].split('\t');
+            const category = (cols[categoryIdx] || '').trim();
+            if (!category) continue;
+            rowsByCategory[category] = {
+                count: (cols[countIdx] || '').trim(),
+                percent: (cols[percentIdx] || '').trim()
+            };
+        }
+
+        const required = ['全部', '不會動', '國際雲', '可能會動'];
+        for (const key of required) {
+            if (!rowsByCategory[key]) return null;
+        }
+
+        return {
+            totalCount: rowsByCategory['全部'].count,
+            wontWorkPercent: formatOverallPercent(rowsByCategory['不會動'].percent),
+            internationalCloudPercent: formatOverallPercent(rowsByCategory['國際雲'].percent),
+            mightWorkPercent: formatOverallPercent(rowsByCategory['可能會動'].percent)
+        };
+    } catch (error) {
+        console.error('Error loading overall-result.tsv:', error);
+        return null;
+    }
 }
 
 async function fetchTestResult(filename) {
@@ -353,7 +422,6 @@ async function loadResults() {
 
     // A prerendered static page without query params does not need runtime fetches.
     if (isStaticPage() && !urlParam) {
-        // Keep the prerendered content visible and sync the search UI state.
         if (window.__vueState__) {
             if (window.__vueState__.showSearch) {
                 window.__vueState__.showSearch.value = false;
@@ -465,7 +533,7 @@ async function loadResults() {
 
 }
 
-const { createApp, ref, computed } = Vue;
+const { createApp, ref, computed, watch } = Vue;
 
 // Vue state container exposed to the existing plain JS helpers.
 const vueState = {
@@ -499,6 +567,30 @@ const vueRootApp = createApp({
 
         const hasResult = computed(() => !!vueResult.value);
         const overallChartUrl = computed(() => getOverallChartUrl());
+
+        const overallStats = ref(null);
+        vueState.overallStats = overallStats;
+        loadOverallResult().then(stats => {
+            if (stats) overallStats.value = stats;
+        });
+
+        function applyHomepageOverallMetaIfNeeded() {
+            const stats = overallStats.value;
+            if (!stats || vueResult.value) {
+                return;
+            }
+            const desc = getAppTextConfig().homeOverallMetaDescription(stats);
+            const metaDesc = document.querySelector('meta[name="description"]');
+            const ogDesc = document.querySelector('meta[property="og:description"]');
+            if (metaDesc) {
+                metaDesc.content = desc;
+            }
+            if (ogDesc) {
+                ogDesc.content = desc;
+            }
+        }
+
+        watch([overallStats, vueResult], applyHomepageOverallMetaIfNeeded, { immediate: true });
 
         const displayUrl = computed(() => {
             if (!vueResult.value) return '';
@@ -835,6 +927,7 @@ const vueRootApp = createApp({
             vueResult,
             hasResult,
             overallChartUrl,
+            overallStats,
             displayUrl,
             testTime,
             httpStatus,
