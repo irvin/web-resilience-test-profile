@@ -61,6 +61,16 @@ function fixAssetPaths(html) {
   return html;
 }
 
+/** Only the homepage build should ship OG image tags for the overall chart (template omits them). */
+function injectHomepageChartOgMeta(html) {
+  const block = `    <meta property="og:image" content="https://resilience.ocf.tw/web/img/overall-result.svg">
+    <meta property="og:image:alt" content="台灣常用網站韌性檢測整體結果圖表">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://resilience.ocf.tw/web/img/overall-result.svg">
+`;
+  return html.replace('</head>', `${block}</head>`);
+}
+
 // Output path: <dir>/index.html
 function urlToOutputPath(url) {
   const dirName = urlToDirPath(url);
@@ -413,6 +423,8 @@ async function prerenderHomepageOverviewAndMeta(browser, artifact) {
     // Prerender runs on localhost where getOverallChartUrl() is /test-result/img/...;
     // shipped site lives under /web/ with assets in /web/img/ (see copy step above).
     html = html.replace(/\/test-result\/img\/overall-result\.svg/g, '/web/img/overall-result.svg');
+
+    html = injectHomepageChartOgMeta(html);
 
     return html;
   } catch (error) {
