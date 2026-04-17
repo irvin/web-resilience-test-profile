@@ -38,10 +38,10 @@
                     <p class="score score-X" :class="foreignZeroClass">Foreign connections (X)<br><strong style="font-size: 1.3em;">{{foreignCount}}</strong></p>
                 </div>
 
-                <div class="test-env-section" itemscope itemtype="https://schema.org/FAQPage">
-                    <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                <div class="test-env-section" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/FAQPage' : undefined">
+                    <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
                         <p itemprop="name"><strong>When submarine cables fail, can {{ displayUrl }} still load normally?</strong></p>
-                        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
                             <p itemprop="text" v-if="summaryKey === 'wontWork'">Based on the latest test, under a submarine-cable outage scenario {{ displayUrl }} may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p>
                             <p itemprop="text" v-else-if="summaryKey === 'uncertain'">Based on the latest test, under a submarine-cable outage scenario the availability of {{ displayUrl }} is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.</p>
                             <p itemprop="text" v-else>Based on the latest test, under a submarine-cable outage scenario {{ displayUrl }} “may work.” If international connectivity is cut or blocked, the site may still remain available.</p>
@@ -49,58 +49,58 @@
                     </div>
 
                     <template v-if="summaryKey === 'wontWork'">
-                        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
                             <p itemprop="name"><strong>Why might {{ displayUrl }} “not work” when submarine cables fail?</strong></p>
-                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
                                 <p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p>
                             </div>
                         </div>
                     </template>
                     <template v-else-if="summaryKey === 'uncertain'">
-                        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
                             <p itemprop="name"><strong>Why is it “uncertain” whether {{ displayUrl }} would work when submarine cables fail?</strong></p>
-                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
                                 <p itemprop="text">We did not see direct requests to foreign resources, but we did find reliance on in-country nodes of multinational cloud services. Whether those services keep running when outbound connectivity is impaired depends on platform architecture, cache design, origin routing, and more—so for now we can only label the outcome “uncertain.”</p>
                             </div>
                         </div>
                     </template>
                     <template v-else>
-                        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
                             <p itemprop="name"><strong>Why might {{ displayUrl }} “may work” when submarine cables fail?</strong></p>
-                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
                                 <p itemprop="text">During testing, resources used by the homepage of {{ displayUrl }} appeared obtainable within the country, and we did not find clear international-cloud dependencies. That means when cables are cut or connectivity is blocked, the site has a relatively better chance of staying up.</p>
                             </div>
                         </div>
                     </template>
 
                     <template v-if="summaryKey === 'wontWork'">
-                        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
                             <p itemprop="name"><strong>Does this mean {{ displayUrl }} will definitely be unavailable during severe cable congestion?</strong></p>
-                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
                                 <p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p>
                             </div>
                         </div>
                     </template>
                     <template v-else-if="summaryKey === 'uncertain'">
-                        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
                             <p itemprop="name"><strong>Does this mean {{ displayUrl }} might be unavailable during severe cable congestion?</strong></p>
-                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
                                 <p itemprop="text">“Uncertain” means we currently cannot conclude it will definitely work or definitely fail. Availability of the multinational cloud in-country nodes that {{ displayUrl }} depends on, when cables are cut or congestion is extreme, needs to be clarified and explained further by providers.</p>
                             </div>
                         </div>
                     </template>
                     <template v-else>
-                        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
                             <p itemprop="name"><strong>Does this mean {{ displayUrl }} will definitely be fine during severe cable congestion?</strong></p>
-                            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
                                 <p itemprop="text">No. “May work” only means the homepage test did not show obvious high-risk dependencies. It does not guarantee that every page, login flow, API, database, or other function would behave normally.</p>
                             </div>
                         </div>
                     </template>
 
-                    <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+                    <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
                         <p itemprop="name"><strong>How is resilience for {{ displayUrl }} under cable outages assessed?</strong></p>
-                        <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                        <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
                             <p itemprop="text">When opening the homepage of {{ displayUrl }}, we observed {{ requestCount }} requests across {{ uniqueDomains }} domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>
                             For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p>
                         </div>
