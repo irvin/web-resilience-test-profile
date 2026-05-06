@@ -108,9 +108,9 @@ function getStatisticTsvUrl() {
 // - production: read the file emitted under /web/img/ at build time
 function getOverallChartUrl() {
     if (isLocalhost()) {
-        return '/test-result/img/overall-result.svg';
+        return '/test-result/img/overall-result.png';
     }
-    return '/web/img/overall-result.svg';
+    return '/web/img/overall-result.png';
 }
 
 // Resolve the overall-result.tsv location:

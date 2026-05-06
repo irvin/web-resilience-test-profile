@@ -63,10 +63,11 @@ function fixAssetPaths(html) {
 
 /** Only the homepage build should ship OG image tags for the overall chart (template omits them). */
 function injectHomepageChartOgMeta(html) {
-  const block = `    <meta property="og:image" content="https://resilience.ocf.tw/web/img/overall-result.svg">
+  const imageUrl = 'https://resilience.ocf.tw/web/img/overall-result.png';
+  const block = `    <meta property="og:image" content="${imageUrl}">
     <meta property="og:image:alt" content="台灣常用網站韌性檢測整體結果圖表">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://resilience.ocf.tw/web/img/overall-result.svg">
+    <meta name="twitter:image" content="${imageUrl}">
 `;
   return html.replace('</head>', `${block}</head>`);
 }
@@ -422,7 +423,7 @@ async function prerenderHomepageOverviewAndMeta(browser, artifact) {
 
     // Prerender runs on localhost where getOverallChartUrl() is /test-result/img/...;
     // shipped site lives under /web/ with assets in /web/img/ (see copy step above).
-    html = html.replace(/\/test-result\/img\/overall-result\.svg/g, '/web/img/overall-result.svg');
+    html = html.replace(/\/test-result\/img\/overall-result\.svg/g, '/web/img/overall-result.png');
 
     html = injectHomepageChartOgMeta(html);
 
@@ -519,9 +520,15 @@ async function build() {
 
     const overallChartSrc = path.join(SUBMODULE_IMG_DIR, 'overall-result.svg');
     const overallChartDest = path.join(outputImgDir, 'overall-result.svg');
-
+    const overallChartPngSrc = path.join(SUBMODULE_IMG_DIR, 'overall-result.png');
+    const overallChartPngDest = path.join(outputImgDir, 'overall-result.png');
     if (fs.existsSync(overallChartSrc)) {
       fs.copyFileSync(overallChartSrc, overallChartDest);
+    }
+    if (fs.existsSync(overallChartPngSrc)) {
+      fs.copyFileSync(overallChartPngSrc, overallChartPngDest);
+    } else {
+      console.warn(`⚠️  Missing ${overallChartPngSrc}; homepage chart expects PNG`);
     }
   }
 
