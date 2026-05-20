@@ -204,9 +204,13 @@ FIXME: 因 statistic.tsv 會在 client side cache 24 小時，故使用者端無
 - 研究方法與原始碼：https://github.com/irvin/web-resilience-test
 - 測試結果資料：https://github.com/irvin/web-resilience-test-result
 
-## License
+## 📜 授權
 
-CC BY-NC-ND 4.0 International License
+本專案在 ISIF 研究專案期間（2026 年 12 月 31 日前）採用 [CC BY-NC-ND 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/)（姓名標示─非商業性─禁止改作 4.0 國際）。
+
+2026 年 12 月 31 日後，本專案之資料與腳本將釋出至公有領域（Public Domain）。研究期間若需超出 CC BY-NC-ND 4.0 限制之使用，請聯絡 Irvin Chen（Open Culture Foundation）：irvin@moztw.org（請 cc hi@ocf.tw）。
+
+完整條款與建議署名格式請見 [LICENSE](LICENSE)。
 
 ## 致謝
 
