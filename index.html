@@ -216,7 +216,7 @@
             <!-- 找不到結果時顯示的區塊 -->
             <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
                         <p>找不到 {{ searchQuery }} 的測試結果</p>
-                        <p>你可以在此檢視<a href="https://github.com/irvin/web-resilience-test-result" target="_blank">已測試網站資料</a>，並<a href="https://github.com/irvin/web-resilience-test/blob/main_w_test_result/no-global-connection-check.js" target="_blank">使用此工具</a>手動進行測試。</p>
+                        <p>你可以在此檢視<a href="https://github.com/irvin/web-resilience-test-result" target="_blank">已測試網站資料</a>，並<a href="https://github.com/irvin/web-resilience-test/tree/a6ccd6f1b05fca34034250055d566d1c1c0f4c65#d-automated-testing-tool" target="_blank">使用此工具</a>手動進行測試。</p>
             </div>
             <div class="search-meta" id="search-meta">
                 <!-- 搜尋統計資訊模板 -->
@@ -231,7 +231,7 @@
         </div>
     </div>
 
-    <section class="overview-card" itemscope="" itemtype="https://schema.org/FAQPage"><hr><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><meta itemprop="name" content="海纜斷掉時，台灣人常用的網站會動嗎？"><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據 1859 個台灣常用網站的檢測結果，在海纜斷光或極度壅塞的情況下，有 47% 的網站可能不會動；42% 的網站有較高風險；僅 11% 的網站相對較有韌性，較有可能維持正常運作。</p><p>下圖為台灣常用網站的境外及國際雲資源依賴暴露狀態。<a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">查看研究方法與彙整報告</a>。</p></div></div><figure class="overview-chart"><img src="/web/img/overall-result.svg" alt="整體結果圖表"></figure></section>
+    <section class="overview-card" itemscope="" itemtype="https://schema.org/FAQPage"><hr><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><meta itemprop="name" content="海纜斷掉時，台灣人常用的網站會動嗎？"><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據 1859 個台灣常用網站的檢測結果，在海纜斷光或極度壅塞的情況下，有 47% 的網站可能不會動；42% 的網站有較高風險；僅 11% 的網站相對較有韌性，較有可能維持正常運作。</p><p>下圖為台灣常用網站的境外及國際雲資源依賴暴露狀態。<a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">查看研究方法與彙整報告</a>。</p></div></div><figure class="overview-chart"><img src="/test-result/img/overall-result.png" alt="整體結果圖表"></figure></section>
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">
