@@ -423,7 +423,7 @@ async function prerenderHomepageOverviewAndMeta(browser, artifact) {
 
     // Prerender runs on localhost where getOverallChartUrl() is /test-result/img/...;
     // shipped site lives under /web/ with assets in /web/img/ (see copy step above).
-    html = html.replace(/\/test-result\/img\/overall-result\.svg/g, '/web/img/overall-result.png');
+    html = html.replace(/\/test-result\/img\/overall-result\.(svg|png)/g, '/web/img/overall-result.png');
 
     html = injectHomepageChartOgMeta(html);
 
