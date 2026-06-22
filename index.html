@@ -17,13 +17,24 @@
 
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
+    <script src="locales/zh-TW.js"></script>
+    <script src="locales/en.js"></script>
+    <script src="i18n.js"></script>
 </head>
 <body>
     <div id="app">
 
+    <nav class="lang-switcher" :aria-label="t('lang.switcherLabel')">
+        <a class="lang-switcher-btn" :href="zhLocaleHref" hreflang="zh-TW" :aria-current="locale === 'zh-TW' ? 'page' : undefined">{{ t('lang.zh') }}</a>
+        <a class="lang-switcher-btn" :href="enLocaleHref" hreflang="en" :aria-current="locale === 'en' ? 'page' : undefined">{{ t('lang.en') }}</a>
+    </nav>
+
     <div class="static-wrapper" data-static="begin"></div>
-    <h1 v-if="!displayUrl" class="home-title">海纜斷掉時，台灣人常用的網站會動嗎？</h1>
-    <h1 v-else>海纜斷掉時，<a :href="'https://' + displayUrl" target="_blank" rel="noopener noreferrer nofollow">{{displayUrl}}</a> 會動嗎？</h1>
+    <div class="static-wrapper" data-static="end"></div>
+
+    <div id="site-dynamic" v-show="showSiteDynamic">
+    <h1 v-if="!displayUrl" class="home-title">{{ t('home.title') }}</h1>
+    <h1 v-else>{{ t('home.titlePrefix') }}<a :href="'https://' + displayUrl" target="_blank" rel="noopener noreferrer nofollow">{{displayUrl}}</a>{{ t('home.titleSuffix') }}</h1>
 
     <div id="results">
         <div v-if="vueResult" class="result-card">
@@ -33,76 +44,75 @@
 
             <div class="score-container">
                 <div class="score-stats">
-                    <p class="score score-O" :class="domesticZeroClass">境內直接連線 (O)<br><strong style="font-size: 1.3em;">{{domesticCount}}</strong></p>
-                    <p class="score score-Q" :class="cloudZeroClass">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">{{cloudCount}}</strong></p>
-                    <p class="score score-X" :class="foreignZeroClass">境外連線 (X)<br><strong style="font-size: 1.3em;">{{foreignCount}}</strong></p>
+                    <p class="score score-O" :class="domesticZeroClass">{{ t('result.scores.domestic') }}<br><strong style="font-size: 1.3em;">{{domesticCount}}</strong></p>
+                    <p class="score score-Q" :class="cloudZeroClass">{{ t('result.scores.cloud') }}<br><strong style="font-size: 1.3em;">{{cloudCount}}</strong></p>
+                    <p class="score score-X" :class="foreignZeroClass">{{ t('result.scores.foreign') }}<br><strong style="font-size: 1.3em;">{{foreignCount}}</strong></p>
                 </div>
 
                 <div class="test-env-section" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/FAQPage' : undefined">
                     <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
-                        <p itemprop="name"><strong>海纜斷掉時，{{ displayUrl }} 還能正常開啟嗎？</strong></p>
+                        <p itemprop="name"><strong>{{ t('result.faq.openQuestion', { displayUrl }) }}</strong></p>
                         <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
-                            <p itemprop="text" v-if="summaryText === '不會動'">根據最近一次測試，在海纜斷掉的情境下，{{ displayUrl }} 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p>
-                            <p itemprop="text" v-else-if="summaryText === '不確定'">根據最近一次測試，在海纜斷掉的情境下，{{ displayUrl }} 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p>
-                            <p itemprop="text" v-else>根據最近一次測試，在海纜斷掉的情境下，{{ displayUrl }} 「可能會動」。這表示如果海纜中斷、對外連線受阻，網站有可能維持可用。</p>
+                            <p itemprop="text" v-if="summaryKey === 'wontWork'">{{ t('result.faq.wontWork.opening', { displayUrl }) }}</p>
+                            <p itemprop="text" v-else-if="summaryKey === 'uncertain'">{{ t('result.faq.uncertain.opening', { displayUrl }) }}</p>
+                            <p itemprop="text" v-else>{{ t('result.faq.mightWork.opening', { displayUrl }) }}</p>
                         </div>
                     </div>
 
-                    <template v-if="summaryText === '不會動'">
+                    <template v-if="summaryKey === 'wontWork'">
                         <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
-                            <p itemprop="name"><strong>為什麼 {{ displayUrl }} 在海纜斷掉時「不會動」？</strong></p>
+                            <p itemprop="name"><strong>{{ t('result.faq.wontWork.whyQuestion', { displayUrl }) }}</strong></p>
                             <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
-                                <p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p>
+                                <p itemprop="text">{{ t('result.faq.wontWork.whyAnswer') }}</p>
                             </div>
                         </div>
                     </template>
-                    <template v-else-if="summaryText === '不確定'">
+                    <template v-else-if="summaryKey === 'uncertain'">
                         <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
-                            <p itemprop="name"><strong>為什麼 {{ displayUrl }} 在海纜斷掉時「不確定是否會動」？</strong></p>
+                            <p itemprop="name"><strong>{{ t('result.faq.uncertain.whyQuestion', { displayUrl }) }}</strong></p>
                             <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
-                                <p itemprop="text">測試過程中，我們雖然沒有看到直接連到境外的資源請求，但有發現對於跨國雲服務在台灣的節點依賴。這些服務能否在對外受阻時持續運作，會受到平台架構、快取設計、或回源方式等影響，所以目前只能列為「不確定」。</p>
-                            </div>
-                        </div>
-                    </template>
-                    <template v-else>
-                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
-                            <p itemprop="name"><strong>為什麼 {{ displayUrl }} 在海纜斷掉時「可能會動」？</strong></p>
-                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
-                                <p itemprop="text">測試過程中，{{ displayUrl }} 的首頁使用的資源，看起來都能在境內取得，也沒有發現明確的國際雲依賴。這代表在海纜中斷或阻礙時，相對比較有機會維持運作。</p>
-                            </div>
-                        </div>
-                    </template>
-                    
-                    <template v-if="summaryText === '不會動'">
-                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
-                            <p itemprop="name"><strong>這是不是代表在海纜壅塞時，{{ displayUrl }} 屆時一定不能用？</strong></p>
-                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
-                                <p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p>
-                            </div>
-                        </div>
-                    </template>
-                    <template v-else-if="summaryText === '不確定'">
-                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
-                            <p itemprop="name"><strong>這是不是代表在海纜壅塞時，{{ displayUrl }} 屆時可能不能用？</strong></p>
-                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
-                                <p itemprop="text">「不確定」的意思是，目前不足以判定一定能用或不能用。{{ displayUrl }} 所依賴的這些跨國雲服務在台節點，在海纜斷線或極度壅塞時的可用性，需由業者進一步釐清與說明。</p>
+                                <p itemprop="text">{{ t('result.faq.uncertain.whyAnswer') }}</p>
                             </div>
                         </div>
                     </template>
                     <template v-else>
                         <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
-                            <p itemprop="name"><strong>這是不是代表在海纜壅塞時，{{ displayUrl }} 一定沒問題？</strong></p>
+                            <p itemprop="name"><strong>{{ t('result.faq.mightWork.whyQuestion', { displayUrl }) }}</strong></p>
                             <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
-                                <p itemprop="text">不是。「可能會動」只表示首頁測試中沒有看到明顯高風險依賴，不代表整個網站所有頁面、登入流程、API、資料庫或其他功能，都一定正常。</p>
+                                <p itemprop="text">{{ t('result.faq.mightWork.whyAnswer', { displayUrl }) }}</p>
+                            </div>
+                        </div>
+                    </template>
+
+                    <template v-if="summaryKey === 'wontWork'">
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
+                            <p itemprop="name"><strong>{{ t('result.faq.wontWork.congestionQuestion', { displayUrl }) }}</strong></p>
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
+                                <p itemprop="text">{{ t('result.faq.wontWork.congestionAnswer') }}</p>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-else-if="summaryKey === 'uncertain'">
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
+                            <p itemprop="name"><strong>{{ t('result.faq.uncertain.congestionQuestion', { displayUrl }) }}</strong></p>
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
+                                <p itemprop="text">{{ t('result.faq.uncertain.congestionAnswer', { displayUrl }) }}</p>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
+                            <p itemprop="name"><strong>{{ t('result.faq.mightWork.congestionQuestion', { displayUrl }) }}</strong></p>
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
+                                <p itemprop="text">{{ t('result.faq.mightWork.congestionAnswer') }}</p>
                             </div>
                         </div>
                     </template>
 
                     <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
-                        <p itemprop="name"><strong>怎麼研判 {{ displayUrl }} 在海纜障礙時的韌性？</strong></p>
+                        <p itemprop="name"><strong>{{ t('result.faq.resilienceQuestion', { displayUrl }) }}</strong></p>
                         <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
-                            <p itemprop="text">打開 {{ displayUrl }} 的首頁時，我們觀察到來自 {{ uniqueDomains }} 個網域的 {{ requestCount }} 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>
-                            詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p>
+                            <p itemprop="text" v-html="t('result.faq.resilienceBodyHtml', { displayUrl, uniqueDomains, requestCount })"></p>
                         </div>
                     </div>
 
@@ -111,11 +121,11 @@
 
             <div class="details-container">
                 <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
-                    <span>連線資訊</span>
+                    <span>{{ t('result.details.connectionsToggle') }}</span>
                 </div>
                 <div class="test-env-content">
                     <div class="test-env-section" v-if="siteLocation">
-                        <h4>網站位置</h4>
+                        <h4>{{ t('result.details.siteLocation') }}</h4>
                         <ul class="connection-list">
                             <li class="connection-item">
                                 <span v-if="siteLocation.category" :class="['category-badge', siteLocation.categoryClass]">{{siteLocation.categoryText}}</span>
@@ -125,7 +135,7 @@
                         </ul>
                     </div>
                     <div class="test-env-section" v-if="connectionDetails && connectionDetails.length > 0">
-                        <h4>連線資訊</h4>
+                        <h4>{{ t('result.details.connections') }}</h4>
                         <ul class="connection-list">
                             <li v-for="(connection, index) in connectionDetails" :key="index" class="connection-item">
                                 <span v-if="connection.category" :class="['category-badge', connection.categoryClass]">{{connection.categoryText}}</span>
@@ -139,15 +149,15 @@
 
             <div class="details-container">
                 <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
-                    <span>測試環境</span>
+                    <span>{{ t('result.details.testEnvToggle') }}</span>
                 </div>
                 <div class="test-env-content">
                     <div class="test-env-section">
-                        <h4>測試參數</h4>
+                        <h4>{{ t('result.details.testParams') }}</h4>
                         <ul>
-                            <li>指定 DNS 伺服器：{{testParameters && testParameters.customDNS}}</li>
+                            <li>{{ t('result.details.customDns', { value: testParameters && testParameters.customDNS }) }}</li>
                             <li v-if="testParameters && testParameters.adblockUrls && testParameters.adblockUrls.length">
-                                使用 Adblock 清單：
+                                {{ t('result.details.adblockLists') }}
                                 <ul>
                                     <li v-for="url in testParameters.adblockUrls" :key="url">
                                         <a :href="url" target="_blank">{{url}}</a>
@@ -158,14 +168,14 @@
                     </div>
 
                     <div class="test-env-section" v-if="testingEnvironment">
-                        <h4>測試環境</h4>
+                        <h4>{{ t('result.details.testEnv') }}</h4>
                         <ul>
-                            <li>IP：{{testingEnvironment.ip}}</li>
-                            <li v-if="testingEnvironment.city">城市：{{testingEnvironment.city}}</li>
-                            <li v-if="testingEnvironment.region">地區：{{testingEnvironment.region}}</li>
-                            <li>國家：{{testingEnvironment.country}}</li>
-                            <li v-if="testingEnvironment.org">組織：{{testingEnvironment.org}}</li>
-                            <li v-if="testingEnvironment.dnsServer">DNS 伺服器：{{testingEnvironment.dnsServer}}</li>
+                            <li>{{ t('result.details.ip', { value: testingEnvironment.ip }) }}</li>
+                            <li v-if="testingEnvironment.city">{{ t('result.details.city', { value: testingEnvironment.city }) }}</li>
+                            <li v-if="testingEnvironment.region">{{ t('result.details.region', { value: testingEnvironment.region }) }}</li>
+                            <li>{{ t('result.details.country', { value: testingEnvironment.country }) }}</li>
+                            <li v-if="testingEnvironment.org">{{ t('result.details.org', { value: testingEnvironment.org }) }}</li>
+                            <li v-if="testingEnvironment.dnsServer">{{ t('result.details.dnsServer', { value: testingEnvironment.dnsServer }) }}</li>
                         </ul>
                     </div>
                 </div>
@@ -173,29 +183,28 @@
 
             <div class="details-container">
                 <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
-                    <span>原始資料</span>
+                    <span>{{ t('result.details.rawDataToggle') }}</span>
                 </div>
                 <div class="test-env-content">
-                    <p style="margin-top: 0;"><a :href="rawDataUrl" target="_blank">在 GitHub 上查看</a></p>
+                    <p style="margin-top: 0;"><a :href="rawDataUrl" target="_blank">{{ t('result.details.viewOnGithub') }}</a></p>
                     <pre><code>{{detailsJson}}</code></pre>
                 </div>
             </div>
 
-            <p style="margin-bottom: 0;">最後測試時間：{{testTime}}<span v-if="httpStatus"> (HTTP {{httpStatus}})</span></p>
+            <p style="margin-bottom: 0;">{{ t('result.details.lastTested', { time: testTime }) }}<span v-if="httpStatus"> (HTTP {{httpStatus}})</span></p>
         </div>
     </div>
-    <div class="static-wrapper" data-static="end"></div>
+    </div>
 
-    <!-- 統一版型的搜尋框：固定放在 footer 上方 -->
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
-            <input type="text" id="search-input" placeholder="輸入網址查看測試結果..." autocomplete="off"
+            <input type="text" id="search-input" :placeholder="t('search.placeholder')" autocomplete="off"
                 v-model="searchQuery"  @keydown="onSearchKeydown" @focus="onSearchFocus"
             >
 
             <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length" @scroll.passive="onDropdownScroll">
                 <a
-                    :href=`/web/${formatDisplayUrl(url)}/`
+                    :href="sitePageHref(url)"
                     class="search-dropdown-item"
                     v-for="(url, index) in displayedUrls"
                     :key="url"
@@ -207,59 +216,64 @@
                     {{ formatDisplayUrl(url) }}
                 </a>
             </div>
-            <!-- 找不到結果時顯示的區塊 -->
             <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
-                        <p>找不到 {{ searchQuery }} 的測試結果</p>
-                        <p>你可以在此檢視<a href="https://github.com/irvin/web-resilience-test-result" target="_blank">已測試網站資料</a>，並<a href="https://github.com/irvin/web-resilience-test/tree/a6ccd6f1b05fca34034250055d566d1c1c0f4c65#d-automated-testing-tool" target="_blank">使用此工具</a>手動進行測試。</p>
+                        <p>{{ t('search.noResults', { query: searchQuery }) }}</p>
+                        <p v-html="t('search.noResultsHelpHtml')"></p>
             </div>
             <div class="search-meta" id="search-meta">
-                <!-- 搜尋統計資訊模板 -->
                 <template v-if="hasItems">
-                        總共 {{totalAll}} 網站，目前顯示前 {{shown}} 個。
-                        <span class="search-load-more" v-if="hasMore" @click="loadMore">[載入更多網站]</span>
+                        {{ t('search.statsWithItems', { totalAll, shown }) }}
+                        <span class="search-load-more" v-if="hasMore" @click="loadMore">{{ t('search.loadMore') }}</span>
                 </template>
                 <template v-else>
-                        總共 {{totalAll}} 網站，目前顯示前 0 個。
+                        {{ t('search.statsEmpty', { totalAll }) }}
                 </template>
             </div>
         </div>
     </div>
 
-    <section v-if="!displayUrl" class="overview-card" itemscope itemtype="https://schema.org/FAQPage">
+    <div v-pre id="overview-prerender">
+    <div class="static-wrapper" data-overview-static="begin"></div>
+    <div class="static-wrapper" data-overview-static="end"></div>
+    </div>
+
+    <div id="overview-dynamic" v-if="showOverviewDynamic">
+    <section class="overview-card" itemscope itemtype="https://schema.org/FAQPage">
         <hr>
         <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
-            <meta itemprop="name" content="海纜斷掉時，台灣人常用的網站會動嗎？">
+            <meta itemprop="name" :content="t('home.overviewQuestion')">
             <div v-if="overallStats" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
-                <p itemprop="text">根據 {{ overallStats.totalCount }} 個台灣常用網站的檢測結果，在海纜斷光或極度壅塞的情況下，有 {{ overallStats.wontWorkPercent }} 的網站可能不會動；{{ overallStats.internationalCloudPercent }} 的網站有較高風險；僅 {{ overallStats.mightWorkPercent }} 的網站相對較有韌性，較有可能維持正常運作。</p>
-                <p>下圖為台灣常用網站的境外及國際雲資源依賴暴露狀態。<a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">查看研究方法與彙整報告</a>。</p>
+                <p itemprop="text">{{ t('home.overviewStats', { totalCount: overallStats.totalCount, wontWorkPercent: overallStats.wontWorkPercent, internationalCloudPercent: overallStats.internationalCloudPercent, mightWorkPercent: overallStats.mightWorkPercent }) }}</p>
+                <p>{{ t('home.overviewChartCaption') }} <a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">{{ t('home.reportLink') }}</a>{{ t('home.overviewTrailing') }}</p>
             </div>
             <div v-else>
-                <p>根據目前的檢測結果，下圖為台灣常用網站的境外及國際雲資源依賴暴露狀態。亦即，在海纜斷光或極度壅塞的情境下，有多少比例的網站將會直接失效，多少網站因依賴國際雲節點而故障風險較高，多少比例的網站則相對較有韌性。<a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">查看研究方法與彙整報告</a>。</p>
+                <p>{{ t('home.overviewFallback') }} <a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">{{ t('home.reportLink') }}</a>{{ t('home.overviewTrailing') }}</p>
             </div>
         </div>
         <figure class="overview-chart">
-            <img :src="overallChartUrl" alt="整體結果圖表">
+            <img :src="overallChartUrl" :alt="t('home.chartAlt')">
         </figure>
     </section>
+    </div>
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">
-            <a href="/web/">
-                <button class="check-other-site-btn" @click.prevent="openSearch">檢查其他網站</button>
+            <a :href="homeHref">
+                <button class="check-other-site-btn" @click.prevent="openSearch">{{ t('footer.checkOther') }}</button>
             </a>
         </p>
         <hr>
         <p>
-            <a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="g0v_logo.svg" title="g0v 數位韌性松" style="height: 65px;"></a>
-            <a href="https://ocf.tw/" target="_blank"><img src="Logo_Compact-OCF_Purple.svg" title="開放文化基金會" style="height: 35px;"></a>
+            <a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="g0v_logo.svg" :title="t('footer.g0vTitle')" style="height: 65px;"></a>
+            <a href="https://ocf.tw/" target="_blank"><img src="Logo_Compact-OCF_Purple.svg" :title="t('footer.ocfTitle')" style="height: 35px;"></a>
         </p>
         <p>Curated by <a href="https://t.me/s/irvinfly" target="_blank">Irvin Chen</a>. Released under the <a href="https://github.com/irvin/web-resilience-test/?tab=License-1-ov-file#License-1-ov-file" target="_blank">CC BY-NC-ND 4.0 International License</a>.</p>
         <p style="margin-bottom: 2em;">
-            <a href="https://resilience.ocf.tw/web/report/" target="_blank">研究報告</a>｜<a href="https://github.com/irvin/web-resilience-test" target="_blank">原始碼</a>
+            <a :href="t('footer.reportUrl')" target="_blank">{{ t('footer.report') }}</a>｜<a href="https://github.com/irvin/web-resilience-test" target="_blank">{{ t('footer.source') }}</a>
         </p>
         <hr>
-        <p><a href="https://apnic.foundation/" target="_blank"><img src="APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" title="APNIC Foundation ISIF Asia" style="height: 90px;"></a></p>
-        <p>This work was supported by a grant from the <a href="https://apnic.foundation/" target="_blank">APNIC Foundation</a>, via <a href="https://apnic.foundation/home/isifasia/" target="_blank">ISIF Asia</a>.</p>
+        <p><a href="https://apnic.foundation/" target="_blank"><img src="APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" :title="t('footer.apnicTitle')" style="height: 90px;"></a></p>
+        <p v-html="t('footer.apnicSupportHtml')"></p>
     </footer>
     </div>
 

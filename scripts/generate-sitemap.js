@@ -5,6 +5,8 @@
  *
  * Default baseUrl: https://resilience.ocf.tw/web/
  * Override with --base or SITEMAP_BASE_URL
+ *
+ * Emits zh-TW and en URLs for the homepage and each site in statistic.tsv.
  */
 
 const fs = require('fs');
@@ -12,6 +14,7 @@ const path = require('path');
 
 const ROOT_DIR = path.join(__dirname, '..');
 const DEFAULT_OUTPUT_DIR = path.join(ROOT_DIR, 'web');
+const STATISTIC_TSV_PATH = path.join(ROOT_DIR, 'test-result', 'statistic.tsv');
 
 function getArgValue(args, name) {
   const idx = args.indexOf(name);
@@ -43,16 +46,34 @@ function getIndexHtmlLastModDate(indexHtmlPath) {
   }
 }
 
-function listBuiltDirs(outputDir) {
-  try {
-    return fs.readdirSync(outputDir, { withFileTypes: true })
-      .filter(d => d.isDirectory())
-      .map(d => d.name)
-      .filter(name => fs.existsSync(path.join(outputDir, name, 'index.html')))
-      .sort();
-  } catch {
+function urlToDirPath(url) {
+  let cleanUrl = url.replace(/^https?:\/\//, '');
+  cleanUrl = cleanUrl.replace(/\/+$/, '');
+  cleanUrl = cleanUrl.replace(/[^a-zA-Z0-9._-]/g, '_');
+  if (cleanUrl.length > 100) {
+    cleanUrl = cleanUrl.slice(0, 100);
+  }
+  return cleanUrl;
+}
+
+function loadStatisticDomains() {
+  if (!fs.existsSync(STATISTIC_TSV_PATH)) {
     return [];
   }
+
+  const text = fs.readFileSync(STATISTIC_TSV_PATH, 'utf-8');
+  const lines = text.split('\n').filter(line => line.trim());
+  const domains = [];
+
+  for (let i = 1; i < lines.length; i++) {
+    let url = lines[i].split('\t')[0];
+    if (url && url.startsWith('http')) {
+      url = url.replace(/\/+$/, '').replace(/^https?:\/\//, '');
+      domains.push(urlToDirPath(url));
+    }
+  }
+
+  return domains;
 }
 
 function buildSitemapXml(entries) {
@@ -84,17 +105,25 @@ function main() {
     fs.mkdirSync(outputDir, { recursive: true });
   }
 
-  const builtDirs = listBuiltDirs(outputDir);
-
   const entries = [];
   const rootIndexLastmod = getIndexHtmlLastModDate(path.join(outputDir, 'index.html'));
-  entries.push({ loc: baseUrl, lastmod: rootIndexLastmod });
+  const enIndexLastmod = getIndexHtmlLastModDate(path.join(outputDir, 'en', 'index.html'));
 
-  for (const dirName of builtDirs) {
-    const lastmod = getIndexHtmlLastModDate(path.join(outputDir, dirName, 'index.html'));
+  entries.push({ loc: baseUrl, lastmod: rootIndexLastmod });
+  entries.push({ loc: `${baseUrl}en/`, lastmod: enIndexLastmod || rootIndexLastmod });
+
+  const domains = loadStatisticDomains();
+  for (const dirName of domains) {
+    const zhLastmod = getIndexHtmlLastModDate(path.join(outputDir, dirName, 'index.html'));
+    const enLastmod = getIndexHtmlLastModDate(path.join(outputDir, dirName, 'en', 'index.html'));
+
     entries.push({
       loc: `${baseUrl}${dirName}/`,
-      lastmod,
+      lastmod: zhLastmod
+    });
+    entries.push({
+      loc: `${baseUrl}${dirName}/en/`,
+      lastmod: enLastmod || zhLastmod
     });
   }
 
@@ -105,7 +134,7 @@ function main() {
   console.log(`✓ Wrote sitemap: ${outPath}`);
   console.log(`  baseUrl: ${baseUrl}`);
   console.log(`  urls: ${entries.length}`);
-  console.log('  mode: from web/');
+  console.log('  mode: bilingual from statistic.tsv');
 }
 
 main();

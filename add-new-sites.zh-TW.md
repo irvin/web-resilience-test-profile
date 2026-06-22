@@ -210,3 +210,7 @@ git submodule update --remote web-resilience-test-profile
    - `npm run deploy`
 4. `resilience.ocf.tw` 是否已正確指到最新的 `gh-pages` submodule 版本
 5. 手動清除 Cloudflare cache
+
+## 7. 更新後測試
+
+程式、建置產物或 `404.html` 變更後，請依 [`web-resilience-test-profile/TESTING.zh-TW.md`](https://github.com/irvin/web-resilience-test-profile/blob/main/TESTING.zh-TW.md) 逐項回歸測試。

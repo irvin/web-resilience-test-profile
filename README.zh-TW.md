@@ -20,6 +20,8 @@
 
 請參考 [`add-new-sites.zh-TW.md`](add-new-sites.zh-TW.md)。
 
+每次改程式或建置後的回歸測試請見 [`TESTING.zh-TW.md`](TESTING.zh-TW.md)。
+
 ## 安裝
 
 ```bash
@@ -94,9 +96,9 @@ npm run build:all
 這會：
 - 從 submodule 讀取 `statistic.tsv` 取得所有測試網址
 - 使用 8 個並行的瀏覽器實例處理
-- 為每個網址生成靜態 HTML 頁面到 `web/` 目錄
-- 每個網址會建立一個目錄，例如 `web/google.com/index.html`
-- 主頁面（`web/index.html`）會從線上 API 讀取 JSON 和 statistic.tsv 資料
+- 為每個網址生成繁中、英文靜態 HTML 頁面到 `web/` 目錄
+- 每個網址會建立目錄，例如 `web/google.com/index.html`（繁中）與 `web/google.com/en/index.html`（英文）
+- 主頁面為 `web/index.html`（繁中）與 `web/en/index.html`（英文）
 - 建置完成後會在 `web/` 產生 `sitemap.xml`（部署後位於 `/web/sitemap.xml`）
 - 建置完成後自動準備部署到 `gh-pages` 分支
 
@@ -109,9 +111,9 @@ npm run build:all
 
 ### 內容與日期（lastmod）規則
 
-- **sitemap 收錄哪些頁面**：以 `web/` 資料夾下「實際存在的子目錄」（且包含 `index.html`）為準，確保 sitemap 與部署內容一致
-- **主頁 `/web/` 的 lastmod**：使用 `web/index.html` 的檔案修改時間（mtime，`YYYY-MM-DD`）
-- **個別站點頁面 `/web/<domain>/` 的 lastmod**：使用 `web/<dir>/index.html` 的檔案修改時間（mtime，`YYYY-MM-DD`）
+- **sitemap 收錄哪些頁面**：以 `statistic.tsv` 為準，每站與首頁各產生繁中、英文兩筆 URL（約 3720 筆）
+- **主頁 `/web/` 與 `/web/en/` 的 lastmod**：分別使用對應 `index.html` 的 mtime
+- **個別站點 `/web/<domain>/` 與 `/web/<domain>/en/` 的 lastmod**：分別使用對應 `index.html` 的 mtime
 
 備註：測試模式（`npm run build` 預設）不會更新 `web/sitemap.xml`，避免把 sitemap 變成只含 1 筆測試資料。
 
@@ -145,14 +147,46 @@ npm run build-worktree
 - 將 `web/` 的內容部署到 `gh-pages` 分支（不執行建置）
 - 適用於已經完成建置，只需要更新 worktree 的情況
 
+## 本地預覽（開發）
+
+在 repo 根目錄編輯 `index.html`、`app.js`、`i18n.js`、`locales/`，並以 HTTP 服務根目錄（例如 VS Code Live Server 或 `npx serve .`）開啟 `index.html`。
+
+- localhost 可用 `?url=example.com` 動態預覽單站結果。
+- 請勿用 `file://` 開啟；讀取 `/test-result/` 需要本機伺服器。
+- `web/` 為建置產物，日常改 UI 請改根目錄模板。
+
+## 雙語介面（繁中 / 英文）
+
+正式站以**路徑**區分語系（一個 URL、一種語言、建置時烘焙一次）：
+
+| 頁面 | 繁中 | 英文 |
+|------|------|------|
+| 首頁 | `/web/` | `/web/en/` |
+| 子站 | `/web/{domain}/` | `/web/{domain}/en/` |
+
+- `npm run build:all` 一次產出上述雙語靜態頁；建置產物**不含** `#site-dynamic` / `#overview-dynamic`。
+- 語言切換為純 `<a href>` 連到對應路徑。
+- **找不到的網站**：`resilience.ocf.tw` 的 [`404.html`](../resilience.ocf.tw/404.html) 將未知路徑轉到 query 模式——繁中 `/web/?url={domain}`、英文 `/web/en/?url={domain}`；語言切換在該模式下會保留 `url` 參數。
+- 已知網站若帶 `?url=` 造訪，仍由 `loadResults()` 導向對應靜態路徑。
+
+開發模板（repo 根目錄）仍保留 Vue dynamic 區塊供預覽；localhost 可用 `?url=example.com&lang=en` 預覽英文。
+
+文案在 `locales/zh-TW.js`、`locales/en.js`。Fork 仍可用 `window.__WEB_RESILIENCE_TEXT__` 覆寫動態文字。
+
 ## 專案結構
 
 ```text
 web-resilience-profile/
 ├── web/                     # 建置產物目錄
-│   ├── index.html           # 主頁面
+│   ├── index.html           # 繁中首頁
+│   ├── en/
+│   │   └── index.html       # 英文首頁
+│   ├── locales/
+│   ├── i18n.js
 │   ├── google.com/          # 每個網址的目錄
-│   │   └── index.html
+│   │   ├── index.html       # 繁中
+│   │   └── en/
+│   │       └── index.html   # 英文
 │   └── ...
 ├── test-result/             # Git submodule（測試結果資料）
 │   ├── statistic.tsv
@@ -165,8 +199,11 @@ web-resilience-profile/
 │   ├── deploy.js            # 推送與清理腳本
 │   ├── generate-sitemap.js  # sitemap 生成腳本（輸出到 web/sitemap.xml）
 │   └── clean-worktree.js    # 清理腳本（內部使用）
-├── index.html               # 原始模板（正式站中文）
-├── index.en.example.html    # 英文範例模板
+├── locales/
+│   ├── zh-TW.js
+│   └── en.js
+├── index.html               # 唯一模板（dev 用 Vue dynamic 區塊）
+├── i18n.js
 ├── add-new-sites.zh-TW.md   # 維運流程（繁中）
 ├── add-new-sites.md         # 維運流程（英文）
 ├── app.js

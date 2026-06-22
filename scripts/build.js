@@ -4,6 +4,7 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 const http = require('http');
+const { bakeShellStrings } = require('./bake-shell-strings');
 
 // Repository root (this file lives under scripts/)
 const ROOT_DIR = path.join(__dirname, '..');
@@ -17,7 +18,9 @@ const OUTPUT_DIR = path.join(ROOT_DIR, 'web');
 const TEMPLATE_FILE = path.join(ROOT_DIR, 'index.html');
 const BROWSER_INSTANCES = 8; // parallel browser instances
 const SERVER_PORT = 3000;
-const SITEMAP_BASE_URL = 'https://resilience.ocf.tw/web/'; // sitemap base URL (/web)
+const BUILD_LOCALES = ['zh-TW', 'en'];
+const PUBLIC_BASE = 'https://resilience.ocf.tw/web';
+const SITEMAP_BASE_URL = `${PUBLIC_BASE}/`; // sitemap base URL (/web)
 
 // Test mode: only the first URL (default)
 // --all: build every site
@@ -48,34 +51,127 @@ function urlToDirPath(url) {
   return cleanUrl;
 }
 
-// Rewrite relative asset URLs to ../ so nested pages load correctly
-function fixAssetPaths(html) {
+// Rewrite relative asset URLs so nested pages load correctly (depth 1 = ../, depth 2 = ../../)
+function fixAssetPaths(html, depth = 1) {
+  const prefix = depth === 2 ? '../../' : '../';
   // src="..."
   html = html.replace(/src=["']((?!https?:\/\/|\.\.\/|\/)[^"']+\.(png|svg|jpg|jpeg|gif|webp|css|js))["']/gi, (match, filename) => {
-    return match.replace(filename, `../${filename}`);
+    return match.replace(filename, `${prefix}${filename}`);
   });
   // href="..." (e.g. styles.css)
   html = html.replace(/href=["']((?!https?:\/\/|\.\.\/|\/)[^"']+\.(png|svg|jpg|jpeg|gif|webp|css|js))["']/gi, (match, filename) => {
-    return match.replace(filename, `../${filename}`);
+    return match.replace(filename, `${prefix}${filename}`);
   });
   return html;
 }
 
+function publicPageUrl(domain, locale) {
+  if (!domain) {
+    return locale === 'en' ? `${PUBLIC_BASE}/en/` : `${PUBLIC_BASE}/`;
+  }
+  return locale === 'en'
+    ? `${PUBLIC_BASE}/${domain}/en/`
+    : `${PUBLIC_BASE}/${domain}/`;
+}
+
+function injectPageUrls(html, domain, locale) {
+  const pageUrl = publicPageUrl(domain, locale);
+  const htmlLang = locale === 'en' ? 'en' : 'zh-TW';
+  let out = html.replace(/<html lang="[^"]*">/i, `<html lang="${htmlLang}">`);
+  out = out.replace(
+    /<link id="canonical"[^>]*href="[^"]*"/i,
+    `<link id="canonical" rel="canonical" href="${pageUrl}"`
+  );
+  out = out.replace(
+    /<meta property="og:url" content="[^"]*"/i,
+    `<meta property="og:url" content="${pageUrl}"`
+  );
+  return out;
+}
+
+function injectHreflang(html, { zhUrl, enUrl }) {
+  // Only skip when <link rel="alternate"> exists (not <a hreflang> in the lang switcher).
+  if (html.includes('rel="alternate" hreflang="zh-TW"') && html.includes('rel="alternate" hreflang="en"')) {
+    return html;
+  }
+  const block = `    <link rel="alternate" hreflang="zh-TW" href="${zhUrl}">
+    <link rel="alternate" hreflang="en" href="${enUrl}">
+`;
+  return html.replace('</head>', `${block}</head>`);
+}
+
 /** Only the homepage build should ship OG image tags for the overall chart (template omits them). */
-function injectHomepageChartOgMeta(html) {
-  const imageUrl = 'https://resilience.ocf.tw/web/img/overall-result.png';
+function injectHomepageChartOgMeta(html, locale) {
+  if (html.includes('property="og:image"')) {
+    return html.replace(
+      /<meta property="og:image:alt" content="[^"]*">/i,
+      `<meta property="og:image:alt" content="${locale === 'en'
+        ? 'Overall resilience test results chart for popular Taiwan websites'
+        : '台灣常用網站韌性檢測整體結果圖表'}">`
+    );
+  }
+
+  const imageUrl = `${PUBLIC_BASE}/img/overall-result.png`;
+  const alt = locale === 'en'
+    ? 'Overall resilience test results chart for popular Taiwan websites'
+    : '台灣常用網站韌性檢測整體結果圖表';
   const block = `    <meta property="og:image" content="${imageUrl}">
-    <meta property="og:image:alt" content="台灣常用網站韌性檢測整體結果圖表">
+    <meta property="og:image:alt" content="${alt}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="${imageUrl}">
 `;
   return html.replace('</head>', `${block}</head>`);
 }
 
-// Output path: <dir>/index.html
-function urlToOutputPath(url) {
-  const dirName = urlToDirPath(url);
-  return path.join(dirName, 'index.html');
+function getSiteOutputPath(domainDir, locale) {
+  if (locale === 'en') {
+    return path.join(OUTPUT_DIR, domainDir, 'en', 'index.html');
+  }
+  return path.join(OUTPUT_DIR, domainDir, 'index.html');
+}
+
+function getHomepageOutputPath(locale) {
+  if (locale === 'en') {
+    return path.join(OUTPUT_DIR, 'en', 'index.html');
+  }
+  return path.join(OUTPUT_DIR, 'index.html');
+}
+
+function getAssetDepth(locale, isHomepage) {
+  if (isHomepage) {
+    return 1;
+  }
+  return locale === 'en' ? 2 : 1;
+}
+
+function stripSiteDynamic(html) {
+  return html.replace(/<div id="site-dynamic"[^>]*>[\s\S]*?(?=\s*<div id="search-container")/i, '');
+}
+
+function stripOverviewDynamic(html) {
+  return html.replace(/<div id="overview-dynamic"[^>]*>[\s\S]*?(?=\s*<footer>)/i, '');
+}
+
+function insertHomeTitle(html, homeTitleHTML) {
+  if (!homeTitleHTML) {
+    return html;
+  }
+  return html.replace(/(<\/nav>\s*)/i, `$1\n\n    ${homeTitleHTML}\n\n    `);
+}
+
+function finalizeHomepageHtml(html, homeTitleHTML) {
+  const prerenderPattern = /<div v-pre id="overview-prerender"[^>]*>[\s\S]*?<div[^>]*data-overview-static="begin"[^>]*><\/div>([\s\S]*?)<div[^>]*data-overview-static="end"[^>]*><\/div>\s*<\/div>\s*<div id="overview-dynamic"[^>]*>[\s\S]*?(?=\s*<footer>)/i;
+  let out = prerenderPattern.test(html)
+    ? html.replace(prerenderPattern, '$1\n\n    ')
+    : stripHomepageOverview(html);
+  out = stripSiteDynamic(out);
+  return insertHomeTitle(out, homeTitleHTML);
+}
+
+function finalizeSiteHtml(html) {
+  let out = stripSiteDynamic(html);
+  out = stripHomepageOverview(out);
+  return out;
 }
 
 function copyDirRecursive(src, dest) {
@@ -122,6 +218,40 @@ function injectHeadExtras(html, { statisticFileName, statisticPreload = false, s
     out = out.replace('</head>', `\n${extra.join('\n')}\n</head>`);
   }
   return out;
+}
+
+function stripHomepageOverview(html) {
+  let out = html.replace(
+    /<div v-pre id="overview-prerender"[^>]*>[\s\S]*?<\/div>\s*(?=<div id="overview-dynamic")/i,
+    ''
+  );
+  out = out.replace(/<div id="overview-dynamic"[^>]*>[\s\S]*?(?=\s*<footer>)/i, '');
+  return out;
+}
+
+function insertBetweenDataMarkers(html, attribute, content) {
+  const beginPattern = new RegExp(`<div[^>]*${attribute}="begin"[^>]*><\\/div>`);
+  const endPattern = new RegExp(`<div[^>]*${attribute}="end"[^>]*><\\/div>`);
+
+  const beginMatch = html.match(beginPattern);
+  const endMatch = html.match(endPattern);
+  if (!beginMatch || !endMatch) {
+    return { html, ok: false };
+  }
+
+  const beginIndex = beginMatch.index;
+  const endIndex = endMatch.index;
+  if (endIndex <= beginIndex) {
+    return { html, ok: false };
+  }
+
+  const beginTagEnd = beginIndex + beginMatch[0].length;
+  const beforeBegin = html.substring(0, beginTagEnd);
+  const afterEnd = html.substring(endIndex);
+  return {
+    html: beforeBegin + '\n        ' + content + '\n    ' + afterEnd,
+    ok: true
+  };
 }
 
 function cleanupVersionedStatisticTsfs(outputDir) {
@@ -179,7 +309,8 @@ function startServer() {
 
       if (url.pathname === '/' || url.pathname === '/index.html') {
         const hasUrlQuery = url.searchParams.has('url');
-        if (hasUrlQuery) {
+        const langParam = url.searchParams.get('lang');
+        if (hasUrlQuery || langParam === 'en') {
           filePath = TEMPLATE_FILE;
         } else {
           const builtIndex = path.join(OUTPUT_DIR, 'index.html');
@@ -222,7 +353,7 @@ function startServer() {
 }
 
 // Render one page with Playwright and extract static HTML
-async function generateStaticHTML(browser, url, index, total, artifact) {
+async function generateStaticHTML(browser, url, index, total, artifact, locale) {
   const page = await browser.newPage({
     viewport: { width: 1200, height: 800 }
   });
@@ -230,9 +361,13 @@ async function generateStaticHTML(browser, url, index, total, artifact) {
   try {
 
     const cleanUrl = url.replace(/\/+$/, '');
-    const fileUrl = `http://localhost:${SERVER_PORT}/?url=${encodeURIComponent(cleanUrl)}`;
+    const previewParams = new URLSearchParams({
+      url: cleanUrl,
+      lang: locale
+    });
+    const fileUrl = `http://localhost:${SERVER_PORT}/?${previewParams.toString()}`;
 
-    console.log(`  [browser ${index}] [${total}] loading: ${cleanUrl}`);
+    console.log(`  [browser ${index}] [${locale}] [${total}] loading: ${cleanUrl}`);
 
     await page.goto(fileUrl, {
       waitUntil: 'networkidle0',
@@ -273,22 +408,8 @@ async function generateStaticHTML(browser, url, index, total, artifact) {
 
     if (testResult) {
       const staticWrapperHTML = await page.evaluate(() => {
-        const beginMarker = document.querySelector('div[data-static="begin"]');
-        const endMarker = document.querySelector('div[data-static="end"]');
-
-        if (beginMarker && endMarker && beginMarker.parentElement) {
-          const parentHTML = beginMarker.parentElement.innerHTML;
-          const beginMarkerHTML = beginMarker.outerHTML;
-          const endMarkerHTML = endMarker.outerHTML;
-          const beginIndex = parentHTML.indexOf(beginMarkerHTML);
-          const endIndex = parentHTML.indexOf(endMarkerHTML);
-
-          if (beginIndex !== -1 && endIndex !== -1 && endIndex > beginIndex) {
-            const start = beginIndex + beginMarkerHTML.length;
-            return parentHTML.substring(start, endIndex).trim();
-          }
-        }
-        return '';
+        const dynamicRoot = document.getElementById('site-dynamic');
+        return dynamicRoot ? dynamicRoot.innerHTML.trim() : '';
       });
 
       const beginPattern = /<div[^>]*class="static-wrapper"[^>]*data-static="begin"[^>]*><\/div>/;
@@ -298,19 +419,12 @@ async function generateStaticHTML(browser, url, index, total, artifact) {
       const endMatch = html.match(endPattern);
 
       if (beginMatch && endMatch) {
-        const beginIndex = beginMatch.index;
-        const endIndex = endMatch.index;
-
-        if (endIndex > beginIndex) {
-          const beginTagEnd = beginIndex + beginMatch[0].length;
-          const endTagStart = endIndex;
-
-          const beforeBegin = html.substring(0, beginTagEnd);
-          const afterEnd = html.substring(endTagStart);
-          html = beforeBegin + '\n        ' + staticWrapperHTML + '\n    ' + afterEnd;
+        const inserted = insertBetweenDataMarkers(html, 'data-static', staticWrapperHTML);
+        if (inserted.ok) {
+          html = inserted.html;
           console.log(`  [browser ${index}] ✅ replaced static-wrapper region`);
         } else {
-          console.log(`  [browser ${index}] ⚠️  marker order invalid (begin: ${beginIndex}, end: ${endIndex})`);
+          console.log(`  [browser ${index}] ⚠️  marker order invalid (begin: ${beginMatch.index}, end: ${endMatch.index})`);
         }
       } else {
         console.log(`  [browser ${index}] ⚠️  data-static markers missing (begin: ${beginMatch ? 'found' : 'not found'}, end: ${endMatch ? 'found' : 'not found'})`);
@@ -340,30 +454,38 @@ async function generateStaticHTML(browser, url, index, total, artifact) {
       });
       console.log(`  [browser ${index}] ✅ injected static page markers`);
 
-      // Per-site pages should not ship the homepage overview block
-      html = html.replace(/<section[^>]*class="overview-card"[^>]*>[\s\S]*?<\/section>/i, '');
+      const domainDir = urlToDirPath(cleanUrl);
+      html = injectPageUrls(html, domainDir, locale);
+      html = injectHreflang(html, {
+        zhUrl: publicPageUrl(domainDir, 'zh-TW'),
+        enUrl: publicPageUrl(domainDir, 'en')
+      });
+
+      html = finalizeSiteHtml(html);
+      html = bakeShellStrings(html, { locale, domain: domainDir }, ROOT_DIR);
     }
 
-    html = fixAssetPaths(html);
+    const depth = getAssetDepth(locale, false);
+    html = fixAssetPaths(html, depth);
 
-    return { success: true, html, url: cleanUrl };
+    return { success: true, html, url: cleanUrl, locale };
   } catch (error) {
     console.error(`  [browser ${index}] error: ${url}`, error.message);
-    return { success: false, html: null, url };
+    return { success: false, html: null, url, locale };
   } finally {
     await page.close();
   }
 }
 
-/** Prerender only `.overview-card` and `<head>` (meta/title) for the homepage; rest stays Vue templates. */
-async function prerenderHomepageOverviewAndMeta(browser, artifact) {
+/** Prerender homepage overview (into data-overview-static) and <head> meta/title. */
+async function prerenderHomepageOverviewAndMeta(browser, artifact, locale) {
   const page = await browser.newPage({
     viewport: { width: 1200, height: 800 }
   });
 
   try {
-    console.log('  [homepage] loading / (overview + meta)...');
-    await page.goto(`http://localhost:${SERVER_PORT}/`, {
+    console.log(`  [homepage] [${locale}] loading / (overview + meta)...`);
+    await page.goto(`http://localhost:${SERVER_PORT}/?lang=${locale}`, {
       waitUntil: 'networkidle0',
       timeout: 45000
     });
@@ -371,34 +493,39 @@ async function prerenderHomepageOverviewAndMeta(browser, artifact) {
     await page
       .waitForFunction(
         () => {
-          const card = document.querySelector('.overview-card');
-          if (!card) return false;
-          return !card.textContent.includes('{{');
+          const root = document.getElementById('overview-dynamic');
+          if (!root) return false;
+          return !root.textContent.includes('{{');
         },
         { timeout: 25000 }
       )
       .catch(() => {
-        console.log('  [homepage] ⚠️  timeout waiting for .overview-card; continuing');
+        console.log('  [homepage] ⚠️  timeout waiting for #overview-dynamic; continuing');
       });
 
     await page.evaluate(() => new Promise((resolve) => {
       requestAnimationFrame(() => requestAnimationFrame(resolve));
     }));
 
-    const overviewOuter = await page.evaluate(() => {
-      const el = document.querySelector('.overview-card');
-      return el ? el.outerHTML : '';
+    const overviewHTML = await page.evaluate(() => {
+      const dynamicRoot = document.getElementById('overview-dynamic');
+      return dynamicRoot ? dynamicRoot.innerHTML.trim() : '';
+    });
+
+    const homeTitleHTML = await page.evaluate(() => {
+      const titleEl = document.querySelector('#site-dynamic h1.home-title');
+      return titleEl ? titleEl.outerHTML.trim() : '';
     });
 
     let html = fs.readFileSync(TEMPLATE_FILE, 'utf8');
 
-    if (overviewOuter) {
-      const overviewPattern = /<section[^>]*class="overview-card"[^>]*>[\s\S]*?<\/section>/i;
-      if (overviewPattern.test(html)) {
-        html = html.replace(overviewPattern, overviewOuter);
-        console.log('  [homepage] ✅ replaced .overview-card');
+    if (overviewHTML) {
+      const inserted = insertBetweenDataMarkers(html, 'data-overview-static', overviewHTML);
+      if (inserted.ok) {
+        html = inserted.html;
+        console.log('  [homepage] ✅ replaced data-overview-static region');
       } else {
-        console.log('  [homepage] ⚠️  .overview-card block not found in template');
+        console.log('  [homepage] ⚠️  data-overview-static markers missing or invalid');
       }
     }
 
@@ -421,11 +548,23 @@ async function prerenderHomepageOverviewAndMeta(browser, artifact) {
       staticPageMarker: false
     });
 
+    html = injectHreflang(html, {
+      zhUrl: publicPageUrl('', 'zh-TW'),
+      enUrl: publicPageUrl('', 'en')
+    });
+
+    html = injectPageUrls(html, '', locale);
+
     // Prerender runs on localhost where getOverallChartUrl() is /test-result/img/...;
     // shipped site lives under /web/ with assets in /web/img/ (see copy step above).
     html = html.replace(/\/test-result\/img\/overall-result\.(svg|png)/g, '/web/img/overall-result.png');
 
-    html = injectHomepageChartOgMeta(html);
+    html = injectHomepageChartOgMeta(html, locale);
+    html = finalizeHomepageHtml(html, homeTitleHTML);
+    html = bakeShellStrings(html, { locale, domain: '' }, ROOT_DIR);
+
+    const depth = getAssetDepth(locale, true);
+    html = fixAssetPaths(html, depth);
 
     return html;
   } catch (error) {
@@ -436,11 +575,11 @@ async function prerenderHomepageOverviewAndMeta(browser, artifact) {
   }
 }
 
-async function processUrl(browser, url, browserIndex, globalIndex, totalUrls, artifact) {
-  return await generateStaticHTML(browser, url, browserIndex, globalIndex, artifact);
+async function processUrl(browser, url, browserIndex, globalIndex, totalUrls, artifact, locale) {
+  return await generateStaticHTML(browser, url, browserIndex, globalIndex, artifact, locale);
 }
 
-async function processUrlWorker(browser, urlQueue, workerId, totalUrls, artifact) {
+async function processUrlWorker(browser, urlQueue, workerId, totalUrls, artifact, locale) {
   const results = [];
 
   while (urlQueue.length > 0) {
@@ -448,20 +587,21 @@ async function processUrlWorker(browser, urlQueue, workerId, totalUrls, artifact
     if (!url) break;
 
     const globalIndex = totalUrls - urlQueue.length;
-    const result = await processUrl(browser, url, workerId, globalIndex, totalUrls, artifact);
+    const result = await processUrl(browser, url, workerId, globalIndex, totalUrls, artifact, locale);
     results.push(result);
 
     if (result.success && result.html) {
       const dirPath = urlToDirPath(result.url);
-      const fullDirPath = path.join(OUTPUT_DIR, dirPath);
-      const outputPath = path.join(fullDirPath, 'index.html');
+      const outputPath = getSiteOutputPath(dirPath, locale);
+      const fullDirPath = path.dirname(outputPath);
 
       if (!fs.existsSync(fullDirPath)) {
         fs.mkdirSync(fullDirPath, { recursive: true });
       }
 
       fs.writeFileSync(outputPath, result.html, 'utf-8');
-      console.log(`  ✓ wrote ${dirPath}/index.html`);
+      const relPath = locale === 'en' ? `${dirPath}/en/index.html` : `${dirPath}/index.html`;
+      console.log(`  ✓ wrote ${relPath}`);
     }
   }
 
@@ -492,11 +632,12 @@ async function build() {
   fs.writeFileSync(path.join(OUTPUT_DIR, 'index.html'), homepageHtml, 'utf8');
 
   const assets = [
-    'g0v_logo.svg', 
-    'Logo_Compact-OCF_Purple.svg', 
-    'APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg', 
-    'styles.css', 
-    'app.js', 
+    'g0v_logo.svg',
+    'Logo_Compact-OCF_Purple.svg',
+    'APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg',
+    'styles.css',
+    'app.js',
+    'i18n.js',
     'favicon.ico'
   ];
   assets.forEach(asset => {
@@ -506,6 +647,8 @@ async function build() {
       fs.copyFileSync(srcPath, destPath);
     }
   });
+
+  copyDirRecursive(path.join(ROOT_DIR, 'locales'), path.join(OUTPUT_DIR, 'locales'));
 
   copyVersionedStatistic(OUTPUT_DIR, artifact);
 
@@ -535,18 +678,6 @@ async function build() {
   const server = await startServer();
 
   try {
-    console.log('Prerendering homepage (.overview-card + <head>)...\n');
-    const homeBrowser = await chromium.launch({
-      headless: true
-    });
-    try {
-      const prerenderedHome = await prerenderHomepageOverviewAndMeta(homeBrowser, artifact);
-      fs.writeFileSync(path.join(OUTPUT_DIR, 'index.html'), prerenderedHome, 'utf8');
-      console.log('✓ Homepage overview + meta written to web/index.html\n');
-    } finally {
-      await homeBrowser.close();
-    }
-
     const urls = loadStatisticData();
 
     let urlsToProcess;
@@ -572,53 +703,80 @@ async function build() {
       urlsToProcess = TEST_LIMIT ? urls.slice(0, TEST_LIMIT) : urls;
     }
 
-    console.log(`Found ${urls.length} URLs in statistic.tsv; processing ${urlsToProcess.length}\n`);
+    console.log(`Found ${urls.length} URLs in statistic.tsv; processing ${urlsToProcess.length} per locale\n`);
 
-    const urlQueue = [...urlsToProcess];
-
-    console.log(`Launching ${BROWSER_INSTANCES} browser instances...\n`);
-
-    const browsers = await Promise.all(
-      Array.from({ length: BROWSER_INSTANCES }, async (_, idx) => {
-        try {
-          return await chromium.launch({
-            headless: true
-          });
-        } catch (error) {
-          console.error('Failed to launch browser:', error.message);
-          throw error;
-        }
-      })
-    );
-
-    let successCount = 0;
-    let failCount = 0;
+    let totalSuccess = 0;
+    let totalFail = 0;
     let flatResults = [];
 
-    try {
-      const allResults = await Promise.all(
-        browsers.map((browser, idx) =>
-          processUrlWorker(browser, urlQueue, idx + 1, urlsToProcess.length, artifact)
-        )
+    for (const locale of BUILD_LOCALES) {
+      console.log(`\n=== Building locale: ${locale} ===\n`);
+
+      console.log('Prerendering homepage (.overview-card + <head>)...\n');
+      const homeBrowser = await chromium.launch({
+        headless: true
+      });
+      try {
+        const prerenderedHome = await prerenderHomepageOverviewAndMeta(homeBrowser, artifact, locale);
+        const homePath = getHomepageOutputPath(locale);
+        fs.mkdirSync(path.dirname(homePath), { recursive: true });
+        fs.writeFileSync(homePath, prerenderedHome, 'utf8');
+        const relHome = locale === 'en' ? 'en/index.html' : 'index.html';
+        console.log(`✓ Homepage overview + meta written to web/${relHome}\n`);
+      } finally {
+        await homeBrowser.close();
+      }
+
+      const urlQueue = [...urlsToProcess];
+
+      console.log(`Launching ${BROWSER_INSTANCES} browser instances...\n`);
+
+      const browsers = await Promise.all(
+        Array.from({ length: BROWSER_INSTANCES }, async () => {
+          try {
+            return await chromium.launch({
+              headless: true
+            });
+          } catch (error) {
+            console.error('Failed to launch browser:', error.message);
+            throw error;
+          }
+        })
       );
 
-      flatResults = allResults.flat();
+      let successCount = 0;
+      let failCount = 0;
 
-      for (const result of flatResults) {
-        if (result.success && result.html) {
-          successCount++;
-        } else {
-          failCount++;
+      try {
+        const allResults = await Promise.all(
+          browsers.map((browser, idx) =>
+            processUrlWorker(browser, urlQueue, idx + 1, urlsToProcess.length, artifact, locale)
+          )
+        );
+
+        const localeResults = allResults.flat();
+        flatResults = flatResults.concat(localeResults);
+
+        for (const result of localeResults) {
+          if (result.success && result.html) {
+            successCount++;
+          } else {
+            failCount++;
+          }
         }
+      } finally {
+        console.log('\nClosing browser instances...');
+        await Promise.all(browsers.map(browser => browser.close()));
       }
-    } finally {
-      console.log('\nClosing browser instances...');
-      await Promise.all(browsers.map(browser => browser.close()));
+
+      console.log(`\nLocale ${locale} finished: ${successCount} page(s), ${failCount} failed/skipped`);
+      totalSuccess += successCount;
+      totalFail += failCount;
     }
 
     console.log('\nBuild finished.');
-    console.log(`Generated: ${successCount} page(s)`);
-    console.log(`Failed / skipped: ${failCount} URL(s)`);
+    console.log(`Generated: ${totalSuccess} page(s) across ${BUILD_LOCALES.length} locale(s)`);
+    console.log(`Failed / skipped: ${totalFail} URL(s)`);
     console.log(`Output: ${OUTPUT_DIR}`);
 
     if (TEST_MODE) {
@@ -632,12 +790,18 @@ async function build() {
       }
     }
 
-    if (TEST_MODE && successCount > 0) {
+    if (TEST_MODE && totalSuccess > 0) {
       const firstResult = flatResults.find(r => r.success);
       if (firstResult) {
         const dirPath = urlToDirPath(firstResult.url);
-        console.log(`\n📄 Test output: ${path.join(OUTPUT_DIR, dirPath, 'index.html')}`);
+        const zhPath = path.join(OUTPUT_DIR, dirPath, 'index.html');
+        const enPath = path.join(OUTPUT_DIR, dirPath, 'en', 'index.html');
+        console.log(`\n📄 Test output (zh-TW): ${zhPath}`);
         console.log(`   URL: http://127.0.0.1:5500/web/${dirPath}/`);
+        if (fs.existsSync(enPath)) {
+          console.log(`📄 Test output (en): ${enPath}`);
+          console.log(`   URL: http://127.0.0.1:5500/web/${dirPath}/en/`);
+        }
         console.log('   Open in a browser to preview.');
       }
     }

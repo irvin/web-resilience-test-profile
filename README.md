@@ -19,6 +19,8 @@ This project:
 
 For the full workflow from updating test results to publishing a new page on `resilience.ocf.tw`, see [`add-new-sites.md`](add-new-sites.md).
 
+For a post-update regression checklist, see [`TESTING.md`](TESTING.md).
+
 ## Installation
 
 ```bash
@@ -91,9 +93,9 @@ npm run build:all
 This mode:
 - Reads all tested URLs from `test-result/statistic.tsv`
 - Uses 8 parallel browser instances
-- Generates static pages under `web/`
-- Creates one directory per site, for example `web/google.com/index.html`
-- Keeps `web/index.html` as the main landing page
+- Generates zh-TW and English static pages under `web/`
+- Creates one directory per site, for example `web/google.com/index.html` (zh-TW) and `web/google.com/en/index.html` (en)
+- Homepage output: `web/index.html` (zh-TW) and `web/en/index.html` (en)
 - Generates `web/sitemap.xml`
 - Prepares the output for the `gh-pages` branch automatically
 
@@ -106,9 +108,9 @@ This mode:
 
 ### `lastmod` rules
 
-- The sitemap includes only directories that actually exist under `web/` and contain `index.html`
-- The homepage `/web/` uses the modification time of `web/index.html`
-- Each site page `/web/<domain>/` uses the modification time of `web/<domain>/index.html`
+- The sitemap lists zh-TW and en URLs for the homepage and every site in `statistic.tsv` (~3720 URLs)
+- `/web/` and `/web/en/` use the mtime of their respective `index.html`
+- `/web/<domain>/` and `/web/<domain>/en/` use the mtime of their respective `index.html`
 
 Note: the default `npm run build` test mode does not update `web/sitemap.xml`, so the sitemap will not accidentally shrink to a single test page.
 
@@ -138,14 +140,41 @@ If you already built the site and only want to sync the worktree:
 npm run build-worktree
 ```
 
+## Local preview (development)
+
+Edit files at the repository root (`index.html`, `app.js`, `i18n.js`, `locales/`). Serve the repo root over HTTP (for example VS Code Live Server or `npx serve .`) and open `index.html`.
+
+- Use `?url=example.com` on localhost to preview a site result dynamically.
+- Do not use `file://`; fetches to `/test-result/` require a local server.
+- Built output under `web/` is for deployment verification; day-to-day UI work uses the root template.
+
+## Bilingual UI (zh-TW / en)
+
+Production pages use **path-based locales** (one URL, one language, baked at build time):
+
+| Page | zh-TW | en |
+|------|-------|-----|
+| Homepage | `/web/` | `/web/en/` |
+| Site | `/web/{domain}/` | `/web/{domain}/en/` |
+
+- `npm run build:all` emits both locales in one run; built HTML **does not** include `#site-dynamic` or `#overview-dynamic`.
+- Language switching uses plain `<a href>` links to the alternate path.
+- **Unknown sites**: the site-wide [`404.html`](../resilience.ocf.tw/404.html) redirects missing paths to query mode — zh-TW `/web/?url={domain}`, en `/web/en/?url={domain}`; lang switcher links preserve the `url` parameter in that mode.
+- Known sites visited with `?url=` are still redirected to the static path by `loadResults()`.
+
+The dev template at the repo root keeps Vue dynamic blocks for preview; on localhost use `?url=example.com&lang=en` for English preview.
+
+Copy lives in `locales/zh-TW.js` and `locales/en.js`. Forks can still override dynamic labels via `window.__WEB_RESILIENCE_TEXT__`.
+
 ## Customizing for your own version
 
 If you are adapting this repository for another country, organization, or report set, these are the main places to start:
 
-- `index.html`: the current Chinese-first template used by the live site
-- `index.en.example.html`: an English example template that demonstrates how to reskin the page
-- `app.js`: shared runtime logic, summary mapping, search behavior, and configurable text overrides
-- `styles.css`: shared styles used by both the main template and the example template
+- `index.html`: the single dev template (Vue dynamic blocks; stripped from built output)
+- `locales/`: UI strings and per-locale `appText` (summary labels, meta helpers)
+- `i18n.js`: path-based locale detection, not-found query hrefs, and `t()` helper
+- `app.js`: shared runtime logic, summary mapping, and search behavior
+- `styles.css`: shared styles
 - `test-result/`: the input data source, including `statistic.tsv` and result JSON files
 - `add-new-sites.md`: maintainer workflow (English)
 - `add-new-sites.zh-TW.md`: same workflow (Traditional Chinese)
@@ -157,16 +186,22 @@ Typical customization points:
 - default locale and meta text overrides
 - deployment destination and hosting URL
 
-The example English template uses `window.__WEB_RESILIENCE_TEXT__` to override labels and dynamic text while reusing the same `app.js` runtime. That pattern is intended to make forks easier without introducing a full runtime i18n layer.
+English copy lives in `locales/en.js`.
 
 ## Project structure
 
 ```text
 web-resilience-profile/
 ├── web/                     # Generated output directory
-│   ├── index.html           # Main landing page
+│   ├── index.html           # zh-TW homepage
+│   ├── en/
+│   │   └── index.html       # English homepage
+│   ├── locales/             # Copied locale bundles
+│   ├── i18n.js
 │   ├── google.com/          # One directory per tested website
-│   │   └── index.html
+│   │   ├── index.html       # zh-TW
+│   │   └── en/
+│   │       └── index.html   # English
 │   └── ...
 ├── test-result/             # Git submodule with test result data
 │   ├── statistic.tsv
@@ -179,8 +214,11 @@ web-resilience-profile/
 │   ├── deploy.js
 │   ├── generate-sitemap.js
 │   └── clean-worktree.js
+├── locales/
+│   ├── zh-TW.js
+│   └── en.js
 ├── index.html
-├── index.en.example.html
+├── i18n.js
 ├── add-new-sites.md
 ├── add-new-sites.zh-TW.md
 ├── app.js

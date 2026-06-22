@@ -209,3 +209,7 @@ If updates do not appear on `resilience.ocf.tw`, check in order:
    - `npm run deploy`
 4. `resilience.ocf.tw`: submodule points at the latest `gh-pages` revision
 5. Purge Cloudflare cache manually
+
+## 7. Post-update testing
+
+After code, build output, or `404.html` changes, run the checklist in [`TESTING.md`](TESTING.md).
