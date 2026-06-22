@@ -58,21 +58,38 @@ const DEFAULT_APP_TEXT = {
     }
 };
 
+function getLocaleAppTextBase() {
+    if (window.WebResilienceI18n) {
+        const fromLocale = window.WebResilienceI18n.getAppText();
+        if (fromLocale && Object.keys(fromLocale).length > 0) {
+            return fromLocale;
+        }
+    }
+    return DEFAULT_APP_TEXT;
+}
+
 function getAppTextConfig() {
+    const base = getLocaleAppTextBase();
     const overrides = window.__WEB_RESILIENCE_TEXT__ || {};
     return {
-        ...DEFAULT_APP_TEXT,
+        ...base,
         ...overrides,
-        homeOverallMetaDescription: overrides.homeOverallMetaDescription || DEFAULT_APP_TEXT.homeOverallMetaDescription,
+        homeOverallMetaDescription: overrides.homeOverallMetaDescription || base.homeOverallMetaDescription,
+        pageTitle: overrides.pageTitle || base.pageTitle,
+        ogDescription: overrides.ogDescription || base.ogDescription,
         summaryLabels: {
-            ...DEFAULT_APP_TEXT.summaryLabels,
+            ...base.summaryLabels,
             ...(overrides.summaryLabels || {})
         },
         categoryLabels: {
-            ...DEFAULT_APP_TEXT.categoryLabels,
+            ...base.categoryLabels,
             ...(overrides.categoryLabels || {})
         }
     };
+}
+
+if (window.WebResilienceI18n) {
+    window.WebResilienceI18n.init();
 }
 
 // Global state
@@ -84,9 +101,14 @@ function isLocalhost() {
     return host === 'localhost' || host === '127.0.0.1';
 }
 
-function getLocalDynamicBasePath() {
-    const pathname = window.location.pathname || '/';
-    return pathname.startsWith('/web/') ? '/web/' : '/';
+function isWebDeploymentPath() {
+    const pathname = window.location.pathname;
+    return pathname === '/web' || pathname.startsWith('/web/');
+}
+
+function shouldRedirectKnownUrlToStatic() {
+    // Repo-root dev template on localhost keeps dynamic ?url= preview.
+    return !isLocalhost() || isWebDeploymentPath();
 }
 
 // Resolve the statistic.tsv location from template metadata.
@@ -209,7 +231,7 @@ function getOgDescription(domain, summaryKey) {
 
 // Read the current target URL from the query string.
 function getUrlParam() {
-    return window.location.search.substring(5);
+    return new URLSearchParams(window.location.search).get('url') || '';
 }
 
 // Convert a URL into the corresponding JSON filename.
@@ -350,28 +372,65 @@ function isStaticPage() {
     return window.__IS_STATIC_PAGE__ === true;
 }
 
-// Navigate to the selected URL.
-function selectUrl(url) {
-    // Use a normalized URL for navigation.
-    const cleanUrl = cleanUrlForNavigation(url);
-
-    // Keep localhost in dynamic mode for local preview.
-    if (isLocalhost()) {
-        window.location.href = `${getLocalDynamicBasePath()}?url=${encodeURIComponent(cleanUrl)}`;
-        return;
+function hasBakedStaticContent() {
+    const begin = document.querySelector('[data-static="begin"]');
+    const end = document.querySelector('[data-static="end"]');
+    if (!begin || !end) {
+        return false;
     }
-
-    // Use the canonical /web/{domain}/ static path format.
-    const staticPath = `/web/${cleanUrl}/`;
-    window.location.href = staticPath;
+    let node = begin.nextElementSibling;
+    while (node && node !== end) {
+        if (node.textContent && node.textContent.trim().length > 0) {
+            return true;
+        }
+        node = node.nextElementSibling;
+    }
+    return false;
 }
 
-// Extract the domain from a /web/{domain}/ path, used by 404 fallbacks.
+function hasBakedOverviewContent() {
+    const begin = document.querySelector('[data-overview-static="begin"]');
+    const end = document.querySelector('[data-overview-static="end"]');
+    if (!begin || !end) {
+        return false;
+    }
+    let node = begin.nextElementSibling;
+    while (node && node !== end) {
+        if (node.textContent && node.textContent.trim().length > 0) {
+            return true;
+        }
+        node = node.nextElementSibling;
+    }
+    return false;
+}
+
+function isDevTemplate() {
+    return !isStaticPage() && !hasBakedStaticContent() && !hasBakedOverviewContent();
+}
+
+function sitePageHref(url) {
+    const cleanUrl = cleanUrlForNavigation(url);
+    if (window.WebResilienceI18n) {
+        return window.WebResilienceI18n.sitePageHref(cleanUrl);
+    }
+    return `/web/${cleanUrl}/`;
+}
+
+// Navigate to the selected URL.
+function selectUrl(url) {
+    window.location.href = sitePageHref(url);
+}
+
+// Extract the domain from a /web/{domain}/ or /web/{domain}/en/ path.
 function extractDomainFromPath() {
+    if (window.WebResilienceI18n && window.WebResilienceI18n.parseWebPath) {
+        const { domain } = window.WebResilienceI18n.parseWebPath(window.location.pathname);
+        return domain || null;
+    }
+
     const pathname = window.location.pathname;
-    // Match the /web/{domain}/ format.
-    const match = pathname.match(/^\/web\/([^\/]+)\/?$/);
-    if (match) {
+    const match = pathname.match(/^\/web\/([^/]+)(?:\/en)?\/?$/);
+    if (match && match[1] !== 'en') {
         return match[1];
     }
     return null;
@@ -398,9 +457,9 @@ async function loadResults() {
         }
     }
 
-    // Production uses static pages only: redirect to a static page when the URL exists.
-    // localhost keeps dynamic mode so Live Server can preview it.
-    if (urlParam && !isLocalhost()) {
+    // Redirect to a static page when the URL exists in statistic.tsv.
+    // Repo-root dev template on localhost keeps dynamic ?url= preview.
+    if (urlParam && shouldRedirectKnownUrlToStatic()) {
         await ensureStatisticLoaded();
         const targetKey = cleanUrlForNavigation(urlParam);
         // Match URLs using the same normalization logic as the static page paths.
@@ -409,9 +468,7 @@ async function loadResults() {
         });
 
         if (existsInStatistic) {
-            // Use the canonical /web/{domain}/ static path format.
-            const staticPath = `/web/${targetKey}/`;
-            window.location.href = staticPath;
+            window.location.href = sitePageHref(targetKey);
             return;
         }
         // If the URL is missing from statistic.tsv, keep the dynamic flow so
@@ -435,8 +492,8 @@ async function loadResults() {
 
     // Remaining cases:
     // - dynamic homepage with no URL param
-    // - localhost with a URL param
-    // - production with a URL param that is not present in statistic.tsv
+    // - repo-root dev template on localhost with a URL param
+    // - query URL for a site not present in statistic.tsv
     // All of them need statistic data to power search behavior.
     await ensureStatisticLoaded();
 
@@ -592,12 +649,88 @@ const vueRootApp = createApp({
 
         watch([overallStats, vueResult], applyHomepageOverallMetaIfNeeded, { immediate: true });
 
+        const locale = ref(window.WebResilienceI18n ? window.WebResilienceI18n.getLocale() : DEFAULT_DISPLAY_LOCALE);
+
         const displayUrl = computed(() => {
             if (!vueResult.value) return '';
             return cleanUrlForNavigation(vueResult.value.url || '');
         });
 
+        function t(key, params) {
+            locale.value;
+            if (!window.WebResilienceI18n) {
+                return key;
+            }
+            return window.WebResilienceI18n.t(key, params);
+        }
+
+        function applyPageMeta() {
+            if (!isDevTemplate()) {
+                return;
+            }
+
+            const domain = displayUrl.value || '';
+            const config = getAppTextConfig();
+            const title = config.pageTitle(domain);
+            document.title = title;
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) {
+                ogTitle.content = title;
+            }
+
+            if (vueResult.value) {
+                const summaryKeyValue = getSummaryKey(vueResult.value);
+                const description = getOgDescription(domain, summaryKeyValue);
+                const metaDesc = document.querySelector('meta[name="description"]');
+                const ogDesc = document.querySelector('meta[property="og:description"]');
+                if (metaDesc) {
+                    metaDesc.content = description;
+                }
+                if (ogDesc) {
+                    ogDesc.content = description;
+                }
+                return;
+            }
+
+            if (!domain) {
+                applyHomepageOverallMetaIfNeeded();
+                const fallbackDesc = window.WebResilienceI18n
+                    ? window.WebResilienceI18n.t('meta.defaultDescription')
+                    : DEFAULT_META_DESCRIPTION;
+                const metaDesc = document.querySelector('meta[name="description"]');
+                const ogDesc = document.querySelector('meta[property="og:description"]');
+                if (metaDesc && !overallStats.value) {
+                    metaDesc.content = fallbackDesc;
+                }
+                if (ogDesc && !overallStats.value) {
+                    ogDesc.content = fallbackDesc;
+                }
+            }
+        }
+
+        const showSiteDynamic = computed(() => isDevTemplate());
+        const showOverviewDynamic = computed(() => isDevTemplate() && !displayUrl.value);
+
+        const zhLocaleHref = computed(() => {
+            if (!window.WebResilienceI18n) return '/web/';
+            return window.WebResilienceI18n.zhLocaleHref();
+        });
+
+        const enLocaleHref = computed(() => {
+            if (!window.WebResilienceI18n) return '/web/en/';
+            return window.WebResilienceI18n.enLocaleHref();
+        });
+
+        const homeHref = computed(() => {
+            if (!window.WebResilienceI18n) return '/web/';
+            return window.WebResilienceI18n.homeHref();
+        });
+
+        vueState.applyPageMeta = applyPageMeta;
+        vueState.displayUrl = displayUrl;
+
         const testTime = computed(() => {
+            locale.value;
             if (!vueResult.value) return '';
             return formatDate(vueResult.value.timestamp, getAppTextConfig().displayLocale);
         });
@@ -675,6 +808,7 @@ const vueRootApp = createApp({
         });
 
         const summaryText = computed(() => {
+            locale.value;
             if (!summaryKey.value) return '';
             return getSummaryText(summaryKey.value);
         });
@@ -739,6 +873,7 @@ const vueRootApp = createApp({
 
         // Primary site location taken from domainDetails[0].
         const siteLocation = computed(() => {
+            locale.value;
             if (!vueResult.value || !vueResult.value.domainDetails || vueResult.value.domainDetails.length === 0) {
                 return null;
             }
@@ -754,6 +889,7 @@ const vueRootApp = createApp({
 
         // Connection details from domainDetails[1] onward.
         const connectionDetails = computed(() => {
+            locale.value;
             if (!vueResult.value || !vueResult.value.domainDetails || vueResult.value.domainDetails.length <= 1) {
                 return [];
             }
@@ -923,7 +1059,20 @@ const vueRootApp = createApp({
         // Expose openSearch globally for inline onclick handlers.
         window.openSearch = openSearch;
 
+        watch(vueResult, () => {
+            applyPageMeta();
+        });
+
+        applyPageMeta();
+
         return {
+            locale,
+            t,
+            showSiteDynamic,
+            showOverviewDynamic,
+            zhLocaleHref,
+            enLocaleHref,
+            homeHref,
             vueResult,
             hasResult,
             overallChartUrl,
@@ -973,6 +1122,7 @@ const vueRootApp = createApp({
             onSearchKeydown,
             onSearchFocus,
             selectUrl: selectUrl, // Reuse the global selectUrl helper.
+            sitePageHref,
             openSearch
         };
     }

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When submarine cables fail, will taobao.com still work?</title>
+    <meta name="description" content="Based on the latest test, under a submarine-cable outage scenario taobao.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.">
+    <link rel="icon" href="/favicon.ico">
+    <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/taobao.com/en/">
+
+    <!-- Open Graph 標籤 -->
+    <meta property="og:title" content="When submarine cables fail, will taobao.com still work?">
+    <meta property="og:description" content="Based on the latest test, under a submarine-cable outage scenario taobao.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resilience.ocf.tw/web/taobao.com/en/">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+
+    <link rel="stylesheet" href="../../styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
+    <script src="../../locales/zh-TW.js"></script>
+    <script src="../../locales/en.js"></script>
+    <script src="../../i18n.js"></script>
+
+    <script>window.__IS_STATIC_PAGE__ = true;</script>
+    <link rel="alternate" hreflang="zh-TW" href="https://resilience.ocf.tw/web/taobao.com/">
+    <link rel="alternate" hreflang="en" href="https://resilience.ocf.tw/web/taobao.com/en/">
+</head>
+<body>
+    <div id="app">
+
+    <nav class="lang-switcher" aria-label="Language">
+        <a class="lang-switcher-btn" href="/web/taobao.com/" hreflang="zh-TW">中文</a>
+        <a class="lang-switcher-btn" href="/web/taobao.com/en/" hreflang="en" aria-current="page">English</a>
+    </nav>
+
+    <div class="static-wrapper" data-static="begin"></div>
+        <h1>When submarine cables fail, will <a href="https://taobao.com" target="_blank" rel="noopener noreferrer nofollow">taobao.com</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>Will not work</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">10</strong></p><p class="score score-Q score-zero">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-X">Foreign connections (X)<br><strong style="font-size: 1.3em;">10</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can taobao.com still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario taobao.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why might taobao.com “not work” when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean taobao.com will definitely be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for taobao.com under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of taobao.com, we observed 384 requests across 21 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS37963 Hangzhou Alibaba Advertising Co.,Ltd.</span><span class="connection-domain">59.82.121.163</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS45102 Alibaba (US) Technology Co., Ltd.</span><span class="connection-domain">h5api.m.taobao.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS45102 Alibaba (US) Technology Co., Ltd.</span><span class="connection-domain">pc-growht-rta.taobao.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS4134 CHINANET-BACKBONE</span><span class="connection-domain">fourier.taobao.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS4134 CHINANET-BACKBONE</span><span class="connection-domain">ynuf.aliapp.org</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">g.alicdn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS37963 Hangzhou Alibaba Advertising Co.,Ltd.</span><span class="connection-domain">umdc.taobao.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS37963 Hangzhou Alibaba Advertising Co.,Ltd.</span><span class="connection-domain">umdcv4.taobao.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS37963 Hangzhou Alibaba Advertising Co.,Ltd.</span><span class="connection-domain">g.aplus.taobao.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS37963 Hangzhou Alibaba Advertising Co.,Ltd.</span><span class="connection-domain">acjs.aliyun.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS37963 Hangzhou Alibaba Advertising Co.,Ltd.</span><span class="connection-domain">cf.aliyun.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">www.taobao.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">o.alicdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">d.alicdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">img.alicdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">gw.alicdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">push-v1.taobao.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">at.alicdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">alidt.alicdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">hudong.alicdn.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/taobao.com.json" target="_blank">View on GitHub</a></p><pre><code>{
+  "url": "https://taobao.com",
+  "canonicalURL": "https://taobao.com",
+  "httpStatus": 200,
+  "timestamp": "2026-01-14T01:05:14.605Z",
+  "testParameters": {
+    "customDNS": "168.95.1.1",
+    "useAdblock": true,
+    "adblockUrls": [
+      "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
+    ],
+    "useCache": true,
+    "hasIPinfoToken": true
+  },
+  "testingEnvironment": {
+    "ip": "220.132.212.194",
+    "hostname": "220-132-212-194.hinet-ip.hinet.net",
+    "city": "Banqiao",
+    "region": "Taipei",
+    "country": "TW",
+    "loc": "25.0143,121.4672",
+    "org": "AS3462 Data Communication Business Group",
+    "timezone": "Asia/Taipei",
+    "source": "ipinfo json api (direct)",
+    "dnsServer": "168.95.1.1"
+  },
+  "requestCount": 384,
+  "uniqueDomains": 21,
+  "test_results": {
+    "domestic": {
+      "cloud": 0,
+      "direct": 10
+    },
+    "foreign": {
+      "cloud": 2,
+      "direct": 8
+    }
+  },
+  "domainDetails": [
+    {
+      "originalUrl": "https://taobao.com/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "taobao.com",
+        "ip": "59.82.121.163",
+        "city": "Zhangjiakou",
+        "region": "Hebei",
+        "country": "CN",
+        "loc": "40.7834,114.8714",
+        "org": "AS37963 Hangzhou Alibaba Advertising Co.,Ltd.",
+        "timezone": "Asia/Shanghai"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://www.taobao.com/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "www.taobao.com",
+        "ip": "47.246.38.202",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://o.alicdn.com/tbpc/traceSDK/index.umd.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "o.alicdn.com",
+        "ip": "47.246.38.141",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://g.alicdn.com/tbpc/polyfill/1.0.0/index.umd.es5.production.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "g.alicdn.com",
+        "ip": "210.71.227.123",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://fourier.taobao.com/rp?ext=51&amp;data=jm_null&amp;random=8877032858345084&amp;href=https%3A%2F%2Fwww.taobao.com%2F&amp;protocol=https:&amp;callback=jsonpCallback",
+      "type": "script",
+      "ipinfo": {
+        "domain": "fourier.taobao.com",
+        "ip": "124.239.14.250",
+        "city": "Zhangjiakou",
+        "region": "Hebei",
+        "country": "CN",
+        "loc": "40.7834,114.8714",
+        "org": "AS4134 CHINANET-BACKBONE",
+        "timezone": "Asia/Shanghai"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://umdc.taobao.com/wcfg.json?ver=2&amp;href=https%3A%2F%2Fwww.taobao.com%2F&amp;v=013481288216608367",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "umdc.taobao.com",
+        "ip": "59.82.122.224",
+        "city": "Zhangjiakou",
+        "region": "Hebei",
+        "country": "CN",
+        "loc": "40.7834,114.8714",
+        "org": "AS37963 Hangzhou Alibaba Advertising Co.,Ltd.",
+        "timezone": "Asia/Shanghai"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://h5api.m.taobao.com/h5/mtop.tmall.kangaroo.core.service.route.aldlampservicefixedresv2/1.0/?jsv=2.7.2&amp;appKey=12574478&amp;t=1768352711809&amp;sign=681d2d36b982b8e5da5418a42dbdb6f3&amp;api=mtop.tmall.kangaroo.core.service.route.AldLampServiceFixedResV2&amp;v=1.0&amp;timeout=3000&amp;dataType=jsonp&amp;valueType=original&amp;jsonpIncPrefix=tbpc&amp;ttid=1%40tbwang_mac_1.0.0%23pc&amp;type=originaljsonp&amp;callback=mtopjsonptbpc1&amp;data=%7B%22params%22%3A%22%7B%5C%22resId%5C%22%3A%5C%2233718589%2C33972676%2C33665512%2C41905558%2C33667440%5C%22%2C%5C%22bizId%5C%22%3A%5C%22443%2C443%2C443%2C443%2C443%5C%22%7D%22%7D",
+      "type": "script",
+      "ipinfo": {
+        "domain": "h5api.m.taobao.com",
+        "ip": "47.246.99.131",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS45102 Alibaba (US) Technology Co., Ltd.",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/cloud"
+    },
+    {
+      "originalUrl": "https://d.alicdn.com/alilog/??aplus/1.13.27/aplus_pc.js,aplus/1.13.27/plugin/aplus_spmact.js?v=20251202143226",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "d.alicdn.com",
+        "ip": "47.246.38.141",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://img.alicdn.com/imgextra/i1/O1CN011YZ3P01zMCE6HGyhk_!!6000000006699-2-tps-480-144.png",
+      "type": "image",
+      "ipinfo": {
+        "domain": "img.alicdn.com",
+        "ip": "47.246.38.140",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://gw.alicdn.com/imgextra/i3/O1CN01OPMo5d1SnKKX8RfYM_!!6000000002291-1-tps-72-40.gif",
+      "type": "image",
+      "ipinfo": {
+        "domain": "gw.alicdn.com",
+        "ip": "47.246.38.141",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://push-v1.taobao.com/app/tbpc/tb-web-push/dist/global-request-permission.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "push-v1.taobao.com",
+        "ip": "47.246.38.181",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://pc-growht-rta.taobao.com/rta/360redirect",
+      "type": "image",
+      "ipinfo": {
+        "domain": "pc-growht-rta.taobao.com",
+        "ip": "47.246.177.8",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS45102 Alibaba (US) Technology Co., Ltd.",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/cloud"
+    },
+    {
+      "originalUrl": "https://at.alicdn.com/t/a/font_4480420_nu0sa7g3x9d.woff2?t=1737688298714",
+      "type": "font",
+      "ipinfo": {
+        "domain": "at.alicdn.com",
+        "ip": "155.102.184.136",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://umdcv4.taobao.com/repTw.json?e=2075&amp;sv=145&amp;pv=231&amp;pn=www.taobao.com",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "umdcv4.taobao.com",
+        "ip": "59.82.120.143",
+        "city": "Zhangjiakou",
+        "region": "Hebei",
+        "country": "CN",
+        "loc": "40.7834,114.8714",
+        "org": "AS37963 Hangzhou Alibaba Advertising Co.,Ltd.",
+        "timezone": "Asia/Shanghai"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://ynuf.aliapp.org/w/wu.json",
+      "type": "script",
+      "ipinfo": {
+        "domain": "ynuf.aliapp.org",
+        "ip": "124.239.14.253",
+        "city": "Zhangjiakou",
+        "region": "Hebei",
+        "country": "CN",
+        "loc": "40.7834,114.8714",
+        "org": "AS4134 CHINANET-BACKBONE",
+        "timezone": "Asia/Shanghai"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://alidt.alicdn.com/alilog/configs/sdk/common.json",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "alidt.alicdn.com",
+        "ip": "155.102.184.137",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://hudong.alicdn.com/api/online/data/v3/c45746794e4a4de99af2b9fb4f65e0d2.js",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "hudong.alicdn.com",
+        "ip": "47.246.38.141",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://g.aplus.taobao.com/aplus.monitor.intercept_expect?gmkey=OTHER&amp;gokey=spm-url%3D%26spm-pre%3D%26spm-cnt%3Da21bo.jianhua%2Fa.0.0.5af92a89cc0rQW%26_f_t%3Dfalse%26pid%3Dwww_taobao_com%26logSendDomain%3Dg.aplus.taobao.com%26clientType%3Dpc%26cache%3D8de9fe3%26jsver%3Daplus.js%26lver%3D1.13.27%26customSdkId%3D%26platformType%3Dpc%26device_model%3DMacintosh%26os%3DMac%20OS%20X%26os_version%3D10.15.7%26language%3Den-US%26o%3Dmac%26w%3Dwebkit%26s%3D1280x720%26scr%3D1280x720%26m%3D%26ism%3Dmac%26p%3D1%26b%3Dchrome133%26tag%3D0%26stag%3D-2%26lstag%3D-1%26_g_encode%3Dutf-8&amp;cna=yNntIR125GQBASABsBF2/oIM&amp;spm-cnt=a21bo.jianhua%2Fa.0.0.5af92a89cc0rQW&amp;logtype=2&amp;scr=1280x720&amp;_p_url=https%3A%2F%2Fwww.taobao.com%2F",
+      "type": "image",
+      "ipinfo": {
+        "domain": "g.aplus.taobao.com",
+        "ip": "140.205.151.4",
+        "city": "Shanghai",
+        "region": "Shanghai",
+        "country": "CN",
+        "loc": "31.2222,121.4581",
+        "org": "AS37963 Hangzhou Alibaba Advertising Co.,Ltd.",
+        "timezone": "Asia/Shanghai"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://acjs.aliyun.com/error?v=et_g77_init&amp;e=&amp;stack=&amp;line=&amp;u=h5api.m.taobao.com&amp;js=et&amp;etv=g77",
+      "type": "image",
+      "ipinfo": {
+        "domain": "acjs.aliyun.com",
+        "ip": "203.119.175.202",
+        "city": "Zhangjiakou",
+        "region": "Hebei",
+        "country": "CN",
+        "loc": "40.7834,114.8714",
+        "org": "AS37963 Hangzhou Alibaba Advertising Co.,Ltd.",
+        "timezone": "Asia/Shanghai"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "blob:https://h5api.m.taobao.com/cc8e4851-33bb-46c9-9c26-343671faf1ed",
+      "type": "other",
+      "ipinfo": {
+        "domain": ""
+      }
+    },
+    {
+      "originalUrl": "https://cf.aliyun.com/nocaptcha/initialize.jsonp?a=X82Y__9484afe327c30377792b3b181cf902d1&amp;t=09097415b5299858837a54fc68050999&amp;scene=register&amp;lang=en&amp;v=v1.3.21&amp;href=https%3A%2F%2Fh5api.m.taobao.com%2F%2Fh5%2Fmtop.alibaba.fc.api.maoxland.containerfacade.singleview%2F1.0%2F_____tmd_____%2Fpunish&amp;comm={}&amp;callback=initializeJsonp_0714979746043706",
+      "type": "script",
+      "ipinfo": {
+        "domain": "cf.aliyun.com",
+        "ip": "59.82.133.163",
+        "city": "Zhangjiakou",
+        "region": "Hebei",
+        "country": "CN",
+        "loc": "40.7834,114.8714",
+        "org": "AS37963 Hangzhou Alibaba Advertising Co.,Ltd.",
+        "timezone": "Asia/Shanghai"
+      },
+      "category": "foreign/direct"
+    }
+  ]
+}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 1/14/2026, 9:05:14 AM<span> (HTTP 200)</span></p></div></div>
+    <div class="static-wrapper" data-static="end"></div>
+
+    
+
+    <div id="search-container" v-show="showSearch">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Enter a URL to view the test result..." autocomplete="off"
+                v-model="searchQuery"  @keydown="onSearchKeydown" @focus="onSearchFocus"
+            >
+
+            <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length" @scroll.passive="onDropdownScroll">
+                <a
+                    :href="sitePageHref(url)"
+                    class="search-dropdown-item"
+                    v-for="(url, index) in displayedUrls"
+                    :key="url"
+                    :data-url="url"
+                    :data-index="index"
+                    :class="{ selected: index === selectedIndex }"
+                    @click.prevent="selectUrl(url)"
+                >
+                    {{ formatDisplayUrl(url) }}
+                </a>
+            </div>
+            <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
+                        <p>{{ t('search.noResults', { query: searchQuery }) }}</p>
+                        <p>You can browse the <a href="https://github.com/irvin/web-resilience-test-result" target="_blank">dataset of tested sites</a> and run a manual test with <a href="https://github.com/irvin/web-resilience-test/tree/a6ccd6f1b05fca34034250055d566d1c1c0f4c65#d-automated-testing-tool" target="_blank">this tool</a>.</p>
+            </div>
+            <div class="search-meta" id="search-meta">
+                <template v-if="hasItems">
+                        {{ t('search.statsWithItems', { totalAll, shown }) }}
+                        <span class="search-load-more" v-if="hasMore" @click="loadMore">[Load more sites]</span>
+                </template>
+                <template v-else>
+                        {{ t('search.statsEmpty', { totalAll }) }}
+                </template>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <footer>
+        <p id="check-other-site-container" v-show="showCheckOther">
+            <a href="/web/en/">
+                <button class="check-other-site-btn" @click.prevent="openSearch">Check another site</button>
+            </a>
+        </p>
+        <hr>
+        <p>
+            <a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="../../g0v_logo.svg" title="g0v Digital Resilience Hackathon" style="height: 65px;"></a>
+            <a href="https://ocf.tw/" target="_blank"><img src="../../Logo_Compact-OCF_Purple.svg" title="Open Culture Foundation" style="height: 35px;"></a>
+        </p>
+        <p>Curated by <a href="https://t.me/s/irvinfly" target="_blank">Irvin Chen</a>. Released under the <a href="https://github.com/irvin/web-resilience-test/?tab=License-1-ov-file#License-1-ov-file" target="_blank">CC BY-NC-ND 4.0 International License</a>.</p>
+        <p style="margin-bottom: 2em;">
+            <a href="https://resilience.ocf.tw/web/report/en.html" target="_blank">Research report</a>｜<a href="https://github.com/irvin/web-resilience-test" target="_blank">Source code</a>
+        </p>
+        <hr>
+        <p><a href="https://apnic.foundation/" target="_blank"><img src="../../APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" title="APNIC Foundation ISIF Asia" style="height: 90px;"></a></p>
+        <p>This work was supported by a grant from the <a href="https://apnic.foundation/" target="_blank">APNIC Foundation</a>, via <a href="https://apnic.foundation/home/isifasia/" target="_blank">ISIF Asia</a>.</p>
+    </footer>
+    </div>
+
+    <script src="../../app.js"></script>
+</body>
+</html>
