@@ -186,6 +186,25 @@
         return bundle.appText || {};
     }
 
+    function updateLangSwitcherHrefs() {
+        const doc = global.document;
+        if (!doc) {
+            return;
+        }
+        const nav = doc.querySelector('.lang-switcher');
+        if (!nav) {
+            return;
+        }
+        const zhLink = nav.querySelector('a[hreflang="zh-TW"]');
+        const enLink = nav.querySelector('a[hreflang="en"]');
+        if (zhLink) {
+            zhLink.setAttribute('href', zhLocaleHref());
+        }
+        if (enLink) {
+            enLink.setAttribute('href', enLocaleHref());
+        }
+    }
+
     function init() {
         const params = new URLSearchParams(global.location.search);
         const lang = params.get('lang');
@@ -199,6 +218,7 @@
         }
 
         global.document.documentElement.lang = currentLocale === 'en' ? 'en' : 'zh-TW';
+        updateLangSwitcherHrefs();
     }
 
     global.WebResilienceI18n = {
