@@ -51,9 +51,12 @@ function urlToDirPath(url) {
   return cleanUrl;
 }
 
-// Rewrite relative asset URLs so nested pages load correctly (depth 1 = ../, depth 2 = ../../)
+// Rewrite relative asset URLs so nested pages load correctly (depth 0 = same dir, 1 = ../, 2 = ../../)
 function fixAssetPaths(html, depth = 1) {
-  const prefix = depth === 2 ? '../../' : '../';
+  const prefix = depth === 0 ? '' : depth === 2 ? '../../' : '../';
+  if (!prefix) {
+    return html;
+  }
   // src="..."
   html = html.replace(/src=["']((?!https?:\/\/|\.\.\/|\/)[^"']+\.(png|svg|jpg|jpeg|gif|webp|css|js))["']/gi, (match, filename) => {
     return match.replace(filename, `${prefix}${filename}`);
@@ -139,7 +142,7 @@ function getHomepageOutputPath(locale) {
 
 function getAssetDepth(locale, isHomepage) {
   if (isHomepage) {
-    return 1;
+    return locale === 'en' ? 1 : 0;
   }
   return locale === 'en' ? 2 : 1;
 }
