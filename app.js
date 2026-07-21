@@ -185,16 +185,16 @@ async function loadOverallResult() {
             };
         }
 
-        const required = ['全部', '不會動', '國際雲', '可能會動'];
+        const required = ['Total', 'Immobile', 'Intl. cloud', 'Relocatable'];
         for (const key of required) {
             if (!rowsByCategory[key]) return null;
         }
 
         return {
-            totalCount: rowsByCategory['全部'].count,
-            wontWorkPercent: formatOverallPercent(rowsByCategory['不會動'].percent),
-            internationalCloudPercent: formatOverallPercent(rowsByCategory['國際雲'].percent),
-            mightWorkPercent: formatOverallPercent(rowsByCategory['可能會動'].percent)
+            totalCount: rowsByCategory['Total'].count,
+            wontWorkPercent: formatOverallPercent(rowsByCategory['Immobile'].percent),
+            internationalCloudPercent: formatOverallPercent(rowsByCategory['Intl. cloud'].percent),
+            mightWorkPercent: formatOverallPercent(rowsByCategory['Relocatable'].percent)
         };
     } catch (error) {
         console.error('Error loading overall-result.tsv:', error);
