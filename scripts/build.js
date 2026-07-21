@@ -118,7 +118,8 @@ function injectHomepageChartOgMeta(html, locale) {
     );
   }
 
-  const imageUrl = `${PUBLIC_BASE}/img/overall-result.png`;
+  const chartLocale = locale === 'en' ? 'en' : 'zh-TW';
+  const imageUrl = `${PUBLIC_BASE}/img/overall-result.${chartLocale}.png`;
   const alt = locale === 'en'
     ? 'Overall resilience test results chart for popular Taiwan websites'
     : '台灣常用網站韌性檢測整體結果圖表';
@@ -564,7 +565,12 @@ async function prerenderHomepageOverviewAndMeta(browser, artifact, locale) {
 
     // Prerender runs on localhost where getOverallChartUrl() is /test-result/img/...;
     // shipped site lives under /web/ with assets in /web/img/ (see copy step above).
-    html = html.replace(/\/test-result\/img\/overall-result\.(svg|png)/g, '/web/img/overall-result.png');
+    const chartLocale = locale === 'en' ? 'en' : 'zh-TW';
+    const chartFile = `overall-result.${chartLocale}.png`;
+    html = html.replace(
+      /\/test-result\/img\/overall-result(?:\.[A-Za-z-]+)?\.(svg|png)/g,
+      `/web/img/${chartFile}`
+    );
 
     html = injectHomepageChartOgMeta(html, locale);
     html = finalizeHomepageHtml(html, homeTitleHTML);
@@ -672,17 +678,22 @@ async function build() {
     fs.rmSync(outputImgDir, { recursive: true, force: true });
     fs.mkdirSync(outputImgDir, { recursive: true });
 
-    const overallChartSrc = path.join(SUBMODULE_IMG_DIR, 'overall-result.svg');
-    const overallChartDest = path.join(outputImgDir, 'overall-result.svg');
-    const overallChartPngSrc = path.join(SUBMODULE_IMG_DIR, 'overall-result.png');
-    const overallChartPngDest = path.join(outputImgDir, 'overall-result.png');
-    if (fs.existsSync(overallChartSrc)) {
-      fs.copyFileSync(overallChartSrc, overallChartDest);
-    }
-    if (fs.existsSync(overallChartPngSrc)) {
-      fs.copyFileSync(overallChartPngSrc, overallChartPngDest);
-    } else {
-      console.warn(`⚠️  Missing ${overallChartPngSrc}; homepage chart expects PNG`);
+    const overallChartFiles = [
+      'overall-result.zh-TW.svg',
+      'overall-result.zh-TW.png',
+      'overall-result.en.svg',
+      'overall-result.en.png',
+      'overall-result.svg',
+      'overall-result.png',
+    ];
+    for (const fileName of overallChartFiles) {
+      const srcPath = path.join(SUBMODULE_IMG_DIR, fileName);
+      const destPath = path.join(outputImgDir, fileName);
+      if (fs.existsSync(srcPath)) {
+        fs.copyFileSync(srcPath, destPath);
+      } else if (fileName.endsWith('.png')) {
+        console.warn(`⚠️  Missing ${srcPath}; homepage chart expects PNG`);
+      }
     }
   }
 
