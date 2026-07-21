@@ -118,8 +118,9 @@ function injectHomepageChartOgMeta(html, locale) {
     );
   }
 
-  const chartLocale = locale === 'en' ? 'en' : 'zh-TW';
-  const imageUrl = `${PUBLIC_BASE}/img/overall-result.${chartLocale}.png`;
+  const imageUrl = locale === 'en'
+    ? `${PUBLIC_BASE}/img/overall-result.en.png`
+    : `${PUBLIC_BASE}/img/overall-result.png`;
   const alt = locale === 'en'
     ? 'Overall resilience test results chart for popular Taiwan websites'
     : '台灣常用網站韌性檢測整體結果圖表';
@@ -565,8 +566,7 @@ async function prerenderHomepageOverviewAndMeta(browser, artifact, locale) {
 
     // Prerender runs on localhost where getOverallChartUrl() is /test-result/img/...;
     // shipped site lives under /web/ with assets in /web/img/ (see copy step above).
-    const chartLocale = locale === 'en' ? 'en' : 'zh-TW';
-    const chartFile = `overall-result.${chartLocale}.png`;
+    const chartFile = locale === 'en' ? 'overall-result.en.png' : 'overall-result.png';
     html = html.replace(
       /\/test-result\/img\/overall-result(?:\.[A-Za-z-]+)?\.(svg|png)/g,
       `/web/img/${chartFile}`

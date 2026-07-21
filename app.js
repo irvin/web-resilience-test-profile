@@ -128,9 +128,11 @@ function getStatisticTsvUrl() {
 // Resolve the overall chart location:
 // - localhost: read from the test-result submodule
 // - production: read the file emitted under /web/img/ at build time
+// Chinese Profile uses undated overall-result.png (short labels);
+// English uses overall-result.en.png.
 function getOverallChartFileName(locale) {
-    const chartLocale = locale === 'en' ? 'en' : 'zh-TW';
-    return `overall-result.${chartLocale}.png`;
+    if (locale === 'en') return 'overall-result.en.png';
+    return 'overall-result.png';
 }
 
 function getOverallChartUrl(locale) {
