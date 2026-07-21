@@ -108,7 +108,7 @@ This mode:
 
 ### `lastmod` rules
 
-- The sitemap lists zh-TW and en URLs for the homepage and every site in `statistic.tsv` (~3720 URLs)
+- The sitemap contains two homepage URLs plus two URLs (zh-TW and en) for every site row in `statistic.tsv`: `2 + 2 × site rows`
 - `/web/` and `/web/en/` use the mtime of their respective `index.html`
 - `/web/<domain>/` and `/web/<domain>/en/` use the mtime of their respective `index.html`
 

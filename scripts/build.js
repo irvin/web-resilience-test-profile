@@ -51,6 +51,10 @@ function urlToDirPath(url) {
   return cleanUrl;
 }
 
+function stripTrailingWhitespace(html) {
+  return html.replace(/[\t ]+$/gm, '');
+}
+
 // Rewrite relative asset URLs so nested pages load correctly (depth 0 = same dir, 1 = ../, 2 = ../../)
 function fixAssetPaths(html, depth = 1) {
   const prefix = depth === 0 ? '' : depth === 2 ? '../../' : '../';
@@ -471,7 +475,7 @@ async function generateStaticHTML(browser, url, index, total, artifact, locale) 
     const depth = getAssetDepth(locale, false);
     html = fixAssetPaths(html, depth);
 
-    return { success: true, html, url: cleanUrl, locale };
+    return { success: true, html: stripTrailingWhitespace(html), url: cleanUrl, locale };
   } catch (error) {
     console.error(`  [browser ${index}] error: ${url}`, error.message);
     return { success: false, html: null, url, locale };
@@ -569,7 +573,7 @@ async function prerenderHomepageOverviewAndMeta(browser, artifact, locale) {
     const depth = getAssetDepth(locale, true);
     html = fixAssetPaths(html, depth);
 
-    return html;
+    return stripTrailingWhitespace(html);
   } catch (error) {
     console.error('  [homepage] error:', error.message);
     throw error;
@@ -632,7 +636,11 @@ async function build() {
     statisticFileName: artifact.statisticFileName,
     statisticPreload: true
   });
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'index.html'), homepageHtml, 'utf8');
+  fs.writeFileSync(
+    path.join(OUTPUT_DIR, 'index.html'),
+    stripTrailingWhitespace(homepageHtml),
+    'utf8'
+  );
 
   const assets = [
     'g0v_logo.svg',

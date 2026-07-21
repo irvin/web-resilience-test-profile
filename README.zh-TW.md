@@ -111,7 +111,7 @@ npm run build:all
 
 ### 內容與日期（lastmod）規則
 
-- **sitemap 收錄哪些頁面**：以 `statistic.tsv` 為準，每站與首頁各產生繁中、英文兩筆 URL（約 3720 筆）
+- **sitemap 收錄哪些頁面**：以 `statistic.tsv` 為準，雙語首頁共 2 筆，每個網站資料列再各產生繁中、英文 2 筆，總數公式為 `2 + 2 × 網站資料列數`
 - **主頁 `/web/` 與 `/web/en/` 的 lastmod**：分別使用對應 `index.html` 的 mtime
 - **個別站點 `/web/<domain>/` 與 `/web/<domain>/en/` 的 lastmod**：分別使用對應 `index.html` 的 mtime
 
