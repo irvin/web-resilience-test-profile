@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>海纜斷掉時，ksnews.com.tw 會動嗎？</title>
-    <meta name="description" content="根據最近一次測試，在海纜斷掉的情境下，ksnews.com.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。">
+    <meta name="description" content="根據最近一次測試，在海纜斷掉的情境下，ksnews.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <link rel="icon" href="/favicon.ico">
     <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/ksnews.com.tw/">
 
     <!-- Open Graph 標籤 -->
     <meta property="og:title" content="海纜斷掉時，ksnews.com.tw 會動嗎？">
-    <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，ksnews.com.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。">
+    <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，ksnews.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/ksnews.com.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://ksnews.com.tw" target="_blank" rel="noopener noreferrer nofollow">ksnews.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>不確定</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">境內直接連線 (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">6</strong></p><p class="score score-X score-zero">境外連線 (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，ksnews.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，ksnews.com.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 ksnews.com.tw 在海纜斷掉時「不確定是否會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，我們雖然沒有看到直接連到境外的資源請求，但有發現對於跨國雲服務在台灣的節點依賴。這些服務能否在對外受阻時持續運作，會受到平台架構、快取設計、或回源方式等影響，所以目前只能列為「不確定」。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，ksnews.com.tw 屆時可能不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">「不確定」的意思是，目前不足以判定一定能用或不能用。ksnews.com.tw 所依賴的這些跨國雲服務在台節點，在海纜斷線或極度壅塞時的可用性，需由業者進一步釐清與說明。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 ksnews.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 ksnews.com.tw 的首頁時，我們觀察到來自 6 個網域的 129 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">104.26.2.65</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">online.fliphtml5.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">static.fliphtml5.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.ksnews.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">as.ksnews.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/ksnews.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://ksnews.com.tw" target="_blank" rel="noopener noreferrer nofollow">ksnews.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">境內直接連線 (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">13</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">2</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，ksnews.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，ksnews.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 ksnews.com.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，ksnews.com.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 ksnews.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 ksnews.com.tw 的首頁時，我們觀察到來自 15 個網域的 179 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">172.67.73.135</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">abr.ge</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.ksnews.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">as.ksnews.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.temu.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.youtube.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">i.ytimg.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">yt3.ggpht.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">mt-usw.appiersig.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">jnn-pa.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS39832 Opera Norway AS</span><span class="connection-domain">t.oa.opera.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16276 OVH SAS</span><span class="connection-domain">ss-sg2.appiersig.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/ksnews.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://ksnews.com.tw",
   "canonicalURL": "https://www.ksnews.com.tw/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T02:47:06.019Z",
+  "timestamp": "2026-07-20T20:55:19.338Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,16 +61,16 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 129,
-  "uniqueDomains": 6,
+  "requestCount": 179,
+  "uniqueDomains": 15,
   "test_results": {
     "domestic": {
-      "cloud": 6,
+      "cloud": 13,
       "direct": 0
     },
     "foreign": {
-      "cloud": 0,
-      "direct": 0
+      "cloud": 1,
+      "direct": 1
     }
   },
   "domainDetails": [
@@ -78,6 +79,26 @@
       "type": "document",
       "ipinfo": {
         "domain": "ksnews.com.tw",
+        "ip": "172.67.73.135",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4dd918ffe4a8e-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://www.ksnews.com.tw/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "www.ksnews.com.tw",
         "ip": "104.26.2.65",
         "city": "San Francisco",
         "region": "California",
@@ -89,27 +110,7 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bd9cd8bff02a9ce-TPE",
-        "detection_method": "header"
-      }
-    },
-    {
-      "originalUrl": "https://www.ksnews.com.tw/",
-      "type": "document",
-      "ipinfo": {
-        "domain": "www.ksnews.com.tw",
-        "ip": "104.26.3.65",
-        "city": "San Francisco",
-        "region": "California",
-        "country": "US",
-        "loc": "37.7621,-122.3971",
-        "org": "AS13335 Cloudflare, Inc.",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "cf-ray": "9bd9cd940d82a9ce-TPE",
+        "cf-ray": "a1e4dd9619a44a8e-TPE",
         "detection_method": "header"
       }
     },
@@ -118,8 +119,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "www.googletagmanager.com",
-        "ip": "142.250.204.40",
-        "hostname": "hkg07s38-in-f8.1e100.net",
+        "ip": "142.250.196.200",
+        "hostname": "nctsaa-ac-in-f8.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -145,47 +146,298 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bd9cd99dac4a9ce-TPE",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.67.73.135",
+          "prefix": "172.67.73.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 63,
+          "location_count": 63,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.youtube.com/embed/8G2ZNuFOVCQ?feature=oembed",
+      "type": "document",
+      "ipinfo": {
+        "domain": "www.youtube.com",
+        "ip": "142.251.150.4",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 8.251,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.150.4",
+          "prefix": "142.251.150.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://i.ytimg.com/vi/8G2ZNuFOVCQ/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgWihRMA8=&amp;rs=AOn4CLBoj5UcdJtYiIxhjcPzKReY5Jme5Q",
+      "type": "image",
+      "ipinfo": {
+        "domain": "i.ytimg.com",
+        "ip": "142.250.66.86",
+        "hostname": "hkg12s27-in-f22.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://yt3.ggpht.com/nKRUO7NQR4kBpMWoEUpMu6yLSEUNQojYYaAAV6O5U4w78EDGqi0230ltf6-Q9suJ-S9OWHAXBB0=s68-c-k-c0x00ffffff-no-rj",
+      "type": "image",
+      "ipinfo": {
+        "domain": "yt3.ggpht.com",
+        "ip": "142.250.77.1",
+        "hostname": "nctsaa-ab-in-f1.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.gstatic.com/youtube/img/icons/mweb/youtube_fill/logo/v2/67px.svg",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "www.gstatic.com",
+        "ip": "142.250.66.67",
+        "hostname": "hkg12s27-in-f3.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.google.com/js/th/8uIar4J4-RenYUa4HtG5DFVcni3D6dGneJv1JZIjHfM.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.google.com",
+        "ip": "142.251.155.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.359,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.155.119",
+          "prefix": "142.251.155.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://abr.ge/@maplestoryworlds/appier?click_id=39LTVvJZSQq6aK0WkT-y4g.WlywwDFBBrm2ebT-NIteag&amp;sub_id=appier_broad&amp;sub_id_1=03mSf3HNecb-&amp;sub_id_2=0cD793HJPKY7BUnzRJx&amp;campaign=1-1_gl_tw_250424&amp;campaign_id=1-1_gl_tw_258751c1d2489a&amp;ad_creative=gl_artale_myarea&amp;ad_creative_id=psF8Q7DoTFCXuJ5pinMYWw&amp;ad_group=appier_broad&amp;ad_group_id=appier_broad1a7258a7b5f1&amp;content=pc_tw&amp;routing_short_id=9ijq5n&amp;term=gl_artale_myarea&amp;tracking_template_id=3792f4ac5f03c5fd3faa0766884c3a43&amp;ad_type=view&amp;_atrk_c=39LTVvJZSQq6aK0WkT-y4g&amp;_atrk_cr=kQv7J4C9Tgyqm-9T0g9tfg&amp;_atrk_pt=03mSf3HNecb-&amp;_atrk_bi=WlywwDFBBrm2ebT-NIteag&amp;dett=2",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "abr.ge",
+        "ip": "65.9.180.67",
+        "hostname": "server-65-9-180-67.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://ss-sg2.appiersig.com/winshowimg?bidobjid=WlywwDFBBrm2ebT-NIteag&amp;cid=39LTVvJZSQq6aK0WkT-y4g&amp;crid=kQv7J4C9Tgyqm-9T0g9tfg&amp;crpid=psF8Q7DoTFCXuJ5pinMYWw&amp;soid=WYaH&amp;partner_id=03mSf3HNecb-&amp;bx=Cylxwnu_2rZ9o0Gm7rfs70IQ2r6RoPf-uY79uqa1cD793HJPKY7BUnzRJyu-uYS9uqa1cD793HJPKY7BUnzRJyu-uYgWJ4u_onx1wHTRuqayK4lBZyu_uYsNwyu-uYsBuqa1ord1K4lBZDw121uVo4QV7nQDKqd1eM&amp;ui=CylYc8Myuqa1oqdxorE1o0GV2qoQo0u_2qa_ord1eM&amp;consent=1&amp;ddhh=oqdW7M&amp;billing=170486252553&amp;price_encoded=al6LNAAAbsEF6YiGABOgY1RlvTJ6aMMDRNpbjA&amp;cachebust=2131726297&amp;dett=2",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "ss-sg2.appiersig.com",
+        "ip": "15.235.222.87",
+        "hostname": "ns5031778.ip-15-235-222.net",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS16276 OVH SAS",
+        "timezone": "Asia/Singapore"
+      },
+      "category": "foreign/cloud"
+    },
+    {
+      "originalUrl": "https://mt-usw.appiersig.com/event?bidobjid=WlywwDFBBrm2ebT-NIteag&amp;cid=39LTVvJZSQq6aK0WkT-y4g&amp;oid=TbOw08gTQ3SyhML0FPS_pA&amp;partner_id=03mSf3HNecb-&amp;s2s=0&amp;event=show&amp;loc=show&amp;dm=&amp;osv=10.15.7.0&amp;adj=0&amp;cn=0cD793HJPKY7BUnzRJx&amp;url=cLtRZLo_KyONwju93mIBMbsNZbVgZDtBZjgDUDl-3LoBwHTxc8iy5m7-c87FHmgf5rozrSt8JfEcIsSV7YSKoSJFi4sz7bZ9imVzJDJGtfl4ZYRy38lIKIzlJbiN3y3PJ8lec8MOwHTxc8iyHmlyUmSflj7swgOE3SAV5rdPUi7YoRN23871Kn3PJ8lec8teoqRxwRMD2r7ungTK8rJ4i8z_IfEQlY7NUHTNc8J95rGWoiOjUSORJsAy7rdRoqMYwmSWZbSE3mzec8MOonRVHmJ-HDtDHPus20Zso8oV30uR20gNlYSfHm7y38SRcH3g58J-HmSyJbS-3iOWC8Sy38GYw8tewDlgwHtEJYiec8MOZL7b2SGDtbOItf7wJIasZbg9rigHJy3N3SOjZYOsZ0sNZLTE3HlewjlBw8MYw8te3DlBJHTec8MOwHTxc8iyHmlyUmSfo8GDoqIQwrJ178wVlY7BUjtgUjMOZb7eJLZYZYOsJbg93sOPcbOyJSOE30Rzc8EV78QYJbiyUrsjUSONZjtNUbieUHgNZYiNljtyw87Fc8zjHDtgUHT-wHtgHmgf5roD2rlY7bSq78wxomos3YMP3YSNo0Zm7q6Q7boPwrMPlYSfHDtzZbIOJYggJy3ewHtycsOq5rozrSt8JfEcIsSV7YSKoSJFi4sz7bZYHmSRZYWewDuOcsSm7RaRMPgI3DgVUnRzi0Tj2HtY3y3ewHtycsOxJ0Rxomsr3q7urYiqw1RYHmSRZYWewYfOimVzJDJGtfl4ZYRy38lIKIzlJbiN3x&amp;dett=2",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "mt-usw.appiersig.com",
+        "ip": "34.36.231.211",
+        "hostname": "211.231.36.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.749,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.36.231.211",
+          "prefix": "34.36.231.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 64,
+          "location_count": 64
+        }
+      }
+    },
+    {
+      "originalUrl": "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "jnn-pa.googleapis.com",
+        "ip": "172.217.114.4",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.719,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.217.114.4",
+          "prefix": "172.217.114.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.temu.com/api/adx/cm/pixel-opera?adx_uid=1a8cac93fec07b29&amp;gdpr=&amp;gdpr_consent=&amp;us_privacy=&amp;redir=https%3A%2F%2Ft.oa.opera.com%2Fsync%3Fvendor%3D60369%26pubid%3Dpub9322105895424%26gdpr%3D%26consent%3D%26us_privacy%3D%26custom_data%3D",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.temu.com",
+        "ip": "162.159.141.246",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4ddadbf8c4a4b-TPE",
         "detection_method": "header"
       }
     },
     {
-      "originalUrl": "https://online.fliphtml5.com/zppkv/lswg/",
-      "type": "document",
+      "originalUrl": "https://t.oa.opera.com/sync?vendor=60369&amp;pubid=pub9322105895424&amp;gdpr=&amp;consent=&amp;us_privacy=&amp;custom_data=",
+      "type": "image",
       "ipinfo": {
-        "domain": "online.fliphtml5.com",
-        "ip": "3.169.55.84",
-        "hostname": "server-3-169-55-84.tpe54.r.cloudfront.net",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "Asia/Taipei"
+        "domain": "t.oa.opera.com",
+        "ip": "82.145.213.8",
+        "hostname": "n-sysadmin-jumpbox-03.feednews.opera.technology",
+        "city": "Lelystad",
+        "region": "Flevoland",
+        "country": "NL",
+        "loc": "52.5083,5.4750",
+        "org": "AS39832 Opera Norway AS",
+        "timezone": "Europe/Amsterdam"
       },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://static.fliphtml5.com/resourceFiles/html5_templates/js/LoadingJS.js?c3cd7f589f64047efd9556fe4192899e",
-      "type": "script",
-      "ipinfo": {
-        "domain": "static.fliphtml5.com",
-        "ip": "3.169.137.44",
-        "hostname": "server-3-169-137-44.tpe54.r.cloudfront.net",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
+      "category": "foreign/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午10:47:06<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午4:55:19<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -223,7 +475,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

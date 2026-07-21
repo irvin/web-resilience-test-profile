@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，planet.com.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/planet.com.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://planet.com.tw" target="_blank" rel="noopener noreferrer nofollow">planet.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>不確定</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">2</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-X score-zero">境外連線 (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，planet.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，planet.com.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 planet.com.tw 在海纜斷掉時「不確定是否會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，我們雖然沒有看到直接連到境外的資源請求，但有發現對於跨國雲服務在台灣的節點依賴。這些服務能否在對外受阻時持續運作，會受到平台架構、快取設計、或回源方式等影響，所以目前只能列為「不確定」。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，planet.com.tw 屆時可能不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">「不確定」的意思是，目前不足以判定一定能用或不能用。planet.com.tw 所依賴的這些跨國雲服務在台節點，在海纜斷線或極度壅塞時的可用性，需由業者進一步釐清與說明。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 planet.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 planet.com.tw 的首頁時，我們觀察到來自 6 個網域的 78 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">60.250.65.206</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.recaptcha.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">img.youtube.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/planet.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://planet.com.tw" target="_blank" rel="noopener noreferrer nofollow">planet.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>不確定</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">3</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-X score-zero">境外連線 (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，planet.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，planet.com.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 planet.com.tw 在海纜斷掉時「不確定是否會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，我們雖然沒有看到直接連到境外的資源請求，但有發現對於跨國雲服務在台灣的節點依賴。這些服務能否在對外受阻時持續運作，會受到平台架構、快取設計、或回源方式等影響，所以目前只能列為「不確定」。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，planet.com.tw 屆時可能不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">「不確定」的意思是，目前不足以判定一定能用或不能用。planet.com.tw 所依賴的這些跨國雲服務在台節點，在海纜斷線或極度壅塞時的可用性，需由業者進一步釐清與說明。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 planet.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 planet.com.tw 的首頁時，我們觀察到來自 7 個網域的 80 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">60.250.65.206</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.recaptcha.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">img.youtube.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/planet.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://planet.com.tw",
   "canonicalURL": "https://planet.com.tw",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T02:30:57.342Z",
+  "timestamp": "2026-07-20T20:35:13.196Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,12 +61,12 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 78,
-  "uniqueDomains": 6,
+  "requestCount": 80,
+  "uniqueDomains": 7,
   "test_results": {
     "domestic": {
       "cloud": 4,
-      "direct": 2
+      "direct": 3
     },
     "foreign": {
       "cloud": 0,
@@ -80,10 +81,10 @@
         "domain": "planet.com.tw",
         "ip": "60.250.65.206",
         "hostname": "mail2.planet.com.tw",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "city": "Taipei",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
+        "loc": "25.0531,121.5264",
         "org": "AS3462 Data Communication Business Group",
         "timezone": "Asia/Taipei"
       },
@@ -94,8 +95,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "www.googletagmanager.com",
-        "ip": "142.250.196.200",
-        "hostname": "nctsaa-ac-in-f8.1e100.net",
+        "ip": "142.250.77.200",
+        "hostname": "del11s08-in-f8.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -110,24 +111,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "www.recaptcha.net",
-        "ip": "142.250.198.67",
-        "hostname": "lctsaa-ab-in-f3.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://img.youtube.com/vi/3Gd1M8jf0f8/hqdefault.jpg",
-      "type": "image",
-      "ipinfo": {
-        "domain": "img.youtube.com",
-        "ip": "142.250.66.78",
-        "hostname": "hkg12s27-in-f14.1e100.net",
+        "ip": "142.250.204.35",
+        "hostname": "hkg07s38-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -154,12 +139,12 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://www.gstatic.com/recaptcha/releases/9TiwnJFHeuIw_s0wSd3fiKfN/recaptcha__en.js",
+      "originalUrl": "https://www.gstatic.com/recaptcha/releases/A7KpaEASfhDcK0nXxgQEyyYv/recaptcha__zh_tw.js",
       "type": "script",
       "ipinfo": {
         "domain": "www.gstatic.com",
-        "ip": "142.250.196.195",
-        "hostname": "nctsaa-ac-in-f3.1e100.net",
+        "ip": "142.250.77.195",
+        "hostname": "del11s08-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -168,12 +153,44 @@
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://img.youtube.com/vi/NQT__-8kyAM/hqdefault.jpg",
+      "type": "image",
+      "ipinfo": {
+        "domain": "img.youtube.com",
+        "ip": "142.250.196.206",
+        "hostname": "nctsaa-ac-in-f14.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.facebook.com/tr/?id=6590811884357530&amp;ev=PageView&amp;dl=https%3A%2F%2Fplanet.com.tw%2F&amp;rl=&amp;if=false&amp;ts=1784579712156&amp;iw=false&amp;sw=1280&amp;sh=720&amp;v=2.9.358&amp;r=stable&amp;ec=0&amp;o=4126&amp;aems=0%3B0&amp;fbp=fb.2.1784579712153.455082307925676679&amp;cs_est=true&amp;ler=empty&amp;cdl=API_unavailable&amp;pmd[title]=Welcome%20to%20PLANET%20Technology&amp;pmd[locale]=en&amp;pmd[description]=PLANET%20Technology%20Corporation%20is%20a%20leading%20global%20provider%20of%20IP-based%20networking%20products%20and%20solutions%20for%20small-to-medium-sized%20businesses%2C%20enterprises%2C%20and%20network%20infrastructures%20of%20IoT%2C%20IIoT%20and%20IoV%20applications.%20PLANET%20Technology%20has%20been%20focusing%20on%20the%20R%26D%20of%20the%20transmission-based%20network%20and%20communications%20solutions%20since%20its%20establishment%20in%201993.&amp;plt=1932.1000000014901&amp;iss=1&amp;imft=1&amp;tz=480&amp;it=1784579711627&amp;coo=false&amp;expv2[0]=pl0&amp;expv2[1]=el2&amp;expv2[2]=bc1&amp;expv2[3]=ra2&amp;expv2[4]=rp2&amp;expv2[5]=ct2&amp;expv2[6]=hf0&amp;rqm=GET",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.facebook.com",
+        "ip": "31.13.87.36",
+        "hostname": "edge-star-mini-shv-01-tpe1.facebook.com",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS32934 Facebook, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午10:30:57<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午4:35:13<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -211,7 +228,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

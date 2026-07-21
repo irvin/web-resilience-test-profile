@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，netflix.com 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/netflix.com/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://netflix.com" target="_blank" rel="noopener noreferrer nofollow">netflix.com</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">1</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">7</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，netflix.com 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，netflix.com 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 netflix.com 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，netflix.com 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 netflix.com 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 netflix.com 的首頁時，我們觀察到來自 12 個網域的 39 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">44.240.158.19</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">ae.nflximg.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">www.netflix.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">logs.netflix.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">web.prod.cloud.netflix.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">geolocation.onetrust.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">occ-0-3594-395.1.nflxso.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS40027 Netflix Streaming Services Inc.</span><span class="connection-domain">assets.nflxext.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS40027 Netflix Streaming Services Inc.</span><span class="connection-domain">help.nflxext.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS40027 Netflix Streaming Services Inc.</span><span class="connection-domain">occ.a.nflxso.net</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/netflix.com.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://netflix.com" target="_blank" rel="noopener noreferrer nofollow">netflix.com</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">3</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">7</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">9</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，netflix.com 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，netflix.com 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 netflix.com 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，netflix.com 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 netflix.com 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 netflix.com 的首頁時，我們觀察到來自 19 個網域的 116 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">44.240.158.19</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">ae.nflximg.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">logs.netflix.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">ichnaea-web.netflix.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS14618 Amazon.com, Inc.</span><span class="connection-domain">dv-c3e594c6d429469e90b54478358619c3.ecs.us-east-1.on.aws</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">geolocation.onetrust.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cookies-data.onetrust.io</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">occ-0-3594-325.1.nflxso.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS40027 Netflix Streaming Services Inc.</span><span class="connection-domain">www.netflix.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS40027 Netflix Streaming Services Inc.</span><span class="connection-domain">assets.nflxext.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS40027 Netflix Streaming Services Inc.</span><span class="connection-domain">help.nflxext.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS40027 Netflix Streaming Services Inc.</span><span class="connection-domain">occ.a.nflxso.net</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS40027 Netflix Streaming Services Inc.</span><span class="connection-domain">web.prod.cloud.netflix.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/netflix.com.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://netflix.com",
   "canonicalURL": "https://netflix.com",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T01:04:14.293Z",
+  "timestamp": "2026-07-20T19:17:52.104Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,16 +61,16 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 39,
-  "uniqueDomains": 12,
+  "requestCount": 116,
+  "uniqueDomains": 19,
   "test_results": {
     "domestic": {
-      "cloud": 4,
-      "direct": 1
+      "cloud": 7,
+      "direct": 3
     },
     "foreign": {
       "cloud": 4,
-      "direct": 3
+      "direct": 5
     }
   },
   "domainDetails": [
@@ -87,30 +88,48 @@
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "America/Los_Angeles"
       },
-      "category": "foreign/cloud"
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "44.240.158.19",
+          "prefix": "44.240.158.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
     },
     {
       "originalUrl": "https://www.netflix.com/",
       "type": "document",
       "ipinfo": {
         "domain": "www.netflix.com",
-        "ip": "44.240.158.19",
-        "hostname": "ec2-44-240-158-19.us-west-2.compute.amazonaws.com",
-        "city": "Boardman",
-        "region": "Oregon",
+        "ip": "207.45.72.1",
+        "hostname": "prod.ftl4.netflix.com",
+        "city": "Los Gatos",
+        "region": "California",
         "country": "US",
-        "loc": "45.8399,-119.7006",
-        "org": "AS16509 Amazon.com, Inc.",
+        "loc": "37.2417,-121.9554",
+        "org": "AS40027 Netflix Streaming Services Inc.",
         "timezone": "America/Los_Angeles"
       },
-      "category": "foreign/cloud"
+      "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://assets.nflxext.com/web/ffe/wp/ui/landingPages/nmhp/nmhpFrameworkClient.b5c7ae87120158728e01.js",
+      "originalUrl": "https://assets.nflxext.com/web/ffe/wp/ui/landingPages/nmhp/nmhpFrameworkClient.7de022bfd67cdbace755.js",
       "type": "script",
       "ipinfo": {
         "domain": "assets.nflxext.com",
-        "ip": "45.57.91.1",
+        "ip": "45.57.90.1",
         "hostname": "occ.a.nflxso.net",
         "city": "Wilmington",
         "region": "Delaware",
@@ -122,11 +141,11 @@
       "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2026-01-09/scripttemplates/otSDKStub.js",
+      "originalUrl": "https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production_2026-05-14/scripttemplates/otSDKStub.js",
       "type": "script",
       "ipinfo": {
         "domain": "help.nflxext.com",
-        "ip": "45.57.91.1",
+        "ip": "45.57.90.1",
         "hostname": "occ.a.nflxso.net",
         "city": "Wilmington",
         "region": "Delaware",
@@ -138,11 +157,11 @@
       "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://occ.a.nflxso.net/genc/hawkins/5.11.1/font/netflix-sans-core-variable-full.woff2",
+      "originalUrl": "https://occ.a.nflxso.net/genc/hawkins/5.23.2/font/netflix-sans-core-variable-full.woff2",
       "type": "font",
       "ipinfo": {
         "domain": "occ.a.nflxso.net",
-        "ip": "45.57.90.1",
+        "ip": "45.57.91.1",
         "hostname": "occ.a.nflxso.net",
         "city": "Wilmington",
         "region": "Delaware",
@@ -167,7 +186,40 @@
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "America/Los_Angeles"
       },
-      "category": "foreign/cloud"
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "52.33.247.19",
+          "prefix": "52.33.247.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://occ-0-3594-325.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABchOs-1XieJMoyK3mNyWioi6yUn-js6rfSCYIK6Mutbxh9I9hiHFwXtxaPJ5P9GIP6lK2xLrcWl88F70-Zd-4fS8zSum3ZDe9yyIJAV7Xlpr8kfbZDeGskrJuVKvqhl3apbs.webp?r=35e",
+      "type": "image",
+      "ipinfo": {
+        "domain": "occ-0-3594-325.1.nflxso.net",
+        "ip": "203.75.84.2",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
     },
     {
       "originalUrl": "https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location",
@@ -185,31 +237,16 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bd9378f2fb00f9a-TPE",
+        "cf-ray": "a1e44ea14d654a21-TPE",
         "detection_method": "header"
       }
-    },
-    {
-      "originalUrl": "https://occ-0-3594-395.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABetZV_Qn1mqr8IbJyfZ_EGBZvHTzyoun3YNJSRJlM1vgNO0avhxoXq3sYRnbV0PgR8v0ZvfXdnfP_H7QQB8ZEG5bCJvinLHyDSM.webp?r=b55",
-      "type": "image",
-      "ipinfo": {
-        "domain": "occ-0-3594-395.1.nflxso.net",
-        "ip": "203.75.84.14",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS3462 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
     },
     {
       "originalUrl": "https://www.google.com/recaptcha/enterprise.js?render=6LdqW_EqAAAAAO87Fb_kcZfNzs0IqJRcKiJDYpUv",
       "type": "script",
       "ipinfo": {
         "domain": "www.google.com",
-        "ip": "142.251.154.119",
+        "ip": "142.251.153.119",
         "city": "Mountain View",
         "region": "California",
         "country": "US",
@@ -220,8 +257,24 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 4.094,
-        "detection_method": "rtt"
+        "rtt": 4.994,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.153.119",
+          "prefix": "142.251.153.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
       }
     },
     {
@@ -229,19 +282,55 @@
       "type": "fetch",
       "ipinfo": {
         "domain": "web.prod.cloud.netflix.com",
-        "ip": "100.20.29.191",
-        "hostname": "ec2-100-20-29-191.us-west-2.compute.amazonaws.com",
-        "city": "Boardman",
-        "region": "Oregon",
+        "ip": "207.45.72.1",
+        "hostname": "prod.ftl4.netflix.com",
+        "city": "Los Gatos",
+        "region": "California",
         "country": "US",
-        "loc": "45.8399,-119.7006",
-        "org": "AS16509 Amazon.com, Inc.",
+        "loc": "37.2417,-121.9554",
+        "org": "AS40027 Netflix Streaming Services Inc.",
         "timezone": "America/Los_Angeles"
       },
-      "category": "foreign/cloud"
+      "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://ae.nflximg.net/monet/scripts/adtech_iframe_target_05.html?data=%7B%22membership_status%22%3A%22ANONYMOUS%22%2C%22country%22%3A%22TW%22%2C%22region_code%22%3A%22NWT%22%2C%22is_member%22%3A%22ANONYMOUS%22%2C%22wasFormerMember%22%3Afalse%2C%22referrer%22%3A%22nmLanding%22%2C%22deniedConsentCookieGroups%22%3A%22C0005%22%7D",
+      "originalUrl": "https://www.gstatic.com/recaptcha/releases/A7KpaEASfhDcK0nXxgQEyyYv/recaptcha__zh_tw.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.gstatic.com",
+        "ip": "142.250.77.195",
+        "hostname": "del11s08-in-f3.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://cookies-data.onetrust.io/cfw/cmp/v1/session",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "cookies-data.onetrust.io",
+        "ip": "104.18.32.25",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e44ea71ca84a66-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://ae.nflximg.net/monet/scripts/adtech_iframe_target_05.html?data=%7B%22membership_status%22%3A%22ANONYMOUS%22%2C%22country%22%3A%22TW%22%2C%22region_code%22%3A%22NWT%22%2C%22request_id%22%3A%227540d386-ed11-4b37-b493-6164703e8582-304095785%22%2C%22is_member%22%3A%22ANONYMOUS%22%2C%22wasFormerMember%22%3Afalse%2C%22referrer%22%3A%22nmLanding%22%2C%22deniedConsentCookieGroups%22%3A%22C0005%22%7D",
       "type": "document",
       "ipinfo": {
         "domain": "ae.nflximg.net",
@@ -257,12 +346,46 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://www.gstatic.com/recaptcha/releases/9TiwnJFHeuIw_s0wSd3fiKfN/recaptcha__en.js",
+      "originalUrl": "https://ichnaea-web.netflix.com/log",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "ichnaea-web.netflix.com",
+        "ip": "52.41.166.128",
+        "hostname": "ec2-52-41-166-128.us-west-2.compute.amazonaws.com",
+        "city": "Boardman",
+        "region": "Oregon",
+        "country": "US",
+        "loc": "45.8399,-119.7006",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "52.41.166.128",
+          "prefix": "52.41.166.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.googletagmanager.com/gtag/js?id=AW-981179826",
       "type": "script",
       "ipinfo": {
-        "domain": "www.gstatic.com",
-        "ip": "142.250.77.3",
-        "hostname": "nctsaa-ab-in-f3.1e100.net",
+        "domain": "www.googletagmanager.com",
+        "ip": "142.250.198.72",
+        "hostname": "lctsaa-ab-in-f8.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -271,12 +394,94 @@
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://connect.facebook.net/en_US/fbevents.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "connect.facebook.net",
+        "ip": "31.13.87.5",
+        "hostname": "xx-fbcdn-shv-01-tpe1.fbcdn.net",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS32934 Facebook, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://www.google.com.tw/pagead/1p-user-list/17080120652/?random=1784575058664&amp;cv=11&amp;fst=1784574000000&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be67g0v876272219za200zd876272219xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115616985~115938465~115938468~118897920~118897930~119773332&amp;u_w=1352&amp;u_h=878&amp;url=https%3A%2F%2Fae.nflximg.net%2Fmonet%2Fscripts%2Fnetflix_tag_05.html%3Fdata%3D%257B%2522membership_status%2522%253A%2522ANONYMOUS%2522%252C%2522country%2522%253A%2522TW%2522%252C%2522region_code%2522%253A%2522NWT%2522%252C%2522request_id%2522%253A%25227540d386-ed11-4b37-b493-6164703e8582-304095785%2522%252C%2522is_member%2522%253A%2522ANONYMOUS%2522%252C%2522wasFormerMember%2522%253Afalse%252C%2522referrer%2522%253A%2522nmLanding%2522%252C%2522deniedConsentCookieGroups%2522%253A%2522C0005%2522%257D&amp;ref=https%3A%2F%2Fae.nflximg.net%2Fmonet%2Fscripts%2Fadtech_iframe_target_05.html%3Fdata%3D%257B%2522membership_status%2522%253A%2522ANONYMOUS%2522%252C%2522country%2522%253A%2522TW%2522%252C%2522region_code%2522%253A%2522NWT%2522%252C%2522request_id%2522%253A%25227540d386-ed11-4b37-b493-6164703e8582-304095785%2522%252C%2522is_member%2522%253A%2522ANONYMOUS%2522%252C%2522wasFormerMember%2522%253Afalse%252C%2522referrer%2522%253A%2522nmLanding%2522%252C%2522deniedConsentCookieGroups%2522%253A%2522C0005%2522%257D&amp;top=https%3A%2F%2Fwww.netflix.com%2F&amp;rcb=17&amp;frm=2&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1143270710.1784575059&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;_tu=QA&amp;data=event%3Dgtag.config&amp;ept=9&amp;rfmt=3&amp;fmt=3&amp;is_vtc=1&amp;cid=CAQS7AEAEQoqgUgqEKodxsBgoG4_5VmyDCJeP8nIo4xlPGtUyQ9r7uqAzd1vzUbEvYLkadCqB5ytIfBVMYOC0lk7Zse_P3YD-AbjYrF2WXOLdttMr_QAccAiycU2uONIMroK0V9qkndRKFKPWI6rhS_9fiI4wJ8w9Yuhe81ax9WR46D9GwFvFXgsDb5P4BUJRvaDaomqG7rGauGs_QW42yBX7Iwh5j7D-adyOaT9SVS0WbVWf72llGIMqNopPqT6WCXIlBRkcpdnTLaSAohe-LsZZarqX9mqRr8lpeeMr6PLMmIecGDjrqC-df6DAAHOMg&amp;random=1332056033&amp;rmt_tld=1&amp;ipr=y",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.google.com.tw",
+        "ip": "142.250.204.35",
+        "hostname": "hkg07s38-in-f3.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://dv-c3e594c6d429469e90b54478358619c3.ecs.us-east-1.on.aws/events?cee=no",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "dv-c3e594c6d429469e90b54478358619c3.ecs.us-east-1.on.aws",
+        "ip": "100.58.50.164",
+        "hostname": "ec2-100-58-50-164.compute-1.amazonaws.com",
+        "city": "Ashburn",
+        "region": "Virginia",
+        "country": "US",
+        "loc": "39.0437,-77.4875",
+        "org": "AS14618 Amazon.com, Inc.",
+        "timezone": "America/New_York"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "100.58.50.164",
+          "prefix": "100.58.50.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.facebook.com/tr/?id=829253787145710&amp;ev=PageView&amp;dl=https%3A%2F%2Fae.nflximg.net%2Fmonet%2Fscripts%2Fnetflix_tag_05.html%3Fdata%3D%257B%2522membership_status%2522%253A%2522ANONYMOUS%2522%252C%2522country%2522%253A%2522TW%2522%252C%2522region_code%2522%253A%2522NWT%2522%252C%2522request_id%2522%253A%25227540d386-ed11-4b37-b493-6164703e8582-304095785%2522%252C%2522is_member%2522%253A%2522ANONYMOUS%2522%252C%2522wasFormerMember%2522%253Afalse%252C%2522referrer%2522%253A%2522nmLanding%2522%252C%2522deniedConsentCookieGroups%2522%253A%2522C0005%2522%257D&amp;rl=https%3A%2F%2Fae.nflximg.net%2Fmonet%2Fscripts%2Fadtech_iframe_target_05.html%3Fdata%3D%257B%2522membership_status%2522%253A%2522ANONYMOUS%2522%252C%2522country%2522%253A%2522TW%2522%252C%2522region_code%2522%253A%2522NWT%2522%252C%2522request_id%2522%253A%25227540d386-ed11-4b37-b493-6164703e8582-304095785%2522%252C%2522is_member%2522%253A%2522ANONYMOUS%2522%252C%2522wasFormerMember%2522%253Afalse%252C%2522referrer%2522%253A%2522nmLanding%2522%252C%2522deniedConsentCookieGroups%2522%253A%2522C0005%2522%257D&amp;if=true&amp;ts=1784575059287&amp;iw=false&amp;cd[content_ids]=%5B%5D&amp;sw=1352&amp;sh=878&amp;v=2.9.357&amp;r=stable&amp;ec=0&amp;o=4126&amp;aems=0%3B0&amp;fbp=fb.2.1784575059284.666265931284115991&amp;eid=ob3_plugin-set_04637009a9fc3590c23f1bf29ff9aede120b59a9654d8584716b01eb46bca9a9&amp;cdl=API_unavailable&amp;pmd[title]=&amp;plt=26.200000002980232&amp;iss=1&amp;ss=%7B%22page_title%22%3A%5B%7B%22rid%22%3A%221036793222400150%22%2C%22v%22%3A%5B%22https%3A%2F%2Ftr.snapchat.com%2Fconfig%2Fnet%2F83129519-c5b8-449c-9442-de249017abb3.js%3Fv%3D3.59.0-2606221835%22%5D%7D%5D%7D&amp;imft=1&amp;tz=480&amp;it=1784575059013&amp;coo=false&amp;cf=1&amp;expv2[0]=pl0&amp;expv2[1]=el2&amp;expv2[2]=bc1&amp;expv2[3]=ra2&amp;expv2[4]=rp2&amp;expv2[5]=ct3&amp;expv2[6]=hf0&amp;rqm=GET",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.facebook.com",
+        "ip": "31.13.87.36",
+        "hostname": "edge-star-mini-shv-01-tpe1.facebook.com",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS32934 Facebook, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午9:04:14<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午3:17:52<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -314,7 +519,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

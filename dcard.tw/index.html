@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，dcard.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/dcard.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://dcard.tw" target="_blank" rel="noopener noreferrer nofollow">dcard.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>不確定</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">境內直接連線 (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">11</strong></p><p class="score score-X score-zero">境外連線 (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，dcard.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，dcard.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 dcard.tw 在海纜斷掉時「不確定是否會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，我們雖然沒有看到直接連到境外的資源請求，但有發現對於跨國雲服務在台灣的節點依賴。這些服務能否在對外受阻時持續運作，會受到平台架構、快取設計、或回源方式等影響，所以目前只能列為「不確定」。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，dcard.tw 屆時可能不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">「不確定」的意思是，目前不足以判定一定能用或不能用。dcard.tw 所依賴的這些跨國雲服務在台節點，在海纜斷線或極度壅塞時的可用性，需由業者進一步釐清與說明。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 dcard.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 dcard.tw 的首頁時，我們觀察到來自 11 個網域的 163 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">104.19.247.7</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">megapx-assets.dcard.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">sb.scorecardresearch.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.dcard.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">bilanx.dcard.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">sentry.io</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fundingchoicesmessages.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/dcard.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://dcard.tw" target="_blank" rel="noopener noreferrer nofollow">dcard.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>不確定</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">境內直接連線 (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">7</strong></p><p class="score score-X score-zero">境外連線 (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，dcard.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，dcard.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 dcard.tw 在海纜斷掉時「不確定是否會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，我們雖然沒有看到直接連到境外的資源請求，但有發現對於跨國雲服務在台灣的節點依賴。這些服務能否在對外受阻時持續運作，會受到平台架構、快取設計、或回源方式等影響，所以目前只能列為「不確定」。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，dcard.tw 屆時可能不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">「不確定」的意思是，目前不足以判定一定能用或不能用。dcard.tw 所依賴的這些跨國雲服務在台節點，在海纜斷線或極度壅塞時的可用性，需由業者進一步釐清與說明。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 dcard.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 dcard.tw 的首頁時，我們觀察到來自 7 個網域的 239 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">104.19.248.7</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">sb.scorecardresearch.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.dcard.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">bilanx.dcard.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">sentry.io</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/dcard.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://dcard.tw",
   "canonicalURL": "https://www.dcard.tw/f",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T01:04:11.482Z",
+  "timestamp": "2026-07-20T19:17:52.430Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,11 +61,11 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 163,
-  "uniqueDomains": 11,
+  "requestCount": 239,
+  "uniqueDomains": 7,
   "test_results": {
     "domestic": {
-      "cloud": 11,
+      "cloud": 7,
       "direct": 0
     },
     "foreign": {
@@ -78,7 +79,7 @@
       "type": "document",
       "ipinfo": {
         "domain": "dcard.tw",
-        "ip": "104.19.247.7",
+        "ip": "104.19.248.7",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -89,7 +90,7 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bd937b1ca494a6c-TPE",
+        "cf-ray": "a1e44ef459c14aa6-TPE",
         "detection_method": "header"
       }
     },
@@ -109,7 +110,7 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bd937b3ee256b62-TPE",
+        "cf-ray": "a1e44ef4f9574a87-TPE",
         "detection_method": "header"
       }
     },
@@ -118,8 +119,8 @@
       "type": "stylesheet",
       "ipinfo": {
         "domain": "fonts.googleapis.com",
-        "ip": "142.250.66.74",
-        "hostname": "hkg12s27-in-f10.1e100.net",
+        "ip": "142.250.77.10",
+        "hostname": "nctsaa-ab-in-f10.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -146,8 +147,24 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 4.093,
-        "detection_method": "rtt"
+        "rtt": 6.096,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "35.186.247.156",
+          "prefix": "35.186.247.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 63,
+          "location_count": 63
+        }
       }
     },
     {
@@ -155,12 +172,12 @@
       "type": "script",
       "ipinfo": {
         "domain": "sb.scorecardresearch.com",
-        "ip": "3.169.137.94",
-        "hostname": "server-3-169-137-94.tpe54.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "3.169.137.16",
+        "hostname": "server-3-169-137-16.tpe54.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -171,8 +188,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "www.googletagmanager.com",
-        "ip": "142.250.196.200",
-        "hostname": "nctsaa-ac-in-f8.1e100.net",
+        "ip": "142.250.77.8",
+        "hostname": "nctsaa-ab-in-f8.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -183,7 +200,7 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://bilanx.dcard.tw/v1/configs?appPlatform=web&amp;appVersion=web%202.3.0&amp;deviceId=6642c3a8-570c-4193-9791-01b604dadbc4&amp;deviceLanguage=zh-TW&amp;manufacturer=Apple&amp;memberId=0&amp;model=Chrome%20133.0.0.0&amp;osVersion=Mac%20OS%2010.15.7&amp;privateMode=off&amp;productName=Dcard&amp;serviceRegion=TW",
+      "originalUrl": "https://bilanx.dcard.tw/v1/configs?appPlatform=web&amp;appVersion=web%202.99.0&amp;deviceId=f9d7764e-f0b2-471e-ac8f-45747934df47&amp;deviceLanguage=zh-TW&amp;manufacturer=Apple&amp;memberId=0&amp;model=Chrome%20143.0.0.0&amp;osVersion=Mac%20OS%2010.15.7&amp;privateMode=off&amp;productName=Dcard&amp;serviceRegion=TW",
       "type": "fetch",
       "ipinfo": {
         "domain": "bilanx.dcard.tw",
@@ -198,83 +215,37 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bd937bb9e0e8f09-TPE",
-        "detection_method": "header"
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "104.19.248.7",
+          "prefix": "104.19.248.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 77,
+          "location_count": 77,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
       }
-    },
-    {
-      "originalUrl": "https://www.google.com/ccm/collect?frm=0&amp;en=page_view&amp;dl=https%3A%2F%2Fwww.dcard.tw%2Ff&amp;scrsrc=www.googletagmanager.com&amp;rnd=835045616.1768352650&amp;dt=Dcard&amp;auid=335970856.1768352650&amp;navt=n&amp;npa=0&amp;gtm=45He61c1v810931448za200zd810931448xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391252~115938466~115938469~115985660~116744867~116988316~117041587&amp;tft=1768352649581&amp;tfd=1743&amp;apve=1&amp;apvf=f",
-      "type": "fetch",
-      "ipinfo": {
-        "domain": "www.google.com",
-        "ip": "142.251.156.119",
-        "city": "Mountain View",
-        "region": "California",
-        "country": "US",
-        "loc": "38.0088,-122.1175",
-        "org": "AS15169 Google LLC",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 4.277,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://megapx-assets.dcard.tw/videos/c81916f3-4fe8-4f52-bc47-81c003340b4c/thumbnails/360.jpeg",
-      "type": "image",
-      "ipinfo": {
-        "domain": "megapx-assets.dcard.tw",
-        "ip": "203.69.138.222",
-        "hostname": "203-69-138-222.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS20940 Akamai International B.V.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://fundingchoicesmessages.google.com/i/146730420?ers=3",
-      "type": "script",
-      "ipinfo": {
-        "domain": "fundingchoicesmessages.google.com",
-        "ip": "142.250.204.46",
-        "hostname": "hkg07s38-in-f14.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-DSM1GSYX4C&amp;cid=533334775.1768352650&amp;gtm=45je61c1v869323592z8810931448za20gzb810931448zd810931448&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=103116026~103200004~104527906~104528501~104684208~104684211~105391252~115616985~115938466~115938469~115985660~116744867~116910503~117041588&amp;z=721186157",
-      "type": "image",
-      "ipinfo": {
-        "domain": "www.google.com.tw",
-        "ip": "142.250.204.35",
-        "hostname": "hkg07s38-in-f3.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午9:04:11<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午3:17:52<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -312,7 +283,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

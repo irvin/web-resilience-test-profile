@@ -13,7 +13,7 @@
     <meta property="og:description" content="Based on the latest test, under a submarine-cable outage scenario trip.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/trip.com/en/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>When submarine cables fail, will <a href="https://trip.com" target="_blank" rel="noopener noreferrer nofollow">trip.com</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>Will not work</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">9</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">6</strong></p><p class="score score-X">Foreign connections (X)<br><strong style="font-size: 1.3em;">3</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can trip.com still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario trip.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why might trip.com “not work” when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean trip.com will definitely be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for trip.com under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of trip.com, we observed 137 requests across 19 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS45102 Alibaba (US) Technology Co., Ltd.</span><span class="connection-domain">47.84.182.52</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">images3.c-ctrip.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">wcs.naver.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">ssl.pstatic.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">www.trip.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">ak-s-cw.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">dimg04.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">ak-d.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">static.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">webresource.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">ak-s.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">file.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS23576 NAVER Cloud Corp.</span><span class="connection-domain">wcs.naver.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS23576 NAVER Cloud Corp.</span><span class="connection-domain">nam.veta.naver.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/trip.com.json" target="_blank">View on GitHub</a></p><pre><code>{
+        <h1>When submarine cables fail, will <a href="https://trip.com" target="_blank" rel="noopener noreferrer nofollow">trip.com</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>Will not work</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">17</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">6</strong></p><p class="score score-X">Foreign connections (X)<br><strong style="font-size: 1.3em;">3</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can trip.com still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario trip.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why might trip.com “not work” when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean trip.com will definitely be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for trip.com under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of trip.com, we observed 168 requests across 26 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS45102 Alibaba (US) Technology Co., Ltd.</span><span class="connection-domain">47.84.182.52</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">t.co</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">analytics.twitter.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">www.trip.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">tw.trip.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">ak-s-cw.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">dimg04.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">static.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">ak-d.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">webresource.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">dimg04.c-ctrip.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">ak-s.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">m.trip.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">wcs.naver.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">file.tripcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">webresource.c-ctrip.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">images3.c-ctrip.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">ssl.pstatic.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">bat.bing.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS23576 NAVER Cloud Corp.</span><span class="connection-domain">wcs.naver.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS23576 NAVER Cloud Corp.</span><span class="connection-domain">nam.veta.naver.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/trip.com.json" target="_blank">View on GitHub</a></p><pre><code>{
   "url": "https://trip.com",
-  "canonicalURL": "https://www.trip.com/",
+  "canonicalURL": "https://tw.trip.com/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T01:12:10.235Z",
+  "timestamp": "2026-07-20T19:19:46.145Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,12 +61,12 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 137,
-  "uniqueDomains": 19,
+  "requestCount": 168,
+  "uniqueDomains": 26,
   "test_results": {
     "domestic": {
       "cloud": 6,
-      "direct": 9
+      "direct": 17
     },
     "foreign": {
       "cloud": 1,
@@ -93,7 +94,7 @@
       "type": "document",
       "ipinfo": {
         "domain": "www.trip.com",
-        "ip": "210.71.227.217",
+        "ip": "203.69.81.161",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
@@ -104,11 +105,26 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://ak-s-cw.tripcdn.com/modules/ibu/online-home/onlineHome.022a4f1f1ce6d1415a711a7132f3f938.css",
+      "originalUrl": "https://tw.trip.com/?locale=zh-tw",
+      "type": "document",
+      "ipinfo": {
+        "domain": "tw.trip.com",
+        "ip": "203.69.81.161",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://ak-s-cw.tripcdn.com/modules/ibu/online-home/onlineHome.9642d48a423a309b93581f9010a28867.css",
       "type": "stylesheet",
       "ipinfo": {
         "domain": "ak-s-cw.tripcdn.com",
-        "ip": "210.71.227.138",
+        "ip": "203.69.81.43",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
@@ -123,7 +139,7 @@
       "type": "image",
       "ipinfo": {
         "domain": "dimg04.tripcdn.com",
-        "ip": "210.71.227.217",
+        "ip": "203.69.81.161",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
@@ -134,18 +150,26 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "blob:https://www.trip.com/af5d8a00-6bc8-4630-aa30-e5cda53f2652",
-      "type": "other",
+      "originalUrl": "https://static.tripcdn.com/packages/ubt/websdk/*/ubt.minh.js?d=2026721",
+      "type": "script",
       "ipinfo": {
-        "domain": ""
-      }
+        "domain": "static.tripcdn.com",
+        "ip": "203.69.81.161",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
     },
     {
       "originalUrl": "https://ak-d.tripcdn.com/images/05E5p12000cga1phzA0ED.webp",
       "type": "image",
       "ipinfo": {
         "domain": "ak-d.tripcdn.com",
-        "ip": "210.71.227.99",
+        "ip": "203.69.81.57",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
@@ -156,26 +180,26 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://static.tripcdn.com/packages/ubt/websdk/*/ubt.minh.js?d=2026114",
-      "type": "script",
-      "ipinfo": {
-        "domain": "static.tripcdn.com",
-        "ip": "210.71.227.216",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS3462 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://webresource.tripcdn.com/ares2/train/csec/*/default/sec/c-sec.js?v=2026114",
+      "originalUrl": "https://webresource.tripcdn.com/ares2/train/csec/5.1.3/default/sec/c-sec.js?v=2026721",
       "type": "script",
       "ipinfo": {
         "domain": "webresource.tripcdn.com",
-        "ip": "210.71.227.217",
+        "ip": "203.69.81.161",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://dimg04.c-ctrip.com/images/05S7112000s2qu46l107A.png",
+      "type": "image",
+      "ipinfo": {
+        "domain": "dimg04.c-ctrip.com",
+        "ip": "203.69.81.91",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
@@ -190,7 +214,7 @@
       "type": "script",
       "ipinfo": {
         "domain": "ak-s.tripcdn.com",
-        "ip": "210.71.227.217",
+        "ip": "61.220.62.227",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
@@ -201,7 +225,7 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://www.googletagmanager.com/gtm.js?id=GTM-MV95N9D",
+      "originalUrl": "https://www.googletagmanager.com/gtm.js?id=GTM-T2SD",
       "type": "script",
       "ipinfo": {
         "domain": "www.googletagmanager.com",
@@ -217,39 +241,103 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://images3.c-ctrip.com/risk/logo/a.png",
-      "type": "image",
+      "originalUrl": "https://m.trip.com/ares/cdn/downgrade.json",
+      "type": "fetch",
       "ipinfo": {
-        "domain": "images3.c-ctrip.com",
-        "ip": "203.69.138.11",
-        "hostname": "203-69-138-11.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "domain": "m.trip.com",
+        "ip": "203.69.81.161",
+        "city": "Taipei",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS20940 Akamai International B.V.",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
         "timezone": "Asia/Taipei"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://bat.bing.com/bat.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "bat.bing.com",
+        "ip": "150.171.28.10",
+        "city": "Redmond",
+        "region": "Washington",
+        "country": "US",
+        "loc": "47.6740,-122.1215",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "x-msedge-ref": "Ref A: F8ACFE621BF14E93BC1342CCBF175C4C Ref B: TPE201050220062 Ref C: 2026-07-20T19:19:44Z",
+        "detection_method": "header"
+      }
     },
     {
       "originalUrl": "https://wcs.naver.net/wcslog.js",
       "type": "script",
       "ipinfo": {
         "domain": "wcs.naver.net",
-        "ip": "203.69.138.216",
-        "hostname": "203-69-138-216.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "ip": "203.69.81.51",
+        "city": "Taipei",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS20940 Akamai International B.V.",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
         "timezone": "Asia/Taipei"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://www.facebook.com/tr?id=%20723654084355478&amp;ev=PageView&amp;noscript=1&amp;gtmcb=400423414",
+      "originalUrl": "https://connect.facebook.net/en_US/fbevents.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "connect.facebook.net",
+        "ip": "31.13.87.5",
+        "hostname": "xx-fbcdn-shv-01-tpe1.fbcdn.net",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS32934 Facebook, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://file.tripcdn.com/files/7/ibu_online_assets/marketing-module/coupon_image/FLIGHT.png",
+      "type": "image",
+      "ipinfo": {
+        "domain": "file.tripcdn.com",
+        "ip": "61.220.62.227",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://webresource.c-ctrip.com/NFES/nfes-iconfont/project-hotel_desktop_ctrip-0.0.39/hotel_desktop_ctrip.woff2",
+      "type": "font",
+      "ipinfo": {
+        "domain": "webresource.c-ctrip.com",
+        "ip": "203.69.81.35",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://www.facebook.com/tr?id=%20723654084355478&amp;ev=PageView&amp;noscript=1&amp;gtmcb=1219507466",
       "type": "image",
       "ipinfo": {
         "domain": "www.facebook.com",
@@ -265,11 +353,11 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://file.tripcdn.com/files/7/ibu_online_assets/marketing-module/coupon_image/HOTEL_CROSS.png",
+      "originalUrl": "https://images3.c-ctrip.com/risk/logo/a.png",
       "type": "image",
       "ipinfo": {
-        "domain": "file.tripcdn.com",
-        "ip": "210.71.227.217",
+        "domain": "images3.c-ctrip.com",
+        "ip": "203.69.81.91",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
@@ -284,23 +372,23 @@
       "type": "script",
       "ipinfo": {
         "domain": "ssl.pstatic.net",
-        "ip": "203.69.141.64",
-        "hostname": "203-69-141-64.hinet-ip.hinet.net",
-        "city": "Taipei",
+        "ip": "210.65.144.201",
+        "hostname": "210-65-144-201.hinet-ip.hinet.net",
+        "city": "Taichung",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS20940 Akamai International B.V.",
+        "loc": "24.1469,120.6839",
+        "org": "AS3462 Data Communication Business Group",
         "timezone": "Asia/Taipei"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/direct"
     },
     {
       "originalUrl": "https://wcs.naver.com/b",
       "type": "ping",
       "ipinfo": {
         "domain": "wcs.naver.com",
-        "ip": "202.179.180.81",
+        "ip": "125.209.233.21",
         "city": "Seoul",
         "region": "Seoul",
         "country": "KR",
@@ -311,28 +399,90 @@
       "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://www.google.com/ccm/collect?frm=0&amp;en=page_view&amp;dl=https%3A%2F%2Fwww.trip.com%2F&amp;scrsrc=www.googletagmanager.com&amp;rnd=563614704.1768353130&amp;dt=Trip.com%20Official%20Site%E2%80%8E%E2%80%8E%20%7C%20Travel%20Deals%20and%20Promotions&amp;auid=1851404511.1768353130&amp;navt=n&amp;npa=0&amp;_tu=CA&amp;gtm=45He61c1v835431442za200zd835431442xea&amp;gcs=G111&amp;gcd=13t3t3t3t5l1&amp;dma=0&amp;tag_exp=102015666~103116026~103200004~104527906~104528500~104684208~104684211~105391252~115938466~115938468~117041588&amp;tft=1768353129581&amp;tfd=2871&amp;apve=1&amp;apvf=f",
+      "originalUrl": "https://www.google.com/rmkt/collect/789926500/?random=1784575183934&amp;cv=11&amp;fst=1784575183934&amp;fmt=8&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be67g0v876607279z86109556za20gzb6109556zd6109556xec&amp;gcd=13t3t3t3t5l1&amp;dma=0&amp;tag_exp=115938466~115938469~118897920~118897930&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Ftw.trip.com%2F%3Flocale%3Dzh-tw&amp;rcb=8&amp;frm=0&amp;tiba=Trip.com%EF%BC%9A%E4%BD%8F%E5%AE%BF%E9%A3%AF%E5%BA%97%E9%A0%90%E8%A8%82%EF%BC%8C%E6%A9%9F%E7%A5%A8%E5%84%AA%E6%83%A0%EF%BC%8C%E6%97%85%E9%81%8A%E5%BA%A6%E5%81%87&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1018181141.1784575184&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;_tu=CA&amp;data=event%3Dgtag.config&amp;ept=68&amp;gcp=5",
       "type": "fetch",
       "ipinfo": {
         "domain": "www.google.com",
-        "ip": "142.250.77.4",
-        "hostname": "nctsaa-ab-in-f4.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
+        "ip": "142.251.151.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
         "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
+        "timezone": "America/Los_Angeles"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 9.945,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.151.119",
+          "prefix": "142.251.151.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
+      }
     },
     {
-      "originalUrl": "https://www.google.com.tw/pagead/1p-user-list/789926500/?random=1768353129079&amp;cv=11&amp;fst=1768352400000&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be61c1v876607279za200zb835431442zd835431442xec&amp;gcd=13t3t3t3t5l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391252~115495939~115616986~115938466~115938469~116988315~117041588&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fwww.trip.com%2F&amp;frm=0&amp;tiba=Trip.com%20Official%20Site%E2%80%8E%E2%80%8E%20%7C%20Travel%20Deals%20and%20Promotions&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1851404511.1768353130&amp;uaa=arm&amp;uab=64&amp;uafvl=Not(A%253ABrand%3B99.0.0.0%7CHeadlessChrome%3B133.0.6943.16%7CChromium%3B133.0.6943.16&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=26.2.0&amp;uaw=0&amp;_tu=CA&amp;data=event%3Dgtag.config&amp;rfmt=3&amp;fmt=3&amp;is_vtc=1&amp;cid=CAQSiwEA56J1eTF8SahAG3mmRZMlZ89bjrd7gTG-nElWSNuZp66KIFh3esBOIc8Vyim--bh5G0L6DeiHUC3ETyycac2dB9GhO1SFJLu3n1gnTateSRxgeh35LF8Hmgbl_IRrhniN5OoylHvsdnjWwWD_mP338eStQP6a9so9XG5H0PEk783o39LnKkz-28vX&amp;random=730956626&amp;rmt_tld=1&amp;ipr=y",
+      "originalUrl": "https://t.co/1/i/adsct?bci=4&amp;dv=Asia%2FTaipei%26zh-TW%26Google%20Inc.%26MacIntel%26127%261280%26720%2610%2630%261280%26720%260%26na&amp;eci=3&amp;event=%7B%7D&amp;event_id=8eb7b5ba-aae0-4e5b-a9bf-20a9097ae2df&amp;integration=gtm&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=c5acee39-e37f-43bb-bafc-928c3a7e061b&amp;pt=Trip.com%EF%BC%9A%E4%BD%8F%E5%AE%BF%E9%A3%AF%E5%BA%97%E9%A0%90%E8%A8%82%EF%BC%8C%E6%A9%9F%E7%A5%A8%E5%84%AA%E6%83%A0%EF%BC%8C%E6%97%85%E9%81%8A%E5%BA%A6%E5%81%87&amp;tw_document_href=https%3A%2F%2Ftw.trip.com%2F%3Flocale%3Dzh-tw&amp;tw_iframe_status=0&amp;tw_pid_src=1&amp;twpid=tw.1784575184551.78482002527760753&amp;txn_id=qey8z&amp;type=javascript&amp;version=2.3.54",
+      "type": "image",
+      "ipinfo": {
+        "domain": "t.co",
+        "ip": "172.66.0.227",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e451bc7a7b8094-TPE",
+        "x-served-by": "t4_p",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://analytics.twitter.com/1/i/adsct?bci=4&amp;dv=Asia%2FTaipei%26zh-TW%26Google%20Inc.%26MacIntel%26127%261280%26720%2610%2630%261280%26720%260%26na&amp;eci=3&amp;event=%7B%7D&amp;event_id=8eb7b5ba-aae0-4e5b-a9bf-20a9097ae2df&amp;integration=gtm&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=c5acee39-e37f-43bb-bafc-928c3a7e061b&amp;pt=Trip.com%EF%BC%9A%E4%BD%8F%E5%AE%BF%E9%A3%AF%E5%BA%97%E9%A0%90%E8%A8%82%EF%BC%8C%E6%A9%9F%E7%A5%A8%E5%84%AA%E6%83%A0%EF%BC%8C%E6%97%85%E9%81%8A%E5%BA%A6%E5%81%87&amp;tw_document_href=https%3A%2F%2Ftw.trip.com%2F%3Flocale%3Dzh-tw&amp;tw_iframe_status=0&amp;tw_pid_src=1&amp;twpid=tw.1784575184551.78482002527760753&amp;txn_id=qey8z&amp;type=javascript&amp;version=2.3.54",
+      "type": "image",
+      "ipinfo": {
+        "domain": "analytics.twitter.com",
+        "ip": "162.159.140.229",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e451bcbac98421-TPE",
+        "x-served-by": "t4_p",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://www.google.com.tw/pagead/1p-user-list/789926500/?random=1784575183934&amp;cv=11&amp;fst=1784574000000&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be67g0v876607279z86109556za20gzb6109556zd6109556xec&amp;gcd=13t3t3t3t5l1&amp;dma=0&amp;tag_exp=115938466~115938469~118897920~118897930&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Ftw.trip.com%2F%3Flocale%3Dzh-tw&amp;rcb=8&amp;frm=0&amp;tiba=Trip.com%EF%BC%9A%E4%BD%8F%E5%AE%BF%E9%A3%AF%E5%BA%97%E9%A0%90%E8%A8%82%EF%BC%8C%E6%A9%9F%E7%A5%A8%E5%84%AA%E6%83%A0%EF%BC%8C%E6%97%85%E9%81%8A%E5%BA%A6%E5%81%87&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1018181141.1784575184&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;_tu=CA&amp;data=event%3Dgtag.config&amp;ept=9&amp;rfmt=3&amp;fmt=3&amp;is_vtc=1&amp;cid=CAQS7AEAEQoqgYQv_CoQKG5HbptxHmI08Ojfi7Wt0MInfrkZMNhoRQ5O2wrheoxznDC5eyADDcc2ysvyvdkgGGLmVWNQx1vXBb1pRsRYzyFlEgyDRBwFxBr_kbTAMW0ROjqCxuywNb0TsyH_dK3vIN7dBXXB1vF_uNGYED6SfIZwhXi7pE-NYPYv9y-z4evddULisKNMO4TQVgmvNfdDkD5cc9nlKfc_sl8Uc2jlZpYcoLk6Qe2QGsEMGhwBH7zwnodkLlVMElwJI2KE_xRfEXeBAEh_6FELa14Y6LecUrQWZVKqmtRQgaoQ-wTDL_xEzQ&amp;random=4105889116&amp;rmt_tld=1&amp;ipr=y",
       "type": "image",
       "ipinfo": {
         "domain": "www.google.com.tw",
-        "ip": "142.250.66.67",
-        "hostname": "hkg12s27-in-f3.1e100.net",
+        "ip": "142.250.192.131",
+        "hostname": "bom12s18-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -347,7 +497,7 @@
       "type": "xhr",
       "ipinfo": {
         "domain": "nam.veta.naver.com",
-        "ip": "210.89.168.82",
+        "ip": "61.247.192.227",
         "city": "Seoul",
         "region": "Seoul",
         "country": "KR",
@@ -358,10 +508,10 @@
       "category": "foreign/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 1/14/2026, 9:12:10 AM<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 7/21/2026, 3:19:46 AM<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -399,7 +549,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>海纜斷掉時，kymco.com.tw 會動嗎？</title>
-    <meta name="description" content="根據最近一次測試，在海纜斷掉的情境下，kymco.com.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。">
+    <meta name="description" content="根據最近一次測試，在海纜斷掉的情境下，kymco.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <link rel="icon" href="/favicon.ico">
     <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/kymco.com.tw/">
 
     <!-- Open Graph 標籤 -->
     <meta property="og:title" content="海纜斷掉時，kymco.com.tw 會動嗎？">
-    <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，kymco.com.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。">
+    <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，kymco.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/kymco.com.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://kymco.com.tw" target="_blank" rel="noopener noreferrer nofollow">kymco.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>不確定</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">9</strong></p><p class="score score-X score-zero">境外連線 (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，kymco.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，kymco.com.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 kymco.com.tw 在海纜斷掉時「不確定是否會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，我們雖然沒有看到直接連到境外的資源請求，但有發現對於跨國雲服務在台灣的節點依賴。這些服務能否在對外受阻時持續運作，會受到平台架構、快取設計、或回源方式等影響，所以目前只能列為「不確定」。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，kymco.com.tw 屆時可能不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">「不確定」的意思是，目前不足以判定一定能用或不能用。kymco.com.tw 所依賴的這些跨國雲服務在台節點，在海纜斷線或極度壅塞時的可用性，需由業者進一步釐清與說明。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 kymco.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 kymco.com.tw 的首頁時，我們觀察到來自 13 個網域的 111 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">210.71.253.105</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">rr3---sn-ipoxu-un5el.googlevideo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">www.kymco.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.recaptcha.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.youtube.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">yt3.ggpht.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">jnn-pa.googleapis.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/kymco.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://kymco.com.tw" target="_blank" rel="noopener noreferrer nofollow">kymco.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">5</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">10</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">1</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，kymco.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，kymco.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 kymco.com.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，kymco.com.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 kymco.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 kymco.com.tw 的首頁時，我們觀察到來自 16 個網域的 118 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">210.71.253.105</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">fh-118116076e9a4c2a96a99fbb70bea2a0.ecs.us-west-2.on.aws</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">rr5---sn-ipoxu-un5el.googlevideo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">www.kymco.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.recaptcha.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.youtube.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">i.ytimg.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">jnn-pa.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">yt3.ggpht.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/kymco.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://kymco.com.tw",
   "canonicalURL": "https://kymco.com.tw",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T03:38:02.327Z",
+  "timestamp": "2026-07-20T20:35:17.794Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,15 +61,15 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 111,
-  "uniqueDomains": 13,
+  "requestCount": 118,
+  "uniqueDomains": 16,
   "test_results": {
     "domestic": {
-      "cloud": 9,
-      "direct": 4
+      "cloud": 10,
+      "direct": 5
     },
     "foreign": {
-      "cloud": 0,
+      "cloud": 1,
       "direct": 0
     }
   },
@@ -94,8 +95,8 @@
       "type": "stylesheet",
       "ipinfo": {
         "domain": "fonts.googleapis.com",
-        "ip": "142.250.77.10",
-        "hostname": "nctsaa-ab-in-f10.1e100.net",
+        "ip": "142.250.204.42",
+        "hostname": "hkg07s38-in-f10.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -110,8 +111,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "www.recaptcha.net",
-        "ip": "142.250.198.67",
-        "hostname": "lctsaa-ab-in-f3.1e100.net",
+        "ip": "142.250.192.131",
+        "hostname": "bom12s18-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -126,8 +127,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "www.googletagmanager.com",
-        "ip": "142.250.198.72",
-        "hostname": "lctsaa-ab-in-f8.1e100.net",
+        "ip": "142.250.196.200",
+        "hostname": "nctsaa-ac-in-f8.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -138,12 +139,48 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://www.youtube.com/embed/r2NA2_YpPEs?autoplay=1&amp;mute=1&amp;modestbranding=0&amp;controls=1&amp;rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.kymco.com.tw&amp;widgetid=1",
+      "originalUrl": "https://www.youtube.com/embed/dGYcdBR3Jbc?autoplay=1&amp;mute=1&amp;modestbranding=0&amp;controls=1&amp;rel=0&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.kymco.com.tw&amp;widgetid=1",
       "type": "document",
       "ipinfo": {
         "domain": "www.youtube.com",
-        "ip": "142.250.198.78",
-        "hostname": "lctsaa-ab-in-f14.1e100.net",
+        "ip": "142.251.154.4",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 5.175,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.154.4",
+          "prefix": "142.251.154.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 60,
+          "location_count": 60
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.gstatic.com/recaptcha/releases/A7KpaEASfhDcK0nXxgQEyyYv/recaptcha__zh_tw.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.gstatic.com",
+        "ip": "142.250.77.3",
+        "hostname": "nctsaa-ab-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -154,12 +191,12 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://www.google.com/ccm/collect?frm=0&amp;en=page_view&amp;dl=https%3A%2F%2Fkymco.com.tw%2F&amp;scrsrc=www.googletagmanager.com&amp;rnd=460971043.1768361880&amp;dt=KYMCO%20%E5%85%89%E9%99%BD%E6%A9%9F%E8%BB%8A%E5%AE%98%E7%B6%B2%EF%BD%9C%E5%85%A8%E6%96%B0%E8%BB%8A%E6%AC%BE%20%E4%BB%BB%E6%82%A8%E6%8C%91%E9%81%B8&amp;auid=2111677314.1768361880&amp;navt=n&amp;npa=0&amp;gtm=45He61c1v811901091za200zd811901091xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527907~104528500~104684208~104684211~105391253~115938466~115938468~117041588~117091818&amp;tft=1768361880446&amp;tfd=554&amp;apve=1&amp;apvf=f",
-      "type": "fetch",
+      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-6FV8F6WQ8Z&amp;cid=446655970.1784579705&amp;gtm=45je67g0v886212774za200zd886212774&amp;rcb=6&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=115616985~115938465~115938469~118395334~118897920~118897930~119381663&amp;z=1759296002",
+      "type": "image",
       "ipinfo": {
-        "domain": "www.google.com",
-        "ip": "142.250.77.4",
-        "hostname": "nctsaa-ab-in-f4.1e100.net",
+        "domain": "www.google.com.tw",
+        "ip": "142.250.77.195",
+        "hostname": "del11s08-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -186,60 +223,48 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-6FV8F6WQ8Z&amp;cid=985002868.1768361880&amp;gtm=45je61c1v886212774z8811901091za20gzb811901091zd811901091&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=103116026~103200004~104527907~104528501~104684208~104684211~105391252~115938466~115938469~116910502~117041588&amp;z=953546722",
-      "type": "image",
-      "ipinfo": {
-        "domain": "www.google.com.tw",
-        "ip": "142.250.198.67",
-        "hostname": "lctsaa-ab-in-f3.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.gstatic.com/recaptcha/releases/9TiwnJFHeuIw_s0wSd3fiKfN/recaptcha__en.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "www.gstatic.com",
-        "ip": "142.250.204.35",
-        "hostname": "hkg07s38-in-f3.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://yt3.ggpht.com/2M3hcmaJrOE1pe6kqSrIQjejGcgPfz5b5v_P5-qXmedqQxUpmEArntWvGe5vx8-TwUJEInx2=s68-c-k-c0x00ffffff-no-rj",
-      "type": "image",
-      "ipinfo": {
-        "domain": "yt3.ggpht.com",
-        "ip": "142.250.77.1",
-        "hostname": "nctsaa-ab-in-f1.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://rr3---sn-ipoxu-un5el.googlevideo.com/videoplayback?expire=1768383480&amp;ei=mA9nafvKKICFpt8P-9OK-Q8&amp;ip=2001%3Ab011%3A3802%3Ab3f9%3A7801%3A3a2d%3A7ca8%3A40b&amp;id=o-ANZGBXX7lzuNZUSEAkV1YrcrlR2OhT3DUH3iiq5ef5Vk&amp;itag=244&amp;aitags=133%2C134%2C135%2C136%2C137%2C160%2C242%2C243%2C244%2C247%2C248%2C278&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;cps=0&amp;met=1768361880%2C&amp;mh=IK&amp;mm=31%2C29&amp;mn=sn-ipoxu-un5el%2Csn-un57enel&amp;ms=au%2Crdu&amp;mv=m&amp;mvi=3&amp;pl=52&amp;rms=au%2Cau&amp;initcwndbps=2206250&amp;bui=AW-iu_oqJAjtLUcFd_IsmFsj5kcxiSeqdwFvE_sNMHGNFfP4S8wkqu8AAxJn7vf920fLG5u5qHYTYhzT&amp;spc=q5xjPEMDNWWJjWOAuHhXWmS5tI70JXHg9B5NU-wEaqBiQQTPzNBNsYGmmMNHcmXOC-A&amp;vprv=1&amp;svpuc=1&amp;mime=video%2Fwebm&amp;ns=VWygI9pvxPtwm6-mPHto0QsR&amp;rqh=1&amp;gir=yes&amp;clen=2312350&amp;dur=30.063&amp;lmt=1767879936673717&amp;mt=1768361337&amp;fvip=1&amp;keepalive=yes&amp;fexp=51552689%2C51565116%2C51565681%2C51580968&amp;c=WEB_EMBEDDED_PLAYER&amp;sefc=1&amp;txp=530F224&amp;n=_lOwzxlYCWb5vQ&amp;sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&amp;sig=AJfQdSswRAIgAcMACoMtE1Z3OjZAzZZP8x5NQJSTtQvjw6MmMwjOxiwCIB2gTAVKsSszd4WSL_fRoXSN_cWUbYn6JEPWkV_njY4_&amp;lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=APaTxxMwRgIhAPNcdrS3RzBM2Cl__z1U7XMr81U6d-WIU6LOoTny6NCJAiEApl__rYbxpBH0PkTblMVh5tLyg8fi9_a8v82cjDVnsnY%3D&amp;alr=yes&amp;cpn=S5j8eQO9-k9FJWmB&amp;cver=1.20260112.10.00&amp;range=0-185253&amp;rn=1&amp;rbuf=0&amp;pot=IgjwzvHPman_Vg==&amp;ump=1&amp;srfvp=1",
+      "originalUrl": "https://www.google.com/ccm/collect?rcb=16&amp;frm=0&amp;ae=g&amp;auid=891134730.1784579705&amp;dt=KYMCO%20%E5%85%89%E9%99%BD%E6%A9%9F%E8%BB%8A%E5%AE%98%E7%B6%B2%EF%BD%9C%E5%85%A8%E6%96%B0%E8%BB%8A%E6%AC%BE%20%E4%BB%BB%E6%82%A8%E6%8C%91%E9%81%B8&amp;en=page_view&amp;dl=https%3A%2F%2Fkymco.com.tw%2F&amp;scrsrc=www.googletagmanager.com&amp;rnd=580786935.1784579705&amp;navt=n&amp;npa=0&amp;ep.ads_data_redaction=0&amp;gtm=45He67g0v811901091za200zd811901091xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115616985~115938465~115938469~118897920~118897930~118981136~119773332&amp;apve=1&amp;apvf=f&amp;apvc=1&amp;tft=1784579705024&amp;tfd=1406&amp;fmt=8",
       "type": "fetch",
       "ipinfo": {
-        "domain": "rr3---sn-ipoxu-un5el.googlevideo.com",
-        "ip": "203.66.169.78",
-        "hostname": "203-66-169-78.hinet-ip.hinet.net",
+        "domain": "www.google.com",
+        "ip": "142.251.150.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 5.9,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.150.119",
+          "prefix": "142.251.150.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://rr5---sn-ipoxu-un5el.googlevideo.com/videoplayback?expire=1784601305&amp;ei=eYZeaoHHNauEpt8PlpudgQI&amp;ip=2001%3Ab011%3A3802%3A52d7%3Aced%3Aab09%3A4293%3Ae75c&amp;id=o-AI-IkJGnd1QT2FUOsXwrDRMb5wsuI1vBrXaMYn0Scggt&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;cps=297&amp;met=1784579705%2C&amp;mh=1Y&amp;mm=31%2C29&amp;mn=sn-ipoxu-un5el%2Csn-ajun55-54&amp;ms=au%2Crdu&amp;mv=m&amp;mvi=5&amp;pl=52&amp;rms=au%2Cau&amp;initcwndbps=2851250&amp;spc=SQ-umtWs-5sgHEdSDCXsZV3GUj_p7u5m-qmT39JhQ_bDer4N9WEkQeKn_FVQS_JusWv8xg&amp;svpuc=1&amp;ns=qgGK_6lseMIkOn5SdXwTQmkW&amp;sabr=1&amp;rqh=1&amp;mt=1784579368&amp;fvip=3&amp;keepalive=yes&amp;fexp=51565116%2C51992868&amp;c=WEB_EMBEDDED_PLAYER&amp;n=tThZ0Kx3XZ0M0Q&amp;sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&amp;sig=AE0s2JYwRQIhAPzl2glYxRmVSrknAF6ImEnweMvcAGaS7p582ntgoIUpAiAqS1T8J2L1_vE0bIENHyGJ3fQ9KrJ5IfL5G24XqkJilw%3D%3D&amp;lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=APaTxxMwRgIhANwhMwO_SZJWHvKme07cp6reHlt5lnHGxxR_Juhtj71vAiEAr8jFCvBlgCL-Kn_PEm6KdicIOM17jhwaMQbYvYCBdvA%3D&amp;cpn=FHyD3afqs0y4mrEn&amp;cver=2.20260720.01.00&amp;rn=1&amp;alr=yes",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "rr5---sn-ipoxu-un5el.googlevideo.com",
+        "ip": "203.66.169.80",
+        "hostname": "203-66-169-80.hinet-ip.hinet.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -250,12 +275,12 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
-      "type": "xhr",
+      "originalUrl": "https://i.ytimg.com/vi_webp/dGYcdBR3Jbc/maxresdefault.webp",
+      "type": "image",
       "ipinfo": {
-        "domain": "jnn-pa.googleapis.com",
-        "ip": "142.250.77.10",
-        "hostname": "nctsaa-ab-in-f10.1e100.net",
+        "domain": "i.ytimg.com",
+        "ip": "142.250.204.54",
+        "hostname": "hkg07s38-in-f22.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -266,7 +291,109 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://www.kymco.com.tw/storage/app/media/_mediathumbs/_covers-k1-125-sport-ad4d6cdd5f8fd71b745305d246bd910f.png",
+      "originalUrl": "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "jnn-pa.googleapis.com",
+        "ip": "172.217.114.4",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 6.781,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.217.114.4",
+          "prefix": "172.217.114.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.facebook.com/tr/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "www.facebook.com",
+        "ip": "31.13.87.36",
+        "hostname": "edge-star-mini-shv-01-tpe1.facebook.com",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS32934 Facebook, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://fh-118116076e9a4c2a96a99fbb70bea2a0.ecs.us-west-2.on.aws/events?cee=no",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "fh-118116076e9a4c2a96a99fbb70bea2a0.ecs.us-west-2.on.aws",
+        "ip": "32.186.47.109",
+        "hostname": "ec2-32-186-47-109.us-west-2.compute.amazonaws.com",
+        "city": "Boardman",
+        "region": "Oregon",
+        "country": "US",
+        "loc": "45.8399,-119.7006",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "32.186.47.109",
+          "prefix": "32.186.47.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://yt3.ggpht.com/2M3hcmaJrOE1pe6kqSrIQjejGcgPfz5b5v_P5-qXmedqQxUpmEArntWvGe5vx8-TwUJEInx2=s88-c-k-c0x00ffffff-no-rj",
+      "type": "image",
+      "ipinfo": {
+        "domain": "yt3.ggpht.com",
+        "ip": "142.250.192.129",
+        "hostname": "bom12s18-in-f1.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.kymco.com.tw/storage/app/media/_mediathumbs/_covers-dollar-125-2026-a3403d9128de9ab098ef985e69448a1c.png",
       "type": "image",
       "ipinfo": {
         "domain": "www.kymco.com.tw",
@@ -282,10 +409,10 @@
       "category": "domestic/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午11:38:02<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午4:35:17<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -323,7 +450,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

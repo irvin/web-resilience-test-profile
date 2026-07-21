@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，redino.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/redino.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://redino.tw" target="_blank" rel="noopener noreferrer nofollow">redino.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">1</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">15</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">1</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，redino.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，redino.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 redino.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，redino.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 redino.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 redino.tw 的首頁時，我們觀察到來自 17 個網域的 402 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">172.66.41.6</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">cdn.shoplineapp.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">shoplineimg.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">img.shoplineapp.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">r2cdn.myshopline.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.redino.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">sugarapple.redino.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdn.redino.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">info.redino.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">browser.sentry-cdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.recaptcha.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/redino.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://redino.tw" target="_blank" rel="noopener noreferrer nofollow">redino.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">1</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">16</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">1</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，redino.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，redino.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 redino.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，redino.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 redino.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 redino.tw 的首頁時，我們觀察到來自 18 個網域的 475 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">104.26.13.155</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">cdn.shoplineapp.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">shoplineimg.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">img.shoplineapp.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">r2cdn.myshopline.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">public-prod-dspcookiematching.dmxleo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.redino.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">sugarapple.redino.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdn.redino.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">browser.sentry-cdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">o769852.ingest.sentry.io</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.recaptcha.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">c.bing.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/redino.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://redino.tw",
   "canonicalURL": "https://www.redino.tw/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T03:57:34.381Z",
+  "timestamp": "2026-07-20T22:09:38.747Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,11 +61,11 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 402,
-  "uniqueDomains": 17,
+  "requestCount": 475,
+  "uniqueDomains": 18,
   "test_results": {
     "domestic": {
-      "cloud": 15,
+      "cloud": 16,
       "direct": 1
     },
     "foreign": {
@@ -78,7 +79,7 @@
       "type": "document",
       "ipinfo": {
         "domain": "redino.tw",
-        "ip": "172.66.41.6",
+        "ip": "104.26.13.155",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -89,7 +90,7 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bda35ab9cf86a9e-TPE",
+        "cf-ray": "a1e54a746ef16b78-TPE",
         "detection_method": "header"
       }
     },
@@ -98,7 +99,7 @@
       "type": "document",
       "ipinfo": {
         "domain": "www.redino.tw",
-        "ip": "172.66.42.250",
+        "ip": "104.26.12.155",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -109,7 +110,7 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bda35abed586a9e-TPE",
+        "cf-ray": "a1e54a749efb6b78-TPE",
         "detection_method": "header"
       }
     },
@@ -118,35 +119,35 @@
       "type": "script",
       "ipinfo": {
         "domain": "cdn.shoplineapp.com",
-        "ip": "3.169.137.85",
-        "hostname": "server-3-169-137-85.tpe54.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "54.192.248.30",
+        "hostname": "server-54-192-248-30.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://shoplineimg.com/5dca72bb376b23000a43e2c5/69648b2505e026fa139f21c6/1296x.webp?source_format=gif",
+      "originalUrl": "https://shoplineimg.com/5dca72bb376b23000a43e2c5/6a5d76586884d16d50f360f1/1296x.webp?source_format=gif",
       "type": "image",
       "ipinfo": {
         "domain": "shoplineimg.com",
-        "ip": "3.169.36.45",
-        "hostname": "server-3-169-36-45.tpe53.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "54.192.248.46",
+        "hostname": "server-54-192-248-46.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://browser.sentry-cdn.com/6.8.0/bundle.tracing.min.js",
+      "originalUrl": "https://browser.sentry-cdn.com/7.120.4/bundle.tracing.replay.min.js",
       "type": "script",
       "ipinfo": {
         "domain": "browser.sentry-cdn.com",
@@ -160,8 +161,24 @@
       },
       "category": "foreign/cloud",
       "cloud_provider": {
-        "rtt": 34.181,
-        "detection_method": "rtt"
+        "rtt": 35.645,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "151.101.130.217",
+          "prefix": "151.101.130.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 56,
+          "location_count": 56
+        }
       }
     },
     {
@@ -181,16 +198,16 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://img.shoplineapp.com/media/image_clips/6953a2a3adddf35c4fdec8bc/original.jpg?1767088803=&amp;owner_id=5dca72bb376b23000a43e2c5",
+      "originalUrl": "https://img.shoplineapp.com/media/image_clips/69ab37fb9fc6af292b00fe27/original.png?1772828666=&amp;owner_id=5dca72bb376b23000a43e2c5",
       "type": "image",
       "ipinfo": {
         "domain": "img.shoplineapp.com",
-        "ip": "3.169.137.95",
-        "hostname": "server-3-169-137-95.tpe54.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "65.9.180.61",
+        "hostname": "server-65-9-180-61.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -201,7 +218,7 @@
       "type": "script",
       "ipinfo": {
         "domain": "sugarapple.redino.tw",
-        "ip": "172.66.41.6",
+        "ip": "172.67.73.69",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -212,7 +229,7 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bda35b23b9d6a9e-TPE",
+        "cf-ray": "a1e54a7c39ac6b78-TPE",
         "detection_method": "header"
       }
     },
@@ -221,12 +238,12 @@
       "type": "script",
       "ipinfo": {
         "domain": "r2cdn.myshopline.com",
-        "ip": "3.169.121.79",
-        "hostname": "server-3-169-121-79.tpe53.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "54.192.248.57",
+        "hostname": "server-54-192-248-57.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -237,7 +254,7 @@
       "type": "image",
       "ipinfo": {
         "domain": "cdn.redino.tw",
-        "ip": "172.66.42.250",
+        "ip": "104.26.12.155",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -248,7 +265,7 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bda35b36ceb6a9e-TPE",
+        "cf-ray": "a1e54a7dea4f6b78-TPE",
         "detection_method": "header"
       }
     },
@@ -269,78 +286,46 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://www.google.com/ccm/collect?frm=0&amp;tid=AW-10982389350&amp;en=page_view&amp;dl=https%3A%2F%2Fwww.redino.tw%2F&amp;scrsrc=www.redino.tw&amp;rnd=387491767.1768363052&amp;dt=%E3%80%90%E7%B4%85%E7%8A%80%E7%89%9B%E3%80%91%E2%9D%A4%EF%B8%8F%E2%9D%A4%EF%B8%8F%20%E5%8F%B0%E7%81%A3NO.1%E6%83%85%E8%B6%A3%E7%94%A8%E5%93%81%E5%95%86%E5%9F%8E%E3%80%815%25%E7%8F%BE%E9%87%91%E5%9B%9E%E9%A5%8B%E3%80%81%E5%85%8D%E9%81%8B%E4%B8%8B%E6%AE%BA&amp;auid=2074499877.1768363052&amp;navt=n&amp;npa=0&amp;did=dY2E1Nz&amp;gdid=dY2E1Nz&amp;gtm=45892e61c1v9135507953za204zd9135507953xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391252~115497441~115938465~115938468~116682877~116744867~117041587&amp;tft=1768363051975&amp;tfd=1333&amp;apve=1&amp;apvf=f",
+      "originalUrl": "https://www.google.com/rmkt/collect/10982389350/?random=1784585373933&amp;cv=11&amp;fst=1784585373933&amp;fmt=8&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45892e67k0h2v9135507953za204zd9135507953xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115938465~115938469~118395334~118897920~118897930~119732170&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fwww.redino.tw%2F&amp;rcb=16&amp;frm=0&amp;tiba=%E3%80%90%E7%B4%85%E7%8A%80%E7%89%9B%E3%80%91%E2%9D%A4%EF%B8%8F%E2%9D%A4%EF%B8%8F%20%E5%8F%B0%E7%81%A3NO.1%E6%83%85%E8%B6%A3%E7%94%A8%E5%93%81%E5%95%86%E5%9F%8E%E3%80%815%25%E7%8F%BE%E9%87%91%E5%9B%9E%E9%A5%8B%E3%80%81%E5%85%8D%E9%81%8B%E4%B8%8B%E6%AE%BA&amp;did=dY2E1Nz&amp;gdid=dY2E1Nz.dNzQzZD&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=827340380.1784585374&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;data=event%3Dgtag.config&amp;gap.gtb=1&amp;ept=68&amp;gcp=5",
       "type": "fetch",
       "ipinfo": {
         "domain": "www.google.com",
-        "ip": "142.250.198.68",
-        "hostname": "lctsaa-ab-in-f4.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-SLYPTT6CJ8&amp;cid=989370013.1768363052&amp;gtm=45g92e61c1v882417378za204zb9135507953zd9135507953&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391252~115616986~115938465~115938468~116682877~116744867~117041587&amp;z=1287365536",
-      "type": "image",
-      "ipinfo": {
-        "domain": "www.google.com.tw",
-        "ip": "142.250.77.3",
-        "hostname": "nctsaa-ab-in-f3.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://info.redino.tw/images/info-logo.png",
-      "type": "image",
-      "ipinfo": {
-        "domain": "info.redino.tw",
-        "ip": "172.66.41.6",
-        "city": "San Francisco",
+        "ip": "142.251.155.119",
+        "city": "Mountain View",
         "region": "California",
         "country": "US",
-        "loc": "37.7621,-122.3971",
-        "org": "AS13335 Cloudflare, Inc.",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
         "timezone": "America/Los_Angeles"
       },
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bda35b54f106a9e-TPE",
-        "detection_method": "header"
+        "rtt": 4.731,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.155.119",
+          "prefix": "142.251.155.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
       }
     },
     {
-      "originalUrl": "https://www.recaptcha.net/recaptcha/api.js?onload=onRecaptchaLoaded&amp;render=explicit",
-      "type": "script",
+      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-SLYPTT6CJ8&amp;cid=1140878211.1784585375&amp;gtm=45je67h1v882417378za200zb9135507953zd9135507953&amp;rcb=19&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=115938465~115938469~118395334~118897920~118897930&amp;z=2132251529",
+      "type": "image",
       "ipinfo": {
-        "domain": "www.recaptcha.net",
-        "ip": "142.250.66.67",
-        "hostname": "hkg12s27-in-f3.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.gstatic.com/recaptcha/releases/9TiwnJFHeuIw_s0wSd3fiKfN/recaptcha__en.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "www.gstatic.com",
+        "domain": "www.google.com.tw",
         "ip": "142.250.198.67",
         "hostname": "lctsaa-ab-in-f3.1e100.net",
         "city": "Banqiao",
@@ -353,12 +338,49 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&amp;display=swap",
-      "type": "stylesheet",
+      "originalUrl": "https://o769852.ingest.sentry.io/api/5797752/envelope/?sentry_key=aec31088a6fb4f6eafac028a91e1cf21&amp;sentry_version=7&amp;sentry_client=sentry.javascript.browser%2F7.120.4",
+      "type": "fetch",
       "ipinfo": {
-        "domain": "fonts.googleapis.com",
-        "ip": "142.250.198.74",
-        "hostname": "lctsaa-ab-in-f10.1e100.net",
+        "domain": "o769852.ingest.sentry.io",
+        "ip": "34.160.81.0",
+        "hostname": "0.81.160.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 4.916,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.160.81.0",
+          "prefix": "34.160.81.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 65,
+          "location_count": 65
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.recaptcha.net/recaptcha/api.js?onload=onRecaptchaLoaded&amp;render=explicit",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.recaptcha.net",
+        "ip": "142.250.196.195",
+        "hostname": "nctsaa-ac-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -367,12 +389,86 @@
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.gstatic.com/recaptcha/releases/A7KpaEASfhDcK0nXxgQEyyYv/recaptcha__zh_tw.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.gstatic.com",
+        "ip": "142.250.77.3",
+        "hostname": "nctsaa-ab-in-f3.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://public-prod-dspcookiematching.dmxleo.com/dspreply?dspId=1521&amp;dspUserId=k-HUOb2yFyzDsdDjczFo8AZv0QEBo8KwrvnCm-Uw",
+      "type": "image",
+      "ipinfo": {
+        "domain": "public-prod-dspcookiematching.dmxleo.com",
+        "ip": "54.192.248.54",
+        "hostname": "server-54-192-248-54.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://c.bing.com/c.gif?Red3=CTOMS_pd&amp;cbid=k-zAt9PCFyzDsdDjczFo8AZv0QEBpZdxirT57EkQ",
+      "type": "image",
+      "ipinfo": {
+        "domain": "c.bing.com",
+        "ip": "150.171.28.10",
+        "city": "Redmond",
+        "region": "Washington",
+        "country": "US",
+        "loc": "47.6740,-122.1215",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "150.171.28.10",
+          "prefix": "150.171.28.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            8075
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 57,
+          "location_count": 57,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午11:57:34<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午6:09:38<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -410,7 +506,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

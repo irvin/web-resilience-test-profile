@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，shopee.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/shopee.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://shopee.tw" target="_blank" rel="noopener noreferrer nofollow">shopee.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">3</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">3</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">1</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，shopee.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，shopee.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 shopee.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，shopee.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 shopee.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 shopee.tw 的首頁時，我們觀察到來自 8 個網域的 70 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS131634 MOBA Private Limited Taiwan Branch</span><span class="connection-domain">103.127.231.0</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">deo.shopeemobile.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">content.garena.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS138341 SHOPEE SINGAPORE PRIVATE LIMITED</span><span class="connection-domain">df.infra.shopee.tw</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/shopee.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://shopee.tw" target="_blank" rel="noopener noreferrer nofollow">shopee.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">3</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">3</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，shopee.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，shopee.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 shopee.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，shopee.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 shopee.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 shopee.tw 的首頁時，我們觀察到來自 10 個網域的 95 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS138341 SHOPEE SINGAPORE PRIVATE LIMITED</span><span class="connection-domain">147.136.172.131</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">deo.shopeemobile.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">content.garena.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS138341 SHOPEE SINGAPORE PRIVATE LIMITED</span><span class="connection-domain">ubta.tracking.shopee.tw</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS138341 SHOPEE SINGAPORE PRIVATE LIMITED</span><span class="connection-domain">df.infra.shopee.tw</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/shopee.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://shopee.tw",
   "canonicalURL": "https://shopee.tw",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T01:04:00.243Z",
+  "timestamp": "2026-07-20T19:17:33.801Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,16 +61,16 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 70,
-  "uniqueDomains": 8,
+  "requestCount": 95,
+  "uniqueDomains": 10,
   "test_results": {
     "domestic": {
       "cloud": 3,
-      "direct": 3
+      "direct": 4
     },
     "foreign": {
       "cloud": 0,
-      "direct": 1
+      "direct": 3
     }
   },
   "domainDetails": [
@@ -78,55 +79,38 @@
       "type": "document",
       "ipinfo": {
         "domain": "shopee.tw",
-        "ip": "103.127.231.0",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS131634 MOBA Private Limited Taiwan Branch",
-        "timezone": "Asia/Taipei"
+        "ip": "147.136.172.131",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS138341 SHOPEE SINGAPORE PRIVATE LIMITED",
+        "timezone": "Asia/Singapore"
       },
-      "category": "domestic/direct"
+      "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/bundle.8d2938e07caf8fb9.2023.css",
+      "originalUrl": "https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/bundle.b60777b6d2d093ba.2023.css",
       "type": "stylesheet",
       "ipinfo": {
         "domain": "deo.shopeemobile.com",
-        "ip": "203.69.138.209",
-        "hostname": "203-69-138-209.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "ip": "203.69.81.51",
+        "city": "Taipei",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS20940 Akamai International B.V.",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
         "timezone": "Asia/Taipei"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/direct"
     },
     {
       "originalUrl": "https://www.googletagmanager.com/gtm.js?id=GTM-WJZQSJF",
       "type": "script",
       "ipinfo": {
         "domain": "www.googletagmanager.com",
-        "ip": "142.250.66.72",
-        "hostname": "hkg12s27-in-f8.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.google.com/ccm/collect?frm=0&amp;en=page_view&amp;dl=https%3A%2F%2Fshopee.tw%2F&amp;scrsrc=www.googletagmanager.com&amp;rnd=1575393946.1768352638&amp;auid=1449007543.1768352638&amp;navt=n&amp;npa=0&amp;gtm=45He61c1v77691473za200zd77691473xea&amp;gcs=G1--&amp;gcd=13l3l3l3l5l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527906~104528501~104684208~104684211~105391252~115938465~115938468~116682877~116988316~117041587&amp;tft=1768352637591&amp;tfd=1126&amp;apve=1&amp;apvf=f",
-      "type": "fetch",
-      "ipinfo": {
-        "domain": "www.google.com",
-        "ip": "142.250.204.36",
-        "hostname": "hkg07s38-in-f4.1e100.net",
+        "ip": "142.250.196.200",
+        "hostname": "nctsaa-ac-in-f8.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -153,18 +137,94 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "blob:https://shopee.tw/83a7e1a4-ea14-4313-8242-596999425820",
-      "type": "other",
+      "originalUrl": "https://www.google.com/ccm/collect?rcb=17&amp;frm=0&amp;ae=g&amp;auid=1823877300.1784575049&amp;en=page_view&amp;dl=https%3A%2F%2Fshopee.tw%2F&amp;scrsrc=www.googletagmanager.com&amp;rnd=415714609.1784575049&amp;navt=n&amp;npa=0&amp;ep.ads_data_redaction=0&amp;gtm=45He67g0h1v77691473za200zd77691473xea&amp;gcs=G1--&amp;gcd=13l3l3l3l5l1&amp;dma=0&amp;tag_exp=115938465~115938469~118395333~118897920~118897930~119896802&amp;apve=1&amp;apvf=f&amp;apvc=1&amp;tft=1784575049194&amp;tfd=457&amp;fmt=8",
+      "type": "fetch",
       "ipinfo": {
-        "domain": ""
+        "domain": "www.google.com",
+        "ip": "142.251.154.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 5.24,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.154.119",
+          "prefix": "142.251.154.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 60,
+          "location_count": 60
+        }
       }
     },
     {
-      "originalUrl": "https://df.infra.shopee.tw/v2/shpsec/web/report",
-      "type": "xhr",
+      "originalUrl": "https://content.garena.com/shopee/track_config/split_by_market_config.json",
+      "type": "fetch",
       "ipinfo": {
-        "domain": "df.infra.shopee.tw",
-        "ip": "143.92.85.12",
+        "domain": "content.garena.com",
+        "ip": "203.69.81.49",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-E1H7XE0312&amp;cid=2072975808.1784575052&amp;gtm=45je67g0h1v9111305889z877691473za20gzb77691473zd77691473&amp;rcb=14&amp;aip=1&amp;dma=0&amp;gcs=G1--&amp;gcd=13l3l3l3l5l1&amp;npa=0&amp;frm=0&amp;tag_exp=115938465~115938469~118395333~118897920~118897930~119896803&amp;z=1786444858",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.google.com.tw",
+        "ip": "142.250.198.67",
+        "hostname": "lctsaa-ab-in-f3.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.facebook.com/tr/?id=503280033161781&amp;ev=PageView&amp;dl=https%3A%2F%2Fshopee.tw%2Fverify%2Ftraffic%2Ferror%3Fhome_url%3Dhttps%253A%252F%252Fshopee.tw%26is_logged_in%3Dfalse%26next%3Dhttps%253A%252F%252Fshopee.tw%252F%26tracking_id%3D884f97678e9-63d7-47ab-b41e-559cd630945b%26type%3D4&amp;rl=&amp;if=false&amp;ts=1784575052108&amp;iw=false&amp;sw=1280&amp;sh=720&amp;v=2.9.357&amp;r=stable&amp;ec=0&amp;o=4126&amp;aems=0%3B0&amp;fbp=fb.1.1784575052089.729033698408328131&amp;ler=empty&amp;cdl=API_unavailable&amp;pmd[title]=%E8%9D%A6%E7%9A%AE%E8%B3%BC%E7%89%A9%20%7C%20%09%E8%8A%B1%E5%BE%97%E6%9B%B4%E5%B0%91%E8%B2%B7%E5%BE%97%E6%9B%B4%E5%A5%BD&amp;pmd[locale]=zh-Hant&amp;plt=615.6999999992549&amp;iss=1&amp;imft=1&amp;tz=480&amp;it=1784575051716&amp;coo=false&amp;ss=%7B%22entity_name%22%3A%5B%7B%22rid%22%3A%22993846550136879%22%2C%22v%22%3A%5B%22%E8%9D%A6%E7%9A%AE%E8%B3%BC%E7%89%A9%20%7C%20%5Ct%E8%8A%B1%E5%BE%97%E6%9B%B4%E5%B0%91%E8%B2%B7%E5%BE%97%E6%9B%B4%E5%A5%BD%22%5D%7D%5D%7D&amp;ss_rks=%7B%22currency%22%3A%7B%22tv%22%3A1%2C%22rules%22%3A%7B%22902301812863180%22%3A1%7D%7D%7D&amp;expv2[0]=pl1&amp;expv2[1]=el3&amp;expv2[2]=bc1&amp;expv2[3]=ra2&amp;expv2[4]=rp2&amp;expv2[5]=im0&amp;expv2[6]=hf1&amp;rqm=GET",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.facebook.com",
+        "ip": "31.13.87.36",
+        "hostname": "edge-star-mini-shv-01-tpe1.facebook.com",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS32934 Facebook, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://ubta.tracking.shopee.tw/v4/event_batch",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "ubta.tracking.shopee.tw",
+        "ip": "147.136.145.191",
         "city": "Singapore",
         "region": "Singapore",
         "country": "SG",
@@ -175,25 +235,25 @@
       "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://content.garena.com/shopee/track_config/split_by_market_config.json",
-      "type": "fetch",
+      "originalUrl": "https://df.infra.shopee.tw/v2/shpsec/web/report",
+      "type": "xhr",
       "ipinfo": {
-        "domain": "content.garena.com",
-        "ip": "210.71.227.155",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS3462 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
+        "domain": "df.infra.shopee.tw",
+        "ip": "147.136.145.231",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS138341 SHOPEE SINGAPORE PRIVATE LIMITED",
+        "timezone": "Asia/Singapore"
       },
-      "category": "domestic/direct"
+      "category": "foreign/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午9:04:00<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午3:17:33<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -231,7 +291,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，foodpanda.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/foodpanda.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://foodpanda.tw" target="_blank" rel="noopener noreferrer nofollow">foodpanda.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">2</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">15</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">6</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，foodpanda.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，foodpanda.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 foodpanda.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，foodpanda.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 foodpanda.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 foodpanda.tw 的首頁時，我們觀察到來自 25 個網域的 157 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">172.67.156.152</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">collector-3601.tvsquared.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS14618 Amazon.com, Inc.</span><span class="connection-domain">action-log.foodpanda.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">images.deliveryhero.io</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">images.dhmedia.io</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS14618 Amazon.com, Inc.</span><span class="connection-domain">conn-check.icg-in.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.foodpanda.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">micro-assets.foodora.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdnjs.cloudflare.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">disco.deliveryhero.io</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">tw.fd-api.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">use.fontawesome.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">geocoder.deliveryhero.io</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">o516780.ingest.sentry.io</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">tzm.px-cloud.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">collector-pxljub4etb.cl6.px-cloud.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">accounts.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16276 OVH SAS</span><span class="connection-domain">logo.page-source.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/foodpanda.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://foodpanda.tw" target="_blank" rel="noopener noreferrer nofollow">foodpanda.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">2</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">17</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">6</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，foodpanda.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，foodpanda.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 foodpanda.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，foodpanda.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 foodpanda.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 foodpanda.tw 的首頁時，我們觀察到來自 26 個網域的 172 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">104.21.8.7</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS14618 Amazon.com, Inc.</span><span class="connection-domain">action-log.foodpanda.com.tw</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">collector-3601.tvsquared.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">images.deliveryhero.io</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">foodpanda.dhmedia.io</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">images.dhmedia.io</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">fh-118116076e9a4c2a96a99fbb70bea2a0.ecs.us-west-2.on.aws</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS14618 Amazon.com, Inc.</span><span class="connection-domain">conn-check.icg-in.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.foodpanda.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">micro-assets.foodora.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdnjs.cloudflare.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">disco.deliveryhero.io</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">tw.fd-api.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">use.fontawesome.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">ift.px-cloud.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">collector-pxljub4etb.cl6.px-cloud.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">o516780.ingest.sentry.io</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">accounts.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">google.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16276 OVH SAS</span><span class="connection-domain">logo.page-source.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/foodpanda.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://foodpanda.tw",
-  "canonicalURL": "https://foodpanda.tw",
+  "canonicalURL": "https://www.foodpanda.com.tw/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T02:31:39.340Z",
+  "timestamp": "2026-07-20T20:27:52.580Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,11 +61,11 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 157,
-  "uniqueDomains": 25,
+  "requestCount": 172,
+  "uniqueDomains": 26,
   "test_results": {
     "domestic": {
-      "cloud": 15,
+      "cloud": 17,
       "direct": 2
     },
     "foreign": {
@@ -78,7 +79,7 @@
       "type": "document",
       "ipinfo": {
         "domain": "foodpanda.tw",
-        "ip": "172.67.156.152",
+        "ip": "104.21.8.7",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -86,10 +87,34 @@
         "org": "AS13335 Cloudflare, Inc.",
         "timezone": "America/Los_Angeles"
       },
-      "category": "foreign/cloud",
+      "category": "domestic/cloud",
       "cloud_provider": {
-        "rtt": 136.066,
-        "detection_method": "rtt"
+        "cf-ray": "a1e4b51f4de2527e-SIN",
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "104.21.8.7",
+          "prefix": "104.21.8.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 57,
+          "location_count": 57,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
       }
     },
     {
@@ -108,16 +133,16 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bd9b787ef888276-TPE",
+        "cf-ray": "a1e4b524ba7c8457-TPE",
         "detection_method": "header"
       }
     },
     {
-      "originalUrl": "https://micro-assets.foodora.com/js/load-css-var-polyfill.v2.js",
-      "type": "script",
+      "originalUrl": "https://micro-assets.foodora.com/utility-classes-21e34b40.b0474cfd8d5f2d2c0519.css",
+      "type": "stylesheet",
       "ipinfo": {
         "domain": "micro-assets.foodora.com",
-        "ip": "104.17.157.236",
+        "ip": "104.17.156.236",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -128,7 +153,7 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bd9b78d98e24a46-TPE",
+        "cf-ray": "a1e4b525cdd2c4ed-TPE",
         "detection_method": "header"
       }
     },
@@ -137,8 +162,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "www.googletagmanager.com",
-        "ip": "142.250.196.200",
-        "hostname": "nctsaa-ac-in-f8.1e100.net",
+        "ip": "142.250.204.40",
+        "hostname": "hkg07s38-in-f8.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -147,6 +172,76 @@
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://ift.px-cloud.net/ns?c=7276bed0-8479-11f1-adb3-5b43d6faf3b7",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "ift.px-cloud.net",
+        "ip": "136.110.101.249",
+        "hostname": "249.101.110.136.bc.googleusercontent.com",
+        "city": "Tokyo",
+        "region": "Tokyo",
+        "country": "JP",
+        "loc": "35.6895,139.6917",
+        "org": "AS396982 Google LLC",
+        "timezone": "Asia/Tokyo"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 40.491,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "136.110.101.249",
+          "prefix": "136.110.101.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://collector-pxljub4etb.cl6.px-cloud.net/api/v2/collector",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "collector-pxljub4etb.cl6.px-cloud.net",
+        "ip": "34.120.250.63",
+        "hostname": "63.250.120.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 6.567,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.120.250.63",
+          "prefix": "34.120.250.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 65,
+          "location_count": 65
+        }
+      }
     },
     {
       "originalUrl": "https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=Array.prototype.flat,CustomEvent,Element.prototype.closest,Element.prototype.remove,es5,es6,es7,Event,fetch,globalThis,IntersectionObserver,Intl,NodeList.prototype.forEach,Object.entries,Object.values,requestAnimationFrame,ResizeObserver,TextEncoder,URL,URLSearchParams,window.crypto,Intl.DateTimeFormat.~timeZone.golden,HTMLPictureElement&amp;flags=gated",
@@ -164,7 +259,7 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bd9b78e4f2cae64-TPE",
+        "cf-ray": "a1e4b52d7d8e4a5d-TPE",
         "detection_method": "header"
       }
     },
@@ -185,50 +280,24 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 4.807,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://tzm.px-cloud.net/ns?c=1f69d720-f0f1-11f0-a7b4-45dd3d68b9fd",
-      "type": "xhr",
-      "ipinfo": {
-        "domain": "tzm.px-cloud.net",
-        "ip": "34.36.73.246",
-        "hostname": "246.73.36.34.bc.googleusercontent.com",
-        "city": "Kansas City",
-        "region": "Missouri",
-        "country": "US",
-        "loc": "39.0997,-94.5786",
-        "org": "AS396982 Google LLC",
-        "timezone": "America/Chicago"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 4.145,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://collector-pxljub4etb.cl6.px-cloud.net/api/v2/collector",
-      "type": "xhr",
-      "ipinfo": {
-        "domain": "collector-pxljub4etb.cl6.px-cloud.net",
-        "ip": "34.120.250.63",
-        "hostname": "63.250.120.34.bc.googleusercontent.com",
-        "city": "Kansas City",
-        "region": "Missouri",
-        "country": "US",
-        "loc": "39.0997,-94.5786",
-        "org": "AS396982 Google LLC",
-        "timezone": "America/Chicago"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 4.523,
-        "detection_method": "rtt"
+        "rtt": 6.193,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.160.81.0",
+          "prefix": "34.160.81.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 65,
+          "location_count": 65
+        }
       }
     },
     {
@@ -247,7 +316,7 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bd9b7961e776b86-TPE",
+        "cf-ray": "a1e4b536693f6b86-TPE",
         "detection_method": "header"
       }
     },
@@ -267,21 +336,55 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bd9b796dbefa9ad-TPE",
+        "cf-ray": "a1e4b53488b70738-TPE",
         "detection_method": "header"
       }
     },
     {
-      "originalUrl": "https://www.google.com/ccm/collect?frm=0&amp;en=page_view&amp;dl=https%3A%2F%2Fwww.foodpanda.com.tw%2Frestaurants%2Fnew&amp;scrsrc=www.googletagmanager.com&amp;rnd=1022448846.1768357886&amp;dt=%E5%B0%87%E4%BD%A0%E6%9C%80%E5%96%9C%E6%AD%A1%E9%A4%90%E5%BB%B3%E7%9A%84%E7%BE%8E%E5%91%B3%E9%A4%90%E9%BB%9E%E5%BF%AB%E9%80%9F%E9%80%81%E5%88%B0%E6%82%A8%E6%89%8B%E4%B8%8A%EF%BC%8Dfoodpanda&amp;auid=959723545.1768357886&amp;navt=n&amp;npa=0&amp;gtm=45He61c1v72567727za200zd72567727xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391252~115616985~115938465~115938469~115985661~116682877~116744866~116988315~117041587&amp;tft=1768357886229&amp;tfd=2713&amp;apve=1&amp;apvf=f",
-      "type": "fetch",
+      "originalUrl": "https://action-log.foodpanda.com.tw/web/cchd_config",
+      "type": "xhr",
       "ipinfo": {
-        "domain": "www.google.com",
-        "ip": "142.250.204.36",
-        "hostname": "hkg07s38-in-f4.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "domain": "action-log.foodpanda.com.tw",
+        "ip": "98.86.9.233",
+        "hostname": "ec2-98-86-9-233.compute-1.amazonaws.com",
+        "city": "Ashburn",
+        "region": "Virginia",
+        "country": "US",
+        "loc": "39.0437,-77.4875",
+        "org": "AS14618 Amazon.com, Inc.",
+        "timezone": "America/New_York"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "98.86.9.233",
+          "prefix": "98.86.9.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://accounts.google.com/gsi/client",
+      "type": "script",
+      "ipinfo": {
+        "domain": "accounts.google.com",
+        "ip": "64.233.189.84",
+        "hostname": "tl-in-f84.1e100.net",
+        "city": "Taichung",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
+        "loc": "24.1469,120.6839",
         "org": "AS15169 Google LLC",
         "timezone": "Asia/Taipei"
       },
@@ -292,8 +395,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "collector-3601.tvsquared.com",
-        "ip": "18.224.201.173",
-        "hostname": "ec2-18-224-201-173.us-east-2.compute.amazonaws.com",
+        "ip": "3.141.49.247",
+        "hostname": "ec2-3-141-49-247.us-east-2.compute.amazonaws.com",
         "city": "Columbus",
         "region": "Ohio",
         "country": "US",
@@ -301,7 +404,25 @@
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "America/New_York"
       },
-      "category": "foreign/cloud"
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "3.141.49.247",
+          "prefix": "3.141.49.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
     },
     {
       "originalUrl": "https://connect.facebook.net/en_US/fbevents.js",
@@ -320,47 +441,48 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://accounts.google.com/gsi/client",
-      "type": "script",
+      "originalUrl": "https://www.google.com/ccm/collect?rcb=18&amp;frm=0&amp;ae=g&amp;auid=511716033.1784579259&amp;dt=%E5%85%A8%E5%8F%B0%E6%9C%80%E5%A4%A7%E5%8D%B3%E6%99%82%E5%A4%96%E9%80%81%20%7C%20%E7%BE%8E%E9%A3%9F%E5%92%8C%E7%94%9F%E9%AE%AE%E9%9B%9C%E8%B2%A8%20APP%E8%A8%82%E8%B3%BC20%E5%88%86%E9%90%98%E7%9B%B4%E9%80%81%E5%88%B0%E5%AE%B6%20%7C%20foodpanda&amp;en=page_view&amp;dl=https%3A%2F%2Fwww.foodpanda.com.tw%2F&amp;scrsrc=www.googletagmanager.com&amp;rnd=552722837.1784579259&amp;navt=n&amp;npa=0&amp;ep.ads_data_redaction=0&amp;gtm=45He67g0v72567727za200zd72567727xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115938465~115938469~118131809~118395335~118897920~118897930~119732170~119773332~119896803&amp;apve=1&amp;apvf=f&amp;apvc=1&amp;tft=1784579258837&amp;tfd=3642&amp;fmt=8",
+      "type": "fetch",
       "ipinfo": {
-        "domain": "accounts.google.com",
-        "ip": "74.125.203.84",
-        "hostname": "th-in-f84.1e100.net",
-        "city": "Taichung",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "24.1469,120.6839",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://use.fontawesome.com/7f85a56ba4.css",
-      "type": "stylesheet",
-      "ipinfo": {
-        "domain": "use.fontawesome.com",
-        "ip": "104.21.27.152",
-        "city": "San Francisco",
+        "domain": "www.google.com",
+        "ip": "142.251.154.119",
+        "city": "Mountain View",
         "region": "California",
         "country": "US",
-        "loc": "37.7621,-122.3971",
-        "org": "AS13335 Cloudflare, Inc.",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
         "timezone": "America/Los_Angeles"
       },
-      "category": "foreign/cloud",
+      "category": "domestic/cloud",
       "cloud_provider": {
-        "rtt": 135.204,
-        "detection_method": "rtt"
+        "country": "tw",
+        "rtt": 5.861,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.154.119",
+          "prefix": "142.251.154.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 60,
+          "location_count": 60
+        }
       }
     },
     {
-      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-HCJXSZSZBP&amp;cid=1739575359.1768357886&amp;gtm=45je61c1v883726615z872567727za20gzb72567727zd72567727&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=103116026~103200004~104527906~104528501~104684208~104684211~105391253~115938465~115938468~115985661~116682877~116744866~117041588~117091819&amp;z=1829383618",
+      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-HCJXSZSZBP&amp;cid=369367063.1784579259&amp;gtm=45je67g0v883726615z872567727za20gzb72567727zd72567727&amp;rcb=8&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=115938465~115938468~118395334~118897920~118897930~119896803&amp;z=2118031807",
       "type": "image",
       "ipinfo": {
         "domain": "www.google.com.tw",
-        "ip": "142.250.77.3",
-        "hostname": "nctsaa-ab-in-f3.1e100.net",
+        "ip": "142.250.66.67",
+        "hostname": "hkg12s27-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -371,34 +493,27 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "blob:https://www.foodpanda.com.tw/a4d3e0e2-c967-49da-8e94-aeacc243d112",
-      "type": "other",
+      "originalUrl": "https://google.com/.well-known/web-identity",
+      "type": "fedcm",
       "ipinfo": {
-        "domain": ""
-      }
-    },
-    {
-      "originalUrl": "https://action-log.foodpanda.com.tw/web/cchd_config",
-      "type": "xhr",
-      "ipinfo": {
-        "domain": "action-log.foodpanda.com.tw",
-        "ip": "34.233.252.128",
-        "hostname": "ec2-34-233-252-128.compute-1.amazonaws.com",
-        "city": "Ashburn",
-        "region": "Virginia",
-        "country": "US",
-        "loc": "39.0437,-77.4875",
-        "org": "AS14618 Amazon.com, Inc.",
-        "timezone": "America/New_York"
+        "domain": "google.com",
+        "ip": "142.250.204.46",
+        "hostname": "hkg07s38-in-f14.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
       },
-      "category": "foreign/cloud"
+      "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://geocoder.deliveryhero.io/api/v2/reverse?lat=24.164687&amp;lng=120.675409&amp;language=zh_TW",
-      "type": "xhr",
+      "originalUrl": "https://use.fontawesome.com/7f85a56ba4.css",
+      "type": "stylesheet",
       "ipinfo": {
-        "domain": "geocoder.deliveryhero.io",
-        "ip": "104.19.167.109",
+        "domain": "use.fontawesome.com",
+        "ip": "172.67.142.245",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -408,14 +523,119 @@
       },
       "category": "domestic/cloud",
       "cloud_provider": {
+        "cf-ray": "a1e4b537980df8e2-SIN",
         "country": "tw",
-        "cf-ray": "9bd9b79a5ea3844b-TPE",
-        "detection_method": "header"
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.67.142.245",
+          "prefix": "172.67.142.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 57,
+          "location_count": 57,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
       }
     },
     {
-      "originalUrl": "https://www.facebook.com/privacy_sandbox/topics/registration/?id=1200626643396295",
+      "originalUrl": "https://images.deliveryhero.io/image/foodpanda/web-acquisition/fp/rlp-nc-banner-background.webp",
+      "type": "image",
+      "ipinfo": {
+        "domain": "images.deliveryhero.io",
+        "ip": "3.169.55.84",
+        "hostname": "server-3-169-55-84.tpe54.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://foodpanda.dhmedia.io/image/fd-tw/LH/cc2dt-listing.jpg?width=400&amp;height=225",
+      "type": "image",
+      "ipinfo": {
+        "domain": "foodpanda.dhmedia.io",
+        "ip": "54.192.248.58",
+        "hostname": "server-54-192-248-58.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://images.dhmedia.io/image/foodpanda/web-acquisition/app-download_mweb/logo_foodpanda.png",
+      "type": "image",
+      "ipinfo": {
+        "domain": "images.dhmedia.io",
+        "ip": "3.169.55.128",
+        "hostname": "server-3-169-55-128.tpe54.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://fh-118116076e9a4c2a96a99fbb70bea2a0.ecs.us-west-2.on.aws/events?cee=no",
       "type": "fetch",
+      "ipinfo": {
+        "domain": "fh-118116076e9a4c2a96a99fbb70bea2a0.ecs.us-west-2.on.aws",
+        "ip": "35.167.183.6",
+        "hostname": "ec2-35-167-183-6.us-west-2.compute.amazonaws.com",
+        "city": "Boardman",
+        "region": "Oregon",
+        "country": "US",
+        "loc": "45.8399,-119.7006",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "35.167.183.6",
+          "prefix": "35.167.183.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.facebook.com/tr/?id=1200626643396295&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.foodpanda.com.tw&amp;rl=&amp;if=false&amp;ts=1784579260223&amp;iw=false&amp;sw=1280&amp;sh=720&amp;v=2.9.357&amp;r=stable&amp;ec=0&amp;o=4126&amp;aems=0%3B0&amp;fbp=fb.2.1784579260222.320527462116138714&amp;eid=ob3_plugin-set_b166b4ffb519ad99628ba8dae405f024ef9ac6c6d96afa47e134459540be03e9&amp;pm=1&amp;hrl=dd1fe7&amp;ler=empty&amp;cdl=API_unavailable&amp;plt=3149.699999999255&amp;ups[pv]=%7B%7D&amp;ups[rpv]=%7B%7D&amp;it=1784579259562&amp;coo=false&amp;cs_cc=1&amp;cas=7647262498695611%2C7433195280078451%2C8204555516224401%2C2188908784557468%2C2540198285994405%2C2329025657108877%2C2140484062714860&amp;pm_metadata=%7B%22cd%22%3Atrue%7D&amp;dlc=1&amp;cf=1&amp;expv2[0]=pl0&amp;expv2[1]=el2&amp;expv2[2]=bc1&amp;expv2[3]=ra0&amp;expv2[4]=rp0&amp;expv2[5]=im1&amp;expv2[6]=hf1&amp;rqm=GET",
+      "type": "image",
       "ipinfo": {
         "domain": "www.facebook.com",
         "ip": "31.13.87.36",
@@ -430,44 +650,12 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://images.deliveryhero.io/image/foodpanda/web-acquisition/fp/rlp-nc-banner-background.webp",
-      "type": "image",
-      "ipinfo": {
-        "domain": "images.deliveryhero.io",
-        "ip": "3.169.55.84",
-        "hostname": "server-3-169-55-84.tpe54.r.cloudfront.net",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://images.dhmedia.io/image/foodpanda/web-acquisition/app-download_mweb/logo_foodpanda.png",
-      "type": "image",
-      "ipinfo": {
-        "domain": "images.dhmedia.io",
-        "ip": "3.169.55.84",
-        "hostname": "server-3-169-55-84.tpe54.r.cloudfront.net",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
       "originalUrl": "https://conn-check.icg-in.com/connectioncheck",
       "type": "xhr",
       "ipinfo": {
         "domain": "conn-check.icg-in.com",
-        "ip": "44.212.235.60",
-        "hostname": "ec2-44-212-235-60.compute-1.amazonaws.com",
+        "ip": "52.86.173.132",
+        "hostname": "ec2-52-86-173-132.compute-1.amazonaws.com",
         "city": "Ashburn",
         "region": "Virginia",
         "country": "US",
@@ -475,7 +663,25 @@
         "org": "AS14618 Amazon.com, Inc.",
         "timezone": "America/New_York"
       },
-      "category": "foreign/cloud"
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "52.86.173.132",
+          "prefix": "52.86.173.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
     },
     {
       "originalUrl": "https://logo.page-source.com/resizeimage.ashx?ig=www.foodpanda.com.tw&amp;sz=263425",
@@ -501,10 +707,10 @@
       }
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午10:31:39<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午4:27:52<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -542,7 +748,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

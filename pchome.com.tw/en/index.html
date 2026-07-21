@@ -13,7 +13,7 @@
     <meta property="og:description" content="Based on the latest test, under a submarine-cable outage scenario the availability of pchome.com.tw is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/pchome.com.tw/en/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>When submarine cables fail, will <a href="https://pchome.com.tw" target="_blank" rel="noopener noreferrer nofollow">pchome.com.tw</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>Uncertain</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">26</strong></p><p class="score score-X score-zero">Foreign connections (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can pchome.com.tw still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario the availability of pchome.com.tw is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why is it “uncertain” whether pchome.com.tw would work when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">We did not see direct requests to foreign resources, but we did find reliance on in-country nodes of multinational cloud services. Whether those services keep running when outbound connectivity is impaired depends on platform architecture, cache design, origin routing, and more—so for now we can only label the outcome “uncertain.”</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean pchome.com.tw might be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">“Uncertain” means we currently cannot conclude it will definitely work or definitely fail. Availability of the multinational cloud in-country nodes that pchome.com.tw depends on, when cables are cut or congestion is extreme, needs to be clarified and explained further by providers.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for pchome.com.tw under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of pchome.com.tw, we observed 366 requests across 26 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">34.110.144.106</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdnjs.cloudflare.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">cdn.jsdelivr.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">www.pchome.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">ajax.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">s0.2mdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">w6.pchome.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">wwwapi.pchome.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">pacl.pchome.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">news.pchome.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">pchome.megatime.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cs-c.ecimg.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cs-a.ecimg.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cs-b.ecimg.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cs-f.ecimg.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cs-e.ecimg.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cs-d.ecimg.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">apis.pchome.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS19527 Google LLC</span><span class="connection-domain">kdcl.pchome.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">onead.onevision.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">onead-v6.onevision.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">pixel.omnisegment.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/pchome.com.tw.json" target="_blank">View on GitHub</a></p><pre><code>{
+        <h1>When submarine cables fail, will <a href="https://pchome.com.tw" target="_blank" rel="noopener noreferrer nofollow">pchome.com.tw</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>Uncertain</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">24</strong></p><p class="score score-X score-zero">Foreign connections (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can pchome.com.tw still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario the availability of pchome.com.tw is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why is it “uncertain” whether pchome.com.tw would work when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">We did not see direct requests to foreign resources, but we did find reliance on in-country nodes of multinational cloud services. Whether those services keep running when outbound connectivity is impaired depends on platform architecture, cache design, origin routing, and more—so for now we can only label the outcome “uncertain.”</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean pchome.com.tw might be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">“Uncertain” means we currently cannot conclude it will definitely work or definitely fail. Availability of the multinational cloud in-country nodes that pchome.com.tw depends on, when cables are cut or congestion is extreme, needs to be clarified and explained further by providers.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for pchome.com.tw under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of pchome.com.tw, we observed 352 requests across 24 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">34.110.144.106</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdnjs.cloudflare.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdn.jsdelivr.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">www.pchome.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">ajax.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">s0.2mdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">w6.pchome.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">wwwapi.pchome.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">news.pchome.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">pchome.megatime.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cs-c.ecimg.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cs-a.ecimg.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cs-f.ecimg.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cs-d.ecimg.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cs-b.ecimg.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cs-e.ecimg.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">apis.pchome.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS19527 Google LLC</span><span class="connection-domain">kdcl.pchome.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">onead-v6.onevision.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">pixel.omnisegment.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/pchome.com.tw.json" target="_blank">View on GitHub</a></p><pre><code>{
   "url": "https://pchome.com.tw",
   "canonicalURL": "https://www.pchome.com.tw/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T01:04:21.048Z",
+  "timestamp": "2026-07-20T19:18:08.111Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,11 +61,11 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 366,
-  "uniqueDomains": 26,
+  "requestCount": 352,
+  "uniqueDomains": 24,
   "test_results": {
     "domestic": {
-      "cloud": 26,
+      "cloud": 24,
       "direct": 0
     },
     "foreign": {
@@ -90,8 +91,24 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 4.35,
-        "detection_method": "rtt"
+        "rtt": 6.85,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.110.144.106",
+          "prefix": "34.110.144.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 64,
+          "location_count": 64
+        }
       }
     },
     {
@@ -111,8 +128,24 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 4.489,
-        "detection_method": "rtt"
+        "rtt": 7.704,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.110.144.106",
+          "prefix": "34.110.144.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 64,
+          "location_count": 64
+        }
       }
     },
     {
@@ -120,7 +153,7 @@
       "type": "stylesheet",
       "ipinfo": {
         "domain": "cdnjs.cloudflare.com",
-        "ip": "104.17.25.14",
+        "ip": "104.17.24.14",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -131,7 +164,7 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bd937e52a2d8261-TPE",
+        "cf-ray": "a1e44f406e47843a-TPE",
         "detection_method": "header"
       }
     },
@@ -140,8 +173,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "ajax.googleapis.com",
-        "ip": "142.250.77.10",
-        "hostname": "nctsaa-ab-in-f10.1e100.net",
+        "ip": "142.250.77.202",
+        "hostname": "del11s08-in-f10.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -156,40 +189,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "s0.2mdn.net",
-        "ip": "142.250.204.38",
-        "hostname": "hkg07s38-in-f6.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.googletagmanager.com/gtm.js?id=GTM-KKDQDMN",
-      "type": "script",
-      "ipinfo": {
-        "domain": "www.googletagmanager.com",
-        "ip": "142.250.198.72",
-        "hostname": "lctsaa-ab-in-f8.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://fonts.googleapis.com/earlyaccess/notosanstc.css",
-      "type": "stylesheet",
-      "ipinfo": {
-        "domain": "fonts.googleapis.com",
-        "ip": "142.250.196.202",
-        "hostname": "nctsaa-ac-in-f10.1e100.net",
+        "ip": "142.250.77.198",
+        "hostname": "del11s08-in-f6.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -204,24 +205,78 @@
       "type": "script",
       "ipinfo": {
         "domain": "cdn.jsdelivr.net",
-        "ip": "151.101.65.229",
+        "ip": "104.17.208.5",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
         "loc": "37.7621,-122.3971",
-        "org": "AS54113 Fastly, Inc.",
+        "org": "AS13335 Cloudflare, Inc.",
         "timezone": "America/Los_Angeles"
       },
       "category": "domestic/cloud",
       "cloud_provider": {
+        "x-served-by": "cache-fra-eddf8230205-FRA, cache-sin-wsat1880028-SIN",
         "country": "tw",
-        "cf-ray": "9bd937e52dd10758-TPE",
-        "x-served-by": "cache-fra-eddf8230115-FRA, cache-hkg17920-HKG",
-        "detection_method": "header"
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "104.17.208.5",
+          "prefix": "104.17.208.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 76,
+          "location_count": 76,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
       }
     },
     {
-      "originalUrl": "https://w6.pchome.com.tw/img/index_2019/img_278_0_0.png?t=1768352523",
+      "originalUrl": "https://www.googletagmanager.com/gtm.js?id=GTM-KKDQDMN",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.googletagmanager.com",
+        "ip": "142.250.66.72",
+        "hostname": "hkg12s27-in-f8.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://fonts.googleapis.com/earlyaccess/notosanstc.css",
+      "type": "stylesheet",
+      "ipinfo": {
+        "domain": "fonts.googleapis.com",
+        "ip": "142.250.77.202",
+        "hostname": "del11s08-in-f10.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://w6.pchome.com.tw/img/index_2019/img_278_0_0.png?t=1784574061",
       "type": "image",
       "ipinfo": {
         "domain": "w6.pchome.com.tw",
@@ -237,8 +292,24 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 4.763,
-        "detection_method": "rtt"
+        "rtt": 9.907,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.149.76.231",
+          "prefix": "34.149.76.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 64,
+          "location_count": 64
+        }
       }
     },
     {
@@ -258,29 +329,24 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 4.925,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://pacl.pchome.com.tw/js/pdtag.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "pacl.pchome.com.tw",
-        "ip": "34.149.97.195",
-        "hostname": "195.97.149.34.bc.googleusercontent.com",
-        "city": "Kansas City",
-        "region": "Missouri",
-        "country": "US",
-        "loc": "39.0997,-94.5786",
-        "org": "AS396982 Google LLC",
-        "timezone": "America/Chicago"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 5.176,
-        "detection_method": "rtt"
+        "rtt": 5.346,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.110.134.241",
+          "prefix": "34.110.134.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 64,
+          "location_count": 64
+        }
       }
     },
     {
@@ -300,8 +366,24 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 4.404,
-        "detection_method": "rtt"
+        "rtt": 6.701,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.95.73.92",
+          "prefix": "34.95.73.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 63,
+          "location_count": 63
+        }
       }
     },
     {
@@ -321,12 +403,28 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 4.855,
-        "detection_method": "rtt"
+        "rtt": 6.101,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.120.111.230",
+          "prefix": "34.120.111.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 64,
+          "location_count": 64
+        }
       }
     },
     {
-      "originalUrl": "https://cs-c.ecimg.tw/items/DYAJ3LA900J9CVX/003002_1758098086.jpg",
+      "originalUrl": "https://cs-c.ecimg.tw/items/DSABPDA900JB664/000002_1759464497.jpg",
       "type": "image",
       "ipinfo": {
         "domain": "cs-c.ecimg.tw",
@@ -342,12 +440,28 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 5.026,
-        "detection_method": "rtt"
+        "rtt": 6.52,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.160.217.38",
+          "prefix": "34.160.217.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
       }
     },
     {
-      "originalUrl": "https://cs-a.ecimg.tw/items/DYAQ9MA900IUNC8/000002_1763400021.jpg",
+      "originalUrl": "https://cs-a.ecimg.tw/items/DYAJJ5A900JTLEU/005002_1773717367.jpg",
       "type": "image",
       "ipinfo": {
         "domain": "cs-a.ecimg.tw",
@@ -363,33 +477,28 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 5.065,
-        "detection_method": "rtt"
+        "rtt": 5.754,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.160.217.38",
+          "prefix": "34.160.217.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
       }
     },
     {
-      "originalUrl": "https://cs-b.ecimg.tw/items/DEASBHA900JGNK3/000002_1766053483.jpg",
-      "type": "image",
-      "ipinfo": {
-        "domain": "cs-b.ecimg.tw",
-        "ip": "34.160.217.38",
-        "hostname": "38.217.160.34.bc.googleusercontent.com",
-        "city": "Kansas City",
-        "region": "Missouri",
-        "country": "US",
-        "loc": "39.0997,-94.5786",
-        "org": "AS396982 Google LLC",
-        "timezone": "America/Chicago"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 6.202,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://cs-f.ecimg.tw/items/DBAJDBA900JBM71/000002_1759804997.jpg",
+      "originalUrl": "https://cs-f.ecimg.tw/items/DYAJEPA900JSBGW/002002_1773048901.jpg",
       "type": "image",
       "ipinfo": {
         "domain": "cs-f.ecimg.tw",
@@ -405,33 +514,28 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 5.325,
-        "detection_method": "rtt"
+        "rtt": 8.472,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.160.217.38",
+          "prefix": "34.160.217.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
       }
     },
     {
-      "originalUrl": "https://cs-e.ecimg.tw/items/DYAW7CA900IK8X7/000002_1744713282.jpg",
-      "type": "image",
-      "ipinfo": {
-        "domain": "cs-e.ecimg.tw",
-        "ip": "34.160.217.38",
-        "hostname": "38.217.160.34.bc.googleusercontent.com",
-        "city": "Kansas City",
-        "region": "Missouri",
-        "country": "US",
-        "loc": "39.0997,-94.5786",
-        "org": "AS396982 Google LLC",
-        "timezone": "America/Chicago"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 4.944,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://cs-d.ecimg.tw/items/DYAJ87A900JLZ4D/000002_1767579400.jpg",
+      "originalUrl": "https://cs-d.ecimg.tw/items/DSAR0XA900J9S6Y/000002_1763310398.jpg",
       "type": "image",
       "ipinfo": {
         "domain": "cs-d.ecimg.tw",
@@ -447,8 +551,98 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 4.868,
-        "detection_method": "rtt"
+        "rtt": 5.632,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.160.217.38",
+          "prefix": "34.160.217.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://cs-b.ecimg.tw/items/DSABP4A900IBZUX/000002_1755159221.jpg",
+      "type": "image",
+      "ipinfo": {
+        "domain": "cs-b.ecimg.tw",
+        "ip": "34.160.217.38",
+        "hostname": "38.217.160.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 6.288,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.160.217.38",
+          "prefix": "34.160.217.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://cs-e.ecimg.tw/items/DAAG50A900ADCMG/000002_1766556615.jpg",
+      "type": "image",
+      "ipinfo": {
+        "domain": "cs-e.ecimg.tw",
+        "ip": "34.160.217.38",
+        "hostname": "38.217.160.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.612,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.160.217.38",
+          "prefix": "34.160.217.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
       }
     },
     {
@@ -468,12 +662,28 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 5.429,
-        "detection_method": "rtt"
+        "rtt": 6.851,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.120.26.196",
+          "prefix": "34.120.26.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 65,
+          "location_count": 65
+        }
       }
     },
     {
-      "originalUrl": "https://kdcl.pchome.com.tw/adshow2.html?pfbxCustomerInfoId=PFBC20190424002&amp;positionId=PFBP201904260006&amp;padWidth=1400&amp;padHeight=160&amp;keyword=&amp;page=&amp;precise=&amp;_pa=xxx-93d1a963-f02f-4dd8-b87c-c62ff2382bb2&amp;screenX=1280&amp;screenY=720&amp;t=890&amp;docurl=https%3A%2F%2Fwww.pchome.com.tw%2F&amp;format=3",
+      "originalUrl": "https://kdcl.pchome.com.tw/adshow2.html?pfbxCustomerInfoId=PFBC20190424002&amp;positionId=PFBP201904260006&amp;padWidth=1400&amp;padHeight=160&amp;keyword=&amp;page=&amp;precise=&amp;_pa=xxx-bfda4591-fc1f-4569-b179-88729c9d5766&amp;screenX=1280&amp;screenY=720&amp;t=498&amp;docurl=https%3A%2F%2Fwww.pchome.com.tw%2F&amp;format=3",
       "type": "fetch",
       "ipinfo": {
         "domain": "kdcl.pchome.com.tw",
@@ -489,33 +699,48 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://onead.onevision.com.tw/v2/et/oid?cb=window.etag_callback_isip_1xzww",
-      "type": "script",
+      "originalUrl": "https://www.google.com/measurement/conversion?random=1784575084535&amp;cv=11&amp;tid=G-QB624SM9W2&amp;fst=1784575084535&amp;fmt=8&amp;en=page_view&amp;gtm=45je67g0v880239029z8812255390za20gzb812255390zd812255390xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115616986~115938465~115938468~118395334~118897920~118897930&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fwww.pchome.com.tw%2F&amp;gacid=2137619554.1784575085&amp;frm=0&amp;tiba=PChome%20Online%20%E9%A6%96%E9%A0%81&amp;npa=0&amp;pscdl=noapi&amp;auid=1650316150.1784575085&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;rcb=5",
+      "type": "fetch",
       "ipinfo": {
-        "domain": "onead.onevision.com.tw",
-        "ip": "107.178.241.176",
-        "hostname": "176.241.178.107.bc.googleusercontent.com",
-        "city": "Kansas City",
-        "region": "Missouri",
+        "domain": "www.google.com",
+        "ip": "142.251.152.119",
+        "city": "Mountain View",
+        "region": "California",
         "country": "US",
-        "loc": "39.0997,-94.5786",
-        "org": "AS396982 Google LLC",
-        "timezone": "America/Chicago"
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
       },
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 5.88,
-        "detection_method": "rtt"
+        "rtt": 8.209,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.152.119",
+          "prefix": "142.251.152.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
       }
     },
     {
-      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-QB624SM9W2&amp;cid=1047824731.1768352658&amp;gtm=45je61d0h2v880239029z8812255390za20gzb812255390zd812255390&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391252~115616986~115938465~115938468~117041588&amp;z=758848074",
+      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-QB624SM9W2&amp;cid=2137619554.1784575085&amp;gtm=45je67g0v880239029z8812255390za20gzb812255390zd812255390&amp;rcb=5&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=115616986~115938465~115938468~118395334~118897920~118897930&amp;z=1151684531",
       "type": "image",
       "ipinfo": {
         "domain": "www.google.com.tw",
-        "ip": "142.250.198.67",
-        "hostname": "lctsaa-ab-in-f3.1e100.net",
+        "ip": "142.250.204.35",
+        "hostname": "hkg07s38-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -526,7 +751,7 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://onead-v6.onevision.com.tw/v2/poke?uuid=f3edb3cd-f0e4-11f0-adaa-42010a00005a",
+      "originalUrl": "https://onead-v6.onevision.com.tw/v2/poke?uuid=bbc9eb77-846f-11f1-ba3a-42010a00005e",
       "type": "image",
       "ipinfo": {
         "domain": "onead-v6.onevision.com.tw",
@@ -542,33 +767,33 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 4.262,
-        "detection_method": "rtt"
+        "rtt": 5.006,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "107.178.241.176",
+          "prefix": "107.178.241.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 65,
+          "location_count": 65
+        }
       }
     },
     {
-      "originalUrl": "https://pixel.omnisegment.com/track?cid=f3edb3cd-f0e4-11f0-adaa-42010a00005a&amp;to=https%3A%2F%2Fonead.onevision.com.tw%2Fv2%2Fpixel%2Fbb",
+      "originalUrl": "https://pixel.omnisegment.com/track?cid=bbc9eb77-846f-11f1-ba3a-42010a00005e&amp;to=https%3A%2F%2Fonead.onevision.com.tw%2Fv2%2Fpixel%2Fbb",
       "type": "image",
       "ipinfo": {
         "domain": "pixel.omnisegment.com",
-        "ip": "142.250.204.51",
-        "hostname": "hkg07s38-in-f19.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.google.com/recaptcha/api2/aframe",
-      "type": "document",
-      "ipinfo": {
-        "domain": "www.google.com",
-        "ip": "142.250.198.68",
-        "hostname": "lctsaa-ab-in-f4.1e100.net",
+        "ip": "142.250.198.83",
+        "hostname": "lctsaa-ab-in-f19.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -579,10 +804,10 @@
       "category": "domestic/cloud"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 1/14/2026, 9:04:21 AM<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 7/21/2026, 3:18:08 AM<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -620,7 +845,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

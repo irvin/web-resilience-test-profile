@@ -13,7 +13,7 @@
     <meta property="og:description" content="Based on the latest test, under a submarine-cable outage scenario bilibili.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/bilibili.com/en/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>When submarine cables fail, will <a href="https://bilibili.com" target="_blank" rel="noopener noreferrer nofollow">bilibili.com</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>Will not work</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">1</strong></p><p class="score score-X">Foreign connections (X)<br><strong style="font-size: 1.3em;">8</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can bilibili.com still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario bilibili.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why might bilibili.com “not work” when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean bilibili.com will definitely be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for bilibili.com under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of bilibili.com, we observed 120 requests across 11 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS37963 Hangzhou Alibaba Advertising Co.,Ltd.</span><span class="connection-domain">47.103.24.173</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS140633 BILIBILI HK LIMITED</span><span class="connection-domain">www.bilibili.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS140633 BILIBILI HK LIMITED</span><span class="connection-domain">api.bilibili.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS140633 BILIBILI HK LIMITED</span><span class="connection-domain">cm.bilibili.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS140633 BILIBILI HK LIMITED</span><span class="connection-domain">data.bilibili.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS54994 Meteverse Limited.</span><span class="connection-domain">i0.hdslb.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS54994 Meteverse Limited.</span><span class="connection-domain">i1.hdslb.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS21859 Zenlayer Inc</span><span class="connection-domain">i2.hdslb.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">s1.hdslb.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/bilibili.com.json" target="_blank">View on GitHub</a></p><pre><code>{
+        <h1>When submarine cables fail, will <a href="https://bilibili.com" target="_blank" rel="noopener noreferrer nofollow">bilibili.com</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>Will not work</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">2</strong></p><p class="score score-X">Foreign connections (X)<br><strong style="font-size: 1.3em;">8</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can bilibili.com still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario bilibili.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why might bilibili.com “not work” when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean bilibili.com will definitely be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for bilibili.com under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of bilibili.com, we observed 128 requests across 10 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS55990 Huawei Cloud Service data center</span><span class="connection-domain">119.3.70.188</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS140633 BILIBILI HK LIMITED</span><span class="connection-domain">www.bilibili.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS140633 BILIBILI HK LIMITED</span><span class="connection-domain">api.bilibili.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS140633 BILIBILI HK LIMITED</span><span class="connection-domain">cm.bilibili.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS140633 BILIBILI HK LIMITED</span><span class="connection-domain">data.bilibili.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS140633 BILIBILI HK LIMITED</span><span class="connection-domain">api.live.bilibili.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS54994 Meteverse Limited.</span><span class="connection-domain">s1.hdslb.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS54994 Meteverse Limited.</span><span class="connection-domain">i1.hdslb.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS21859 Zenlayer Inc</span><span class="connection-domain">i0.hdslb.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS21859 Zenlayer Inc</span><span class="connection-domain">i2.hdslb.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/bilibili.com.json" target="_blank">View on GitHub</a></p><pre><code>{
   "url": "https://bilibili.com",
   "canonicalURL": "https://www.bilibili.com/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T01:05:03.060Z",
+  "timestamp": "2026-07-20T19:19:08.113Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,11 +61,11 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 120,
-  "uniqueDomains": 11,
+  "requestCount": 128,
+  "uniqueDomains": 10,
   "test_results": {
     "domestic": {
-      "cloud": 1,
+      "cloud": 2,
       "direct": 0
     },
     "foreign": {
@@ -78,12 +79,13 @@
       "type": "document",
       "ipinfo": {
         "domain": "bilibili.com",
-        "ip": "47.103.24.173",
+        "ip": "119.3.70.188",
+        "hostname": "ecs-119-3-70-188.compute.hwclouds-dns.com",
         "city": "Shanghai",
         "region": "Shanghai",
         "country": "CN",
         "loc": "31.2222,121.4581",
-        "org": "AS37963 Hangzhou Alibaba Advertising Co.,Ltd.",
+        "org": "AS55990 Huawei Cloud Service data center",
         "timezone": "Asia/Shanghai"
       },
       "category": "foreign/direct"
@@ -93,11 +95,11 @@
       "type": "document",
       "ipinfo": {
         "domain": "www.bilibili.com",
-        "ip": "103.151.151.6",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
+        "ip": "103.151.151.134",
+        "city": "Tung Chung",
+        "region": "Islands",
         "country": "HK",
-        "loc": "22.2783,114.1747",
+        "loc": "22.2878,113.9424",
         "org": "AS140633 BILIBILI HK LIMITED",
         "timezone": "Asia/Hong_Kong"
       },
@@ -108,48 +110,33 @@
       "type": "script",
       "ipinfo": {
         "domain": "s1.hdslb.com",
-        "ip": "163.181.78.185",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
-        "country": "HK",
-        "loc": "22.2783,114.1747",
-        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
-        "timezone": "Asia/Hong_Kong"
+        "ip": "138.113.153.218",
+        "city": "Tokyo",
+        "region": "Tokyo",
+        "country": "JP",
+        "loc": "35.6895,139.6917",
+        "org": "AS54994 Meteverse Limited.",
+        "timezone": "Asia/Tokyo"
       },
       "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://i0.hdslb.com/bfs/archive/a8dcb9d05c22e7e5cfb1bbd0d97092f4edd357ef.png@3840w_360h_1c.avif?mirror_report_banner=1",
+      "originalUrl": "https://i0.hdslb.com/bfs/archive/cc634ec77d2755641d5ed3f392c9b7e065a88aae.png@3840w_360h_1c.avif?mirror_report_banner=1",
       "type": "image",
       "ipinfo": {
         "domain": "i0.hdslb.com",
-        "ip": "138.113.119.45",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
-        "country": "HK",
-        "loc": "22.2783,114.1747",
-        "org": "AS54994 Meteverse Limited.",
-        "timezone": "Asia/Hong_Kong"
+        "ip": "162.128.37.194",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS21859 Zenlayer Inc",
+        "timezone": "Asia/Taipei"
       },
-      "category": "foreign/direct"
+      "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://i1.hdslb.com/bfs/archive/b73b09fecd372a4ddd2e265fbadbc10aa471310e.jpg@672w_378h_1c_!web-home-common-cover.avif",
-      "type": "image",
-      "ipinfo": {
-        "domain": "i1.hdslb.com",
-        "ip": "138.113.119.45",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
-        "country": "HK",
-        "loc": "22.2783,114.1747",
-        "org": "AS54994 Meteverse Limited.",
-        "timezone": "Asia/Hong_Kong"
-      },
-      "category": "foreign/direct"
-    },
-    {
-      "originalUrl": "https://i2.hdslb.com/bfs/archive/794496f8565a462beb0ed8049bbb76d8723b1263.jpg@672w_378h_1c_!web-home-common-cover.avif",
+      "originalUrl": "https://i2.hdslb.com/bfs/archive/d37a71dca314bd8ffd4b043fd672135cd6da6204.jpg@672w_378h_1c_!web-home-common-cover.avif",
       "type": "image",
       "ipinfo": {
         "domain": "i2.hdslb.com",
@@ -164,15 +151,30 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://api.bilibili.com/x/kv-frontend/namespace/data?appKey=333.1339&amp;nscode=1&amp;unlimit=true",
+      "originalUrl": "https://i1.hdslb.com/bfs/archive/588d7c2aa07c9a9316e8969216d89e7b32c008d9.jpg@672w_378h_1c_!web-home-common-cover.avif",
+      "type": "image",
+      "ipinfo": {
+        "domain": "i1.hdslb.com",
+        "ip": "157.185.135.95",
+        "city": "Tung Chung",
+        "region": "Islands",
+        "country": "HK",
+        "loc": "22.2878,113.9424",
+        "org": "AS54994 Meteverse Limited.",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://api.bilibili.com/x/web-interface/nav",
       "type": "xhr",
       "ipinfo": {
         "domain": "api.bilibili.com",
-        "ip": "103.151.151.4",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
+        "ip": "103.151.151.134",
+        "city": "Tung Chung",
+        "region": "Islands",
         "country": "HK",
-        "loc": "22.2783,114.1747",
+        "loc": "22.2878,113.9424",
         "org": "AS140633 BILIBILI HK LIMITED",
         "timezone": "Asia/Hong_Kong"
       },
@@ -183,11 +185,11 @@
       "type": "xhr",
       "ipinfo": {
         "domain": "cm.bilibili.com",
-        "ip": "103.151.151.4",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
+        "ip": "103.151.151.134",
+        "city": "Tung Chung",
+        "region": "Islands",
         "country": "HK",
-        "loc": "22.2783,114.1747",
+        "loc": "22.2878,113.9424",
         "org": "AS140633 BILIBILI HK LIMITED",
         "timezone": "Asia/Hong_Kong"
       },
@@ -198,35 +200,36 @@
       "type": "fetch",
       "ipinfo": {
         "domain": "data.bilibili.com",
-        "ip": "103.151.151.3",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
+        "ip": "103.151.151.2",
+        "city": "Tung Chung",
+        "region": "Islands",
         "country": "HK",
-        "loc": "22.2783,114.1747",
+        "loc": "22.2878,113.9424",
         "org": "AS140633 BILIBILI HK LIMITED",
         "timezone": "Asia/Hong_Kong"
       },
       "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://bfs/vc/48bee957f95b7bc5f0e1b7fc14b25a4cca26901a.png@1c.webp",
-      "type": "image",
+      "originalUrl": "https://api.live.bilibili.com/xlive/web-interface/v1/webMain/getMoreRecList?platform=web&amp;web_location=333.1007",
+      "type": "fetch",
       "ipinfo": {
-        "domain": "bfs"
-      }
-    },
-    {
-      "originalUrl": "blob:https://www.bilibili.com/79e460d1-0ec0-4850-a4c1-9b81661b8dce",
-      "type": "media",
-      "ipinfo": {
-        "domain": ""
-      }
+        "domain": "api.live.bilibili.com",
+        "ip": "103.151.151.134",
+        "city": "Tung Chung",
+        "region": "Islands",
+        "country": "HK",
+        "loc": "22.2878,113.9424",
+        "org": "AS140633 BILIBILI HK LIMITED",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 1/14/2026, 9:05:03 AM<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 7/21/2026, 3:19:08 AM<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -264,7 +267,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

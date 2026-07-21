@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，www.kgibank.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/www.kgibank.com.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://www.kgibank.com.tw" target="_blank" rel="noopener noreferrer nofollow">www.kgibank.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">5</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">8</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">3</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，www.kgibank.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，www.kgibank.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 www.kgibank.com.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，www.kgibank.com.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 www.kgibank.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 www.kgibank.com.tw 的首頁時，我們觀察到來自 16 個網域的 166 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">13.107.213.73</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">assets.adobedtm.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">d.line-scdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">dsp.vpadn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">cdbh.tt.omtrdc.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdn.jsdelivr.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">echo2.peopleview.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">echo5.peopleview.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">echo1.peopleview.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">bat.bing.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/www.kgibank.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://www.kgibank.com.tw" target="_blank" rel="noopener noreferrer nofollow">www.kgibank.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">5</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">12</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">4</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，www.kgibank.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，www.kgibank.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 www.kgibank.com.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，www.kgibank.com.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 www.kgibank.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 www.kgibank.com.tw 的首頁時，我們觀察到來自 21 個網域的 215 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">150.171.110.68</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">assets.adobedtm.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">d.line-scdn.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">cdbh.tt.omtrdc.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">2c-1138a2e087744ef69e662051fe044c44.ecs.us-west-1.on.aws</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">7s-d309b5b93ece4e188e0aa4e9c7906f0f.ecs.us-west-1.on.aws</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdn.jsdelivr.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">segment.api.useinsider.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">locationv2.api.useinsider.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">echo2.peopleview.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">echo5.peopleview.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">echo1.peopleview.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">resources.digital-cloud-sin1.medallia.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">mpc2-prod-28-is5qnl632q-ue.a.run.app</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">bat.bing.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/www.kgibank.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://www.kgibank.com.tw/",
   "canonicalURL": "https://www.kgibank.com.tw/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T02:50:23.777Z",
+  "timestamp": "2026-07-20T21:02:06.082Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,15 +61,15 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 166,
-  "uniqueDomains": 16,
+  "requestCount": 215,
+  "uniqueDomains": 21,
   "test_results": {
     "domestic": {
-      "cloud": 8,
+      "cloud": 12,
       "direct": 5
     },
     "foreign": {
-      "cloud": 3,
+      "cloud": 4,
       "direct": 0
     }
   },
@@ -78,23 +79,23 @@
       "type": "document",
       "ipinfo": {
         "domain": "www.kgibank.com.tw",
-        "ip": "13.107.213.73",
-        "city": "Redmond",
-        "region": "Washington",
-        "country": "US",
-        "loc": "47.6740,-122.1215",
+        "ip": "150.171.110.68",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
         "org": "AS8075 Microsoft Corporation",
-        "timezone": "America/Los_Angeles"
+        "timezone": "Asia/Taipei"
       },
-      "category": "foreign/cloud"
+      "category": "domestic/cloud"
     },
     {
       "originalUrl": "https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;250;300;400;500;600&amp;family=Noto+Sans+TC:wght@300;400;500;700&amp;display=swap",
       "type": "stylesheet",
       "ipinfo": {
         "domain": "fonts.googleapis.com",
-        "ip": "142.250.198.74",
-        "hostname": "lctsaa-ab-in-f10.1e100.net",
+        "ip": "142.250.66.74",
+        "hostname": "hkg12s27-in-f10.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -105,16 +106,16 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://assets.adobedtm.com/4806fd71ad63/2c13f6ca081c/launch-617fb587978c.min.js?v=49",
+      "originalUrl": "https://assets.adobedtm.com/4806fd71ad63/2c13f6ca081c/launch-617fb587978c.min.js?v=57",
       "type": "script",
       "ipinfo": {
         "domain": "assets.adobedtm.com",
-        "ip": "104.116.17.21",
-        "hostname": "a104-116-17-21.deploy.static.akamaitechnologies.com",
-        "city": "Yuanlin",
+        "ip": "23.39.61.29",
+        "hostname": "a23-39-61-29.deploy.static.akamaitechnologies.com",
+        "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "23.9567,120.5761",
+        "loc": "25.0531,121.5264",
         "org": "AS16625 Akamai Technologies, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -125,8 +126,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "www.googletagmanager.com",
-        "ip": "142.250.77.8",
-        "hostname": "nctsaa-ab-in-f8.1e100.net",
+        "ip": "142.250.196.200",
+        "hostname": "nctsaa-ac-in-f8.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -137,20 +138,80 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://www.google.com/ccm/collect?frm=0&amp;en=page_view&amp;dl=https%3A%2F%2Fwww.kgibank.com.tw%2Fzh-tw%2F&amp;scrsrc=www.googletagmanager.com&amp;rnd=1822068294.1768359011&amp;dt=%E9%A6%96%E9%A0%81%20-%20%E5%87%B1%E5%9F%BA%E9%8A%80%E8%A1%8C%20KGI%20Bank&amp;auid=1254040230.1768359011&amp;navt=n&amp;npa=0&amp;gtm=45He61c1v812113384za200zd812113384xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527906~104528501~104684208~104684211~105391252~115938466~115938468~117041587&amp;tft=1768359010937&amp;tfd=896&amp;apve=1&amp;apvf=f",
-      "type": "fetch",
+      "originalUrl": "https://cdbh.tt.omtrdc.net/rest/v1/delivery?client=cdbh&amp;sessionId=ad55f257fb80440da6b697431d4c67ac&amp;version=2.10.2",
+      "type": "xhr",
       "ipinfo": {
-        "domain": "www.google.com",
-        "ip": "142.250.196.196",
-        "hostname": "nctsaa-ac-in-f4.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
+        "domain": "cdbh.tt.omtrdc.net",
+        "ip": "63.140.48.235",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Singapore"
       },
-      "category": "domestic/cloud"
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "63.140.48.235",
+          "prefix": "63.140.48.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://cdn.jsdelivr.net/gh/yEchKgnaHWFO/eland-tracker@5.1/el_fingerprint.min.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "cdn.jsdelivr.net",
+        "ip": "104.17.207.5",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-fra-etou8220161-FRA, cache-sin-wsat1880068-SIN",
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "104.17.207.5",
+          "prefix": "104.17.207.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 76,
+          "location_count": 76,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
     },
     {
       "originalUrl": "https://connect.facebook.net/en_US/fbevents.js",
@@ -173,7 +234,7 @@
       "type": "script",
       "ipinfo": {
         "domain": "bat.bing.com",
-        "ip": "150.171.28.10",
+        "ip": "150.171.27.10",
         "city": "Redmond",
         "region": "Washington",
         "country": "US",
@@ -181,31 +242,20 @@
         "org": "AS8075 Microsoft Corporation",
         "timezone": "America/Los_Angeles"
       },
-      "category": "foreign/cloud"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "x-msedge-ref": "Ref A: 135CA0D2667C49889325002D4646E7D6 Ref B: TPE201050221025 Ref C: 2026-07-20T21:01:52Z",
+        "detection_method": "header"
+      }
     },
     {
       "originalUrl": "https://d.line-scdn.net/n/line_tag/public/release/v1/lt.js",
       "type": "script",
       "ipinfo": {
         "domain": "d.line-scdn.net",
-        "ip": "104.116.17.150",
-        "hostname": "a104-116-17-150.deploy.static.akamaitechnologies.com",
-        "city": "Yuanlin",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "23.9567,120.5761",
-        "org": "AS16625 Akamai Technologies, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://dsp.vpadn.com/9528498c/js/v_upx_c.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "dsp.vpadn.com",
-        "ip": "23.201.14.9",
-        "hostname": "a23-201-14-9.deploy.static.akamaitechnologies.com",
+        "ip": "23.39.61.163",
+        "hostname": "a23-39-61-163.deploy.static.akamaitechnologies.com",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
@@ -216,12 +266,48 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-VP232BVCSF&amp;cid=1672656216.1768359011&amp;gtm=45je61c1v9104296454z8812113384za20gzb812113384zd812113384&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391252~115938466~115938469~116988316~117041587&amp;z=617677030",
+      "originalUrl": "https://www.google.com/ccm/collect?rcb=12&amp;frm=0&amp;ae=g&amp;auid=612984443.1784581311&amp;dt=%E9%A6%96%E9%A0%81%20-%20%E5%87%B1%E5%9F%BA%E9%8A%80%E8%A1%8C%20KGI%20Bank&amp;en=page_view&amp;dl=https%3A%2F%2Fwww.kgibank.com.tw%2Fzh-tw%2F&amp;scrsrc=www.googletagmanager.com&amp;rnd=1214732866.1784581311&amp;navt=n&amp;npa=0&amp;ep.ads_data_redaction=0&amp;gtm=45He67g0v812113384za200zd812113384xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115938465~115938468~118131809~118897920~118897930~119996999&amp;apve=1&amp;apvf=f&amp;apvc=1&amp;tft=1784581311464&amp;tfd=4037&amp;fmt=8",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "www.google.com",
+        "ip": "142.251.155.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 6.492,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.155.119",
+          "prefix": "142.251.155.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.google.com.tw/pagead/1p-user-list/16796780558/?random=1784581311623&amp;cv=11&amp;fst=1784581200000&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be67g0z8812113384za20gzb812113384zd812113384xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115616985~115938465~115938469~118131809~118897920~118897930&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fwww.kgibank.com.tw%2Fzh-tw%2F&amp;rcb=18&amp;frm=0&amp;tiba=%E9%A6%96%E9%A0%81%20-%20%E5%87%B1%E5%9F%BA%E9%8A%80%E8%A1%8C%20KGI%20Bank&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=612984443.1784581311&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;data=event%3Dgtag.config&amp;ept=9&amp;rfmt=3&amp;fmt=3&amp;is_vtc=1&amp;cid=CAQS7AEAEQoqgaCYIEZzVplG2VW9fy_y9TBY0nw0YwXl6Uhpao-HUaf73_86Epg3rUoVxyHdJJWL9Au0Zqw5M9fc28J916N2UNkTLYCVqQyQuRhB7UiJL5hU1iQ0tLgnQ_wAegucvC2nmguASmlIMe91x3aYrT-NCWJI7u5Mhheno3SFIMB5YvSywoeDZryXvULvPeY80Ia6JWPzxPeqzFFHryAFVSZ7A85DETuKRou8Wt9lHagbmNmWYMvzPkZbERosh53DbedjAtCUbx4p6t1TCbKfygDYdJjizRNzHlpZrMWGrhhoQJB39VhC9A0EJQ&amp;random=724770748&amp;rmt_tld=1&amp;ipr=y",
       "type": "image",
       "ipinfo": {
         "domain": "www.google.com.tw",
-        "ip": "142.250.196.195",
-        "hostname": "nctsaa-ac-in-f3.1e100.net",
+        "ip": "142.250.77.195",
+        "hostname": "del11s08-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -232,22 +318,83 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://cdbh.tt.omtrdc.net/rest/v1/delivery?client=cdbh&amp;sessionId=d3d19b53c3dc4cafaba524e395d43705&amp;version=2.10.2",
-      "type": "xhr",
+      "originalUrl": "https://resources.digital-cloud-sin1.medallia.com/wdcsin1/13383/onsite/embed.js",
+      "type": "script",
       "ipinfo": {
-        "domain": "cdbh.tt.omtrdc.net",
-        "ip": "63.140.48.235",
+        "domain": "resources.digital-cloud-sin1.medallia.com",
+        "ip": "199.232.113.230",
         "city": "Singapore",
         "region": "Singapore",
         "country": "SG",
         "loc": "1.2897,103.8501",
-        "org": "AS16509 Amazon.com, Inc.",
+        "org": "AS54113 Fastly, Inc.",
         "timezone": "Asia/Singapore"
       },
-      "category": "foreign/cloud"
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-hkg17923-HKG",
+        "rtt": 63.917,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "199.232.113.230",
+          "prefix": "199.232.113.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
     },
     {
-      "originalUrl": "https://www.facebook.com/tr/?id=592118146035633&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.kgibank.com.tw%2Fzh-tw%2F&amp;rl=&amp;if=false&amp;ts=1768359011327&amp;cd[cv]=0&amp;cd[pm]=0&amp;cd[pp]=0&amp;cd[l]=0&amp;eid=014c5398bef3f0f0119a7d2ec1a3ba758b&amp;fbp=fb.2.1768359011327.1517325932",
+      "originalUrl": "https://segment.api.useinsider.com/v4/segments/1784581312176a16ee13eb2.1beeac30?partnerid=10014541&amp;fields=c3264455e6a8d3606a6a6a905004f81b,fe6fa08b801a7088e646a32a2c077b72,31214b5fc7f79400fd65065c1a31e73a&amp;",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "segment.api.useinsider.com",
+        "ip": "162.159.133.61",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4e755887d4a58-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://locationv2.api.useinsider.com/?v=2&amp;pId=10014541&amp;",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "locationv2.api.useinsider.com",
+        "ip": "162.159.133.61",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4e7558f7b4a52-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://www.facebook.com/tr/?id=592118146035633&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.kgibank.com.tw%2Fzh-tw%2F&amp;rl=&amp;if=false&amp;ts=1784581312168&amp;cd[cv]=0&amp;cd[pm]=0&amp;cd[pp]=0&amp;cd[l]=0&amp;eid=01c2d7983b7e84f111a5a20a35574e355a&amp;fbp=fb.2.1784581312168.399364839",
       "type": "image",
       "ipinfo": {
         "domain": "www.facebook.com",
@@ -263,32 +410,12 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://cdn.jsdelivr.net/gh/yEchKgnaHWFO/eland-tracker@5.1/el_fingerprint.min.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "cdn.jsdelivr.net",
-        "ip": "104.16.174.226",
-        "city": "San Francisco",
-        "region": "California",
-        "country": "US",
-        "loc": "37.7621,-122.3971",
-        "org": "AS13335 Cloudflare, Inc.",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 5.005,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://echo2.peopleview.com.tw/dmpreceiver/cookiereceiver?eland_uuid=cf5d9246481f4cb0b55d538309c5e013011410&amp;eland_gs=PeopleView_dmp&amp;google_gid=CAESEDIHo6c1vTX7z6POWi3va-c&amp;google_cver=1",
+      "originalUrl": "https://echo2.peopleview.com.tw/dmpreceiver/cookiereceiver?eland_uuid=df74fe9fe3364c349d5839674f1157a1072105&amp;eland_gs=PeopleView_dmp&amp;google_gid=CAESEAbAuaC3jBNrojFte4Zd80g&amp;google_cver=1",
       "type": "image",
       "ipinfo": {
         "domain": "echo2.peopleview.com.tw",
-        "ip": "211.21.3.155",
-        "hostname": "211-21-3-155.hinet-ip.hinet.net",
+        "ip": "59.125.96.13",
+        "hostname": "59-125-96-13.hinet-ip.hinet.net",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
@@ -299,28 +426,46 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://echo5.peopleview.com.tw/dmpreceiver/cookiereceiver_yahoo?yahoo_id=y-TDsQqsRE2rXLQlpDrS7E6SyIZHkoYVBF0g--~A&amp;eland_uuid=cf5d9246481f4cb0b55d538309c5e013011410",
+      "originalUrl": "https://2c-1138a2e087744ef69e662051fe044c44.ecs.us-west-1.on.aws/events?cee=no",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "2c-1138a2e087744ef69e662051fe044c44.ecs.us-west-1.on.aws",
+        "ip": "50.18.255.252",
+        "hostname": "ec2-50-18-255-252.us-west-1.compute.amazonaws.com",
+        "city": "San Jose",
+        "region": "California",
+        "country": "US",
+        "loc": "37.3394,-121.8950",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "50.18.255.252",
+          "prefix": "50.18.255.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://echo5.peopleview.com.tw/dmpreceiver/cookiereceiver_yahoo?yahoo_id=y-IChjtmBE2rXl3_.BSkbKiQ8xGQeL4Y9JiQ--~A&amp;eland_uuid=df74fe9fe3364c349d5839674f1157a1072105",
       "type": "image",
       "ipinfo": {
         "domain": "echo5.peopleview.com.tw",
         "ip": "59.125.96.13",
         "hostname": "59-125-96-13.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS3462 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://echo1.peopleview.com.tw/dmpreceiver/cookiereceiver_ttd?ttd_puid=cf5d9246481f4cb0b55d538309c5e013011410&amp;ttd_id=73c86c70-08bd-4235-a19d-0bdbae48b24a",
-      "type": "image",
-      "ipinfo": {
-        "domain": "echo1.peopleview.com.tw",
-        "ip": "211.21.3.154",
-        "hostname": "211-21-3-154.hinet-ip.hinet.net",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
@@ -329,12 +474,98 @@
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://7s-d309b5b93ece4e188e0aa4e9c7906f0f.ecs.us-west-1.on.aws/events?cee=no",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "7s-d309b5b93ece4e188e0aa4e9c7906f0f.ecs.us-west-1.on.aws",
+        "ip": "52.52.69.63",
+        "hostname": "ec2-52-52-69-63.us-west-1.compute.amazonaws.com",
+        "city": "San Jose",
+        "region": "California",
+        "country": "US",
+        "loc": "37.3394,-121.8950",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "52.52.69.63",
+          "prefix": "52.52.69.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://echo1.peopleview.com.tw/dmpreceiver/cookiereceiver_ttd?ttd_puid=df74fe9fe3364c349d5839674f1157a1072105&amp;ttd_id=3d85eae4-0784-42b9-84ca-94fbee8f2896",
+      "type": "image",
+      "ipinfo": {
+        "domain": "echo1.peopleview.com.tw",
+        "ip": "59.125.96.13",
+        "hostname": "59-125-96-13.hinet-ip.hinet.net",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://mpc2-prod-28-is5qnl632q-ue.a.run.app/events?cee=no",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "mpc2-prod-28-is5qnl632q-ue.a.run.app",
+        "ip": "34.143.79.2",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 6.147,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.143.79.2",
+          "prefix": "34.143.79.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
+      }
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午10:50:23<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午5:02:06<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -372,7 +603,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

@@ -13,7 +13,7 @@
     <meta property="og:description" content="Based on the latest test, under a submarine-cable outage scenario office.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/office.com/en/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>When submarine cables fail, will <a href="https://office.com" target="_blank" rel="noopener noreferrer nofollow">office.com</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>Will not work</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">5</strong></p><p class="score score-X">Foreign connections (X)<br><strong style="font-size: 1.3em;">7</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can office.com still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario office.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why might office.com “not work” when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean office.com will definitely be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for office.com under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of office.com, we observed 59 requests across 12 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS8068 Microsoft Corporation</span><span class="connection-domain">13.107.6.156</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">res.cdn.office.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">aadcdnjp.msftauth.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">www.microsoft.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">uhf.microsoft.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">c.s-microsoft.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS8068 Microsoft Corporation</span><span class="connection-domain">www.office.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">mem.gfx.ms</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">login.live.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">login.microsoftonline.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">js.monitor.azure.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">logincdn.msauth.net</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/office.com.json" target="_blank">View on GitHub</a></p><pre><code>{
+        <h1>When submarine cables fail, will <a href="https://office.com" target="_blank" rel="noopener noreferrer nofollow">office.com</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>Will not work</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">2</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">7</strong></p><p class="score score-X">Foreign connections (X)<br><strong style="font-size: 1.3em;">6</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can office.com still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario office.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why might office.com “not work” when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean office.com will definitely be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for office.com under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of office.com, we observed 55 requests across 15 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS8068 Microsoft Corporation</span><span class="connection-domain">13.107.6.156</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">www.microsoft.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">uhf.microsoft.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">c.s-microsoft.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">res.cdn.office.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">aadcdnjp.msftauth.net</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS8068 Microsoft Corporation</span><span class="connection-domain">www.office.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">mem.gfx.ms</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">login.live.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">login.microsoftonline.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">js.monitor.azure.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">config.edge.skype.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">admin.microsoft.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">logincdn.msauth.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">browser.events.data.microsoft.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/office.com.json" target="_blank">View on GitHub</a></p><pre><code>{
   "url": "https://office.com",
   "canonicalURL": "https://www.office.com/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T01:07:16.665Z",
+  "timestamp": "2026-07-20T19:21:31.242Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,15 +61,15 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 59,
-  "uniqueDomains": 12,
+  "requestCount": 55,
+  "uniqueDomains": 15,
   "test_results": {
     "domestic": {
-      "cloud": 5,
-      "direct": 0
+      "cloud": 7,
+      "direct": 2
     },
     "foreign": {
-      "cloud": 5,
+      "cloud": 4,
       "direct": 2
     }
   },
@@ -104,23 +105,22 @@
       "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://res.cdn.office.net/officehub/bundles/unauth-c311a3a134.css",
+      "originalUrl": "https://res.cdn.office.net/officehub/bundles/unauth-3fc5cc3a37.css",
       "type": "stylesheet",
       "ipinfo": {
         "domain": "res.cdn.office.net",
-        "ip": "203.69.138.216",
-        "hostname": "203-69-138-216.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "ip": "203.69.81.56",
+        "city": "Taipei",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS20940 Akamai International B.V.",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
         "timezone": "Asia/Taipei"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://www.microsoft.com/onerfstatics/marketingsites-wcus-prod/west-european/shell/_scrf/css/themes=default.device=uplevel_web_pc/63-57d110/c9-be0100/a6-e969ef/43-9f2e7c/82-8b5456/a0-5d3913/3d-28500e/ae-f1ac0c?ver=2.0&amp;_cf=02242021_3231",
+      "originalUrl": "https://www.microsoft.com/onerfstatics/marketingsites-eas-prod/west-european/shell/_scrf/css/themes=default.device=uplevel_web_pc/63-57d110/c9-be0100/a6-e969ef/43-9f2e7c/82-8b5456/a0-5d3913/4f-460e79/ae-f1ac0c?ver=2.0&amp;_cf=02242021_3231",
       "type": "stylesheet",
       "ipinfo": {
         "domain": "www.microsoft.com",
@@ -164,44 +164,148 @@
         "org": "AS8075 Microsoft Corporation",
         "timezone": "America/Los_Angeles"
       },
-      "category": "foreign/cloud"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "x-azure-ref": "20260720T192119Z-16f54f76b64v6x5whC1TPEh3tg00000018900000000000wd",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2",
+      "type": "font",
+      "ipinfo": {
+        "domain": "c.s-microsoft.com",
+        "ip": "23.39.61.232",
+        "hostname": "a23-39-61-232.deploy.static.akamaitechnologies.com",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS16625 Akamai Technologies, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
     },
     {
       "originalUrl": "https://login.live.com/Me.srf?wa=wsignin1.0&amp;wreply=https://www.office.com/",
       "type": "document",
       "ipinfo": {
         "domain": "login.live.com",
-        "ip": "40.126.38.22",
-        "city": "Tokyo",
-        "region": "Tokyo",
+        "ip": "40.126.13.8",
+        "city": "Osaka",
+        "region": "Osaka",
         "country": "JP",
-        "loc": "35.6895,139.6917",
+        "loc": "34.6938,135.5011",
         "org": "AS8075 Microsoft Corporation",
         "timezone": "Asia/Tokyo"
       },
-      "category": "foreign/cloud"
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 42.128,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "40.126.13.8",
+          "prefix": "40.126.13.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
     },
     {
       "originalUrl": "https://login.microsoftonline.com/savedusers?wreply=https://www.office.com/&amp;appid=4345a7b9-9a63-4910-a426-35363201d503",
       "type": "document",
       "ipinfo": {
         "domain": "login.microsoftonline.com",
-        "ip": "20.190.166.132",
-        "city": "Tokyo",
-        "region": "Tokyo",
+        "ip": "20.190.141.38",
+        "city": "Osaka",
+        "region": "Osaka",
         "country": "JP",
-        "loc": "35.6895,139.6917",
+        "loc": "34.6938,135.5011",
         "org": "AS8075 Microsoft Corporation",
         "timezone": "Asia/Tokyo"
       },
-      "category": "foreign/cloud"
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 41.138,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "20.190.141.38",
+          "prefix": "20.190.141.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
     },
     {
       "originalUrl": "https://js.monitor.azure.com/scripts/c/ms.shared.analytics.mectrl-3.gbl.min.js",
       "type": "script",
       "ipinfo": {
         "domain": "js.monitor.azure.com",
-        "ip": "13.107.213.73",
+        "ip": "150.171.110.70",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-azure-ref": "20260720T192120Z-16455cd79bbmxb5bhC1HK13mv80000000q40000000007bvc",
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "150.171.110.70",
+          "prefix": "150.171.110.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://config.edge.skype.com/config/v1/CHILL/0.0.14?disableexperiments=true&amp;disablerollouts=false&amp;Audience=Production&amp;Platform=Web&amp;environment=prod&amp;agent=ChillUnauthenticated-Copilot-Pages&amp;Application=Unauthenticated-Copilot-Pages&amp;version=unknown&amp;language=en-US",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "config.edge.skype.com",
+        "ip": "52.123.224.161",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://admin.microsoft.com/admin/api/uxversion?bldVer=v1&amp;locale=en&amp;hostingapp=host-floodgate-websdk",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "admin.microsoft.com",
+        "ip": "150.171.73.13",
         "city": "Redmond",
         "region": "Washington",
         "country": "US",
@@ -209,42 +313,30 @@
         "org": "AS8075 Microsoft Corporation",
         "timezone": "America/Los_Angeles"
       },
-      "category": "foreign/cloud"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "x-msedge-ref": "Ref A: 0803204457304A89AB650F793046003E Ref B: TPE201080401060 Ref C: 2026-07-20T19:21:20Z",
+        "detection_method": "header"
+      }
     },
     {
-      "originalUrl": "https://aadcdnjp.msftauth.net/shared/1.0/content/js/BssoInterrupt_Core_ZdehiqMaZbamNI2GxExNjA2.js",
+      "originalUrl": "https://aadcdnjp.msftauth.net/shared/1.0/content/js/BssoInterrupt_Core_l_chUU-5ZYSVgQoZAiHKxw2.js",
       "type": "script",
       "ipinfo": {
         "domain": "aadcdnjp.msftauth.net",
-        "ip": "23.211.113.19",
-        "hostname": "a23-211-113-19.deploy.static.akamaitechnologies.com",
-        "city": "Yuanlin",
+        "ip": "203.69.81.147",
+        "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "23.9567,120.5761",
-        "org": "AS20940 Akamai International B.V.",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
         "timezone": "Asia/Taipei"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2",
-      "type": "font",
-      "ipinfo": {
-        "domain": "c.s-microsoft.com",
-        "ip": "104.116.17.220",
-        "hostname": "a104-116-17-220.deploy.static.akamaitechnologies.com",
-        "city": "Yuanlin",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "23.9567,120.5761",
-        "org": "AS16625 Akamai Technologies, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://logincdn.msauth.net/16.000/content/js/MeControl_UaDf_ZvWRHqtiaO6Ibd8gw2.js",
+      "originalUrl": "https://logincdn.msauth.net/16.000/content/js/MeControl_377GdivNXaLjZNRnrq1NwA2.js",
       "type": "script",
       "ipinfo": {
         "domain": "logincdn.msauth.net",
@@ -256,13 +348,50 @@
         "org": "AS8075 Microsoft Corporation",
         "timezone": "America/Los_Angeles"
       },
-      "category": "foreign/cloud"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "x-azure-ref": "20260720T192120Z-16f54f76b64v2nh2hC1TPEs7zn0000001am0000000000ds5",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://browser.events.data.microsoft.com/OneCollector/1.0/?cors=true&amp;content-type=application/x-json-stream&amp;w=0",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "browser.events.data.microsoft.com",
+        "ip": "20.184.175.2",
+        "city": "San Jose",
+        "region": "California",
+        "country": "US",
+        "loc": "37.3394,-121.8950",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 139.622,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "20.184.175.2",
+          "prefix": "20.184.175.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 1/14/2026, 9:07:16 AM<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 7/21/2026, 3:21:31 AM<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -300,7 +429,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

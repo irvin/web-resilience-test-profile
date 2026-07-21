@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海纜斷掉時，pubmatic.com 會動嗎？</title>
+    <meta name="description" content="根據最近一次測試，在海纜斷掉的情境下，pubmatic.com 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
+    <link rel="icon" href="/favicon.ico">
+    <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/pubmatic.com/">
+
+    <!-- Open Graph 標籤 -->
+    <meta property="og:title" content="海纜斷掉時，pubmatic.com 會動嗎？">
+    <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，pubmatic.com 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resilience.ocf.tw/web/pubmatic.com/">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
+
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
+    <script src="../locales/zh-TW.js"></script>
+    <script src="../locales/en.js"></script>
+    <script src="../i18n.js"></script>
+
+    <script>window.__IS_STATIC_PAGE__ = true;</script>
+    <link rel="alternate" hreflang="zh-TW" href="https://resilience.ocf.tw/web/pubmatic.com/">
+    <link rel="alternate" hreflang="en" href="https://resilience.ocf.tw/web/pubmatic.com/en/">
+</head>
+<body>
+    <div id="app">
+
+    <nav class="lang-switcher" aria-label="語言">
+        <a class="lang-switcher-btn" href="/web/pubmatic.com/" hreflang="zh-TW" aria-current="page">中文</a>
+        <a class="lang-switcher-btn" href="/web/pubmatic.com/en/" hreflang="en">English</a>
+    </nav>
+
+    <div class="static-wrapper" data-static="begin"></div>
+        <h1>海纜斷掉時，<a href="https://pubmatic.com" target="_blank" rel="noopener noreferrer nofollow">pubmatic.com</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">1</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">11</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">6</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，pubmatic.com 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，pubmatic.com 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 pubmatic.com 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，pubmatic.com 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 pubmatic.com 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 pubmatic.com 的首頁時，我們觀察到來自 18 個網域的 114 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">54.230.70.115</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS14618 Amazon.com, Inc.</span><span class="connection-domain">pi.pardot.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS209242 Cloudflare London, LLC</span><span class="connection-domain">thenai.org</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdnjs.cloudflare.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">player.vimeo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">t.co</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">analytics.twitter.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">vimeo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.linkedin.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">snap.licdn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">global.ketchcdn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">f.vimeocdn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">i.vimeocdn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">cdn.ketchjs.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">arclight.vimeo.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/pubmatic.com.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+  "url": "https://pubmatic.com",
+  "canonicalURL": "https://pubmatic.com/",
+  "httpStatus": 200,
+  "timestamp": "2026-07-20T19:29:19.676Z",
+  "testParameters": {
+    "customDNS": "168.95.1.1",
+    "useAdblock": true,
+    "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
+      "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
+    ],
+    "useCache": true,
+    "hasIPinfoToken": true
+  },
+  "testingEnvironment": {
+    "ip": "220.132.212.194",
+    "hostname": "220-132-212-194.hinet-ip.hinet.net",
+    "city": "Banqiao",
+    "region": "Taipei",
+    "country": "TW",
+    "loc": "25.0143,121.4672",
+    "org": "AS3462 Data Communication Business Group",
+    "timezone": "Asia/Taipei",
+    "source": "ipinfo json api (direct)",
+    "dnsServer": "168.95.1.1"
+  },
+  "requestCount": 114,
+  "uniqueDomains": 18,
+  "test_results": {
+    "domestic": {
+      "cloud": 11,
+      "direct": 1
+    },
+    "foreign": {
+      "cloud": 6,
+      "direct": 0
+    }
+  },
+  "domainDetails": [
+    {
+      "originalUrl": "https://pubmatic.com/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "pubmatic.com",
+        "ip": "54.230.70.115",
+        "hostname": "server-54-230-70-115.hkg1.r.cloudfront.net",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-amz-cf-pop": "HKG1-P1",
+        "rtt": 180.335,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "54.230.70.115",
+          "prefix": "54.230.70.0/24",
+          "anycast": true,
+          "confidence": "low_confidence",
+          "partial": false,
+          "asns": [
+            16509
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js?ver=1",
+      "type": "script",
+      "ipinfo": {
+        "domain": "cdnjs.cloudflare.com",
+        "ip": "104.17.25.14",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e45f5f5cfba343-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://thenai.org/wp-json/nai-badge/v1/badge/nai_nrd78dbaqmij/png",
+      "type": "image",
+      "ipinfo": {
+        "domain": "thenai.org",
+        "ip": "141.193.213.10",
+        "city": "Austin",
+        "region": "Texas",
+        "country": "US",
+        "loc": "30.2672,-97.7431",
+        "org": "AS209242 Cloudflare London, LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e45f696db28422-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://player.vimeo.com/api/player.js?ver=20052024",
+      "type": "script",
+      "ipinfo": {
+        "domain": "player.vimeo.com",
+        "ip": "162.159.128.61",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e45f66fac4152a-TPE",
+        "x-served-by": "cache-iad-kiad7000082-IAD, cache-sin-wsap440049-SIN",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://www.googletagmanager.com/gtm.js?id=GTM-TDPB8VC",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.googletagmanager.com",
+        "ip": "142.250.198.72",
+        "hostname": "lctsaa-ab-in-f8.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://global.ketchcdn.com/web/v3/config/pubmatic/website_smart_tag/boot.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "global.ketchcdn.com",
+        "ip": "151.101.197.91",
+        "city": "Los Angeles",
+        "region": "California",
+        "country": "US",
+        "loc": "34.0522,-118.2437",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-pdx12333-PDX, cache-lhr-egwu1540036-LHR",
+        "rtt": 131.253,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "151.101.197.91",
+          "prefix": "151.101.197.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://f.vimeocdn.com/p/4.46.77/js/player.zh-CN.module.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "f.vimeocdn.com",
+        "ip": "199.232.112.217",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "Asia/Singapore"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-iad-kcgs7200163-IAD, cache-nrt-rjtf7700076-NRT",
+        "rtt": 64.39,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "199.232.112.217",
+          "prefix": "199.232.112.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://i.vimeocdn.com/video/2141890018-e5ee04d1c4f26fe0dd893e73575f5c556d26904c7fbf8af71e8fa2132b80ae06-d?mw=80&amp;q=85",
+      "type": "image",
+      "ipinfo": {
+        "domain": "i.vimeocdn.com",
+        "ip": "146.75.44.217",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "Asia/Singapore"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-dfw-kdfw8210165-DFW, cache-nrt-rjaa8190022-NRT",
+        "rtt": 65.195,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "146.75.44.217",
+          "prefix": "146.75.44.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "snap.licdn.com",
+        "ip": "210.71.227.139",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://www.google.com/rmkt/collect/17542155272/?random=1784575745477&amp;cv=11&amp;fst=1784575745477&amp;fmt=8&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45je67g0v878823985za200zd878823985xec&amp;gcd=13l3t3l3l5l1&amp;dma=0&amp;tag_exp=115616985~115938465~115938469~118395333~118897920~118897930&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fpubmatic.com%2F&amp;rcb=2&amp;frm=0&amp;tiba=AI-Powered%20Ad%20Tech%20for%20Measurable%20Performance%20%7C%20PubMatic&amp;did=dN2JhM2&amp;gdid=dN2JhM2&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1073707080.1784575745&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;data=event%3Dgtag.config&amp;gap.plf=5&amp;ept=68&amp;gcp=5",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "www.google.com",
+        "ip": "142.251.155.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 5.22,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.155.119",
+          "prefix": "142.251.155.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-7EY3MG987N&amp;cid=1691307567.1784575745&amp;gtm=45je67g0v878823985za200zd878823985&amp;rcb=2&amp;aip=1&amp;dma=0&amp;gcs=G1-1&amp;gcd=13l3t3l3l5l1&amp;npa=0&amp;frm=0&amp;tag_exp=115616985~115938465~115938469~118395333~118897920~118897930&amp;z=2138168106",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.google.com.tw",
+        "ip": "142.250.192.131",
+        "hostname": "bom12s18-in-f3.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://cdn.ketchjs.com/ketchtag/stable/v2.12/ketch-sdk.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "cdn.ketchjs.com",
+        "ip": "151.101.41.91",
+        "city": "San Jose",
+        "region": "California",
+        "country": "US",
+        "loc": "37.3394,-121.8950",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-pdx12320-PDX, cache-lon420118-LON",
+        "rtt": 140.213,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "151.101.41.91",
+          "prefix": "151.101.41.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://t.co/i/adsct?bci=3&amp;dv=Asia%2FTaipei%26zh-TW%26Google%20Inc.%26MacIntel%26127%261280%26720%2610%2630%261280%26720%260%26na&amp;eci=2&amp;event_id=036dc900-9e8d-46f4-a111-1925f16d695b&amp;events=%5B%5B%22pageview%22%2C%7B%7D%5D%5D&amp;integration=advertiser&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=64ba2838-24eb-4056-8be7-a8abe7974a36&amp;pt=AI-Powered%20Ad%20Tech%20for%20Measurable%20Performance%20%7C%20PubMatic&amp;tw_document_href=https%3A%2F%2Fpubmatic.com%2F&amp;tw_iframe_status=0&amp;tw_order_quantity=0&amp;tw_pid_src=1&amp;tw_sale_amount=0&amp;twpid=tw.1784575745687.56631906217755389&amp;txn_id=nw8l4&amp;type=javascript&amp;version=2.3.54",
+      "type": "image",
+      "ipinfo": {
+        "domain": "t.co",
+        "ip": "162.159.140.229",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e45f712db5fac4-TPE",
+        "x-served-by": "t4_p",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://analytics.twitter.com/i/adsct?bci=3&amp;dv=Asia%2FTaipei%26zh-TW%26Google%20Inc.%26MacIntel%26127%261280%26720%2610%2630%261280%26720%260%26na&amp;eci=2&amp;event_id=036dc900-9e8d-46f4-a111-1925f16d695b&amp;events=%5B%5B%22pageview%22%2C%7B%7D%5D%5D&amp;integration=advertiser&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=64ba2838-24eb-4056-8be7-a8abe7974a36&amp;pt=AI-Powered%20Ad%20Tech%20for%20Measurable%20Performance%20%7C%20PubMatic&amp;tw_document_href=https%3A%2F%2Fpubmatic.com%2F&amp;tw_iframe_status=0&amp;tw_order_quantity=0&amp;tw_pid_src=1&amp;tw_sale_amount=0&amp;twpid=tw.1784575745687.56631906217755389&amp;txn_id=nw8l4&amp;type=javascript&amp;version=2.3.54",
+      "type": "image",
+      "ipinfo": {
+        "domain": "analytics.twitter.com",
+        "ip": "162.159.140.229",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e45f718a1b152a-TPE",
+        "x-served-by": "t4_p",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://arclight.vimeo.com/add/player-stats?beacon=1&amp;session-id=7b216d250b6857ebe657301b8756a14d7bf8966d1784575745",
+      "type": "ping",
+      "ipinfo": {
+        "domain": "arclight.vimeo.com",
+        "ip": "34.120.202.204",
+        "hostname": "204.202.120.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 4.81,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.120.202.204",
+          "prefix": "34.120.202.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 65,
+          "location_count": 65
+        }
+      }
+    },
+    {
+      "originalUrl": "https://vimeo.com/flarepoint/orion/v3/identity/settings",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "vimeo.com",
+        "ip": "162.159.128.61",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e45f748c74846a-TPE",
+        "x-served-by": "cache-pdx12320-PDX",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://www.linkedin.com/px/li_sync?redirect=https%3A%2F%2Fpx.ads.linkedin.com%2Fcollect%3Fv%3D2%26fmt%3Djs%26pid%3D3076002%26time%3D1784575745855%26li_adsId%3Ddc4c7b37-c8b1-4719-8328-d0a67cffd77d%26url%3Dhttps%253A%252F%252Fpubmatic.com%252F%26cookiesTest%3Dtrue%26liSync%3Dtrue",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.linkedin.com",
+        "ip": "104.18.41.41",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e45f75bf23db55-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://pi.pardot.com/pd.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "pi.pardot.com",
+        "ip": "54.158.196.145",
+        "hostname": "ec2-54-158-196-145.compute-1.amazonaws.com",
+        "city": "Ashburn",
+        "region": "Virginia",
+        "country": "US",
+        "loc": "39.0437,-77.4875",
+        "org": "AS14618 Amazon.com, Inc.",
+        "timezone": "America/New_York"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "54.158.196.145",
+          "prefix": "54.158.196.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    }
+  ]
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午3:29:19<span> (HTTP 200)</span></p></div></div>
+    <div class="static-wrapper" data-static="end"></div>
+
+
+
+    <div id="search-container" v-show="showSearch">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="輸入網址查看測試結果..." autocomplete="off"
+                v-model="searchQuery"  @keydown="onSearchKeydown" @focus="onSearchFocus"
+            >
+
+            <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length" @scroll.passive="onDropdownScroll">
+                <a
+                    :href="sitePageHref(url)"
+                    class="search-dropdown-item"
+                    v-for="(url, index) in displayedUrls"
+                    :key="url"
+                    :data-url="url"
+                    :data-index="index"
+                    :class="{ selected: index === selectedIndex }"
+                    @click.prevent="selectUrl(url)"
+                >
+                    {{ formatDisplayUrl(url) }}
+                </a>
+            </div>
+            <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
+                        <p>{{ t('search.noResults', { query: searchQuery }) }}</p>
+                        <p>你可以在此檢視<a href="https://github.com/irvin/web-resilience-test-result" target="_blank">已測試網站資料</a>，並<a href="https://github.com/irvin/web-resilience-test/tree/a6ccd6f1b05fca34034250055d566d1c1c0f4c65#d-automated-testing-tool" target="_blank">使用此工具</a>手動進行測試。</p>
+            </div>
+            <div class="search-meta" id="search-meta">
+                <template v-if="hasItems">
+                        {{ t('search.statsWithItems', { totalAll, shown }) }}
+                        <span class="search-load-more" v-if="hasMore" @click="loadMore">[載入更多網站]</span>
+                </template>
+                <template v-else>
+                        {{ t('search.statsEmpty', { totalAll }) }}
+                </template>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <p id="check-other-site-container" v-show="showCheckOther">
+            <a href="/web/">
+                <button class="check-other-site-btn" @click.prevent="openSearch">檢查其他網站</button>
+            </a>
+        </p>
+        <hr>
+        <p>
+            <a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="../g0v_logo.svg" title="g0v 數位韌性松" style="height: 65px;"></a>
+            <a href="https://ocf.tw/" target="_blank"><img src="../Logo_Compact-OCF_Purple.svg" title="開放文化基金會" style="height: 35px;"></a>
+        </p>
+        <p>Curated by <a href="https://t.me/s/irvinfly" target="_blank">Irvin Chen</a>. Released under the <a href="https://github.com/irvin/web-resilience-test/?tab=License-1-ov-file#License-1-ov-file" target="_blank">CC BY-NC-ND 4.0 International License</a>.</p>
+        <p style="margin-bottom: 2em;">
+            <a href="https://resilience.ocf.tw/web/report/" target="_blank">研究報告</a>｜<a href="https://github.com/irvin/web-resilience-test" target="_blank">原始碼</a>
+        </p>
+        <hr>
+        <p><a href="https://apnic.foundation/" target="_blank"><img src="../APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" title="APNIC Foundation ISIF Asia" style="height: 90px;"></a></p>
+        <p>This work was supported by a grant from the <a href="https://apnic.foundation/" target="_blank">APNIC Foundation</a>, via <a href="https://apnic.foundation/home/isifasia/" target="_blank">ISIF Asia</a>.</p>
+    </footer>
+    </div>
+
+    <script src="../app.js"></script>
+</body>
+</html>

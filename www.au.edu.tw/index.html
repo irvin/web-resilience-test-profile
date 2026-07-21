@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，www.au.edu.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/www.au.edu.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://www.au.edu.tw" target="_blank" rel="noopener noreferrer nofollow">www.au.edu.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>不確定</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">3</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">6</strong></p><p class="score score-X score-zero">境外連線 (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，www.au.edu.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，www.au.edu.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 www.au.edu.tw 在海纜斷掉時「不確定是否會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，我們雖然沒有看到直接連到境外的資源請求，但有發現對於跨國雲服務在台灣的節點依賴。這些服務能否在對外受阻時持續運作，會受到平台架構、快取設計、或回源方式等影響，所以目前只能列為「不確定」。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，www.au.edu.tw 屆時可能不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">「不確定」的意思是，目前不足以判定一定能用或不能用。www.au.edu.tw 所依賴的這些跨國雲服務在台節點，在海纜斷線或極度壅塞時的可用性，需由業者進一步釐清與說明。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 www.au.edu.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 www.au.edu.tw 的首頁時，我們觀察到來自 9 個網域的 165 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS1659 Taiwan Academic Network (TANet) Information Center</span><span class="connection-domain">192.192.120.53</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">rr8---sn-ipoxu-un5r.googlevideo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">rr5---sn-ipoxu-un5k.googlevideo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.youtube.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">yt3.ggpht.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">i.ytimg.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">jnn-pa.googleapis.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/www.au.edu.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://www.au.edu.tw" target="_blank" rel="noopener noreferrer nofollow">www.au.edu.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>不確定</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">3</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">9</strong></p><p class="score score-X score-zero">境外連線 (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，www.au.edu.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，www.au.edu.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 www.au.edu.tw 在海纜斷掉時「不確定是否會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，我們雖然沒有看到直接連到境外的資源請求，但有發現對於跨國雲服務在台灣的節點依賴。這些服務能否在對外受阻時持續運作，會受到平台架構、快取設計、或回源方式等影響，所以目前只能列為「不確定」。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，www.au.edu.tw 屆時可能不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">「不確定」的意思是，目前不足以判定一定能用或不能用。www.au.edu.tw 所依賴的這些跨國雲服務在台節點，在海纜斷線或極度壅塞時的可用性，需由業者進一步釐清與說明。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 www.au.edu.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 www.au.edu.tw 的首頁時，我們觀察到來自 12 個網域的 195 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS1659 Taiwan Academic Network (TANet) Information Center</span><span class="connection-domain">192.192.120.53</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">rr5---sn-ipoxu-un5k.googlevideo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">rr8---sn-ipoxu-un5r.googlevideo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">translate.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">translate.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.youtube.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">translate-pa.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">i.ytimg.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">jnn-pa.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">rr4---sn-ojun55-54.googlevideo.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/www.au.edu.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://www.au.edu.tw/",
   "canonicalURL": "https://www.au.edu.tw/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T03:34:25.906Z",
+  "timestamp": "2026-07-20T21:08:23.875Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,11 +61,11 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 165,
-  "uniqueDomains": 9,
+  "requestCount": 195,
+  "uniqueDomains": 12,
   "test_results": {
     "domestic": {
-      "cloud": 6,
+      "cloud": 9,
       "direct": 3
     },
     "foreign": {
@@ -79,7 +80,6 @@
       "ipinfo": {
         "domain": "www.au.edu.tw",
         "ip": "192.192.120.53",
-        "hostname": "www.au.edu.tw",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
@@ -90,10 +90,10 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://www.youtube.com/embed/dZpT3QvKFww?autoplay=1&amp;mute=1",
-      "type": "document",
+      "originalUrl": "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit",
+      "type": "script",
       "ipinfo": {
-        "domain": "www.youtube.com",
+        "domain": "translate.google.com",
         "ip": "142.250.77.14",
         "hostname": "nctsaa-ab-in-f14.1e100.net",
         "city": "Banqiao",
@@ -106,12 +106,12 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://yt3.ggpht.com/9Ezx8Pcu2C-4em4twwpNuiYADcojoV0pA-NOVCJuf_HuT5WiJ_WgjuJwVLfY0UZ6fY7R85KmIg=s68-c-k-c0x00ffffff-no-rj",
-      "type": "image",
+      "originalUrl": "https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.zZZZhVqDDCw.L.W.O/am=BIAABw/d=0/rs=AN8SPfpWxivXbFD2WhpIdS-DPbQSwnZZjQ/m=el_main_css",
+      "type": "stylesheet",
       "ipinfo": {
-        "domain": "yt3.ggpht.com",
-        "ip": "142.250.77.1",
-        "hostname": "nctsaa-ab-in-f1.1e100.net",
+        "domain": "www.gstatic.com",
+        "ip": "142.250.192.131",
+        "hostname": "bom12s18-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -122,28 +122,12 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://rr8---sn-ipoxu-un5r.googlevideo.com/videoplayback?expire=1768383263&amp;ei=vw5nafLQOuX0pt8P1LTF0QM&amp;ip=2001%3Ab011%3A3802%3Ab3f9%3A7801%3A3a2d%3A7ca8%3A40b&amp;id=o-AJDNLHdOOdNou3OxsEEdWkCwjcTcI7r3iefwLetAFZgJ&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;cps=0&amp;met=1768361663%2C&amp;mh=lY&amp;mm=31%2C29&amp;mn=sn-ipoxu-un5r%2Csn-ojun55-55&amp;ms=au%2Crdu&amp;mv=m&amp;mvi=8&amp;pcm2cms=yes&amp;pl=52&amp;rms=au%2Cau&amp;initcwndbps=2448750&amp;spc=q5xjPA5FSLWRVTmAH9O0ZvCqzjdp6btdNhLRfgq66eBLt-B85yiT5q56eH3409ZUbxs&amp;svpuc=1&amp;ns=qUiYM7SjkSatwoK2Qcj7v2oR&amp;sabr=1&amp;rqh=1&amp;mt=1768361337&amp;fvip=1&amp;keepalive=yes&amp;fexp=51552689%2C51565115%2C51565682%2C51580968&amp;c=WEB_EMBEDDED_PLAYER&amp;n=ZVOypa1bx0jdXw&amp;sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&amp;sig=AJfQdSswRgIhAN12xq8BsbNOP1IFjpH04qiO64rRCboaKlVbYQlSgsUAAiEAvQqYKCWehJzxorwr6Fkf6EAPpo4gyo3J0cWSi5thbHo%3D&amp;lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpcm2cms%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=APaTxxMwRQIhAOu-blBlQElK1BQG4L35uZZid54qq-7TJB-upNJ6rRsPAiArFakDyCDPt2cM9kjfM8l2Nd4zg9gK4G0ZjHHAYsqH0w%3D%3D&amp;cpn=JU5iKTlP8SbfVIzQ&amp;cver=2.20260112.10.00&amp;rn=1&amp;alr=yes",
-      "type": "fetch",
+      "originalUrl": "https://translate.googleapis.com/_/translate_http/_/js/k=translate_http.tr.zh_TW.g8Tx0odbiT8.O/am=BIAABw/d=1/exm=el_conf/ed=1/rs=AN8SPfrPaKDFjtUt-XzX9AihIx_mkhzJww/m=el_main",
+      "type": "script",
       "ipinfo": {
-        "domain": "rr8---sn-ipoxu-un5r.googlevideo.com",
-        "ip": "203.66.169.51",
-        "hostname": "203-66-169-51.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS3462 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://i.ytimg.com/vi/wDMGLA7piGo/sddefault.jpg",
-      "type": "image",
-      "ipinfo": {
-        "domain": "i.ytimg.com",
-        "ip": "142.250.77.22",
-        "hostname": "nctsaa-ab-in-f22.1e100.net",
+        "domain": "translate.googleapis.com",
+        "ip": "142.250.204.42",
+        "hostname": "hkg07s38-in-f10.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -154,7 +138,79 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://rr5---sn-ipoxu-un5k.googlevideo.com/videoplayback?expire=1768383264&amp;ei=wA5nadVomvWm3w_j8dC5Aw&amp;ip=2001%3Ab011%3A3802%3Ab3f9%3A7801%3A3a2d%3A7ca8%3A40b&amp;id=o-ABB4RFN4a9PkiGqkn4nDes0SBTB0v9D2qVGIjuLKlQCP&amp;itag=396&amp;aitags=133%2C134%2C135%2C136%2C137%2C160%2C242%2C243%2C244%2C247%2C248%2C271%2C278%2C313%2C394%2C395%2C396%2C397%2C398%2C399%2C400%2C401&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;cps=0&amp;met=1768361664%2C&amp;mh=nH&amp;mm=31%2C29&amp;mn=sn-ipoxu-un5k%2Csn-un57ene6&amp;ms=au%2Crdu&amp;mv=m&amp;mvi=5&amp;pl=52&amp;rms=au%2Cau&amp;initcwndbps=2857500&amp;bui=AW-iu_r56CfcOtvcDGDPcsu25vGB7NJTNqN_6PI15btSeokMX09Sy28QwGstytYEvL5UO8MVUI3nKAGl&amp;spc=q5xjPHz7bHvZ7KgXn6-J8E5mFmzBHfGtWG9PRMwfAKDnLzOce6Ta1AxX2JnEFINeru8&amp;vprv=1&amp;svpuc=1&amp;mime=video%2Fmp4&amp;ns=slH0r6mXXizSQSyf4VZEaNUR&amp;rqh=1&amp;gir=yes&amp;clen=11009522&amp;dur=261.561&amp;lmt=1726011775703754&amp;mt=1768361337&amp;fvip=4&amp;keepalive=yes&amp;fexp=51552689%2C51565115%2C51565682%2C51580968&amp;c=WEB_EMBEDDED_PLAYER&amp;sefc=1&amp;txp=543G434&amp;n=bquvs3Pifub_4Q&amp;sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&amp;sig=AJfQdSswRQIgMHqri9QMb6Xl2CmW5GESGJu8ve50iFjpOTCB3iMHgwYCIQCVmOqt8YfnkHXXKxiiSeUC5XWhES-HbO0nNPxdBjkscA%3D%3D&amp;lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=APaTxxMwRQIhAL2euW9q0SIaEjfgCS8L-_lp1lirAKFMQVxOVS4vKJtzAiAWdtymCl3MQj5hVi9WUFy6DMx_39HQHySyV5TpSz4JIQ%3D%3D&amp;alr=yes&amp;cpn=DcsevcpAAZUJiGEw&amp;cver=1.20260112.10.00&amp;range=0-112988&amp;rn=1&amp;rbuf=0&amp;pot=Igj1gPSBnOf7Pw==&amp;ump=1&amp;srfvp=1",
+      "originalUrl": "https://www.youtube.com/embed/dZpT3QvKFww?autoplay=1&amp;mute=1",
+      "type": "document",
+      "ipinfo": {
+        "domain": "www.youtube.com",
+        "ip": "142.251.152.4",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.182,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.152.4",
+          "prefix": "142.251.152.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
+      }
+    },
+    {
+      "originalUrl": "https://translate-pa.googleapis.com/v1/supportedLanguages?client=te&amp;display_language=zh-TW&amp;key=AIzaSyBWDj0QJvVIx8XOhRegXX5_SrRWxhT5Hs4&amp;callback=callback",
+      "type": "script",
+      "ipinfo": {
+        "domain": "translate-pa.googleapis.com",
+        "ip": "172.217.119.4",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.516,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.217.119.4",
+          "prefix": "172.217.119.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://rr5---sn-ipoxu-un5k.googlevideo.com/videoplayback?expire=1784603257&amp;ei=GY5eao27Kciw2roPmrn56AE&amp;ip=2001%3Ab011%3A3802%3A52d7%3Aced%3Aab09%3A4293%3Ae75c&amp;id=o-AHit7-X2_I2pVFW3O3FV0V-uhLGqYNAVqWwjWBImdbOm&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;cps=140&amp;met=1784581657%2C&amp;mh=nH&amp;mm=31%2C29&amp;mn=sn-ipoxu-un5k%2Csn-ajun55-54&amp;ms=au%2Crdu&amp;mv=m&amp;mvi=5&amp;pl=52&amp;rms=au%2Cau&amp;initcwndbps=3055000&amp;spc=SQ-uml-xAeHuXql-1AQDgFtWPqfAuVgoXXl8j0JXuflWlqJTnnQIXVEKx8Fm5jkUpzaItg&amp;svpuc=1&amp;ns=UJ59sXk__dULSK2OWyLHzHwW&amp;sabr=1&amp;rqh=1&amp;mt=1784581287&amp;fvip=4&amp;keepalive=yes&amp;fexp=51565116%2C51946838&amp;c=WEB_EMBEDDED_PLAYER&amp;n=VtQObt2LbOwjGA&amp;sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&amp;sig=AE0s2JYwRQIhALmInB3QaWVdow5mg10U0OOwUXo0pAnAUL_TgMBr-9LrAiB_-nLX3ezgKqH5x9fsjJ9FUbZJzwnBo1xsLMfdg1dXBg%3D%3D&amp;lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=APaTxxMwRgIhAJJcQki8qlyr6Jeplw0bavl45lw_iEBu_qmxM2aLNjzlAiEAu1VKPYqPPPhlaTupyPQEdGuBkqloGDnDzn3ca-ZcrNg%3D&amp;cpn=UOrEOvWirgMd-o84&amp;cver=2.20260720.01.00&amp;rn=1&amp;alr=yes",
       "type": "fetch",
       "ipinfo": {
         "domain": "rr5---sn-ipoxu-un5k.googlevideo.com",
@@ -170,12 +226,28 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://www.gstatic.com/cv/js/sender/v1/cast_sender.js",
-      "type": "script",
+      "originalUrl": "https://rr8---sn-ipoxu-un5r.googlevideo.com/videoplayback?expire=1784603257&amp;ei=GY5eatShK8ekpt8P76eS6AU&amp;ip=2001%3Ab011%3A3802%3A52d7%3Aced%3Aab09%3A4293%3Ae75c&amp;id=o-AIPcCNbJEVKwXEccQ_6lLNn1RbeiJrAwgYrtoAnZ0wMW&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;cps=203&amp;met=1784581657%2C&amp;mh=lY&amp;mm=31%2C29&amp;mn=sn-ipoxu-un5r%2Csn-ojun55-55&amp;ms=au%2Crdu&amp;mv=m&amp;mvi=8&amp;pl=52&amp;rms=au%2Cau&amp;initcwndbps=2776250&amp;spc=SQ-umg_wgMg1MrXpQxzMfzu3S4Fi3ibQ0aRXllLKkrYwzu4gju8nVrLb-mBG3Q-Rz6kB4A&amp;svpuc=1&amp;ns=xS_je7XbxMipvojkAb6zpPgW&amp;sabr=1&amp;rqh=1&amp;mt=1784581287&amp;fvip=1&amp;keepalive=yes&amp;fexp=51565115&amp;c=WEB_EMBEDDED_PLAYER&amp;n=2ALYtut-J2WLlw&amp;sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&amp;sig=AE0s2JYwRQIgMYXrxA4D7ihtnAzz8Xe6WuHoaXb9cAmSinqAxfiAhfACIQDsz7QkmqFwY1L_FoJzSHl4jriQ7l3ZmN5BWtlb8ZIUjw%3D%3D&amp;lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=APaTxxMwRgIhAMuJiwTdTEFEgteEKnVbDbfHyl2dhsuYOFZjLrwdLRzLAiEAhQ03qL3on0besPGUMJJQmWqYTqW179c-MoNzV4dmouw%3D&amp;cpn=AX2yeItcD7hMfdXp&amp;cver=2.20260720.01.00&amp;rn=1&amp;alr=yes",
+      "type": "fetch",
       "ipinfo": {
-        "domain": "www.gstatic.com",
-        "ip": "142.250.198.67",
-        "hostname": "lctsaa-ab-in-f3.1e100.net",
+        "domain": "rr8---sn-ipoxu-un5r.googlevideo.com",
+        "ip": "203.66.169.51",
+        "hostname": "203-66-169-51.hinet-ip.hinet.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://i.ytimg.com/vi/dZpT3QvKFww/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgVShMMA8=&amp;rs=AOn4CLCRJGCBALXPFWFteBgfR7e93wB8TA",
+      "type": "image",
+      "ipinfo": {
+        "domain": "i.ytimg.com",
+        "ip": "142.250.196.214",
+        "hostname": "nctsaa-ac-in-f22.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -186,28 +258,84 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://www.google.com/js/th/VQRLE1nj_w3YOUr9bDT-SZkrXPV28X05Wh6hb2M3ukQ.js",
+      "originalUrl": "https://www.google.com/js/th/8uIar4J4-RenYUa4HtG5DFVcni3D6dGneJv1JZIjHfM.js",
       "type": "script",
       "ipinfo": {
         "domain": "www.google.com",
-        "ip": "142.250.204.36",
-        "hostname": "hkg07s38-in-f4.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
+        "ip": "142.251.156.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
         "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
+        "timezone": "America/Los_Angeles"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.609,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.156.119",
+          "prefix": "142.251.156.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
+      }
     },
     {
       "originalUrl": "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
       "type": "xhr",
       "ipinfo": {
         "domain": "jnn-pa.googleapis.com",
-        "ip": "142.250.196.202",
-        "hostname": "nctsaa-ac-in-f10.1e100.net",
+        "ip": "172.217.119.4",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 6.686,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.217.119.4",
+          "prefix": "172.217.119.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://rr4---sn-ojun55-54.googlevideo.com/videoplayback?expire=1784603257&amp;ei=GY5eao27Kciw2roPmrn56AE&amp;ip=2001%3Ab011%3A3802%3A52d7%3Aced%3Aab09%3A4293%3Ae75c&amp;id=o-AHit7-X2_I2pVFW3O3FV0V-uhLGqYNAVqWwjWBImdbOm&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;cps=140&amp;rms=au%2Cau&amp;spc=SQ-uml-xAeHuXql-1AQDgFtWPqfAuVgoXXl8j0JXuflWlqJTnnQIXVEKx8Fm5jkUpzaItg&amp;svpuc=1&amp;ns=UJ59sXk__dULSK2OWyLHzHwW&amp;sabr=1&amp;rqh=1&amp;keepalive=yes&amp;fexp=51565116%2C51946838&amp;c=WEB_EMBEDDED_PLAYER&amp;n=VtQObt2LbOwjGA&amp;sparams=expire%2Cei%2Cip%2Cid%2Csource%2Crequiressl%2Cxpc%2Cspc%2Csvpuc%2Cns%2Csabr%2Crqh&amp;sig=AE0s2JYwRQIhALmInB3QaWVdow5mg10U0OOwUXo0pAnAUL_TgMBr-9LrAiB_-nLX3ezgKqH5x9fsjJ9FUbZJzwnBo1xsLMfdg1dXBg%3D%3D&amp;cpn=UOrEOvWirgMd-o84&amp;cver=2.20260720.01.00&amp;redirect_counter=1&amp;cms_redirect=yes&amp;cmsv=e&amp;met=1784581658,&amp;mh=nH&amp;mm=29&amp;mn=sn-ojun55-54&amp;ms=rdu&amp;mt=1784581269&amp;mv=m&amp;mvi=4&amp;pl=52&amp;lsparams=cps,met,mh,mm,mn,ms,mv,mvi,pl,rms&amp;lsig=APaTxxMwRQIgKy6h7n95aeZobNm8MgRuq8_9BVqkZlYWchgarE7EpaQCIQDgtWECNE1u1-IKkGuzE7iSRVqfnHhWoRsO5p8WPIdshg%3D%3D&amp;rn=2&amp;alr=yes",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "rr4---sn-ojun55-54.googlevideo.com",
+        "ip": "142.251.80.116",
+        "hostname": "nctsaa-af-in-f4.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -218,10 +346,10 @@
       "category": "domestic/cloud"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午11:34:25<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午5:08:23<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -259,7 +387,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

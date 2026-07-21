@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，homeplus.net.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/homeplus.net.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://homeplus.net.tw" target="_blank" rel="noopener noreferrer nofollow">homeplus.net.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">12</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">4</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，homeplus.net.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，homeplus.net.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 homeplus.net.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，homeplus.net.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 homeplus.net.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 homeplus.net.tw 的首頁時，我們觀察到來自 20 個網域的 170 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS18042 Koos Broadband Telecom</span><span class="connection-domain">58.86.34.21</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">d.line-scdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">client-chat.easychat.co</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">chat-plugin.easychat.co</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">api.easychat.co</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">track.omnichat.ai</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdnjs.cloudflare.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">asset.popin.cc</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">api.popin.cc</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">crs.rixbeedesk.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">storage.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">global.trk-adv.rixbeedesk.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">trace.popin.cc</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS18042 Koos Broadband Telecom</span><span class="connection-domain">www.homeplus.net.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS18042 Koos Broadband Telecom</span><span class="connection-domain">event.homeplus.net.tw</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">bat.bing.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/homeplus.net.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://homeplus.net.tw" target="_blank" rel="noopener noreferrer nofollow">homeplus.net.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">6</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">11</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">7</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，homeplus.net.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，homeplus.net.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 homeplus.net.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，homeplus.net.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 homeplus.net.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 homeplus.net.tw 的首頁時，我們觀察到來自 24 個網域的 190 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS18042 Koos Broadband Telecom</span><span class="connection-domain">58.86.34.21</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">d.line-scdn.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS45102 Alibaba (US) Technology Co., Ltd.</span><span class="connection-domain">dsp.vpadn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS45102 Alibaba (US) Technology Co., Ltd.</span><span class="connection-domain">ids-dmp.vpadn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS45102 Alibaba (US) Technology Co., Ltd.</span><span class="connection-domain">u-dsp.vpadn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">client-chat.easychat.co</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">chat-plugin.easychat.co</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">api.easychat.co</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">track.omnichat.ai</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS14618 Amazon.com, Inc.</span><span class="connection-domain">sl-11a463aaedf44600a99367660fd6fa70.ecs.us-east-1.on.aws</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdnjs.cloudflare.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">storage.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cdn.mida.so</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">api-us.mida.so</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">mpc2-prod-25-is5qnl632q-wl.a.run.app</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS18042 Koos Broadband Telecom</span><span class="connection-domain">www.homeplus.net.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS18042 Koos Broadband Telecom</span><span class="connection-domain">event.homeplus.net.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">bat.bing.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24158 Taiwan Mobile Co., Ltd.</span><span class="connection-domain">adc.tamedia.com.tw</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/homeplus.net.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://homeplus.net.tw",
   "canonicalURL": "https://www.homeplus.net.tw/cable/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T02:31:49.751Z",
+  "timestamp": "2026-07-20T20:38:48.755Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,15 +61,15 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 170,
-  "uniqueDomains": 20,
+  "requestCount": 190,
+  "uniqueDomains": 24,
   "test_results": {
     "domestic": {
-      "cloud": 12,
-      "direct": 4
+      "cloud": 11,
+      "direct": 6
     },
     "foreign": {
-      "cloud": 4,
+      "cloud": 7,
       "direct": 0
     }
   },
@@ -121,12 +122,12 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bd9b7d93c4d8088-TPE",
+        "cf-ray": "a1e4c536ab9449fa-TPE",
         "detection_method": "header"
       }
     },
     {
-      "originalUrl": "https://event.homeplus.net.tw/upload_prod/banner/img_20260102095011_936.webp",
+      "originalUrl": "https://event.homeplus.net.tw/upload_prod/banner/img_20260626143040_664.webp",
       "type": "image",
       "ipinfo": {
         "domain": "event.homeplus.net.tw",
@@ -162,12 +163,12 @@
       "type": "document",
       "ipinfo": {
         "domain": "client-chat.easychat.co",
-        "ip": "3.169.137.71",
-        "hostname": "server-3-169-137-71.tpe54.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "3.169.55.57",
+        "hostname": "server-3-169-55-57.tpe54.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -180,27 +181,11 @@
         "domain": "chat-plugin.easychat.co",
         "ip": "3.169.137.47",
         "hostname": "server-3-169-137-47.tpe54.r.cloudfront.net",
-        "city": "Taipei",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.google.com/ccm/collect?frm=0&amp;en=page_view&amp;dl=https%3A%2F%2Fhomeplus.net.tw%2Fcable%2F&amp;scrsrc=www.googletagmanager.com&amp;rnd=101480029.1768357897&amp;dt=%E4%B8%AD%E5%98%89%E5%AF%AC%E9%A0%BB%EF%BD%9C%E5%85%89%E7%BA%96%E7%B6%B2%E8%B7%AF%E3%80%81%E6%95%B8%E4%BD%8D%E6%9C%89%E7%B7%9A%E9%9B%BB%E8%A6%96(%E7%AC%AC%E5%9B%9B%E5%8F%B0)%E3%80%81Home%2B%20tv%20%E7%B6%B2%E8%B7%AF%E9%9B%BB%E8%A6%96&amp;auid=1057951989.1768357897&amp;navt=n&amp;npa=0&amp;gtm=45He61c1v831803227za200zd831803227xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527906~104528501~104684208~104684211~105391252~115616985~115938466~115938468~117041588&amp;tft=1768357897353&amp;tfd=562&amp;apve=1&amp;apvf=f",
-      "type": "fetch",
-      "ipinfo": {
-        "domain": "www.google.com",
-        "ip": "142.250.204.36",
-        "hostname": "hkg07s38-in-f4.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
@@ -210,12 +195,12 @@
       "type": "script",
       "ipinfo": {
         "domain": "d.line-scdn.net",
-        "ip": "184.25.121.253",
-        "hostname": "a184-25-121-253.deploy.static.akamaitechnologies.com",
-        "city": "Yuanlin",
+        "ip": "23.39.61.163",
+        "hostname": "a23-39-61-163.deploy.static.akamaitechnologies.com",
+        "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "23.9567,120.5761",
+        "loc": "25.0531,121.5264",
         "org": "AS16625 Akamai Technologies, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -238,83 +223,40 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://asset.popin.cc/js/pixel.js?acid=29026",
-      "type": "script",
-      "ipinfo": {
-        "domain": "asset.popin.cc",
-        "ip": "34.117.195.210",
-        "hostname": "210.195.117.34.bc.googleusercontent.com",
-        "city": "Kansas City",
-        "region": "Missouri",
-        "country": "US",
-        "loc": "39.0997,-94.5786",
-        "org": "AS396982 Google LLC",
-        "timezone": "America/Chicago"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 4.765,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://api.popin.cc/ads/29026.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "api.popin.cc",
-        "ip": "34.49.93.142",
-        "hostname": "142.93.49.34.bc.googleusercontent.com",
-        "city": "Kansas City",
-        "region": "Missouri",
-        "country": "US",
-        "loc": "39.0997,-94.5786",
-        "org": "AS396982 Google LLC",
-        "timezone": "America/Chicago"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 4.81,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://crs.rixbeedesk.com/wrapper/1375_9330.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "crs.rixbeedesk.com",
-        "ip": "34.36.179.131",
-        "hostname": "131.179.36.34.bc.googleusercontent.com",
-        "city": "Kansas City",
-        "region": "Missouri",
-        "country": "US",
-        "loc": "39.0997,-94.5786",
-        "org": "AS396982 Google LLC",
-        "timezone": "America/Chicago"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 4.086,
-        "detection_method": "rtt"
-      }
-    },
-    {
       "originalUrl": "https://storage.googleapis.com/mostga4/ma_ga4_twOK.js.obfuscated.js?d=0910",
       "type": "script",
       "ipinfo": {
         "domain": "storage.googleapis.com",
-        "ip": "142.250.198.91",
-        "hostname": "lctsaa-ab-in-f27.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
+        "ip": "34.153.3.27",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Los_Angeles"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 5.509,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.153.3.27",
+          "prefix": "34.153.3.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
     },
     {
       "originalUrl": "https://bat.bing.com/bat.js",
@@ -329,15 +271,123 @@
         "org": "AS8075 Microsoft Corporation",
         "timezone": "America/Los_Angeles"
       },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "x-msedge-ref": "Ref A: 332757F67DE04449B0ED999649477BEA Ref B: TPE201080401025 Ref C: 2026-07-20T20:38:36Z",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://adc.tamedia.com.tw/tr/pixel.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "adc.tamedia.com.tw",
+        "ip": "124.29.140.130",
+        "city": "Taichung",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.1469,120.6839",
+        "org": "AS24158 Taiwan Mobile Co., Ltd.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://dsp.vpadn.com/70067d45/js/v_upx_c.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "dsp.vpadn.com",
+        "ip": "47.83.221.165",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS45102 Alibaba (US) Technology Co., Ltd.",
+        "timezone": "Asia/Hong_Kong"
+      },
       "category": "foreign/cloud"
+    },
+    {
+      "originalUrl": "https://www.google.com/ccm/collect?rcb=0&amp;frm=0&amp;ae=g&amp;auid=884524350.1784579916&amp;dt=%E4%B8%AD%E5%98%89%E5%AF%AC%E9%A0%BB%EF%BD%9C%E5%85%89%E7%BA%96%E7%B6%B2%E8%B7%AF%E4%B8%8A%E7%B6%B2%E3%80%81%E6%95%B8%E4%BD%8D%E6%9C%89%E7%B7%9A%E9%9B%BB%E8%A6%96(%E7%AC%AC%E5%9B%9B%E5%8F%B0)%E3%80%81Home%2B%20%E7%B6%B2%E8%B7%AF%E9%9B%BB%E8%A6%96%E2%80%8B&amp;en=page_view&amp;dl=https%3A%2F%2Fhomeplus.net.tw%2Fcable%2F&amp;scrsrc=www.googletagmanager.com&amp;rnd=1504894175.1784579916&amp;navt=n&amp;npa=0&amp;ep.ads_data_redaction=0&amp;gtm=45He67g0h1v831803227za200zd831803227xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115938465~115938468~118131810~118897920~118897930&amp;apve=1&amp;apvf=f&amp;apvc=1&amp;tft=1784579915673&amp;tfd=1839&amp;fmt=8",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "www.google.com",
+        "ip": "142.251.154.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 6.044,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.154.119",
+          "prefix": "142.251.154.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 60,
+          "location_count": 60
+        }
+      }
+    },
+    {
+      "originalUrl": "https://cdn.mida.so/js/optimize.js?key=Wpw95KNXBpDg9BEVgMJvAm",
+      "type": "script",
+      "ipinfo": {
+        "domain": "cdn.mida.so",
+        "ip": "34.160.168.163",
+        "hostname": "163.168.160.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.414,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.160.168.163",
+          "prefix": "34.160.168.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 63,
+          "location_count": 63
+        }
+      }
     },
     {
       "originalUrl": "https://api.easychat.co/restapi/v1/login/anonymous",
       "type": "xhr",
       "ipinfo": {
         "domain": "api.easychat.co",
-        "ip": "3.1.183.119",
-        "hostname": "ec2-3-1-183-119.ap-southeast-1.compute.amazonaws.com",
+        "ip": "122.248.211.200",
+        "hostname": "ec2-122-248-211-200.ap-southeast-1.compute.amazonaws.com",
         "city": "Singapore",
         "region": "Singapore",
         "country": "SG",
@@ -345,10 +395,28 @@
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Singapore"
       },
-      "category": "foreign/cloud"
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "122.248.211.200",
+          "prefix": "122.248.211.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
     },
     {
-      "originalUrl": "https://www.google.com.tw/pagead/1p-user-list/11279620422/?random=1768357897427&amp;cv=11&amp;fst=1768356000000&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be61c1v9182935991z8831803227za20gzb831803227zd831803227xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391253~115938466~115938468~116910503~117041587&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fhomeplus.net.tw%2Fcable%2F&amp;label=FSCGCPCAs8wYEMayxYIq&amp;frm=0&amp;tiba=%E4%B8%AD%E5%98%89%E5%AF%AC%E9%A0%BB%EF%BD%9C%E5%85%89%E7%BA%96%E7%B6%B2%E8%B7%AF%E3%80%81%E6%95%B8%E4%BD%8D%E6%9C%89%E7%B7%9A%E9%9B%BB%E8%A6%96(%E7%AC%AC%E5%9B%9B%E5%8F%B0)%E3%80%81Home%2B%20tv%20%E7%B6%B2%E8%B7%AF%E9%9B%BB%E8%A6%96&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1057951989.1768357897&amp;uaa=arm&amp;uab=64&amp;uafvl=Not(A%253ABrand%3B99.0.0.0%7CHeadlessChrome%3B133.0.6943.16%7CChromium%3B133.0.6943.16&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=26.2.0&amp;uaw=0&amp;_tu=CA&amp;rfmt=3&amp;fmt=3&amp;is_vtc=1&amp;cid=CAQSiwEA56J1eRdpsG2zQEpbCNoUJDAiW3CvkbIfFqVnwAfB-ia0-_Tfcwp_TVCePNDGB_d059qTp2DwIqOkBqD2yR48LdW75qM-NqD4BNAkSnQ0ceioou2NDMWtArDwILWAJuCVDztrcnA4JN5Rp6z2qsjq0uyp6YncXbNPWD4TzkklpDp905soV74fiLBm&amp;random=857631608&amp;rmt_tld=1&amp;ipr=y",
+      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-20RZWFHD8R&amp;cid=1707398599.1784579916&amp;gtm=45je67h1h2v887178873z89234156600za20gzb9234156600zd9234156600&amp;rcb=16&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=115616986~115938465~115938468~118897920~118897930&amp;z=969084525",
       "type": "image",
       "ipinfo": {
         "domain": "www.google.com.tw",
@@ -364,33 +432,42 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://global.trk-adv.rixbeedesk.com/cookie/9330/get",
-      "type": "fetch",
+      "originalUrl": "https://ids-dmp.vpadn.com/set?t=1784579916275&amp;dn=.net.tw&amp;ctid=0252c456-2065-a70d-9365-0cf5289a8a6e",
+      "type": "xhr",
       "ipinfo": {
-        "domain": "global.trk-adv.rixbeedesk.com",
-        "ip": "34.54.142.75",
-        "hostname": "75.142.54.34.bc.googleusercontent.com",
-        "city": "Kansas City",
-        "region": "Missouri",
-        "country": "US",
-        "loc": "39.0997,-94.5786",
-        "org": "AS396982 Google LLC",
-        "timezone": "America/Chicago"
+        "domain": "ids-dmp.vpadn.com",
+        "ip": "47.239.239.69",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS45102 Alibaba (US) Technology Co., Ltd.",
+        "timezone": "Asia/Hong_Kong"
       },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 4.021,
-        "detection_method": "rtt"
-      }
+      "category": "foreign/cloud"
     },
     {
-      "originalUrl": "https://track.omnichat.ai/restapi/v1/pixel/track?ecid=1fcbc1ca-3eb2-4b5b-a0b9-4179bda4c51b&amp;p=ownsite&amp;t=3195f31d-1258-4963-8747-03727f71eb3f&amp;bh=pageview&amp;v=1.0&amp;dl=https%3A%2F%2Fhomeplus.net.tw%2Fcable%2F&amp;dv=web_desktop&amp;ssid=4c2ck3pv-mkdemuo7.1768357897927.1768357897927",
+      "originalUrl": "https://u-dsp.vpadn.com/upx-event?k=d.gcM27NNDmJYXA26N6fVqiCHl29RWd4Qx.9614&amp;eid=d.gcM27NNDmJYXA26N6fVqiCHl29RWd4Qx.9614_1784579916276&amp;uid=0252c456-2065-a70d-9365-0cf5289a8a6e&amp;e=1&amp;ewl=https%3A%2F%2Fhomeplus.net.tw%2Fcable%2F",
+      "type": "ping",
+      "ipinfo": {
+        "domain": "u-dsp.vpadn.com",
+        "ip": "47.239.239.69",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS45102 Alibaba (US) Technology Co., Ltd.",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/cloud"
+    },
+    {
+      "originalUrl": "https://track.omnichat.ai/restapi/v1/pixel/track?ecid=c26b6fac-d3f6-4731-8036-2e20103898cb&amp;p=ownsite&amp;t=3195f31d-1258-4963-8747-03727f71eb3f&amp;bh=pageview&amp;v=1.0&amp;dl=https%3A%2F%2Fhomeplus.net.tw%2Fcable%2F&amp;dv=web_desktop&amp;ssid=h414yugr-mrtot0jn.1784579916803.1784579916803",
       "type": "image",
       "ipinfo": {
         "domain": "track.omnichat.ai",
-        "ip": "52.221.148.46",
-        "hostname": "ec2-52-221-148-46.ap-southeast-1.compute.amazonaws.com",
+        "ip": "47.131.157.247",
+        "hostname": "ec2-47-131-157-247.ap-southeast-1.compute.amazonaws.com",
         "city": "Singapore",
         "region": "Singapore",
         "country": "SG",
@@ -398,33 +475,150 @@
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Singapore"
       },
-      "category": "foreign/cloud"
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "47.131.157.247",
+          "prefix": "47.131.157.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
     },
     {
-      "originalUrl": "https://trace.popin.cc/api/bidder/track/pixel/pageview?tn=f9f2b1ef23fe2759c2cad0953029a94b&amp;spd=&amp;mgd=e5cbe76c3d8c4f1fba6c907f1d004ba4&amp;ptd=&amp;tkd=&amp;acd=29026&amp;cpid=&amp;v=216178889",
-      "type": "ping",
+      "originalUrl": "https://api-us.mida.so/init/uuid",
+      "type": "xhr",
       "ipinfo": {
-        "domain": "trace.popin.cc",
-        "ip": "35.213.89.133",
-        "hostname": "133.89.213.35.bc.googleusercontent.com",
-        "city": "Tokyo",
-        "region": "Tokyo",
-        "country": "JP",
-        "loc": "35.6895,139.6917",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Tokyo"
+        "domain": "api-us.mida.so",
+        "ip": "34.122.227.131",
+        "hostname": "131.227.122.34.bc.googleusercontent.com",
+        "city": "Council Bluffs",
+        "region": "Iowa",
+        "country": "US",
+        "loc": "41.2619,-95.8608",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
       },
       "category": "foreign/cloud",
       "cloud_provider": {
-        "rtt": 59.486,
-        "detection_method": "rtt"
+        "rtt": 166.124,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.122.227.131",
+          "prefix": "34.122.227.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.facebook.com/tr/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "www.facebook.com",
+        "ip": "31.13.87.36",
+        "hostname": "edge-star-mini-shv-01-tpe1.facebook.com",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS32934 Facebook, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://mpc2-prod-25-is5qnl632q-wl.a.run.app/events?cee=no",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "mpc2-prod-25-is5qnl632q-wl.a.run.app",
+        "ip": "34.143.76.2",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 6.183,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.143.76.2",
+          "prefix": "34.143.76.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://sl-11a463aaedf44600a99367660fd6fa70.ecs.us-east-1.on.aws/events?cee=no",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "sl-11a463aaedf44600a99367660fd6fa70.ecs.us-east-1.on.aws",
+        "ip": "3.222.99.104",
+        "hostname": "ec2-3-222-99-104.compute-1.amazonaws.com",
+        "city": "Ashburn",
+        "region": "Virginia",
+        "country": "US",
+        "loc": "39.0437,-77.4875",
+        "org": "AS14618 Amazon.com, Inc.",
+        "timezone": "America/New_York"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "3.222.99.104",
+          "prefix": "3.222.99.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
       }
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午10:31:49<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午4:38:48<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -462,7 +656,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

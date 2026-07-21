@@ -13,7 +13,7 @@
     <meta property="og:description" content="Based on the latest test, under a submarine-cable outage scenario news.yahoo.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/news.yahoo.com/en/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>When submarine cables fail, will <a href="https://news.yahoo.com" target="_blank" rel="noopener noreferrer nofollow">news.yahoo.com</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>Will not work</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">1</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">16</strong></p><p class="score score-X">Foreign connections (X)<br><strong style="font-size: 1.3em;">21</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can news.yahoo.com still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario news.yahoo.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why might news.yahoo.com “not work” when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean news.yahoo.com will definitely be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for news.yahoo.com under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of news.yahoo.com, we observed 1374 requests across 39 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS38033 internet content provider</span><span class="connection-domain">180.222.106.12</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS63949 Akamai Connected Cloud</span><span class="connection-domain">cm-mx.advolve.io</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">secure-assets.rubiconproject.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">hbx.media.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">consent.cmp.oath.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">guce.yahoo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">sb.scorecardresearch.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">c2shb-oao.ssp.yahoo.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS14618 Amazon.com, Inc.</span><span class="connection-domain">ssp.disqus.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS14618 Amazon.com, Inc.</span><span class="connection-domain">pxl.iqm.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.temu.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">capi.connatix.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">ced-ns.sascdn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">tsdtocl.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">prebid.media.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">trace.popin.cc</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">pool.liftdsp.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">us-east-1-cs-rtb.openwebmp.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">pbs-cs.minutemedia-prebid.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">e-jp.cmcd1.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">cs-rtb.minutemedia-prebid.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">hb.trustedstack.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">cdn.ampproject.org</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS38033 internet content provider</span><span class="connection-domain">s.yimg.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS38033 internet content provider</span><span class="connection-domain">edge-mcdn.secure.yahoo.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS396362 Leaseweb USA, Inc.</span><span class="connection-domain">sync.rbstsystems.live</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS26667 Magnite, Inc.</span><span class="connection-domain">prebid-server.rubiconproject.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS26667 Magnite, Inc.</span><span class="connection-domain">token.rubiconproject.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS26667 Magnite, Inc.</span><span class="connection-domain">pixel-eu.rubiconproject.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS26667 Magnite, Inc.</span><span class="connection-domain">pixel-us-east.rubiconproject.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">c.bing.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS46636 NatCoWeb Corp.</span><span class="connection-domain">cs.krushmedia.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS24376 Yahoo China Datacenter</span><span class="connection-domain">pbs.yahoo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS24376 Yahoo China Datacenter</span><span class="connection-domain">www.yahoo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS24506 Yahoo Global Holdings B.V. Taiwan Branch</span><span class="connection-domain">udc.yahoo.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><!----><span class="connection-domain">cs.nex8.net</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/news.yahoo.com.json" target="_blank">View on GitHub</a></p><pre><code>{
+        <h1>When submarine cables fail, will <a href="https://news.yahoo.com" target="_blank" rel="noopener noreferrer nofollow">news.yahoo.com</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>Will not work</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-X">Foreign connections (X)<br><strong style="font-size: 1.3em;">1</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can news.yahoo.com still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario news.yahoo.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why might news.yahoo.com “not work” when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean news.yahoo.com will definitely be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for news.yahoo.com under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of news.yahoo.com, we observed 99 requests across 5 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS24376 Yahoo China Datacenter</span><span class="connection-domain">180.222.109.251</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">consent.cmp.oath.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS24376 Yahoo China Datacenter</span><span class="connection-domain">www.yahoo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS24376 Yahoo China Datacenter</span><span class="connection-domain">s.yimg.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS24376 Yahoo China Datacenter</span><span class="connection-domain">jsapi.login.yahoo.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/news.yahoo.com.json" target="_blank">View on GitHub</a></p><pre><code>{
   "url": "https://news.yahoo.com",
-  "canonicalURL": "https://news.yahoo.com/",
+  "canonicalURL": "https://www.yahoo.com/news/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T01:08:21.834Z",
+  "timestamp": "2026-07-20T19:21:15.252Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,16 +61,16 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 1374,
-  "uniqueDomains": 39,
+  "requestCount": 99,
+  "uniqueDomains": 5,
   "test_results": {
     "domestic": {
-      "cloud": 16,
-      "direct": 1
+      "cloud": 4,
+      "direct": 0
     },
     "foreign": {
-      "cloud": 14,
-      "direct": 7
+      "cloud": 1,
+      "direct": 0
     }
   },
   "domainDetails": [
@@ -78,140 +79,8 @@
       "type": "document",
       "ipinfo": {
         "domain": "news.yahoo.com",
-        "ip": "180.222.106.12",
-        "hostname": "e2.ycpi.vip.tpb.yahoo.com",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS38033 internet content provider",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://s.yimg.com/cv/apiv2/ngy-fonts/YahooSans-VF-Web.woff2",
-      "type": "font",
-      "ipinfo": {
-        "domain": "s.yimg.com",
-        "ip": "180.222.106.11",
-        "hostname": "e1.ycpi.vip.tpb.yahoo.com",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS38033 internet content provider",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://consent.cmp.oath.com/version/7.0.0/cmp.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "consent.cmp.oath.com",
-        "ip": "108.139.10.115",
-        "hostname": "server-108-139-10-115.sfo5.r.cloudfront.net",
-        "city": "San Jose",
-        "region": "California",
-        "country": "US",
-        "loc": "37.3394,-121.8950",
-        "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "foreign/cloud",
-      "cloud_provider": {
-        "rtt": 139.485,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://guce.yahoo.com/v1/consentRecord?consentTypes=iab%2CiabCCPA%2Cgpp%2CgppSid",
-      "type": "xhr",
-      "ipinfo": {
-        "domain": "guce.yahoo.com",
-        "ip": "13.250.82.241",
-        "hostname": "ec2-13-250-82-241.ap-southeast-1.compute.amazonaws.com",
-        "city": "Singapore",
-        "region": "Singapore",
-        "country": "SG",
-        "loc": "1.2897,103.8501",
-        "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "Asia/Singapore"
-      },
-      "category": "foreign/cloud"
-    },
-    {
-      "originalUrl": "https://edge-mcdn.secure.yahoo.com/ybar/cerebro_min.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "edge-mcdn.secure.yahoo.com",
-        "ip": "180.222.106.11",
-        "hostname": "e1.ycpi.vip.tpb.yahoo.com",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS38033 internet content provider",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://udc.yahoo.com/v2/public/yql?yhlVer=2&amp;yhlClient=rapid&amp;yhlS=1197800621&amp;yhlCT=2&amp;yhlBTMS=1768352806527&amp;yhlClientVer=3.69.0&amp;yhlRnd=1SdcxfBTCVHN9uAv&amp;yhlCompressed=0",
-      "type": "xhr",
-      "ipinfo": {
-        "domain": "udc.yahoo.com",
-        "ip": "180.222.102.158",
-        "hostname": "media-router-brb71.prod.media.vip.tp2.yahoo.com",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS24506 Yahoo Global Holdings B.V. Taiwan Branch",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.googletagmanager.com/gtag/js?id=G-B40QGCQW3G",
-      "type": "script",
-      "ipinfo": {
-        "domain": "www.googletagmanager.com",
-        "ip": "142.250.204.40",
-        "hostname": "hkg07s38-in-f8.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://sb.scorecardresearch.com/p?c1=2&amp;c2=7241469&amp;c5=1197800621&amp;c7=https%3A%2F%2Fnews.yahoo.com%2F&amp;c14=-1&amp;c8=Yahoo%20News%3A%20Latest%20and%20Breaking%20News%2C%20Headlines%2C%20Live%20Updates%2C%20and%20More&amp;c9=&amp;gdpr=0&amp;gdpr_consent=&amp;cs_ucfr=1&amp;cs_fpdm=*null&amp;cs_fpdt=*null&amp;cs_fpid=i8woSFvmY_JaKI5NHX8MzSkXW7QjBrOtnIGusPKP2-Q&amp;cs_fpit=c&amp;ns_c=UTF-8&amp;ns__t=1768352806580",
-      "type": "image",
-      "ipinfo": {
-        "domain": "sb.scorecardresearch.com",
-        "ip": "3.169.137.16",
-        "hostname": "server-3-169-137-16.tpe54.r.cloudfront.net",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://pbs.yahoo.com/cookie_sync",
-      "type": "fetch",
-      "ipinfo": {
-        "domain": "pbs.yahoo.com",
         "ip": "180.222.109.251",
-        "hostname": "e1-bmr.ycpi.vip.twb.yahoo.com",
+        "hostname": "e1-bmr.ycpi.vip.twd.yahoo.com",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -222,64 +91,12 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://prebid-server.rubiconproject.com/openrtb2/auction",
-      "type": "fetch",
-      "ipinfo": {
-        "domain": "prebid-server.rubiconproject.com",
-        "ip": "69.173.158.92",
-        "city": "Singapore",
-        "region": "Singapore",
-        "country": "SG",
-        "loc": "1.2897,103.8501",
-        "org": "AS26667 Magnite, Inc.",
-        "timezone": "Asia/Singapore"
-      },
-      "category": "foreign/direct"
-    },
-    {
-      "originalUrl": "https://c2shb-oao.ssp.yahoo.com/admax/bid/partners/YPBJS",
-      "type": "fetch",
-      "ipinfo": {
-        "domain": "c2shb-oao.ssp.yahoo.com",
-        "ip": "52.221.129.239",
-        "hostname": "ec2-52-221-129-239.ap-southeast-1.compute.amazonaws.com",
-        "city": "Singapore",
-        "region": "Singapore",
-        "country": "SG",
-        "loc": "1.2897,103.8501",
-        "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "Asia/Singapore"
-      },
-      "category": "foreign/cloud"
-    },
-    {
-      "originalUrl": "https://prebid.media.net/rtb/prebid?cid=8CU2K123F",
-      "type": "fetch",
-      "ipinfo": {
-        "domain": "prebid.media.net",
-        "ip": "34.36.209.34",
-        "hostname": "34.209.36.34.bc.googleusercontent.com",
-        "city": "Kansas City",
-        "region": "Missouri",
-        "country": "US",
-        "loc": "39.0997,-94.5786",
-        "org": "AS396982 Google LLC",
-        "timezone": "America/Chicago"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 4.903,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://www.yahoo.com/px.gif?ch=1&amp;rn=8.510043027701675",
-      "type": "image",
+      "originalUrl": "https://www.yahoo.com/news/",
+      "type": "document",
       "ipinfo": {
         "domain": "www.yahoo.com",
         "ip": "180.222.109.252",
-        "hostname": "e2-bmr.ycpi.vip.twb.yahoo.com",
+        "hostname": "e2-bmr.ycpi.vip.twd.yahoo.com",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -290,447 +107,76 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://trace.popin.cc/ju/cs/prebid?gdpr=0&amp;gdpr_consent=&amp;us_privacy=1---&amp;redirect=https%3A%2F%2Fpbs.yahoo.com%2Fsetuid%3Fbidder%3Dmediago%26gdpr%3D0%26gdpr_consent%3D%26gpp%3DDBAA%26gpp_sid%3D-1%26f%3Di%26uid%3D%24UID",
+      "originalUrl": "https://s.yimg.com/lo/mysterio/api/69869cadfb9e238026593118b644c1434ddaa33b99d65fff73367576faee6a36/lightyear_networkapi/smartcrop_w1000_h562;quality_85;format_webp/https:%2F%2Fs.yimg.com%2Fos%2Fcreatr-uploaded-images%2F2026-07%2Fd20b3e90-846d-11f1-b776-55bd959a6973",
       "type": "image",
       "ipinfo": {
-        "domain": "trace.popin.cc",
-        "ip": "35.213.89.133",
-        "hostname": "133.89.213.35.bc.googleusercontent.com",
-        "city": "Tokyo",
-        "region": "Tokyo",
-        "country": "JP",
-        "loc": "35.6895,139.6917",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Tokyo"
-      },
-      "category": "foreign/cloud",
-      "cloud_provider": {
-        "rtt": 62.56,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://tsdtocl.com/",
-      "type": "document",
-      "ipinfo": {
-        "domain": "tsdtocl.com",
-        "ip": "151.101.65.44",
-        "city": "San Francisco",
-        "region": "California",
-        "country": "US",
-        "loc": "37.7621,-122.3971",
-        "org": "AS54113 Fastly, Inc.",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "foreign/cloud",
-      "cloud_provider": {
-        "rtt": 36.896,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://c.bing.com/c.gif?xid=763844085367640623610&amp;Red3=TLMS_pd",
-      "type": "image",
-      "ipinfo": {
-        "domain": "c.bing.com",
-        "ip": "150.171.28.10",
-        "city": "Redmond",
-        "region": "Washington",
-        "country": "US",
-        "loc": "47.6740,-122.1215",
-        "org": "AS8075 Microsoft Corporation",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "foreign/cloud"
-    },
-    {
-      "originalUrl": "https://token.rubiconproject.com/khaos.json?gdpr=0&amp;us_privacy=1---",
-      "type": "xhr",
-      "ipinfo": {
-        "domain": "token.rubiconproject.com",
-        "ip": "69.173.158.64",
-        "city": "Singapore",
-        "region": "Singapore",
-        "country": "SG",
-        "loc": "1.2897,103.8501",
-        "org": "AS26667 Magnite, Inc.",
-        "timezone": "Asia/Singapore"
-      },
-      "category": "foreign/direct"
-    },
-    {
-      "originalUrl": "https://pool.liftdsp.com/sync?ssp=bidswitch&amp;bidswitch_ssp_id=pubmatic&amp;bsw_custom_parameter=240fdd2b-5f9c-45a9-b2c6-43704954c03c",
-      "type": "document",
-      "ipinfo": {
-        "domain": "pool.liftdsp.com",
-        "ip": "35.213.45.194",
-        "hostname": "194.45.213.35.bc.googleusercontent.com",
-        "city": "Tokyo",
-        "region": "Tokyo",
-        "country": "JP",
-        "loc": "35.6895,139.6917",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Tokyo"
-      },
-      "category": "foreign/cloud",
-      "cloud_provider": {
-        "rtt": 63.584,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://secure-assets.rubiconproject.com/utils/xapi/multi-sync.html?p=seedtag&amp;endpoint=eu",
-      "type": "document",
-      "ipinfo": {
-        "domain": "secure-assets.rubiconproject.com",
-        "ip": "118.214.250.218",
-        "hostname": "a118-214-250-218.deploy.static.akamaitechnologies.com",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS16625 Akamai Technologies, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://cs.nex8.net/cs/openx",
-      "type": "image",
-      "ipinfo": {
-        "domain": "cs.nex8.net",
-        "ip": "127.0.0.1"
-      },
-      "category": "foreign/direct"
-    },
-    {
-      "originalUrl": "https://ced-ns.sascdn.com/diff/js/modules/cmp.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "ced-ns.sascdn.com",
-        "ip": "210.71.227.139",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS3462 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://pixel-eu.rubiconproject.com/exchange/sync.php?p=seedtag&amp;gdpr_consent=undefined&amp;gdpr=0&amp;us_privacy=1---&amp;khaos=MKDBLRPR-13-CGRJ",
-      "type": "image",
-      "ipinfo": {
-        "domain": "pixel-eu.rubiconproject.com",
-        "ip": "69.173.144.138",
-        "city": "Frankfurt am Main",
-        "region": "Hesse",
-        "country": "DE",
-        "loc": "50.0960,8.7111",
-        "org": "AS26667 Magnite, Inc.",
-        "timezone": "Europe/Berlin"
-      },
-      "category": "foreign/direct"
-    },
-    {
-      "originalUrl": "https://www.temu.com/api/adx/cm/pixel-opera?adx_uid=acc5664811b824c1&amp;gdpr=&amp;gdpr_consent=&amp;us_privacy=&amp;redir=https%3A%2F%2Ft.adx.opera.com%2Fsync%3Fvendor%3D60369%26pubid%3Dpub9283744565120%26gdpr%3D%26consent%3D%26us_privacy%3D%26custom_data%3D",
-      "type": "image",
-      "ipinfo": {
-        "domain": "www.temu.com",
-        "ip": "162.159.141.246",
-        "city": "San Francisco",
-        "region": "California",
-        "country": "US",
-        "loc": "37.7621,-122.3971",
-        "org": "AS13335 Cloudflare, Inc.",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 4.676,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://match.rundsp.com/redirect?ex=openx&amp;gpp=DBAA&amp;gpp_sid=-1",
-      "type": "image",
-      "ipinfo": {
-        "domain": "match.rundsp.com"
-      }
-    },
-    {
-      "originalUrl": "https://cm-mx.advolve.io/pixel?adx_id=462&amp;vcode=bz0yJnR5cGU9MSZjb2RlPTQwNTImdGw9MTI5NjAw&amp;adx_uid=$UID&amp;gdpr=0&amp;gdpr_consent=&amp;us_privacy=1---&amp;gpp=&amp;gpp_sid=",
-      "type": "document",
-      "ipinfo": {
-        "domain": "cm-mx.advolve.io",
-        "ip": "172.234.45.206",
-        "hostname": "172-234-45-206.ip.linodeusercontent.com",
-        "city": "Ashburn",
-        "region": "Virginia",
-        "country": "US",
-        "loc": "39.0437,-77.4875",
-        "org": "AS63949 Akamai Connected Cloud",
-        "timezone": "America/New_York"
-      },
-      "category": "foreign/cloud",
-      "cloud_provider": {
-        "rtt": 196.861,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://us-east-1-cs-rtb.openwebmp.com/sync-iframe?gdpr=0&amp;gdpr_consent=&amp;gpp=&amp;gpp_sid=&amp;redirect=https%3A%2F%2Fsync.adkernel.com%2Fuser-sync%3Fzone%3D218872%26dsp%3D980417%26t%3Diframe%26uid%3D%7BpartnerId%7D%26us_privacy%3D1---",
-      "type": "document",
-      "ipinfo": {
-        "domain": "us-east-1-cs-rtb.openwebmp.com",
-        "ip": "34.4.35.11",
-        "hostname": "11.35.4.34.bc.googleusercontent.com",
-        "city": "Washington",
-        "region": "District of Columbia",
-        "country": "US",
-        "loc": "38.8951,-77.0364",
-        "org": "AS15169 Google LLC",
-        "timezone": "America/New_York"
-      },
-      "category": "foreign/cloud",
-      "cloud_provider": {
-        "rtt": 190.065,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://pixel-us-east.rubiconproject.com/exchange/sync.php?p=vidazoo&amp;gdpr_consent=undefined&amp;gdpr=0&amp;us_privacy=1---&amp;khaos=MKDBLRPR-13-CGRJ",
-      "type": "image",
-      "ipinfo": {
-        "domain": "pixel-us-east.rubiconproject.com",
-        "ip": "69.173.146.5",
-        "city": "Leesburg",
-        "region": "Virginia",
-        "country": "US",
-        "loc": "39.1157,-77.5636",
-        "org": "AS26667 Magnite, Inc.",
-        "timezone": "America/New_York"
-      },
-      "category": "foreign/direct"
-    },
-    {
-      "originalUrl": "https://pbs-cs.minutemedia-prebid.com/pbs-iframe?gdpr=&amp;gdpr_consent=&amp;us_privacy=&amp;gpp=&amp;gpp_sid=&amp;redirect=https%3A%2F%2Fcookies.nextmillmedia.com%2Fsetuid%3Fbidder%3Dminutemedia%26nmuid%3D%26gdpr%3D%26gdpr_consent%3D%26us_privacy%3D%26uid%3D%5BPBS_UID%5D",
-      "type": "document",
-      "ipinfo": {
-        "domain": "pbs-cs.minutemedia-prebid.com",
-        "ip": "35.219.187.163",
-        "hostname": "163.187.219.35.bc.googleusercontent.com",
-        "city": "Las Vegas",
-        "region": "Nevada",
-        "country": "US",
-        "loc": "36.1750,-115.1372",
-        "org": "AS15169 Google LLC",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "foreign/cloud",
-      "cloud_provider": {
-        "rtt": 149.709,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://ssp.disqus.com/redirectuser?sid=GET_SID_FROM_ZETA&amp;gdpr=&amp;gdpr_consent=&amp;us_privacy=&amp;r=https%3A%2F%2Fcookies.nextmillmedia.com%2Fsetuid%3Fbidder%3Dzeta_global_ssp%26nmuid%3D%26gdpr%3D%26gdpr_consent%3D%26us_privacy%3D%26uid%3DBUYERUID",
-      "type": "document",
-      "ipinfo": {
-        "domain": "ssp.disqus.com",
-        "ip": "54.221.166.233",
-        "hostname": "ec2-54-221-166-233.compute-1.amazonaws.com",
-        "city": "Ashburn",
-        "region": "Virginia",
-        "country": "US",
-        "loc": "39.0437,-77.4875",
-        "org": "AS14618 Amazon.com, Inc.",
-        "timezone": "America/New_York"
-      },
-      "category": "foreign/cloud"
-    },
-    {
-      "originalUrl": "https://hbx.media.net/cksync.php?cs=1&amp;type=pbs&amp;ovsid=setstatuscode&amp;bidder=medianet&amp;gdpr=&amp;gdpr_consent=&amp;us_privacy=&amp;redirect=https%3A%2F%2Fcookies.nextmillmedia.com%2Fsetuid%3Fbidder%3Dmedianet%26nmuid%3D%26gdpr%3D%26gdpr_consent%3D%26us_privacy%3D%26uid%3D%3Cvsid%3E&amp;gpp=&amp;gpp_sid=",
-      "type": "document",
-      "ipinfo": {
-        "domain": "hbx.media.net",
-        "ip": "184.25.120.29",
-        "hostname": "a184-25-120-29.deploy.static.akamaitechnologies.com",
-        "city": "Yuanlin",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "23.9567,120.5761",
-        "org": "AS16625 Akamai Technologies, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://sync.rbstsystems.live/psync?t=s&amp;e=238&amp;cb=https%3A%2F%2Fcookies.nextmillmedia.com%2Fsetuid%3Fbidder%3Drobustapps%26nmuid%3D%26gdpr%3D%26gdpr_consent%3D%26us_privacy%3D%26uid%3D%25USER_ID%25",
-      "type": "document",
-      "ipinfo": {
-        "domain": "sync.rbstsystems.live",
-        "ip": "69.147.224.39",
-        "city": "New York City",
-        "region": "New York",
-        "country": "US",
-        "loc": "40.7143,-74.0060",
-        "org": "AS396362 Leaseweb USA, Inc.",
-        "timezone": "America/New_York"
-      },
-      "category": "foreign/direct"
-    },
-    {
-      "originalUrl": "https://pxl.iqm.com/i/ck/vidazoo?cid=fd04f26e-7bfe-fb3c-516d-fe075df3278b&amp;redir=https%3A%2F%2Fsync.cootlogix.com%2Fapi%2Fcookie%3FpartnerId%3Diqm%26gdpr%3D%24%7Buser.gdpr%7D%26gdpr_consent%3D%24%7Buser.consentStr%7D%26us_privacy%3D%24%7Buser.usPrivacy%7D%26userId%3D%7BIQM_COOKIE%7D",
-      "type": "document",
-      "ipinfo": {
-        "domain": "pxl.iqm.com",
-        "ip": "3.229.202.201",
-        "hostname": "ec2-3-229-202-201.compute-1.amazonaws.com",
-        "city": "Ashburn",
-        "region": "Virginia",
-        "country": "US",
-        "loc": "39.0437,-77.4875",
-        "org": "AS14618 Amazon.com, Inc.",
-        "timezone": "America/New_York"
-      },
-      "category": "foreign/cloud"
-    },
-    {
-      "originalUrl": "https://e-jp.cmcd1.com/usersync/openxjp?id=10e6ce14-83b1-4240-be79-4d16ad538df2",
-      "type": "image",
-      "ipinfo": {
-        "domain": "e-jp.cmcd1.com",
-        "ip": "35.213.64.108",
-        "hostname": "108.64.213.35.bc.googleusercontent.com",
-        "city": "Tokyo",
-        "region": "Tokyo",
-        "country": "JP",
-        "loc": "35.6895,139.6917",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Tokyo"
-      },
-      "category": "foreign/cloud",
-      "cloud_provider": {
-        "rtt": 56,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://cs-rtb.minutemedia-prebid.com/sync-iframe?gdpr=&amp;gdpr_consent=&amp;us_privacy=&amp;redirect=https%3A%2F%2Fcookies.nextmillmedia.com%2Fsetuid%3Fbidder%3Dinsticator%26nmuid%3D3338f11d-19ef-45ce-b514-05263140c583%26gdpr%3D%26gdpr_consent%3D%26us_privacy%3D%26uid%3D%24UID&amp;redirect=https://cs.ingage.tech/v1/sync/minutemedia/9e821b14-4e82-4e71-a486-7862c401dc81?uid=01garg96c88b",
-      "type": "document",
-      "ipinfo": {
-        "domain": "cs-rtb.minutemedia-prebid.com",
-        "ip": "35.219.187.163",
-        "hostname": "163.187.219.35.bc.googleusercontent.com",
-        "city": "Las Vegas",
-        "region": "Nevada",
-        "country": "US",
-        "loc": "36.1750,-115.1372",
-        "org": "AS15169 Google LLC",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "foreign/cloud",
-      "cloud_provider": {
-        "rtt": 148.609,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://hb.trustedstack.com/cksync.php?cs=61&amp;type=kz&amp;gdpr=${GDPR}&amp;gdpr_consent=${GDPR_CONSENT}&amp;us_privacy=${USP_CONSENT}&amp;gpp_sid=${GPP_SID}&amp;redirect=https%3A%2F%2Fsync.kueezrtb.com%2Fapi%2Fcookie%3FpartnerId%3Dkueez-trustedstack%26userId%3D%3Cvsid%3E",
-      "type": "image",
-      "ipinfo": {
-        "domain": "hb.trustedstack.com",
-        "ip": "136.110.189.215",
-        "hostname": "215.189.110.136.bc.googleusercontent.com",
-        "city": "Kansas City",
-        "region": "Missouri",
-        "country": "US",
-        "loc": "39.0997,-94.5786",
-        "org": "AS396982 Google LLC",
-        "timezone": "America/Chicago"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "rtt": 3.475,
-        "detection_method": "rtt"
-      }
-    },
-    {
-      "originalUrl": "https://cs.krushmedia.com/feeeee7941a3729706aafcc88658ed50.gif?puid=72143a8e-5a81-4c40-bae1-8215b10799fc&amp;redir=https%3A%2F%2Fsync.go.sonobi.com%2Fus.gif%3Fnw%3Dkr%26nuid%3D[UID]",
-      "type": "image",
-      "ipinfo": {
-        "domain": "cs.krushmedia.com",
-        "ip": "80.77.82.130",
-        "city": "West Milford",
-        "region": "New Jersey",
-        "country": "US",
-        "loc": "41.1312,-74.3674",
-        "org": "AS46636 NatCoWeb Corp.",
-        "timezone": "America/New_York"
-      },
-      "category": "foreign/direct"
-    },
-    {
-      "originalUrl": "https://capi.connatix.com/us/pixel?puid=72143a8e-5a81-4c40-bae1-8215b10799fc&amp;pId=43&amp;gdpr_consent=&amp;callback=&amp;us_privacy=",
-      "type": "image",
-      "ipinfo": {
-        "domain": "capi.connatix.com",
-        "ip": "104.18.41.104",
-        "city": "San Francisco",
-        "region": "California",
-        "country": "US",
-        "loc": "37.7621,-122.3971",
-        "org": "AS13335 Cloudflare, Inc.",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "cf-ray": "9bd93bef8ceaf22a-TPE",
-        "detection_method": "header"
-      }
-    },
-    {
-      "originalUrl": "https://www.google.com/ads/measurement/l?ebcid=ALh7CaQCc-l2wGFiaWgUFRXg6hy5h2BNRfLEtcPMvmMzSYWz0ClYUklovGFnUtlCy6HVQo6DJg6-7HF9-xK8x7JDzNpUamrgRA",
-      "type": "image",
-      "ipinfo": {
-        "domain": "www.google.com",
-        "ip": "142.250.204.36",
-        "hostname": "hkg07s38-in-f4.1e100.net",
+        "domain": "s.yimg.com",
+        "ip": "180.222.109.251",
+        "hostname": "e1-bmr.ycpi.vip.twd.yahoo.com",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
         "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
+        "org": "AS24376 Yahoo China Datacenter",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://cdn.ampproject.org/rtv/012509301838000/amp4ads-v0.js",
+      "originalUrl": "https://consent.cmp.oath.com/version/7.0.2/cmp.js",
       "type": "script",
       "ipinfo": {
-        "domain": "cdn.ampproject.org",
-        "ip": "142.250.196.193",
-        "hostname": "nctsaa-ac-in-f1.1e100.net",
+        "domain": "consent.cmp.oath.com",
+        "ip": "13.249.126.81",
+        "hostname": "server-13-249-126-81.lax54.r.cloudfront.net",
+        "city": "Los Angeles",
+        "region": "California",
+        "country": "US",
+        "loc": "34.0522,-118.2437",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-amz-cf-pop": "LAX54-P6",
+        "rtt": 130.132,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "13.249.126.81",
+          "prefix": "13.249.126.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://jsapi.login.yahoo.com/w/device_users?.crumb=/XETz8LvTwt",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "jsapi.login.yahoo.com",
+        "ip": "180.222.109.251",
+        "hostname": "e1-bmr.ycpi.vip.twd.yahoo.com",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
         "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
+        "org": "AS24376 Yahoo China Datacenter",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 1/14/2026, 9:08:21 AM<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 7/21/2026, 3:21:15 AM<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -768,7 +214,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

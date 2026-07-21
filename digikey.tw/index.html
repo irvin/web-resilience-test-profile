@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海纜斷掉時，digikey.tw 會動嗎？</title>
+    <meta name="description" content="根據最近一次測試，在海纜斷掉的情境下，digikey.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
+    <link rel="icon" href="/favicon.ico">
+    <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/digikey.tw/">
+
+    <!-- Open Graph 標籤 -->
+    <meta property="og:title" content="海纜斷掉時，digikey.tw 會動嗎？">
+    <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，digikey.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resilience.ocf.tw/web/digikey.tw/">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
+
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
+    <script src="../locales/zh-TW.js"></script>
+    <script src="../locales/en.js"></script>
+    <script src="../i18n.js"></script>
+
+    <script>window.__IS_STATIC_PAGE__ = true;</script>
+    <link rel="alternate" hreflang="zh-TW" href="https://resilience.ocf.tw/web/digikey.tw/">
+    <link rel="alternate" hreflang="en" href="https://resilience.ocf.tw/web/digikey.tw/en/">
+</head>
+<body>
+    <div id="app">
+
+    <nav class="lang-switcher" aria-label="語言">
+        <a class="lang-switcher-btn" href="/web/digikey.tw/" hreflang="zh-TW" aria-current="page">中文</a>
+        <a class="lang-switcher-btn" href="/web/digikey.tw/en/" hreflang="en">English</a>
+    </nav>
+
+    <div class="static-wrapper" data-static="begin"></div>
+        <h1>海纜斷掉時，<a href="https://digikey.tw" target="_blank" rel="noopener noreferrer nofollow">digikey.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">3</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">17</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">4</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，digikey.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，digikey.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 digikey.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，digikey.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 digikey.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 digikey.tw 的首頁時，我們觀察到來自 24 個網域的 212 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS14738 Digi-Key Corporation</span><span class="connection-domain">204.221.76.76</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS14618 Amazon.com, Inc.</span><span class="connection-domain">produs-ccs-assurancecard-service.sgsonline.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">digikey.egain.cloud</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.digikey.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">sc-c.digikeyassets.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">sc-a.digikeyassets.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">sc-b.digikeyassets.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.digikey.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdn.cookielaw.org</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">geolocation.onetrust.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">privacyportal.onetrust.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">t.co</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">analytics.twitter.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.linkedin.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">info.digikey.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">snap.licdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">cdn.evgnet.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">cdn.sift.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">bat.bing.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/digikey.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+  "url": "https://digikey.tw",
+  "canonicalURL": "https://www.digikey.tw/zh",
+  "httpStatus": 200,
+  "timestamp": "2026-07-20T20:42:38.077Z",
+  "testParameters": {
+    "customDNS": "168.95.1.1",
+    "useAdblock": true,
+    "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
+      "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
+    ],
+    "useCache": true,
+    "hasIPinfoToken": true
+  },
+  "testingEnvironment": {
+    "ip": "220.132.212.194",
+    "hostname": "220-132-212-194.hinet-ip.hinet.net",
+    "city": "Banqiao",
+    "region": "Taipei",
+    "country": "TW",
+    "loc": "25.0143,121.4672",
+    "org": "AS3462 Data Communication Business Group",
+    "timezone": "Asia/Taipei",
+    "source": "ipinfo json api (direct)",
+    "dnsServer": "168.95.1.1"
+  },
+  "requestCount": 212,
+  "uniqueDomains": 24,
+  "test_results": {
+    "domestic": {
+      "cloud": 17,
+      "direct": 3
+    },
+    "foreign": {
+      "cloud": 3,
+      "direct": 1
+    }
+  },
+  "domainDetails": [
+    {
+      "originalUrl": "https://digikey.tw/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "digikey.tw",
+        "ip": "204.221.76.76",
+        "city": "Thief River Falls",
+        "region": "Minnesota",
+        "country": "US",
+        "loc": "48.1191,-96.1812",
+        "org": "AS14738 Digi-Key Corporation",
+        "timezone": "America/Chicago"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://www.digikey.tw/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "www.digikey.tw",
+        "ip": "104.18.13.132",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4cac0df4da378-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://sc-c.digikeyassets.com/-/media/Designer/Global/fonts/fonts.css?la=en&amp;ts=40b60453-8da6-4752-9420-2b35b16e0ca2",
+      "type": "stylesheet",
+      "ipinfo": {
+        "domain": "sc-c.digikeyassets.com",
+        "ip": "104.18.23.32",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4cac4eafd6e87-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://sc-a.digikeyassets.com/-/media/Designer/Misc/SuggestionSearchBar/CSS/searchsuggest.css?la=en&amp;ts=41f98d6f-b221-4c88-a872-a91f60fe5338",
+      "type": "stylesheet",
+      "ipinfo": {
+        "domain": "sc-a.digikeyassets.com",
+        "ip": "104.18.22.32",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4cac4dabd82cd-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://sc-b.digikeyassets.com/-/media/Designer/Carousel/Swiper/CSS/carousel.css?la=en&amp;ts=886a1496-74c0-4ff7-9e39-dcceff9def06",
+      "type": "stylesheet",
+      "ipinfo": {
+        "domain": "sc-b.digikeyassets.com",
+        "ip": "104.18.22.32",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4cac49c034a42-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://cdn.evgnet.com/beacon/digikey/production/scripts/evergage.min.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "cdn.evgnet.com",
+        "ip": "151.101.128.114",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-iad-kcgs7200061-IAD, cache-nrt-rjtf7700022-NRT",
+        "rtt": 36.662,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "151.101.128.114",
+          "prefix": "151.101.128.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 57,
+          "location_count": 57
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.digikey.com/-/digit/web-components/dk-web-components.esm.js?v=1.0.6",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.digikey.com",
+        "ip": "104.18.13.179",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4cac2e8918283-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://www.googletagmanager.com/gtm.js?id=GTM-53KHTQK",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.googletagmanager.com",
+        "ip": "142.250.196.200",
+        "hostname": "nctsaa-ac-in-f8.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://produs-ccs-assurancecard-service.sgsonline.net/img/thumb.png",
+      "type": "image",
+      "ipinfo": {
+        "domain": "produs-ccs-assurancecard-service.sgsonline.net",
+        "ip": "54.175.7.71",
+        "hostname": "ec2-54-175-7-71.compute-1.amazonaws.com",
+        "city": "Ashburn",
+        "region": "Virginia",
+        "country": "US",
+        "loc": "39.0437,-77.4875",
+        "org": "AS14618 Amazon.com, Inc.",
+        "timezone": "America/New_York"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "54.175.7.71",
+          "prefix": "54.175.7.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js?did=c496aab7-a8e4-45e4-8829-0828b78c04b2&amp;data-document-language=true",
+      "type": "script",
+      "ipinfo": {
+        "domain": "cdn.cookielaw.org",
+        "ip": "104.18.86.42",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4cac848d9827c-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "geolocation.onetrust.com",
+        "ip": "104.18.32.137",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4cacacc90a9a9-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://www.google.com/rmkt/collect/987442776/?random=1784580143656&amp;cv=11&amp;fst=1784580143656&amp;fmt=8&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be67g0v873485838z8895526755za20gzb895526755zd895526755xea&amp;gcd=13r3r3r3r5l1&amp;dma=0&amp;tag_exp=115938465~115938468~118897920~118897930~119317811&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fwww.digikey.tw%2F&amp;rcb=16&amp;frm=0&amp;tiba=DigiKey%20%E8%87%BA%E7%81%A3%20%7C%20%E9%9B%BB%E5%AD%90%E9%9B%B6%E4%BB%B6%E8%88%87%E5%85%83%E4%BB%B6%20%E2%80%93%20%E5%BF%AB%E9%80%9F%E5%87%BA%E8%B2%A8%E3%80%81%E5%85%A8%E7%90%83%E6%94%AF%E6%8F%B4&amp;did=dYWJhMj&amp;gdid=dYWJhMj&amp;hn=www.googleadservices.com&amp;rdp=1&amp;npa=0&amp;pscdl=noapi&amp;auid=1316338010.1784580144&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;_tu=CAI&amp;data=ecomm_pagetype%3Dhome&amp;ept=68&amp;gcp=5",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "www.google.com",
+        "ip": "142.251.151.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 4.954,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.151.119",
+          "prefix": "142.251.151.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
+      }
+    },
+    {
+      "originalUrl": "https://privacyportal.onetrust.com/request/v1/consentreceipts/anonymous",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "privacyportal.onetrust.com",
+        "ip": "104.18.32.137",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4cad73d83a9cd-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-276R9HWFF5&amp;cid=1103310802.1784580143&amp;gtm=45je67g0v898462989za20gzb895526755zd895526755&amp;rcb=4&amp;aip=1&amp;dma=0&amp;gcs=G111&amp;gcd=13r3r3r3r5l1&amp;npa=0&amp;frm=0&amp;tag_exp=115938465~115938469~118395333~118897920~118897930~119896803&amp;z=367223474",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.google.com.tw",
+        "ip": "142.250.77.195",
+        "hostname": "del11s08-in-f3.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://snap.licdn.com/li.lms-analytics/insight.min.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "snap.licdn.com",
+        "ip": "203.69.81.41",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://bat.bing.com/bat.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "bat.bing.com",
+        "ip": "150.171.28.10",
+        "city": "Redmond",
+        "region": "Washington",
+        "country": "US",
+        "loc": "47.6740,-122.1215",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "x-msedge-ref": "Ref A: F378D10EFA3A482F902346FE2636821B Ref B: TPE201050219042 Ref C: 2026-07-20T20:42:25Z",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://connect.facebook.net/en_US/fbevents.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "connect.facebook.net",
+        "ip": "31.13.87.5",
+        "hostname": "xx-fbcdn-shv-01-tpe1.fbcdn.net",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS32934 Facebook, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://digikey.egain.cloud/system/templates/chat/egain-chat.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "digikey.egain.cloud",
+        "ip": "44.241.85.51",
+        "hostname": "ec2-44-241-85-51.us-west-2.compute.amazonaws.com",
+        "city": "Boardman",
+        "region": "Oregon",
+        "country": "US",
+        "loc": "45.8399,-119.7006",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "44.241.85.51",
+          "prefix": "44.241.85.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.facebook.com/tr/?id=525067094339337&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.digikey.tw%2F&amp;rl=&amp;if=false&amp;ts=1784580145497&amp;iw=false&amp;sw=1280&amp;sh=720&amp;v=2.9.358&amp;r=stable&amp;ec=0&amp;o=4126&amp;aems=0%3B0&amp;fbp=fb.1.1784580145493.281139589448871993&amp;ler=empty&amp;cdl=API_unavailable&amp;pmd[title]=%0A%20%20%20%20%20%20%20%20%20%20%20%20DigiKey%20%E8%87%BA%E7%81%A3%20%7C%20%E9%9B%BB%E5%AD%90%E9%9B%B6%E4%BB%B6%E8%88%87%E5%85%83%E4%BB%B6%20%E2%80%93%20%E5%BF%AB%E9%80%9F%E5%87%BA%E8%B2%A8%E3%80%81%E5%85%A8%E7%90%83%E6%94%AF%E6%8F%B4%0A%20%20%20%20%20%20%20%20&amp;pmd[locale]=zh-tw&amp;pmd[keywords]=digikey%2C%20digikey%20electronics%2C%20%E9%9B%BB%E5%AD%90%E5%85%83%E4%BB%B6%E7%B6%93%E9%8A%B7%E5%95%86%2C%20%E9%9B%BB%E5%AD%90%E9%9B%B6%E4%BB%B6%2C%20%E5%93%AA%E8%A3%A1%E8%B3%BC%E8%B2%B7%E9%9B%BB%E5%AD%90%E5%85%83%E4%BB%B6&amp;pmd[description]=DigiKey%20%E6%98%AF%E6%95%B8%E7%99%BE%E8%90%AC%E6%AC%BE%E9%9B%BB%E5%AD%90%E5%85%83%E4%BB%B6%E7%9A%84%E8%B2%A8%E6%BA%90%E9%A6%96%E9%81%B8%EF%BC%8C%E6%8F%90%E4%BE%9B%E8%B1%90%E5%AF%8C%E5%BA%AB%E5%AD%98%E3%80%81%E5%BF%AB%E9%80%9F%E5%87%BA%E8%B2%A8%E3%80%81%E5%B0%88%E5%AE%B6%E6%94%AF%E6%8F%B4%E3%80%82%E5%BE%9E%E8%A8%AD%E8%A8%88%E5%88%B0%E7%94%9F%E7%94%A2%EF%BC%8C%E6%88%91%E5%80%91%E6%8F%90%E4%BE%9B%E5%90%84%E7%A8%AE%E6%8A%80%E8%A1%93%E5%8A%A9%E6%82%A8%E5%89%B5%E6%96%B0%E3%80%82&amp;plt=2250.699999999255&amp;iss=1&amp;imft=1&amp;tz=480&amp;it=1784580145061&amp;coo=false&amp;expv2[0]=pl0&amp;expv2[1]=el2&amp;expv2[2]=bc1&amp;expv2[3]=ra2&amp;expv2[4]=rp2&amp;expv2[5]=im0&amp;expv2[6]=hf0&amp;rqm=GET",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.facebook.com",
+        "ip": "31.13.87.36",
+        "hostname": "edge-star-mini-shv-01-tpe1.facebook.com",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS32934 Facebook, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://t.co/1/i/adsct?bci=4&amp;dv=Asia%2FTaipei%26zh-TW%26Google%20Inc.%26MacIntel%26127%261280%26720%2610%2630%261280%26720%260%26na&amp;eci=3&amp;event=%7B%7D&amp;event_id=f80a71ae-ec7d-4983-810c-95f4426a3b5c&amp;integration=gtm&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=c91a1f4c-6890-4052-8cc7-7f45d987e715&amp;pt=DigiKey%20%E8%87%BA%E7%81%A3%20%7C%20%E9%9B%BB%E5%AD%90%E9%9B%B6%E4%BB%B6%E8%88%87%E5%85%83%E4%BB%B6%20%E2%80%93%20%E5%BF%AB%E9%80%9F%E5%87%BA%E8%B2%A8%E3%80%81%E5%85%A8%E7%90%83%E6%94%AF%E6%8F%B4&amp;tw_document_href=https%3A%2F%2Fwww.digikey.tw%2F&amp;tw_iframe_status=0&amp;tw_pid_src=1&amp;twpid=tw.1784580145573.275367596201295318&amp;txn_id=o5sjj&amp;type=javascript&amp;version=2.3.54",
+      "type": "image",
+      "ipinfo": {
+        "domain": "t.co",
+        "ip": "162.159.140.229",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4cad93bd6a36d-TPE",
+        "x-served-by": "t4_p",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://analytics.twitter.com/1/i/adsct?bci=4&amp;dv=Asia%2FTaipei%26zh-TW%26Google%20Inc.%26MacIntel%26127%261280%26720%2610%2630%261280%26720%260%26na&amp;eci=3&amp;event=%7B%7D&amp;event_id=f80a71ae-ec7d-4983-810c-95f4426a3b5c&amp;integration=gtm&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=c91a1f4c-6890-4052-8cc7-7f45d987e715&amp;pt=DigiKey%20%E8%87%BA%E7%81%A3%20%7C%20%E9%9B%BB%E5%AD%90%E9%9B%B6%E4%BB%B6%E8%88%87%E5%85%83%E4%BB%B6%20%E2%80%93%20%E5%BF%AB%E9%80%9F%E5%87%BA%E8%B2%A8%E3%80%81%E5%85%A8%E7%90%83%E6%94%AF%E6%8F%B4&amp;tw_document_href=https%3A%2F%2Fwww.digikey.tw%2F&amp;tw_iframe_status=0&amp;tw_pid_src=1&amp;twpid=tw.1784580145573.275367596201295318&amp;txn_id=o5sjj&amp;type=javascript&amp;version=2.3.54",
+      "type": "image",
+      "ipinfo": {
+        "domain": "analytics.twitter.com",
+        "ip": "162.159.140.229",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4cad99f2c56f4-TPE",
+        "x-served-by": "t4_p",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://www.linkedin.com/px/li_sync?redirect=https%3A%2F%2Fpx.ads.linkedin.com%2Fcollect%3Fv%3D2%26fmt%3Djs%26pid%3D966017%26time%3D1784580145174%26li_adsId%3Df72b74ad-b4ec-41ef-810a-795c9cab436d%26url%3Dhttps%253A%252F%252Fwww.digikey.tw%252F%26tm%3Dgtmv2%26cookiesTest%3Dtrue%26liSync%3Dtrue",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.linkedin.com",
+        "ip": "172.64.146.215",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4cadb8b60a337-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://cdn.sift.com/s.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "cdn.sift.com",
+        "ip": "34.96.67.224",
+        "hostname": "224.67.96.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 5.918,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.96.67.224",
+          "prefix": "34.96.67.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 63,
+          "location_count": 63
+        }
+      }
+    },
+    {
+      "originalUrl": "https://info.digikey.com/js/forms2/js/forms2.min.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "info.digikey.com",
+        "ip": "104.17.71.206",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "104.17.71.206",
+          "prefix": "104.17.71.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 76,
+          "location_count": 76,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午4:42:38<span> (HTTP 200)</span></p></div></div>
+    <div class="static-wrapper" data-static="end"></div>
+
+
+
+    <div id="search-container" v-show="showSearch">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="輸入網址查看測試結果..." autocomplete="off"
+                v-model="searchQuery"  @keydown="onSearchKeydown" @focus="onSearchFocus"
+            >
+
+            <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length" @scroll.passive="onDropdownScroll">
+                <a
+                    :href="sitePageHref(url)"
+                    class="search-dropdown-item"
+                    v-for="(url, index) in displayedUrls"
+                    :key="url"
+                    :data-url="url"
+                    :data-index="index"
+                    :class="{ selected: index === selectedIndex }"
+                    @click.prevent="selectUrl(url)"
+                >
+                    {{ formatDisplayUrl(url) }}
+                </a>
+            </div>
+            <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
+                        <p>{{ t('search.noResults', { query: searchQuery }) }}</p>
+                        <p>你可以在此檢視<a href="https://github.com/irvin/web-resilience-test-result" target="_blank">已測試網站資料</a>，並<a href="https://github.com/irvin/web-resilience-test/tree/a6ccd6f1b05fca34034250055d566d1c1c0f4c65#d-automated-testing-tool" target="_blank">使用此工具</a>手動進行測試。</p>
+            </div>
+            <div class="search-meta" id="search-meta">
+                <template v-if="hasItems">
+                        {{ t('search.statsWithItems', { totalAll, shown }) }}
+                        <span class="search-load-more" v-if="hasMore" @click="loadMore">[載入更多網站]</span>
+                </template>
+                <template v-else>
+                        {{ t('search.statsEmpty', { totalAll }) }}
+                </template>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <p id="check-other-site-container" v-show="showCheckOther">
+            <a href="/web/">
+                <button class="check-other-site-btn" @click.prevent="openSearch">檢查其他網站</button>
+            </a>
+        </p>
+        <hr>
+        <p>
+            <a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="../g0v_logo.svg" title="g0v 數位韌性松" style="height: 65px;"></a>
+            <a href="https://ocf.tw/" target="_blank"><img src="../Logo_Compact-OCF_Purple.svg" title="開放文化基金會" style="height: 35px;"></a>
+        </p>
+        <p>Curated by <a href="https://t.me/s/irvinfly" target="_blank">Irvin Chen</a>. Released under the <a href="https://github.com/irvin/web-resilience-test/?tab=License-1-ov-file#License-1-ov-file" target="_blank">CC BY-NC-ND 4.0 International License</a>.</p>
+        <p style="margin-bottom: 2em;">
+            <a href="https://resilience.ocf.tw/web/report/" target="_blank">研究報告</a>｜<a href="https://github.com/irvin/web-resilience-test" target="_blank">原始碼</a>
+        </p>
+        <hr>
+        <p><a href="https://apnic.foundation/" target="_blank"><img src="../APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" title="APNIC Foundation ISIF Asia" style="height: 90px;"></a></p>
+        <p>This work was supported by a grant from the <a href="https://apnic.foundation/" target="_blank">APNIC Foundation</a>, via <a href="https://apnic.foundation/home/isifasia/" target="_blank">ISIF Asia</a>.</p>
+    </footer>
+    </div>
+
+    <script src="../app.js"></script>
+</body>
+</html>

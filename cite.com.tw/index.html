@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，cite.com.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/cite.com.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://cite.com.tw" target="_blank" rel="noopener noreferrer nofollow">cite.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>不確定</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-X score-zero">境外連線 (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，cite.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，cite.com.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 cite.com.tw 在海纜斷掉時「不確定是否會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，我們雖然沒有看到直接連到境外的資源請求，但有發現對於跨國雲服務在台灣的節點依賴。這些服務能否在對外受阻時持續運作，會受到平台架構、快取設計、或回源方式等影響，所以目前只能列為「不確定」。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，cite.com.tw 屆時可能不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">「不確定」的意思是，目前不足以判定一定能用或不能用。cite.com.tw 所依賴的這些跨國雲服務在台節點，在海纜斷線或極度壅塞時的可用性，需由業者進一步釐清與說明。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 cite.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 cite.com.tw 的首頁時，我們觀察到來自 8 個網域的 115 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS18182 Sony Network Taiwan Limited</span><span class="connection-domain">27.105.201.3</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">cdn.cite.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS18182 Sony Network Taiwan Limited</span><span class="connection-domain">www.cite.com.tw</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/cite.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://cite.com.tw" target="_blank" rel="noopener noreferrer nofollow">cite.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>不確定</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-X score-zero">境外連線 (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，cite.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，cite.com.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 cite.com.tw 在海纜斷掉時「不確定是否會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，我們雖然沒有看到直接連到境外的資源請求，但有發現對於跨國雲服務在台灣的節點依賴。這些服務能否在對外受阻時持續運作，會受到平台架構、快取設計、或回源方式等影響，所以目前只能列為「不確定」。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，cite.com.tw 屆時可能不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">「不確定」的意思是，目前不足以判定一定能用或不能用。cite.com.tw 所依賴的這些跨國雲服務在台節點，在海纜斷線或極度壅塞時的可用性，需由業者進一步釐清與說明。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 cite.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 cite.com.tw 的首頁時，我們觀察到來自 8 個網域的 120 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS18182 Sony Network Taiwan Limited</span><span class="connection-domain">27.105.201.3</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">cdn.cite.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS18182 Sony Network Taiwan Limited</span><span class="connection-domain">www.cite.com.tw</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/cite.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://cite.com.tw",
   "canonicalURL": "https://www.cite.com.tw/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T02:45:31.541Z",
+  "timestamp": "2026-07-20T20:43:44.222Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,7 +61,7 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 115,
+  "requestCount": 120,
   "uniqueDomains": 8,
   "test_results": {
     "domestic": {
@@ -104,16 +105,16 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://cdn.cite.com.tw/thumbs/1GZ505.jpg",
+      "originalUrl": "https://cdn.cite.com.tw/thumbs/BH6141.jpg",
       "type": "image",
       "ipinfo": {
         "domain": "cdn.cite.com.tw",
-        "ip": "3.169.121.22",
-        "hostname": "server-3-169-121-22.tpe53.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "54.192.248.17",
+        "hostname": "server-54-192-248-17.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -124,8 +125,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "www.googletagmanager.com",
-        "ip": "142.250.204.40",
-        "hostname": "hkg07s38-in-f8.1e100.net",
+        "ip": "142.250.198.72",
+        "hostname": "lctsaa-ab-in-f8.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -152,23 +153,43 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://www.google.com/ccm/collect?frm=0&amp;en=page_view&amp;dl=https%3A%2F%2Fwww.cite.com.tw%2F&amp;scrsrc=www.googletagmanager.com&amp;rnd=643004927.1768358730&amp;dt=%E5%9F%8E%E9%82%A6%E8%AE%80%E6%9B%B8%E8%8A%B1%E5%9C%92%E7%B6%B2%E8%B7%AF%E6%9B%B8%E5%BA%97&amp;auid=912098466.1768358730&amp;navt=n&amp;npa=0&amp;gtm=45He61c1v9102443922za200zd9102443922xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527907~104528501~104684208~104684211~105391253~115938466~115938468~116744867~117041588&amp;tft=1768358729654&amp;tfd=770&amp;apve=1&amp;apvf=f",
+      "originalUrl": "https://www.google.com/rmkt/collect/710828532/?random=1784580220658&amp;cv=11&amp;fst=1784580220658&amp;fmt=8&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be67g0v9215070108za200zd9215070108xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115938466~115938469~118897920~118897930~119724321&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fwww.cite.com.tw%2F&amp;rcb=7&amp;frm=0&amp;tiba=%E5%9F%8E%E9%82%A6%E8%AE%80%E6%9B%B8%E8%8A%B1%E5%9C%92%E7%B6%B2%E8%B7%AF%E6%9B%B8%E5%BA%97&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1954360516.1784580221&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;data=event%3Dgtag.config&amp;ept=68&amp;gcp=5",
       "type": "fetch",
       "ipinfo": {
         "domain": "www.google.com",
-        "ip": "142.250.196.196",
-        "hostname": "nctsaa-ac-in-f4.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
+        "ip": "142.251.154.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
         "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
+        "timezone": "America/Los_Angeles"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.162,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.154.119",
+          "prefix": "142.251.154.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 60,
+          "location_count": 60
+        }
+      }
     },
     {
-      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-SLW7WNG010&amp;cid=817699831.1768358730&amp;gtm=45je61c1v897687418z89102443922za200zd897687418&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=103116026~103200004~104527907~104528500~104684208~104684211~105391253~115938466~115938468~116744867~117041587&amp;z=1439944496",
+      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-SLW7WNG010&amp;cid=1392391155.1784580221&amp;gtm=45je67g0v897687418za200zb9215070108zd9215070108&amp;rcb=2&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=115616985~115938466~115938469~118012009~118395333~118897920~118897930~119724321&amp;z=1420052070",
       "type": "image",
       "ipinfo": {
         "domain": "www.google.com.tw",
@@ -184,8 +205,8 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://www.facebook.com/v2.1/plugins/page.php?adapt_container_width=true&amp;app_id=209534612422689&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df001c7ee6d38d02d7%26domain%3Dwww.cite.com.tw%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.cite.com.tw%252Ff0917413425e606d4%26relation%3Dparent.parent&amp;container_width=149&amp;height=513&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Ficite.fans%2F&amp;lazy=true&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=true&amp;small_header=true&amp;width=145",
-      "type": "document",
+      "originalUrl": "https://www.facebook.com/tr/?id=719586450813467&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.cite.com.tw%2F&amp;rl=&amp;if=false&amp;ts=1784580221992&amp;iw=false&amp;sw=1280&amp;sh=720&amp;v=2.9.358&amp;r=stable&amp;ec=0&amp;o=4126&amp;aems=0%3B0&amp;fbp=fb.2.1784580221988.698576478825103648&amp;ler=empty&amp;cdl=API_unavailable&amp;pmd[title]=%E5%9F%8E%E9%82%A6%E8%AE%80%E6%9B%B8%E8%8A%B1%E5%9C%92%E7%B6%B2%E8%B7%AF%E6%9B%B8%E5%BA%97&amp;pmd[locale]=zh-TW&amp;pmd[description]=%E5%9F%8E%E9%82%A6%E8%AE%80%E6%9B%B8%E8%8A%B1%E5%9C%92%E7%82%BA%E5%8F%B0%E7%81%A3%E6%9C%80%E5%A4%A7%E5%87%BA%E7%89%88%E9%9B%86%E5%9C%98%E7%9B%B4%E7%87%9F%E9%80%9A%E8%B7%AF%EF%BC%8C%E6%AF%8F%E6%9C%88%E6%8F%90%E4%BE%9B%E6%9C%80%E6%96%B0%E8%B3%BC%E6%9B%B8%E5%84%AA%E6%83%A0%E3%80%81%E8%B6%85%E5%80%BC%E6%9B%B8%E5%B1%95%EF%BC%8C%E7%B5%A6%E5%96%9C%E6%AD%A1%E9%96%B1%E8%AE%80%E7%9A%84%E6%82%A8%E6%9C%80%E5%AF%A6%E5%9C%A8%E7%9A%84%E8%B3%BC%E6%9B%B8%E9%9C%80%E6%B1%82%EF%BC%8C%E4%B8%A6%E6%8F%90%E4%BE%9B%E7%8D%A8%E5%AE%B6%E5%BD%B1%E9%9F%B3%E8%AA%AA%E6%9B%B8%E5%85%A7%E5%AE%B9%E3%80%81%E8%AC%9B%E5%A0%82%E8%AA%B2%E7%A8%8B%E6%B4%BB%E5%8B%95%E3%80%81%E7%B7%A8%E8%BC%AF%E6%8E%A8%E8%96%A6%E6%96%87%E7%AB%A0...%E7%AD%89%EF%BC%8C%E8%AE%93%E6%82%A8%E7%8D%B2%E5%BE%97%E6%9B%B4%E5%A4%9A%E5%85%83%E5%8C%96%E7%9A%84%E6%9B%B8%E7%B1%8D%E8%A8%8A%E6%81%AF%EF%BC%8C%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%8F%90%E4%BE%9B%E8%B6%85%E5%95%86%E5%8F%96%E8%B2%A8%E5%85%8D%E9%81%8B%E6%9C%8D%E5%8B%99%EF%BC%8C%E8%B2%B7%E6%9B%B8%E5%B0%B1%E4%B8%8A%E5%9F%8E%E9%82%A6%E8%AE%80%E6%9B%B8%E8%8A%B1%E5%9C%92%E6%9C%80%E5%88%92%E7%AE%97%E3%80%82&amp;plt=1654.699999999255&amp;iss=1&amp;imft=1&amp;tz=480&amp;it=1784580221478&amp;coo=false&amp;expv2[0]=pl1&amp;expv2[1]=el2&amp;expv2[2]=bc1&amp;expv2[3]=ra2&amp;expv2[4]=rp2&amp;expv2[5]=im1&amp;expv2[6]=hf0&amp;rqm=GET",
+      "type": "image",
       "ipinfo": {
         "domain": "www.facebook.com",
         "ip": "31.13.87.36",
@@ -200,10 +221,10 @@
       "category": "domestic/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午10:45:31<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午4:43:44<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -241,7 +262,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

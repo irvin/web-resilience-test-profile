@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，commerce.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/commerce.com.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://commerce.com.tw" target="_blank" rel="noopener noreferrer nofollow">commerce.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">6</strong></p><p class="score score-Q score-zero">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">3</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，commerce.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，commerce.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 commerce.com.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，commerce.com.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 commerce.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 commerce.com.tw 的首頁時，我們觀察到來自 9 個網域的 70 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">172.67.164.96</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.commerce.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">scontent.ftpe7-3.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">external.ftpe7-3.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">scontent.ftpe7-2.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">static.xx.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">scontent.xx.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">gdpr.urb2b.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/commerce.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://commerce.com.tw" target="_blank" rel="noopener noreferrer nofollow">commerce.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">2</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">1</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，commerce.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，commerce.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 commerce.com.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，commerce.com.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 commerce.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 commerce.com.tw 的首頁時，我們觀察到來自 7 個網域的 73 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">104.21.66.211</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.commerce.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">scontent.ftpe7-3.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">external.ftpe7-1.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">static.xx.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">gdpr.urb2b.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/commerce.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://commerce.com.tw",
   "canonicalURL": "https://commerce.com.tw",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T03:45:07.664Z",
+  "timestamp": "2026-07-20T20:25:09.218Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,15 +61,15 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 70,
-  "uniqueDomains": 9,
+  "requestCount": 73,
+  "uniqueDomains": 7,
   "test_results": {
     "domestic": {
-      "cloud": 0,
-      "direct": 6
+      "cloud": 2,
+      "direct": 4
     },
     "foreign": {
-      "cloud": 3,
+      "cloud": 1,
       "direct": 0
     }
   },
@@ -78,7 +79,7 @@
       "type": "document",
       "ipinfo": {
         "domain": "commerce.com.tw",
-        "ip": "172.67.164.96",
+        "ip": "104.21.66.211",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -86,10 +87,34 @@
         "org": "AS13335 Cloudflare, Inc.",
         "timezone": "America/Los_Angeles"
       },
-      "category": "foreign/cloud",
+      "category": "domestic/cloud",
       "cloud_provider": {
-        "rtt": 136.964,
-        "detection_method": "rtt"
+        "cf-ray": "a1e4b167f8dec261-SIN",
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "104.21.66.211",
+          "prefix": "104.21.66.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 58,
+          "location_count": 58,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
       }
     },
     {
@@ -105,10 +130,34 @@
         "org": "AS13335 Cloudflare, Inc.",
         "timezone": "America/Los_Angeles"
       },
-      "category": "foreign/cloud",
+      "category": "domestic/cloud",
       "cloud_provider": {
-        "rtt": 136.918,
-        "detection_method": "rtt"
+        "cf-ray": "a1e4b16a6db0fdfb-SIN",
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.67.164.96",
+          "prefix": "172.67.164.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 58,
+          "location_count": 58,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
       }
     },
     {
@@ -125,7 +174,24 @@
         "org": "AS8075 Microsoft Corporation",
         "timezone": "Asia/Hong_Kong"
       },
-      "category": "foreign/cloud"
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 20.824,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "20.24.217.105",
+          "prefix": "20.24.217.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
     },
     {
       "originalUrl": "http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FOpen-Your-Marketing-Eyes%2F278337692219099&amp;width=292&amp;height=395&amp;colorscheme=light&amp;show_faces=false&amp;border_color&amp;stream=true&amp;header=false",
@@ -144,7 +210,7 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://static.xx.fbcdn.net/rsrc.php/v5/yN/l/1,cross/8OB0YQlOgty.css",
+      "originalUrl": "https://static.xx.fbcdn.net/rsrc.php/v5/yU/l/1,cross/iVmwkZA0KAu.css",
       "type": "stylesheet",
       "ipinfo": {
         "domain": "static.xx.fbcdn.net",
@@ -160,74 +226,42 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://scontent.ftpe7-3.fna.fbcdn.net/v/t39.30808-1/273637586_326841776123816_8117498171919063968_n.jpg?stp=dst-jpg_s100x100_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=f907e8&amp;_nc_ohc=z0iVEXPKkNkQ7kNvwHuAaHR&amp;_nc_oc=Adn6LNsB_6zUIRlqZV6CW8xxyxgrt_HUgqE-HlGxy8uamaU9puEeVxPm__YGYXLP7mbI9KwVhmzdrvgm-oWH1HuV&amp;_nc_zt=24&amp;_nc_ht=scontent.ftpe7-3.fna&amp;edm=AEDRbFQEAAAA&amp;_nc_gid=LncIQoc40RGyyQp-hPXs8g&amp;oh=00_AfohJzJoloCXsdE4jmErwnfE1z-ydCGRJ7sVKXwnDpGnkA&amp;oe=696CD501",
+      "originalUrl": "https://scontent.ftpe7-3.fna.fbcdn.net/v/t39.30808-1/273637586_326841776123816_8117498171919063968_n.jpg?stp=dst-jpg_s100x100_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=f907e8&amp;_nc_ohc=GoRIV7T1akQQ7kNvwGnKcNt&amp;_nc_oc=Adq7ZR55Qiig4r4LAV9BhTqfmGI_L5z6cn13V_ZILPuoo0_XaqicU3Z5oRebQg25NxeaTtliow5Hhz_aKpwOKmed&amp;_nc_zt=24&amp;_nc_ht=scontent.ftpe7-3.fna&amp;edm=AEDRbFQEAAAA&amp;_nc_gid=-gxJuq-Q6f6SIevIaM-7YQ&amp;oh=00_AQC5hrKC0ArZF6WG_jrmwfoiaMI4FxCbkEaUflH7WX1jvA&amp;oe=6A643E81",
       "type": "image",
       "ipinfo": {
         "domain": "scontent.ftpe7-3.fna.fbcdn.net",
         "ip": "203.74.65.145",
         "hostname": "203-74-65-145.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS3462 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://external.ftpe7-3.fna.fbcdn.net/emg1/v/t13/3831966884329325466?url=https%3A%2F%2Fb2bdigitalmarketers.com%2Fwp-content%2Fuploads%2F2021%2F11%2Fb2b-blog-strategy.jpg&amp;fb_obo=1&amp;utld=b2bdigitalmarketers.com&amp;stp=c0.5000x0.5000f_dst-emg0_p284x149_q75_tt6_u&amp;edm=AEDRbFQEAAAA&amp;_nc_gid=LncIQoc40RGyyQp-hPXs8g&amp;_nc_oc=AdnMzfGwUUYdbltev19ZxYYwg0naVdbrJUO3-aS8Vnpmx4y58PNK8_3Oh1aw9jo8wZpqlJL4B-IITLSA4Zeqxp6S&amp;ccb=13-1&amp;oh=06_Q3-7AYfq2AV6jLpH6MJ-3sF1Qkhd81EUHmLXKc06EzlRVjwD&amp;oe=6968E86A&amp;_nc_sid=e42f53",
-      "type": "image",
-      "ipinfo": {
-        "domain": "external.ftpe7-3.fna.fbcdn.net",
-        "ip": "203.74.65.145",
-        "hostname": "203-74-65-145.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS3462 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://scontent.ftpe7-2.fna.fbcdn.net/v/t39.30808-6/508622763_1179856157489036_2003786512946660415_n.jpg?stp=dst-jpg_s565x565_tt6&amp;_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=e5c1b6&amp;_nc_ohc=WeFXihPy75sQ7kNvwG4a0aI&amp;_nc_oc=AdlV1QH1voaHZYE2VptZEf7yHl-vd8s_tDIyraBBFue_Su1QmOff_0QHgjsyGNQ5O-_VuSQBmob676MOUUAwcVCF&amp;_nc_zt=23&amp;_nc_ht=scontent.ftpe7-2.fna&amp;edm=AEDRbFQEAAAA&amp;_nc_gid=LncIQoc40RGyyQp-hPXs8g&amp;oh=00_Afo__3H6aZH-tlkPtb2UkQG5WwgBZ1jaMl6hgzQ2r_LyvQ&amp;oe=696CFF23",
-      "type": "image",
-      "ipinfo": {
-        "domain": "scontent.ftpe7-2.fna.fbcdn.net",
-        "ip": "203.74.65.81",
-        "hostname": "203-74-65-81.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS3462 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://scontent.xx.fbcdn.net/hads-ak-prn2/1487645_6012475414660_1439393861_n.png",
-      "type": "image",
-      "ipinfo": {
-        "domain": "scontent.xx.fbcdn.net",
-        "ip": "31.13.87.5",
-        "hostname": "xx-fbcdn-shv-01-tpe1.fbcdn.net",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
         "loc": "25.0531,121.5264",
-        "org": "AS32934 Facebook, Inc.",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://external.ftpe7-1.fna.fbcdn.net/emg1/v/t13/860591011597236138?url=https%3A%2F%2Fwww.entrepreneur.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2026%2F05%2Fwhy-your-marketing-isnt-converting-0526_g1344913240.jpg%3Fresize%3D1024%2C683&amp;fb_obo=1&amp;utld=entrepreneur.com&amp;stp=c0.5000x0.5000f_dst-emg0_p284x149_q75_tt6_u&amp;edm=AEDRbFQEAAAA&amp;_nc_gid=-gxJuq-Q6f6SIevIaM-7YQ&amp;_nc_oc=AdrawW3P5CkIqXThMJ7LfgD_DjgDsyyVvgezR_CslBPXKhXsHZdhVUgIcyJxjzk5TKZV4wXqcnQvjTPi6ccrD1By&amp;ccb=13-1&amp;oh=06_Q3_BAbp7ocCJzftiOrCUxDVEMrAwSJPm6RpSByBT9V0WtqCX&amp;oe=6A607C7C&amp;_nc_sid=e42f53",
+      "type": "image",
+      "ipinfo": {
+        "domain": "external.ftpe7-1.fna.fbcdn.net",
+        "ip": "203.74.65.17",
+        "hostname": "203-74-65-17.hinet-ip.hinet.net",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午11:45:07<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午4:25:09<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -265,7 +299,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

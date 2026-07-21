@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，almablog.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/almablog.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://almablog.tw" target="_blank" rel="noopener noreferrer nofollow">almablog.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">11</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">5</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，almablog.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，almablog.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 almablog.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，almablog.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 almablog.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 almablog.tw 的首頁時，我們觀察到來自 21 個網域的 156 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">172.67.162.13</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">www.tiktok.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">sf16-website-login.neutral.ttwstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">p16-sign-sg.tiktokcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">p16-sign-va.tiktokcdn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">libraweb-sg.tiktok.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">d.line-scdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">social-plugins.line.me</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">www.line-website.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS396986 Bytedance Inc.</span><span class="connection-domain">v45.tiktokcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">static.addtoany.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">mcs-sg.tiktokv.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">mssdk-sg.tiktok.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS60068 Datacamp Limited</span><span class="connection-domain">p77-sign-sg.tiktokcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">ajax.googleapis.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/almablog.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://almablog.tw" target="_blank" rel="noopener noreferrer nofollow">almablog.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">17</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">6</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，almablog.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，almablog.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 almablog.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，almablog.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 almablog.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 almablog.tw 的首頁時，我們觀察到來自 27 個網域的 404 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">172.67.162.13</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">www.tiktok.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">sf16-website-login.neutral.ttwstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">p16-common-sign.tiktokcdn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">libraweb-sg.tiktok.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">d.line-scdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">social-plugins.line.me</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">www.line-website.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">abr.ge</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">static.addtoany.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">violet.ghtinc.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.temu.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">mcs-sg.tiktokv.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">mssdk-sg.tiktok.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS60068 Datacamp Limited</span><span class="connection-domain">v77.tiktokcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">p19-common-sign.tiktokcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">ajax.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">storage.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">mt-usw.appiersig.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS19527 Google LLC</span><span class="connection-domain">trace.popin.cc</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16276 OVH SAS</span><span class="connection-domain">ss-sg2.appiersig.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/almablog.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://almablog.tw",
   "canonicalURL": "https://almablog.tw/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T04:09:09.138Z",
+  "timestamp": "2026-07-20T21:45:53.486Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,16 +61,16 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 156,
-  "uniqueDomains": 21,
+  "requestCount": 404,
+  "uniqueDomains": 27,
   "test_results": {
     "domestic": {
-      "cloud": 11,
+      "cloud": 17,
       "direct": 4
     },
     "foreign": {
-      "cloud": 4,
-      "direct": 1
+      "cloud": 6,
+      "direct": 0
     }
   },
   "domainDetails": [
@@ -86,19 +87,43 @@
         "org": "AS13335 Cloudflare, Inc.",
         "timezone": "America/Los_Angeles"
       },
-      "category": "foreign/cloud",
+      "category": "domestic/cloud",
       "cloud_provider": {
-        "rtt": 133.216,
-        "detection_method": "rtt"
+        "cf-ray": "a1e52798abc4dc13-SIN",
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "172.67.162.13",
+          "prefix": "172.67.162.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 60,
+          "location_count": 60,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
       }
     },
     {
-      "originalUrl": "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js",
+      "originalUrl": "https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js",
       "type": "script",
       "ipinfo": {
         "domain": "www.gstatic.com",
-        "ip": "142.250.198.67",
-        "hostname": "lctsaa-ab-in-f3.1e100.net",
+        "ip": "142.250.196.195",
+        "hostname": "nctsaa-ac-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -113,8 +138,8 @@
       "type": "stylesheet",
       "ipinfo": {
         "domain": "fonts.googleapis.com",
-        "ip": "142.250.198.74",
-        "hostname": "lctsaa-ab-in-f10.1e100.net",
+        "ip": "142.250.77.10",
+        "hostname": "nctsaa-ab-in-f10.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -129,7 +154,7 @@
       "type": "script",
       "ipinfo": {
         "domain": "static.addtoany.com",
-        "ip": "104.20.20.192",
+        "ip": "172.66.171.172",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -139,9 +164,32 @@
       },
       "category": "domestic/cloud",
       "cloud_provider": {
+        "cf-ray": "a1e5279dfa193faa-SIN",
         "country": "tw",
-        "rtt": 5.587,
-        "detection_method": "rtt"
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.66.171.172",
+          "prefix": "172.66.171.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 63,
+          "location_count": 63,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
       }
     },
     {
@@ -149,8 +197,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "www.googletagmanager.com",
-        "ip": "142.250.77.8",
-        "hostname": "nctsaa-ab-in-f8.1e100.net",
+        "ip": "142.250.77.200",
+        "hostname": "del11s08-in-f8.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -181,19 +229,32 @@
       "type": "script",
       "ipinfo": {
         "domain": "www.tiktok.com",
-        "ip": "23.209.45.25",
-        "hostname": "a23-209-45-25.deploy.static.akamaitechnologies.com",
-        "city": "Tokyo",
-        "region": "Tokyo",
-        "country": "JP",
-        "loc": "35.6895,139.6917",
+        "ip": "23.32.91.51",
+        "hostname": "a23-32-91-51.deploy.static.akamaitechnologies.com",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
         "org": "AS20940 Akamai International B.V.",
-        "timezone": "Asia/Tokyo"
+        "timezone": "Asia/Hong_Kong"
       },
       "category": "foreign/cloud",
       "cloud_provider": {
-        "rtt": 43.389,
-        "detection_method": "rtt"
+        "rtt": 23.858,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "23.32.91.51",
+          "prefix": "23.32.91.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
       }
     },
     {
@@ -201,12 +262,12 @@
       "type": "script",
       "ipinfo": {
         "domain": "d.line-scdn.net",
-        "ip": "104.116.17.150",
-        "hostname": "a104-116-17-150.deploy.static.akamaitechnologies.com",
-        "city": "Yuanlin",
+        "ip": "23.39.61.163",
+        "hostname": "a23-39-61-163.deploy.static.akamaitechnologies.com",
+        "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "23.9567,120.5761",
+        "loc": "25.0531,121.5264",
         "org": "AS16625 Akamai Technologies, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -217,8 +278,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "ajax.googleapis.com",
-        "ip": "142.250.198.74",
-        "hostname": "lctsaa-ab-in-f10.1e100.net",
+        "ip": "142.250.192.138",
+        "hostname": "bom12s18-in-f10.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -229,99 +290,318 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://social-plugins.line.me/widget/share?url=https%3A%2F%2Falmablog.tw&amp;buttonType=share-a&amp;lang=zh_Hant&amp;type=share&amp;id=0&amp;origin=https%3A%2F%2Falmablog.tw%2F&amp;title=%E8%89%BE%E7%91%AA%20%E5%90%83%E5%96%9D%E7%8E%A9%E6%A8%82%E6%9C%AD%E8%A8%98&amp;env=REAL",
-      "type": "document",
-      "ipinfo": {
-        "domain": "social-plugins.line.me",
-        "ip": "184.25.120.43",
-        "hostname": "a184-25-120-43.deploy.static.akamaitechnologies.com",
-        "city": "Yuanlin",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "23.9567,120.5761",
-        "org": "AS16625 Akamai Technologies, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "blob:https://almablog.tw/eb023fe1-294c-4d6d-97fe-b3149d35cd4c",
-      "type": "other",
-      "ipinfo": {
-        "domain": ""
-      }
-    },
-    {
       "originalUrl": "https://sf16-website-login.neutral.ttwstatic.com/obj/tiktok_web_login_static/tiktok/falcon/embed/embed_v1.0.13.js",
       "type": "script",
       "ipinfo": {
         "domain": "sf16-website-login.neutral.ttwstatic.com",
         "ip": "203.69.138.233",
         "hostname": "203-69-138-233.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "city": "Taipei",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
+        "loc": "25.0531,121.5264",
         "org": "AS20940 Akamai International B.V.",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://www.line-website.com/social-plugins/css/widget.1.27.8.1.css",
-      "type": "stylesheet",
+      "originalUrl": "https://social-plugins.line.me/widget/share?url=https%3A%2F%2Falmablog.tw&amp;buttonType=share-a&amp;lang=zh_Hant&amp;type=share&amp;id=0&amp;origin=https%3A%2F%2Falmablog.tw%2F&amp;title=%E8%89%BE%E7%91%AA%20%E5%90%83%E5%96%9D%E7%8E%A9%E6%A8%82%E6%9C%AD%E8%A8%98&amp;env=REAL",
+      "type": "document",
       "ipinfo": {
-        "domain": "www.line-website.com",
-        "ip": "104.116.17.150",
-        "hostname": "a104-116-17-150.deploy.static.akamaitechnologies.com",
-        "city": "Yuanlin",
+        "domain": "social-plugins.line.me",
+        "ip": "23.39.60.37",
+        "hostname": "a23-39-60-37.deploy.static.akamaitechnologies.com",
+        "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "23.9567,120.5761",
+        "loc": "25.0531,121.5264",
         "org": "AS16625 Akamai Technologies, Inc.",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/e0ea3b0c741118c1757c7931b1dd2d63~tplv-tiktokx-cropcenter:100:100.jpeg?dr=14579&amp;refresh_token=ee752fab&amp;x-expires=1768536000&amp;x-signature=fGi3IwkQdRjaTsqTuvHF8UaTppo%3D&amp;t=4d5b0474&amp;ps=13740610&amp;shp=a5d48078&amp;shcp=81f88b70&amp;idc=my",
+      "originalUrl": "https://violet.ghtinc.com/api/media/creatives/6a55a13aacc20689def7573b",
       "type": "image",
       "ipinfo": {
-        "domain": "p16-sign-sg.tiktokcdn.com",
+        "domain": "violet.ghtinc.com",
+        "ip": "172.67.172.215",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "cf-ray": "a1e527a5283bf87d-SIN",
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.67.172.215",
+          "prefix": "172.67.172.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 58,
+          "location_count": 58,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "originalUrl": "https://storage.googleapis.com/interactive-media-ads/hosted-samples/wta/icon_adchoices.png",
+      "type": "image",
+      "ipinfo": {
+        "domain": "storage.googleapis.com",
+        "ip": "142.250.196.219",
+        "hostname": "nctsaa-ac-in-f27.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.line-website.com/social-plugins/css/widget.1.27.9.1.css",
+      "type": "stylesheet",
+      "ipinfo": {
+        "domain": "www.line-website.com",
+        "ip": "23.39.61.163",
+        "hostname": "a23-39-61-163.deploy.static.akamaitechnologies.com",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS16625 Akamai Technologies, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://abr.ge/@maplestoryworlds/appier?click_id=39LTVvJZSQq6aK0WkT-y4g.fqPYNCBwAI6PNtNqCpdeag&amp;sub_id=appier_broad&amp;sub_id_1=03mSf3HNecb-&amp;sub_id_2=0w8VWw8l-UmZ9JLZ&amp;campaign=1-1_gl_tw_250424&amp;campaign_id=1-1_gl_tw_258751c1d2489a&amp;ad_creative=gl_mapleorigin_exp4x&amp;ad_creative_id=gl_mapleorigfdf9deb26dc3&amp;ad_group=appier_broad&amp;ad_group_id=appier_broad1a7258a7b5f1&amp;content=pc_tw&amp;routing_short_id=nvh4c29&amp;term=gl_mapleorigin_exp4x&amp;tracking_template_id=3169d71139c5900c51d0442b53cce37f&amp;ad_type=view&amp;_atrk_c=39LTVvJZSQq6aK0WkT-y4g&amp;_atrk_cr=RClfRbf31Uq2glYFmXEh14&amp;_atrk_pt=03mSf3HNecb-&amp;_atrk_bi=fqPYNCBwAI6PNtNqCpdeag",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "abr.ge",
+        "ip": "65.9.180.15",
+        "hostname": "server-65-9-180-15.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://ss-sg2.appiersig.com/winshowimg?bidobjid=fqPYNCBwAI6PNtNqCpdeag&amp;cid=39LTVvJZSQq6aK0WkT-y4g&amp;crid=RClfRbf31Uq2glYFmXEh14&amp;crpid=RPBA2lEGyXN2glYBYgO115&amp;soid=WYaH&amp;partner_id=03mSf3HNecb-&amp;bx=Cylxwnu_2r69oPux7qZy7qdD70uV20f-uY79uqa1w8VWw8l-UmZ9JLZ1K4lNU1u_uYS-U8S1UbOjKjtDu1x1c8sRuqaVK4lNZLM12qu-uYOPuqa1U8Squ1x1U8A121uVo4u-uYOPJ1u_uqGxKqGsKqZ9o4lO&amp;ui=CyljUmOjUbisc8M121l0MIirtIObtYiGIIfVtg3TibzlUjJGIgwmnIR1K4lYc8Myuqa1oqdxorE1o0GV2qoQo0u_2qa_ord1eM&amp;consent=1&amp;ddhh=oqdW7M&amp;billing=170486252553&amp;price_encoded=al6XCgACVxwFOHwJAAykDT_EZUn7u-Iu7jEHog&amp;cachebust=1298486506",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "ss-sg2.appiersig.com",
+        "ip": "15.235.222.89",
+        "hostname": "ns5031775.ip-15-235-222.net",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS16276 OVH SAS",
+        "timezone": "Asia/Singapore"
+      },
+      "category": "foreign/cloud"
+    },
+    {
+      "originalUrl": "https://mt-usw.appiersig.com/event?bidobjid=fqPYNCBwAI6PNtNqCpdeag&amp;cid=39LTVvJZSQq6aK0WkT-y4g&amp;oid=TbOw08gTQ3SyhML0FPS_pA&amp;partner_id=03mSf3HNecb-&amp;s2s=0&amp;event=show&amp;loc=show&amp;dm=&amp;osv=10.15.7.0&amp;adj=0&amp;cn=0w8VWw8l-UmZ9JLZ&amp;url=cLtRZLo_KyONwju93mIBMbsNZbVgZDtBZjgDUDl-3LoBwHTxc8iy5m7-c87FHmgf5rozrSt8JfEcIsSV7YSKoSJFi4sz7bZ93jSM8Iz0MjJTnr3Mrjt2ZI7x3biN3y3PJ8lec8MOwHTxc8iyHmlyUmSflj7swgOE3SAV5rdPUi7YoRN23871Kn3PJ8lec8teoqRxJPN8iDZQU4siUiaznfVclY7NUHTNc8J95rGWoiOjUSORJsAy7rdRoqMYwmSWZbSE3mzec8MOonRVHmJ-HDtDHPus20Zso8oV30uR20gNlYSfHm7y38SRcH3g58J-HmsNZbVgUDlE3mg9HmiQZ0tQlYSfHm7y38SRcH3gHmgf58J-HmsNZbVgUDlE3m3f3qgf38uy7Ytqoy3N3SOjZYOsZ0sNZLTE3HlewjlBw8MYw8te3DlBJHTec8MOwHTxc8iyHmlyUmSfo8GDoqIQwrJ178wVlY7BUjtgUjMOZb7eJLZYZYOsJbg93sOPcbOyJSOE30s9JY6RwPuzljtgZYRO3mVeU8SxUbiBZYgjc8ze3HNx7L6YJLlNwmWEUYJeJbiWZbVNJbiec8MOoPGm28MDorGP28os2rdxwPIV30dR70l17r7qwmIP7mwYw8teJLgx3rsmc8iDlgONJLlFHmoOoPgoiS3mngErIHGmwI-ximWIKHfR3y3ewHtycsOqZqsnMmVYIYlYoPSiZrljUSgbUiNSc0GRlgONJLlFHDTR5rdPUi7YoRN23871Kn3ewHtycsO1crsYZiT3rf74JRSl7gT2JGzVMDTf38Sj",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "mt-usw.appiersig.com",
+        "ip": "34.36.231.211",
+        "hostname": "211.231.36.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 5.85,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.36.231.211",
+          "prefix": "34.36.231.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 64,
+          "location_count": 64
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.google.com/ads/measurement/l?ebcid=ALh7CaRcrLsDnJucb84tV4s7G5l-Dwa-MZc4dEveLi-hvf5V-aUsYgrS5LMZ32C8pQEc-qC8Fs7aDwYn9g49buwzadifW9SJaQ",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.google.com",
+        "ip": "142.251.156.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 6.221,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.156.119",
+          "prefix": "142.251.156.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.temu.com/api/adx/cm/pixel?google_gid=CAESEBovtaDNsmNr3FyW6lUBqT4&amp;google_cver=1&amp;google_push=AXcoOmTH7IMIPI5Whbm7XPINJvhrSFE0Hl9wugL0VUR_cdX5UIfzrqB3L5-zpxVs4W9LF3XxMeyOdWD7d0tZdihmOvTvk0ilBuL1k2U",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.temu.com",
+        "ip": "172.66.1.242",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.66.1.242",
+          "prefix": "172.66.1.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 77,
+          "location_count": 77,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "originalUrl": "https://p16-common-sign.tiktokcdn.com/tos-alisg-avt-0068/e0ea3b0c741118c1757c7931b1dd2d63~tplv-tiktokx-cropcenter:100:100.jpeg?dr=14579&amp;refresh_token=18d69efb&amp;x-expires=1784754000&amp;x-signature=UoWUtZ011SiXt72Lw9J9vn9Lw7Y%3D&amp;t=4d5b0474&amp;ps=13740610&amp;shp=a5d48078&amp;shcp=81f88b70&amp;idc=my",
+      "type": "image",
+      "ipinfo": {
+        "domain": "p16-common-sign.tiktokcdn.com",
         "ip": "203.69.138.231",
         "hostname": "203-69-138-231.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "city": "Taipei",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
+        "loc": "25.0531,121.5264",
         "org": "AS20940 Akamai International B.V.",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://p16-sign-va.tiktokcdn.com/tos-maliva-p-0068/o45gLw8pCGdhoSVG3gLigQgIjATEbedeIgCOfn~tplv-tiktokx-origin.image?dr=14575&amp;x-expires=1768536000&amp;x-signature=Qf5Ny2zkIs2lnYkXwiNAT%2FOvVDI%3D&amp;t=4d5b0474&amp;ps=13740610&amp;shp=81f88b70&amp;shcp=43f4a2f9&amp;idc=my",
+      "originalUrl": "https://p19-common-sign.tiktokcdn.com/tos-alisg-p-0037/oUQEMFqllBCvB1DpQfxRWUMgEyqHwJmPxJWARf~tplv-tiktokx-origin.image?dr=14575&amp;x-expires=1784754000&amp;x-signature=f9ez%2FVXIO6kXrzut4zmBXz0ZW8c%3D&amp;t=4d5b0474&amp;ps=13740610&amp;shp=81f88b70&amp;shcp=43f4a2f9&amp;idc=my",
       "type": "image",
       "ipinfo": {
-        "domain": "p16-sign-va.tiktokcdn.com",
-        "ip": "203.69.138.230",
-        "hostname": "203-69-138-230.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS20940 Akamai International B.V.",
-        "timezone": "Asia/Taipei"
+        "domain": "p19-common-sign.tiktokcdn.com",
+        "ip": "146.75.46.73",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "Asia/Singapore"
       },
-      "category": "domestic/cloud"
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-sin-wsat1880034-SIN",
+        "rtt": 64.214,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "146.75.46.73",
+          "prefix": "146.75.46.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
     },
     {
-      "originalUrl": "https://p77-sign-sg.tiktokcdn.com/tos-alisg-p-0037/ocqBH75ii0GCISiw0goAkFofNo0IA8Cn9IAXrP~tplv-tiktokx-origin.image?dr=14575&amp;x-expires=1768536000&amp;x-signature=XnyVmSVFke1EVl0S5%2FytiswPL8s%3D&amp;t=4d5b0474&amp;ps=13740610&amp;shp=81f88b70&amp;shcp=43f4a2f9&amp;idc=my",
-      "type": "image",
+      "originalUrl": "https://v77.tiktokcdn.com/fbbf48adb6d2bdb86bd6129090484b86/6a613a2d/video/tos/alisg/tos-alisg-ve-0068c800-sg/oYMIQenGVgbjGsPIgoTIAdCSdChLQ9fpOeQ5Ka/?a=1233&amp;bti=ODszNWYuMDE6&amp;&amp;bt=1791&amp;ft=td_Le8Zmo0PuQUfgkVQRE.c~Tr4jD0.N5SY&amp;mime_type=video_mp4&amp;rc=aGQ3OjwzNmkzNDs8ZGc5NEBpM3k7OW45cjZtdzMzNzczM0AtYS9hNi4wNmIxMzQ0YF42YSMxXmdzMmRraC5gLS1kMTZzcw%3D%3D&amp;vvpl=1&amp;l=20260721054547D1F694A830A7BDC4025A&amp;btag=e00088000",
+      "type": "media",
       "ipinfo": {
-        "domain": "p77-sign-sg.tiktokcdn.com",
-        "ip": "143.244.51.55",
-        "hostname": "263668552.lax.cdn77.com",
+        "domain": "v77.tiktokcdn.com",
+        "ip": "143.244.51.239",
+        "hostname": "144118377.lax.cdn77.com",
         "city": "Los Angeles",
         "region": "California",
         "country": "US",
@@ -332,26 +612,11 @@
       "category": "foreign/cloud"
     },
     {
-      "originalUrl": "https://v45.tiktokcdn.com/33a91da7595cc579956b96029578aae1/6969b9ba/video/tos/useast2a/tos-useast2a-ve-0068c002/oYMIQenGVgbjGsPIgoTIAdCSdChLQ9fpOeQ5Ka/?a=1233&amp;bti=ODszNWYuMDE6&amp;ch=0&amp;cr=3&amp;dr=0&amp;lr=all&amp;cd=0%7C0%7C0%7C&amp;cv=1&amp;br=3582&amp;bt=1791&amp;cs=0&amp;ds=6&amp;ft=bCkK5mugPD12N9X0zd-UxIV5hY6e3wv25dcAp&amp;mime_type=video_mp4&amp;qs=0&amp;rc=aGQ3OjwzNmkzNDs8ZGc5NEBpM3k7OW45cjZtdzMzNzczM0AtYS9hNi4wNmIxMzQ0YF42YSMxXmdzMmRraC5gLS1kMTZzcw%3D%3D&amp;vvpl=1&amp;l=202601141207522ABFDDBDFCC75E39806E&amp;btag=e0008d000",
-      "type": "media",
-      "ipinfo": {
-        "domain": "v45.tiktokcdn.com",
-        "ip": "71.18.35.230",
-        "city": "Osaka",
-        "region": "Osaka",
-        "country": "JP",
-        "loc": "34.6938,135.5011",
-        "org": "AS396986 Bytedance Inc.",
-        "timezone": "Asia/Tokyo"
-      },
-      "category": "foreign/direct"
-    },
-    {
       "originalUrl": "https://mcs-sg.tiktokv.com/v1/user/webid",
       "type": "xhr",
       "ipinfo": {
         "domain": "mcs-sg.tiktokv.com",
-        "ip": "210.71.227.209",
+        "ip": "210.71.227.208",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
@@ -366,23 +631,36 @@
       "type": "xhr",
       "ipinfo": {
         "domain": "libraweb-sg.tiktok.com",
-        "ip": "23.209.45.27",
-        "hostname": "a23-209-45-27.deploy.static.akamaitechnologies.com",
-        "city": "Tokyo",
-        "region": "Tokyo",
-        "country": "JP",
-        "loc": "35.6895,139.6917",
+        "ip": "23.32.91.42",
+        "hostname": "a23-32-91-42.deploy.static.akamaitechnologies.com",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
         "org": "AS20940 Akamai International B.V.",
-        "timezone": "Asia/Tokyo"
+        "timezone": "Asia/Hong_Kong"
       },
       "category": "foreign/cloud",
       "cloud_provider": {
-        "rtt": 41.767,
-        "detection_method": "rtt"
+        "rtt": 20.053,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "23.32.91.42",
+          "prefix": "23.32.91.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
       }
     },
     {
-      "originalUrl": "https://mssdk-sg.tiktok.com/web/resource?eq=OpWhWoaYMKtTT/JAX2e4vi042Vnz0CQQU8JJ7w4MWWFb4SjchuBTbo72ErJcPqz04QtOX-Xr3mdvQNz/IbRXHS/JLEAC",
+      "originalUrl": "https://mssdk-sg.tiktok.com/web/resource?eq=BQQV/wfuCNkgUznF-BVzExWZHBdXgpnmEVH9VHyHx1SQtlJKn-8QGbgYB4ZEZebLpXRpIWhiHTLViYaQz7pl6F0acLZB",
       "type": "xhr",
       "ipinfo": {
         "domain": "mssdk-sg.tiktok.com",
@@ -397,7 +675,40 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://www.facebook.com/v22.0/plugins/share_button.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df7f787011ec4a21de%26domain%3Dalmablog.tw%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Falmablog.tw%252Ff87b95677469e5e45%26relation%3Dparent.parent&amp;container_width=34&amp;href=https%3A%2F%2Falmablog.tw%2F&amp;layout=box_count&amp;locale=zh_TW&amp;mobile_iframe=false&amp;sdk=joey&amp;size=small",
+      "originalUrl": "https://trace.popin.cc/ju/cs/google?google_gid=CAESELrzfYLYnUro2ZJ74wjOWQc&amp;google_cver=1&amp;google_push=AXcoOmSfO17_wqAVmV1lf_Cxh7TSU4uejpFTTdDM1ZuDQ4UZb3z-n4K62W8UHB_rCtlPwD89Qrjab2xT632l5QACQz-j_-468Ba1oxRZSSej2xy74I3LkusjDANgbqbsG-TGzny3x87jPv3ZoTzakCR83fdMPqY",
+      "type": "image",
+      "ipinfo": {
+        "domain": "trace.popin.cc",
+        "ip": "35.213.89.133",
+        "hostname": "133.89.213.35.bc.googleusercontent.com",
+        "city": "Tokyo",
+        "region": "Tokyo",
+        "country": "JP",
+        "loc": "35.6895,139.6917",
+        "org": "AS19527 Google LLC",
+        "timezone": "Asia/Tokyo"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 53.949,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "35.213.89.133",
+          "prefix": "35.213.89.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.facebook.com/v22.0/plugins/share_button.php?app_id=&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dffa6f6b99a8cc594b%26domain%3Dalmablog.tw%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Falmablog.tw%252Ff67ca3c0cf3340bba%26relation%3Dparent.parent&amp;container_width=34&amp;href=https%3A%2F%2Falmablog.tw%2F&amp;layout=box_count&amp;locale=zh_TW&amp;mobile_iframe=false&amp;sdk=joey&amp;size=small",
       "type": "document",
       "ipinfo": {
         "domain": "www.facebook.com",
@@ -413,10 +724,10 @@
       "category": "domestic/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 下午12:09:09<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午5:45:53<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -454,7 +765,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海纜斷掉時，ww3.xtapes.tw 會動嗎？</title>
+    <meta name="description" content="根據最近一次測試，在海纜斷掉的情境下，ww3.xtapes.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
+    <link rel="icon" href="/favicon.ico">
+    <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/ww3.xtapes.tw/">
+
+    <!-- Open Graph 標籤 -->
+    <meta property="og:title" content="海纜斷掉時，ww3.xtapes.tw 會動嗎？">
+    <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，ww3.xtapes.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resilience.ocf.tw/web/ww3.xtapes.tw/">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
+
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
+    <script src="../locales/zh-TW.js"></script>
+    <script src="../locales/en.js"></script>
+    <script src="../i18n.js"></script>
+
+    <script>window.__IS_STATIC_PAGE__ = true;</script>
+    <link rel="alternate" hreflang="zh-TW" href="https://resilience.ocf.tw/web/ww3.xtapes.tw/">
+    <link rel="alternate" hreflang="en" href="https://resilience.ocf.tw/web/ww3.xtapes.tw/en/">
+</head>
+<body>
+    <div id="app">
+
+    <nav class="lang-switcher" aria-label="語言">
+        <a class="lang-switcher-btn" href="/web/ww3.xtapes.tw/" hreflang="zh-TW" aria-current="page">中文</a>
+        <a class="lang-switcher-btn" href="/web/ww3.xtapes.tw/en/" hreflang="en">English</a>
+    </nav>
+
+    <div class="static-wrapper" data-static="begin"></div>
+        <h1>海纜斷掉時，<a href="https://ww3.xtapes.tw" target="_blank" rel="noopener noreferrer nofollow">ww3.xtapes.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">境內直接連線 (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">8</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">4</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，ww3.xtapes.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，ww3.xtapes.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 ww3.xtapes.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，ww3.xtapes.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 ww3.xtapes.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 ww3.xtapes.tw 的首頁時，我們觀察到來自 13 個網域的 128 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">172.67.215.16</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS209242 Cloudflare London, LLC</span><span class="connection-domain">i.bgicdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS209242 Cloudflare London, LLC</span><span class="connection-domain">vthumb-us28.bcvcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">xtapes.la</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">44x.io</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">qia.izerv.online</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdnjs.cloudflare.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS60068 Datacamp Limited</span><span class="connection-domain">z6v2p9a8.bkcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS24940 Hetzner Online GmbH</span><span class="connection-domain">trafostatic.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16276 OVH SAS</span><span class="connection-domain">adserver.juicyads.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS7979 Servers.com, Inc.</span><span class="connection-domain">blendfencingprune.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/ww3.xtapes.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+  "url": "https://ww3.xtapes.tw",
+  "canonicalURL": "https://ww3.xtapes.tw/",
+  "httpStatus": 200,
+  "timestamp": "2026-07-20T20:17:53.385Z",
+  "testParameters": {
+    "customDNS": "168.95.1.1",
+    "useAdblock": true,
+    "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
+      "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
+    ],
+    "useCache": true,
+    "hasIPinfoToken": true
+  },
+  "testingEnvironment": {
+    "ip": "220.132.212.194",
+    "hostname": "220-132-212-194.hinet-ip.hinet.net",
+    "city": "Banqiao",
+    "region": "Taipei",
+    "country": "TW",
+    "loc": "25.0143,121.4672",
+    "org": "AS3462 Data Communication Business Group",
+    "timezone": "Asia/Taipei",
+    "source": "ipinfo json api (direct)",
+    "dnsServer": "168.95.1.1"
+  },
+  "requestCount": 128,
+  "uniqueDomains": 13,
+  "test_results": {
+    "domestic": {
+      "cloud": 8,
+      "direct": 0
+    },
+    "foreign": {
+      "cloud": 2,
+      "direct": 2
+    }
+  },
+  "domainDetails": [
+    {
+      "originalUrl": "https://ww3.xtapes.tw/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "ww3.xtapes.tw",
+        "ip": "172.67.215.16",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "cf-ray": "a1e4a6a63ffd1f9f-SIN",
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.67.215.16",
+          "prefix": "172.67.215.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 58,
+          "location_count": 58,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "originalUrl": "https://xtapes.la/wp-content/uploads/xtapes_logo9.png",
+      "type": "image",
+      "ipinfo": {
+        "domain": "xtapes.la",
+        "ip": "172.67.176.203",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "cf-ray": "a1e4a6b13bb1ce87-SIN",
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.67.176.203",
+          "prefix": "172.67.176.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 57,
+          "location_count": 57,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "originalUrl": "https://44x.io/im/74101475254100TW147850.webp",
+      "type": "image",
+      "ipinfo": {
+        "domain": "44x.io",
+        "ip": "104.21.12.193",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "cf-ray": "a1e4a6ad0a586ba8-SIN",
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "104.21.12.193",
+          "prefix": "104.21.12.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 55,
+          "location_count": 55,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.googletagmanager.com/gtag/js?id=G-X28T4HL97N",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.googletagmanager.com",
+        "ip": "142.250.77.200",
+        "hostname": "del11s08-in-f8.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://qia.izerv.online/vast-im.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "qia.izerv.online",
+        "ip": "104.21.17.237",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "cf-ray": "a1e4a6b15905fd2c-SIN",
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "104.21.17.237",
+          "prefix": "104.21.17.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 58,
+          "location_count": 58,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "originalUrl": "https://blendfencingprune.com/2045995?var={SUB1}",
+      "type": "script",
+      "ipinfo": {
+        "domain": "blendfencingprune.com",
+        "ip": "69.41.167.178",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS7979 Servers.com, Inc.",
+        "timezone": "Asia/Singapore"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "cdnjs.cloudflare.com",
+        "ip": "104.17.24.14",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4a6b9b8f393ae-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://z6v2p9a8.bkcdn.net/library/834176/02556c867061d6be35499b116610798deb4d0b04.gif",
+      "type": "image",
+      "ipinfo": {
+        "domain": "z6v2p9a8.bkcdn.net",
+        "ip": "156.146.44.90",
+        "hostname": "383924299.hkg.cdn77.com",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS60068 Datacamp Limited",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/cloud"
+    },
+    {
+      "originalUrl": "https://c6.inhouseclick.net/ortbimp/15o54ssyw5rx6oyyy?token=mbxfcz43m3nr1inumtcigzynbybrs111eieo&amp;type=1",
+      "type": "image",
+      "ipinfo": {
+        "domain": "c6.inhouseclick.net"
+      }
+    },
+    {
+      "originalUrl": "https://adserver.juicyads.com/adshow.php?adzone=467351",
+      "type": "document",
+      "ipinfo": {
+        "domain": "adserver.juicyads.com",
+        "ip": "51.79.176.157",
+        "hostname": "ns5002771.ip-51-79-176.net",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS16276 OVH SAS",
+        "timezone": "Asia/Singapore"
+      },
+      "category": "foreign/cloud"
+    },
+    {
+      "originalUrl": "https://trafostatic.com/asset-12092686.mp4",
+      "type": "media",
+      "ipinfo": {
+        "domain": "trafostatic.com",
+        "ip": "176.9.127.48",
+        "hostname": "static.48.127.9.176.clients.your-server.de",
+        "city": "Falkenstein",
+        "region": "Saxony",
+        "country": "DE",
+        "loc": "50.4779,12.3713",
+        "org": "AS24940 Hetzner Online GmbH",
+        "timezone": "Europe/Berlin"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://i.bgicdn.com/0d8/2e3/2c2/45064379d310b585f705337a7e9381dd_thumb_medium.jpg",
+      "type": "image",
+      "ipinfo": {
+        "domain": "i.bgicdn.com",
+        "ip": "195.85.23.12",
+        "hostname": "net-12-23.lotuna.net",
+        "city": "Prague",
+        "region": "Prague",
+        "country": "CZ",
+        "loc": "50.0696,14.3775",
+        "org": "AS209242 Cloudflare London, LLC",
+        "timezone": "Europe/Prague"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4a6d56c836a92-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://vthumb-us28.bcvcdn.com/stream_hujiajiajia1314.mp4?t=1784578669",
+      "type": "media",
+      "ipinfo": {
+        "domain": "vthumb-us28.bcvcdn.com",
+        "ip": "195.85.23.248",
+        "hostname": "net-248-23.lotuna.net",
+        "city": "Prague",
+        "region": "Prague",
+        "country": "CZ",
+        "loc": "50.0696,14.3775",
+        "org": "AS209242 Cloudflare London, LLC",
+        "timezone": "Europe/Prague"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "195.85.23.248",
+          "prefix": "195.85.23.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            209242
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 73,
+          "location_count": 73,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午4:17:53<span> (HTTP 200)</span></p></div></div>
+    <div class="static-wrapper" data-static="end"></div>
+
+
+
+    <div id="search-container" v-show="showSearch">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="輸入網址查看測試結果..." autocomplete="off"
+                v-model="searchQuery"  @keydown="onSearchKeydown" @focus="onSearchFocus"
+            >
+
+            <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length" @scroll.passive="onDropdownScroll">
+                <a
+                    :href="sitePageHref(url)"
+                    class="search-dropdown-item"
+                    v-for="(url, index) in displayedUrls"
+                    :key="url"
+                    :data-url="url"
+                    :data-index="index"
+                    :class="{ selected: index === selectedIndex }"
+                    @click.prevent="selectUrl(url)"
+                >
+                    {{ formatDisplayUrl(url) }}
+                </a>
+            </div>
+            <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
+                        <p>{{ t('search.noResults', { query: searchQuery }) }}</p>
+                        <p>你可以在此檢視<a href="https://github.com/irvin/web-resilience-test-result" target="_blank">已測試網站資料</a>，並<a href="https://github.com/irvin/web-resilience-test/tree/a6ccd6f1b05fca34034250055d566d1c1c0f4c65#d-automated-testing-tool" target="_blank">使用此工具</a>手動進行測試。</p>
+            </div>
+            <div class="search-meta" id="search-meta">
+                <template v-if="hasItems">
+                        {{ t('search.statsWithItems', { totalAll, shown }) }}
+                        <span class="search-load-more" v-if="hasMore" @click="loadMore">[載入更多網站]</span>
+                </template>
+                <template v-else>
+                        {{ t('search.statsEmpty', { totalAll }) }}
+                </template>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <p id="check-other-site-container" v-show="showCheckOther">
+            <a href="/web/">
+                <button class="check-other-site-btn" @click.prevent="openSearch">檢查其他網站</button>
+            </a>
+        </p>
+        <hr>
+        <p>
+            <a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="../g0v_logo.svg" title="g0v 數位韌性松" style="height: 65px;"></a>
+            <a href="https://ocf.tw/" target="_blank"><img src="../Logo_Compact-OCF_Purple.svg" title="開放文化基金會" style="height: 35px;"></a>
+        </p>
+        <p>Curated by <a href="https://t.me/s/irvinfly" target="_blank">Irvin Chen</a>. Released under the <a href="https://github.com/irvin/web-resilience-test/?tab=License-1-ov-file#License-1-ov-file" target="_blank">CC BY-NC-ND 4.0 International License</a>.</p>
+        <p style="margin-bottom: 2em;">
+            <a href="https://resilience.ocf.tw/web/report/" target="_blank">研究報告</a>｜<a href="https://github.com/irvin/web-resilience-test" target="_blank">原始碼</a>
+        </p>
+        <hr>
+        <p><a href="https://apnic.foundation/" target="_blank"><img src="../APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" title="APNIC Foundation ISIF Asia" style="height: 90px;"></a></p>
+        <p>This work was supported by a grant from the <a href="https://apnic.foundation/" target="_blank">APNIC Foundation</a>, via <a href="https://apnic.foundation/home/isifasia/" target="_blank">ISIF Asia</a>.</p>
+    </footer>
+    </div>
+
+    <script src="../app.js"></script>
+</body>
+</html>

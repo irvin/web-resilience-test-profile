@@ -13,7 +13,7 @@
     <meta property="og:description" content="Based on the latest test, under a submarine-cable outage scenario the availability of www.forest.gov.tw is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/www.forest.gov.tw/en/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>When submarine cables fail, will <a href="https://www.forest.gov.tw" target="_blank" rel="noopener noreferrer nofollow">www.forest.gov.tw</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>Uncertain</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">2</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">6</strong></p><p class="score score-X score-zero">Foreign connections (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can www.forest.gov.tw still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario the availability of www.forest.gov.tw is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why is it “uncertain” whether www.forest.gov.tw would work when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">We did not see direct requests to foreign resources, but we did find reliance on in-country nodes of multinational cloud services. Whether those services keep running when outbound connectivity is impaired depends on platform architecture, cache design, origin routing, and more—so for now we can only label the outcome “uncertain.”</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean www.forest.gov.tw might be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">“Uncertain” means we currently cannot conclude it will definitely work or definitely fail. Availability of the multinational cloud in-country nodes that www.forest.gov.tw depends on, when cables are cut or congestion is extreme, needs to be clarified and explained further by providers.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for www.forest.gov.tw under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of www.forest.gov.tw, we observed 194 requests across 8 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS4782 Data Communication Business Group</span><span class="connection-domain">223.200.90.182</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdnjs.cloudflare.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">rr2---sn-ipoxu-un5r.googlevideo.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.youtube.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">yt3.ggpht.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">jnn-pa.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">i.ytimg.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/www.forest.gov.tw.json" target="_blank">View on GitHub</a></p><pre><code>{
+        <h1>When submarine cables fail, will <a href="https://www.forest.gov.tw" target="_blank" rel="noopener noreferrer nofollow">www.forest.gov.tw</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>Uncertain</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">15</strong></p><p class="score score-X score-zero">Foreign connections (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can www.forest.gov.tw still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario the availability of www.forest.gov.tw is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why is it “uncertain” whether www.forest.gov.tw would work when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">We did not see direct requests to foreign resources, but we did find reliance on in-country nodes of multinational cloud services. Whether those services keep running when outbound connectivity is impaired depends on platform architecture, cache design, origin routing, and more—so for now we can only label the outcome “uncertain.”</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean www.forest.gov.tw might be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">“Uncertain” means we currently cannot conclude it will definitely work or definitely fail. Availability of the multinational cloud in-country nodes that www.forest.gov.tw depends on, when cables are cut or congestion is extreme, needs to be clarified and explained further by providers.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for www.forest.gov.tw under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of www.forest.gov.tw, we observed 713 requests across 19 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS17420 Acer e-Enabling Data Center, Inc.</span><span class="connection-domain">210.241.144.187</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">elevation3d.arcgis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">www.arcgis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">basemaps.arcgis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">cdn.arcgis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">static.arcgis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">js.arcgis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS4782 Data Communication Business Group</span><span class="connection-domain">mapportal.forest.gov.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS4782 Data Communication Business Group</span><span class="connection-domain">ffwi.forest.gov.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.youtube.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">i.ytimg.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">yt3.ggpht.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">jnn-pa.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS7539 National Center for High-performance Computing</span><span class="connection-domain">wmts.nlsc.gov.tw</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/www.forest.gov.tw.json" target="_blank">View on GitHub</a></p><pre><code>{
   "url": "https://www.forest.gov.tw/",
   "canonicalURL": "https://www.forest.gov.tw/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T02:18:57.596Z",
+  "timestamp": "2026-07-20T20:04:02.987Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,12 +61,12 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 194,
-  "uniqueDomains": 8,
+  "requestCount": 713,
+  "uniqueDomains": 19,
   "test_results": {
     "domestic": {
-      "cloud": 6,
-      "direct": 2
+      "cloud": 15,
+      "direct": 4
     },
     "foreign": {
       "cloud": 0,
@@ -78,92 +79,91 @@
       "type": "document",
       "ipinfo": {
         "domain": "www.forest.gov.tw",
+        "ip": "210.241.144.187",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS17420 Acer e-Enabling Data Center, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://www.youtube.com/embed/4SyzNzQvvhA?playlist=4SyzNzQvvhA&amp;loop=1&amp;modestbranding=1&amp;mute=1&amp;controls=0&amp;enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer",
+      "type": "document",
+      "ipinfo": {
+        "domain": "www.youtube.com",
+        "ip": "142.251.154.4",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 6.937,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.154.4",
+          "prefix": "142.251.154.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 60,
+          "location_count": 60
+        }
+      }
+    },
+    {
+      "originalUrl": "https://mapportal.forest.gov.tw/TEN/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "mapportal.forest.gov.tw",
         "ip": "223.200.90.182",
         "hostname": "3d-dsfcp.forest.gov.tw",
-        "city": "Taipei",
+        "city": "Taichung",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.1469,120.6839",
         "org": "AS4782 Data Communication Business Group",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://www.youtube.com/embed/DUgNcu0-7y0?modestbranding=1&amp;playlist=DUgNcu0-7y0&amp;mute=1&amp;autoplay=1&amp;controls=0&amp;loop=1&amp;enablejsapi=1&amp;version=3&amp;playerapiid=ytplayer",
+      "originalUrl": "https://ffwi.forest.gov.tw/",
       "type": "document",
       "ipinfo": {
-        "domain": "www.youtube.com",
-        "ip": "142.250.66.78",
-        "hostname": "hkg12s27-in-f14.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "domain": "ffwi.forest.gov.tw",
+        "ip": "223.200.90.182",
+        "hostname": "3d-dsfcp.forest.gov.tw",
+        "city": "Taichung",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://yt3.ggpht.com/uiEt509HUQFWy7OE8uQkAdcZcj5UZJRicFZy8J5aBaSN-suu1EahfLKbxkaJwpOQx58618qp=s68-c-k-c0x00ffffff-no-rj",
-      "type": "image",
-      "ipinfo": {
-        "domain": "yt3.ggpht.com",
-        "ip": "142.250.198.65",
-        "hostname": "lctsaa-ab-in-f1.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://rr2---sn-ipoxu-un5r.googlevideo.com/videoplayback?expire=1768378735&amp;ei=D_1madCzO5rN2roP376E8Ak&amp;ip=2001%3Ab011%3A3802%3Ab3f9%3A7801%3A3a2d%3A7ca8%3A40b&amp;id=o-AILH_0bOeZyxtQNoU3SIvb02lWJ85ykqMvUKBMCpY3Yp&amp;itag=243&amp;aitags=134%2C136%2C137%2C160%2C243&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;cps=0&amp;met=1768357135%2C&amp;mh=SE&amp;mm=31%2C29&amp;mn=sn-ipoxu-un5r%2Csn-un57enel&amp;ms=au%2Crdu&amp;mv=m&amp;mvi=2&amp;pl=52&amp;rms=au%2Cau&amp;initcwndbps=2220000&amp;bui=AW-iu_rtiloX04NE3ZyvPlwST3U07r4315y-99yw4cPgXkPqeUSUZaEe-SQx_vvr9C-GtRMfW81P3HkC&amp;spc=q5xjPFS5821B-D1M7WxRYSB9GCoMnhDNqQniD1Nc8deXPdk6I3QQFfOtypMbPI1OKsw&amp;vprv=1&amp;svpuc=1&amp;mime=video%2Fwebm&amp;ns=Osi8Rvtd7R5y5ozENnq-MJUR&amp;rqh=1&amp;gir=yes&amp;clen=4026318&amp;dur=102.903&amp;lmt=1738621676736765&amp;mt=1768356781&amp;fvip=1&amp;keepalive=yes&amp;fexp=51552689%2C51565116%2C51565681%2C51580968&amp;c=WEB_EMBEDDED_PLAYER&amp;sefc=1&amp;txp=531F224&amp;n=YHEy3lr-RLcGOw&amp;sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&amp;sig=AJfQdSswRQIhAMK7wcOlbITr6FczKuWuSrPb8id0In0RHM8gFvzUTJZ9AiAaXoxH6SUs3VoslIZi4-xcDE_6waSQTcoB1-TugPLyEA%3D%3D&amp;lsparams=cps%2Cmet%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=APaTxxMwRQIgfb6W-dFGihE9abalC-m8cOeSk_yItJLA5ySLsuDvYxYCIQCY-T1jjZwyZ_fzi8LBurhqgIi5ya0sbJJCs7PGEM2oew%3D%3D&amp;alr=yes&amp;cpn=DZtyuqfyuZhTFpRD&amp;cver=1.20260112.10.00&amp;range=0-130787&amp;rn=1&amp;rbuf=0&amp;pot=Igj2efd4nx8Ldg==&amp;ump=1&amp;srfvp=1",
-      "type": "fetch",
-      "ipinfo": {
-        "domain": "rr2---sn-ipoxu-un5r.googlevideo.com",
-        "ip": "203.66.169.45",
-        "hostname": "203-66-169-45.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS3462 Data Communication Business Group",
+        "loc": "24.1469,120.6839",
+        "org": "AS4782 Data Communication Business Group",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js",
-      "type": "script",
+      "originalUrl": "https://i.ytimg.com/vi/4SyzNzQvvhA/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGEMgVShlMA8=&amp;rs=AOn4CLD4kl7hYmjoSKMSjmoLLnuaGzy2Ig",
+      "type": "image",
       "ipinfo": {
-        "domain": "cdnjs.cloudflare.com",
-        "ip": "104.17.24.14",
-        "city": "San Francisco",
-        "region": "California",
-        "country": "US",
-        "loc": "37.7621,-122.3971",
-        "org": "AS13335 Cloudflare, Inc.",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "cf-ray": "9bd9a544fa976a9c-TPE",
-        "detection_method": "header"
-      }
-    },
-    {
-      "originalUrl": "https://www.google.com/js/th/VQRLE1nj_w3YOUr9bDT-SZkrXPV28X05Wh6hb2M3ukQ.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "www.google.com",
-        "ip": "142.250.198.68",
-        "hostname": "lctsaa-ab-in-f4.1e100.net",
+        "domain": "i.ytimg.com",
+        "ip": "142.250.77.22",
+        "hostname": "nctsaa-ab-in-f22.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -172,44 +172,276 @@
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://yt3.ggpht.com/ytc/AIdro_lu-5Xoo6oHFcEU4w2RCpZeYW9IfDOMDnOCMTQUCsG1R7Q=s68-c-k-c0x00ffffff-no-rj",
+      "type": "image",
+      "ipinfo": {
+        "domain": "yt3.ggpht.com",
+        "ip": "142.250.66.65",
+        "hostname": "hkg12s27-in-f1.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.gstatic.com/youtube/img/icons/mweb/youtube_fill/logo/v2/67px.svg",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "www.gstatic.com",
+        "ip": "142.250.198.67",
+        "hostname": "lctsaa-ab-in-f3.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.googletagmanager.com/gtag/js?id=G-NDX2RFTFFW",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.googletagmanager.com",
+        "ip": "142.250.77.200",
+        "hostname": "del11s08-in-f8.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://fonts.googleapis.com/css2?family=Rock+Salt&amp;display=swap",
+      "type": "stylesheet",
+      "ipinfo": {
+        "domain": "fonts.googleapis.com",
+        "ip": "142.250.192.138",
+        "hostname": "bom12s18-in-f10.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-R2PX4HLWKD&amp;cid=858977007.1784577830&amp;gtm=45je67g0v9102070980za200zd9102070980&amp;rcb=14&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=115616985~115938465~115938468~118395333~118897920~118897930~119381664~119724321&amp;z=1633272298",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.google.com.tw",
+        "ip": "142.250.198.67",
+        "hostname": "lctsaa-ab-in-f3.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.google.com/js/th/8uIar4J4-RenYUa4HtG5DFVcni3D6dGneJv1JZIjHfM.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.google.com",
+        "ip": "142.251.152.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 10.595,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.152.119",
+          "prefix": "142.251.152.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
+      }
     },
     {
       "originalUrl": "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
       "type": "xhr",
       "ipinfo": {
         "domain": "jnn-pa.googleapis.com",
-        "ip": "142.250.198.74",
-        "hostname": "lctsaa-ab-in-f10.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
+        "ip": "172.217.119.4",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
         "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.871,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.217.119.4",
+          "prefix": "172.217.119.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://wmts.nlsc.gov.tw/wmts?SERVICE=WMTS&amp;REQUEST=GetTile&amp;VERSION=1.0.0&amp;LAYER=EMAP&amp;STYLE=_null&amp;TILEMATRIXSET=EPSG:3857&amp;TILEMATRIX=EPSG:3857:8&amp;TILEROW=110&amp;TILECOL=214&amp;FORMAT=image%2Fpng",
+      "type": "image",
+      "ipinfo": {
+        "domain": "wmts.nlsc.gov.tw",
+        "ip": "140.110.20.85",
+        "hostname": "temp085.nchc.org.tw",
+        "city": "Tainan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "22.9908,120.2133",
+        "org": "AS7539 National Center for High-performance Computing",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://www.arcgis.com/sharing/rest/content/items/1932e7d4432d45dabc0d4d13109c1f09/resources/styles/root.json?f=json",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "www.arcgis.com",
+        "ip": "3.169.121.56",
+        "hostname": "server-3-169-121-56.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://i.ytimg.com/vi/MMe6n5XG8lg/mqdefault.jpg",
-      "type": "image",
+      "originalUrl": "https://basemaps.arcgis.com/arcgis/rest/services/OpenStreetMap_v2/VectorTileServer?f=json",
+      "type": "xhr",
       "ipinfo": {
-        "domain": "i.ytimg.com",
-        "ip": "142.250.196.214",
-        "hostname": "nctsaa-ac-in-f22.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "domain": "basemaps.arcgis.com",
+        "ip": "3.169.137.4",
+        "hostname": "server-3-169-137-4.tpe54.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://cdn.arcgis.com/sharing/rest/content/items/1932e7d4432d45dabc0d4d13109c1f09/resources/sprites/sprite.json",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "cdn.arcgis.com",
+        "ip": "3.169.121.129",
+        "hostname": "server-3-169-121-129.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://static.arcgis.com/attribution/Vector/OpenStreetMap_v2?f=json",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "static.arcgis.com",
+        "ip": "3.169.137.122",
+        "hostname": "server-3-169-137-122.tpe54.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://js.arcgis.com/4.29/esri/css/main.css",
+      "type": "stylesheet",
+      "ipinfo": {
+        "domain": "js.arcgis.com",
+        "ip": "65.9.180.78",
+        "hostname": "server-65-9-180-78.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer?f=json",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "elevation3d.arcgis.com",
+        "ip": "23.42.100.50",
+        "hostname": "a23-42-100-50.deploy.static.akamaitechnologies.com",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS16625 Akamai Technologies, Inc.",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 1/14/2026, 10:18:57 AM<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 7/21/2026, 4:04:02 AM<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -247,7 +479,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

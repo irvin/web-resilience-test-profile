@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，8891.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/8891.com.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://8891.com.tw" target="_blank" rel="noopener noreferrer nofollow">8891.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">16</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">1</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，8891.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，8891.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 8891.com.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，8891.com.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 8891.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 8891.com.tw 的首頁時，我們觀察到來自 21 個網域的 463 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS9919 New Century InfoComm Tech Co., Ltd.</span><span class="connection-domain">220.228.175.145</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">profiles.dunsregistered.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">assets.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">statics.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">photo.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">sb.scorecardresearch.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">sentry.addcn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">img.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">c.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">video.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">p3.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">p2.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">p1.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagservices.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">apis.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS9919 New Century InfoComm Tech Co., Ltd.</span><span class="connection-domain">www.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS9919 New Century InfoComm Tech Co., Ltd.</span><span class="connection-domain">dc.8891.tw</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/8891.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://8891.com.tw" target="_blank" rel="noopener noreferrer nofollow">8891.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">5</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">12</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">1</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，8891.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，8891.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 8891.com.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，8891.com.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 8891.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 8891.com.tw 的首頁時，我們觀察到來自 18 個網域的 357 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS9919 New Century InfoComm Tech Co., Ltd.</span><span class="connection-domain">220.228.175.145</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">assets.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">statics.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">photo.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">sb.scorecardresearch.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">sentry.addcn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">img.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">c.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">profiles.dunsregistered.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagservices.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">apis.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS9919 New Century InfoComm Tech Co., Ltd.</span><span class="connection-domain">www.8891.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS9919 New Century InfoComm Tech Co., Ltd.</span><span class="connection-domain">dc.8891.tw</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/8891.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://8891.com.tw",
   "canonicalURL": "https://www.8891.com.tw/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T01:09:32.998Z",
+  "timestamp": "2026-07-20T19:25:07.267Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,12 +61,12 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 463,
-  "uniqueDomains": 21,
+  "requestCount": 357,
+  "uniqueDomains": 18,
   "test_results": {
     "domestic": {
-      "cloud": 16,
-      "direct": 4
+      "cloud": 12,
+      "direct": 5
     },
     "foreign": {
       "cloud": 1,
@@ -80,10 +81,10 @@
         "domain": "8891.com.tw",
         "ip": "220.228.175.145",
         "hostname": "220-228-175-145.static.sparqnet.net",
-        "city": "Taipei",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS9919 New Century InfoComm Tech Co., Ltd.",
         "timezone": "Asia/Taipei"
       },
@@ -96,10 +97,10 @@
         "domain": "www.8891.com.tw",
         "ip": "220.228.175.145",
         "hostname": "220-228-175-145.static.sparqnet.net",
-        "city": "Taipei",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS9919 New Century InfoComm Tech Co., Ltd.",
         "timezone": "Asia/Taipei"
       },
@@ -122,16 +123,16 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://assets.8891.com.tw/t8891/public.d2cac7d4.js",
+      "originalUrl": "https://assets.8891.com.tw/t8891/public.5d74c874.js",
       "type": "script",
       "ipinfo": {
         "domain": "assets.8891.com.tw",
-        "ip": "3.169.36.81",
-        "hostname": "server-3-169-36-81.tpe53.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "54.192.248.89",
+        "hostname": "server-54-192-248-89.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -142,8 +143,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "apis.google.com",
-        "ip": "142.250.66.78",
-        "hostname": "hkg12s27-in-f14.1e100.net",
+        "ip": "142.250.192.142",
+        "hostname": "bom12s18-in-f14.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -158,12 +159,12 @@
       "type": "script",
       "ipinfo": {
         "domain": "statics.8891.com.tw",
-        "ip": "3.169.137.108",
-        "hostname": "server-3-169-137-108.tpe54.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "65.9.180.82",
+        "hostname": "server-65-9-180-82.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -174,12 +175,12 @@
       "type": "other",
       "ipinfo": {
         "domain": "photo.8891.com.tw",
-        "ip": "3.169.55.17",
-        "hostname": "server-3-169-55-17.tpe54.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "3.169.55.35",
+        "hostname": "server-3-169-55-35.tpe54.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -202,16 +203,68 @@
       "category": "domestic/cloud"
     },
     {
+      "originalUrl": "https://www.google.com/measurement/conversion?random=1784575502264&amp;cv=11&amp;tid=G-4YCT4M05RT&amp;fst=1784575502264&amp;fmt=8&amp;en=first_visit&amp;gtm=45je67g0v872754476za200zd872754476xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115938466~115938469~118897920~118897930&amp;u_w=1280&amp;u_h=720&amp;hl=zh&amp;gl=tw&amp;url=https%3A%2F%2Fwww.8891.com.tw%2F&amp;gacid=2134018419.1784575502&amp;frm=0&amp;tiba=8891%E6%B1%BD%E8%BB%8A%20-%20%E8%B2%B7%E8%BB%8A%EF%BC%8C%E5%85%88%E4%B8%8A8891%EF%BC%81&amp;gtm_ee=1&amp;npa=0&amp;pscdl=noapi&amp;auid=915310990.1784575502&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;rcb=2",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "www.google.com",
+        "ip": "142.251.157.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 5.608,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.157.119",
+          "prefix": "142.251.157.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-4YCT4M05RT&amp;cid=2134018419.1784575502&amp;gtm=45je67g0v872754476za200zd872754476&amp;rcb=2&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=115938466~115938469~118897920~118897930&amp;z=1213235971",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.google.com.tw",
+        "ip": "142.250.77.195",
+        "hostname": "del11s08-in-f3.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
       "originalUrl": "https://sb.scorecardresearch.com/beacon.js",
       "type": "script",
       "ipinfo": {
         "domain": "sb.scorecardresearch.com",
-        "ip": "3.169.137.32",
-        "hostname": "server-3-169-137-32.tpe54.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "3.169.137.16",
+        "hostname": "server-3-169-137-16.tpe54.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -234,7 +287,7 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://sentry.addcn.com/api/11/envelope/?sentry_version=7&amp;sentry_key=9b47bbf4046c47e4bdb1678021710bcf&amp;sentry_client=sentry.javascript.react%2F9.47.1",
+      "originalUrl": "https://sentry.addcn.com/api/11/envelope/?sentry_version=7&amp;sentry_key=9b47bbf4046c47e4bdb1678021710bcf&amp;sentry_client=sentry.javascript.react%2F9.35.0",
       "type": "fetch",
       "ipinfo": {
         "domain": "sentry.addcn.com",
@@ -249,69 +302,70 @@
       },
       "category": "foreign/cloud",
       "cloud_provider": {
-        "rtt": 27.224,
-        "detection_method": "rtt"
+        "rtt": 18.882,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "18.162.148.174",
+          "prefix": "18.162.148.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
       }
     },
     {
-      "originalUrl": "https://www.google.com/measurement/conversion?random=1768352969590&amp;cv=11&amp;tid=G-4YCT4M05RT&amp;fst=1768352969590&amp;fmt=6&amp;en=first_visit&amp;gtm=45je61c1v872754476za200zd872754476xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527907~104528501~104684208~104684211~105391252~115938465~115938468~117041588~117091818&amp;u_w=1280&amp;u_h=720&amp;hl=en&amp;gl=us&amp;url=https%3A%2F%2Fwww.8891.com.tw%2F&amp;gacid=1907615568.1768352970&amp;frm=0&amp;tiba=8891%E6%B1%BD%E8%BB%8A%20-%20%E8%B2%B7%E8%BB%8A%EF%BC%8C%E5%85%88%E4%B8%8A8891%EF%BC%81&amp;gtm_ee=1&amp;npa=0&amp;pscdl=noapi&amp;auid=990556993.1768352970&amp;uaa=arm&amp;uab=64&amp;uafvl=Not(A%253ABrand%3B99.0.0.0%7CHeadlessChrome%3B133.0.6943.16%7CChromium%3B133.0.6943.16&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=26.2.0&amp;uaw=0",
-      "type": "fetch",
-      "ipinfo": {
-        "domain": "www.google.com",
-        "ip": "142.250.196.196",
-        "hostname": "nctsaa-ac-in-f4.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-4YCT4M05RT&amp;cid=1907615568.1768352970&amp;gtm=45je61c1v872754476za200zd872754476&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=103116026~103200004~104527907~104528501~104684208~104684211~105391252~115938465~115938468~117041588~117091818&amp;z=449510816",
+      "originalUrl": "https://www.facebook.com/tr/?id=1500391950263215&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.8891.com.tw%2F&amp;rl=&amp;if=false&amp;ts=1784575502983&amp;iw=false&amp;sw=1280&amp;sh=720&amp;v=2.9.357&amp;r=stable&amp;ec=0&amp;o=4126&amp;aems=0%3B0&amp;fbp=fb.2.1784575502979.25401554320397735&amp;cs_est=true&amp;ler=empty&amp;cdl=API_unavailable&amp;pmd[title]=8891%E6%B1%BD%E8%BB%8A%20-%20%E8%B2%B7%E8%BB%8A%EF%BC%8C%E5%85%88%E4%B8%8A8891%EF%BC%81&amp;pmd[locale]=zh-Hant-TW&amp;pmd[keywords]=%E6%B1%BD%E8%BB%8A%E6%B8%AC%E8%A9%95%2C%E8%BB%8A%E5%8F%8B%E8%A9%95%E5%83%B9%2C%E6%96%B0%E8%BB%8A%E5%83%B9%E6%A0%BC%2C%E6%96%B0%E8%BB%8A%2C%E4%B8%AD%E5%8F%A4%E8%BB%8A&amp;pmd[description]=8891%E6%B1%BD%E8%BB%8A%E4%BA%A4%E6%98%93%E7%B6%B2%E7%82%BA%E4%BD%A0%E6%8F%90%E4%BE%9B%E6%9C%80%E6%96%B0%E6%B1%BD%E8%BB%8A%E8%B3%87%E8%A8%8A%EF%BC%8C%E5%B0%88%E6%A5%AD%E6%B1%BD%E8%BB%8A%E6%B8%AC%E8%A9%95%E3%80%81%E6%B1%BD%E8%BB%8A%E5%BD%B1%E9%9F%B3%EF%BC%8C%E5%9A%B4%E9%81%B8%E4%B8%AD%E5%8F%A4%E8%BB%8A(%E4%BA%8C%E6%89%8B%E8%BB%8A)%E8%B2%B7%E8%B3%A3%EF%BC%8C%E6%9C%80%E7%B2%BE%E5%BD%A9%E7%9A%84%E6%B1%BD%E8%BB%8A%E6%96%B0%E8%81%9E%E3%80%81%E8%A1%8C%E6%83%85%E3%80%81%E6%B8%AC%E8%A9%95%E3%80%81%E5%B0%8E%E8%B3%BC%E5%85%A7%E5%AE%B9%EF%BC%8C%E6%98%AF%E5%85%A8%E5%8F%B0%E4%B8%80%E7%AB%99%E5%BC%8F%E6%B1%BD%E8%BB%8A%E5%B0%8E%E8%B3%BC%E5%B9%B3%E5%8F%B0%E3%80%82&amp;iss=1&amp;ss=%7B%22page_keywords%22%3A%5B%7B%22rid%22%3A%221904488540223509%22%2C%22v%22%3A%5B%22%E6%B1%BD%E8%BB%8A%E6%B8%AC%E8%A9%95%2C%E8%BB%8A%E5%8F%8B%E8%A9%95%E5%83%B9%2C%E6%96%B0%E8%BB%8A%E5%83%B9%E6%A0%BC%2C%E6%96%B0%E8%BB%8A%2C%E4%B8%AD%E5%8F%A4%E8%BB%8A%22%5D%7D%5D%2C%22entity_name%22%3A%5B%7B%22rid%22%3A%221711861630018750%22%2C%22v%22%3A%5B%228891%E6%B1%BD%E8%BB%8A%20-%20%E8%B2%B7%E8%BB%8A%EF%BC%8C%E5%85%88%E4%B8%8A8891%EF%BC%81%22%5D%7D%5D%7D&amp;imft=1&amp;tz=480&amp;it=1784575502822&amp;coo=false&amp;expv2[0]=pl1&amp;expv2[1]=el3&amp;expv2[2]=bc1&amp;expv2[3]=ra2&amp;expv2[4]=rp2&amp;expv2[5]=ct3&amp;expv2[6]=hf1&amp;rqm=GET",
       "type": "image",
       "ipinfo": {
-        "domain": "www.google.com.tw",
-        "ip": "142.250.196.195",
-        "hostname": "nctsaa-ac-in-f3.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "domain": "www.facebook.com",
+        "ip": "31.13.87.36",
+        "hostname": "edge-star-mini-shv-01-tpe1.facebook.com",
+        "city": "Taipei",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
+        "loc": "25.0531,121.5264",
+        "org": "AS32934 Facebook, Inc.",
         "timezone": "Asia/Taipei"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/direct"
     },
     {
       "originalUrl": "https://profiles.dunsregistered.com/ESGSeal.aspx",
       "type": "document",
       "ipinfo": {
         "domain": "profiles.dunsregistered.com",
-        "ip": "203.69.138.24",
-        "hostname": "203-69-138-24.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS20940 Akamai International B.V.",
-        "timezone": "Asia/Taipei"
+        "ip": "104.18.18.224",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4598c2e876b6c-TPE",
+        "detection_method": "header"
+      }
     },
     {
       "originalUrl": "https://img.8891.com.tw/next/home/img-41.png",
       "type": "image",
       "ipinfo": {
         "domain": "img.8891.com.tw",
-        "ip": "3.169.137.56",
-        "hostname": "server-3-169-137-56.tpe54.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "65.9.180.52",
+        "hostname": "server-65-9-180-52.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -324,100 +378,36 @@
         "domain": "dc.8891.tw",
         "ip": "220.228.175.145",
         "hostname": "220-228-175-145.static.sparqnet.net",
-        "city": "Taipei",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS9919 New Century InfoComm Tech Co., Ltd.",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://c.8891.com.tw/api/v3/search/suggest/default?ads=1&amp;api=6.4&amp;device_id=aaaf1fd8-bd4c-74ef-957c-31c9358422c5-a",
+      "originalUrl": "https://c.8891.com.tw/api/v3/search/suggest/default?ads=1&amp;api=6.4&amp;device_id=73eff407-5eb0-63d4-d6e5-0a05deea9401-a",
       "type": "xhr",
       "ipinfo": {
         "domain": "c.8891.com.tw",
-        "ip": "3.169.121.91",
-        "hostname": "server-3-169-121-91.tpe53.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "54.192.248.78",
+        "hostname": "server-54-192-248-78.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://video.8891.com.tw/popup_718_20251210.mp4",
-      "type": "media",
-      "ipinfo": {
-        "domain": "video.8891.com.tw",
-        "ip": "3.169.137.107",
-        "hostname": "server-3-169-137-107.tpe54.r.cloudfront.net",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://p3.8891.com.tw/nc/2025/11/07/s/1762481545272918_300_200.png",
-      "type": "image",
-      "ipinfo": {
-        "domain": "p3.8891.com.tw",
-        "ip": "3.169.55.17",
-        "hostname": "server-3-169-55-17.tpe54.r.cloudfront.net",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://p2.8891.com.tw/2026/01/14/17683274754668923866_300_201.jpg",
-      "type": "image",
-      "ipinfo": {
-        "domain": "p2.8891.com.tw",
-        "ip": "3.169.55.21",
-        "hostname": "server-3-169-55-21.tpe54.r.cloudfront.net",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://p1.8891.com.tw/2025/11/13/17630352202701056579_300_201.jpg",
-      "type": "image",
-      "ipinfo": {
-        "domain": "p1.8891.com.tw",
-        "ip": "3.169.55.88",
-        "hostname": "server-3-169-55-88.tpe54.r.cloudfront.net",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午9:09:32<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午3:25:07<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -455,7 +445,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

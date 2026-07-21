@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，evox.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/evox.com.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://evox.com.tw" target="_blank" rel="noopener noreferrer nofollow">evox.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">3</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">16</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">1</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，evox.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，evox.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 evox.com.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，evox.com.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 evox.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 evox.com.tw 的首頁時，我們觀察到來自 20 個網域的 177 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">57.180.16.128</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">tag.clearbitscripts.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdnjs.cloudflare.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdn2.hubspot.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">1864133.fs1.hubspotusercontent-na1.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">1864133.fs1.hubspotusercontent-na2.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">js-na2.usemessages.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">js-na2.hs-banner.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">js-na2.hubspot.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cta-na2.hubspot.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">api-na2.hubspot.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">perf-na2.hsforms.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">track-na2.hubspot.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS131149 Yuan-Jhen Info., Co., Ltd</span><span class="connection-domain">www.evoxglobal.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/evox.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://evox.com.tw" target="_blank" rel="noopener noreferrer nofollow">evox.com.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">3</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">18</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">2</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，evox.com.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，evox.com.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 evox.com.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，evox.com.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 evox.com.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 evox.com.tw 的首頁時，我們觀察到來自 23 個網域的 216 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">57.180.16.128</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdnjs.cloudflare.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">unpkg.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">1864133.fs1.hubspotusercontent-na1.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">1864133.fs1.hubspotusercontent-na2.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">js-na2.usemessages.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">js-na2.hs-banner.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">js-na2.hubspot.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">api-na2.hubspot.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cta-na2.hubspot.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">track-na2.hubspot.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">api.popin.cc</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">asset.popin.cc</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">crs.rixbeedesk.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">global.trk-adv.rixbeedesk.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS19527 Google LLC</span><span class="connection-domain">trace.popin.cc</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS131149 Yuan-Jhen Info., Co., Ltd</span><span class="connection-domain">www.evoxglobal.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/evox.com.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://evox.com.tw",
   "canonicalURL": "https://www.evoxglobal.com/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T03:58:02.722Z",
+  "timestamp": "2026-07-20T21:21:35.577Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,15 +61,15 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 177,
-  "uniqueDomains": 20,
+  "requestCount": 216,
+  "uniqueDomains": 23,
   "test_results": {
     "domestic": {
-      "cloud": 16,
+      "cloud": 18,
       "direct": 3
     },
     "foreign": {
-      "cloud": 1,
+      "cloud": 2,
       "direct": 0
     }
   },
@@ -87,7 +88,25 @@
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Tokyo"
       },
-      "category": "foreign/cloud"
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "57.180.16.128",
+          "prefix": "57.180.16.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
     },
     {
       "originalUrl": "https://www.evoxglobal.com/",
@@ -110,8 +129,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "www.googletagmanager.com",
-        "ip": "142.250.204.40",
-        "hostname": "hkg07s38-in-f8.1e100.net",
+        "ip": "142.250.77.200",
+        "hostname": "del11s08-in-f8.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -122,12 +141,12 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://fonts.googleapis.com/css2?family=Noto%20Sans%20TC:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Noto%20Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap",
+      "originalUrl": "https://fonts.googleapis.com/css2?family=Noto%20Sans%20TC:wght@100..900&amp;display=swap",
       "type": "stylesheet",
       "ipinfo": {
         "domain": "fonts.googleapis.com",
-        "ip": "142.250.198.74",
-        "hostname": "lctsaa-ab-in-f10.1e100.net",
+        "ip": "142.250.192.138",
+        "hostname": "bom12s18-in-f10.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -153,36 +172,16 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bda36246fa54a51-TPE",
+        "cf-ray": "a1e503dd8d86d4e1-TPE",
         "detection_method": "header"
       }
     },
     {
-      "originalUrl": "https://cdn2.hubspot.net/hubfs/1864133/EVOX_website_JS_files/flickity/flickity.css",
-      "type": "stylesheet",
-      "ipinfo": {
-        "domain": "cdn2.hubspot.net",
-        "ip": "104.18.88.62",
-        "city": "San Francisco",
-        "region": "California",
-        "country": "US",
-        "loc": "37.7621,-122.3971",
-        "org": "AS13335 Cloudflare, Inc.",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "cf-ray": "9bda362509cb842d-TPE",
-        "detection_method": "header"
-      }
-    },
-    {
-      "originalUrl": "https://1864133.fs1.hubspotusercontent-na1.net/hubfs/1864133/EVOX_website_JS_files/Scroll-magic-2.0.8/ScrollMagic.js",
+      "originalUrl": "https://unpkg.com/gsap@3/dist/gsap.min.js",
       "type": "script",
       "ipinfo": {
-        "domain": "1864133.fs1.hubspotusercontent-na1.net",
-        "ip": "104.18.41.124",
+        "domain": "unpkg.com",
+        "ip": "104.18.0.22",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -193,38 +192,17 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bda3626ee5880a0-TPE",
+        "cf-ray": "a1e503e23df193ae-TPE",
         "detection_method": "header"
       }
     },
     {
-      "originalUrl": "https://1864133.fs1.hubspotusercontent-na2.net/hubfs/1864133/EVOX_website_JS_files/fullpage-js/easings.min.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "1864133.fs1.hubspotusercontent-na2.net",
-        "ip": "104.18.37.175",
-        "city": "San Francisco",
-        "region": "California",
-        "country": "US",
-        "loc": "37.7621,-122.3971",
-        "org": "AS13335 Cloudflare, Inc.",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "cf-ray": "9bda36273ca96a9c-TPE",
-        "x-amz-cf-pop": "AMS1-C1",
-        "detection_method": "header"
-      }
-    },
-    {
-      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-YDX7G515P0&amp;cid=1539547377.1768363070&amp;gtm=45je61c1v878570808za200zd878570808&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=103116026~103200004~104527907~104528501~104684208~104684211~105391253~115938466~115938469~116744867~117041587~117091818&amp;z=352067419",
+      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-YDX7G515P0&amp;cid=1511907702.1784582481&amp;gtm=45je67g0v878570808za200zd878570808&amp;rcb=6&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=115938466~115938469~118395335~118897920~118897930~119793974&amp;z=828407937",
       "type": "image",
       "ipinfo": {
         "domain": "www.google.com.tw",
-        "ip": "142.250.196.195",
-        "hostname": "nctsaa-ac-in-f3.1e100.net",
+        "ip": "142.250.198.67",
+        "hostname": "lctsaa-ab-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -235,36 +213,40 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://www.google.com/ccm/collect?frm=0&amp;tid=AW-11002781144&amp;en=page_view&amp;dl=https%3A%2F%2Fwww.evoxglobal.com%2F&amp;scrsrc=www.googletagmanager.com&amp;rnd=896556208.1768363070&amp;dt=%E6%99%BA%E6%85%A7%E6%BA%9D%E9%80%9A%E6%96%B0%E7%B4%80%E5%85%83%20%E9%A1%A7%E5%AE%A2%E6%9C%8D%E5%8B%99%E5%BF%83%E9%AB%94%E9%A9%97%20%7C%20EVOX%20%E6%98%93%E5%96%82&amp;auid=1414389301.1768363070&amp;navt=n&amp;npa=0&amp;did=dZTNiMT&amp;gdid=dZTNiMT&amp;gtm=45be61c1v894967172za200zb878570808zd878570808xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527907~104528501~104684208~104684211~105391253~115616986~115938466~115938468~116744867~116910502~117041588&amp;tft=1768363070376&amp;tfd=1109&amp;apve=1&amp;apvf=f",
+      "originalUrl": "https://www.google.com/rmkt/collect/11002781144/?random=1784582482239&amp;cv=11&amp;fst=1784582482239&amp;fmt=8&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be67g0v894967172za200zb878570808zd878570808xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115938466~115938468~118897920~118897930&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fwww.evoxglobal.com%2F&amp;rcb=7&amp;frm=0&amp;tiba=%E4%BC%81%E6%A5%AD%E7%B4%9A%20AI%20%E9%A1%A7%E5%AE%A2%E4%BA%92%E5%8B%95%E5%B9%B3%E5%8F%B0%20%E5%86%8D%E9%80%A0%E5%95%86%E5%8B%99%E6%BA%9D%E9%80%9A%E6%96%B0%E5%83%B9%E5%80%BC%20%7C%20EVOX%20%E6%98%93%E5%96%82&amp;did=dZTNiMT&amp;gdid=dZTNiMT&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1242943107.1784582482&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;data=event%3Dgtag.config&amp;ept=68&amp;gcp=5",
       "type": "fetch",
       "ipinfo": {
         "domain": "www.google.com",
-        "ip": "142.250.196.196",
-        "hostname": "nctsaa-ac-in-f4.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
+        "ip": "142.251.156.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
         "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
+        "timezone": "America/Los_Angeles"
       },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://tag.clearbitscripts.com/v1/pk_48cf8575929d21ef32e6471640115a29/tags.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "tag.clearbitscripts.com",
-        "ip": "3.169.137.96",
-        "hostname": "server-3-169-137-96.tpe54.r.cloudfront.net",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS16509 Amazon.com, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 8.038,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.156.119",
+          "prefix": "142.251.156.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
+      }
     },
     {
       "originalUrl": "https://connect.facebook.net/en_US/fbevents.js",
@@ -283,11 +265,122 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://js-na2.usemessages.com/conversations-embed.js",
+      "originalUrl": "https://api.popin.cc/ads/35694.js",
       "type": "script",
       "ipinfo": {
-        "domain": "js-na2.usemessages.com",
-        "ip": "104.16.76.142",
+        "domain": "api.popin.cc",
+        "ip": "34.49.93.142",
+        "hostname": "142.93.49.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 6.474,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.49.93.142",
+          "prefix": "34.49.93.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://asset.popin.cc/js/pixel.js?acid=35694",
+      "type": "script",
+      "ipinfo": {
+        "domain": "asset.popin.cc",
+        "ip": "34.117.195.210",
+        "hostname": "210.195.117.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 8.471,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.117.195.210",
+          "prefix": "34.117.195.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 64,
+          "location_count": 64
+        }
+      }
+    },
+    {
+      "originalUrl": "https://crs.rixbeedesk.com/wrapper/1375_10053.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "crs.rixbeedesk.com",
+        "ip": "34.36.179.131",
+        "hostname": "131.179.36.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.75,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.36.179.131",
+          "prefix": "34.36.179.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 63,
+          "location_count": 63
+        }
+      }
+    },
+    {
+      "originalUrl": "https://1864133.fs1.hubspotusercontent-na1.net/hubfs/1864133/EVOXImages/Official_WEB/icon/arrow/check-solid.png",
+      "type": "image",
+      "ipinfo": {
+        "domain": "1864133.fs1.hubspotusercontent-na1.net",
+        "ip": "104.18.41.124",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -298,8 +391,86 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bda362cdb9cc4ed-TPE",
-        "x-amz-cf-pop": "HIO52-P4",
+        "cf-ray": "a1e503e85c3b6a8a-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://1864133.fs1.hubspotusercontent-na2.net/hubfs/1864133/EVOXImages/2026_%E6%B8%AC%E8%A9%A6/lottie-%E6%B8%AC%E8%A9%A6/data-2.json",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "1864133.fs1.hubspotusercontent-na2.net",
+        "ip": "104.18.37.175",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e503eb78654a91-TPE",
+        "x-amz-cf-pop": "HEL51-P7",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://global.trk-adv.rixbeedesk.com/cookie/10053/get",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "global.trk-adv.rixbeedesk.com",
+        "ip": "34.54.142.75",
+        "hostname": "75.142.54.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.895,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.54.142.75",
+          "prefix": "34.54.142.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 65,
+          "location_count": 65
+        }
+      }
+    },
+    {
+      "originalUrl": "https://js-na2.usemessages.com/conversations-embed.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "js-na2.usemessages.com",
+        "ip": "104.16.75.142",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e503ee0aa44a64-TPE",
+        "x-amz-cf-pop": "HIO52-P5",
         "detection_method": "header"
       }
     },
@@ -308,7 +479,7 @@
       "type": "script",
       "ipinfo": {
         "domain": "js-na2.hs-banner.com",
-        "ip": "104.18.40.240",
+        "ip": "172.64.147.16",
         "city": "San Francisco",
         "region": "California",
         "country": "US",
@@ -319,7 +490,7 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bda362bcefed4e1-TPE",
+        "cf-ray": "a1e503f1eb158283-TPE",
         "detection_method": "header"
       }
     },
@@ -339,13 +510,13 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bda362b68750f9a-TPE",
-        "x-amz-cf-pop": "HIO52-P4",
+        "cf-ray": "a1e503f1ed5a4a16-TPE",
+        "x-amz-cf-pop": "HIO52-P5",
         "detection_method": "header"
       }
     },
     {
-      "originalUrl": "https://www.facebook.com/tr?id=674028138484832&amp;ev=PageView&amp;dl=https%253A%252F%252Fwww.evoxglobal.com%252F&amp;rl=&amp;if=false&amp;ts=1768363071107&amp;fbp=fb.2.1768363071107.376854786",
+      "originalUrl": "https://www.facebook.com/tr?id=674028138484832&amp;ev=PageView&amp;dl=https%253A%252F%252Fwww.evoxglobal.com%252F&amp;rl=&amp;if=false&amp;ts=1784582483383&amp;fbp=fb.2.1784582483383.749660214",
       "type": "image",
       "ipinfo": {
         "domain": "www.facebook.com",
@@ -361,10 +532,43 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://cta-na2.hubspot.com/web-interactives/public/v1/embed/combinedConfigs?portalId=1864133&amp;currentUrl=https%3A%2F%2Fwww.evoxglobal.com%2F",
-      "type": "fetch",
+      "originalUrl": "https://trace.popin.cc/api/bidder/track/pixel/pageview?tn=f9f2b1ef23fe2759c2cad0953029a94b&amp;spd=&amp;mgd=7281c941f7d348b6929ed49048bd7c6c&amp;ptd=&amp;tkd=&amp;acd=35694&amp;cpid=&amp;v=244089662",
+      "type": "ping",
       "ipinfo": {
-        "domain": "cta-na2.hubspot.com",
+        "domain": "trace.popin.cc",
+        "ip": "35.213.89.133",
+        "hostname": "133.89.213.35.bc.googleusercontent.com",
+        "city": "Tokyo",
+        "region": "Tokyo",
+        "country": "JP",
+        "loc": "35.6895,139.6917",
+        "org": "AS19527 Google LLC",
+        "timezone": "Asia/Tokyo"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 54.686,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "35.213.89.133",
+          "prefix": "35.213.89.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://api-na2.hubspot.com/livechat-public/v1/message/public?portalId=1864133&amp;conversations-embed=static-1.27545&amp;mobile=false&amp;messagesUtk=3765b1df5eec42759b40d7c1ca03dd66&amp;traceId=3765b1df5eec42759b40d7c1ca03dd66",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "api-na2.hubspot.com",
         "ip": "104.17.91.187",
         "city": "San Francisco",
         "region": "California",
@@ -376,15 +580,15 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bda362c4a830f9a-TPE",
+        "cf-ray": "a1e503f2ffeb6a8a-TPE",
         "detection_method": "header"
       }
     },
     {
-      "originalUrl": "https://api-na2.hubspot.com/livechat-public/v1/message/public?portalId=1864133&amp;conversations-embed=static-1.25008&amp;mobile=false&amp;messagesUtk=62f9a9eed6ac4fe080f3e40764a1fecb&amp;traceId=62f9a9eed6ac4fe080f3e40764a1fecb",
-      "type": "xhr",
+      "originalUrl": "https://cta-na2.hubspot.com/web-interactives/public/v1/embed/combinedConfigs?portalId=1864133&amp;currentUrl=https%3A%2F%2Fwww.evoxglobal.com%2F",
+      "type": "fetch",
       "ipinfo": {
-        "domain": "api-na2.hubspot.com",
+        "domain": "cta-na2.hubspot.com",
         "ip": "104.17.92.187",
         "city": "San Francisco",
         "region": "California",
@@ -396,32 +600,34 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "cf-ray": "9bda362e5f890f9a-TPE",
-        "detection_method": "header"
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "104.17.92.187",
+          "prefix": "104.17.92.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 77,
+          "location_count": 77,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
       }
     },
     {
-      "originalUrl": "https://perf-na2.hsforms.com/embed/v3/counters.gif?key=config-loaded-success&amp;value=1",
-      "type": "image",
-      "ipinfo": {
-        "domain": "perf-na2.hsforms.com",
-        "ip": "104.19.175.188",
-        "city": "San Francisco",
-        "region": "California",
-        "country": "US",
-        "loc": "37.7621,-122.3971",
-        "org": "AS13335 Cloudflare, Inc.",
-        "timezone": "America/Los_Angeles"
-      },
-      "category": "domestic/cloud",
-      "cloud_provider": {
-        "country": "tw",
-        "cf-ray": "9bda362f3ab84a81-TPE",
-        "detection_method": "header"
-      }
-    },
-    {
-      "originalUrl": "https://track-na2.hubspot.com/__ptq.gif?k=1&amp;sd=1280x720&amp;cd=24-bit&amp;cs=UTF-8&amp;ln=en-us&amp;bfp=25317147f547749ff613307bf148a98f&amp;v=1.1&amp;a=1864133&amp;rcu=https%3A%2F%2Fwww.evoxglobal.com%2F&amp;pu=https%3A%2F%2Fwww.evoxglobal.com%2F&amp;t=%E6%99%BA%E6%85%A7%E6%BA%9D%E9%80%9A%E6%96%B0%E7%B4%80%E5%85%83+%E9%A1%A7%E5%AE%A2%E6%9C%8D%E5%8B%99%E5%BF%83%E9%AB%94%E9%A9%97+%7C+EVOX+%E6%98%93%E5%96%82&amp;cts=1768363072201&amp;vi=3d5072b7762528b49d892b77bac46405&amp;nc=true&amp;u=106870492.3d5072b7762528b49d892b77bac46405.1768363072199.1768363072199.1768363072199.1&amp;b=106870492.1.1768363072199&amp;cc=15",
+      "originalUrl": "https://track-na2.hubspot.com/__ptq.gif?k=1&amp;sd=1280x720&amp;cd=30-bit&amp;cs=UTF-8&amp;ln=zh-tw&amp;bfp=7a1d5896f09145234e048a03c8cb99a8&amp;v=1.1&amp;a=1864133&amp;rcu=https%3A%2F%2Fwww.evoxglobal.com%2F&amp;pu=https%3A%2F%2Fwww.evoxglobal.com%2F&amp;t=%E4%BC%81%E6%A5%AD%E7%B4%9A+AI+%E9%A1%A7%E5%AE%A2%E4%BA%92%E5%8B%95%E5%B9%B3%E5%8F%B0+%E5%86%8D%E9%80%A0%E5%95%86%E5%8B%99%E6%BA%9D%E9%80%9A%E6%96%B0%E5%83%B9%E5%80%BC+%7C+EVOX+%E6%98%93%E5%96%82&amp;cts=1784582485161&amp;vi=5a91d1ecbcc97f2c83ff03bba5bd01eb&amp;nc=true&amp;u=106870492.5a91d1ecbcc97f2c83ff03bba5bd01eb.1784582485160.1784582485160.1784582485160.1&amp;b=106870492.1.1784582485160&amp;cc=15",
       "type": "image",
       "ipinfo": {
         "domain": "track-na2.hubspot.com",
@@ -436,15 +642,37 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 5.829,
-        "detection_method": "rtt"
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "104.17.91.187",
+          "prefix": "104.17.91.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 77,
+          "location_count": 77,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
       }
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午11:58:02<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午5:21:35<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -482,7 +710,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>When submarine cables fail, will websites still work?</title>
-    <meta name="description" content="Based on tests of 1859 widely used Taiwanese websites, if submarine cables fail, 47% may not work, 42% face higher risk, and only 11% are more likely to remain operable. Enter a URL to see whether the site you want to visit might work!">
+    <meta name="description" content="Enter a URL to view the test result">
     <link rel="icon" href="/favicon.ico">
     <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/en/">
 
     <!-- Open Graph 標籤 -->
     <meta property="og:title" content="When submarine cables fail, will websites still work?">
-    <meta property="og:description" content="Based on tests of 1859 widely used Taiwanese websites, if submarine cables fail, 47% may not work, 42% face higher risk, and only 11% are more likely to remain operable. Enter a URL to see whether the site you want to visit might work!">
+    <meta property="og:description" content="Enter a URL to view the test result">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/en/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -22,10 +22,10 @@
     <script src="../i18n.js"></script>
     <link rel="alternate" hreflang="zh-TW" href="https://resilience.ocf.tw/web/">
     <link rel="alternate" hreflang="en" href="https://resilience.ocf.tw/web/en/">
-    <meta property="og:image" content="https://resilience.ocf.tw/web/img/overall-result.png">
+    <meta property="og:image" content="https://resilience.ocf.tw/web/img/overall-result.en.png">
     <meta property="og:image:alt" content="Overall resilience test results chart for popular Taiwan websites">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://resilience.ocf.tw/web/img/overall-result.png">
+    <meta name="twitter:image" content="https://resilience.ocf.tw/web/img/overall-result.en.png">
 </head>
 <body>
     <div id="app">
@@ -35,14 +35,14 @@
         <a class="lang-switcher-btn" href="/web/en/" hreflang="en" aria-current="page">English</a>
     </nav>
 
-    
+
 
     <h1 class="home-title">When submarine cables fail, will the websites Taiwanese people use most still work?</h1>
 
     <div class="static-wrapper" data-static="begin"></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -80,11 +80,11 @@
         </div>
     </div>
 
-    
-        <section class="overview-card" itemscope="" itemtype="https://schema.org/FAQPage"><hr><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><meta itemprop="name" content="When submarine cables fail, will the websites Taiwanese people use most still work?"><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on tests of 1859 widely used Taiwanese websites, if submarine cables fail or congestion is severe, 47% of sites may not work; 42% face higher risk; only 11% are relatively more resilient and more likely to remain available.</p><p>The chart below shows exposure to foreign and international cloud dependencies among widely used Taiwanese sites. <a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">Read the research methodology and aggregated report</a>.</p></div></div><figure class="overview-chart"><img src="/web/img/overall-result.png" alt="Overall results chart"></figure></section>
-    
 
-    
+        <section class="overview-card" itemscope="" itemtype="https://schema.org/FAQPage"><hr><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><meta itemprop="name" content="When submarine cables fail, will the websites Taiwanese people use most still work?"><div><p>Based on current test results, the chart below shows exposure to foreign and international cloud dependencies among widely used Taiwanese websites—that is, what share of sites would fail outright, how many face higher fault risk due to reliance on international cloud nodes, and what share are relatively more resilient when submarine cables fail or congestion is extreme. <a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">Read the research methodology and aggregated report</a>.</p></div></div><figure class="overview-chart"><img src="/web/img/overall-result.en.png" alt="Overall results chart"></figure></section>
+
+
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When submarine cables fail, will msn.com.tw still work?</title>
+    <meta name="description" content="Based on the latest test, under a submarine-cable outage scenario msn.com.tw may “not work.” If international connectivity is cut or blocked, the site may fail to load.">
+    <link rel="icon" href="/favicon.ico">
+    <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/msn.com.tw/en/">
+
+    <!-- Open Graph 標籤 -->
+    <meta property="og:title" content="When submarine cables fail, will msn.com.tw still work?">
+    <meta property="og:description" content="Based on the latest test, under a submarine-cable outage scenario msn.com.tw may “not work.” If international connectivity is cut or blocked, the site may fail to load.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resilience.ocf.tw/web/msn.com.tw/en/">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
+
+    <link rel="stylesheet" href="../../styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
+    <script src="../../locales/zh-TW.js"></script>
+    <script src="../../locales/en.js"></script>
+    <script src="../../i18n.js"></script>
+
+    <script>window.__IS_STATIC_PAGE__ = true;</script>
+    <link rel="alternate" hreflang="zh-TW" href="https://resilience.ocf.tw/web/msn.com.tw/">
+    <link rel="alternate" hreflang="en" href="https://resilience.ocf.tw/web/msn.com.tw/en/">
+</head>
+<body>
+    <div id="app">
+
+    <nav class="lang-switcher" aria-label="Language">
+        <a class="lang-switcher-btn" href="/web/msn.com.tw/" hreflang="zh-TW">中文</a>
+        <a class="lang-switcher-btn" href="/web/msn.com.tw/en/" hreflang="en" aria-current="page">English</a>
+    </nav>
+
+    <div class="static-wrapper" data-static="begin"></div>
+        <h1>When submarine cables fail, will <a href="https://msn.com.tw" target="_blank" rel="noopener noreferrer nofollow">msn.com.tw</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>Will not work</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">6</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">9</strong></p><p class="score score-X">Foreign connections (X)<br><strong style="font-size: 1.3em;">13</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can msn.com.tw still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario msn.com.tw may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why might msn.com.tw “not work” when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean msn.com.tw will definitely be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for msn.com.tw under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of msn.com.tw, we observed 437 requests across 28 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">20.112.250.133</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS20940 Akamai International B.V.</span><span class="connection-domain">res.public.onecdn.static.microsoft</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">www.msn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">sb.scorecardresearch.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">www.temu.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">assets.msn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">img-s-msn-com.akamaized.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">www.bing.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">ecn.dev.virtualearth.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">use.typekit.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">p.typekit.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">ty-api.archive-digger.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS19527 Google LLC</span><span class="connection-domain">trace.popin.cc</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">s0.2mdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">fonts.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS8068 Microsoft Corporation</span><span class="connection-domain">msn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">c.bing.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">login.microsoftonline.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">api.msn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">arc.msn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">aadcdnjp.msauth.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">login.live.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">adsdkprod.azureedge.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">mem.gfx.ms</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">js.monitor.azure.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">browser.events.data.microsoft.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS29990 Xandr Inc.</span><span class="connection-domain">ib.msn.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS29990 Xandr Inc.</span><span class="connection-domain">sin3-ib.msn.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/msn.com.tw.json" target="_blank">View on GitHub</a></p><pre><code>{
+  "url": "https://msn.com.tw",
+  "canonicalURL": "https://msn.com.tw",
+  "httpStatus": 200,
+  "timestamp": "2026-07-20T22:02:19.431Z",
+  "testParameters": {
+    "customDNS": "168.95.1.1",
+    "useAdblock": true,
+    "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
+      "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
+    ],
+    "useCache": true,
+    "hasIPinfoToken": true
+  },
+  "testingEnvironment": {
+    "ip": "220.132.212.194",
+    "hostname": "220-132-212-194.hinet-ip.hinet.net",
+    "city": "Banqiao",
+    "region": "Taipei",
+    "country": "TW",
+    "loc": "25.0143,121.4672",
+    "org": "AS3462 Data Communication Business Group",
+    "timezone": "Asia/Taipei",
+    "source": "ipinfo json api (direct)",
+    "dnsServer": "168.95.1.1"
+  },
+  "requestCount": 437,
+  "uniqueDomains": 28,
+  "test_results": {
+    "domestic": {
+      "cloud": 9,
+      "direct": 6
+    },
+    "foreign": {
+      "cloud": 10,
+      "direct": 3
+    }
+  },
+  "domainDetails": [
+    {
+      "originalUrl": "https://msn.com.tw/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "msn.com.tw",
+        "ip": "20.112.250.133",
+        "city": "Des Moines",
+        "region": "Iowa",
+        "country": "US",
+        "loc": "41.6005,-93.6091",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "America/Chicago"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 167.247,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "20.112.250.133",
+          "prefix": "20.112.250.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://msn.com/zh-tw",
+      "type": "document",
+      "ipinfo": {
+        "domain": "msn.com",
+        "ip": "204.79.197.219",
+        "city": "Redmond",
+        "region": "Washington",
+        "country": "US",
+        "loc": "47.6740,-122.1215",
+        "org": "AS8068 Microsoft Corporation",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://www.msn.com/zh-tw",
+      "type": "document",
+      "ipinfo": {
+        "domain": "www.msn.com",
+        "ip": "23.201.8.64",
+        "hostname": "a23-201-8-64.deploy.static.akamaitechnologies.com",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS16625 Akamai Technologies, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://assets.msn.com/bundles/v1/homePage/latest/vendors.62ad0db3ddae77dc.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "assets.msn.com",
+        "ip": "210.71.227.176",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://sb.scorecardresearch.com/b?rn=1784584923056&amp;c1=2&amp;c2=3000001&amp;cs_ucfr=1&amp;c7=https%3A%2F%2Fwww.msn.com%2Fzh-tw%3Focid%3Dhpmsn%26content%3D1%26mkt%3Dzh-tw&amp;c8=MSN&amp;c9=&amp;cs_fpid=20FF6302F23D663C03B6749EF37267F9&amp;cs_fpit=o&amp;cs_fpdm=*null&amp;cs_fpdt=*null",
+      "type": "image",
+      "ipinfo": {
+        "domain": "sb.scorecardresearch.com",
+        "ip": "3.169.137.63",
+        "hostname": "server-3-169-137-63.tpe54.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://c.bing.com/c.gif?Red3=MSNLI_pd&amp;rid=6a5e9adae38c4e4685526185243c8308&amp;lang=zh-tw&amp;dgk=chrome&amp;imd=1&amp;pn=hp&amp;rf=&amp;tp=https://www.msn.com/zh-tw&amp;gdpr=0&amp;gdpr_consent=",
+      "type": "image",
+      "ipinfo": {
+        "domain": "c.bing.com",
+        "ip": "150.171.27.10",
+        "city": "Redmond",
+        "region": "Washington",
+        "country": "US",
+        "loc": "47.6740,-122.1215",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "x-msedge-ref": "Ref A: 4814A206C5CE4B16858CF7F369E6AD93 Ref B: TPE201050219023 Ref C: 2026-07-20T22:02:03Z",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1E7eqx.img?w=612&amp;h=328&amp;q=90&amp;m=6&amp;f=jpg&amp;x=398&amp;y=158&amp;u=t",
+      "type": "image",
+      "ipinfo": {
+        "domain": "img-s-msn-com.akamaized.net",
+        "ip": "203.69.81.40",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://ib.msn.com/ut/v3",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "ib.msn.com",
+        "ip": "103.43.91.139",
+        "hostname": "1019.bm-nginx-loadbalancer.mgmt.sin3.adnexus.net",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS29990 Xandr Inc.",
+        "timezone": "Asia/Singapore"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://www.bing.com/th?id=OSB.FIFA2026V2.png&amp;pid=MSports&amp;w=72&amp;h=72&amp;qlt=90&amp;c=0&amp;rs=1&amp;dpr=1&amp;p=1",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.bing.com",
+        "ip": "210.71.227.211",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=d7b530a4-7680-4c23-a8bf-c52c121d2e87&amp;scope=User.Read%20openid%20profile%20offline_access&amp;redirect_uri=https%3A%2F%2Fwww.msn.com%2Fstaticsb%2Fstatics%2Flatest%2Fauth%2Fauth-redirect-blank-bridge.html&amp;client-request-id=6a5e9ada-e38c-4e46-8552-6185243c8308&amp;response_mode=fragment&amp;client_info=1&amp;clidata=1&amp;prompt=none&amp;nonce=019f818c-ea01-70dd-b2b5-8bca14c593a7&amp;state=eyJpZCI6IjAxOWY4MThjLWVhMDEtNzQ3Yi04ZjI3LTkyNDI5ZWI3NzY2YSIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoic2lsZW50In19&amp;x-client-SKU=msal.js.browser&amp;x-client-VER=5.6.3&amp;response_type=code&amp;code_challenge=JcbhdaAB03kHH-WF-I4C2DxhbUpjHWq2uSgj9V7Ta78&amp;code_challenge_method=S256",
+      "type": "document",
+      "ipinfo": {
+        "domain": "login.microsoftonline.com",
+        "ip": "40.126.38.20",
+        "city": "Tokyo",
+        "region": "Tokyo",
+        "country": "JP",
+        "loc": "35.6895,139.6917",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "Asia/Tokyo"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 35.51,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "40.126.38.20",
+          "prefix": "40.126.38.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://api.msn.com/msn/v0/pages/LiveRamp/getLiveRampId?apikey=0QfOX3Vn51YCzitbLaRkTTBadtWpgTN8NZLW0C1SEM&amp;activityId=6a5e9ada-e38c-4e46-8552-6185243c8308&amp;ocid=peregrine&amp;cm=zh-tw&amp;it=web&amp;user=m-0B03A859745463BD07F9BFC5757F6260&amp;scn=ANON",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "api.msn.com",
+        "ip": "150.171.28.12",
+        "city": "Redmond",
+        "region": "Washington",
+        "country": "US",
+        "loc": "47.6740,-122.1215",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "x-msedge-ref": "Ref A: 681066B2A2C441478D7E53C968F31EAB Ref B: TPE201050220034 Ref C: 2026-07-20T22:02:04Z",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://arc.msn.com/v4/api/selection?nct=1&amp;fmt=json&amp;nocookie=0&amp;locale=zh-tw&amp;country=TW&amp;muid=0B03A859745463BD07F9BFC5757F6260&amp;ISSIGNEDIN=0&amp;MSN_CANVAS=1&amp;OPSYS=MACOS&amp;ISMOBILE=0&amp;BROWSER=2&amp;placement=10837393&amp;bcnt=1&amp;asid=39239cbbd2b64a5c8076f82328f9ccb5",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "arc.msn.com",
+        "ip": "135.149.173.69",
+        "city": "Osaka",
+        "region": "Osaka",
+        "country": "JP",
+        "loc": "34.6938,135.5011",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "Asia/Tokyo"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 43.643,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "135.149.173.69",
+          "prefix": "135.149.173.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://aadcdnjp.msauth.net/shared/1.0/content/js/BssoInterrupt_Core_l_chUU-5ZYSVgQoZAiHKxw2.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "aadcdnjp.msauth.net",
+        "ip": "150.171.110.65",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-azure-ref": "20260720T220205Z-16455cd79bbftj2shC1HK18r5g0000000700000000001ktt",
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "150.171.110.65",
+          "prefix": "150.171.110.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://res.public.onecdn.static.microsoft/creativeservice/9c6e7ead-bff6-2b01-fa23-ca14c17b14c2_8353863567095989496_128000000005141289_assets__image1_1727808726889.png",
+      "type": "image",
+      "ipinfo": {
+        "domain": "res.public.onecdn.static.microsoft",
+        "ip": "203.69.138.225",
+        "hostname": "203-69-138-225.hinet-ip.hinet.net",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS20940 Akamai International B.V.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://sin3-ib.msn.com/it?an_audit=0&amp;referrer=https%3A%2F%2Fwww.msn.com%2Fzh-tw&amp;e=wqT_3QK0E_BAtAkAAAMA1gAFAQjctfrSBhDyndnNw9b8YRiXhvzUzdOOyiEqNgncvdwnRwHKPxHcvdwnRwHKPxkAAADA9SjsPyEREgApEQkEMQAFG7i8PzCE_bAQOJgCQLhoSJEEUPjd4dkCWPKKTmAAaJmgZ3j_jAaAAQGKAQNVU0SSAQEG8JCYAQGgAQGoAQGwAQC4AQHAAQXIAQLQAQDYAQDgAQDwAQD6AQ5ocDItaW5mb3BhbmUtMrICIDIwRkY2MzAyRjIzRDY2M0MwM0I2NzQ5RUYzNzI2N0Y52AKOvQLgAqDXX-oCGWh0dHBzOi8vd3d3Lm1zbi5jb20vemgtdHeAAwCIAwGQAwCYAxegAwGqA5kNCusMES_0jgh0cmFjZS5wb3Bpbi5jYy9qdS93aW4_dG49YTFiMDY3ODk3ZTRhZTA5M2QxZjk0MjYxZTBkZGM2YzkmdHJhY2tpbmdpZD1lYTI2NzNjZGI0MzZjMjJjOTRjZTRmOWEwYTE4MDczYSZhY2lkPTM1NTI3JmRhdGE9NWZHSEpmeFlwVTltcmNCRlBDdTQ5V0sxcEpKTjg3NGppZFQxTlY1UXNtZnlZY1Nnam9rdVB2SDJOR1hqaW9CSU1pRkM5N3ZDOFJ1cVZfbTJ4S2Z1cFAwc25UNEp0WUt3bGVBbEJzOHlmVldaMW9aZVpNSlRVT3F0STl5UHpIREpUcmxtcDVCTVlQWG1VdWM4dVZzd2YzWFJheE9WT1d3R3MxUkJRcmtRU0pVR3JXRUxJMTRoTzJVX1loYlBHU1BzZU5BdUpmdXp3TzRmMlVsa25MUTVJdHNub3R0UEJDQXd2Um1CRndaaHV3aGZtcUFVZlZkQnFJUG1jUXhXNGY4QVhuNkt5QjBodGx0SWxvSnJlQ1ZVVDNid3IxNUZfcmtEZXNUTUVXclR5Um96UTZMa2RkLWRZd01nX195N3Y3N0hKMFpfcHo5aGxsWjJ4dlYydFdCMEJick9mQkI1dnd1WWhjT1Z3NS1FbjVld0JXRnVqbXBjOUxLN0xUQm5abWp4RUlFbzJPSXFJLWRENjhYaHhSTklzUGVfVFNzaThNcm9pNEJDWmllM0pZTGg0M25pWjVxcEVVMkFDRUxEMXNJOHVtYVlDMTZJUFVCNWZSV0M4ekxIbHp3b1RYTkE0RmdZR1JMWW5iUVpVa0xqNDdNLWVaeEdPbnVBMkF3ZXc5a0h2ODF2eGRVb0tjOFBKc2RjNzBYUXBPNHRsTW1qZmdWajhFZVY0aFAtTzdjWDNZV2dJNWlhSGltM0wyY1I2NFpVbHZ6Ny1VV1AtTGdUekJBRFlpQTFBUjJoaTNqX3l5cWwxTGV6aGtyVkcwZGtCQjVibmk5eWtORzBCQ0s0V0xNVTRrUnA1T2p6VVFkWnFya3dNUUtDLW56VnN3aFVDYjZRQS02dVhDZlNqT0tkbVBNdXM4cDl2VGI5cnktVVFVTVJPYk1GM041a2llMkc3QTdHZDMxd1lJR0hpWXFNRVpBMGlDOThtWUdCRk40LWkzZTZfZUNmSmRTR1UydWZBa0Z5V3l2UjVTSF9HeVNGek1LVF9BV00zSHlnOHphV084Ukt0Mjlaakt1S3RNTXo1dm8wWExhb2xPd1d4eFdMZDJBaEJEWkZzYTZKWjNVRUZXUU1XdXRIYXkxcGZ3Y1MxNl9vcnItRDl5RVlqdk8zLW52SldsUy11bDhxZWw0ZGtzbVNyOEJ3eVRqUVlSWG1DZ3ZXcEZNdnlnN3NOa2t4cXpTbnBlREwtSUt2RkstNFJ4ajVIWG5GY21UdUxJdHluT0c5REE5SnhacWNkaFROZVZDTUR0Ml9BWG5QMWRJYzVEUnJGcDAxR1QzM3VlR3BSTEN4cmt1azAxb1NRN19UMU1mMlFkOVBtdWNxYU1QUldKbE9wcHl2NmRPcE1RN25MTFM1S1BJalZLY3dvMTBrOEpXZVBjblhXQmxHQWlrTEtiR05rOWZmRmo2NnY1ZUJ2TGNhcVQ0WFcwcmw2Um5BMzNHa3JDNUtIQTY4OHNKaFBVQmJzS0M2d2s4ejA1b2s0Z05mOWtBcTlqYlY2X29hRDNIdEtwRjZ1RFFQN2lVT1F3c0xLcFFjZzdUWHNzS3RfdC1sZVlPb3RlbllqNWZGSWdoOVRaaXlYaFN0SGVVZjZWNDRwXzA5UkZOOWpoU0FkWVJpeXJTXzBaY0IzNUtUTlhQUkNERnlNdnQtTXp4TkxueXRUeFQxN2JNTG1qZWZzek9ZcUxVOVAwS2E1OG9qMHQxVERIcDc1UF95bk9WVEhmTURzendXNkI5a2Y0R2xiSy13aEVXamYxeUhwbUV3S1ItZWZiaDd0UjZCQ25DV0dJYXZaMVNDZlNsS3pKaU1qanlrUkdLSTJVUUJmT0hJOFdIa1dWSDV4RGM2emRCNFlwYkNqbUhTNmlVb0xKOXdCc1BmOEVVZ21sZnN4QzgmdWlkPTI0MTk2MjMzNDUxNjE5NjIyNjMmbWd1aWQ9JmFwPSR7QVVDVElPTl9QUklDRX0mdGlkPTAmY19zeW5jPTEaETU1MTU0NDc2MzM0ODYyMDY2Igk3MjUxMTg3MTIqCURpc2NvdmVyeUgAwAPgqAHIAwDYA9XuoQHgAwDoAwD4AwGABACSBAYvdXQvdjOYBACiBA8yMjAuMTMyLjIxMi4xOTSoBACyBBAIABABGAAgACgAMAA4AkIAuAQAwAQAyAQA2gQCCAHgBAHwBPjd4dkCiAUBmAUAoAXUip-yrr7tthjABQDJBQAAAAAAAPA_0gUJCQAAAAAAAAAA2AUB4AUB8AXGBfoFBAgAEACQBgGYBgC4BgDBBgAAAAAAAPA_0AbUrwXaBhYKEAAAAAAAAAAAAAAAAAAAAAAQABgA4AYM8gYGCAAYACAAgAcBiAcAoAdBwgczKAA4AEEAAAAAAAAAAEkAAAAAAAAAAFIFemgtdHdZAAAAAAAAAABwAHgAgAEAigEDaHAyyAf_jAbSBw8JAAAAAAAAAAAQABgAIADaBwYIABAAGADgBwDqBwIIAPAH6piWE4oIiQEKhAEAAAGfgYzrYADD8rQ5tk7yG73Z4vo5ym5wltVtW5z3qmDRNhxZ8Vh7jLZxv-Hed-UdLv3wTvd7nKhCq6JD1dfzQz_o0zzdTPNrVQy_smu9V1JaPLt8Qt6ILJpaSHbUXWb5zyDK6sUHMilA90EJg_XkUfJHRBHIeIFaXcGUozUT_BJg52UQAZUIAACAP5gIAcAIjr0C0ggLCP___7-AHhAAGADaCAQIACAA4AgA6AgA&amp;s=ad40f90635b42b1712c3c1df4cc708b7c491dcc8&amp;pp=${AUCTION_PRICE}",
+      "type": "image",
+      "ipinfo": {
+        "domain": "sin3-ib.msn.com",
+        "ip": "103.43.91.138",
+        "hostname": "1034.bm-nginx-loadbalancer.mgmt.sin3.adnexus.net",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS29990 Xandr Inc.",
+        "timezone": "Asia/Singapore"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://trace.popin.cc/ju/ic?tn=a1b067897e4ae093d1f94261e0ddc6c9&amp;trackingid=ea2673cdb436c22c94ce4f9a0a18073a&amp;acid=35527&amp;data=nKPgo1oF4WrHQrh28SSu4W8mwR5wVZW1YFoeUrZMwaAvpHJL7EnGuXtcvAw8eoLz1l1ZaSV_TO74U3WDyxJ8rxPyVrDt1sHGZiTswVCvwGzW8_ZwSsKS391vdh8KtT4Vng7nZ-aFEn95w2_rU8dQrDEDTF4mmX9e00XdZ2lFoVSPxPOwcwvLlJ7s7_f47DTp82wUZX5epL48QTPllymXTD2ylcJh1gLAqXbnJq2vhOEomjbwBqqOXu89vcyycIEFkOIY4bdkOXa7aiHeNz_XsEzruGCpTBWEOERE0fYr-pUtovGAuxFHVlYkHmAeWP03-eb80kLPaiXlLcML3hcm52-nQjryZdWKOebNaebUBWFDYQLp4piHpFdHIcnALa_80pvVOf2Z755vhlstHOvHOMsY-e4msXG4ToBOSiGMDq8lHgMjJf72YJgpDLfPhsYHNc0PPESFtvG5ytKB2odwjhdtxoBQJft0NhzdgXZOEOdfePlHrIkKbuN6Goj7VQQC-ZS0rxnfkIr4tlg_djU1wSfPnqE-r-yKdN7Ef8nF5ov2NOUXlPlFnIQtgKTwgvmgBGxpYqZQmmN67K5EkZxxVFQAUP2tNSAxuO5IW454FAayOVmPfiV1TSHd7lrksbUoklwvn0wnhgLOHRNhFCTp6DMxrfwyUIpWoi41BqghAY_7jU3iaqhPMs1mHeZ3FyvnbefpjYQ8zSeQFKSOnu3MeAZSOYdQIoJWtNk-eu7yq53UeqyfKm7O6JVwldv-F7Il6D0mNi3QEesCFvGS-H0UkTl9pqDYd__7OKDuICqDyuR7fPHFTJa8DhSAUt_52fuhwtOlCyewz6ilOAf45Mfq4PP_DONqqXeCBoE28bb4bFjlGq3_y1LS0UxT5vIHb3F941QHJFmLGf0Hxb1X74AU4U7u_w4-IP7Cam60XD2HJ2bAt7vk-c6yZEqgYSZ5_-s9aYfPfFiY2uMqPaeAGgGLvoA8zYkMIZSNEf2pFyveDW-GJ-q1WqvG2RxcybytDenVqvVuHFIDbz89Yl-s71kvKBk1fKL2GrF0NCfAER1OpCOFOYBn9aA2XlhLMBdfJhcv4tfU-MwTpmKwVQ8cf9LNSDjeE0lSr-EyVqLK62NwC3NARpf9pLcVxQWqSlg8xM220FKAZD1DGpcb7mk7kc9GCsqVz8XsLyj_ufuP0Ush2MJG2A5ePFLHUkkYWeSRMgs5IFE62d53-6kqi15PsRP-Vt_l3KCQ6xaBnRqJE5MEA8PHIWkb1DO4Iv4b1k2vzH3G-S2FjdeviudCWxUOWwkpDJBqMuTB-yUoml3r3EfsNbx3TRRcI5RwmeN6WxqSb9aTbGG81IZf9tfMyRyYO78Ead3uTt1K0j0wwORoDIG-KFo6BvgAt_CI3nyerGRJ-jfenlYjoSCKOIY-HYG8K1HU7g&amp;uid=2419623345161962263&amp;mguid=&amp;ap={AUCTION_PRICE}&amp;tid={tid}&amp;c_sync=1",
+      "type": "image",
+      "ipinfo": {
+        "domain": "trace.popin.cc",
+        "ip": "35.213.89.133",
+        "hostname": "133.89.213.35.bc.googleusercontent.com",
+        "city": "Tokyo",
+        "region": "Tokyo",
+        "country": "JP",
+        "loc": "35.6895,139.6917",
+        "org": "AS19527 Google LLC",
+        "timezone": "Asia/Tokyo"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 52.501,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "35.213.89.133",
+          "prefix": "35.213.89.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://ty-api.archive-digger.com/2.0/json/msn-taiwan-home/recommendations.notify-available?app.type=bidder&amp;app.apikey=69629143827c91b118c7e0dc9f2a4eb0059feae9&amp;response.id=__2eaa54ec99cfda613c94fc189e6bc6d7__cdb16654ba718d56f5e48fe2171e5b91__%7E%7EV1%7E%7E-2666542051411090799%7E%7EBK8mhcnJv24fV_Rn3AQRZctMUF1YL8y6lcbf9Tap-ZPSxuo-Oq-LrlKx0cUeXgU3ojY91NBIpB443mxewi-WgtPYBNmj_hktxITbYxsdpHBOZcFm06EUYJdZveU_bQ5fA96rg8ivVR9TVgsMl72TEwFM1taA2BBeJJiEZtx2z0pnyyCPG1xRo97-3UqNpZn4HT6zqDmkwJTt3nAwWvha57qqaJBDk-tIsNnbIJdhCstwyvbqMsgrR3KpT4Vkj8UkVqGwrk6UblKerICC3jjFmG5ypORFiIrgfb4sCJUbjuIzoh10mbVTZGN_VkosUYTQ2Hdp1xAYCd7jBGd6akaiog__text&amp;response.session=v2_523fd58005dd62d46953baadb5c855ba_2419623345161962263_1784584924_1784584924_CIi3jgYQwYg_GKnU9brrqvzWZSABKAww3AE44NsNQPKgEEj-qvwDUP___________wFYAGAAaJ3vq8rogquwNnABgAEAiAEAkAEA&amp;view.external-id=5369407293478727938&amp;idf=true&amp;idfs=true&amp;idfkfc=true&amp;viperAppType=SCON",
+      "type": "image",
+      "ipinfo": {
+        "domain": "ty-api.archive-digger.com",
+        "ip": "199.232.113.44",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "Asia/Singapore"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-sin-wsat1880087-SIN",
+        "rtt": 60.848,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "199.232.113.44",
+          "prefix": "199.232.113.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://login.live.com/Me.htm?v=3",
+      "type": "document",
+      "ipinfo": {
+        "domain": "login.live.com",
+        "ip": "20.190.141.32",
+        "city": "Osaka",
+        "region": "Osaka",
+        "country": "JP",
+        "loc": "34.6938,135.5011",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "Asia/Tokyo"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 42.969,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "20.190.141.32",
+          "prefix": "20.190.141.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://ecn.dev.virtualearth.net/REST/v1/Imagery/Map/roadondemandfull/25.000,121.450/5?mapSize=268,136&amp;shading=terrain&amp;key=AnTcaqBi2ypp0xI-OZNi4W_ik2KhjgpqioTAtXLC8GzkMBQRMlyxvxyTnd5b73im&amp;c=zh-tw&amp;maxAge=86400&amp;st=me|lv:0_vg|v:0_nh|lv:0_pp|lv:1_cp|v:0_trs|v:1;lv:0;strokeWidthScale:0.2_wt|fc:B3E5FC_cst|v:0&amp;logo=n&amp;da=n&amp;sftr=newweather&amp;userregion=TW",
+      "type": "image",
+      "ipinfo": {
+        "domain": "ecn.dev.virtualearth.net",
+        "ip": "203.69.81.43",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://adsdkprod.azureedge.net/assets/sf/v1.0.0-1/sf-ext.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "adsdkprod.azureedge.net",
+        "ip": "150.171.110.65",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-azure-ref": "20260720T220206Z-16455cd79bb5zwf9hC1HK1y2x00000000bd00000000038g0",
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "150.171.110.65",
+          "prefix": "150.171.110.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://s0.2mdn.net/879366/express_html_inpage_rendering_lib_200_287.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "s0.2mdn.net",
+        "ip": "142.250.198.70",
+        "hostname": "lctsaa-ab-in-f6.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://mem.gfx.ms/meversion?partner=msnews&amp;market=zh-tw",
+      "type": "script",
+      "ipinfo": {
+        "domain": "mem.gfx.ms",
+        "ip": "13.107.246.73",
+        "city": "Redmond",
+        "region": "Washington",
+        "country": "US",
+        "loc": "47.6740,-122.1215",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "x-azure-ref": "20260720T220207Z-16f54f76b64pgrd2hC1TPEm5b80000001b6g0000000009vv",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://use.typekit.net/jbk1nqn.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "use.typekit.net",
+        "ip": "210.71.227.16",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://www.temu.com/api/x/m/ix?cm_user_id=al6a3hdaRCsAF3atAApZtgAAFOgAAAIB&amp;us_privacy=&amp;gdpr=&amp;gdpr_consent=&amp;gpp=&amp;gpp_sid=",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.temu.com",
+        "ip": "172.66.1.242",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e53f94efb78f12-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://js.monitor.azure.com/scripts/c/ms.shared.analytics.mectrl-3.gbl.min.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "js.monitor.azure.com",
+        "ip": "150.171.110.65",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-azure-ref": "20260720T220208Z-16455cd79bbwbspchC1HK14mk80000000dh0000000002etr",
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "150.171.110.65",
+          "prefix": "150.171.110.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://p.typekit.net/p.gif?s=1&amp;k=jbk1nqn&amp;ht=tk&amp;h=s0.2mdn.net&amp;f=23605.23609.23611.48805.48808.48810.56096.56220&amp;a=307165659&amp;js=1.11.2&amp;app=typekit&amp;e=js&amp;_=1784584927844",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "p.typekit.net",
+        "ip": "210.71.227.57",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://browser.events.data.microsoft.com/OneCollector/1.0/?cors=true&amp;content-type=application/x-json-stream&amp;w=0",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "browser.events.data.microsoft.com",
+        "ip": "20.184.175.19",
+        "city": "San Jose",
+        "region": "California",
+        "country": "US",
+        "loc": "37.3394,-121.8950",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 138.654,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "20.184.175.19",
+          "prefix": "20.184.175.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://fonts.googleapis.com/css?family=DM+Sans:400%7CDM+Sans:700",
+      "type": "stylesheet",
+      "ipinfo": {
+        "domain": "fonts.googleapis.com",
+        "ip": "142.250.66.74",
+        "hostname": "hkg12s27-in-f10.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    }
+  ]
+}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 7/21/2026, 6:02:19 AM<span> (HTTP 200)</span></p></div></div>
+    <div class="static-wrapper" data-static="end"></div>
+
+
+
+    <div id="search-container" v-show="showSearch">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Enter a URL to view the test result..." autocomplete="off"
+                v-model="searchQuery"  @keydown="onSearchKeydown" @focus="onSearchFocus"
+            >
+
+            <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length" @scroll.passive="onDropdownScroll">
+                <a
+                    :href="sitePageHref(url)"
+                    class="search-dropdown-item"
+                    v-for="(url, index) in displayedUrls"
+                    :key="url"
+                    :data-url="url"
+                    :data-index="index"
+                    :class="{ selected: index === selectedIndex }"
+                    @click.prevent="selectUrl(url)"
+                >
+                    {{ formatDisplayUrl(url) }}
+                </a>
+            </div>
+            <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
+                        <p>{{ t('search.noResults', { query: searchQuery }) }}</p>
+                        <p>You can browse the <a href="https://github.com/irvin/web-resilience-test-result" target="_blank">dataset of tested sites</a> and run a manual test with <a href="https://github.com/irvin/web-resilience-test/tree/a6ccd6f1b05fca34034250055d566d1c1c0f4c65#d-automated-testing-tool" target="_blank">this tool</a>.</p>
+            </div>
+            <div class="search-meta" id="search-meta">
+                <template v-if="hasItems">
+                        {{ t('search.statsWithItems', { totalAll, shown }) }}
+                        <span class="search-load-more" v-if="hasMore" @click="loadMore">[Load more sites]</span>
+                </template>
+                <template v-else>
+                        {{ t('search.statsEmpty', { totalAll }) }}
+                </template>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <p id="check-other-site-container" v-show="showCheckOther">
+            <a href="/web/en/">
+                <button class="check-other-site-btn" @click.prevent="openSearch">Check another site</button>
+            </a>
+        </p>
+        <hr>
+        <p>
+            <a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="../../g0v_logo.svg" title="g0v Digital Resilience Hackathon" style="height: 65px;"></a>
+            <a href="https://ocf.tw/" target="_blank"><img src="../../Logo_Compact-OCF_Purple.svg" title="Open Culture Foundation" style="height: 35px;"></a>
+        </p>
+        <p>Curated by <a href="https://t.me/s/irvinfly" target="_blank">Irvin Chen</a>. Released under the <a href="https://github.com/irvin/web-resilience-test/?tab=License-1-ov-file#License-1-ov-file" target="_blank">CC BY-NC-ND 4.0 International License</a>.</p>
+        <p style="margin-bottom: 2em;">
+            <a href="https://resilience.ocf.tw/web/report/en.html" target="_blank">Research report</a>｜<a href="https://github.com/irvin/web-resilience-test" target="_blank">Source code</a>
+        </p>
+        <hr>
+        <p><a href="https://apnic.foundation/" target="_blank"><img src="../../APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" title="APNIC Foundation ISIF Asia" style="height: 90px;"></a></p>
+        <p>This work was supported by a grant from the <a href="https://apnic.foundation/" target="_blank">APNIC Foundation</a>, via <a href="https://apnic.foundation/home/isifasia/" target="_blank">ISIF Asia</a>.</p>
+    </footer>
+    </div>
+
+    <script src="../../app.js"></script>
+</body>
+</html>

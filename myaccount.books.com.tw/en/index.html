@@ -13,7 +13,7 @@
     <meta property="og:description" content="Based on the latest test, under a submarine-cable outage scenario the availability of myaccount.books.com.tw is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/myaccount.books.com.tw/en/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>When submarine cables fail, will <a href="https://myaccount.books.com.tw" target="_blank" rel="noopener noreferrer nofollow">myaccount.books.com.tw</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>Uncertain</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">6</strong></p><p class="score score-X score-zero">Foreign connections (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can myaccount.books.com.tw still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario the availability of myaccount.books.com.tw is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why is it “uncertain” whether myaccount.books.com.tw would work when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">We did not see direct requests to foreign resources, but we did find reliance on in-country nodes of multinational cloud services. Whether those services keep running when outbound connectivity is impaired depends on platform architecture, cache design, origin routing, and more—so for now we can only label the outcome “uncertain.”</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean myaccount.books.com.tw might be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">“Uncertain” means we currently cannot conclude it will definitely work or definitely fail. Availability of the multinational cloud in-country nodes that myaccount.books.com.tw depends on, when cables are cut or congestion is extreme, needs to be clarified and explained further by providers.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for myaccount.books.com.tw under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of myaccount.books.com.tw, we observed 58 requests across 10 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS9919 New Century InfoComm Tech Co., Ltd.</span><span class="connection-domain">113.196.250.40</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">d.line-scdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">jci.book.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagservices.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS9919 New Century InfoComm Tech Co., Ltd.</span><span class="connection-domain">cart.books.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS9919 New Century InfoComm Tech Co., Ltd.</span><span class="connection-domain">db.books.com.tw</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/myaccount.books.com.tw.json" target="_blank">View on GitHub</a></p><pre><code>{
+        <h1>When submarine cables fail, will <a href="https://myaccount.books.com.tw" target="_blank" rel="noopener noreferrer nofollow">myaccount.books.com.tw</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>Uncertain</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">8</strong></p><p class="score score-X score-zero">Foreign connections (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can myaccount.books.com.tw still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario the availability of myaccount.books.com.tw is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why is it “uncertain” whether myaccount.books.com.tw would work when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">We did not see direct requests to foreign resources, but we did find reliance on in-country nodes of multinational cloud services. Whether those services keep running when outbound connectivity is impaired depends on platform architecture, cache design, origin routing, and more—so for now we can only label the outcome “uncertain.”</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean myaccount.books.com.tw might be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">“Uncertain” means we currently cannot conclude it will definitely work or definitely fail. Availability of the multinational cloud in-country nodes that myaccount.books.com.tw depends on, when cables are cut or congestion is extreme, needs to be clarified and explained further by providers.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for myaccount.books.com.tw under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of myaccount.books.com.tw, we observed 73 requests across 12 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS9919 New Century InfoComm Tech Co., Ltd.</span><span class="connection-domain">113.196.250.40</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">d.line-scdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">jci.book.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cart.books.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagservices.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">mpc-prod-27-s6uit34pua-uk.a.run.app</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS9919 New Century InfoComm Tech Co., Ltd.</span><span class="connection-domain">db.books.com.tw</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/myaccount.books.com.tw.json" target="_blank">View on GitHub</a></p><pre><code>{
   "url": "https://myaccount.books.com.tw",
   "canonicalURL": "https://myaccount.books.com.tw",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T02:29:38.859Z",
+  "timestamp": "2026-07-20T20:32:20.481Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,11 +61,11 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 58,
-  "uniqueDomains": 10,
+  "requestCount": 73,
+  "uniqueDomains": 12,
   "test_results": {
     "domestic": {
-      "cloud": 6,
+      "cloud": 8,
       "direct": 4
     },
     "foreign": {
@@ -80,42 +81,46 @@
         "domain": "myaccount.books.com.tw",
         "ip": "113.196.250.40",
         "hostname": "myaccount.books.com.tw",
-        "city": "Taipei",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS9919 New Century InfoComm Tech Co., Ltd.",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://cart.books.com.tw/member/login?url=https%3A%2F%2Fmyaccount.books.com.tw%2F%2F%3Fid%3Dd66880334d1e26d85cc7ebe3efc5be12",
+      "originalUrl": "https://cart.books.com.tw/member/login?url=https%3A%2F%2Fmyaccount.books.com.tw%2F%2F%3Fid%3D2841bc608e004ab1af6523ff52df6c21",
       "type": "document",
       "ipinfo": {
         "domain": "cart.books.com.tw",
-        "ip": "113.196.250.33",
-        "hostname": "cart.books.com.tw",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS9919 New Century InfoComm Tech Co., Ltd.",
-        "timezone": "Asia/Taipei"
+        "ip": "104.18.2.141",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
       },
-      "category": "domestic/direct"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4bbe0ce9c8451-TPE",
+        "detection_method": "header"
+      }
     },
     {
       "originalUrl": "https://jci.book.com.tw/css/books/newmember/css.css",
       "type": "stylesheet",
       "ipinfo": {
         "domain": "jci.book.com.tw",
-        "ip": "3.169.137.113",
-        "hostname": "server-3-169-137-113.tpe54.r.cloudfront.net",
-        "city": "Taipei",
+        "ip": "54.192.248.97",
+        "hostname": "server-54-192-248-97.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS16509 Amazon.com, Inc.",
         "timezone": "Asia/Taipei"
       },
@@ -160,30 +165,14 @@
         "domain": "db.books.com.tw",
         "ip": "113.196.250.38",
         "hostname": "db.books.com.tw",
-        "city": "Taipei",
+        "city": "Taoyuan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0531,121.5264",
+        "loc": "24.9937,121.2970",
         "org": "AS9919 New Century InfoComm Tech Co., Ltd.",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://www.google.com/ccm/collect?frm=0&amp;en=page_view&amp;dl=https%3A%2F%2Fcart.books.com.tw%2Fmember%2Flogin&amp;scrsrc=www.googletagmanager.com&amp;rnd=1424408467.1768357777&amp;dt=%E5%8D%9A%E5%AE%A2%E4%BE%86-%E6%9C%83%E5%93%A1%E7%99%BB%E5%85%A5&amp;auid=1184504028.1768357777&amp;navt=n&amp;npa=0&amp;gtm=45He61c1v72805904za200zd72805904xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527906~104528501~104684208~104684211~105391253~115616985~115938466~115938468~116988315~117041588~117091818&amp;tft=1768357777152&amp;tfd=340&amp;apve=1&amp;apvf=f",
-      "type": "fetch",
-      "ipinfo": {
-        "domain": "www.google.com",
-        "ip": "142.250.196.196",
-        "hostname": "nctsaa-ac-in-f4.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
     },
     {
       "originalUrl": "https://connect.facebook.net/en_US/fbevents.js",
@@ -206,24 +195,60 @@
       "type": "script",
       "ipinfo": {
         "domain": "d.line-scdn.net",
-        "ip": "184.25.121.253",
-        "hostname": "a184-25-121-253.deploy.static.akamaitechnologies.com",
-        "city": "Yuanlin",
+        "ip": "23.39.61.163",
+        "hostname": "a23-39-61-163.deploy.static.akamaitechnologies.com",
+        "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "23.9567,120.5761",
+        "loc": "25.0531,121.5264",
         "org": "AS16625 Akamai Technologies, Inc.",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://www.google.com.tw/pagead/1p-user-list/1040394492/?random=1768357777276&amp;cv=11&amp;fst=1768356000000&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be61c1v899622978z872805904za20gzb72805904zd72805904xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391252~115938466~115938468~116988315~117041587&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fcart.books.com.tw%2Fmember%2Flogin%3Furl%3Dhttps%253A%252F%252Fmyaccount.books.com.tw%252F%252F%253Fid%253Dd66880334d1e26d85cc7ebe3efc5be12&amp;frm=0&amp;tiba=%E5%8D%9A%E5%AE%A2%E4%BE%86-%E6%9C%83%E5%93%A1%E7%99%BB%E5%85%A5&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1184504028.1768357777&amp;uaa=arm&amp;uab=64&amp;uafvl=Not(A%253ABrand%3B99.0.0.0%7CHeadlessChrome%3B133.0.6943.16%7CChromium%3B133.0.6943.16&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=26.2.0&amp;uaw=0&amp;_tu=CA&amp;rfmt=3&amp;fmt=3&amp;is_vtc=1&amp;cid=CAQSiwEA56J1eSG5FakcaesJPYEBxyQOuQlucNq8udPtzcVghqzpMZ6ySsyrMC3DzZyVmUovlQuHSkDU29MNVUGNzag7Kth5LZm--3Vv49gEe2bp1l9uDmjZVpk1g4DNnCUsiBcg-y44t5HaGuOTLoWFkKwOh6y-5BLgff-74fkE2oLXRG-TkbzlDWEAzhY8&amp;random=1432791393&amp;rmt_tld=1&amp;ipr=y",
+      "originalUrl": "https://www.google.com/ccm/collect?rcb=7&amp;frm=0&amp;apvc=1&amp;ae=g&amp;auid=862478310.1784579537&amp;dt=%E5%8D%9A%E5%AE%A2%E4%BE%86-%E6%9C%83%E5%93%A1%E7%99%BB%E5%85%A5&amp;en=page_view&amp;dl=https%3A%2F%2Fcart.books.com.tw%2Fmember%2Flogin&amp;scrsrc=www.googletagmanager.com&amp;rnd=1683890164.1784579537&amp;navt=n&amp;npa=0&amp;ep.ads_data_redaction=0&amp;gcd=13l3l3l3l1l1&amp;tft=1784579536932&amp;tfd=5202&amp;gtm=45He67g0v72805904za200zd72805904xea&amp;dma=0&amp;tag_exp=115938466~115938469~118897920~118897930~118981136~119317811~119724322&amp;apve=1&amp;apvf=f&amp;fmt=8",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "www.google.com",
+        "ip": "142.251.150.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 5.386,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.150.119",
+          "prefix": "142.251.150.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;ngs=1&amp;ibt=1&amp;tid=G-TR763QQ559&amp;cid=1449900861.1784579537&amp;gtm=45je67g0v9127102809z872805904za20gzb72805904zd72805904&amp;rcb=6&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=115616985~115938466~115938469~118897920~118897930~118981135~119527020~119724322&amp;z=9683452",
       "type": "image",
       "ipinfo": {
         "domain": "www.google.com.tw",
-        "ip": "142.250.66.67",
-        "hostname": "hkg12s27-in-f3.1e100.net",
+        "ip": "142.250.196.195",
+        "hostname": "nctsaa-ac-in-f3.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -232,12 +257,64 @@
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://mpc-prod-27-s6uit34pua-uk.a.run.app/events?cee=no",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "mpc-prod-27-s6uit34pua-uk.a.run.app",
+        "ip": "34.143.72.2",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 6.449,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.143.72.2",
+          "prefix": "34.143.72.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.facebook.com/tr/?id=1700571533513678&amp;ev=PageView&amp;dl=https%3A%2F%2Fcart.books.com.tw%2Fmember%2Flogin%3Furl%3Dhttps%253A%252F%252Fmyaccount.books.com.tw%252F%252F%253Fid%253D2841bc608e004ab1af6523ff52df6c21&amp;rl=&amp;if=false&amp;ts=1784579538634&amp;iw=false&amp;sw=1280&amp;sh=720&amp;v=2.9.358&amp;r=stable&amp;ec=0&amp;o=4126&amp;aems=0%3B0&amp;fbp=fb.2.1784579538631.219265751930806619&amp;hmd=cd429aabbff8b2170d94a897&amp;eid=ob3_plugin-set_da1d294d1515e719cd8ba196f04932448ace3dceeea9fe7c7da0fed2078cdc4c&amp;ler=empty&amp;cdl=API_unavailable&amp;pmd[title]=%E5%8D%9A%E5%AE%A2%E4%BE%86-%E6%9C%83%E5%93%A1%E7%99%BB%E5%85%A5&amp;pmd[keywords]=%E5%8D%9A%E5%AE%A2%E4%BE%86%2C%E6%9C%83%E5%93%A1%E7%99%BB%E5%85%A5&amp;pmd[description]=%E5%8D%9A%E5%AE%A2%E4%BE%86-%E6%9C%83%E5%93%A1%E7%99%BB%E5%85%A5&amp;plt=4278.10000000149&amp;iss=1&amp;ss=%7B%22entity_name%22%3A%5B%7B%22rid%22%3A%222529243777498779%22%2C%22v%22%3A%5B%22%E6%9C%83%E5%93%A1%E7%99%BB%E5%85%A5%22%5D%7D%5D%2C%22page_description%22%3A%5B%7B%22rid%22%3A%221325250736074204%22%2C%22v%22%3A%5B%22%E5%8D%9A%E5%AE%A2%E4%BE%86-%E6%9C%83%E5%93%A1%E7%99%BB%E5%85%A5%22%5D%7D%5D%2C%22page_keywords%22%3A%5B%7B%22rid%22%3A%22842281978968057%22%2C%22v%22%3A%5B%22%E5%8D%9A%E5%AE%A2%E4%BE%86%2C%E6%9C%83%E5%93%A1%E7%99%BB%E5%85%A5%22%5D%7D%5D%2C%22page_title%22%3A%5B%7B%22rid%22%3A%221390528409630463%22%2C%22v%22%3A%5B%22%E6%9C%83%E5%93%A1%E7%99%BB%E5%85%A5%22%5D%7D%5D%7D&amp;imft=1&amp;tz=480&amp;it=1784579538087&amp;coo=false&amp;cf=1&amp;expv2[0]=pl1&amp;expv2[1]=el2&amp;expv2[2]=bc1&amp;expv2[3]=ra2&amp;expv2[4]=rp2&amp;expv2[5]=im0&amp;expv2[6]=hf1&amp;rqm=GET",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.facebook.com",
+        "ip": "31.13.87.36",
+        "hostname": "edge-star-mini-shv-01-tpe1.facebook.com",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS32934 Facebook, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 1/14/2026, 10:29:38 AM<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 7/21/2026, 4:32:20 AM<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -275,7 +352,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

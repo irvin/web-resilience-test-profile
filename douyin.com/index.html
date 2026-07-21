@@ -13,7 +13,7 @@
     <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，douyin.com 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/douyin.com/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://douyin.com" target="_blank" rel="noopener noreferrer nofollow">douyin.com</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">3</strong></p><p class="score score-Q score-zero">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">2</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，douyin.com 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，douyin.com 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 douyin.com 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，douyin.com 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 douyin.com 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 douyin.com 的首頁時，我們觀察到來自 5 個網域的 7 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS23724 IDC, China Telecommunications Corporation</span><span class="connection-domain">122.14.229.64</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">www.douyin.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">lf-cdn-tos.bytescm.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">verify.snssdk.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">vcs.snssdk.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/douyin.com.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://douyin.com" target="_blank" rel="noopener noreferrer nofollow">douyin.com</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">10</strong></p><p class="score score-Q score-zero">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">8</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，douyin.com 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，douyin.com 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 douyin.com 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，douyin.com 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 douyin.com 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 douyin.com 的首頁時，我們觀察到來自 18 個網域的 218 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS137718 Beijing Volcano Engine Technology Co., Ltd.</span><span class="connection-domain">101.126.56.165</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS4811 China Telecom (Group)</span><span class="connection-domain">p-pc-weboff.byteimg.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS4837 CHINA UNICOM China169 Backbone</span><span class="connection-domain">sf1-cdn-tos.douyinstatic.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS4837 CHINA UNICOM China169 Backbone</span><span class="connection-domain">p11-sign.douyinpic.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS139057 Edgenext Legend Dynasty Pte. Ltd.</span><span class="connection-domain">lf9-sec.bytetos.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">www.douyin.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">lf-douyin-pc-web.douyinstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">lf-security.bytegoofy.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">lf-static.applogcdn.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">lf-c-flwb.bytetos.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">lf3-short.ibytedapm.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">lf-cdn-tos.bytescm.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">privacy.zijieapi.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">lf-rc1.yhgfb-cn-static.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">p3-pc-sign.douyinpic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">live.douyin.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">境外／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">lf3-static.bytednsdoc.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS24429 Zhejiang Taobao Network Co.,Ltd</span><span class="connection-domain">fonts.bytedance.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/douyin.com.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://douyin.com",
   "canonicalURL": "https://douyin.com",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T01:11:36.561Z",
+  "timestamp": "2026-07-20T19:26:50.556Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,16 +61,16 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 7,
-  "uniqueDomains": 5,
+  "requestCount": 218,
+  "uniqueDomains": 18,
   "test_results": {
     "domestic": {
       "cloud": 0,
-      "direct": 3
+      "direct": 10
     },
     "foreign": {
       "cloud": 0,
-      "direct": 2
+      "direct": 8
     }
   },
   "domainDetails": [
@@ -78,12 +79,12 @@
       "type": "document",
       "ipinfo": {
         "domain": "douyin.com",
-        "ip": "122.14.229.64",
+        "ip": "101.126.56.165",
         "city": "Beijing",
         "region": "Beijing",
         "country": "CN",
         "loc": "39.9075,116.3972",
-        "org": "AS23724 IDC, China Telecommunications Corporation",
+        "org": "AS137718 Beijing Volcano Engine Technology Co., Ltd.",
         "timezone": "Asia/Shanghai"
       },
       "category": "foreign/direct"
@@ -93,36 +94,6 @@
       "type": "document",
       "ipinfo": {
         "domain": "www.douyin.com",
-        "ip": "47.246.38.181",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://lf-cdn-tos.bytescm.com/obj/static/sec_sdk_build/3.5.2/captcha/index.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "lf-cdn-tos.bytescm.com",
-        "ip": "155.102.4.4",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
-        "country": "HK",
-        "loc": "22.2783,114.1747",
-        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
-        "timezone": "Asia/Hong_Kong"
-      },
-      "category": "foreign/direct"
-    },
-    {
-      "originalUrl": "https://verify.snssdk.com/captcha/reportFrontend",
-      "type": "xhr",
-      "ipinfo": {
-        "domain": "verify.snssdk.com",
         "ip": "155.102.184.147",
         "city": "Taipei",
         "region": "Taiwan",
@@ -134,11 +105,236 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://vcs.snssdk.com/vc/setting",
+      "originalUrl": "https://lf-douyin-pc-web.douyinstatic.com/obj/douyin-pc-web/ies/douyin_web/libs/pre-build-xgplayer.7611266a.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "lf-douyin-pc-web.douyinstatic.com",
+        "ip": "155.102.180.251",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://lf-security.bytegoofy.com/obj/security-secsdk/runtime_bundler_34.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "lf-security.bytegoofy.com",
+        "ip": "43.109.134.18",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://lf-static.applogcdn.com/obj/applog-sdk-static/log-sdk/collect/5/collect.dy.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "lf-static.applogcdn.com",
+        "ip": "43.109.134.17",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://lf-c-flwb.bytetos.com/obj/rc-client-security/c-webmssdk/1.0.0.20/webmssdk.es5.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "lf-c-flwb.bytetos.com",
+        "ip": "43.109.134.20",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://lf3-short.ibytedapm.com/slardar/fe/sdk-web/browser.cn.js?bid=douyin_web&amp;globalName=Slardar",
+      "type": "script",
+      "ipinfo": {
+        "domain": "lf3-short.ibytedapm.com",
+        "ip": "43.109.134.20",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://lf-cdn-tos.bytescm.com/obj/static/filter-xss/filter-xss-lastest.umd.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "lf-cdn-tos.bytescm.com",
+        "ip": "155.102.180.249",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://privacy.zijieapi.com/api/web-cmp/sdk/?project_key=dd2ac766b575c31f",
+      "type": "script",
+      "ipinfo": {
+        "domain": "privacy.zijieapi.com",
+        "ip": "155.102.184.173",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://sf1-cdn-tos.douyinstatic.com/obj/accessibility-task-platform/entrance/a11y_web_init.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "sf1-cdn-tos.douyinstatic.com",
+        "ip": "123.6.179.126",
+        "city": "Zhengzhou",
+        "region": "Henan",
+        "country": "CN",
+        "loc": "34.7578,113.6486",
+        "org": "AS4837 CHINA UNICOM China169 Backbone",
+        "timezone": "Asia/Shanghai"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://p-pc-weboff.byteimg.com/tos-cn-i-9r5gewecjs/bdms_1.0.1.19_fix.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "p-pc-weboff.byteimg.com",
+        "ip": "222.73.33.15",
+        "city": "Shanghai",
+        "region": "Shanghai",
+        "country": "CN",
+        "loc": "31.2222,121.4581",
+        "org": "AS4811 China Telecom (Group)",
+        "timezone": "Asia/Shanghai"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://lf-rc1.yhgfb-cn-static.com/obj/rc-verifycenter/sec_sdk_build/4.0.28/captcha/index.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "lf-rc1.yhgfb-cn-static.com",
+        "ip": "43.109.134.21",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://p11-sign.douyinpic.com/image-cut-tos/dp_af82816c36019f032cd5e43caa1bb23a~tplv-cs4mnm1fzv-pc_big_169_card-v2:1760:990:q50.webp?from=1189464143&amp;lk3s=46e5c84f&amp;x-expires=1784746800&amp;x-signature=SaQ4kIFv8NFcRFt6hhIU6sEc%2B1g%3D",
+      "type": "image",
+      "ipinfo": {
+        "domain": "p11-sign.douyinpic.com",
+        "ip": "42.4.56.57",
+        "city": "Shenyang",
+        "region": "Liaoning",
+        "country": "CN",
+        "loc": "41.7922,123.4328",
+        "org": "AS4837 CHINA UNICOM China169 Backbone",
+        "timezone": "Asia/Shanghai"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://p3-pc-sign.douyinpic.com/image-cut-tos/dp_cde2563cf4baa3022c62f88200a657a7~tplv-dy-resize-walign-adapt-aq:540:q75.jpeg?biz_tag=aweme_video&amp;from=1189464143&amp;lk3s=46e5c84f&amp;s=PackSourceEnum_DOUYIN_WEB_NEW_PAGE&amp;sc=cover&amp;se=false&amp;x-expires=1785783600&amp;x-signature=hAO3SWRym8U8ac7INaLdGvlujFg%3D",
+      "type": "image",
+      "ipinfo": {
+        "domain": "p3-pc-sign.douyinpic.com",
+        "ip": "155.102.184.145",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://lf9-sec.bytetos.com/obj/cookie-project-sdk/cmp.4_0d8db16c.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "lf9-sec.bytetos.com",
+        "ip": "156.225.111.242",
+        "city": "Leesburg",
+        "region": "Virginia",
+        "country": "US",
+        "loc": "39.1157,-77.5636",
+        "org": "AS139057 Edgenext Legend Dynasty Pte. Ltd.",
+        "timezone": "America/New_York"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://live.douyin.com/webcast/web/live/watermark/?watermark_key_list=%5B%7B%22watermark_uniq_idx%22%3A%22v4u%22%2C%22watermark_key%22%3A%22u_779991418408748%22%2C%22algorithm%22%3A%22v4u%22%7D%2C%7B%22watermark_uniq_idx%22%3A%22v5p%22%2C%22watermark_key%22%3A%22u_779991418408748%22%2C%22algorithm%22%3A%22v5p%22%7D%5D&amp;device_info=%7B%22DeviceType%22%3A%22%22%2C%22OsType%22%3A%22Mac+OS%22%2C%22OsVersion%22%3A%2210.15.7%22%2C%22BrowserType%22%3A%22Chrome%22%2C%22BrowserVersion%22%3A%22143.0.0.0%22%2C%22ScreenModel%22%3A%221280*720%22%7D&amp;ignoreToast=true&amp;device_platform=web&amp;aid=6383&amp;channel=channel_pc_web&amp;live_id=1&amp;app_name=douyin_web&amp;language=zh-TW&amp;cookie_enabled=true&amp;screen_width=1280&amp;screen_height=720&amp;browser_language=zh-TW&amp;browser_platform=MacIntel&amp;browser_name=Chrome&amp;browser_version=143.0.0.0&amp;browser_online=true&amp;engine_name=Blink&amp;engine_version=143.0.0.0&amp;os_name=Mac+OS&amp;os_version=10.15.7&amp;cpu_core_num=10&amp;device_memory=8&amp;platform=PC&amp;downlink=10&amp;effective_type=4g&amp;round_trip_time=100&amp;a_bogus=QX4fhwWJDNWVPdKbucaXyjPlT0x%2FNsWjGlixRw3P7PPgaH0aBYPeMccUcxug4zADCYBkhHI7gdlAbExcuzUzZF9kLmpDuNv6Wt5C9g0LZqq3P0JsDHDPC0mzzwBTlcvLaA9ti1f5lsMygEclVrKPAxAG95FJmObpbqHAdFTyyEAhDAWkh93iOChpNgitUAIy&amp;verifyFp=verify_mrtm8lk4_qHKOlU5T_v15Z_4XvM_A8mP_8f3jejlFjOR0&amp;fp=verify_mrtm8lk4_qHKOlU5T_v15Z_4XvM_A8mP_8f3jejlFjOR0",
       "type": "xhr",
       "ipinfo": {
-        "domain": "vcs.snssdk.com",
-        "ip": "155.102.184.182",
+        "domain": "live.douyin.com",
+        "ip": "43.109.134.20",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://lf3-static.bytednsdoc.com/obj/eden-cn/666eh7nuhfvhpebd/douyin_web/index-ad-22.js",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "lf3-static.bytednsdoc.com",
+        "ip": "155.102.175.144",
+        "city": "Hong Kong",
+        "region": "Hong Kong",
+        "country": "HK",
+        "loc": "22.2783,114.1747",
+        "org": "AS24429 Zhejiang Taobao Network Co.,Ltd",
+        "timezone": "Asia/Hong_Kong"
+      },
+      "category": "foreign/direct"
+    },
+    {
+      "originalUrl": "https://fonts.bytedance.com/dfd/api/v1/css?family=DFPKingGothicGB-Medium:500&amp;display=swap",
+      "type": "stylesheet",
+      "ipinfo": {
+        "domain": "fonts.bytedance.com",
+        "ip": "43.109.134.19",
         "city": "Taipei",
         "region": "Taiwan",
         "country": "TW",
@@ -149,10 +345,10 @@
       "category": "domestic/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午9:11:36<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午3:26:50<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -190,7 +386,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

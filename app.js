@@ -128,11 +128,19 @@ function getStatisticTsvUrl() {
 // Resolve the overall chart location:
 // - localhost: read from the test-result submodule
 // - production: read the file emitted under /web/img/ at build time
-function getOverallChartUrl() {
+// Chinese Profile uses undated overall-result.png (short labels);
+// English uses overall-result.en.png.
+function getOverallChartFileName(locale) {
+    if (locale === 'en') return 'overall-result.en.png';
+    return 'overall-result.png';
+}
+
+function getOverallChartUrl(locale) {
+    const fileName = getOverallChartFileName(locale);
     if (isLocalhost()) {
-        return '/test-result/img/overall-result.png';
+        return `/test-result/img/${fileName}`;
     }
-    return '/web/img/overall-result.png';
+    return `/web/img/${fileName}`;
 }
 
 // Resolve the overall-result.tsv location:
@@ -623,7 +631,8 @@ const vueRootApp = createApp({
         vueState.showCheckOther = showCheckOther;
 
         const hasResult = computed(() => !!vueResult.value);
-        const overallChartUrl = computed(() => getOverallChartUrl());
+        const locale = ref(window.WebResilienceI18n ? window.WebResilienceI18n.getLocale() : DEFAULT_DISPLAY_LOCALE);
+        const overallChartUrl = computed(() => getOverallChartUrl(locale.value));
 
         const overallStats = ref(null);
         vueState.overallStats = overallStats;
@@ -648,8 +657,6 @@ const vueRootApp = createApp({
         }
 
         watch([overallStats, vueResult], applyHomepageOverallMetaIfNeeded, { immediate: true });
-
-        const locale = ref(window.WebResilienceI18n ? window.WebResilienceI18n.getLocale() : DEFAULT_DISPLAY_LOCALE);
 
         const displayUrl = computed(() => {
             if (!vueResult.value) return '';

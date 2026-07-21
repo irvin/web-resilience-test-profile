@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When submarine cables fail, will mlb.com still work?</title>
+    <meta name="description" content="Based on the latest test, under a submarine-cable outage scenario mlb.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.">
+    <link rel="icon" href="/favicon.ico">
+    <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/mlb.com/en/">
+
+    <!-- Open Graph 標籤 -->
+    <meta property="og:title" content="When submarine cables fail, will mlb.com still work?">
+    <meta property="og:description" content="Based on the latest test, under a submarine-cable outage scenario mlb.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resilience.ocf.tw/web/mlb.com/en/">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
+
+    <link rel="stylesheet" href="../../styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
+    <script src="../../locales/zh-TW.js"></script>
+    <script src="../../locales/en.js"></script>
+    <script src="../../i18n.js"></script>
+
+    <script>window.__IS_STATIC_PAGE__ = true;</script>
+    <link rel="alternate" hreflang="zh-TW" href="https://resilience.ocf.tw/web/mlb.com/">
+    <link rel="alternate" hreflang="en" href="https://resilience.ocf.tw/web/mlb.com/en/">
+</head>
+<body>
+    <div id="app">
+
+    <nav class="lang-switcher" aria-label="Language">
+        <a class="lang-switcher-btn" href="/web/mlb.com/" hreflang="zh-TW">中文</a>
+        <a class="lang-switcher-btn" href="/web/mlb.com/en/" hreflang="en" aria-current="page">English</a>
+    </nav>
+
+    <div class="static-wrapper" data-static="begin"></div>
+        <h1>When submarine cables fail, will <a href="https://mlb.com" target="_blank" rel="noopener noreferrer nofollow">mlb.com</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>Will not work</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">4</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">31</strong></p><p class="score score-X">Foreign connections (X)<br><strong style="font-size: 1.3em;">17</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can mlb.com still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario mlb.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why might mlb.com “not work” when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean mlb.com will definitely be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for mlb.com under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of mlb.com, we observed 802 requests across 52 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">34.102.163.158</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16625 Akamai Technologies, Inc.</span><span class="connection-domain">assets.adobedtm.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">mlbadvancedmedialp.tt.omtrdc.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">images.ctfassets.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">cdn.branch.io</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">p.veritone-ce.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">app.link</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">ads.scorecardresearch.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS14618 Amazon.com, Inc.</span><span class="connection-domain">arttrk.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">sli.mlb.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">mboxedge38.tt.omtrdc.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">sb.scorecardresearch.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS14618 Amazon.com, Inc.</span><span class="connection-domain">pbs.getpublica.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">prebid-a.rubiconproject.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">agen-assets.ftstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">midfield.mlbstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdn.mgln.ai</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">cdn.cookielaw.org</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">mgln.ai</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">geolocation.onetrust.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">t.co</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">analytics.twitter.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">us.mgln.ai</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">floors.atmtd.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">bdfed.stitch.mlbinfra.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">scripts.atmtd.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">znbhheuua1bbyykz4-mlb.siteintercept.qualtrics.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">ajs-assets.ftstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">r5---sn-ipoxu-un5k.gvt1.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS14061 DigitalOcean, LLC</span><span class="connection-domain">e01.atmtd.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">connect.facebook.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">www.mlb.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">www.mlbstatic.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">builds.mlbstatic.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">brand-colors.mlbstatic.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">img.mlbstatic.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">platform.twitter.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">data-graph.mlb.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">statsapi.mlb.com</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS54113 Fastly, Inc.</span><span class="connection-domain">mlb-cuts-diamond.mlb.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">browser-intake-us5-datadoghq.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">imasdk.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">s0.2mdn.net</span></li><li class="connection-item"><span class="category-badge category-foreign-cloud">Foreign / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">csi.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">redirector.gvt1.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">r1---sn-ajun55-54.gvt1.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS8075 Microsoft Corporation</span><span class="connection-domain">bat.bing.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/mlb.com.json" target="_blank">View on GitHub</a></p><pre><code>{
+  "url": "https://mlb.com",
+  "canonicalURL": "https://www.mlb.com/",
+  "httpStatus": 200,
+  "timestamp": "2026-07-20T19:24:59.895Z",
+  "testParameters": {
+    "customDNS": "168.95.1.1",
+    "useAdblock": true,
+    "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
+      "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
+    ],
+    "useCache": true,
+    "hasIPinfoToken": true
+  },
+  "testingEnvironment": {
+    "ip": "220.132.212.194",
+    "hostname": "220-132-212-194.hinet-ip.hinet.net",
+    "city": "Banqiao",
+    "region": "Taipei",
+    "country": "TW",
+    "loc": "25.0143,121.4672",
+    "org": "AS3462 Data Communication Business Group",
+    "timezone": "Asia/Taipei",
+    "source": "ipinfo json api (direct)",
+    "dnsServer": "168.95.1.1"
+  },
+  "requestCount": 802,
+  "uniqueDomains": 52,
+  "test_results": {
+    "domestic": {
+      "cloud": 31,
+      "direct": 4
+    },
+    "foreign": {
+      "cloud": 17,
+      "direct": 0
+    }
+  },
+  "domainDetails": [
+    {
+      "originalUrl": "https://mlb.com/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "mlb.com",
+        "ip": "34.102.163.158",
+        "hostname": "158.163.102.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 12.999,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.102.163.158",
+          "prefix": "34.102.163.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 65,
+          "location_count": 65
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.mlb.com/",
+      "type": "document",
+      "ipinfo": {
+        "domain": "www.mlb.com",
+        "ip": "151.101.41.91",
+        "city": "San Jose",
+        "region": "California",
+        "country": "US",
+        "loc": "37.3394,-121.8950",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-chi-kigq8000085-CHI, cache-lax-kwhp1940119-LAX",
+        "rtt": 145.823,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "151.101.41.91",
+          "prefix": "151.101.41.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://assets.adobedtm.com/267c22ecc15c/4a2ad2c78a04/launch-0febec0c5fac.min.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "assets.adobedtm.com",
+        "ip": "23.39.61.29",
+        "hostname": "a23-39-61-29.deploy.static.akamaitechnologies.com",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS16625 Akamai Technologies, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.mlbstatic.com/mlb.com/fonts/proxima-nova-bold.woff2",
+      "type": "font",
+      "ipinfo": {
+        "domain": "www.mlbstatic.com",
+        "ip": "146.75.41.91",
+        "city": "Seattle",
+        "region": "Washington",
+        "country": "US",
+        "loc": "47.6062,-122.3321",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-sjc1000101-SJC",
+        "rtt": 180.178,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "146.75.41.91",
+          "prefix": "146.75.41.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://builds.mlbstatic.com/mlb.com/web-apps/x-homepage/_next/static/css/09704fe17f3f966d.css",
+      "type": "stylesheet",
+      "ipinfo": {
+        "domain": "builds.mlbstatic.com",
+        "ip": "151.101.197.60",
+        "city": "Los Angeles",
+        "region": "California",
+        "country": "US",
+        "loc": "34.0522,-118.2437",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-bur-kbur8200140-BUR",
+        "rtt": 134.488,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "151.101.197.60",
+          "prefix": "151.101.197.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://brand-colors.mlbstatic.com/v1/default.css",
+      "type": "stylesheet",
+      "ipinfo": {
+        "domain": "brand-colors.mlbstatic.com",
+        "ip": "151.101.41.91",
+        "city": "San Jose",
+        "region": "California",
+        "country": "US",
+        "loc": "37.3394,-121.8950",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-sjc10021-SJC",
+        "rtt": 142.422,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "151.101.41.91",
+          "prefix": "151.101.41.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://img.mlbstatic.com/mlb-images/image/upload/t_16x9/t_w1536/mlb/llkm8cdgbjhtklrdlfjq.jpg",
+      "type": "image",
+      "ipinfo": {
+        "domain": "img.mlbstatic.com",
+        "ip": "146.75.41.91",
+        "city": "Seattle",
+        "region": "Washington",
+        "country": "US",
+        "loc": "47.6062,-122.3321",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-chi-kmdw8640021-CHI, cache-sjc1000147-SJC",
+        "rtt": 171.652,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "146.75.41.91",
+          "prefix": "146.75.41.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://midfield.mlbstatic.com/v1/sport/1/spots/36",
+      "type": "image",
+      "ipinfo": {
+        "domain": "midfield.mlbstatic.com",
+        "ip": "104.18.33.10",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e457449d24a339-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://mlbadvancedmedialp.tt.omtrdc.net/rest/v1/delivery?client=mlbadvancedmedialp&amp;sessionId=4e57e1a201384858afd61ac743cb4085&amp;version=2.3.0",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "mlbadvancedmedialp.tt.omtrdc.net",
+        "ip": "63.140.48.110",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Singapore"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "63.140.48.110",
+          "prefix": "63.140.48.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.googletagmanager.com/gtm.js?id=GTM-T5RM6DXG",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.googletagmanager.com",
+        "ip": "142.250.77.200",
+        "hostname": "del11s08-in-f8.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://images.ctfassets.net/iiozhi00a8lc/5UJM1qBf2nPRO63omkc03b/b731570f84c7b0ad2bd00ed28800d13d/Game_Stories.svg",
+      "type": "image",
+      "ipinfo": {
+        "domain": "images.ctfassets.net",
+        "ip": "54.192.248.120",
+        "hostname": "server-54-192-248-120.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://www.google.com/recaptcha/enterprise.js?render=6LfTxgErAAAAAMY7RSi1t67SCFS7_hbBkDSRXICN",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.google.com",
+        "ip": "142.251.153.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 12.88,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.153.119",
+          "prefix": "142.251.153.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
+    },
+    {
+      "originalUrl": "https://cdn.mgln.ai/pixel.min.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "cdn.mgln.ai",
+        "ip": "104.26.3.180",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4571e3c88f023-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://cdn.cookielaw.org/consent/87e3b067-33e7-4a28-84ad-4aaeb74b4d5a/otSDKStub.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "cdn.cookielaw.org",
+        "ip": "104.18.87.42",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e457202bac8469-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://www.gstatic.com/recaptcha/releases/A7KpaEASfhDcK0nXxgQEyyYv/recaptcha__zh_tw.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "www.gstatic.com",
+        "ip": "142.250.196.195",
+        "hostname": "nctsaa-ac-in-f3.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://cdn.branch.io/branch-latest.min.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "cdn.branch.io",
+        "ip": "54.192.248.7",
+        "hostname": "server-54-192-248-7.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://connect.facebook.net/en_US/fbevents.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "connect.facebook.net",
+        "ip": "31.13.87.5",
+        "hostname": "xx-fbcdn-shv-01-tpe1.fbcdn.net",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS32934 Facebook, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://bat.bing.com/bat.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "bat.bing.com",
+        "ip": "150.171.28.10",
+        "city": "Redmond",
+        "region": "Washington",
+        "country": "US",
+        "loc": "47.6740,-122.1215",
+        "org": "AS8075 Microsoft Corporation",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "x-msedge-ref": "Ref A: D85B55F21E6D4A0F8FEAC1B87E30CD07 Ref B: TPE201050220062 Ref C: 2026-07-20T19:23:26Z",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://p.veritone-ce.com/9bdc2a60-b164-4274-9b81-3d5ddd8bcace?ts=147142137&amp;url=https%3A%2F%2Fwww.mlb.com%2F&amp;ref==425849685",
+      "type": "image",
+      "ipinfo": {
+        "domain": "p.veritone-ce.com",
+        "ip": "44.241.4.58",
+        "hostname": "ec2-44-241-4-58.us-west-2.compute.amazonaws.com",
+        "city": "Boardman",
+        "region": "Oregon",
+        "country": "US",
+        "loc": "45.8399,-119.7006",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "44.241.4.58",
+          "prefix": "44.241.4.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://platform.twitter.com/oct.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "platform.twitter.com",
+        "ip": "199.232.112.157",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "Asia/Singapore"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-sin-wsap440047-SIN",
+        "rtt": 66.293,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "199.232.112.157",
+          "prefix": "199.232.112.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://mgln.ai/init",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "mgln.ai",
+        "ip": "104.26.3.180",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e45721cea64a5d-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://app.link/_r?sdk=web2.87.1&amp;branch_key=key_live_bkvscqeDusZjTIJsWaQp9blcusf4W75N&amp;callback=branch_callback__0",
+      "type": "script",
+      "ipinfo": {
+        "domain": "app.link",
+        "ip": "3.169.121.108",
+        "hostname": "server-3-169-121-108.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://browser-intake-us5-datadoghq.com/api/v2/rum?ddsource=browser&amp;ddtags=sdk_version%3A5.35.1%2Capi%3Afetch%2Cenv%3Aproduction%2Cservice%3Aweb--mlb.com%2Cversion%3A3.0.0&amp;dd-api-key=pub2f3dc9177dc1ca6578d39de100cf518a&amp;dd-evp-origin-version=5.35.1&amp;dd-evp-origin=browser&amp;dd-request-id=99e75614-035d-4c2d-8b6e-573f7646e6fb&amp;batch_time=1784575405380",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "browser-intake-us5-datadoghq.com",
+        "ip": "34.149.66.163",
+        "hostname": "163.66.149.34.bc.googleusercontent.com",
+        "city": "Kansas City",
+        "region": "Missouri",
+        "country": "US",
+        "loc": "39.0997,-94.5786",
+        "org": "AS396982 Google LLC",
+        "timezone": "America/Chicago"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.451,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.149.66.163",
+          "prefix": "34.149.66.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 65,
+          "location_count": 65
+        }
+      }
+    },
+    {
+      "originalUrl": "https://geolocation.onetrust.com/cookieconsentpub/v1/geo/location/dnsfeed",
+      "type": "script",
+      "ipinfo": {
+        "domain": "geolocation.onetrust.com",
+        "ip": "104.18.32.137",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e45726ded40f9a-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://t.co/i/adsct?bci=3&amp;dv=Asia%2FTaipei%26zh-TW%26Google%20Inc.%26MacIntel%26127%261280%26720%2610%2630%261280%26720%260%26na&amp;eci=2&amp;event_id=6e7f77ab-0637-488e-bafd-44e48545b5fd&amp;events=%5B%5B%22pageview%22%2C%7B%7D%5D%5D&amp;integration=advertiser&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=c870fc5b-5cfc-44bf-8eb9-5edffe15b128&amp;pt=MLB.com%20%7C%20The%20Official%20Site%20of%20Major%20League%20Baseball&amp;tw_document_href=https%3A%2F%2Fwww.mlb.com%2F&amp;tw_iframe_status=0&amp;tw_order_quantity=0&amp;tw_pid_src=1&amp;tw_sale_amount=0&amp;twpid=tw.1784575405733.363364364585516567&amp;txn_id=nwb6i&amp;type=javascript&amp;version=2.3.54",
+      "type": "image",
+      "ipinfo": {
+        "domain": "t.co",
+        "ip": "162.159.140.229",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e457279eaf4a85-TPE",
+        "x-served-by": "t4_p",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://analytics.twitter.com/i/adsct?bci=3&amp;dv=Asia%2FTaipei%26zh-TW%26Google%20Inc.%26MacIntel%26127%261280%26720%2610%2630%261280%26720%260%26na&amp;eci=2&amp;event_id=6e7f77ab-0637-488e-bafd-44e48545b5fd&amp;events=%5B%5B%22pageview%22%2C%7B%7D%5D%5D&amp;integration=advertiser&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=c870fc5b-5cfc-44bf-8eb9-5edffe15b128&amp;pt=MLB.com%20%7C%20The%20Official%20Site%20of%20Major%20League%20Baseball&amp;tw_document_href=https%3A%2F%2Fwww.mlb.com%2F&amp;tw_iframe_status=0&amp;tw_order_quantity=0&amp;tw_pid_src=1&amp;tw_sale_amount=0&amp;twpid=tw.1784575405733.363364364585516567&amp;txn_id=nwb6i&amp;type=javascript&amp;version=2.3.54",
+      "type": "image",
+      "ipinfo": {
+        "domain": "analytics.twitter.com",
+        "ip": "172.66.0.227",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e457290d65a9b6-TPE",
+        "x-served-by": "t4_p",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://ads.scorecardresearch.com/p?c1=9&amp;c2=6034944&amp;c3=2&amp;cs_xi=21524718371641948443652425713682591817&amp;rn=1784575405094&amp;r=https%3A%2F%2Fdpm.demdex.net%2Fibs%3Adpid%3D73426%26dpuuid%3D21524718371641948443652425713682591817",
+      "type": "image",
+      "ipinfo": {
+        "domain": "ads.scorecardresearch.com",
+        "ip": "3.169.137.32",
+        "hostname": "server-3-169-137-32.tpe54.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://us.mgln.ai/pixel?tapad_id=b17d3f6f-86f0-4779-ad0f-06e10bba2095",
+      "type": "image",
+      "ipinfo": {
+        "domain": "us.mgln.ai",
+        "ip": "104.26.2.180",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e45729ba3f4a5d-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://www.facebook.com/fr/b.php?p=1531105787105294&amp;e=al51rQAAAFftYAM8&amp;t=2592000&amp;o=0",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.facebook.com",
+        "ip": "31.13.87.36",
+        "hostname": "edge-star-mini-shv-01-tpe1.facebook.com",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS32934 Facebook, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://arttrk.com/pixel/?ad_log=referer&amp;action=content&amp;receipt_id=[receipt_id]&amp;pixid=a90a34b0-a733-421e-8731-a949d7c3ad08",
+      "type": "image",
+      "ipinfo": {
+        "domain": "arttrk.com",
+        "ip": "44.221.186.123",
+        "hostname": "ec2-44-221-186-123.compute-1.amazonaws.com",
+        "city": "Ashburn",
+        "region": "Virginia",
+        "country": "US",
+        "loc": "39.0437,-77.4875",
+        "org": "AS14618 Amazon.com, Inc.",
+        "timezone": "America/New_York"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "44.221.186.123",
+          "prefix": "44.221.186.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://www.google.com.tw/pagead/1p-user-list/1022743323/?random=1784575405300&amp;cv=11&amp;fst=1784574000000&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be67g0v9179683371z871771199za20gzb71771199zd9175559072xea&amp;gcd=13t3t3t3t5l1&amp;dma=0&amp;tag_exp=115616986~115938466~115938469~118131810~118897920~118897930~118981136~119793973&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fwww.mlb.com%2F&amp;rcb=2&amp;frm=0&amp;tiba=MLB.com%20%7C%20The%20Official%20Site%20of%20Major%20League%20Baseball&amp;gdid=dYWJhMj&amp;hn=www.googleadservices.com&amp;npa=0&amp;us_privacy=1---&amp;pscdl=noapi&amp;auid=385901543.1784575407&amp;uaa=x86&amp;uab=64&amp;uafvl=Chromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;_tu=CA&amp;ept=9&amp;rfmt=3&amp;fmt=3&amp;is_vtc=1&amp;cid=CAQS-gEAEQoqgXZxWGS5mQVp6tf9yTk_Q_E6xLrPK946zUvrxQEFiEZWHVrsCVCQ_WDWbY9sL5KZkSqnYKJszVH_JAJkgU7SRq_nHmaeRuMK9cVc4h65ikGoCezc63SJfyFNv8kh6WoDkicVsRLYOlsdgYeNKPVHN4TD_Xd2Aza4nuG1AcvRUT5a3ykkmU5m5-xcjDOKKsD3nabahae3L5twD46QXEaUt6fbeZdm0I1-8ZNksGGpdTuk2SaiLQ03UnsmOPFP9v-CE4Dd5Spw0mkrjcHPwMgWsCZexbtLZUXY-jnh2PgLnOPn6_pUJbiGh7i48xy2qBiwwtCNSef4&amp;random=3136519528&amp;rmt_tld=1&amp;ipr=y",
+      "type": "image",
+      "ipinfo": {
+        "domain": "www.google.com.tw",
+        "ip": "142.250.77.3",
+        "hostname": "nctsaa-ab-in-f3.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://sli.mlb.com/baker?dtstmp=1784575407706",
+      "type": "image",
+      "ipinfo": {
+        "domain": "sli.mlb.com",
+        "ip": "3.169.55.2",
+        "hostname": "server-3-169-55-2.tpe54.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://data-graph.mlb.com/graphql?operationName=GetFeed&amp;variables=%7B%22limit%22%3A3%2C%22language%22%3A%22EN_US%22%2C%22skip%22%3A0%2C%22slug%22%3A%22sel-mlb-homepage-mixed-feed%22%7D&amp;extensions=%7B%22persistedQuery%22%3A%7B%22version%22%3A1%2C%22sha256Hash%22%3A%224a8b515d4ecbaf86596fe4c97f6751530aa5ce78c85570cb5670ab45ad3f6265%22%7D%7D",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "data-graph.mlb.com",
+        "ip": "151.101.41.91",
+        "city": "San Jose",
+        "region": "California",
+        "country": "US",
+        "loc": "37.3394,-121.8950",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 144.391,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "151.101.41.91",
+          "prefix": "151.101.41.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://mboxedge38.tt.omtrdc.net/rest/v1/delivery?client=mlbadvancedmedialp&amp;sessionId=4e57e1a201384858afd61ac743cb4085&amp;version=2.3.0",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "mboxedge38.tt.omtrdc.net",
+        "ip": "18.141.121.112",
+        "hostname": "ec2-18-141-121-112.ap-southeast-1.compute.amazonaws.com",
+        "city": "Singapore",
+        "region": "Singapore",
+        "country": "SG",
+        "loc": "1.2897,103.8501",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Singapore"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "18.141.121.112",
+          "prefix": "18.141.121.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&amp;sportId=51&amp;sportId=21&amp;startDate=2026-07-19&amp;endDate=2026-07-23&amp;gameType=&amp;language=en&amp;leagueId=103&amp;&amp;leagueId=104&amp;&amp;leagueId=590&amp;&amp;leagueId=160&amp;&amp;leagueId=159&amp;hydrate=team,linescore,xrefId,flags,review,broadcasts(all),game(content(media(epg),summary),tickets),seriesStatus(useOverride=true),statusFlags,story&amp;sortBy=gameDate,gameStatus,gameType&amp;timeZone=America/New_York",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "statsapi.mlb.com",
+        "ip": "151.101.41.60",
+        "city": "San Jose",
+        "region": "California",
+        "country": "US",
+        "loc": "37.3394,-121.8950",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-chi-kigq8000177-CHI, cache-lax-kwhp1940034-LAX",
+        "rtt": 143.935,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "151.101.41.60",
+          "prefix": "151.101.41.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://sb.scorecardresearch.com/r?c2=3005352&amp;d.c=gif&amp;d.o=mlbglobal08&amp;d.x=6717663187&amp;d.t=page&amp;d.u=https%3A%2F%2Fwww.mlb.com%2F",
+      "type": "script",
+      "ipinfo": {
+        "domain": "sb.scorecardresearch.com",
+        "ip": "3.169.137.63",
+        "hostname": "server-3-169-137-63.tpe54.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://floors.atmtd.com/floors.json?dist=mgnt&amp;wrapper=MLB_MiLB_Desktop_Tablet_ROW&amp;url=https%3A%2F%2Fwww.mlb.com%2F",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "floors.atmtd.com",
+        "ip": "104.20.22.3",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "cf-ray": "a1e457589fe8600a-SIN",
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "104.20.22.3",
+          "prefix": "104.20.22.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 64,
+          "location_count": 64,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "originalUrl": "https://bdfed.stitch.mlbinfra.com/bdfed/contentful/dictionary/mlb-search/en-US",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "bdfed.stitch.mlbinfra.com",
+        "ip": "172.64.154.60",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e4575769d24a3a-TPE",
+        "detection_method": "header"
+      }
+    },
+    {
+      "originalUrl": "https://imasdk.googleapis.com/js/sdkloader/ima3.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "imasdk.googleapis.com",
+        "ip": "142.250.77.202",
+        "hostname": "del11s08-in-f10.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://mlb-cuts-diamond.mlb.com/FORGE/2026/2026-07/19/f8c79adf-fb8eb6b3-431aa01c-csvm-diamondgcp-asset.m3u8",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "mlb-cuts-diamond.mlb.com",
+        "ip": "151.101.197.60",
+        "city": "Los Angeles",
+        "region": "California",
+        "country": "US",
+        "loc": "34.0522,-118.2437",
+        "org": "AS54113 Fastly, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-served-by": "cache-lax-kwhp1940034-LAX",
+        "rtt": 133.757,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "151.101.197.60",
+          "prefix": "151.101.197.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            54113
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 2
+        }
+      }
+    },
+    {
+      "originalUrl": "https://scripts.atmtd.com/js/prebid_analytics/prebid_analytics.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "scripts.atmtd.com",
+        "ip": "104.20.22.3",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "cf-ray": "a1e457589fc22c14-SIN",
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "104.20.22.3",
+          "prefix": "104.20.22.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 64,
+          "location_count": 64,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "originalUrl": "https://s0.2mdn.net/instream/video/client.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "s0.2mdn.net",
+        "ip": "142.250.77.198",
+        "hostname": "del11s08-in-f6.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://e01.atmtd.com/bidanalytics-event/json?mode=beacon",
+      "type": "ping",
+      "ipinfo": {
+        "domain": "e01.atmtd.com",
+        "ip": "167.172.2.7",
+        "city": "North Bergen",
+        "region": "New Jersey",
+        "country": "US",
+        "loc": "40.8043,-74.0121",
+        "org": "AS14061 DigitalOcean, LLC",
+        "timezone": "America/New_York"
+      },
+      "category": "foreign/cloud"
+    },
+    {
+      "originalUrl": "https://csi.gstatic.com/csi?v=2&amp;s=ima&amp;dmc=8&amp;puid=1~mrtm4irg&amp;c=5278138877285&amp;slotId=2639069438642&amp;eee=missing-element&amp;bi=missing-id&amp;vast_v=4.0&amp;vmfc=5&amp;vhc=0&amp;lima_p_ich=0&amp;lima_p_icu=0",
+      "type": "ping",
+      "ipinfo": {
+        "domain": "csi.gstatic.com",
+        "ip": "142.250.124.120",
+        "hostname": "bw-in-f120.1e100.net",
+        "city": "Melbourne",
+        "region": "Victoria",
+        "country": "AU",
+        "loc": "-37.8140,144.9633",
+        "org": "AS15169 Google LLC",
+        "timezone": "Australia/Melbourne"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": 149.527,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "142.250.124.120",
+          "prefix": "142.250.124.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://pbs.getpublica.com/v1/s2s-hb?site_id=5763&amp;format=vast&amp;site_page=https://www.mlb.com/&amp;site_name=mlb.com&amp;pod_duration=15&amp;min_ad_duration=6&amp;max_ad_duration=15&amp;cb=1825289524&amp;content_length=378000&amp;content_title=Top+10+Plays+of+the+Week&amp;content_cat=baseball&amp;content_keywords=alexa,send-to-news-mlb-feed,mlb-network,plays-of-the-week",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "pbs.getpublica.com",
+        "ip": "3.211.201.251",
+        "hostname": "ec2-3-211-201-251.compute-1.amazonaws.com",
+        "city": "Ashburn",
+        "region": "Virginia",
+        "country": "US",
+        "loc": "39.0437,-77.4875",
+        "org": "AS14618 Amazon.com, Inc.",
+        "timezone": "America/New_York"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "3.211.201.251",
+          "prefix": "3.211.201.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://ajs-assets.ftstatic.com/ftUtils.js",
+      "type": "script",
+      "ipinfo": {
+        "domain": "ajs-assets.ftstatic.com",
+        "ip": "203.69.81.82",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://prebid-a.rubiconproject.com/event",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "prebid-a.rubiconproject.com",
+        "ip": "18.182.134.126",
+        "hostname": "ec2-18-182-134-126.ap-northeast-1.compute.amazonaws.com",
+        "city": "Tokyo",
+        "region": "Tokyo",
+        "country": "JP",
+        "loc": "35.6895,139.6917",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Tokyo"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "rtt": null,
+        "detection_method": "rtt",
+        "rtt_error": "timeout",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "18.182.134.126",
+          "prefix": "18.182.134.0/24",
+          "anycast": false,
+          "confidence": "not_detected",
+          "asns": [],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 0,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://redirector.gvt1.com/videoplayback/id/2f9e4df95d3ac28c/itag/15/source/dclk_video_ads/requiressl/yes/xpc/EgVovf3BOg%3D%3D/acao/yes/mime/video%2Fmp4/ctier/L/ip/0.0.0.0/ipbits/0/expire/1784597016/sparams/ip,ipbits,expire,id,itag,source,requiressl,xpc,acao,mime,ctier/signature/606D983C1C97F0EA83B665C1CADE118E6400A07F.9F51DDE6AA94B9E0227B4798682F10B7A5032AC2/key/ck2/file/file.mp4",
+      "type": "media",
+      "ipinfo": {
+        "domain": "redirector.gvt1.com",
+        "ip": "142.250.204.46",
+        "hostname": "hkg07s38-in-f14.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://agen-assets.ftstatic.com/display/10338185/5524567.json",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "agen-assets.ftstatic.com",
+        "ip": "65.9.180.118",
+        "hostname": "server-65-9-180-118.tpe53.r.cloudfront.net",
+        "city": "Taoyuan",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.9937,121.2970",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://r5---sn-ipoxu-un5k.gvt1.com/videoplayback/id/2f9e4df95d3ac28c/itag/15/source/dclk_video_ads/requiressl/yes/xpc/EgVovf3BOg%3D%3D/acao/yes/mime/video%2Fmp4/ctier/L/ip/0.0.0.0/ipbits/0/expire/1784597016/sparams/acao,ctier,expire,id,ip,ipbits,itag,met,mh,mime,mip,mm,mn,ms,mv,mvi,pcm2cms,pl,requiressl,rms,source,xpc/signature/1A46BA0FBEC36FB365CA41AD3C1C427067FC409F.14203D048B234909A1C33E0AE5FF10A46454B5D6/key/cms1/cms_redirect/yes/met/1784575418,/mh/BA/mip/2001:b011:3802:52d7:ced:ab09:4293:e75c/mm/28/mn/sn-ipoxu-un5k/ms/nvh/mt/1784575032/mv/u/mvi/5/pcm2cms/yes/pl/52/rms/nvh,nvh/file/file.mp4",
+      "type": "media",
+      "ipinfo": {
+        "domain": "r5---sn-ipoxu-un5k.gvt1.com",
+        "ip": "203.66.169.16",
+        "hostname": "203-66-169-16.hinet-ip.hinet.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://r1---sn-ajun55-54.gvt1.com/videoplayback/id/2f9e4df95d3ac28c/itag/15/source/dclk_video_ads/requiressl/yes/xpc/EgVovf3BOg%3D%3D/acao/yes/mime/video%2Fmp4/ctier/L/ip/0.0.0.0/ipbits/0/expire/1784597016/sparams/acao,ctier,expire,id,ip,ipbits,itag,met,mh,mime,mip,mm,mn,ms,mv,mvi,pl,requiressl,rms,source,xpc/signature/2555E38C198269A8DD531F1F0B3D6C69D888996E.347EDF3EABAA932E8DFC024CB2220377F8F5BA03/key/cms1/met/1784575418,/mh/BA/pl/52/rms/nvh,nvh/redirect_counter/1/rm/sn-ipoxu-un5k76/rrc/40/req_id/1578449f0d2336e2/cms_redirect/yes/mip/2001:b011:3802:52d7:ced:ab09:4293:e75c/mm/29/mn/sn-ajun55-54/ms/rdu/mt/1784575033/mv/m/mvi/1?file=file.mp4",
+      "type": "media",
+      "ipinfo": {
+        "domain": "r1---sn-ajun55-54.gvt1.com",
+        "ip": "172.217.158.177",
+        "hostname": "lctsaa-af-in-f1.1e100.net",
+        "city": "Banqiao",
+        "region": "Taipei",
+        "country": "TW",
+        "loc": "25.0143,121.4672",
+        "org": "AS15169 Google LLC",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/cloud"
+    },
+    {
+      "originalUrl": "https://znbhheuua1bbyykz4-mlb.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_bHHEuUA1BByyKz4",
+      "type": "script",
+      "ipinfo": {
+        "domain": "znbhheuua1bbyykz4-mlb.siteintercept.qualtrics.com",
+        "ip": "104.17.209.240",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "104.17.209.240",
+          "prefix": "104.17.209.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 79,
+          "location_count": 79,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 7/21/2026, 3:24:59 AM<span> (HTTP 200)</span></p></div></div>
+    <div class="static-wrapper" data-static="end"></div>
+
+
+
+    <div id="search-container" v-show="showSearch">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Enter a URL to view the test result..." autocomplete="off"
+                v-model="searchQuery"  @keydown="onSearchKeydown" @focus="onSearchFocus"
+            >
+
+            <div class="search-dropdown" id="search-dropdown" v-if="displayedUrls.length" @scroll.passive="onDropdownScroll">
+                <a
+                    :href="sitePageHref(url)"
+                    class="search-dropdown-item"
+                    v-for="(url, index) in displayedUrls"
+                    :key="url"
+                    :data-url="url"
+                    :data-index="index"
+                    :class="{ selected: index === selectedIndex }"
+                    @click.prevent="selectUrl(url)"
+                >
+                    {{ formatDisplayUrl(url) }}
+                </a>
+            </div>
+            <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
+                        <p>{{ t('search.noResults', { query: searchQuery }) }}</p>
+                        <p>You can browse the <a href="https://github.com/irvin/web-resilience-test-result" target="_blank">dataset of tested sites</a> and run a manual test with <a href="https://github.com/irvin/web-resilience-test/tree/a6ccd6f1b05fca34034250055d566d1c1c0f4c65#d-automated-testing-tool" target="_blank">this tool</a>.</p>
+            </div>
+            <div class="search-meta" id="search-meta">
+                <template v-if="hasItems">
+                        {{ t('search.statsWithItems', { totalAll, shown }) }}
+                        <span class="search-load-more" v-if="hasMore" @click="loadMore">[Load more sites]</span>
+                </template>
+                <template v-else>
+                        {{ t('search.statsEmpty', { totalAll }) }}
+                </template>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <p id="check-other-site-container" v-show="showCheckOther">
+            <a href="/web/en/">
+                <button class="check-other-site-btn" @click.prevent="openSearch">Check another site</button>
+            </a>
+        </p>
+        <hr>
+        <p>
+            <a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="../../g0v_logo.svg" title="g0v Digital Resilience Hackathon" style="height: 65px;"></a>
+            <a href="https://ocf.tw/" target="_blank"><img src="../../Logo_Compact-OCF_Purple.svg" title="Open Culture Foundation" style="height: 35px;"></a>
+        </p>
+        <p>Curated by <a href="https://t.me/s/irvinfly" target="_blank">Irvin Chen</a>. Released under the <a href="https://github.com/irvin/web-resilience-test/?tab=License-1-ov-file#License-1-ov-file" target="_blank">CC BY-NC-ND 4.0 International License</a>.</p>
+        <p style="margin-bottom: 2em;">
+            <a href="https://resilience.ocf.tw/web/report/en.html" target="_blank">Research report</a>｜<a href="https://github.com/irvin/web-resilience-test" target="_blank">Source code</a>
+        </p>
+        <hr>
+        <p><a href="https://apnic.foundation/" target="_blank"><img src="../../APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" title="APNIC Foundation ISIF Asia" style="height: 90px;"></a></p>
+        <p>This work was supported by a grant from the <a href="https://apnic.foundation/" target="_blank">APNIC Foundation</a>, via <a href="https://apnic.foundation/home/isifasia/" target="_blank">ISIF Asia</a>.</p>
+    </footer>
+    </div>
+
+    <script src="../../app.js"></script>
+</body>
+</html>

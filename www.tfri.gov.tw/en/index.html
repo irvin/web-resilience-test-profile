@@ -1,293 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>When submarine cables fail, will www.tfri.gov.tw still work?</title>
-    <meta name="description" content="Based on the latest test, under a submarine-cable outage scenario the availability of www.tfri.gov.tw is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.">
+    <title>海纜斷掉時網站會動嗎？</title>
+    <meta name="description" content="輸入網址查看測試結果">
     <link rel="icon" href="/favicon.ico">
-    <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/www.tfri.gov.tw/en/">
+    <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/">
 
     <!-- Open Graph 標籤 -->
-    <meta property="og:title" content="When submarine cables fail, will www.tfri.gov.tw still work?">
-    <meta property="og:description" content="Based on the latest test, under a submarine-cable outage scenario the availability of www.tfri.gov.tw is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.">
+    <meta property="og:title" content="海纜斷掉時網站會動嗎？">
+    <meta property="og:description" content="輸入網址查看測試結果">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://resilience.ocf.tw/web/www.tfri.gov.tw/en/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta property="og:url" content="https://resilience.ocf.tw/web/">
+    <meta name="web-resilience-statistic-url" content="/test-result/statistic.tsv">
 
     <link rel="stylesheet" href="../../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
     <script src="../../locales/zh-TW.js"></script>
     <script src="../../locales/en.js"></script>
     <script src="../../i18n.js"></script>
-
-    <script>window.__IS_STATIC_PAGE__ = true;</script>
-    <link rel="alternate" hreflang="zh-TW" href="https://resilience.ocf.tw/web/www.tfri.gov.tw/">
-    <link rel="alternate" hreflang="en" href="https://resilience.ocf.tw/web/www.tfri.gov.tw/en/">
 </head>
 <body>
     <div id="app">
 
-    <nav class="lang-switcher" aria-label="Language">
-        <a class="lang-switcher-btn" href="/web/www.tfri.gov.tw/" hreflang="zh-TW">中文</a>
-        <a class="lang-switcher-btn" href="/web/www.tfri.gov.tw/en/" hreflang="en" aria-current="page">English</a>
+    <nav class="lang-switcher" :aria-label="t('lang.switcherLabel')">
+        <a class="lang-switcher-btn" :href="zhLocaleHref" hreflang="zh-TW" :aria-current="locale === 'zh-TW' ? 'page' : undefined">{{ t('lang.zh') }}</a>
+        <a class="lang-switcher-btn" :href="enLocaleHref" hreflang="en" :aria-current="locale === 'en' ? 'page' : undefined">{{ t('lang.en') }}</a>
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>When submarine cables fail, will <a href="https://www.tfri.gov.tw" target="_blank" rel="noopener noreferrer nofollow">www.tfri.gov.tw</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>Uncertain</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">5</strong></p><p class="score score-Q">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">8</strong></p><p class="score score-X score-zero">Foreign connections (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can www.tfri.gov.tw still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario the availability of www.tfri.gov.tw is “uncertain.” If international connectivity is cut or blocked, we cannot confirm whether the site would remain available.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why is it “uncertain” whether www.tfri.gov.tw would work when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">We did not see direct requests to foreign resources, but we did find reliance on in-country nodes of multinational cloud services. Whether those services keep running when outbound connectivity is impaired depends on platform architecture, cache design, origin routing, and more—so for now we can only label the outcome “uncertain.”</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean www.tfri.gov.tw might be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">“Uncertain” means we currently cannot conclude it will definitely work or definitely fail. Availability of the multinational cloud in-country nodes that www.tfri.gov.tw depends on, when cables are cut or congestion is extreme, needs to be clarified and explained further by providers.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for www.tfri.gov.tw under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of www.tfri.gov.tw, we observed 156 requests across 13 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS4782 Data Communication Business Group</span><span class="connection-domain">210.69.168.150</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS4782 Data Communication Business Group</span><span class="connection-domain">ws.tfri.gov.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">scontent.ftpe7-1.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">Domestic / Other</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">static.xx.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.youtube.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">i.ytimg.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">yt3.ggpht.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">Domestic / Cloud</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">jnn-pa.googleapis.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/www.tfri.gov.tw.json" target="_blank">View on GitHub</a></p><pre><code>{
-  "url": "https://www.tfri.gov.tw/",
-  "canonicalURL": "https://www.tfri.gov.tw/",
-  "httpStatus": 200,
-  "timestamp": "2026-01-14T03:41:29.465Z",
-  "testParameters": {
-    "customDNS": "168.95.1.1",
-    "useAdblock": true,
-    "adblockUrls": [
-      "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
-    ],
-    "useCache": true,
-    "hasIPinfoToken": true
-  },
-  "testingEnvironment": {
-    "ip": "220.132.212.194",
-    "hostname": "220-132-212-194.hinet-ip.hinet.net",
-    "city": "Banqiao",
-    "region": "Taipei",
-    "country": "TW",
-    "loc": "25.0143,121.4672",
-    "org": "AS3462 Data Communication Business Group",
-    "timezone": "Asia/Taipei",
-    "source": "ipinfo json api (direct)",
-    "dnsServer": "168.95.1.1"
-  },
-  "requestCount": 156,
-  "uniqueDomains": 13,
-  "test_results": {
-    "domestic": {
-      "cloud": 8,
-      "direct": 5
-    },
-    "foreign": {
-      "cloud": 0,
-      "direct": 0
-    }
-  },
-  "domainDetails": [
-    {
-      "originalUrl": "https://www.tfri.gov.tw/",
-      "type": "document",
-      "ipinfo": {
-        "domain": "www.tfri.gov.tw",
-        "ip": "210.69.168.150",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS4782 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftfri.coa&amp;tabs=timeline&amp;width=360&amp;height=271&amp;small_header=false&amp;adapt_container_width=false&amp;hide_cover=false&amp;show_facepile=false&amp;appId",
-      "type": "document",
-      "ipinfo": {
-        "domain": "www.facebook.com",
-        "ip": "31.13.87.36",
-        "hostname": "edge-star-mini-shv-01-tpe1.facebook.com",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS32934 Facebook, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://www.youtube.com/embed/eBbhPCESqgQ?si=oO4lu8OeGOtcv8_p",
-      "type": "document",
-      "ipinfo": {
-        "domain": "www.youtube.com",
-        "ip": "142.250.204.46",
-        "hostname": "hkg07s38-in-f14.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.googletagmanager.com/gtag/js?id=G-PQRLG99SGG",
-      "type": "script",
-      "ipinfo": {
-        "domain": "www.googletagmanager.com",
-        "ip": "142.250.198.72",
-        "hostname": "lctsaa-ab-in-f8.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://ws.tfri.gov.tw/001/Upload/435/relpic/12582/4080/6fca631f-22ac-43b3-81ac-dbf421d8eb07.jpg",
-      "type": "image",
-      "ipinfo": {
-        "domain": "ws.tfri.gov.tw",
-        "ip": "210.69.168.150",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS4782 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://i.ytimg.com/vi/eBbhPCESqgQ/sddefault.jpg",
-      "type": "image",
-      "ipinfo": {
-        "domain": "i.ytimg.com",
-        "ip": "142.250.77.22",
-        "hostname": "nctsaa-ab-in-f22.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://yt3.ggpht.com/1sdJAryr5AYNH-303qmkPesQndRZgVD6wgV5Y9FSBvrjqV3mje9yCtNjc52aMQTh_8-PJDR5xQ=s68-c-k-c0x00ffffff-no-rj",
-      "type": "image",
-      "ipinfo": {
-        "domain": "yt3.ggpht.com",
-        "ip": "142.250.198.65",
-        "hostname": "lctsaa-ab-in-f1.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.google.com.tw/ads/ga-audiences?v=1&amp;t=sr&amp;slf_rd=1&amp;_r=4&amp;tid=G-PQRLG99SGG&amp;cid=571537090.1768362086&amp;gtm=45je61d0h2v9112718616za200zd9112718616&amp;aip=1&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;frm=0&amp;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391252~115616986~115938465~115938469~116744866~117041587~117091819&amp;z=1051688441",
-      "type": "image",
-      "ipinfo": {
-        "domain": "www.google.com.tw",
-        "ip": "142.250.198.67",
-        "hostname": "lctsaa-ab-in-f3.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.gstatic.com/cv/js/sender/v1/cast_sender.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "www.gstatic.com",
-        "ip": "142.250.66.67",
-        "hostname": "hkg12s27-in-f3.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.google.com/js/th/VQRLE1nj_w3YOUr9bDT-SZkrXPV28X05Wh6hb2M3ukQ.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "www.google.com",
-        "ip": "142.250.196.196",
-        "hostname": "nctsaa-ac-in-f4.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://static.xx.fbcdn.net/rsrc.php/v5/yp/l/1,cross/FAL9LK7-qlE.css",
-      "type": "stylesheet",
-      "ipinfo": {
-        "domain": "static.xx.fbcdn.net",
-        "ip": "31.13.87.5",
-        "hostname": "xx-fbcdn-shv-01-tpe1.fbcdn.net",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS32934 Facebook, Inc.",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://scontent.ftpe7-1.fna.fbcdn.net/v/t39.30808-1/364769210_671044835051970_5019546379940573021_n.jpg?stp=dst-jpg_s100x100_tt6&amp;_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=f907e8&amp;_nc_ohc=j_bWUkdAYUUQ7kNvwFoN_Qu&amp;_nc_oc=AdkeU1nsZTBV3S7G80oteuPqMjLRisQYyjp21K3ejLbTK4jah4zyg7ML2DBcJr3IeuLmoFqJQ1RpNuWBsjV7h8Bn&amp;_nc_zt=24&amp;_nc_ht=scontent.ftpe7-1.fna&amp;edm=ADwHzz8EAAAA&amp;_nc_gid=JGdak3OkUBUhIY7bsS2NiQ&amp;oh=00_AfqiuxI0Q6OglCpmDJMAymskQ_ywB_TMjhLP5LUI1nkTtg&amp;oe=696CFD08",
-      "type": "image",
-      "ipinfo": {
-        "domain": "scontent.ftpe7-1.fna.fbcdn.net",
-        "ip": "203.74.65.17",
-        "hostname": "203-74-65-17.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS3462 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
-      "type": "xhr",
-      "ipinfo": {
-        "domain": "jnn-pa.googleapis.com",
-        "ip": "142.250.196.202",
-        "hostname": "nctsaa-ac-in-f10.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    }
-  ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 1/14/2026, 11:41:29 AM<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+    <div id="site-dynamic" v-show="showSiteDynamic">
+    <h1 v-if="!displayUrl" class="home-title">{{ t('home.title') }}</h1>
+    <h1 v-else>{{ t('home.titlePrefix') }}<a :href="'https://' + displayUrl" target="_blank" rel="noopener noreferrer nofollow">{{displayUrl}}</a>{{ t('home.titleSuffix') }}</h1>
+
+    <div id="results">
+        <div v-if="vueResult" class="result-card">
+            <div class="summary" :class="summaryClass">
+                <h2>{{summaryText}}</h2>
+            </div>
+
+            <div class="score-container">
+                <div class="score-stats">
+                    <p class="score score-O" :class="domesticZeroClass">{{ t('result.scores.domestic') }}<br><strong style="font-size: 1.3em;">{{domesticCount}}</strong></p>
+                    <p class="score score-Q" :class="cloudZeroClass">{{ t('result.scores.cloud') }}<br><strong style="font-size: 1.3em;">{{cloudCount}}</strong></p>
+                    <p class="score score-X" :class="foreignZeroClass">{{ t('result.scores.foreign') }}<br><strong style="font-size: 1.3em;">{{foreignCount}}</strong></p>
+                </div>
+
+                <div class="test-env-section" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/FAQPage' : undefined">
+                    <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
+                        <p itemprop="name"><strong>{{ t('result.faq.openQuestion', { displayUrl }) }}</strong></p>
+                        <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
+                            <p itemprop="text" v-if="summaryKey === 'wontWork'">{{ t('result.faq.wontWork.opening', { displayUrl }) }}</p>
+                            <p itemprop="text" v-else-if="summaryKey === 'uncertain'">{{ t('result.faq.uncertain.opening', { displayUrl }) }}</p>
+                            <p itemprop="text" v-else>{{ t('result.faq.mightWork.opening', { displayUrl }) }}</p>
+                        </div>
+                    </div>
+
+                    <template v-if="summaryKey === 'wontWork'">
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
+                            <p itemprop="name"><strong>{{ t('result.faq.wontWork.whyQuestion', { displayUrl }) }}</strong></p>
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
+                                <p itemprop="text">{{ t('result.faq.wontWork.whyAnswer') }}</p>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-else-if="summaryKey === 'uncertain'">
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
+                            <p itemprop="name"><strong>{{ t('result.faq.uncertain.whyQuestion', { displayUrl }) }}</strong></p>
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
+                                <p itemprop="text">{{ t('result.faq.uncertain.whyAnswer') }}</p>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
+                            <p itemprop="name"><strong>{{ t('result.faq.mightWork.whyQuestion', { displayUrl }) }}</strong></p>
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
+                                <p itemprop="text">{{ t('result.faq.mightWork.whyAnswer', { displayUrl }) }}</p>
+                            </div>
+                        </div>
+                    </template>
+
+                    <template v-if="summaryKey === 'wontWork'">
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
+                            <p itemprop="name"><strong>{{ t('result.faq.wontWork.congestionQuestion', { displayUrl }) }}</strong></p>
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
+                                <p itemprop="text">{{ t('result.faq.wontWork.congestionAnswer') }}</p>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-else-if="summaryKey === 'uncertain'">
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
+                            <p itemprop="name"><strong>{{ t('result.faq.uncertain.congestionQuestion', { displayUrl }) }}</strong></p>
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
+                                <p itemprop="text">{{ t('result.faq.uncertain.congestionAnswer', { displayUrl }) }}</p>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
+                            <p itemprop="name"><strong>{{ t('result.faq.mightWork.congestionQuestion', { displayUrl }) }}</strong></p>
+                            <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
+                                <p itemprop="text">{{ t('result.faq.mightWork.congestionAnswer') }}</p>
+                            </div>
+                        </div>
+                    </template>
+
+                    <div itemprop="mainEntity" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Question' : undefined">
+                        <p itemprop="name"><strong>{{ t('result.faq.resilienceQuestion', { displayUrl }) }}</strong></p>
+                        <div itemprop="acceptedAnswer" :itemscope="!!vueResult" :itemtype="vueResult ? 'https://schema.org/Answer' : undefined">
+                            <p itemprop="text" v-html="t('result.faq.resilienceBodyHtml', { displayUrl, uniqueDomains, requestCount })"></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="details-container">
+                <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
+                    <span>{{ t('result.details.connectionsToggle') }}</span>
+                </div>
+                <div class="test-env-content">
+                    <div class="test-env-section" v-if="siteLocation">
+                        <h4>{{ t('result.details.siteLocation') }}</h4>
+                        <ul class="connection-list">
+                            <li class="connection-item">
+                                <span v-if="siteLocation.category" :class="['category-badge', siteLocation.categoryClass]">{{siteLocation.categoryText}}</span>
+                                <span v-if="siteLocation.org" class="connection-org">{{siteLocation.org}}</span>
+                                <span v-if="siteLocation.ip" class="connection-domain">{{siteLocation.ip}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="test-env-section" v-if="connectionDetails && connectionDetails.length > 0">
+                        <h4>{{ t('result.details.connections') }}</h4>
+                        <ul class="connection-list">
+                            <li v-for="(connection, index) in connectionDetails" :key="index" class="connection-item">
+                                <span v-if="connection.category" :class="['category-badge', connection.categoryClass]">{{connection.categoryText}}</span>
+                                <span v-if="connection.org" class="connection-org">{{connection.org}}</span>
+                                <span class="connection-domain">{{connection.domain}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details-container">
+                <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
+                    <span>{{ t('result.details.testEnvToggle') }}</span>
+                </div>
+                <div class="test-env-content">
+                    <div class="test-env-section">
+                        <h4>{{ t('result.details.testParams') }}</h4>
+                        <ul>
+                            <li>{{ t('result.details.customDns', { value: testParameters && testParameters.customDNS }) }}</li>
+                            <li v-if="testParameters && testParameters.adblockUrls && testParameters.adblockUrls.length">
+                                {{ t('result.details.adblockLists') }}
+                                <ul>
+                                    <li v-for="url in testParameters.adblockUrls" :key="url">
+                                        <a :href="url" target="_blank">{{url}}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="test-env-section" v-if="testingEnvironment">
+                        <h4>{{ t('result.details.testEnv') }}</h4>
+                        <ul>
+                            <li>{{ t('result.details.ip', { value: testingEnvironment.ip }) }}</li>
+                            <li v-if="testingEnvironment.city">{{ t('result.details.city', { value: testingEnvironment.city }) }}</li>
+                            <li v-if="testingEnvironment.region">{{ t('result.details.region', { value: testingEnvironment.region }) }}</li>
+                            <li>{{ t('result.details.country', { value: testingEnvironment.country }) }}</li>
+                            <li v-if="testingEnvironment.org">{{ t('result.details.org', { value: testingEnvironment.org }) }}</li>
+                            <li v-if="testingEnvironment.dnsServer">{{ t('result.details.dnsServer', { value: testingEnvironment.dnsServer }) }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details-container">
+                <div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)">
+                    <span>{{ t('result.details.rawDataToggle') }}</span>
+                </div>
+                <div class="test-env-content">
+                    <p style="margin-top: 0;"><a :href="rawDataUrl" target="_blank">{{ t('result.details.viewOnGithub') }}</a></p>
+                    <pre><code>{{detailsJson}}</code></pre>
+                </div>
+            </div>
+
+            <p style="margin-bottom: 0;">{{ t('result.details.lastTested', { time: testTime }) }}<span v-if="httpStatus"> (HTTP {{httpStatus}})</span></p>
+        </div>
+    </div>
+    </div>
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
-            <input type="text" id="search-input" placeholder="Enter a URL to view the test result..." autocomplete="off"
+            <input type="text" id="search-input" :placeholder="t('search.placeholder')" autocomplete="off"
                 v-model="searchQuery"  @keydown="onSearchKeydown" @focus="onSearchFocus"
             >
 
@@ -307,12 +218,12 @@
             </div>
             <div class="search-no-results" id="search-no-results" v-if="!displayedUrls.length && searchQuery">
                         <p>{{ t('search.noResults', { query: searchQuery }) }}</p>
-                        <p>You can browse the <a href="https://github.com/irvin/web-resilience-test-result" target="_blank">dataset of tested sites</a> and run a manual test with <a href="https://github.com/irvin/web-resilience-test/tree/a6ccd6f1b05fca34034250055d566d1c1c0f4c65#d-automated-testing-tool" target="_blank">this tool</a>.</p>
+                        <p v-html="t('search.noResultsHelpHtml')"></p>
             </div>
             <div class="search-meta" id="search-meta">
                 <template v-if="hasItems">
                         {{ t('search.statsWithItems', { totalAll, shown }) }}
-                        <span class="search-load-more" v-if="hasMore" @click="loadMore">[Load more sites]</span>
+                        <span class="search-load-more" v-if="hasMore" @click="loadMore">{{ t('search.loadMore') }}</span>
                 </template>
                 <template v-else>
                         {{ t('search.statsEmpty', { totalAll }) }}
@@ -321,26 +232,48 @@
         </div>
     </div>
 
-    
+    <div v-pre id="overview-prerender">
+    <div class="static-wrapper" data-overview-static="begin"></div>
+    <div class="static-wrapper" data-overview-static="end"></div>
+    </div>
+
+    <div id="overview-dynamic" v-if="showOverviewDynamic">
+    <section class="overview-card" itemscope itemtype="https://schema.org/FAQPage">
+        <hr>
+        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question">
+            <meta itemprop="name" :content="t('home.overviewQuestion')">
+            <div v-if="overallStats" itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+                <p itemprop="text">{{ t('home.overviewStats', { totalCount: overallStats.totalCount, wontWorkPercent: overallStats.wontWorkPercent, internationalCloudPercent: overallStats.internationalCloudPercent, mightWorkPercent: overallStats.mightWorkPercent }) }}</p>
+                <p>{{ t('home.overviewChartCaption') }} <a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">{{ t('home.reportLink') }}</a>{{ t('home.overviewTrailing') }}</p>
+            </div>
+            <div v-else>
+                <p>{{ t('home.overviewFallback') }} <a href="https://resilience.ocf.tw/web/report/" target="_blank" rel="noopener noreferrer">{{ t('home.reportLink') }}</a>{{ t('home.overviewTrailing') }}</p>
+            </div>
+        </div>
+        <figure class="overview-chart">
+            <img :src="overallChartUrl" :alt="t('home.chartAlt')">
+        </figure>
+    </section>
+    </div>
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">
-            <a href="/web/en/">
-                <button class="check-other-site-btn" @click.prevent="openSearch">Check another site</button>
+            <a :href="homeHref">
+                <button class="check-other-site-btn" @click.prevent="openSearch">{{ t('footer.checkOther') }}</button>
             </a>
         </p>
         <hr>
         <p>
-            <a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="../../g0v_logo.svg" title="g0v Digital Resilience Hackathon" style="height: 65px;"></a>
-            <a href="https://ocf.tw/" target="_blank"><img src="../../Logo_Compact-OCF_Purple.svg" title="Open Culture Foundation" style="height: 35px;"></a>
+            <a href="https://g0v.hackmd.io/@paulpengtw/DigiResiTh0n-home" target="_blank"><img src="../../g0v_logo.svg" :title="t('footer.g0vTitle')" style="height: 65px;"></a>
+            <a href="https://ocf.tw/" target="_blank"><img src="../../Logo_Compact-OCF_Purple.svg" :title="t('footer.ocfTitle')" style="height: 35px;"></a>
         </p>
         <p>Curated by <a href="https://t.me/s/irvinfly" target="_blank">Irvin Chen</a>. Released under the <a href="https://github.com/irvin/web-resilience-test/?tab=License-1-ov-file#License-1-ov-file" target="_blank">CC BY-NC-ND 4.0 International License</a>.</p>
         <p style="margin-bottom: 2em;">
-            <a href="https://resilience.ocf.tw/web/report/en.html" target="_blank">Research report</a>｜<a href="https://github.com/irvin/web-resilience-test" target="_blank">Source code</a>
+            <a :href="t('footer.reportUrl')" target="_blank">{{ t('footer.report') }}</a>｜<a href="https://github.com/irvin/web-resilience-test" target="_blank">{{ t('footer.source') }}</a>
         </p>
         <hr>
-        <p><a href="https://apnic.foundation/" target="_blank"><img src="../../APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" title="APNIC Foundation ISIF Asia" style="height: 90px;"></a></p>
-        <p>This work was supported by a grant from the <a href="https://apnic.foundation/" target="_blank">APNIC Foundation</a>, via <a href="https://apnic.foundation/home/isifasia/" target="_blank">ISIF Asia</a>.</p>
+        <p><a href="https://apnic.foundation/" target="_blank"><img src="../../APNIC-Foundation-and-ISIF-Logo-CMYK-stacked-01-a.svg" :title="t('footer.apnicTitle')" style="height: 90px;"></a></p>
+        <p v-html="t('footer.apnicSupportHtml')"></p>
     </footer>
     </div>
 

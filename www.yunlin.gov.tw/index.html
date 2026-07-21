@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>海纜斷掉時，www.yunlin.gov.tw 會動嗎？</title>
-    <meta name="description" content="根據最近一次測試，在海纜斷掉的情境下，www.yunlin.gov.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。">
+    <meta name="description" content="根據最近一次測試，在海纜斷掉的情境下，www.yunlin.gov.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <link rel="icon" href="/favicon.ico">
     <link id="canonical" rel="canonical" href="https://resilience.ocf.tw/web/www.yunlin.gov.tw/">
 
     <!-- Open Graph 標籤 -->
     <meta property="og:title" content="海纜斷掉時，www.yunlin.gov.tw 會動嗎？">
-    <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，www.yunlin.gov.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。">
+    <meta property="og:description" content="根據最近一次測試，在海纜斷掉的情境下，www.yunlin.gov.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/www.yunlin.gov.tw/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>海纜斷掉時，<a href="https://www.yunlin.gov.tw" target="_blank" rel="noopener noreferrer nofollow">www.yunlin.gov.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary might-work"><h2>不確定</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">9</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">9</strong></p><p class="score score-X score-zero">境外連線 (X)<br><strong style="font-size: 1.3em;">0</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，www.yunlin.gov.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，www.yunlin.gov.tw 的可用性「不確定」。這表示如果海纜中斷、對外連線受阻時，無法確認網站是否能維持可用。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 www.yunlin.gov.tw 在海纜斷掉時「不確定是否會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，我們雖然沒有看到直接連到境外的資源請求，但有發現對於跨國雲服務在台灣的節點依賴。這些服務能否在對外受阻時持續運作，會受到平台架構、快取設計、或回源方式等影響，所以目前只能列為「不確定」。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，www.yunlin.gov.tw 屆時可能不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">「不確定」的意思是，目前不足以判定一定能用或不能用。www.yunlin.gov.tw 所依賴的這些跨國雲服務在台節點，在海纜斷線或極度壅塞時的可用性，需由業者進一步釐清與說明。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 www.yunlin.gov.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 www.yunlin.gov.tw 的首頁時，我們觀察到來自 18 個網域的 398 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS4782 Data Communication Business Group</span><span class="connection-domain">210.69.47.71</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS4782 Data Communication Business Group</span><span class="connection-domain">ws.yunlin.gov.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">scontent.ftpe7-3.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">scontent.ftpe7-1.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">scontent.ftpe7-4.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">scontent.ftpe7-2.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">static.xx.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">api.tgos.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.youtube.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">i.ytimg.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">yt3.ggpht.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.gstatic.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">jnn-pa.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS7539 National Center for High-performance Computing</span><span class="connection-domain">wmts.nlsc.gov.tw</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/www.yunlin.gov.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
+        <h1>海纜斷掉時，<a href="https://www.yunlin.gov.tw" target="_blank" rel="noopener noreferrer nofollow">www.yunlin.gov.tw</a> 會動嗎？</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>不會動</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O">境內直接連線 (O)<br><strong style="font-size: 1.3em;">8</strong></p><p class="score score-Q">境內雲端服務 (?)<br><strong style="font-size: 1.3em;">10</strong></p><p class="score score-X">境外連線 (X)<br><strong style="font-size: 1.3em;">1</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>海纜斷掉時，www.yunlin.gov.tw 還能正常開啟嗎？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">根據最近一次測試，在海纜斷掉的情境下，www.yunlin.gov.tw 可能「不會動」。這表示如果海纜中斷、對外連線受阻，網站就可能打不開。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>為什麼 www.yunlin.gov.tw 在海纜斷掉時「不會動」？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">測試過程中，網站的首頁載入時，我們發現有部分內容或資源需要從境外取得。平常這些資源可以正常載入，但在海纜中斷或嚴重塞車的情境下，這些連線可能失敗，網站也就可能跟著出問題。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>這是不是代表在海纜壅塞時，www.yunlin.gov.tw 屆時一定不能用？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">不一定。這個結果是根據首頁載入時觀察到的資源依賴來判定，反映的是較高風險，而不能保證所有頁面或所有功能，都一定完全失效。</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>怎麼研判 www.yunlin.gov.tw 在海纜障礙時的韌性？</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">打開 www.yunlin.gov.tw 的首頁時，我們觀察到來自 19 個網域的 443 個請求。<br>如果其中包含境外的連線，判定為「不會動」；如果沒有境外連線，但有依賴跨國雲服務在台灣的節點，判定為「不確定」；如果只有境內跨國雲服務之外的連線，判定為「可能會動」。<br>詳細判定規則與流程，請參考<a href="https://resilience.ocf.tw/web/report/" target="_blank">研究方法與整體報告</a>。</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>連線資訊</span></div><div class="test-env-content"><div class="test-env-section"><h4>網站位置</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">104.18.22.247</span></li></ul></div><div class="test-env-section"><h4>連線資訊</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-cloud">境外／雲端</span><span class="connection-org">AS16509 Amazon.com, Inc.</span><span class="connection-domain">d1yei2z3i6k35z.cloudfront.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">api.edgentica.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS13335 Cloudflare, Inc.</span><span class="connection-domain">ws.yunlin.gov.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">scontent.ftpe7-3.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">video.ftpe7-3.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">scontent.ftpe7-2.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">scontent.ftpe7-4.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS3462 Data Communication Business Group</span><span class="connection-domain">scontent.ftpe7-1.fna.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">www.facebook.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS32934 Facebook, Inc.</span><span class="connection-domain">static.xx.fbcdn.net</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS396982 Google LLC</span><span class="connection-domain">api.tgos.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.googletagmanager.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.youtube.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">www.google.com.tw</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">i.ytimg.com</span></li><li class="connection-item"><span class="category-badge category-domestic-cloud">境內／雲端</span><span class="connection-org">AS15169 Google LLC</span><span class="connection-domain">jnn-pa.googleapis.com</span></li><li class="connection-item"><span class="category-badge category-domestic-direct">境內／其他</span><span class="connection-org">AS7539 National Center for High-performance Computing</span><span class="connection-domain">wmts.nlsc.gov.tw</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>測試環境</span></div><div class="test-env-content"><div class="test-env-section"><h4>測試參數</h4><ul><li>指定 DNS 伺服器：168.95.1.1</li><li>使用 Adblock 清單： <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>測試環境</h4><ul><li>IP：220.132.212.194</li><li>城市：Banqiao</li><li>地區：Taipei</li><li>國家：TW</li><li>組織：AS3462 Data Communication Business Group</li><li>DNS 伺服器：168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>原始資料</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/www.yunlin.gov.tw.json" target="_blank">在 GitHub 上查看</a></p><pre><code>{
   "url": "https://www.yunlin.gov.tw/",
   "canonicalURL": "https://www.yunlin.gov.tw/",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T02:20:04.241Z",
+  "timestamp": "2026-07-20T20:10:45.009Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,15 +61,15 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 398,
-  "uniqueDomains": 18,
+  "requestCount": 443,
+  "uniqueDomains": 19,
   "test_results": {
     "domestic": {
-      "cloud": 9,
-      "direct": 9
+      "cloud": 10,
+      "direct": 8
     },
     "foreign": {
-      "cloud": 0,
+      "cloud": 1,
       "direct": 0
     }
   },
@@ -78,16 +79,20 @@
       "type": "document",
       "ipinfo": {
         "domain": "www.yunlin.gov.tw",
-        "ip": "210.69.47.71",
-        "hostname": "accounting.yunlin.gov.tw",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS4782 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
+        "ip": "104.18.22.247",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
       },
-      "category": "domestic/direct"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e49c26cbd8842e-TPE",
+        "detection_method": "header"
+      }
     },
     {
       "originalUrl": "https://api.tgos.tw/TGOS_API/tgos?ver=2&amp;AppID=/d1r2NrXFUiZAJq0A0h24WPDq0ju2F938Dy1kXQgqTgKqYzD1XdRIQ==&amp;APIKey=cGEErDNy5yN/1fQ0vyTOZrghjE+jIU6uBH+2Qt3D3YxsUlxn6hjOi6DwNvrlmJtLSs90CkhHlfpBTPXvhFukRoPYlBJWJg+2QL+ECnY+IXQgnRPziXDw0Vc5kpUABRwirXOA0NEWKXwPir80YwkBckRFCwJh82z0TIP+o6ulUdAymiFtLfPw8l+l/DnJVbtL2MjEqryL4t1nh34b7WRzFPaZv81jQW9GfV0H2a3yAfLRADLd0qCQMMe9pyZcA/Z0FIYZD2LgQiHHEgm3xfJJswTHBNDlL6nSt7YhwvvCgNgAVWpHgG0Onc1n2DwLiSNpq0eqGWmwGJguhwvNnVSzNJN1mpqs+skS5DP6a2CaqlVUHEnUzouXuWyB8K4wuIRRc1eEiRxrrjXAtYbZ7VEQXphB9CKQeJ3qXMoopGj9V0Eanjf+uBcdqOlJfadPGc12ALzn4nzJyvO+vtmGVqZGazUudiOlLTlXIXq4eeMWNaRMQxso63nUxr5pdsYB3M/2jYB1NJDfhoP+U+5OLzdSRpQrls4TbyKi",
@@ -106,8 +111,67 @@
       "category": "domestic/cloud",
       "cloud_provider": {
         "country": "tw",
-        "rtt": 4.5,
-        "detection_method": "rtt"
+        "rtt": 5.74,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "34.160.0.116",
+          "prefix": "34.160.0.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            396982
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 64,
+          "location_count": 64
+        }
+      }
+    },
+    {
+      "originalUrl": "https://api.edgentica.com/bundle/loader.js?assistantId=DDB4F2F40B8FF8ACF59EB26B322642A1",
+      "type": "script",
+      "ipinfo": {
+        "domain": "api.edgentica.com",
+        "ip": "172.67.140.144",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "cf-ray": "a1e49c2cda536005-SIN",
+        "country": "tw",
+        "detection_method": "laces",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.67.140.144",
+          "prefix": "172.67.140.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            13335
+          ],
+          "date": "2026-07-17",
+          "has_tw": true,
+          "has_taipei": true,
+          "site_count": 59,
+          "location_count": 59,
+          "tw_locations": [
+            {
+              "city": "Taipei",
+              "country": "TW",
+              "id": "TAI"
+            }
+          ]
+        }
       }
     },
     {
@@ -115,8 +179,8 @@
       "type": "script",
       "ipinfo": {
         "domain": "www.googletagmanager.com",
-        "ip": "142.250.196.200",
-        "hostname": "nctsaa-ac-in-f8.1e100.net",
+        "ip": "142.250.198.72",
+        "hostname": "lctsaa-ab-in-f8.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -127,35 +191,60 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://ws.yunlin.gov.tw/001/Upload/400/relpic/9888/576194/621c8a0c-4366-4d2b-8be7-73ca29bf3622.png",
+      "originalUrl": "https://ws.yunlin.gov.tw/001/Upload/400/relpic/9888/597838/f13bdad2-a7a2-46f6-bb24-131afee9ddec.jpg",
       "type": "image",
       "ipinfo": {
         "domain": "ws.yunlin.gov.tw",
-        "ip": "210.69.47.133",
-        "city": "Taipei",
-        "region": "Taiwan",
-        "country": "TW",
-        "loc": "25.0531,121.5264",
-        "org": "AS4782 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
+        "ip": "104.18.22.247",
+        "city": "San Francisco",
+        "region": "California",
+        "country": "US",
+        "loc": "37.7621,-122.3971",
+        "org": "AS13335 Cloudflare, Inc.",
+        "timezone": "America/Los_Angeles"
       },
-      "category": "domestic/direct"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "cf-ray": "a1e49c34081bf023-TPE",
+        "detection_method": "header"
+      }
     },
     {
       "originalUrl": "https://www.youtube.com/embed/NA1hVcVgv74?rel=0",
       "type": "document",
       "ipinfo": {
         "domain": "www.youtube.com",
-        "ip": "142.250.66.78",
-        "hostname": "hkg12s27-in-f14.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
+        "ip": "142.251.156.4",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
         "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
+        "timezone": "America/Los_Angeles"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 7.08,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.156.4",
+          "prefix": "142.251.156.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 61,
+          "location_count": 61
+        }
+      }
     },
     {
       "originalUrl": "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fyunlin.lishan%2F%3Fref%3Dembed_page&amp;tabs=timeline&amp;width=500&amp;height=350&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId",
@@ -174,70 +263,59 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://wmts.nlsc.gov.tw/wmts/EMAP/default/GoogleMapsCompatible/3/3/6",
+      "originalUrl": "https://wmts.nlsc.gov.tw/wmts/EMAP/default/GoogleMapsCompatible/2/1/3",
       "type": "image",
       "ipinfo": {
         "domain": "wmts.nlsc.gov.tw",
-        "ip": "140.110.134.19",
-        "city": "Taichung",
+        "ip": "140.110.20.85",
+        "hostname": "temp085.nchc.org.tw",
+        "city": "Tainan",
         "region": "Taiwan",
         "country": "TW",
-        "loc": "24.1469,120.6839",
+        "loc": "22.9908,120.2133",
         "org": "AS7539 National Center for High-performance Computing",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://www.google.com/ccm/collect?frm=0&amp;tid=AW-494888555&amp;en=page_view&amp;dl=https%3A%2F%2Fwww.yunlin.gov.tw%2F&amp;scrsrc=www.googletagmanager.com&amp;rnd=444065977.1768357196&amp;dt=%E9%9B%B2%E6%9E%97%E7%B8%A3%E6%94%BF%E5%BA%9C%E5%85%A8%E7%90%83%E8%B3%87%E8%A8%8A%E7%B6%B2&amp;auid=366056953.1768357196&amp;navt=n&amp;npa=0&amp;gtm=45be61c1za200xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391253~115497442~115616986~115938466~115938469~115985660~116744866~117041588&amp;tft=1768357195691&amp;tfd=2052&amp;apve=1&amp;apvf=f",
+      "originalUrl": "https://www.google.com/rmkt/collect/494888555/?random=1784578234887&amp;cv=11&amp;fst=1784578234887&amp;fmt=8&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be67h1h2za200xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115938466~115938468~118131808~118395333~118897920~118897930&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fwww.yunlin.gov.tw%2F&amp;rcb=0&amp;frm=0&amp;tiba=%E9%9B%B2%E6%9E%97%E7%B8%A3%E6%94%BF%E5%BA%9C%E5%85%A8%E7%90%83%E8%B3%87%E8%A8%8A%E7%B6%B2&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1843202614.1784578235&amp;data=event%3Dgtag.config&amp;ept=68&amp;gcp=5",
       "type": "fetch",
       "ipinfo": {
         "domain": "www.google.com",
-        "ip": "142.250.198.68",
-        "hostname": "lctsaa-ab-in-f4.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
+        "ip": "142.251.153.119",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
         "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
+        "timezone": "America/Los_Angeles"
       },
-      "category": "domestic/cloud"
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 5.789,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "142.251.153.119",
+          "prefix": "142.251.153.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 62,
+          "location_count": 62
+        }
+      }
     },
     {
-      "originalUrl": "https://i.ytimg.com/vi/2oGWKneP2V4/default.jpg?sqp=-oaymwEkCHgQWvKriqkDGvABAfgB_gmAAtAFigIMCAAQARhlIE4oPjAP&amp;rs=AOn4CLCjLrp1bVBpvX66BaTc5RwJs7BLuw",
-      "type": "image",
-      "ipinfo": {
-        "domain": "i.ytimg.com",
-        "ip": "142.250.204.54",
-        "hostname": "hkg07s38-in-f22.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://yt3.ggpht.com/ytc/AIdro_mrAufYOPTVLWM8Ya_RYCjNSFjQZh9iG2mz9YmTGg1dKvs=s68-c-k-c0x00ffffff-no-rj",
-      "type": "image",
-      "ipinfo": {
-        "domain": "yt3.ggpht.com",
-        "ip": "142.250.196.193",
-        "hostname": "nctsaa-ac-in-f1.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://www.google.com.tw/pagead/1p-user-list/494888555/?random=1768357195687&amp;cv=11&amp;fst=1768356000000&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be61c1za200xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~104527906~104528500~104684208~104684211~105391253~115497442~115616986~115938466~115938469~115985660~116744866~117041588&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fwww.yunlin.gov.tw%2F&amp;frm=0&amp;tiba=%E9%9B%B2%E6%9E%97%E7%B8%A3%E6%94%BF%E5%BA%9C%E5%85%A8%E7%90%83%E8%B3%87%E8%A8%8A%E7%B6%B2&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=366056953.1768357196&amp;uaa=arm&amp;uab=64&amp;uafvl=Not(A%253ABrand%3B99.0.0.0%7CHeadlessChrome%3B133.0.6943.16%7CChromium%3B133.0.6943.16&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=26.2.0&amp;uaw=0&amp;data=event%3Dgtag.config&amp;rfmt=3&amp;fmt=3&amp;is_vtc=1&amp;cid=CAQSiwEA56J1eYswcGDspV_6cc859l79GEGyZIo1XzjMmF8KJy6V__WoWu3RYovV68LsFoV09AuR9_kz6CTksCVmymHq2K_m3SyX_k3ynNNZETjtxfMG2zxg22S3jRKExG1_2H9RNUyzBvxxelVKiBmgOBFafISX8is_r5Z19e2zSYgIkcV_PkyzjXmINeXA&amp;random=3443739221&amp;rmt_tld=1&amp;ipr=y",
+      "originalUrl": "https://www.google.com.tw/pagead/1p-user-list/494888555/?random=1784578234887&amp;cv=11&amp;fst=1784577600000&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be67h1h2za200xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115938466~115938468~118131808~118395333~118897920~118897930&amp;u_w=1280&amp;u_h=720&amp;url=https%3A%2F%2Fwww.yunlin.gov.tw%2F&amp;rcb=0&amp;frm=0&amp;tiba=%E9%9B%B2%E6%9E%97%E7%B8%A3%E6%94%BF%E5%BA%9C%E5%85%A8%E7%90%83%E8%B3%87%E8%A8%8A%E7%B6%B2&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1843202614.1784578235&amp;data=event%3Dgtag.config&amp;ept=9&amp;rfmt=3&amp;fmt=3&amp;is_vtc=1&amp;cid=CAQS7AEAEQoqgZQA4otF27b4uj1-EBkqNOJ_5UKbfJZAy-3txl4gx5ofBeuu_n-Dtse6jgQ43o6QGAqHbH-mHgliSLM_oJeYQIEv6DckFXrWeh0AEZOnW2uGCN4ClDx0yq6JB1zRKYjIkB_93MC6rRs9rZSJAHsIlxx4anzg8n27D0r17u9Z5NL4xgBPr7xMpwybaZp9538O1WRfoSDQMuzVd3Czwb3Eanux2lO9vJOW5TSXvlMRLLpSPf4moE1gWh9rZVmrwLGbONrJ2h7Duk0BgLvqEjseZBOGdgDbpH5H9hwAR53uy6XF48eOK_UpDQ&amp;random=2696011944&amp;rmt_tld=1&amp;ipr=y",
       "type": "image",
       "ipinfo": {
         "domain": "www.google.com.tw",
@@ -253,23 +331,7 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://www.gstatic.com/cv/js/sender/v1/cast_sender.js",
-      "type": "script",
-      "ipinfo": {
-        "domain": "www.gstatic.com",
-        "ip": "142.250.77.3",
-        "hostname": "nctsaa-ab-in-f3.1e100.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS15169 Google LLC",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/cloud"
-    },
-    {
-      "originalUrl": "https://static.xx.fbcdn.net/rsrc.php/v5/yp/l/1,cross/FAL9LK7-qlE.css",
+      "originalUrl": "https://static.xx.fbcdn.net/rsrc.php/v5/yk/l/1,cross/8xrc6E6blQ-.css",
       "type": "stylesheet",
       "ipinfo": {
         "domain": "static.xx.fbcdn.net",
@@ -285,28 +347,28 @@
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://scontent.ftpe7-3.fna.fbcdn.net/v/t39.30808-1/316806898_702338744596242_4631149779986616488_n.jpg?stp=dst-jpg_s200x200_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=f907e8&amp;_nc_ohc=w5wQzF8fcTgQ7kNvwHz8A4g&amp;_nc_oc=AdlKpEGzECcgzwrHUTT9fM-cWpmxuC_qLxscaMa6bXQgD8YFDxk5_fHh1ixxkoU-6oY1zI-iUNtFZgshcHJ27lUo&amp;_nc_zt=24&amp;_nc_ht=scontent.ftpe7-3.fna&amp;edm=ADwHzz8EAAAA&amp;_nc_gid=gNamWq8N-lrVz1w5-ENDhA&amp;oh=00_AfpIaEC_-64KLR-lWx3yGwJTRdrLhfGY6bH9j_YY2O8stA&amp;oe=696CB802",
+      "originalUrl": "https://scontent.ftpe7-3.fna.fbcdn.net/v/t39.30808-1/316806898_702338744596242_4631149779986616488_n.jpg?stp=dst-jpg_s200x200_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=f907e8&amp;_nc_ohc=ZUFvnhehO7wQ7kNvwGh0v94&amp;_nc_oc=Ado0-y0ApZqkpc-zc8cOh3lINWT9YPUeamVIn3lC0E8LftDCxdOy99FmKONbIbOmgizMRC2QU74ArIgLxAvHqGZK&amp;_nc_zt=24&amp;_nc_ht=scontent.ftpe7-3.fna&amp;edm=ADwHzz8EAAAA&amp;_nc_gid=UeXNRuSan4mlzFc5WTjxRQ&amp;oh=00_AQAIDUATk1KFC0K-wzNHxS2I8qjiiEQwT-bYHMYBghLkPw&amp;oe=6A6459C2",
       "type": "image",
       "ipinfo": {
         "domain": "scontent.ftpe7-3.fna.fbcdn.net",
         "ip": "203.74.65.145",
         "hostname": "203-74-65-145.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "city": "Taipei",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
+        "loc": "25.0531,121.5264",
         "org": "AS3462 Data Communication Business Group",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
-      "type": "xhr",
+      "originalUrl": "https://i.ytimg.com/vi/saZ5t0fdCc4/sddefault.jpg",
+      "type": "image",
       "ipinfo": {
-        "domain": "jnn-pa.googleapis.com",
-        "ip": "142.250.198.74",
-        "hostname": "lctsaa-ab-in-f10.1e100.net",
+        "domain": "i.ytimg.com",
+        "ip": "142.250.204.54",
+        "hostname": "hkg07s38-in-f22.1e100.net",
         "city": "Banqiao",
         "region": "Taipei",
         "country": "TW",
@@ -317,58 +379,147 @@
       "category": "domestic/cloud"
     },
     {
-      "originalUrl": "https://scontent.ftpe7-1.fna.fbcdn.net/v/t39.30808-6/615425900_1444732580356851_534577629427366508_n.jpg?stp=dst-jpg_s526x296_tt6&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=e21142&amp;_nc_ohc=kLYaHXCBE38Q7kNvwFsiHR0&amp;_nc_oc=AdkImFZF-awWpz2Yt7gh8sPcks0hSKl7e13GLRef9184U1DtWYwpZmUOayctEwbcS8yS9dZa3vAs_CnORXBRM9S8&amp;_nc_zt=23&amp;_nc_ht=scontent.ftpe7-1.fna&amp;_nc_gid=Gs5l8OdsflCHS1uu0mD1bA&amp;oh=00_AfoCNr7TyObv025pCgeD8s9MQU091E4gONjzz05bD1RJAQ&amp;oe=696CC432",
+      "originalUrl": "https://d1yei2z3i6k35z.cloudfront.net/6056038/68d47af084802_EdgenticaFavicon.svg",
       "type": "image",
       "ipinfo": {
-        "domain": "scontent.ftpe7-1.fna.fbcdn.net",
-        "ip": "203.74.65.17",
-        "hostname": "203-74-65-17.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "domain": "d1yei2z3i6k35z.cloudfront.net",
+        "ip": "18.65.3.82",
+        "hostname": "server-18-65-3-82.lax50.r.cloudfront.net",
+        "city": "Los Angeles",
+        "region": "California",
+        "country": "US",
+        "loc": "34.0522,-118.2437",
+        "org": "AS16509 Amazon.com, Inc.",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "foreign/cloud",
+      "cloud_provider": {
+        "x-amz-cf-pop": "LAX50-P1",
+        "rtt": 138.89,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (direct)",
+          "queried_ip": "18.65.3.82",
+          "prefix": "18.65.3.0/24",
+          "anycast": true,
+          "confidence": "low_confidence",
+          "partial": false,
+          "asns": [
+            16509
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 2,
+          "location_count": 0
+        }
+      }
+    },
+    {
+      "originalUrl": "https://jnn-pa.googleapis.com/$rpc/google.internal.waa.v1.Waa/GenerateIT",
+      "type": "xhr",
+      "ipinfo": {
+        "domain": "jnn-pa.googleapis.com",
+        "ip": "172.217.112.4",
+        "city": "Mountain View",
+        "region": "California",
+        "country": "US",
+        "loc": "38.0088,-122.1175",
+        "org": "AS15169 Google LLC",
+        "timezone": "America/Los_Angeles"
+      },
+      "category": "domestic/cloud",
+      "cloud_provider": {
+        "country": "tw",
+        "rtt": 6.824,
+        "detection_method": "rtt",
+        "laces": {
+          "source": "laces api (cached)",
+          "queried_ip": "172.217.112.4",
+          "prefix": "172.217.112.0/24",
+          "anycast": true,
+          "confidence": "confident",
+          "partial": false,
+          "asns": [
+            15169
+          ],
+          "date": "2026-07-17",
+          "has_tw": false,
+          "has_taipei": false,
+          "site_count": 60,
+          "location_count": 60
+        }
+      }
+    },
+    {
+      "originalUrl": "https://video.ftpe7-3.fna.fbcdn.net/o1/v/t2/f2/m366/AQMykMFuZe_VhZnDZd_cQiz_aSGBUOo5ZpeBUghhUcLtqzjpq-3TP1zs3aNnRpx8Ms9iTY1iCVmXOjeB2d4N4Po7IwGOYWCrlGlZQAVuH22LJA.mp4?_nc_cat=103&amp;_nc_oc=AdoD0FKx4J9m33Gy-Ns9sV_7ABE7s1yM05dKGGvLrifHiXfkkTL8wH87ZF45MW6TXKd8-x5DU3LAj_e2k6nVH6mG&amp;_nc_sid=9ca052&amp;_nc_ht=video.ftpe7-3.fna.fbcdn.net&amp;_nc_ohc=03hy4E3-vioQ7kNvwGUKmiv&amp;efg=eyJ2ZW5jb2RlX3RhZyI6ImRhc2hfdnA5LWJhc2ljLWdlbjJfNzIwcCIsInZpZGVvX2lkIjoxMjEzNTI1NTY3NTY1NTI3LCJvaWxfdXJsZ2VuX2FwcF9pZCI6MCwiY2xpZW50X25hbWUiOiJ1bmtub3duIiwieHB2X2Fzc2V0X2lkIjo5MTk1MTAwNjA0MDkwMTcsImFzc2V0X2FnZV9kYXlzIjoxLCJ2aV91c2VjYXNlX2lkIjoxMDEyMiwiZHVyYXRpb25fcyI6NzQsImJpdHJhdGUiOjg2NDgyMCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&amp;ccb=17-1&amp;_nc_gid=FSvvDdIR4GN9w6dcQ_jayw&amp;_nc_ss=7b289&amp;_nc_zt=28&amp;oh=00_AQCPNklmuQXV9FNmDHwHHhH4f01LorhygmWpVyx9sYEK5w&amp;oe=6A645B2D&amp;bytestart=0&amp;byteend=798",
+      "type": "fetch",
+      "ipinfo": {
+        "domain": "video.ftpe7-3.fna.fbcdn.net",
+        "ip": "203.74.65.146",
+        "hostname": "203-74-65-146.hinet-ip.hinet.net",
+        "city": "Taipei",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
+        "loc": "25.0531,121.5264",
         "org": "AS3462 Data Communication Business Group",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/direct"
     },
     {
-      "originalUrl": "https://scontent.ftpe7-4.fna.fbcdn.net/v/t39.30808-6/615871441_1444732643690178_2326725728613229691_n.jpg?stp=cp6_dst-jpg_p296x100_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=e21142&amp;_nc_ohc=VIoiFXZyOhoQ7kNvwHdtpjO&amp;_nc_oc=Adl7NtetP6HsYreDFRadChBaa8rPsEIhwWbQ_CQy7m7aQE-MxFL2W-peaBxmIwQt-LO-YsSfhXQMMZpGgV5jaTQ4&amp;_nc_zt=23&amp;_nc_ht=scontent.ftpe7-4.fna&amp;_nc_gid=Gs5l8OdsflCHS1uu0mD1bA&amp;oh=00_Afrz1FbkHE1jyuHXzEpVJXwNhyapd3MvEhv8yzekwF0ZzQ&amp;oe=696CD35F",
-      "type": "image",
-      "ipinfo": {
-        "domain": "scontent.ftpe7-4.fna.fbcdn.net",
-        "ip": "203.74.65.209",
-        "hostname": "203-74-65-209.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
-        "country": "TW",
-        "loc": "25.0143,121.4672",
-        "org": "AS3462 Data Communication Business Group",
-        "timezone": "Asia/Taipei"
-      },
-      "category": "domestic/direct"
-    },
-    {
-      "originalUrl": "https://scontent.ftpe7-2.fna.fbcdn.net/v/t39.30808-6/614605916_1444590910371018_1305348802234357768_n.jpg?stp=cp6_dst-jpg_s261x260_tt6&amp;_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=e21142&amp;_nc_ohc=kQatxLK2TAYQ7kNvwHLVLGW&amp;_nc_oc=AdmOQkO2Dcku-9C5DS0C_Ar4DF3V672AmYHyhtwGB78ourKB2uQ_GZ1bEqOR-N_CPTiaQrX5vk5vbJsiQZ1C7_v8&amp;_nc_zt=23&amp;_nc_ht=scontent.ftpe7-2.fna&amp;_nc_gid=Gs5l8OdsflCHS1uu0mD1bA&amp;oh=00_Afoso6oKQxhMUC1WlO81NR-gGeORJsno7dWhkoGL8P7Tgg&amp;oe=696CB537",
+      "originalUrl": "https://scontent.ftpe7-2.fna.fbcdn.net/v/t39.30808-6/750016216_1600020014828106_6018927681546050544_n.jpg?stp=dst-jpg_p320x320_tt6&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=e5c1b6&amp;_nc_ohc=mQ3eD99WEkMQ7kNvwHz6wVe&amp;_nc_oc=AdrQ2uv280fjR8UsdxZz0T-nsvj6I54EdZTdczHLKcmH716zTd0bTiNNW5unzeX10i-Icbz83M7WSsvZ8d31rXVk&amp;_nc_zt=23&amp;_nc_ht=scontent.ftpe7-2.fna&amp;_nc_gid=FSvvDdIR4GN9w6dcQ_jayw&amp;_nc_ss=7b289&amp;oh=00_AQATDGxDLQ4fbZPuK0DgrFpAOozh3wTtey6LeD3GDcef6w&amp;oe=6A64403D",
       "type": "image",
       "ipinfo": {
         "domain": "scontent.ftpe7-2.fna.fbcdn.net",
         "ip": "203.74.65.81",
         "hostname": "203-74-65-81.hinet-ip.hinet.net",
-        "city": "Banqiao",
-        "region": "Taipei",
+        "city": "Taichung",
+        "region": "Taiwan",
         "country": "TW",
-        "loc": "25.0143,121.4672",
+        "loc": "24.1469,120.6839",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://scontent.ftpe7-4.fna.fbcdn.net/v/t39.30808-6/749301059_1599776748185766_5126390510446640577_n.jpg?stp=cp6_dst-jpg_p180x540_tt6&amp;_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=e21142&amp;_nc_ohc=0dwWNu5_l3QQ7kNvwEaX8ca&amp;_nc_oc=AdqnstlgkU1qRWV6leSmlKpFRp7xwU5b3JSskxv61z8pMtXkCQivbZoQFzHRwjqOKUkDoYzWas0Mrk6KVF3FvnK0&amp;_nc_zt=23&amp;_nc_ht=scontent.ftpe7-4.fna&amp;_nc_gid=FSvvDdIR4GN9w6dcQ_jayw&amp;_nc_ss=7b289&amp;oh=00_AQCP-PhIFE7nIf_o2BsFx_xDHIRnisb6lTsu0iBqzxJBjw&amp;oe=6A6464E4",
+      "type": "image",
+      "ipinfo": {
+        "domain": "scontent.ftpe7-4.fna.fbcdn.net",
+        "ip": "203.74.65.209",
+        "hostname": "203-74-65-209.hinet-ip.hinet.net",
+        "city": "Taichung",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "24.1469,120.6839",
+        "org": "AS3462 Data Communication Business Group",
+        "timezone": "Asia/Taipei"
+      },
+      "category": "domestic/direct"
+    },
+    {
+      "originalUrl": "https://scontent.ftpe7-1.fna.fbcdn.net/v/t39.30808-6/749389784_1598868494943258_7740103050319754408_n.jpg?stp=cp6_dst-jpg_s526x395_tt6&amp;_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=e21142&amp;_nc_ohc=PGkzGSvdng8Q7kNvwGwYbSo&amp;_nc_oc=Ado0FajcWhwb91UhAg2QoCRPYvYDhJWO5SSdF9KhDSRHVKJuU_FHlzCS0sMVuKqdZfVhP5mn8yyLKeiqyPGlrDNx&amp;_nc_zt=23&amp;_nc_ht=scontent.ftpe7-1.fna&amp;_nc_gid=FSvvDdIR4GN9w6dcQ_jayw&amp;_nc_ss=7b289&amp;oh=00_AQCM3f4CxzArkoHISVnLICvjEjkgd6NkFyWXiSaa7JaZlQ&amp;oe=6A645D53",
+      "type": "image",
+      "ipinfo": {
+        "domain": "scontent.ftpe7-1.fna.fbcdn.net",
+        "ip": "203.74.65.17",
+        "hostname": "203-74-65-17.hinet-ip.hinet.net",
+        "city": "Taipei",
+        "region": "Taiwan",
+        "country": "TW",
+        "loc": "25.0531,121.5264",
         "org": "AS3462 Data Communication Business Group",
         "timezone": "Asia/Taipei"
       },
       "category": "domestic/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/1/14 上午10:20:04<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">最後測試時間：2026/7/21 上午4:10:45<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -406,7 +557,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">

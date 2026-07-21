@@ -13,7 +13,7 @@
     <meta property="og:description" content="Based on the latest test, under a submarine-cable outage scenario baidu.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://resilience.ocf.tw/web/baidu.com/en/">
-    <meta name="web-resilience-statistic-url" content="/web/statistic.698270a59fa109e201536566aa2e57c4c4ef4d3f.tsv">
+    <meta name="web-resilience-statistic-url" content="/web/statistic.63835d4b6e27ba88a238267705ef0c2e6277df6b.tsv">
 
     <link rel="stylesheet" href="../../styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.5.22/vue.global.prod.min.js"></script>
@@ -34,15 +34,16 @@
     </nav>
 
     <div class="static-wrapper" data-static="begin"></div>
-        <h1>When submarine cables fail, will <a href="https://baidu.com" target="_blank" rel="noopener noreferrer nofollow">baidu.com</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>Will not work</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q score-zero">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-X">Foreign connections (X)<br><strong style="font-size: 1.3em;">12</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can baidu.com still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario baidu.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why might baidu.com “not work” when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean baidu.com will definitely be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for baidu.com under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of baidu.com, we observed 95 requests across 12 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS24547 Hebei Mobile Communication Company Limited</span><span class="connection-domain">111.63.65.103</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS55967 Beijing Baidu Netcom Science and Technology Co., Ltd.</span><span class="connection-domain">www.baidu.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS55967 Beijing Baidu Netcom Science and Technology Co., Ltd.</span><span class="connection-domain">pss.bdstatic.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS55967 Beijing Baidu Netcom Science and Technology Co., Ltd.</span><span class="connection-domain">mbd.baidu.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS55967 Beijing Baidu Netcom Science and Technology Co., Ltd.</span><span class="connection-domain">sp1.baidu.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS55967 Beijing Baidu Netcom Science and Technology Co., Ltd.</span><span class="connection-domain">sp2.baidu.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS9808 China Mobile Communications Group Co., Ltd.</span><span class="connection-domain">hector.baidu.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS134770 CHINANET Jiangsu province Suzhou taihu IDC network</span><span class="connection-domain">aisearch.cdn.bcebos.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS137693 CHINATELECOM Guangxi Nanning IDC network</span><span class="connection-domain">hectorstatic.baidu.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS137687 Luoyang, Henan Province, P.R.China.</span><span class="connection-domain">psstatic.cdn.bcebos.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS62610 Zenlayer Inc</span><span class="connection-domain">gips2.baidu.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS62610 Zenlayer Inc</span><span class="connection-domain">gips0.baidu.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/baidu.com.json" target="_blank">View on GitHub</a></p><pre><code>{
+        <h1>When submarine cables fail, will <a href="https://baidu.com" target="_blank" rel="noopener noreferrer nofollow">baidu.com</a> still work?</h1><div id="results" style="display: block;"><div class="result-card"><div class="summary wont-work"><h2>Will not work</h2></div><div class="score-container"><div class="score-stats"><p class="score score-O score-zero">Domestic direct connections (O)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-Q score-zero">Domestic cloud services (?)<br><strong style="font-size: 1.3em;">0</strong></p><p class="score score-X">Foreign connections (X)<br><strong style="font-size: 1.3em;">9</strong></p></div><div class="test-env-section" itemscope="" itemtype="https://schema.org/FAQPage"><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>When submarine cables fail, can baidu.com still load normally?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Based on the latest test, under a submarine-cable outage scenario baidu.com may “not work.” If international connectivity is cut or blocked, the site may fail to load.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Why might baidu.com “not work” when submarine cables fail?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">During testing, when the homepage loaded we found that some content or resources had to be fetched from outside the country. Those resources usually load fine, but when cables are cut or traffic is severely congested those connections can fail—and the site may break along with them.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>Does this mean baidu.com will definitely be unavailable during severe cable congestion?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">Not necessarily. This result is inferred from resource dependencies observed while loading the homepage. It reflects higher risk—not a guarantee that every page or every feature would fail completely.</p></div></div><div itemprop="mainEntity" itemscope="" itemtype="https://schema.org/Question"><p itemprop="name"><strong>How is resilience for baidu.com under cable outages assessed?</strong></p><div itemprop="acceptedAnswer" itemscope="" itemtype="https://schema.org/Answer"><p itemprop="text">When opening the homepage of baidu.com, we observed 73 requests across 9 domains.<br>If any involve connections abroad, the outcome is classified as “Will not work.” If there are no foreign connections but there is reliance on in-country nodes of multinational cloud services, the outcome is “Uncertain.” If connections are only domestic aside from that international-cloud pattern, the outcome is “May work.”<br>For detailed rules and the full workflow, see the <a href="https://resilience.ocf.tw/web/report/" target="_blank">research methodology and overall report</a>.</p></div></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Connection information</span></div><div class="test-env-content"><div class="test-env-section"><h4>Site location</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS4837 CHINA UNICOM China169 Backbone</span><span class="connection-domain">110.242.74.102</span></li></ul></div><div class="test-env-section"><h4>Connection information</h4><ul class="connection-list"><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS55967 Beijing Baidu Netcom Science and Technology Co., Ltd.</span><span class="connection-domain">www.baidu.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS55967 Beijing Baidu Netcom Science and Technology Co., Ltd.</span><span class="connection-domain">mbd.baidu.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS55967 Beijing Baidu Netcom Science and Technology Co., Ltd.</span><span class="connection-domain">sp1.baidu.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS151823 China Telecom</span><span class="connection-domain">psstatic.cdn.bcebos.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS4134 CHINANET BACKBONE</span><span class="connection-domain">hectorstatic.baidu.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS58540 CHINATELECOM SHANDONG JINAN IDC</span><span class="connection-domain">pss.bdstatic.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS24547 Hebei Mobile Communication Company Limited</span><span class="connection-domain">hector.baidu.com</span></li><li class="connection-item"><span class="category-badge category-foreign-direct">Foreign / Other</span><span class="connection-org">AS62610 Zenlayer Inc</span><span class="connection-domain">gips2.baidu.com</span></li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Test environment</span></div><div class="test-env-content"><div class="test-env-section"><h4>Test parameters</h4><ul><li>Specified DNS server: 168.95.1.1</li><li>Adblock lists used: <ul><li><a href="https://filter.futa.gg/hosts_abp.txt" target="_blank">https://filter.futa.gg/hosts_abp.txt</a></li><li><a href="https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt" target="_blank">https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt</a></li></ul></li></ul></div><div class="test-env-section"><h4>Test environment</h4><ul><li>IP: 220.132.212.194</li><li>City: Banqiao</li><li>Region: Taipei</li><li>Country: TW</li><li>Organization: AS3462 Data Communication Business Group</li><li>DNS server: 168.95.1.1</li></ul></div></div></div><div class="details-container"><div class="test-env-toggle collapsed" onclick="toggleTestEnv(this)"><span>Raw data</span></div><div class="test-env-content"><p style="margin-top: 0px;"><a href="https://github.com/irvin/web-resilience-test-result/blob/main/baidu.com.json" target="_blank">View on GitHub</a></p><pre><code>{
   "url": "https://baidu.com",
   "canonicalURL": "https://baidu.com",
   "httpStatus": 200,
-  "timestamp": "2026-01-14T01:04:30.744Z",
+  "timestamp": "2026-07-20T19:18:13.860Z",
   "testParameters": {
     "customDNS": "168.95.1.1",
     "useAdblock": true,
     "adblockUrls": [
+      "https://filter.futa.gg/hosts_abp.txt",
       "https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_15_DnsFilter/filter.txt"
     ],
     "useCache": true,
@@ -60,8 +61,8 @@
     "source": "ipinfo json api (direct)",
     "dnsServer": "168.95.1.1"
   },
-  "requestCount": 95,
-  "uniqueDomains": 12,
+  "requestCount": 73,
+  "uniqueDomains": 9,
   "test_results": {
     "domestic": {
       "cloud": 0,
@@ -69,7 +70,7 @@
     },
     "foreign": {
       "cloud": 0,
-      "direct": 12
+      "direct": 9
     }
   },
   "domainDetails": [
@@ -78,12 +79,12 @@
       "type": "document",
       "ipinfo": {
         "domain": "baidu.com",
-        "ip": "111.63.65.103",
-        "city": "Tianjin",
-        "region": "Tianjin",
+        "ip": "110.242.74.102",
+        "city": "Shijiazhuang",
+        "region": "Hebei",
         "country": "CN",
-        "loc": "39.1422,117.1767",
-        "org": "AS24547 Hebei Mobile Communication Company Limited",
+        "loc": "38.0414,114.4786",
+        "org": "AS4837 CHINA UNICOM China169 Backbone",
         "timezone": "Asia/Shanghai"
       },
       "category": "foreign/direct"
@@ -94,56 +95,41 @@
       "ipinfo": {
         "domain": "www.baidu.com",
         "ip": "103.235.46.102",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
+        "city": "Tung Chung",
+        "region": "Islands",
         "country": "HK",
-        "loc": "22.2783,114.1747",
+        "loc": "22.2878,113.9424",
         "org": "AS55967 Beijing Baidu Netcom Science and Technology Co., Ltd.",
         "timezone": "Asia/Hong_Kong"
       },
       "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://pss.bdstatic.com/r/www/static/font/cosmic/pc/cos-icon_20cec29.css",
+      "originalUrl": "https://pss.bdstatic.com/r/www/static/font/cosmic/pc/cos-icon_3df378f.css",
       "type": "stylesheet",
       "ipinfo": {
         "domain": "pss.bdstatic.com",
-        "ip": "103.235.45.242",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
-        "country": "HK",
-        "loc": "22.2783,114.1747",
-        "org": "AS55967 Beijing Baidu Netcom Science and Technology Co., Ltd.",
-        "timezone": "Asia/Hong_Kong"
-      },
-      "category": "foreign/direct"
-    },
-    {
-      "originalUrl": "https://psstatic.cdn.bcebos.com/aife/static/wenAI_1761814195000.png",
-      "type": "image",
-      "ipinfo": {
-        "domain": "psstatic.cdn.bcebos.com",
-        "ip": "36.99.225.38",
-        "city": "Zhengzhou",
-        "region": "Henan",
+        "ip": "182.61.128.203",
+        "city": "Beijing",
+        "region": "Beijing",
         "country": "CN",
-        "loc": "34.7578,113.6486",
-        "org": "AS137687 Luoyang, Henan Province, P.R.China.",
+        "loc": "39.9075,116.3972",
+        "org": "AS58540 CHINATELECOM SHANDONG JINAN IDC",
         "timezone": "Asia/Shanghai"
       },
       "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://aisearch.cdn.bcebos.com/public/weixin_code/2025-06/eba505c38fe819615861ee2dc71991ac.png",
+      "originalUrl": "https://psstatic.cdn.bcebos.com/aife/static/wenxinlogo_1770695621000.png",
       "type": "image",
       "ipinfo": {
-        "domain": "aisearch.cdn.bcebos.com",
-        "ip": "218.94.231.38",
-        "city": "Nanjing",
-        "region": "Jiangsu",
+        "domain": "psstatic.cdn.bcebos.com",
+        "ip": "175.12.90.38",
+        "city": "Changsha",
+        "region": "Hunan",
         "country": "CN",
-        "loc": "32.0617,118.7778",
-        "org": "AS134770 CHINANET Jiangsu province Suzhou taihu IDC network",
+        "loc": "28.1987,112.9709",
+        "org": "AS151823 China Telecom",
         "timezone": "Asia/Shanghai"
       },
       "category": "foreign/direct"
@@ -153,56 +139,41 @@
       "type": "script",
       "ipinfo": {
         "domain": "hectorstatic.baidu.com",
-        "ip": "124.226.72.38",
-        "city": "Nanning",
-        "region": "Guangxi",
+        "ip": "171.214.23.38",
+        "city": "Chengdu",
+        "region": "Sichuan",
         "country": "CN",
-        "loc": "22.8167,108.3167",
-        "org": "AS137693 CHINATELECOM Guangxi Nanning IDC network",
+        "loc": "30.6667,104.0667",
+        "org": "AS4134 CHINANET BACKBONE",
         "timezone": "Asia/Shanghai"
       },
       "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://mbd.baidu.com/ztbox?action=zpblog&amp;appname=pcsearch&amp;v=2.0&amp;data=%7B%22cateid%22%3A%2299%22%2C%22actiondata%22%3A%7B%22id%22%3A18463%2C%22type%22%3A%220%22%2C%22timestamp%22%3A1768352669406%2C%22content%22%3A%7B%22page%22%3A%22home%22%2C%22source%22%3A%22%22%2C%22from%22%3A%22search%22%2C%22type%22%3A%22display%22%2C%22value%22%3A%22%22%2C%22ext%22%3A%7B%22status%22%3A%22default%22%2C%22is_log%22%3A%220%22%2C%22have_hotsearch%22%3A%221%22%2C%22is_kuang_rec_disp%22%3A%221%22%2C%22search_kuang_status%22%3A%22default%22%2C%22aisou_btn%22%3A%220%22%2C%22kuang_rec_status%22%3A%221%22%7D%7D%7D%7D",
+      "originalUrl": "https://mbd.baidu.com/ztbox?action=zpblog&amp;appname=pcsearch&amp;sid=63140_67861_71139_71289_71301_71309_71358_71355_71440_71452_71445_71509_71617_71654_71499_71664_71674_71772_71778_71706_71723_71749_71797_71816_71837_71897_71913_71909_71922_71969_71989_71945_71935_71925_71930_71950_72030_72021_72011_72002_71946_71932_72072_72061_72096_72101_72102_72106_72112_72110_72116_72119&amp;v=2.0&amp;data=%7B%22cateid%22%3A%2299%22%2C%22actiondata%22%3A%7B%22id%22%3A18463%2C%22type%22%3A%220%22%2C%22timestamp%22%3A1784575090702%2C%22content%22%3A%7B%22page%22%3A%22home%22%2C%22source%22%3A%22%22%2C%22from%22%3A%22search%22%2C%22type%22%3A%22display%22%2C%22value%22%3A%22%22%2C%22ext%22%3A%7B%22status%22%3A%22default%22%2C%22is_log%22%3A%220%22%2C%22have_hotsearch%22%3A%221%22%2C%22is_kuang_rec_disp%22%3A%221%22%2C%22search_kuang_status%22%3A%22default%22%2C%22aisou_btn%22%3A%220%22%2C%22kuang_rec_status%22%3A%221%22%2C%22is_first_visit%22%3A%221%22%7D%7D%7D%7D",
       "type": "ping",
       "ipinfo": {
         "domain": "mbd.baidu.com",
         "ip": "103.235.47.212",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
+        "city": "Tung Chung",
+        "region": "Islands",
         "country": "HK",
-        "loc": "22.2783,114.1747",
+        "loc": "22.2878,113.9424",
         "org": "AS55967 Beijing Baidu Netcom Science and Technology Co., Ltd.",
         "timezone": "Asia/Hong_Kong"
       },
       "category": "foreign/direct"
     },
     {
-      "originalUrl": "https://sp1.baidu.com/-L-Xsjip0QIZ8tyhnq/v.gif?logactid=1234567890&amp;showTab=10000&amp;opType=showpv&amp;mod=superman%3Alib&amp;submod=index&amp;superver=supernewplus&amp;glogid=2155854206&amp;type=2011&amp;pid=315&amp;isLogin=0&amp;version=PCHome&amp;terminal=PC&amp;qid=0xfa97da33007fb97e&amp;sid=&amp;super_frm=&amp;from_login=&amp;from_reg=&amp;query=&amp;curcard=2&amp;curcardtab=&amp;_r=0.8298922679541014",
+      "originalUrl": "https://sp1.baidu.com/-L-Xsjip0QIZ8tyhnq/v.gif?logactid=1234567890&amp;showTab=10000&amp;opType=showpv&amp;mod=superman%3Alib&amp;submod=index&amp;superver=supernewplus&amp;glogid=2154514146&amp;type=2011&amp;pid=315&amp;isLogin=0&amp;version=PCHome&amp;terminal=PC&amp;qid=0x80e3e346006b46e2&amp;sid=63140_67861_71139_71289_71301_71309_71358_71355_71440_71452_71445_71509_71617_71654_71499_71664_71674_71772_71778_71706_71723_71749_71797_71816_71837_71897_71913_71909_71922_71969_71989_71945_71935_71925_71930_71950_72030_72021_72011_72002_71946_71932_72072_72061_72096_72101_72102_72106_72112_72110_72116_72119&amp;super_frm=&amp;from_login=&amp;from_reg=&amp;query=&amp;curcard=2&amp;curcardtab=&amp;_r=0.9271939382494272",
       "type": "image",
       "ipinfo": {
         "domain": "sp1.baidu.com",
         "ip": "103.235.46.115",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
+        "city": "Tung Chung",
+        "region": "Islands",
         "country": "HK",
-        "loc": "22.2783,114.1747",
-        "org": "AS55967 Beijing Baidu Netcom Science and Technology Co., Ltd.",
-        "timezone": "Asia/Hong_Kong"
-      },
-      "category": "foreign/direct"
-    },
-    {
-      "originalUrl": "https://sp2.baidu.com/-L-Ysjip0QIZ8tyhnq/v.gif?mod=superman%3Acomponents&amp;submod=hotsearch&amp;utype=undefined&amp;superver=supernewplus&amp;portrait=undefined&amp;logPortrait=undefined&amp;glogid=2155854206&amp;type=2011&amp;pid=315&amp;isLogin=0&amp;version=PCHome&amp;terminal=PC&amp;qid=0xfa97da33007fb97e&amp;sid=&amp;super_frm=&amp;from_login=&amp;from_reg=&amp;query=&amp;curcard=2&amp;curcardtab=&amp;_r=0.7168511334016006&amp;m=superman%3Acomponents_hotsearchShow&amp;showType=hotword&amp;words=%5B%22%E5%BC%80%E5%B1%80%E4%B9%8B%E5%B9%B4%E5%A6%82%E4%BD%95%E6%8E%A8%E8%BF%9B%E5%85%A8%E9%9D%A2%E4%BB%8E%E4%B8%A5%E6%B2%BB%E5%85%9A%22%2C%22%E5%A6%BB%E5%AD%90%E9%94%99%E5%A4%B1%E5%B9%B4%E7%BB%88%E5%A5%96%E4%B8%88%E5%A4%AB%E5%A9%86%E5%A9%86%E9%BB%98%E5%A5%91%E8%A1%A5%E4%B8%8A%22%2C%22%E5%86%9B%E5%B7%A5%E4%BC%81%E4%B8%9A%E5%91%98%E5%B7%A5%E9%99%B7%E9%97%B4%E8%B0%8D%E7%BE%8E%E8%89%B2%E9%99%B7%E9%98%B1%E8%A2%AB%E8%A6%81%E6%8C%9F%22%2C%22%E5%A7%94%E5%86%85%E7%91%9E%E6%8B%89%E4%BB%A3%E6%80%BB%E7%BB%9F%E5%B0%86%E6%B4%BE%E7%89%B9%E4%BD%BF%E8%B5%B4%E7%BE%8E%22%2C%22%E7%BE%8E%E5%9B%BD%E6%89%B9%E5%87%86%E5%90%91%E4%B8%AD%E5%9B%BD%E5%87%BA%E5%8F%A3%E8%8B%B1%E4%BC%9F%E8%BE%BEH200%E8%8A%AF%E7%89%87%22%2C%22%E6%BD%98%E5%90%AF%E8%83%9C%E6%94%80%E9%99%84%E8%92%8B%E8%B6%85%E8%89%AF%201%E5%B9%B4%E5%86%852%E6%AC%A1%E5%8D%87%E8%81%8C%22%2C%22%E8%B5%B6%E5%A4%A7%E9%9B%86%20%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%9A%84%E6%96%B0%E6%BD%AE%E6%B5%81%22%2C%22%E4%B8%AD%E5%9B%BD%E9%A9%BB%E9%9F%A9%E5%9B%BD%E5%A4%A7%E4%BD%BF%E9%A6%86%E4%B8%A5%E6%AD%A3%E5%8F%91%E5%A3%B0%22%2C%22%E6%9C%89%E4%BA%BA%E5%87%BA%E4%BB%B713%E4%B8%87%E6%B1%82%E8%B4%AD%E4%BC%9A%E8%A3%85%E6%AD%BB%E7%9A%84%E5%B0%8F%E7%BE%8A%22%2C%22%E5%8D%8E%E6%B8%85%E6%B1%A0%E8%B4%B5%E5%A6%83%E5%87%BA%E6%B5%B4%E9%9B%95%E5%83%8F%E8%A2%AB%E6%8C%87%E4%B8%8D%E9%9B%85%22%5D&amp;pagenum=0",
-      "type": "image",
-      "ipinfo": {
-        "domain": "sp2.baidu.com",
-        "ip": "103.235.46.115",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
-        "country": "HK",
-        "loc": "22.2783,114.1747",
+        "loc": "22.2878,113.9424",
         "org": "AS55967 Beijing Baidu Netcom Science and Technology Co., Ltd.",
         "timezone": "Asia/Hong_Kong"
       },
@@ -213,12 +184,12 @@
       "type": "script",
       "ipinfo": {
         "domain": "hector.baidu.com",
-        "ip": "39.156.68.81",
+        "ip": "111.63.65.178",
         "city": "Beijing",
         "region": "Beijing",
         "country": "CN",
         "loc": "39.9075,116.3972",
-        "org": "AS9808 China Mobile Communications Group Co., Ltd.",
+        "org": "AS24547 Hebei Mobile Communication Company Limited",
         "timezone": "Asia/Shanghai"
       },
       "category": "foreign/direct"
@@ -238,28 +209,12 @@
         "timezone": "Asia/Hong_Kong"
       },
       "category": "foreign/direct"
-    },
-    {
-      "originalUrl": "https://gips0.baidu.com/it/u=14154217,3818936281&amp;fm=3028&amp;app=3028&amp;f=PNG&amp;fmt=auto&amp;q=100&amp;size=f384_384",
-      "type": "image",
-      "ipinfo": {
-        "domain": "gips0.baidu.com",
-        "ip": "66.93.81.122",
-        "hostname": "dsl093-081-122.atl1.dsl.speakeasy.net",
-        "city": "Hong Kong",
-        "region": "Hong Kong",
-        "country": "HK",
-        "loc": "22.2783,114.1747",
-        "org": "AS62610 Zenlayer Inc",
-        "timezone": "Asia/Hong_Kong"
-      },
-      "category": "foreign/direct"
     }
   ]
-}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 1/14/2026, 9:04:30 AM<span> (HTTP 200)</span></p></div></div>
+}</code></pre></div></div><p style="margin-bottom: 0px;">Last tested: 7/21/2026, 3:18:13 AM<span> (HTTP 200)</span></p></div></div>
     <div class="static-wrapper" data-static="end"></div>
 
-    
+
 
     <div id="search-container" v-show="showSearch">
         <div class="search-box">
@@ -297,7 +252,7 @@
         </div>
     </div>
 
-    
+
 
     <footer>
         <p id="check-other-site-container" v-show="showCheckOther">
