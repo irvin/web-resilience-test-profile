@@ -21,6 +21,8 @@
                 overviewChartCaption: 'The chart below shows exposure to foreign and international cloud dependencies among widely used Taiwanese sites.',
                 overviewFallback: 'Based on current test results, the chart below shows exposure to foreign and international cloud dependencies among widely used Taiwanese websites—that is, what share of sites would fail outright, how many face higher fault risk due to reliance on international cloud nodes, and what share are relatively more resilient when submarine cables fail or congestion is extreme.',
                 reportLink: 'Read the research methodology and aggregated report',
+                paperLink: 'Full research paper (PDF)',
+                paperDescription: 'Irvin Chen / Open Culture Foundation; public author version of the AINTEC 2026 technical paper submission',
                 overviewTrailing: '.',
                 chartAlt: 'Overall results chart'
             },
