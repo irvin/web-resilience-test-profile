@@ -21,6 +21,8 @@
                 overviewChartCaption: '下圖為台灣常用網站的境外及國際雲資源依賴暴露狀態。',
                 overviewFallback: '根據目前的檢測結果，下圖為台灣常用網站的境外及國際雲資源依賴暴露狀態。亦即，在海纜斷光或極度壅塞的情境下，有多少比例的網站將會直接失效，多少網站因依賴國際雲節點而故障風險較高，多少比例的網站則相對較有韌性。',
                 reportLink: '查看研究方法與彙整報告',
+                paperLink: '完整英文論文（PDF）',
+                paperDescription: 'Irvin Chen／開放文化基金會，AINTEC 2026 technical paper 投稿稿件公開版',
                 overviewTrailing: '。',
                 chartAlt: '整體結果圖表'
             },
